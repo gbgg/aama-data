@@ -1,6 +1,8 @@
 #!/bin/sh
 # usage:  fuquery "dir"
 
+# 04/22/2013: gbgg modified script names to accommodate changed constants.sh and xsl
+
 echo > logs/schemagen.log
 
 for d in `ls -d $1`

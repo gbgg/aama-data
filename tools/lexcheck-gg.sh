@@ -1,6 +1,7 @@
 #!/bin/bash
 # usage:  lexcheck.sh "dir"
 
+# 04/22/2013: gbgg modified constants.sh and xsl
 
 . tools/constants-gg.sh
 
@@ -21,7 +22,7 @@ do
 	-xi \
 	-s:$f \
 	-o:$of \
-	-xsl:tools/lexcheck.xsl \
+	-xsl:tools/lexcheck-gg.xsl \
 	f=$f;
 	#cat $of >> $ofsum
 done

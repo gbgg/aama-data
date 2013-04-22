@@ -1,6 +1,8 @@
 #!/bin/bash
 # usage:  datagen.sh "dir"
 
+# 04/22/2013: gbgg modified constants.sh and xsl
+
 . tools/constants-gg.sh
 
 #for d in `ls -d data`

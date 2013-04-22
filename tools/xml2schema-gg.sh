@@ -1,6 +1,8 @@
 #!/bin/bash
 # usage:  xml2schema.sh "dir"
 
+# 04/22/2013: gbgg modified constants.sh
+
 . tools/constants-gg.sh
 
 for d in `ls -d $1`
