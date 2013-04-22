@@ -1,4 +1,4 @@
-JARDIR=../../../saxon/saxonpe9-3-0-5j
+JARDIR=../../../usr/local
 SAXON=saxon9pe.jar
 FUSEKIDIR=/cygdrive/c/Fuseki-0.2.4
 
