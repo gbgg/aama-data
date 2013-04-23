@@ -4,8 +4,9 @@
   xmlns:aama="urn:aama:2010" xmlns:java="java:java.util.UUID" exclude-result-prefixes="xsl fn java"
   version="2.0">
 
-  <!-- 04/22/2013 tests added to pick up mu-term vals-->
-  
+  <!-- 04/22/2013: gbgg, tests added to pick up mu-term vals-->
+  <!-- 04/23/13: gbgg, $lexref for terms in termclusters marked "multiLex" -->
+
   <xsl:output method="text" indent="yes" encoding="utf-8"/>
 
   <xsl:strip-space elements="*"/>
@@ -194,7 +195,7 @@
 
   </xsl:template>
 
-    <!-- MU-TERMS -->
+  <!-- MU-TERMS -->
   <xsl:template match="mu-term">
 
     <xsl:variable name="lang">
@@ -362,8 +363,16 @@
 	</xsl:text>
 
       <xsl:variable name="lexref">
-        <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='lexlabel']/@val"/>
+        <xsl:choose>
+          <xsl:when test="ancestor::pdgm/common-properties/prop[@type='multiLex']">
+            <xsl:value-of select="prop[@type='lexlabel']/@val"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='lexlabel']/@val"/>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:variable>
+
       <xsl:variable name="muref">
         <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='mulabel']/@val"/>
       </xsl:variable>
@@ -384,27 +393,25 @@
         <xsl:value-of select="(//mu-term/prop[@type='mulabel' and @val=$muref])/../@id"/>
       </xsl:variable>
       <xsl:if test="not($lexid) and not($muid)">
- <!--       <xsl:message> TID: <xsl:value-of select="@id"/> LEXREF: <xsl:value-of select="$lexref"/>
+        <!--       <xsl:message> TID: <xsl:value-of select="@id"/> LEXREF: <xsl:value-of select="$lexref"/>
           LEXID: <xsl:value-of select="$lexid"/>
         </xsl:message> -->
-		<xsl:message> TID: <xsl:value-of select="@id"/> 
-          LEX/MUID: MISSING
-        </xsl:message>
-      </xsl:if> 
+        <xsl:message> TID: <xsl:value-of select="@id"/> LEX/MUID: MISSING </xsl:message>
+      </xsl:if>
 
-		<xsl:if test="fn:string-length($lexid) > 0">
-      <xsl:text>aamas:lexeme aama:</xsl:text>
-      <xsl:value-of select="$lexid"/>
-      <xsl:text>;
+      <xsl:if test="fn:string-length($lexid) > 0">
+        <xsl:text>aamas:lexeme aama:</xsl:text>
+        <xsl:value-of select="$lexid"/>
+        <xsl:text>;
 	</xsl:text>
-		</xsl:if>
-		
-		<xsl:if test="fn:string-length($muid) > 0">
-      <xsl:text>aamas:mu-term aama:</xsl:text>
-      <xsl:value-of select="$muid"/>
-      <xsl:text>;
+      </xsl:if>
+
+      <xsl:if test="fn:string-length($muid) > 0">
+        <xsl:text>aamas:mu-term aama:</xsl:text>
+        <xsl:value-of select="$muid"/>
+        <xsl:text>;
 	</xsl:text>
-		</xsl:if>
+      </xsl:if>
 
       <!-- common-props -->
       <xsl:apply-templates select="../../common-properties/prop"/>

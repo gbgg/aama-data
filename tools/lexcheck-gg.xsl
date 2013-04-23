@@ -9,9 +9,9 @@
 
   <xsl:param name="f" required="yes"/>
   <!-- ################################################################ -->
-<!--04/19/13 gbgg added pdgmlabel to output-->
-<!--04/22/13 gbgg added "or mulabel" to common-properties test-->
-
+  <!--04/19/13: gbgg added pdgmlabel to output-->
+  <!--04/22/13: gbgg added "or mulabel" to common-properties test-->
+  <!-- 04/23/13: gbgg added multiLex option to common-properties -->
   <xsl:template match="/">
     <xsl:value-of select="$f"/>
     <xsl:text>&#10;</xsl:text>
@@ -19,13 +19,13 @@
   </xsl:template>
 
   <xsl:template match="common-properties">
-    <xsl:if test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')])">
-<xsl:message>
-FAIL: pid=<xsl:value-of select="../@pid"/>
-</xsl:message>
+    <xsl:if
+      test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')] or prop[fn:matches(@type, '.*multiLex.*')])">
+      <xsl:message> FAIL: pid=<xsl:value-of select="../@pid"/>
+      </xsl:message>
       <xsl:value-of select="../@pid"/>
       <xsl:text>&#10;      </xsl:text>
-	  <xsl:value-of select="../pdgmlabel"/>
+      <xsl:value-of select="../pdgmlabel"/>
       <xsl:text>&#10;</xsl:text>
     </xsl:if>
   </xsl:template>
