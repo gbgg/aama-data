@@ -65,6 +65,7 @@
 					</th>
 				</tr>
 				<xsl:for-each select="//lexeme">
+					<xsl:sort select="./prop[@type='lexlabel']/@val"/>
 					<tr>
 						<td><xsl:value-of select="./prop[@type='lexlabel']/@val"/></td>
 <!--						<xsl:if test="@id='ID0'">-->
@@ -81,6 +82,9 @@
 							<td><xsl:value-of select="./@val"/></td>
 						</tr>
 					</xsl:for-each>
+					<tr> 
+						<td> ----- </td>
+					</tr>
 				</xsl:for-each>
 			</tbody>
 		</table>
@@ -103,8 +107,9 @@
 					</th>
 				</tr>
 				<xsl:for-each select="//mu-term">
+					<xsl:sort select="./prop[@type='mulabel']/@val"/>
 					<tr>
-						<td><xsl:value-of select="./prop[@type='label']/@val"/></td>
+						<td><xsl:value-of select="./prop[@type='mulabel']/@val"/></td>
 <!--						<xsl:if test="@id='ID0'">-->
 							<td>id</td>
 							<td>=</td>
@@ -119,6 +124,9 @@
 							<td><xsl:value-of select="./@val"/></td>
 						</tr>
 					</xsl:for-each>
+					<tr> 
+						<td> ----- </td>
+					</tr>
 				</xsl:for-each>
 			</tbody>
 		</table>
