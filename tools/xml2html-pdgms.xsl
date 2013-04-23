@@ -35,6 +35,9 @@
 				<xsl:if test="analysis/lexemes">
 					<xsl:call-template name="lexemes"/>
 					</xsl:if> 
+				<xsl:if test="analysis/mu-terms">
+					<xsl:call-template name="mu-terms"/>
+					</xsl:if> 
 				<xsl:call-template name="pdgm"/>
 			</body>
 		</html>
@@ -64,6 +67,44 @@
 				<xsl:for-each select="//lexeme">
 					<tr>
 						<td><xsl:value-of select="./prop[@type='lexlabel']/@val"/></td>
+<!--						<xsl:if test="@id='ID0'">-->
+							<td>id</td>
+							<td>=</td>
+							<td><xsl:value-of select="@id"/></td>
+<!--						</xsl:if>-->
+					</tr>
+					<xsl:for-each select="./prop">
+						<tr>
+							<td/>
+							<td><xsl:value-of select="./@type"/></td>
+							<td>=</td>
+							<td><xsl:value-of select="./@val"/></td>
+						</tr>
+					</xsl:for-each>
+				</xsl:for-each>
+			</tbody>
+		</table>
+	</xsl:template>
+
+	<xsl:template name="mu-terms">
+		<p><h2>Paradigm µ-Terms</h2></p>
+		<table>
+			<tbody>
+				<tr>
+					<th align="left">
+						<u>µ-Term</u>
+					</th>
+					<th align="left">
+						<u>Property</u>
+					</th>
+					<th/>
+					<th align="left">
+						<u>Value</u>
+					</th>
+				</tr>
+				<xsl:for-each select="//mu-term">
+					<tr>
+						<td><xsl:value-of select="./prop[@type='label']/@val"/></td>
 <!--						<xsl:if test="@id='ID0'">-->
 							<td>id</td>
 							<td>=</td>

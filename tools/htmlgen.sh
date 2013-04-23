@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage:  htmlgen.sh "dir"
 
-. tools/constants.sh
+. tools/constants-gg.sh
 
 echo "xml2html" >> logs/xml2html.log;
 

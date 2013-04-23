@@ -1,9 +1,10 @@
-JARDIR=../../../usr/local
+JARDIR=../../../usr/local/jar
 SAXON=saxon9pe.jar
 FUSEKIDIR=/cygdrive/c/Fuseki-0.2.4
 
 EYEBALL="../src/eyeball-2.3/lib/*"
-RDF2RDF="../../../rdf2rdf/rdf2rdf-1.0.1-2.3.1.jar"
+RDF2RDF="../../../usr/local/jar/rdf2rdf-1.0.1-2.3.1.jar"
+
 
 capitalize_path ()
 {

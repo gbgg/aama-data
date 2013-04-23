@@ -17,7 +17,7 @@ do
 	    -xi \
 	    -s:$f \
 	    -o:tmp/`basename ${f%-pdgms\.xml}`.schema.ttl \
-	    -xsl:tools/xml2schema.xsl;
+	    -xsl:tools/xml2schema-gg.xsl;
 	# set +x;
     done
 done
