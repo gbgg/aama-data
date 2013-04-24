@@ -16,6 +16,8 @@
     <xsl:text>&lt;http://id.oi.uchicago.edu/aama/2013/</xsl:text>
   </xsl:variable>
   <!-- ######################################################## -->
+<!-- 04/23/13: gbgg calqued two entries for "Mu-term" based on two etries for "Lexeme"-->
+
   <xsl:template match="/">
 
     <xsl:variable name="lang">
@@ -71,8 +73,10 @@
       <xsl:text>aamas:muProperty rdfs:subProperty rdfs:Property .&#10;</xsl:text>
       <xsl:text>aamas:Cluster rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
       <xsl:text>aamas:Lexeme rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
+     <xsl:text>aamas:Mu-term rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
       <xsl:text>aamas:MuScheme rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
       <xsl:text>aamas:Term rdf:type aamas:Lexeme .&#10;</xsl:text>
+      <xsl:text>aamas:Term rdf:type aamas:Mu-term .&#10;</xsl:text>
       <xsl:text>aamas:Term rdf:type aamas:MuScheme .&#10;</xsl:text>
       <xsl:text>aamas:Token rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
       <xsl:text>aamas:Text rdfs:subClassOf rdfs:Class .&#10;</xsl:text>

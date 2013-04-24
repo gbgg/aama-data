@@ -9,7 +9,9 @@
 # cumulative logfile written to logs/schema2rdf.log
 # each lang/var gets its own logfile
 
-. tools/constants.sh
+# 04/22/2013: gbgg modified constants.sh 
+
+. tools/constants-gg.sh
 
 echo "schema2rdf" > logs/schema2rdf.log;
 
