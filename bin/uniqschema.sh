@@ -3,8 +3,8 @@
 
 AAMADATA_HOME=..
 XSLHOME=${AAMADATA_HOME}/tools
-JARDIR=/usr/local/jar
-SAXON=saxon9.jar
+JARDIR=/cygdrive/c/saxon9pe-3-0-5j
+SAXON=saxon9pe.jar
 
 for f in `find $1 -name *.xml`
 do

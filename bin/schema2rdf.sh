@@ -9,7 +9,9 @@
 # cumulative logfile written to logs/schema2rdf.log
 # each lang/var gets its own logfile
 
-. tools/constants.sh
+# 04/22/2013: gbgg modified constants.sh 
+
+. tools/constants-gg.sh
 
 echo "schema2rdf" > logs/schema2rdf.log;
 
@@ -19,7 +21,7 @@ do
     lang=${l1#data/}
     from=data/$lang/`basename ${f%-pdgms.xml}`.schema.ttl
     to=data/$lang/`basename ${f%-pdgms.xml}`.schema.rdf
-    # echo "$lang: rdfizing "$from to $to
+    echo "$lang: rdfizing "$from to $to
 
     java -jar ${RDF2RDF} $from $to
 

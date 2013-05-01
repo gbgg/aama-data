@@ -1,7 +1,9 @@
 #!/bin/bash
 # usage:  xml2schema.sh "dir"
 
-. tools/constants.sh
+# 04/22/2013: gbgg modified constants.sh
+
+. tools/constants-gg.sh
 
 for d in `ls -d $1`
 do
@@ -15,7 +17,7 @@ do
 	    -xi \
 	    -s:$f \
 	    -o:tmp/`basename ${f%-pdgms\.xml}`.schema.ttl \
-	    -xsl:tools/xml2schema.xsl;
+	    -xsl:tools/xml2schema-gg.xsl;
 	# set +x;
     done
 done

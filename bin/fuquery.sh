@@ -6,6 +6,7 @@
 # example:
 #    <aama> $ tools/fuquery data/alaaba sparql/exponents.local.skel.rq
 
+. tools/constants.sh
 
 echo "fuquery.log" > logs/fuquery.log;
 for f in `find $1 -name *.xml`
@@ -20,5 +21,5 @@ do
     localqry="sparql/${of%.template}.$lang.rq"
     echo $localqry
     sed -e "s/%Lang%/${FN/\//\/}/g" -e "s/%lang%/${fn/\//\/}/g" $2 > $localqry
-    s-query --service http://localhost:3030/aama/query --query=$localqry
+    ${FUSEKIDIR}/s-query --service http://localhost:3030/aama/query --query=$localqry
 done

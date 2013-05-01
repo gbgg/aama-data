@@ -8,6 +8,9 @@
 # cumulative logfile written to logs/fuload.log
 # each lang/var gets its own logfile
 
+
+. tools/constants.sh
+
 echo "fuload.log" > logs/fuload.log;
 for f in `find $1 -name *.rdf`
 do
@@ -15,5 +18,5 @@ do
     lang=${l#data/}
     graph="http://oi.uchicago.edu/aama/`dirname ${lang/\/\///}`"
     echo posting $f to $graph;
-    s-post -v http://localhost:3030/aama/data $graph  $f 2>&1 >>logs/fuload.log
+    ${FUSEKIDIR}/s-post -v http://localhost:3030/aama/data $graph  $f 2>&1 >>logs/fuload.log
 done

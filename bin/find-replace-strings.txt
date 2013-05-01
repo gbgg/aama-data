@@ -5,3 +5,8 @@
 2. To replace dummy lexeme "_" with "_LANG-lexlabel"
 	Find: <lexeme id="_"(.*?"lexlabel" val=")(.*?)"
 	Replace: <lexeme id="_Beja-atmaan-$2"$1$2"
+	
+3. To remove all prop "lemma" from mu-term (regex on)
+	Find: <prop type="lemma" val=".*?"/>
+	Replace:
+	XPath:analysis/mu-terms/mu-term 

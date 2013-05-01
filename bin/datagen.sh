@@ -1,22 +1,27 @@
 #!/bin/bash
 # usage:  datagen.sh "dir"
 
-. tools/constants.sh
+# 04/22/2013: gbgg modified constants.sh and xsl
 
-for d in `ls -d $1`
-do
+. tools/constants-gg.sh
+
+#for d in `ls -d data`
+#do
     # echo "$d ********************************************"
-    for f in `find $d -name "*xml"`
-    do
-	lang=${f%\.xml}
-	echo "generating ${f%-pdgms\.xml}.data.ttl  from  $f "
-	# set -x;
-	java  -jar ${JARDIR}/${SAXON} \
-	    -xi \
-	    -s:$f \
-	    -o:${f%-pdgms\.xml}.data.ttl \
-	    -xsl:tools/xml2data.xsl \
-	    lang=`dirname ${f#data/}`;
-	# set +x;
-    done
-done
+	#fs=`find $d -name *xml`
+	fs=`find $1 -name *xml`
+    for f in $fs
+	do
+		lang=${f%\.xml}
+		echo "generating ${f%-pdgms\.xml}.data.ttl  from  $f "
+		# set -x;
+		java  -jar ${JARDIR}/${SAXON} \
+			-xi \
+			-s:$f \
+			-o:${f%-pdgms\.xml}.data.ttl \
+			-xsl:tools/xml2data-gg.xsl \
+			lang=`dirname ${f#data/}`;
+		# set +x;
+	done
+#done
+
