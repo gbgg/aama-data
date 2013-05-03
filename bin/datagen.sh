@@ -20,7 +20,9 @@
 			-s:$f \
 			-o:${f%-pdgms\.xml}.data.ttl \
 			-xsl:tools/xml2data-gg.xsl \
-			lang=`dirname ${f#data/}`;
+			lang=$lang \
+			abb=$2;
+			#lang=`dirname ${f#data/}`;
 		# set +x;
 	done
 #done

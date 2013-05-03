@@ -6,18 +6,26 @@
 
   <!-- 04/22/2013: gbgg, tests added to pick up mu-term vals-->
   <!-- 04/23/13: gbgg, $lexref for terms in termclusters marked "multiLex" -->
+  <!-- 05/03/13: gbgg, changed for revised ttl format w/o langVar and with lang @prefix  -->
 
   <xsl:output method="text" indent="yes" encoding="utf-8"/>
 
   <xsl:strip-space elements="*"/>
 
   <xsl:param name="lang" required="yes"/>
-  <xsl:param name="langVar" required="no"/>
+  <xsl:param name="abbr" required="yes"/>
+<!--  <xsl:param name="langVar" required="no"/>-->
 
   <xsl:variable name="aamaURI">
     <xsl:text>&lt;http://id.oi.uchicago.edu/aama/2013/</xsl:text>
   </xsl:variable>
-
+  <xsl:variable name="Lang" select="aama:upcase-first($lang)"/>
+  <xsl:variable name="pref-p">
+    <xsl:value-of select="$abbr"/>p:
+  </xsl:variable>
+  <xsl:variable name="pref-v">
+    <xsl:value-of select="$abbr"/>v:
+  </xsl:variable>
   <!-- ################################################ -->
   <xsl:template match="/">
     <xsl:apply-templates/>
@@ -35,8 +43,13 @@
 @prefix rdfs:	 &lt;http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 &lt;http://id.oi.uchicago.edu/aama/2013/> .
 @prefix aamas:	 &lt;http://id.oi.uchicago.edu/aama/schema/2013/> .
-
+@prefix </xsl:text>
+    <xsl:value-of select="$pref-p"/> <xsl:value-of select="$aamaURI"/><xsl:value-of select="$lang"/><xsl:text>>
+@prefix </xsl:text>
+    <xsl:value-of select="$pref-v"/> <xsl:value-of select="$aamaURI"/><xsl:value-of select="$Lang"/><xsl:text>>
+    
 </xsl:text>
+
     <xsl:apply-templates/>
 
   </xsl:template>
