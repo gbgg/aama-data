@@ -393,7 +393,7 @@
         <xsl:value-of select="(//mu-term/prop[@type='mulabel' and @val=$muref])/../@id"/>
       </xsl:variable>
       <xsl:if test="not($lexid) and not($muid)">
-        <!--       <xsl:message> TID: <xsl:value-of select="@id"/> LEXREF: <xsl:value-of select="$lexref"/>
+        <!-- <xsl:message> TID: <xsl:value-of select="@id"/> LEXREF: <xsl:value-of select="$lexref"/>
           LEXID: <xsl:value-of select="$lexid"/>
         </xsl:message> -->
         <xsl:message> TID: <xsl:value-of select="@id"/> LEX/MUID: MISSING </xsl:message>
