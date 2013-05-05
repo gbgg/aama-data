@@ -3,7 +3,7 @@
 
 # 04/22/2013: gbgg modified constants.sh and xsl
 
-. tools/constants-gg.sh
+. bin/constants.sh
 
 #for d in `ls -d data`
 #do
@@ -12,16 +12,20 @@
 	fs=`find $1 -name *xml`
     for f in $fs
 	do
-		lang=${f%\.xml}
+		echo "f is $f"
+		lang=`basename ${f%-pdgms\.xml}`;
+		abb=$2
+		echo "lang is $lang"
+		echo "abb is $abb"
 		echo "generating ${f%-pdgms\.xml}.data.ttl  from  $f "
 		# set -x;
 		java  -jar ${JARDIR}/${SAXON} \
 			-xi \
 			-s:$f \
 			-o:${f%-pdgms\.xml}.data.ttl \
-			-xsl:tools/xml2data-gg.xsl \
+			-xsl:bin/xml2data.xsl \
 			lang=$lang \
-			abb=$2;
+			abbr=$abb;
 			#lang=`dirname ${f#data/}`;
 		# set +x;
 	done
