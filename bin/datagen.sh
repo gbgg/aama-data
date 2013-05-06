@@ -2,6 +2,7 @@
 # usage:  datagen.sh "dir"
 
 # 04/22/2013: gbgg modified constants.sh and xsl
+# usage:  "datagen.sh dir abbr"
 
 . bin/constants.sh
 

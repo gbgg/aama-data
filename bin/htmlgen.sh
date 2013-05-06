@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage:  htmlgen.sh "dir"
 
-. tools/constants-gg.sh
+. bin/constants.sh
 
 echo "xml2html" >> logs/xml2html.log;
 
@@ -19,7 +19,7 @@ echo "xml2html" >> logs/xml2html.log;
 			-xi \
 			-s:$f \
 			-o:${f%-pdgms\.xml}-pdgms.html \
-			-xsl:tools/xml2html-pdgms.xsl \
+			-xsl:bin/xml2html-pdgms.xsl \
 			lang=`dirname ${f#data/}`;
 		# set +x;
 	done

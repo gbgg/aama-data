@@ -9,7 +9,7 @@
 # cumulative logfile written to logs/data2rdf.log
 # each lang/var gets its own logfile
 
-. tools/constants.sh
+. bin/constants.sh
 
 echo "data2rdf" > logs/data2rdf.log;
 
