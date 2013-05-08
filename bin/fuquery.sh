@@ -4,9 +4,9 @@
 # exponents.local.skel.rq for an example.
 
 # example:
-#    <aama> $ tools/fuquery data/alaaba sparql/exponents.local.skel.rq
+#    <aama> $ bin/fuquery.sh data/alaaba sparql/exponents.local.skel.rq
 
-. tools/constants.sh
+. bin/constants.sh
 
 echo "fuquery.log" > logs/fuquery.log;
 for f in `find $1 -name *.xml`

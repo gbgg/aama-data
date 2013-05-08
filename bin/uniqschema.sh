@@ -1,6 +1,8 @@
 #!/bin/bash
 # usage:  uniqttl.sh
 
+# 05/07/13: gbgg transferring @prefix section to xml2schema.xsl
+
 AAMADATA_HOME=..
 XSLHOME=${AAMADATA_HOME}/tools
 JARDIR=/cygdrive/c/saxon9pe-3-0-5j

@@ -21,10 +21,10 @@
   </xsl:variable>
   <xsl:variable name="Lang" select="aama:upcase-first($lang)"/>
   <xsl:variable name="pref-p">
-    <xsl:value-of select="$abbr"/><xsl:text>-p:</xsl:text>
+    <xsl:value-of select="aama:dncase-first($abbr)"/><xsl:text>:</xsl:text>
   </xsl:variable>
   <xsl:variable name="pref-v">
-    <xsl:value-of select="$abbr"/><xsl:text>-v:</xsl:text>
+    <xsl:value-of select="aama:upcase-first($abbr)"/><xsl:text>:</xsl:text>
   </xsl:variable>
   <!-- ################################################ -->
   <xsl:template match="/">
@@ -203,9 +203,9 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$pref-v"/>
-          <xsl:value-of select="aama:upcase-first(@type)"/>
+<!--          <xsl:value-of select="aama:upcase-first(@type)"/>
           <xsl:text>_</xsl:text>
-          <xsl:value-of select="aama:upcase-first(@val)"/>
+-->          <xsl:value-of select="aama:upcase-first(@val)"/>
           <xsl:text> </xsl:text>
         </xsl:otherwise>
       </xsl:choose>
@@ -348,9 +348,9 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of select="$pref-v"/>
-          <xsl:value-of select="aama:upcase-first(@type)"/>
+<!--          <xsl:value-of select="aama:upcase-first(@type)"/>
           <xsl:text>_</xsl:text>
-          <xsl:value-of select="aama:upcase-first(@val)"/>
+-->          <xsl:value-of select="aama:upcase-first(@val)"/>
           <xsl:text> </xsl:text>
         </xsl:otherwise>
       </xsl:choose>
@@ -507,8 +507,8 @@
       <xsl:when test="@type = 'mulabel'"/>
       <xsl:when test="@type = 'lang'">
         <!--          <xsl:value-of select="fn:replace($LangURI, '(.*)/$', '$1>')"/>-->
-        <xsl:text>aama:</xsl:text>
-        <xsl:value-of select="$Lang"/>
+        <xsl:text>aama:lang </xsl:text>
+ <!--       <xsl:value-of select="$Lang"/>-->
       </xsl:when>
       
       <xsl:otherwise>
@@ -890,9 +890,9 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$pref-v"/>
-        <xsl:value-of select="aama:upcase-first(@type)"/>
+<!--        <xsl:value-of select="aama:upcase-first(@type)"/>
         <xsl:text>_</xsl:text>
-        <xsl:value-of select="aama:upcase-first(@val)"/>
+-->        <xsl:value-of select="aama:upcase-first(@val)"/>
         <xsl:text> </xsl:text>
       </xsl:otherwise>
     </xsl:choose>

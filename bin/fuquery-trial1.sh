@@ -4,7 +4,7 @@
 # exponents.local.skel.rq for an example.
 
 # example:
-#    <aama> $ tools/fuquery data/alaaba sparql/exponents.local.skel.rq
+#    <aama> $ bin/fuquery.sh data/oromo sparql/templates/exponents.template
 
 
 echo "fuquery.log" > logs/fuquery.log;
