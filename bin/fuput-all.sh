@@ -19,7 +19,10 @@ do
     graph="http://oi.uchicago.edu/aama/$lang"
     echo putting $fn to $graph;
     ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn 2>&1 >>logs/fuput.log
- 	#version=`${FUSEKIDIR}/s-put --version`
+    fn2=data/$lang/`basename ${f%-pdgms.xml}`.data.rdf
+    echo putting $fn2 to $graph;
+    ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn2 2>&1 >>logs/fuput.log
+	#version=`${FUSEKIDIR}/s-put --version`
 	#echo $version
 done
 

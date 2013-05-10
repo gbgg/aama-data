@@ -14,7 +14,7 @@ do
 
     bin/schema2rdf.sh $d 
 
-    #bin/fuput.sh $d || echo FAILURE fuput $d >> logs/schemagen.log
+    bin/fuput.sh $d || echo FAILURE fuput $d >> logs/schemagen.log
 
     # bin/fuquery.sh $d sparql/predicates-local-skel.rq || echo FAILURE fuquery $d >> logs/reload.log
 

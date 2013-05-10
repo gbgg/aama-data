@@ -4,5 +4,5 @@
 # Start the server before queries
 
  cd /cygdrive/c/Fuseki-0.2.4/
-#./fuseki-server  --config=aamaconfig.ttl 
-./fuseki-server -v  --update --loc=aama /aamaData
+./fuseki-server  --config=aamaconfig.ttl 
+#./fuseki-server -v  --update --loc=aama /aamaData

@@ -6,7 +6,7 @@ usage() {
     printf "\tOptions:\n"
     printf "\t\t-h, --help	Display this message\n\n"
 }
-. tools/constants.sh
+. bin/constants.sh
 
 #global:
 newpath=""

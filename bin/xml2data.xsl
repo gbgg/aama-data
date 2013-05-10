@@ -44,9 +44,9 @@
 @prefix aama:	 &lt;http://id.oi.uchicago.edu/aama/2013/> .
 @prefix aamas:	 &lt;http://id.oi.uchicago.edu/aama/schema/2013/> .
 @prefix </xsl:text>
-    <xsl:value-of select="$pref-p"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$lang"/><xsl:text>> .
+    <xsl:value-of select="$pref-p"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$lang"/><xsl:text>/> .
 @prefix </xsl:text>
-    <xsl:value-of select="$pref-v"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$Lang"/><xsl:text>> .
+    <xsl:value-of select="$pref-v"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$Lang"/><xsl:text>/> .
     
 </xsl:text>
 
