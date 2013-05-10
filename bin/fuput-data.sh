@@ -7,7 +7,7 @@
 #    aama/$ bin/fuput "schema" -- puts all 3 datasets
 # cumulative logfile written to logs/fuput.log
 # each lang/var gets its own logfile
-
+ # 05/10/13: gg created from fuput.sh to be parallel with fuput-schema.sh
 . bin/constants.sh
 
 echo "fuput.log" > logs/fuput.log;
@@ -15,14 +15,11 @@ for f in `find $1 -name *.xml`
 do
     lang=`dirname ${f#data/}`
     echo $lang
-    fn=data/$lang/`basename ${f%-pdgms.xml}`.schema.rdf
+    fn=data/$lang/`basename ${f%-pdgms.xml}`.data.rdf
     graph="http://oi.uchicago.edu/aama/$lang"
     echo putting $fn to $graph;
     ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn 2>&1 >>logs/fuput.log
-    fn2=data/$lang/`basename ${f%-pdgms.xml}`.data.rdf
-    echo putting $fn2 to $graph;
-    ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn2 2>&1 >>logs/fuput.log
-	#version=`${FUSEKIDIR}/s-put --version`
+ 	#version=`${FUSEKIDIR}/s-put --version`
 	#echo $version
 done
 

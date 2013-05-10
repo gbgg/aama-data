@@ -1,34 +1,19 @@
-#!/bin/bash
-# usage:  datagen.sh "dir" abbr
+#!/bin/sh
+# usage:  bin/datagen.sh "dir" abbr
 
-# 04/22/2013: gbgg modified constants.sh and xsl
-# usage:  "datagen.sh dir abbr"
+# 05/10/13: gbgg remodeled datagen on basis of schemagen.sh
+# old datagen.sh is now xml2data.sh fuput.sh 
 
-. bin/constants.sh
+echo > logs/datagen.log
 
-#for d in `ls -d data`
-#do
-    # echo "$d ********************************************"
-	#fs=`find $d -name *xml`
-	fs=`find $1 -name *xml`
-    for f in $fs
-	do
-		echo "f is $f"
-		lang=`basename ${f%-pdgms\.xml}`;
-		abb=$2
-		echo "lang is $lang"
-		echo "abb is $abb"
-		echo "generating ${f%-pdgms\.xml}.data.ttl  from  $f "
-		# set -x;
-		java  -jar ${JARDIR}/${SAXON} \
-			-xi \
-			-s:$f \
-			-o:${f%-pdgms\.xml}.data.ttl \
-			-xsl:bin/xml2data.xsl \
-			lang=$lang \
-			abbr=$abb;
-			#lang=`dirname ${f#data/}`;
-		# set +x;
-	done
-#done
+for d in `ls -d $1`
+do
+    bin/xml2data.sh $d  $2|| echo FAILURE xml2data $d >> logs/datagen.log
 
+    bin/data2rdf.sh $d 
+
+    bin/fuput-data.sh $d || echo FAILURE fuput $d >> logs/datagen.log
+
+    # bin/fuquery.sh $d sparql/predicates-local-skel.rq || echo FAILURE fuquery $d >> logs/reload.log
+
+done

@@ -8,8 +8,6 @@
 # cumulative logfile written to logs/fuput.log
 # each lang/var gets its own logfile
 
-# 05/10/13: general fuput for all rdf in a lang dir; = fuput-schema.sh + fuput-data.sh
-
 . bin/constants.sh
 
 echo "fuput.log" > logs/fuput.log;
@@ -21,10 +19,7 @@ do
     graph="http://oi.uchicago.edu/aama/$lang"
     echo putting $fn to $graph;
     ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn 2>&1 >>logs/fuput.log
-    fn2=data/$lang/`basename ${f%-pdgms.xml}`.data.rdf
-    echo putting $fn2 to $graph;
-    ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn2 2>&1 >>logs/fuput.log
-	#version=`${FUSEKIDIR}/s-put --version`
+ 	#version=`${FUSEKIDIR}/s-put --version`
 	#echo $version
 done
 

@@ -3,7 +3,7 @@
 
 # 04/22/2013: gbgg modified constants.sh and xsl
 
-. tools/constants-gg.sh
+. bin/constants.sh
 
 ofsum=tmp/lexcheck.txt
 #for d in `ls -d data`
@@ -22,7 +22,7 @@ do
 	-xi \
 	-s:$f \
 	-o:$of \
-	-xsl:tools/lexcheck-gg.xsl \
+	-xsl:tools/lexcheck.xsl \
 	f=$f;
 	#cat $of >> $ofsum
 done

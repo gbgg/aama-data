@@ -18,8 +18,7 @@
        have a lex label (many of which will need to be assigned a mulabel
   		 or a multiLex property). lexcheck2-gg.xsl has been created as a second
   		 pass to make sure that every termcluster has either a lexlabel, a mulabel, 
-  		 or a multiLex property, and in the last case, to add to the log a dummy
-  		 lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
+  		 or a multiLex property, and in the last case, to add to the log file (lexadd) a dummy lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
 
   <xsl:template match="/">
     <xsl:value-of select="$f"/>
@@ -30,18 +29,20 @@
   <xsl:template match="common-properties">
     <xsl:choose>
       <xsl:when test="prop[fn:matches(@type, '.*multiLex.*')]"> 
+	  <xsl:variable name="multiLex" select="prop[@type='multiLex']/@val"/>
         <xsl:for-each select="../termcluster/term">
           <xsl:variable name="lexref" select="prop[@type='lexlabel']/@val"/>
           <xsl:if test="not(//lexeme/prop[@type='lexlabel' and @val=$lexref])">
+		  <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
             <xsl:text>&#10;</xsl:text>
-            <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>
+            <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
             <xsl:text>
-            &lt;lexeme id="IDx_</xsl:text>
-            <xsl:value-of select="$lexref"/>
+            &lt;lexeme id="mlex_</xsl:text>
+            <xsl:value-of select="$multiLex"/>
             <xsl:text>"&gt;
               &lt;prop type="gloss" val="[x]"/&gt;
               &lt;prop type="lang" val="[LANG]"/&gt;
-              &lt;prop type="langVar" val="[LANGVAR]"/&gt;
+              <!--&lt;prop type="langVar" val="[LANGVAR]"/&gt;-->
               &lt;prop type="lemma" val="[y]"/&gt;
               &lt;prop type="lexlabel" val="</xsl:text>
             <xsl:value-of select="$lexref"/>
