@@ -1,0 +1,25 @@
+﻿# lang-props-vals.rq
+# list of each prop and its values in each language
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT DISTINCT ?pos ?property ?value ?pdgmlabel
+WHERE 
+{
+   ?pid ?term aama:pid ;
+	aama:pdgmlabel ?pdgmlabel .
+	?s aama:pid ?pid ;
+   aama:lang aama:LANG ;
+   #aama:langVar aama:LANGVAR ;
+   ?p ?o ;
+   aama:pos ?poscat .
+   ?poscat rdfs:label ?pos .
+   ?p rdfs:label ?property .
+   ?o rdfs:label ?value .
+   FILTER(!(?p IN (aama:lang, aama:langVar, aama:pos, aama:person, aama:gender, aama:number, aama:pers, aama:gen, aama:num))) .
+   FILTER(!(?value IN ("⊥", "⊤", "x22a4"))) .
+}
+ORDER BY ?pos ?property ?value ?pdgmlabel
+

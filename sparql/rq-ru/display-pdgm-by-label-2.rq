@@ -1,0 +1,15 @@
+﻿# Print out specific paradigm:
+# display-pdgm-by-label.rq
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT ?predicate ?value
+WHERE 
+{
+   ?pdgmID aama:pdgmlabel "oromo-VBaseMainAffPresSmpl-beek" .
+   ?s aama:pid ?pdgmID .
+   ?s ?predicate ?value
+}
+ORDER BY ?s ?value # ?predicate

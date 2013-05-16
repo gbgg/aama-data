@@ -22,7 +22,8 @@ do
 	-xi \
 	-s:$f \
 	-o:$of \
-	-xsl:tools/lexcheck2.xsl \
+	-xsl:tools/lexadd
+	.xsl \
 	f=$f;
 	#cat $of >> $ofsum
 done

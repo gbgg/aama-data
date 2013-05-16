@@ -1,0 +1,23 @@
+﻿# to get list of languages in archive, where languages actually
+# mark the elements of a paradigm
+# can get list of paradigms by adding ?pdgmLabel to SELECT DISTINCT
+# and adding line '?pid aama:pdgmlabel ?pdgmLabel .'
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT DISTINCT ?language ?languageVariant
+WHERE 
+{
+   ?s aama:lang ?lang .
+   ?lang rdfs:label ?language .
+   
+   OPTIONAL
+	  {
+		 ?s aama:langVar ?langVar .
+		 ?langVar rdfs:label ?languageVariant .
+	  }
+	  ?s aama:pid ?pid .
+}
+ORDER BY ?language ?languageVariant

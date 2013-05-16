@@ -38,14 +38,14 @@ Use fuclear to drop the default graph.
 2.	Make html: bin/htmlgen.sh dir
 3.	Do first-pass  bin/lexcheck.sh dir, make sure every term has a lexlabel or mulabel. Corrections:
 	a.	create muterms/muterm section, insert muterms with mulabel LABEL and id _[LANG]LABEL
-	b.	insert  missing lexemes :
+	b.	insert  missing lexlabels :
 		i.	each lexical termcluster: <prop type="lexlabel" val="[lexlabel]"/>
 		ii.	multiLex termclusters 
 			1.	Mark termclusters with <prop type="multiLex" val=[name]>
 			2.	mark each term with <prop type="lexlabel" val="[lexlabel]"/>
 4.	Do second-pass bin/lexadd.sh dir; 
 	a.	make sure every lexlabel is associated with a lexeme
-	b.	create lexemes in log file, edit and add to xml
+	b.	create dummy/tentative lexemes in log file, edit and add to xml
 5.	Fireup fuseki: bin/fuseki.sh
 6.	Generate .data.ttl/rdf: bin/datagen.sh dir abbrev
 7.	Generate .schema.ttl/rdf: bin/schemagen.sh dir abbrev

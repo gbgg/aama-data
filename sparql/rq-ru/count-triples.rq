@@ -1,0 +1,26 @@
+﻿# 1. COUNT ALL TRIPLES	
+
+		
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT (COUNT(?s) AS ?sTotal)
+WHERE
+{
+	?s ?p ?o
+}
+
+# 2. COUNT ALL TRIPLES WITH aama:kijee-bala AS ?o
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT (COUNT(?o) AS ?oTotal)
+WHERE
+{
+        ?s ?p ?o .
+		?s ?p aama:kijee-bala .
+}
+
