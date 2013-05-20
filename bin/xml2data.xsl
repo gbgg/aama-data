@@ -42,7 +42,7 @@
 @prefix rdf:	 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	 &lt;http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 &lt;http://id.oi.uchicago.edu/aama/2013/> .
-@prefix aamas:	 &lt;http://id.oi.uchicago.edu/aama/schema/2013/> .
+@prefix aamas:	 &lt;http://id.oi.uchicago.edu/aama/2013/schema/> .
 @prefix </xsl:text>
     <xsl:value-of select="$pref-p"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$lang"/><xsl:text>/> .
 @prefix </xsl:text>
