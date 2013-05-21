@@ -22,7 +22,7 @@ do
     #echo putting $fn to $graph;
     echo putting $fn to default graph;
     #${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn 2>&1 >>logs/fuput.log
-    ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data  $fn 2>&1 >>logs/fuput.log
+    ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data 'default' $fn 2>&1 >>logs/fuput.log
  	#version=`${FUSEKIDIR}/s-put --version`
 	#echo $version
 done

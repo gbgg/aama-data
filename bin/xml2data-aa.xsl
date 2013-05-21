@@ -14,7 +14,7 @@
   <xsl:strip-space elements="*"/>
 
   <xsl:param name="lang" required="yes"/>
-  <xsl:param name="abbr" required="yes"/>
+<!--  <xsl:param name="abbr" required="yes"/>-->
 <!--  <xsl:param name="langVar" required="no"/>-->
 
   <xsl:variable name="aamaURI">
