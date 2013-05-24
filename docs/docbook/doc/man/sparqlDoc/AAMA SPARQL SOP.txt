@@ -1,0 +1,251 @@
+﻿						AAMA SPARQL SOP (DRAFT)
+
+This text is a first draft of a SOP (Standard Operating Procedure) document governing SPARQL queries and updates. It will be continued or complemented by a document specifying how a large range of SPARQL queries can be formed and submitted to a server through interface widgits  (essentially those of an HTML form and the accompanying javascript) by a naive (i.e., non-SPARQL-cognizant) user.
+
+The SPARQL procedures are all contained in the /tools/aamaTest/rq-ru subdirectory, and essentially involve four kinds of tasks:
+	1. Outputting the datastore in a persistent, serialized format. Although this is essentially a task for the datastore administrators, some interface automatization could be helpful. It will be discussed first, since it is for the moment the best systematized of the task categories. The relevant .rq files all begin with "output-".
+	2. Editing and updating procedures. These would be tasks for administrators, but also under controlled conditions for domain(i.e. language)-expert approved users. A variety of editing tasks are exemplified in .ru files beginning with "change-".
+	3. Datastore statistics. Here there are just a couple of queries beginning with "count-".
+	4. Paradigm display and analysis. A wide, and for the moment unsystematized, range of query examples, all beginning with "display-". which hopefully can eventually be ordered into some kind of system.
+
+1 SERIALIZE DATASTORE
+
+	1.1. N3 FILES
+
+	In general a datastore in a SPARQL endpoint is contained in an optimized, server-specific, non-human-readable database (in fuseki,  a "tdb" database -- http://openjena.org/wiki/TDB). In order to distribute or share all or part of the datastore, or to upload it to a different SPARQL server, it is necessary to decide on a persistent serialization format. The one chosen here, for reasons of relative inspectability and size, is n3. If rdf-xml is preferred for uploading this can be obtained by using rapper (from /tools/Makefile):
+
+		rapper -i guess -o rdfxml $F.n3 > $F.rdf;
+		rapper -i guess -o rdfxml $F.rdfs.n3 > $F.rdfs.rdf;
+
+		1.1.1 The original n3 files.
+
+		At present (Nov., 2011), each <LANG> subdirectory of comadata contains the files used by GG and GR for uploading to a SPARQL server (Mulgara; these files were also the initial files uploaded to Fuseki). The original files for each <LANG> were transformed from a <LANG>/<LANG>-pdgms.xml file to two files <LANG>/<LANG>-pdgms.n3, <LANG>/<LANG>-pdgms.rdfs.n3 and thence respectively to <LANG>/<LANG>-pdgms.rdf, <LANG>/<LANG>-pdgms.rdfs.rdf by tools/pdgms2n3.xsl and tools/pdgms2rdfs.xsl (plus rapper). 
+
+		In this present transitional stage a potential problem arises from the fact that GG is currently using Jena Fuseki (which implements SPARQL 1.1 Query and Update) as development environment with a test database consisting of Afar, Akkadian-OB, Arbore, Beja-Arteiga, Kemant, and Oromo; more languages will be added as the test expands.  As the test goes on, he has been correcting data errors and making other editorial changes using .ru update files. Thus, from the point of view of data, the Fuseki datastore is the most correct and up-to-date, and it is essential that GR have access to it (and that it be periodically uploaded to the Mulgara server on localhost:8080 and the [Sibawayhi] site]. However, in order to avoid conflict with the continuing use of the existing <LANG>/<LANG>-pdgms files, the newly generated n3 output files are all labeled <LANG>/<LANG>-jpdgms.n3 and <LANG>/<LANG>-jpdgms.rdfs.n3. 
+
+		1.1.2 A new n3 file: <LANG>-jpdgmids.n3. 
+
+		In addition -- for practical and theoretical reasons I need to enumerate elsewhere -- in the Fuseki datastore each paradigm term has been associated with its "base (= original input)" paradigm  via a new predicate aama:pid, and each pdgmID  is associated with a paradigm label. The latter two triples are serialized in the file <LANG>/<LANG>-jpdgmids.n3; the "termID aama:pid pdgmID"  triples however are contained in the <LANG>/<LANG>-jpdgms.n3 files. 
+
+		The jpdgmids.n3 file is thus of the format:
+
+		aama:<pdgmID> a aama:pid;
+				aama:pdgmlabel "<PDGMLABEL>"
+				.
+
+		(e.g.:
+			aama:ID0369ee0a-7c28-4b17-b84b-27d30e80a9c0 a aama:pid ;
+				aama:pdgmlabel "oromo-VBaseNegImprtvSmpl-beek"
+				.
+		)
+
+		while in the jpdgms.n3 files, each set of triples whose subject is the termID contains one triple associating the term with its pdgmID:
+
+			aama:<termID> aama:pid aama:<pdgmID>
+
+		(e.g.:
+
+			aama:IDc98a3742-338a-4357-8f8c-82caa1c4bb14  a  aama:Term ;
+				aama:dervStem	aama:base ;
+				aama:gender	aama:⊤ ;
+				aama:lang	aama:oromo ;
+				aama:number	aama:sg ;
+				aama:pdgmLex	"beek" ;
+				aama:person	aama:p2 ;
+				aama:pid	aama:ID0369ee0a-7c28-4b17-b84b-27d30e80a9c0 ;  # <===
+				aama:polarity	aama:negative ;
+				aama:pos	aama:verb ;
+				aama:tam	aama:imperative ;
+				aama:token	"beek-ini"
+				.
+		)
+
+		1.1.3 A possible additional file: <LANG>-jpdgms-com-props.n3.  
+
+		A feature of the <LANG>/<LANG>-pdgms.xml is an element <common-properties> which occurs with each <pdgm> and enumerates the property-value pairs common to all the rows of the paradigm (i.e., the col-row entries which are invariable throughout the paradigm). On the one hand these are the col-row entries which, although they are true of each term in the paradigm,  one does not want cluttering up a paradigm display. On the other hand they are (usually, although perhaps not necessarily) the prop-val pairs which distinguish a given (base-)paradigm from every other (base-)paradigm in the language (or, for that matter, in the archive, since the properties lang and langVar are, along with pos, present in each <common-properties> element). 
+
+		In fact the unwieldy paradigm labels associated with each base-paradigm arise from an attempt to give a unique name to every base-paradigm in the archive (since originally each was contained in a separate file). This name was programmatically generated for each base-paradigm as it was extracted from the original <LANG>-pdgms.txt and transformed  to the <PDGM-NAME>.xml file. The <pdgmName> element was preserved when the pdgms were gathered into a single <LANG>-pdgms.xml file. 
+
+		The set of prop-val pairs common to a given aama:pid (or in fact any collection of terms) can be generated on an ad-hoc basis by a (time-consuming!) SPARQL query if needed -- in fact output-common-properties.rq does just that. It remains to be seen whether it will be useful to pre-generate a set of these for each base-pdgm. Such a set of properties could be helpful: a) for paradigm display, or b) for narrowing down the search for a specific default paradigm -- i.e., a display of the different subject-agreement shapes for a basic (unique) combination of theme-tense-aspect-mode-inflectionClass values; or c) perhaps even getting rid entirely of the unwieldy "<PDGMLABEL>".  If this turns out to be the case, a <LANG>-pdgm-com-props.n3 could be merged with the <LANG>-pdgmids.n3 with a resulting set of triples:
+			aama:<PID> a aama:pid;
+				aama:pdgmlabel "<PDGMLABEL>";
+				aama:<PROP1>	aama:<VAL1>;
+				aama:<PROP2>     aama:<VAL2>;
+				.  .  .
+				.
+		or simply:
+			aama:<PID> a aama:pid;
+				aama:<PROP1>	aama:<VAL1>;
+				aama:<PROP2>     aama:<VAL2>;
+				.  .  .
+				.
+		where there is no PDGMLABEL, and an adhoc descriptive tag is generated as needed from the relevant  PROP-i/VAL-j combinations (e.g., within a language, probably not necessary to include aama:lang or aama:pos).
+
+	1.2. Outputting the n3 files by language.
+
+	The process of serializing the contents of the datastore as a set of n3 files follows a uniform set of  steps for each type of file:
+
+		1.	a set of triples SELECTED by a SPARQL query are saved as a <LANG>/<LANG>-jpdgm ... .tsv (tab-separated value) file, 
+		2.	which  is processed, for the moment, by a perl script, /tools/pl/pdgmstsv2n3.pl (I will get up a pdgmstsv2n3.xsl script as soon as I can get around to it!), resulting in
+		3.	a <LANG>/<LANG>-jpdgm ... .n3 file.
+
+		
+	The perl script works uniformly for each type of tsv file. In the following breakdown I identify the SPARQL query file (all of which are in the /tools/aamaTest/rq-ru sub-directory), the TSV output file input to the perl script, and the final N3 file.
+
+		1.2.1 The pdgm triples:
+			SPARQL: 	output-pdgms.rq
+				TSV file:		<LANG>/<LANG>-jpdgms.tsv
+			N3 file:		<LANG>/<LANG>-jpdgms.n3
+
+		1.2.2 The property and value labels:
+			SPARQL:	output-pdgms.rdfs.rq
+			TSV file:		<LANG>/<LANG>-jpdgms.rdfs.tsv
+			N3 file:		<LANG>/<LANG>-jpdgms.rdfs.n3
+
+		1.2.3 The base-paradigm information:
+			SPARQL:	output-pdgmids.rq
+			TSV file:		<LANG>/<LANG>-jpdgmids.tsv
+			N3 file:		<LANG>/<LANG>-jpdgmids.n3
+
+		(Note here that there is an alternative query, output-pdgmids-alt.rq, which might eventually be useful in itself, but whose output can't be handled by pdgmstsv2n3.pl.)
+		,
+		1.2.4 The common-properties information (if decided to include):
+			SPARQL:	output-common-properties.rq
+			TSV file:		<LANG>/<LANG>-jpdgms-com-props.tsv
+			N3 file:		<LANG>/<LANG>-jpdgms-com-props.n3
+
+		(Note that the resulting n3 file, if desired, could be combined with the jpdgmids.n3 through a clean-up script which essentially repeats some of the stages of the pdgmstsv2n3.pl script). The essential  method of the common-properties.rq is to get all the properties of a given paradigm, and then subtract those properties that have more than one value w/i the paradigm. There is a query which will output the non-common properties of a paradigm, output-non-common-properties.rq, and which is essentially the complement of the output-common-properties.rq query. It is in fact essentially what is used in the MINUS{ } clause of that query.)
+
+		1.2.5 Output the lexemes:
+			SPARQL: output-pdgmlex.rq
+			TSV file: <LANG>/<LANG>-pdgm-lex.tsv
+			NS file: 
+			XML file (for <LANG>Documentation): 
+				documentation/docBook/doc/languages/<LANG>/ <LANG>-pdgm-lex.xml 
+
+
+2. EDIT
+
+This section enumerates a couple of general editorial tasks, and some specific SPARQL update procedures (.ru files) found necessary to do some required data clean-up in Akkadian. The .ru files in the following enumeration are sometimes formulated very generally, with an indication of where specific terms should replace a dummy (e.g., <LANG> is to be replaced by some specific language-name), but sometimes very task-specific. 
+
+For each task I specify: 1) the nature of the task, 2) an example (frequently the one encoded in the .ru file), and 3) the SPARQL Update file. Hopefully with enough trial-and-error, some general patterns will emerge which will lend themselves to automatic SPARQL Update generation.
+
+	2.1 General tasks
+
+		2.1.1	Task: Property replacement -- to replace a <PROP1>  by <PROP2>
+		[Necessary1)  to exchange (DELETE/INSERT) all <PROP1/2> occurrences as a predicate and 2) to exchange (DELETE/INSERT) all <PROP1/2> occurrences as subj and obj in rdfs:label triple.]
+		Example: replacing aama:TAM by aama:tam.
+		SPARQL:  1)  change-prop.ru;  2) change-propVal-label.ru.   
+			
+		2.1.2	Task: Value replacement -- to replace a <VAL1>  by <VAL2>
+		[Necessary1)  to exchange (DELETE/INSERT) all <VAL1/2> occurrences as a object and 2) to exchange (DELETE/INSERT) all <VAL1/2> occurrences as subj and obj in rdfs:label triple.]
+		Example: replacing aama:plural by aama:pl.
+		SPARQL:  1)  change-val.ru;  2) change-propVal-label.ru.   
+
+	2.2 Special editing cases
+
+		2.2.1	Task: in akkadian, a value got wrongly classified as a property 
+		SPARQL: change-prop2val.ru
+
+		2.2.2	Task: in akkadian, special TYPE-token properties needed to be replaced 
+		by a more general  token
+		SPARQL: change-token.ru
+	 
+	2.2.3	Task: in Akkadian paradigms, 3f prefixes had not been properly distinguished from 3m. 
+	[1) add t- to 3m forms (which gave correct form when initial vowel of
+	3m was "a" or "u"; 2) change (ayy-)ti-/tī- to (ayy-)ta-/tā-.]
+	SPARQL: 1) change-akk-prefix-1.ru, 2) change-akk-prefix-2.ru. [These do the job, but a more concise formulation is undoubtedly possible.]
+
+3. STATISTICS
+
+	3.1 	Task: How many triples are currently in the datastore? (75389)
+	SPARQL: count-datastore-triples.rq  [Gives correct total even though output format needs work]
+
+	3.2	Task:  number of occurrences of each predicate
+	SPARQL: count-pred-occurrences.rq: 
+
+
+4. DISPLAY
+
+The following queries differ widely in degree of "finish" of result. In some a BIND clause like: 
+   BIND (CONCAT("aama:", SUBSTR(str(?feature), 41)) AS ?qfeature)
+replaces a URI like "<http://oi.uchicago.edu/aama/schema/2010#>" with the more readable prefix "aama:", while in others the URI remains. Likewise in some something like a traditional paradigm format is obtained by an ordering clause:
+ORDER BY ?theme ?tense DESC(?num) ?pers DESC(?gen)
+while in others the output is relatively unordered. Some standard output/display protocols will have to be developed, deciding what things should be done by SPARQL, and what by app-associated scripts (xsl, perl, etc.).
+
+	4.1	Task: What languages and langVars are in the datastore?
+		SPARQL: display-lang-langvar-list.rq
+
+	4.2	Task: What is the total list of predicates in each language in the datastore?
+		SPARQL: display-lang-preds.rq	
+
+	4.3	Task: list of predicates and values in each language
+		SPARQL: display-lang-props-vals.rq
+
+	4.4	Task: list of each prop and its values in each language
+		SPARQL: display-lang-props-vals.rq
+
+	4.5	Task: what languages each prop+val combination occurs in
+		SPARQL: display-prop-val-lang.rq
+
+	4.6	Task: For a given property, what languages and values are associated with it
+		SPARQL: display-prop-lang-val.rq
+
+	4.9	Task: All tam values
+		SPARQL: display-prop-vals.rq
+
+	4.10	Task: All paradigms where "mainStem" occurs
+		SPARQL: display-prop-pdgms.rq	
+
+	4.11	Task: display all triples containing a given val. E.g., all occurrences of value "pl".
+		SPARQL: display-val-occ
+
+	4.12	Task: Make a list of "default" ("base", "original")  paradigms:
+		SPARQL: display-pdgm-list.rq
+
+	4.13	Task: Print out specific paradigm:
+		SPARQL: display-pdgm-by-label.rq
+
+	4.14	Task: See what props/vals are in what pdgm, i.e., fish for paradigm:
+		SPARQL: display-pdgm-prop-vals.rq
+
+	4.15	Task: display all pdgms with specific property. Example here is "tense=present"
+		SPARQL: display-pdgms-prop.rq
+
+	4.16	Task: Display default verbal paradigms of a language
+		SPARQL: display-base-verbal-pdgms.rq
+
+	4.17	Task: Display tense patterns. Here: paradigms whose aama:tam contains "pres"
+		SPARQL: display-tense-patterns.rq
+
+	4.18	Task:  Asking for two tenses from two languages -- first try 
+		(beja aorist with oromo past)
+		SPARQL: display-pdgm-compare-1.rq
+
+	4.19	Task: Asking for two tenses from two languages -- refined query 
+		for beja aorist with oromo past
+		SPARQL: display-pdgm-compare-2.rq
+
+	4.20	Task: Enumerate Akkadian Paradigms/SubjMarker (3sg)
+		SPARQL: display-subjMarker-pdgm.rq
+
+	4.21	Task: To see, e.g. subject markers of verb
+		SPARQL: display-verb-pdgm-feature.rq
+
+	
+<REFENTRY>
+
+Running Fuseki:
+
+	1. In cygwin window, from any directory: fuseki.bat
+
+			cd C:\Fuseki-0.2.0
+			java -Xmx1200M -jar fuseki-sys.jar --update --loc=aamaDir /aamaTestData
+
+	2. Point browser to: localhost:3030
+
+	3. Choose dataset aamaTestData
+
+	4. Query, Update, or upload file into aamaTestData
+	
+</REFENTRY>

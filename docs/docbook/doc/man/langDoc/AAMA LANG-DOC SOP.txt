@@ -1,0 +1,21 @@
+﻿# The following are the steps to be followed for initiating a language documentation:
+
+docBook language documentation routine:
+
+	0) clone dataDocumentTemplate.xml to LANGDocumentation.xml
+	
+	1) grab Ethnologue link
+	
+	2) get bibliog material from bibl or zotero -- compare both formats, look up zotero + docbook, see what can be done with refDB. For now, plug in zotero bibl values directly into template.
+	
+	3) see whether a display-lang-pdgmLex.rq will yield the desired lexeme list.
+	
+	4) get prop-val table from datastore via SPARQL query display-lang-props-vals.rq, then apply aamatsv2Doc.xsl (parm LANG). . Subdivide by pos, inherent, agreement, inflectional class. When glosses, defs, etc. are given for props/vals, find way to put them back in datastore.
+	
+	5) for paradigm table: output pdgmName + commonProps with variant of output-common-properties.rq
+	
+	6) if new paradigms to be added to LANG/LANG-pdgms.xml
+		a) put new paradigms in text file
+		b) perl tools/pl/pdgmtxt2xml-insert.pl LANG/src/LANG- . . ..txt  SCOPE yields LANG/LANG-SCOPE.xml, add <pdgm>'s to main file
+
+
