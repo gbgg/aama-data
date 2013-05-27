@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:aama="urn:aama:2010"
-    xmlns:java="java:java.util.UUID"
-    exclude-result-prefixes="xsl fn java"
-    version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:aama="urn:aama:2010" xmlns:java="java:java.util.UUID" exclude-result-prefixes="xsl fn java"
+  version="2.0">
+
+  <!-- 04/22/2013: gbgg, tests added to pick up mu-term vals-->
+  <!-- 04/23/13: gbgg, $lexref for terms in termclusters marked "multiLex" -->
+  <!-- 05/03/13: gbgg, changed for revised ttl format w/o langVar and with lang @prefix  -->
 
   <xsl:output method="text" indent="yes" encoding="utf-8"/>
 
   <xsl:strip-space elements="*"/>
 
   <xsl:param name="lang" required="yes"/>
-  <xsl:param name="langVar" required="no"/>
+  <xsl:param name="abbr" required="yes"/>
+<!--  <xsl:param name="langVar" required="no"/>-->
 
   <xsl:variable name="aamaURI">
     <xsl:text>&lt;http://id.oi.uchicago.edu/aama/2013/</xsl:text>
   </xsl:variable>
-  
+  <xsl:variable name="Lang" select="aama:upcase-first($lang)"/>
+  <xsl:variable name="pref-p">
+    <xsl:value-of select="aama:dncase-first($abbr)"/><xsl:text>:</xsl:text>
+  </xsl:variable>
+  <xsl:variable name="pref-v">
+    <xsl:value-of select="aama:upcase-first($abbr)"/><xsl:text>:</xsl:text>
+  </xsl:variable>
   <!-- ################################################ -->
   <xsl:template match="/">
     <xsl:apply-templates/>
@@ -26,24 +33,34 @@
 
   <xsl:template match="analysis">
     <!-- n3 header -->
-<!-- @prefix xsd:	 &lt;http://www.w3.org/2001/XMLSchema#> . -->
-<!-- @prefix dc:	 &lt;http://purl.org/dc/elements/1.1/> . -->
-<!-- @prefix dcterms: &lt;http://purl.org/dc/terms> . -->
-<!-- @prefix gold:	 &lt;http://purl.org/linguistics/gold/> . -->
+    <!-- @prefix xsd:	 &lt;http://www.w3.org/2001/XMLSchema#> . -->
+    <!-- @prefix dc:	 &lt;http://purl.org/dc/elements/1.1/> . -->
+    <!-- @prefix dcterms: &lt;http://purl.org/dc/terms> . -->
+    <!-- @prefix gold:	 &lt;http://purl.org/linguistics/gold/> . -->
 
     <xsl:text>
 @prefix rdf:	 &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	 &lt;http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 &lt;http://id.oi.uchicago.edu/aama/2013/> .
-@prefix aamas:	 &lt;http://id.oi.uchicago.edu/aama/schema/2013/> .
-
+@prefix aamas:	 &lt;http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix </xsl:text>
+    <xsl:value-of select="$pref-p"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$lang"/><xsl:text>/> .
+@prefix </xsl:text>
+    <xsl:value-of select="$pref-v"/><xsl:text>   </xsl:text><xsl:value-of select="$aamaURI"/><xsl:value-of select="$Lang"/><xsl:text>/> .
+    
 </xsl:text>
+
     <xsl:apply-templates/>
 
   </xsl:template>
 
   <xsl:template match="lexemes">
-<!--    <xsl:message>....skipping lexemes</xsl:message>-->
+    <!--    <xsl:message>....skipping lexemes</xsl:message>-->
+    <xsl:apply-templates/>
+  </xsl:template>
+
+  <xsl:template match="muterms">
+    <!--    <xsl:message>....skipping lexemes</xsl:message>-->
     <xsl:apply-templates/>
   </xsl:template>
 
@@ -57,129 +74,288 @@
       <xsl:value-of select="aama:upcase-first($lang)"/>
     </xsl:variable>
 
-    <xsl:variable name="lvar">
+<!--    <xsl:variable name="lvar">
       <xsl:if test="(//prop[@type='langVar'])[1]">
-	<xsl:value-of select="aama:dncase-first((//prop[@type='langVar'])[1]/@val)"/>
+        <xsl:value-of select="aama:dncase-first((//prop[@type='langVar'])[1]/@val)"/>
       </xsl:if>
     </xsl:variable>
     <xsl:variable name="Lvar">
       <xsl:value-of select="aama:upcase-first($lvar)"/>
     </xsl:variable>
-
+-->
     <xsl:variable name="langURI">
       <xsl:value-of select="$aamaURI"/>
       <!-- <xsl:text>lang/</xsl:text> -->
       <xsl:value-of select="aama:dncase-first($lang)"/>
-      <xsl:if test="fn:string-length($lvar) > 0">
-	<xsl:text>/</xsl:text>
-	<xsl:value-of select="aama:dncase-first($lvar)"/>
+<!--      <xsl:if test="fn:string-length($lvar) > 0">
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="aama:dncase-first($lvar)"/>
       </xsl:if>
-      <xsl:text>/</xsl:text>
+-->      <xsl:text>/</xsl:text>
     </xsl:variable>
     <xsl:variable name="LangURI">
       <xsl:value-of select="$aamaURI"/>
       <!-- <xsl:text>Lang/</xsl:text> -->
       <xsl:value-of select="aama:upcase-first($lang)"/>
-      <xsl:if test="fn:string-length($lvar) > 0">
-	<xsl:text>/</xsl:text>
-	<xsl:value-of select="aama:upcase-first($lvar)"/>
+<!--      <xsl:if test="fn:string-length($lvar) > 0">
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="aama:upcase-first($lvar)"/>
       </xsl:if>
-      <xsl:text>/</xsl:text>
+-->      <xsl:text>/</xsl:text>
     </xsl:variable>
 
-    <xsl:text>aama:</xsl:text>
+<!--    <xsl:text>aama:</xsl:text>-->
+    <xsl:value-of select="$pref-p"/>
     <xsl:value-of select="@id"/>
     <xsl:text> a aamas:Lexeme ;&#10;</xsl:text>
 
     <xsl:for-each select="prop">
+    <!-- properties     -->
       <xsl:choose>
-	<xsl:when test="@type = 'lexlabel'">
-	  <xsl:text>  rdfs:label </xsl:text>
-	</xsl:when>
-	<xsl:when test="@type = 'lang'">
-	  <xsl:text>  aama:lang </xsl:text>
-	</xsl:when>
-	<xsl:otherwise>
-	  <xsl:text>  </xsl:text>
-	  <xsl:value-of select="$langURI"/>
-	  <xsl:value-of select="@type"/>
-	  <xsl:text>> </xsl:text>
-	</xsl:otherwise>
+        <xsl:when test="@type = 'lexlabel'">
+          <xsl:text>  rdfs:label </xsl:text>
+        </xsl:when>
+        <xsl:when test="@type = 'mulabel'">
+          <xsl:text>  rdfs:label </xsl:text>
+        </xsl:when>
+        <xsl:when test="@type = 'lang'">
+          <xsl:text>  aama:lang </xsl:text>
+        </xsl:when>
+        <xsl:when test="@type = 'lemma'">
+          <xsl:text>  aama:lemma </xsl:text>
+        </xsl:when>
+        <xsl:when test="@type = 'gloss'">
+          <xsl:text>  aama:gloss </xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>  </xsl:text>
+          <xsl:value-of select="$pref-p"/>
+          <xsl:value-of select="@type"/>
+          <xsl:text>  </xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+      <!-- values     -->
+      <xsl:choose>
+        <xsl:when test="@type = 'lang'">
+<!--          <xsl:value-of select="fn:replace($LangURI, '(.*)/$', '$1>')"/>-->
+          <xsl:text>aama:</xsl:text>
+          <xsl:value-of select="$Lang"/>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'auxAdjunct')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'attributes')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[eE]xample')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[gG]loss')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[lL]emma')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[lL]abel')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'note')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'stem')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'structAux')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'structMain')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[tT]oken')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@val, '_NULL')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$pref-v"/>
+<!--          <xsl:value-of select="aama:upcase-first(@type)"/>
+          <xsl:text>_</xsl:text>
+-->          <xsl:value-of select="aama:upcase-first(@val)"/>
+          <xsl:text> </xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:if test="position() != last()">
+        <xsl:text> ;&#10;</xsl:text>
+      </xsl:if>
+    </xsl:for-each>
+
+    <xsl:text>
+      .&#10;</xsl:text>
+
+  </xsl:template>
+
+  <!-- MUTERMS -->
+  <xsl:template match="muterm">
+
+    <xsl:variable name="lang">
+      <xsl:value-of select="aama:dncase-first((//prop[@type='lang'])[1]/@val)"/>
+    </xsl:variable>
+    <xsl:variable name="Lang">
+      <xsl:value-of select="aama:upcase-first($lang)"/>
+    </xsl:variable>
+
+<!--    <xsl:variable name="lvar">
+      <xsl:if test="(//prop[@type='langVar'])[1]">
+        <xsl:value-of select="aama:dncase-first((//prop[@type='langVar'])[1]/@val)"/>
+      </xsl:if>
+    </xsl:variable>
+    <xsl:variable name="Lvar">
+      <xsl:value-of select="aama:upcase-first($lvar)"/>
+    </xsl:variable>
+-->
+    <xsl:variable name="langURI">
+      <xsl:value-of select="$pref-p"/>
+      <!-- <xsl:text>lang/</xsl:text> -->
+      <xsl:value-of select="aama:dncase-first($lang)"/>
+<!--      <xsl:if test="fn:string-length($lvar) > 0">
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="aama:dncase-first($lvar)"/>
+      </xsl:if>
+-->      <xsl:text>/</xsl:text>
+    </xsl:variable>
+    <xsl:variable name="LangURI">
+      <xsl:value-of select="$pref-v"/>
+      <!-- <xsl:text>Lang/</xsl:text> -->
+      <xsl:value-of select="aama:upcase-first($lang)"/>
+<!--      <xsl:if test="fn:string-length($lvar) > 0">
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="aama:upcase-first($lvar)"/>
+      </xsl:if>
+-->      <xsl:text>/</xsl:text>
+    </xsl:variable>
+
+<!--    <xsl:text>aama:</xsl:text>-->
+    <xsl:value-of select="$pref-p"/>
+    <xsl:value-of select="@id"/>
+    <xsl:text> a aamas:Mu-term ;&#10;</xsl:text>
+
+    <xsl:for-each select="prop">
+      <xsl:choose>
+        <xsl:when test="@type = 'mulabel'">
+          <xsl:text>  rdfs:label </xsl:text>
+        </xsl:when>
+        <xsl:when test="@type = 'lang'">
+          <xsl:text>  aama:lang </xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>  </xsl:text>
+          <xsl:value-of select="$pref-p"/>
+          <xsl:value-of select="@type"/>
+          <xsl:text>  </xsl:text>
+        </xsl:otherwise>
       </xsl:choose>
 
       <xsl:choose>
-	<xsl:when test="@type = 'lang'">
-	  <xsl:value-of select="fn:replace($LangURI,
-				'(.*)/$', '$1>')"/>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, 'auxAdjunct')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, 'attributes')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, '[eE]xample')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, '[gG]loss')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, '[lL]emma')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, '[lL]abel')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, 'note')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, 'stem')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, 'structAux')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, 'structMain')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@type, '[tT]oken')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:when test="fn:matches(@val, '_NULL')">
-	  <xsl:text>"</xsl:text>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>"</xsl:text>
-	</xsl:when>
-	<xsl:otherwise>
-	  <xsl:value-of select="$LangURI"/>
-	  <xsl:value-of select="@val"/>
-	  <xsl:text>></xsl:text>
-	</xsl:otherwise>
+        <xsl:when test="@type = 'lang'">
+          <!--          <xsl:value-of select="fn:replace($LangURI, '(.*)/$', '$1>')"/>-->
+          <xsl:text>aama:</xsl:text>
+          <xsl:value-of select="$Lang"/>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'auxAdjunct')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'attributes')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[eE]xample')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[gG]loss')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[lL]emma')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[lL]abel')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'note')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'stem')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'structAux')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, 'structMain')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@type, '[tT]oken')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:when test="fn:matches(@val, '_NULL')">
+          <xsl:text>"</xsl:text>
+          <xsl:value-of select="@val"/>
+          <xsl:text>"</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$pref-v"/>
+<!--          <xsl:value-of select="aama:upcase-first(@type)"/>
+          <xsl:text>_</xsl:text>
+-->          <xsl:value-of select="aama:upcase-first(@val)"/>
+          <xsl:text> </xsl:text>
+        </xsl:otherwise>
       </xsl:choose>
       <xsl:if test="position() != last()">
-	<xsl:text> ;&#10;</xsl:text>
+        <xsl:text> ;&#10;</xsl:text>
       </xsl:if>
     </xsl:for-each>
 
@@ -190,7 +366,7 @@
 
   <xsl:template match="pdgms">
 
-<xsl:text>
+    <xsl:text>
 
 ########################################################
 ########  TERMS
@@ -215,33 +391,55 @@
 	</xsl:text>
 
       <xsl:variable name="lexref">
-	<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='lexlabel']/@val"/>
+        <xsl:choose>
+          <xsl:when test="ancestor::pdgm/common-properties/prop[@type='multiLex']">
+            <xsl:value-of select="prop[@type='lexlabel']/@val"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='lexlabel']/@val"/>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:variable>
-      <xsl:if test="$lexref = ''">
-<xsl:message>
-  LEXREF: <xsl:value-of select="$lexref"/>
-  <xsl:text> POS: </xsl:text> 
-	<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='pos']/@val"/>
-TERM <xsl:value-of select="@id"/>
-</xsl:message>
+
+      <xsl:variable name="muref">
+        <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='mulabel']/@val"/>
+      </xsl:variable>
+      <xsl:if test="$lexref = '' and $muref = ''">
+        <xsl:message> LEXREF: <xsl:value-of select="$lexref"/>
+          <xsl:text> PDGM: </xsl:text>
+          <xsl:value-of select="ancestor::pdgm/pdgmlabel"/>
+          <xsl:text> POS: </xsl:text>
+          <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='pos']/@val"/> TERM
+            <xsl:value-of select="@id"/>
+        </xsl:message>
       </xsl:if>
 
       <xsl:variable name="lexid">
-	<xsl:value-of select="(//lexeme/prop
-	[@type='lexlabel' and @val=$lexref])/../@id"/>
+        <xsl:value-of select="(//lexeme/prop[@type='lexlabel' and @val=$lexref])/../@id"/>
       </xsl:variable>
-      <xsl:if test="not($lexid)">
-      <xsl:message>
-	TID: <xsl:value-of select="@id"/>
-	LEXREF: <xsl:value-of select="$lexref"/>
-	LEXID:  <xsl:value-of select="$lexid"/>
-      </xsl:message>
+      <xsl:variable name="muid">
+        <xsl:value-of select="(//mu-term/prop[@type='mulabel' and @val=$muref])/../@id"/>
+      </xsl:variable>
+      <xsl:if test="not($lexid) and not($muid)">
+        <!-- <xsl:message> TID: <xsl:value-of select="@id"/> LEXREF: <xsl:value-of select="$lexref"/>
+          LEXID: <xsl:value-of select="$lexid"/>
+        </xsl:message> -->
+        <xsl:message> TID: <xsl:value-of select="@id"/> LEX/MUID: MISSING </xsl:message>
       </xsl:if>
 
-      <xsl:text>aamas:lexeme aama:</xsl:text>
-      <xsl:value-of select="$lexid"/>
-      <xsl:text>;
+      <xsl:if test="fn:string-length($lexid) > 0">
+        <xsl:text>aamas:lexeme aama:</xsl:text>
+        <xsl:value-of select="$lexid"/>
+        <xsl:text>;
 	</xsl:text>
+      </xsl:if>
+
+      <xsl:if test="fn:string-length($muid) > 0">
+        <xsl:text>aamas:mu-term aama:</xsl:text>
+        <xsl:value-of select="$muid"/>
+        <xsl:text>;
+	</xsl:text>
+      </xsl:if>
 
       <!-- common-props -->
       <xsl:apply-templates select="../../common-properties/prop"/>
@@ -270,34 +468,34 @@ TERM <xsl:value-of select="@id"/>
       <xsl:value-of select="aama:upcase-first($lang)"/>
     </xsl:variable>
 
-    <xsl:variable name="lvar">
+<!--    <xsl:variable name="lvar">
       <xsl:if test="(//prop[@type='langVar'])[1]">
-	<xsl:value-of select="aama:dncase-first((//prop[@type='langVar'])[1]/@val)"/>
+        <xsl:value-of select="aama:dncase-first((//prop[@type='langVar'])[1]/@val)"/>
       </xsl:if>
     </xsl:variable>
     <xsl:variable name="Lvar">
       <xsl:value-of select="aama:upcase-first($lvar)"/>
     </xsl:variable>
-
+-->
     <xsl:variable name="langURI">
       <xsl:value-of select="$aamaURI"/>
       <!-- <xsl:text>lang/</xsl:text> -->
       <xsl:value-of select="aama:dncase-first($lang)"/>
-      <xsl:if test="fn:string-length($lvar) > 0">
-	<xsl:text>/</xsl:text>
-	<xsl:value-of select="aama:dncase-first($lvar)"/>
+<!--      <xsl:if test="fn:string-length($lvar) > 0">
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="aama:dncase-first($lvar)"/>
       </xsl:if>
-      <xsl:text>/</xsl:text>
+-->      <xsl:text>/</xsl:text>
     </xsl:variable>
     <xsl:variable name="LangURI">
       <xsl:value-of select="$aamaURI"/>
       <!-- <xsl:text>Lang/</xsl:text> -->
       <xsl:value-of select="aama:upcase-first($lang)"/>
-      <xsl:if test="fn:string-length($lvar) > 0">
-	<xsl:text>/</xsl:text>
-	<xsl:value-of select="aama:upcase-first($lvar)"/>
+<!--      <xsl:if test="fn:string-length($lvar) > 0">
+        <xsl:text>/</xsl:text>
+        <xsl:value-of select="aama:upcase-first($lvar)"/>
       </xsl:if>
-      <xsl:text>/</xsl:text>
+-->      <xsl:text>/</xsl:text>
     </xsl:variable>
 
     <xsl:choose>
@@ -306,26 +504,28 @@ TERM <xsl:value-of select="@id"/>
         <xsl:text>		</xsl:text>
       </xsl:when>
       <xsl:when test="@type = 'lexlabel'"/>
+      <xsl:when test="@type = 'mulabel'"/>
       <xsl:when test="@type = 'lang'">
-	<xsl:value-of select="fn:replace($LangURI,
-			      '(.*)/$', '$1')"/>
-	<xsl:text>></xsl:text>
+        <!--          <xsl:value-of select="fn:replace($LangURI, '(.*)/$', '$1>')"/>-->
+        <xsl:text>aama:lang </xsl:text>
+ <!--       <xsl:value-of select="$Lang"/>-->
       </xsl:when>
+      
       <xsl:otherwise>
-	<xsl:value-of select="$langURI"/>
-	<xsl:value-of select="@type"/>
-	<xsl:text>></xsl:text>
+        <xsl:value-of select="$pref-p"/>
+        <xsl:value-of select="@type"/>
+        <xsl:text> </xsl:text>
         <!-- <xsl:value-of select="concat($aamaURI, -->
-	<!-- 		      'lang/', -->
-	<!-- 		      aama:dncase-first($l), -->
-	<!-- 		      '/', -->
-	<!-- 		      @type, -->
-	<!-- 		      '>')"/> -->
+        <!-- 		      'lang/', -->
+        <!-- 		      aama:dncase-first($l), -->
+        <!-- 		      '/', -->
+        <!-- 		      @type, -->
+        <!-- 		      '>')"/> -->
       </xsl:otherwise>
     </xsl:choose>
 
     <xsl:text> </xsl:text>
-    
+
     <!-- VALS -->
     <xsl:choose>
       <xsl:when test="fn:matches(@type, '[tT]oken.*')">
@@ -664,10 +864,11 @@ TERM <xsl:value-of select="@id"/>
         <xsl:text>"</xsl:text>
       </xsl:when>
       <xsl:when test="@type = 'lexlabel'"/>
-      <!--   <xsl:text>"</xsl:text> -->
-      <!--   <xsl:value-of select="@val"/> -->
-      <!--   <xsl:text>"</xsl:text> -->
-      <!-- </xsl:when> -->
+      <xsl:when test="@type = 'mulabel'"/>
+      <!-- <xsl:text>"</xsl:text>
+        <xsl:value-of select="@val"/>
+        <xsl:text>"</xsl:text>
+      </xsl:when> -->
       <xsl:when test="@type = 'pdgmLex'">
         <xsl:text>"</xsl:text>
         <xsl:value-of select="@val"/>
@@ -678,26 +879,26 @@ TERM <xsl:value-of select="@id"/>
         <xsl:value-of select="@val"/>
         <xsl:text>"</xsl:text>
       </xsl:when>
+<!-- Not already taken care of?      -->
       <xsl:when test="@type = 'lang'">
-	<xsl:value-of select="$langURI"/>
-	<xsl:value-of select="@val"/>
-	<xsl:text>></xsl:text>
+        <xsl:text>aama:</xsl:text>
+        <xsl:value-of select="$Lang"/>
         <!-- <xsl:value-of select="concat($aamaURI, -->
-	<!-- 		      '/Lang/', -->
-	<!-- 		      @val, -->
-	<!-- 		      '>')"/> -->
+        <!-- 		      '/Lang/', -->
+        <!-- 		      @val, -->
+        <!-- 		      '>')"/> -->
       </xsl:when>
       <xsl:otherwise>
-	<xsl:value-of select="$LangURI"/>
-	<xsl:value-of select="aama:upcase-first(@type)"/>
-	<xsl:text>/</xsl:text>
-	<xsl:value-of select="aama:upcase-first(@val)"/>
-	<xsl:text>></xsl:text>
+        <xsl:value-of select="$pref-v"/>
+<!--        <xsl:value-of select="aama:upcase-first(@type)"/>
+        <xsl:text>_</xsl:text>
+-->        <xsl:value-of select="aama:upcase-first(@val)"/>
+        <xsl:text> </xsl:text>
       </xsl:otherwise>
     </xsl:choose>
     <xsl:if test="position() != last()">
-      <xsl:if test="@type != 'lexlabel'">
-	<xsl:text> ;
+      <xsl:if test="@type != 'lexlabel' and @type != 'mulabel'">
+        <xsl:text> ;
 	</xsl:text>
       </xsl:if>
     </xsl:if>

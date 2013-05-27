@@ -1,0 +1,45 @@
+﻿#backup-rdfs-label.rq 
+# This will return all the rdfs:label values which occur in the datastore 
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT DISTINCT ?qterm ?qpred ?label
+WHERE
+{
+	{?s ?term ?o .}
+	UNION 
+	{?s ?p ?term .}
+	?term ?pred ?label .
+	?term rdfs:label ?label .
+	BIND (CONCAT("aama:", SUBSTR(str(?term), 41)) AS ?qterm)
+	BIND (CONCAT("rdfs:", SUBSTR(str(?pred), 38)) AS ?qpred)
+}
+ORDER BY ?qterm ?label
+
+#then delete existing rdfs:label triples
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+DELETE WHERE { ?s rdfs:label ?o }
+
+#then make new rdfs:label
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+INSERT
+{ 	?qterm rdfs:label ?termstring . }
+WHERE
+{
+	{?s ?term ?o .}
+	UNION 
+	{?s ?p ?term .}
+	BIND (CONCAT("aama:", SUBSTR(str(?term), 41)) AS ?qterm)
+	BIND (SUBSTR(str(?term), 41) AS ?termstring)
+}
+	

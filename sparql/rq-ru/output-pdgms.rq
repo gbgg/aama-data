@@ -1,0 +1,28 @@
+﻿		#output-pdgms.rq (-- to be saved as LANG(-LANGVAR)-pdgm-pdgms.tsv)
+		# Get default pdgm triples, i.e. triples which belong to a paradigm (aama:pid) in a given
+		# language (aama:lang) -- substitute archive language-name for LANG
+			
+		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+		SELECT  ?qs ?qp ?qo
+		WHERE
+		{
+		  ?s ?p ?o .
+		  ?s aama:lang aama:oromo .
+			OPTIONAL  { ?s aama:langvar ?langVar . }
+		 ?s aama:pid ?pid .
+		  BIND (CONCAT("aama:", SUBSTR(str(?s), 41)) AS ?qs)
+		  BIND (IF(regex(str(?p), "www.w3"),
+				  "a",
+				  CONCAT("aama:", SUBSTR(str(?p), 41))
+					) AS ?qp 
+				  )
+		  BIND (IF(regex(str(?o), "oi.uchicago"),
+				  CONCAT("aama:", SUBSTR(str(?o), 41)),
+				  ?o
+					) AS ?qo 
+				  )
+		 }
+		ORDER BY ?pid ?s ?qp

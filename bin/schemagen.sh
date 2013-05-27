@@ -1,18 +1,22 @@
-#!/usr/local/bin/bash
-# usage:  fuquery "dir"
+#!/bin/sh
+# usage:  bin/schemagen.sh "dir" abbr
+
+# 04/22/2013: gbgg modified script names to accommodate changed constants.sh and xsl
+# 05/07/13: gbgg added abbr arg (for xml2schema.sh)
+# 05/10/13: gbgg restricted fuput.sh to fuput-schema.sh
 
 echo > logs/schemagen.log
 
 for d in `ls -d $1`
 do
-    tools/xml2schema.sh $d || echo FAILURE xml2schema $d >> logs/schemagen.log
+    bin/xml2schema.sh $d  $2|| echo FAILURE xml2schema $d >> logs/schemagen.log
 
-    tools/uniqschema.sh $d
+    bin/uniqschema.sh $d
 
-    tools/schema2rdf.sh $d
+    bin/schema2rdf.sh $d 
 
-    tools/fuput.sh $d || echo FAILURE fuput $d >> logs/schemagen.log
+    bin/fuput-schema.sh $d || echo FAILURE fuput $d >> logs/schemagen.log
 
-    # tools/fuquery.sh $d sparql/predicates-local-skel.rq || echo FAILURE fuquery $d >> logs/reload.log
+    # bin/fuquery.sh $d sparql/predicates-local-skel.rq || echo FAILURE fuquery $d >> logs/reload.log
 
 done

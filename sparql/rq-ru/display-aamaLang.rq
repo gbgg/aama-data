@@ -1,0 +1,22 @@
+﻿# display-aamaLang.rq
+# What are the currently recognized aamaLang?
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+PREFIX terms: <http://oi.uchicago.edu/aama/terms> 
+PREFIX aamaLang:  <http://oi.uchicago.edu/aama/Language/>
+PREFIX dcterms: <http://purl.org/dc/terms> 
+
+SELECT DISTINCT ?aamaLang
+WHERE 
+{
+   ?s a terms:TermSet .
+   ?s rdfs:label ?aamaLang .
+}
+ORDER BY ?aamaLang
+
+aamaLang:Beja-arteiga	rdf:type	terms:TermSet .
+aamaLang:Beja-bishari	rdf:type	terms:TermSet .
+
+aamaLang:Beja-arteiga	rdfs:label	"Beja-arteiga" .
+aamaLang:Beja-bishari	rdfs:label	"Beja-bishari" .
