@@ -13,12 +13,14 @@
   <!--04/22/13: gbgg added "or mulabel" to common-properties test-->
   <!-- 04/23/13: gbgg added multiLex option to common-properties -->
   <!--04/25/13: gbgg 
-		  This program was "forked" from lexcheck-gg.xsl, which is limited to a
+		  This program was "forked" from lexcheck.xsl, which is limited to a
   		first-pass, to pick out termclusters which do not
        have a lex label (many of which will need to be assigned a mulabel
-  		 or a multiLex property). lexcheck2-gg.xsl has been created as a second
+  		 or a multiLex property). Run by the script lexadd.sh, 
+  		 lexcheckadd.xsl has been created as a second
   		 pass to make sure that every termcluster has either a lexlabel, a mulabel, 
-  		 or a multiLex property, and in the last case, to add to the log file (lexadd) a dummy lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
+  		 or a multiLex property, and in the last case, to add to the log file (lexadd) 
+  		 a dummy lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
 
   <xsl:template match="/">
     <xsl:value-of select="$f"/>
