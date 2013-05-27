@@ -30,12 +30,12 @@
 
   <xsl:template match="common-properties">
     <xsl:choose>
-      <xsl:when test="prop[fn:matches(@type, '.*multiLex.*')]"> 
-	  <xsl:variable name="multiLex" select="prop[@type='multiLex']/@val"/>
+      <xsl:when test="prop[fn:matches(@type, '.*multiLex.*')]">
+        <xsl:variable name="multiLex" select="prop[@type='multiLex']/@val"/>
         <xsl:for-each select="../termcluster/term">
           <xsl:variable name="lexref" select="prop[@type='lexlabel']/@val"/>
           <xsl:if test="not(//lexeme/prop[@type='lexlabel' and @val=$lexref])">
-		  <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
+            <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
             <xsl:text>&#10;</xsl:text>
             <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
             <xsl:text>
@@ -44,7 +44,7 @@
             <xsl:text>"&gt;
               &lt;prop type="gloss" val="[x]"/&gt;
               &lt;prop type="lang" val="[LANG]"/&gt;
-              <!--&lt;prop type="langVar" val="[LANGVAR]"/&gt;-->
+              &lt;prop type="langVar" val="[LANGVAR]"/&gt;
               &lt;prop type="lemma" val="[y]"/&gt;
               &lt;prop type="lexlabel" val="</xsl:text>
             <xsl:value-of select="$lexref"/>
@@ -52,17 +52,18 @@
             &lt;/lexeme&gt;
             </xsl:text>
           </xsl:if>
-            
-        </xsl:for-each>      
+
+        </xsl:for-each>
       </xsl:when>
-      <xsl:when test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')] or prop[fn:matches(@type, '.*multiLex.*')])">
+      <xsl:when
+        test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')] or prop[fn:matches(@type, '.*multiLex.*')])">
         <xsl:message> FAIL: pid=<xsl:value-of select="../@pid"/>
         </xsl:message>
         <xsl:value-of select="../@pid"/>
         <xsl:text>&#10;      </xsl:text>
         <xsl:value-of select="../pdgmlabel"/>
         <xsl:text>&#10;</xsl:text>
-        
+
       </xsl:when>
     </xsl:choose>
   </xsl:template>
