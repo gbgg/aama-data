@@ -9,7 +9,7 @@
 # each lang/var gets its own logfile
 
 
-. tools/constants.sh
+. bin/constants.sh
 
 echo "fuload.log" > logs/fuload.log;
 for f in `find $1 -name *.rdf`

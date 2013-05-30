@@ -1,7 +1,9 @@
-prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/>
-prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
-prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
 
 SELECT DISTINCT ?label ?pred ?lang
 WHERE {
@@ -14,3 +16,14 @@ GRAPH <http://oi.uchicago.edu/aama/oromo> {
 }}
 ORDER BY ASC(?pred)
 
+# With prefixes; 
+SELECT DISTINCT ?label ?pred ?lang
+WHERE {
+GRAPH <http://oi.uchicago.edu/aama/oromo> {
+      ?pred aama:lang aama:Oromo .
+      ?pred aama:lang ?lang .
+      ?pred rdfs:label ?label .
+#     ?pred rdfs:subClassOf Orm:MuExponent .
+   ?prop rdfs:subPropertyOf orm:muProperty .	 
+}}
+ORDER BY ASC(?pred)

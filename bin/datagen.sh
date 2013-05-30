@@ -12,7 +12,8 @@ do
 
     bin/data2rdf.sh $d 
 
-    bin/fuput-data.sh $d || echo FAILURE fuput $d >> logs/datagen.log
+    # Use fupost.sh (or fuput.sh) to load data
+	#bin/fuput-data.sh $d || echo FAILURE fuput $d >> logs/datagen.log
 
     # bin/fuquery.sh $d sparql/predicates-local-skel.rq || echo FAILURE fuquery $d >> logs/reload.log
 
