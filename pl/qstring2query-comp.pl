@@ -1,66 +1,83 @@
 #!/usr/local/bin/perl
 
 # rev 02/10/13
+# rev 06/04/13 adapted to be run by bin/pdgm-display-comp.sh
 
-# This is a version of pdgmtemplate2query.pl, and is to be run in the 
-# tools/rq-ru/pdgm-def directory. It constructs a SPARQL query 
-# based on a bi-partite argumet string joined by "^", ARG1^ARG2.
-# each ARG has the structure (cf. pod below): 
+# As opposed to the earlier version of pdgm-display-comp which works 
+# in all languages exclusively with common
+# aama: props and vals, it is in practice (seems to depend on computational
+# capacities of Fuseki) impossible to isolate common properties in WHERE clause 
+# preceding UNION clause in the datastore version which has language-specific
+# properties and values (orm:tam, Orm:Present). Therefore the comp query 
+# developed here will be simply a union of two
+# (or more) simple queries.
+
+# This version of pdgmtemplate2query.pl receives two args, a prop=val string and 
+# a query file name. The program constructs a SPARQL query our of
+# the first argument, a bi-partite string joined by "^" (ARG1^ARG2), where
+# each ARG has the structure (cf. at end of comment below): 
 # 1) a language name whose pdgm-defining properties it looks up in 
 # pdgm-finite-props.txt;
-# 2) a value specification for one or more props in a string of the form 
+# 2) a string consisting of a series of value specifications for one or more props: rm 
 #  "prop=val:prop=val:..." 
-# The script is invoked by rq-make-query-display.sh.  
+# It then writes the query out to the file-name given in the second argument.
+# The script is invoked by bin/pdgm-display-comp.sh.  
 
 # rev 02/22/13
 # changed $lang, $langvar to $aamalang
 
 =begin comment
 #  Asking for two tenses from two languages -- first try (beja aorist with oromo past)
-# display-pdgm-compare-1.rq
+# display-pdgm-union-bar-orm.rq
 
-SELECT ?langName ?langVariety ?tense ?pol ?num ?pers ?gen ?token
+SELECT ?langName ?tense ?pol ?num ?pers ?gen ?token
 WHERE
 {
-   ?s aama:lang ?lang .
-   ?lang rdfs:label ?langName .
-   ?s aama:tam ?tam .
-   ?tam rdfs:label ?tense .
-   ?s aama:polarity ?polarity .
-   ?polarity rdfs:label ?pol .
-   ?s aama:number ?number .
-   ?number rdfs:label ?num .
-	?s aama:person ?person .
-	?person rdfs:label ?pers .
-	?s aama:gender ?gender .
-	?gender rdfs:label ?gen .
-	?s aama:token ?token .
-
-	{
-	   ?s aama:tam aama:aorist .
-	   ?s aama:lang aama:beja .
-	   ?s aama:langVar aama:arteiga .
-		?s aama:langVar ?langVar .
-		?langVar rdfs:label ?langVariety .
-		?s aama:polarity aama:affirmative .
-		?s aama:conjClass aama:prefix .
-		?s aama:rootClass aama:CCC .
+   {
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s bar:tam Bar:Aorist .
+		?s bar:tam ?tam .
+		?s aama:lang aama:Beja-arteiga .
+		?s bar:polarity Bar:Affirmative .
+		?s bar:polarity ?polarity .
+		?s bar:number ?number .
+		?s bar:person ?person .
+		?s bar:gender ?gender .
+		?s bar:conjClass Bar:Prefix .
+		?s bar:rootClass Bar:CCC .
+		?s bar:token ?token .
 	}
-	
 	UNION
-	
 	{
-	   ?s aama:tam aama:past .
-	   ?s aama:lang aama:oromo .
-       ?s aama:polarity aama:affirmative .
-		?s aama:dervStem aama:base .
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s orm:tam Orm:Past .
+		?s orm:tam ?tam .
+		?s aama:lang aama:Oromo .
+		?s orm:polarity Orm:Affirmative .
+		?s orm:polarity ?polarity .
+		?s orm:number ?number .
+		?s orm:person ?person .
+		?s orm:gender ?gender .
+		?s orm:derivedStem Orm:Base .
+		?s orm:token ?token .
 	}
-	
 }
 ORDER BY  ?langName   DESC(?num) ?pers DESC(?gen)
 
-beja-arteiga+conjClass=prefix:tam=aorist:polarity=affirmative:rootClass=CCC^
-oromo+dervStem=base:tam=past:polarity=affirmative
+beja-arteiga+conjClass=Prefix:tam=Aorist:polarity=Affirmative:rootClass=CCC^
+oromo+derivedStem=Base:tam=Past:polarity=Affirmative
 
 =end comment
 =cut

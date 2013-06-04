@@ -1,7 +1,9 @@
 ﻿#  Asking for two tenses from two languages -- first try (beja aorist with oromo past)
 # display-pdgm-compare-1.rq
 
-# Following query goes on forever (with and without the named graph components)
+# One would like to take all common properties outside the UNION structure
+# as in the following. However the query goes on forever 
+# (with and without the named graph components)
 PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
@@ -58,7 +60,14 @@ WHERE
 }
 ORDER BY  ?langName   DESC(?num) ?pers DESC(?gen)
 
-# Following works
+# Following always works, with no common triples (property value pairs).
+# Apparently you can always move up one property.
+# Ability to state common triples outside UNION seems to depend
+# on processing capabilities of Fuseki.
+# Cf also more complicated configuration with 
+# "?p rdfs:subPropertyOf aama:tam ." in file 
+# subProperty-aama-pdgm-comp.rq
+
 PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
@@ -113,6 +122,180 @@ WHERE
 	}
 }
 ORDER BY  ?langName   DESC(?num) ?pers DESC(?gen)
+
+#Variant
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+PREFIX Bar:   <http://id.oi.uchicago.edu/aama/2013/Beja-arteiga/>
+
+SELECT ?langName ?tense ?pol ?clauseType ?num ?pers ?gen ?token
+WHERE
+{
+   {
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s bar:tam Bar:Aorist .
+		?s bar:tam ?tam .
+		?s aama:lang aama:Beja-arteiga .
+		?s bar:polarity Bar:Affirmative .
+		?s bar:polarity ?polarity .
+		?s bar:number ?number .
+		?s bar:person ?person .
+		?s bar:gender ?gender .
+		?s bar:conjClass Bar:Prefix .
+		?s bar:rootClass Bar:CCC .
+		?s bar:token ?token .
+	}
+	UNION
+	{
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		#?s orm:tam Orm:Past .
+		?s orm:tam ?tam .
+		?s aama:lang aama:Oromo .
+		?s orm:polarity Orm:Affirmative .
+		?s orm:polarity ?polarity .
+                ?s orm:clauseType ?clause .
+                ?clause rdfs:label ?clauseType .
+		?s orm:number ?number .
+		?s orm:person ?person .
+		?s orm:gender ?gender .
+		?s orm:derivedStem Orm:Base .
+		?s orm:token ?token .
+	}
+}
+ORDER BY  ?langName ?tense  ?clauseType  DESC(?num) ?pers DESC(?gen)
+
+# This works. But not if you move up ?tense
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+PREFIX Bar:   <http://id.oi.uchicago.edu/aama/2013/Beja-arteiga/>
+
+SELECT ?langName ?tense ?pol ?num ?pers ?gen ?token
+WHERE
+{
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+
+   {
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s bar:tam Bar:Aorist .
+		?s bar:tam ?tam .
+		?s aama:lang aama:Beja-arteiga .
+		?s bar:polarity Bar:Affirmative .
+		?s bar:polarity ?polarity .
+		?s bar:number ?number .
+		?s bar:person ?person .
+		?s bar:gender ?gender .
+		?s bar:conjClass Bar:Prefix .
+		?s bar:rootClass Bar:CCC .
+		?s bar:token ?token .
+	}
+	UNION
+	{
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s orm:tam Orm:Past .
+		?s orm:tam ?tam .
+		?s aama:lang aama:Oromo .
+		?s orm:polarity Orm:Affirmative .
+		?s orm:polarity ?polarity .
+		?s orm:number ?number .
+		?s orm:person ?person .
+		?s orm:gender ?gender .
+		?s orm:derivedStem Orm:Base .
+		?s orm:token ?token .
+	}
+}
+ORDER BY  ?langName ?tense ?polarity  DESC(?num) ?pers DESC(?gen)
+
+# This works, but continues forever if you move up ?person also.
+# Apparently a question of capacity rather than well-formedness
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+PREFIX Bar:   <http://id.oi.uchicago.edu/aama/2013/Beja-arteiga/>
+
+SELECT ?langName ?tense ?pol ?num ?pers ?gen ?token
+WHERE
+{
+
+		?number rdfs:label ?num .
+		#?person rdfs:label ?pers .
+		#?gender rdfs:label ?gen .
+   {
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		#?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s bar:tam Bar:Aorist .
+		?s bar:tam ?tam .
+		?s aama:lang aama:Beja-arteiga .
+		?s bar:polarity Bar:Affirmative .
+		?s bar:polarity ?polarity .
+		?s bar:number ?number .
+		?s bar:person ?person .
+		?s bar:gender ?gender .
+		?s bar:conjClass Bar:Prefix .
+		?s bar:rootClass Bar:CCC .
+		?s bar:token ?token .
+	}
+	UNION
+	{
+		?s aama:lang ?lang .
+		?lang rdfs:label ?langName .
+		?tam rdfs:label ?tense .
+		?polarity rdfs:label ?pol .
+		#?number rdfs:label ?num .
+		?person rdfs:label ?pers .
+		?gender rdfs:label ?gen .
+		?s orm:tam Orm:Past .
+		?s orm:tam ?tam .
+		?s aama:lang aama:Oromo .
+		?s orm:polarity Orm:Affirmative .
+		?s orm:polarity ?polarity .
+		?s orm:number ?number .
+		?s orm:person ?person .
+		?s orm:gender ?gender .
+		?s orm:derivedStem Orm:Base .
+		?s orm:token ?token .
+	}
+}
+ORDER BY  ?langName ?tense ?polarity  DESC(?num) ?pers DESC(?gen)
 
 # Here is the aama: version
 SELECT ?langName ?tense ?pol ?num ?pers ?gen ?token
