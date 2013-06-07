@@ -12,8 +12,6 @@
 #	langName+prop=val:prop=val: . . .  
 # and passes it to pdgmtemplate2query-comp.pl. Otherwise it is the same,
 # and should be able to be unified with it.
-# Default qstring "beja-arteiga+tam=aorist:polarity=affirmative:conjClass=prefix:rootClass=CCC^oromo+tam=past:polarity=affirmative:derivedStem=base"
-
 
 # "Finite verb" is operationally defined as any form of  a verb that is marked for a 
 # value of tam, and is marked also at least for person  (optionally also for gender 
@@ -31,28 +29,32 @@
 # and transforms it to various display formats using pdgmtsv2table.pl .
 # The script is based on an earlier query-output-display.sh.
 
-# Default qstring "oromo+tam=Present:polarity=Affirmative:clauseType=Main"
+# Default qstring: "beja-arteiga+tam=Aorist:polarity=Affirmative:conjClass=Prefix:rootClass=CCC^oromo+tam=Past:polarity=Affirmative:derivedStem=Base"
 
 . bin/constants.sh
 
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$1
-lang=${1%+*}
-localqry=sparql/pdgms/output/$lang-query.rq
-response=sparql/pdgms/output/$lang-response.tsv
+langstr1=${1%^*}
+langstr2=${1#*^}
+lang1=${langstr1%+*}
+lang2=${langstr2%+*}
+localqry=sparql/pdgms/output/$lang1-$lang2-query.rq
+response=sparql/pdgms/output/$lang1-$lang2-response.tsv
 # find way to parse qstring to give value string $vstring
 # then give "title=$lang-$vstring" as argument to pdgmtsv2table.pl 
 # for output title
 
 echo "Query String = $qstring"
-echo "Language = $lang"
+echo "Language = $lang1-$lang2"
 echo "Localqry = $localqry"
 echo "Response = $response"
+echo " "
 #echo "Title = $title"
 
-mv sparql/pdgms/output/$lang* sparql/pdgms/output/back/
+mv sparql/pdgms/output/$lang1* sparql/pdgms/output/back/
 #mv *.tsv back/
-perl pl/qstring2query.pl $qstring $localqry
+perl pl/qstring2query-comp.pl $qstring $localqry
 
 ${FUSEKIDIR}/s-query \
 	--output=tsv  \
