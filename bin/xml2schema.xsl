@@ -60,7 +60,7 @@
 <!--     </xsl:message> -->
 
       <xsl:text>aamas:MuExponent rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
-      <xsl:text>aamas:muProperty rdfs:subProperty rdfs:Property .&#10;</xsl:text>
+      <xsl:text>aamas:muProperty rdfs:subPropertyOf rdfs:Property .&#10;</xsl:text>
       <xsl:text>aamas:Cluster rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
       <xsl:text>aamas:Lexeme rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
      <xsl:text>aamas:Mu-term rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>

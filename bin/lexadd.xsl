@@ -13,12 +13,14 @@
   <!--04/22/13: gbgg added "or mulabel" to common-properties test-->
   <!-- 04/23/13: gbgg added multiLex option to common-properties -->
   <!--04/25/13: gbgg 
-		  This program was "forked" from lexcheck-gg.xsl, which is limited to a
+		  This program was "forked" from lexcheck.xsl, which is limited to a
   		first-pass, to pick out termclusters which do not
        have a lex label (many of which will need to be assigned a mulabel
-  		 or a multiLex property). lexcheck2-gg.xsl has been created as a second
+  		 or a multiLex property). Run by the script lexadd.sh, 
+  		 lexcheckadd.xsl has been created as a second
   		 pass to make sure that every termcluster has either a lexlabel, a mulabel, 
-  		 or a multiLex property, and in the last case, to add to the log file (lexadd) a dummy lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
+  		 or a multiLex property, and in the last case, to add to the log file (lexadd) 
+  		 a dummy lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
 
   <xsl:template match="/">
     <xsl:value-of select="$f"/>
@@ -28,12 +30,12 @@
 
   <xsl:template match="common-properties">
     <xsl:choose>
-      <xsl:when test="prop[fn:matches(@type, '.*multiLex.*')]"> 
-	  <xsl:variable name="multiLex" select="prop[@type='multiLex']/@val"/>
+      <xsl:when test="prop[fn:matches(@type, '.*multiLex.*')]">
+        <xsl:variable name="multiLex" select="prop[@type='multiLex']/@val"/>
         <xsl:for-each select="../termcluster/term">
           <xsl:variable name="lexref" select="prop[@type='lexlabel']/@val"/>
           <xsl:if test="not(//lexeme/prop[@type='lexlabel' and @val=$lexref])">
-		  <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
+            <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
             <xsl:text>&#10;</xsl:text>
             <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
             <xsl:text>
@@ -42,7 +44,7 @@
             <xsl:text>"&gt;
               &lt;prop type="gloss" val="[x]"/&gt;
               &lt;prop type="lang" val="[LANG]"/&gt;
-              <!--&lt;prop type="langVar" val="[LANGVAR]"/&gt;-->
+              &lt;prop type="langVar" val="[LANGVAR]"/&gt;
               &lt;prop type="lemma" val="[y]"/&gt;
               &lt;prop type="lexlabel" val="</xsl:text>
             <xsl:value-of select="$lexref"/>
@@ -50,17 +52,18 @@
             &lt;/lexeme&gt;
             </xsl:text>
           </xsl:if>
-            
-        </xsl:for-each>      
+
+        </xsl:for-each>
       </xsl:when>
-      <xsl:when test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')] or prop[fn:matches(@type, '.*multiLex.*')])">
+      <xsl:when
+        test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')] or prop[fn:matches(@type, '.*multiLex.*')])">
         <xsl:message> FAIL: pid=<xsl:value-of select="../@pid"/>
         </xsl:message>
         <xsl:value-of select="../@pid"/>
         <xsl:text>&#10;      </xsl:text>
         <xsl:value-of select="../pdgmlabel"/>
         <xsl:text>&#10;</xsl:text>
-        
+
       </xsl:when>
     </xsl:choose>
   </xsl:template>

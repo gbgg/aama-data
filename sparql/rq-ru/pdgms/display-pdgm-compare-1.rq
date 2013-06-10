@@ -1,0 +1,44 @@
+﻿#  Asking for two tenses from two languages -- first try (beja aorist with oromo past)
+# display-pdgm-compare-1.rq
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT ?langName ?langVariety ?tense ?pol ?num ?pers ?gen ?token
+WHERE
+{
+   ?s aama:lang ?lang .
+   ?lang rdfs:label ?langName .
+   ?s aama:tam ?tam .
+   ?tam rdfs:label ?tense .
+   ?s aama:polarity ?polarity .
+   ?polarity rdfs:label ?pol .
+   ?s aama:number ?number .
+   ?number rdfs:label ?num .
+	?s aama:person ?person .
+	?person rdfs:label ?pers .
+	?s aama:gender ?gender .
+	?gender rdfs:label ?gen .
+	?s aama:token ?token .
+
+	{
+	   ?s aama:tam aama:aorist .
+	   ?s aama:lang aama:beja .
+	   ?s aama:langVar aama:arteiga .
+		?s aama:langVar ?langVar .
+		?langVar rdfs:label ?langVariety .
+		?s aama:polarity aama:affirmative .
+		?s aama:conjClass aama:prefix .
+		?s aama:rootClass aama:CCC .
+	}
+	UNION
+	{
+	   ?s aama:tam aama:past .
+	   ?s aama:lang aama:oromo .
+       ?s aama:polarity aama:affirmative .
+		?s aama:dervStem aama:base .
+	}
+	
+}
+ORDER BY  ?langName   DESC(?num) ?pers DESC(?gen)

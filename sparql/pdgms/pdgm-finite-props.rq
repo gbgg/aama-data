@@ -1,0 +1,22 @@
+# Yields properties that cooccur with finite verbs. Edited list is in pdgm-finite-props.txt
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+SELECT DISTINCT  ?language ?variant ?prop1
+WHERE 
+{
+	?s ?p ?o ;
+    aama:tam  ?tam ;
+	aama:person ?person ;
+	aama:lang ?lang .
+	?lang rdfs:label ?language .
+	OPTIONAL {
+	?s aama:langVar ?langVar .
+	?langVar rdfs:label ?variant .}
+   ?p rdfs:label ?prop1 .
+   ?o rdfs:label ?val1  .
+  	FILTER (?p NOT IN ( aama:lang, aama:langVar, aama:gender, aama:number, aama:person, aama:pos, rdf:type))
+ 
+}
+ORDER BY  ?language ?variant ?prop1

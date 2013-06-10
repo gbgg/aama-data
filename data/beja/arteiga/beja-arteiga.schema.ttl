@@ -2,15 +2,15 @@
 @prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
 @prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+
 @prefix bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/> .
 @prefix Bar:   <http://id.oi.uchicago.edu/aama/2013/Beja-arteiga/> .
-
 aama:Beja-arteiga a aamas:Language .
 aama:Beja-arteiga rdfs:label "Beja-arteiga" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subProperty rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdfs:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Mu-term rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -600,3 +600,4 @@ Bar:VERBALPARTICIPLES rdfs:label "VERBALPARTICIPLES" .
 Bar:Yàs aama:lang aama:Beja-arteiga .
 Bar:Yàs rdf:type Bar:PluralForm .
 Bar:Yàs rdfs:label "yàs" .
+bar:tam rdfs:subPropertyOf aama:tam .

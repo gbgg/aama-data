@@ -3,6 +3,8 @@
 # where <qry> is a skeleton in <aama>/sparql.  See
 # exponents.local.skel.rq for an example.
 
+# Cf. sparql/templates/README.txt
+
 # example:
 #    <aama> $ bin/fuquery.sh data/alaaba sparql/exponents.local.skel.rq
 # example:
