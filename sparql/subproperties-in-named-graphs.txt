@@ -1,0 +1,86 @@
+# Currently the use of a URI prefix aama: is rather limited. However,aama:lang
+#  is one property which is  used across the archive, so it is possible to query:
+# What graphs use aama:lang with what subjects and what values
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://id.oi.uchicago.edu/aama/2013/graph/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+
+SELECT DISTINCT ?g ?s  ?lang
+WHERE
+{
+  GRAPH ?g 
+  { 
+		?s aama:lang ?lang .
+		FILTER (!(regex(str(?s), "/ID")))
+	}
+}
+ORDER BY ?lang ?s
+
+# It would be useful have an archive-wide m-s propery aama:tam, 
+# so that it would be possible to ask:
+# What graphs use aama:tam and with what values
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://id.oi.uchicago.edu/aama/2013/graph/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+
+SELECT DISTINCT ?g ?tam
+WHERE
+{
+  GRAPH ?g 
+  { 
+		?s aama:tam ?tam .
+	}
+}
+ORDER BY ?g ?tamvalue
+
+# But for query and inference purposes, it is perfectly possible to supply 
+# an rdfs:subPropertyOf predicate for every [lang]:tam property. E.g.
+#		orm:tam	rdfs:subPropertyOf		aama:tam
+# so that one can formulate the query:
+# What graphs use a property which is a subPropertyOf aama:tam 
+# and with what values?
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+
+SELECT DISTINCT  ?g ?p ?tam
+WHERE
+{
+  GRAPH ?g 
+  { 
+		?s ?p ?tam .
+		?p rdfs:subPropertyOf aama:tam .
+	}
+}
+ORDER BY ?g  ?p ?tam
+
+# Or less succinctly:
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://id.oi.uchicago.edu/aama/2013/graph/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+
+SELECT DISTINCT  ?language ?prop ?value
+WHERE
+{
+  GRAPH ?g 
+  { 
+		?s ?p ?tam .
+		?p rdfs:subPropertyOf aama:tam .
+		?p aama:lang ?lang .
+		?lang rdfs:label ?language .
+		?p rdfs:label ?prop .
+		?tam rdfs:label ?value .
+	}
+}
+ORDER BY ?g  ?prop ?value
+
