@@ -3,7 +3,7 @@
 
 # 04/22/2013: gbgg modified constants.sh and   
 # 05/27/13: outputs file with names of pdgms with no lexlabel/mulabel/multiLex property
-#					templates to be added to xml file can be found in bin/xml-file-lexeme-template.txt
+# templates to be added to xml file can be found in bin/xml-file-lexeme-template.txt
 
 . bin/constants.sh
 

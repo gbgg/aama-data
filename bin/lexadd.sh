@@ -16,6 +16,7 @@ do
 	bf=`basename $f`
 	echo $bf
     of=tmp/lexcheck/lexadd.`basename $f`.txt
+	lang=`basename ${f%-pdgms\.xml}`;	
 	echo of is $of
 	echo $f to $of
 	java  -jar ${JARDIR}/${SAXON} \
@@ -23,7 +24,8 @@ do
 	-s:$f \
 	-o:$of \
 	-xsl:bin/lexadd.xsl \
-	f=$f;
+	f=$f \
+	lang=$lang
 	#cat $of >> $ofsum
 done
 #done
