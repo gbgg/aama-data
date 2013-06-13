@@ -1,0 +1,5 @@
+These lexemes are added by lexadd.xsl, a program run by script lexadd.sh.  This  program is a supplement to lexcheck.xsl, which, in a first-pass check of a pdgms.xml file, picks out termclusters which do not have a lex label. Many of these latter need to be assigned either a mulabel or a multiLex property, and if multiLex, the terms they dominate need their own '<prop type="lexlabel" val="[lexlabel]"/>'. This is added by hand, using whatever information is available from the term or termcluster. 
+
+Run by the script lexadd.sh, lexadd.xsl checks, in a second  pass, to make sure that every lexlabel added after lexcheck is associated with a lexeme. If the lexeme is not found, a provisional "dummy" lexeme is created with id mlex_ . . ., for multiLex items, or newlex- . . ., for others.
+
+It is expected that in a more detailed revision and with eventual further research these "dummy" lexemes can be replaced by real ones. 

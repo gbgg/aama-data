@@ -7,7 +7,8 @@
   <!-- 04/22/2013: gbgg, tests added to pick up mu-term vals-->
   <!-- 04/23/13: gbgg, $lexref for terms in termclusters marked "multiLex" -->
   <!-- 05/03/13: gbgg, changed for revised ttl format w/o langVar and with lang @prefix  -->
-
+  <!-- 06/13/13: gbgg [Mm]uterm substituted for [Mm]u-term -->
+  
   <xsl:output method="text" indent="yes" encoding="utf-8"/>
 
   <xsl:strip-space elements="*"/>
@@ -104,8 +105,8 @@
 -->      <xsl:text>/</xsl:text>
     </xsl:variable>
 
-<!--    <xsl:text>aama:</xsl:text>-->
-    <xsl:value-of select="$pref-p"/>
+    <xsl:text>aama:</xsl:text>
+<!--    <xsl:value-of select="$pref-p"/>-->
     <xsl:value-of select="@id"/>
     <xsl:text> a aamas:Lexeme ;&#10;</xsl:text>
 
@@ -259,15 +260,18 @@
 -->      <xsl:text>/</xsl:text>
     </xsl:variable>
 
-<!--    <xsl:text>aama:</xsl:text>-->
-    <xsl:value-of select="$pref-p"/>
+    <xsl:text>aama:</xsl:text>
+<!--    <xsl:value-of select="$pref-p"/>-->
     <xsl:value-of select="@id"/>
-    <xsl:text> a aamas:Mu-term ;&#10;</xsl:text>
+    <xsl:text> a aamas:Muterm ;&#10;</xsl:text>
 
     <xsl:for-each select="prop">
       <xsl:choose>
         <xsl:when test="@type = 'mulabel'">
           <xsl:text>  rdfs:label </xsl:text>
+        </xsl:when>
+        <xsl:when test="@type = 'gloss'">
+          <xsl:text>  rdfs:comment </xsl:text>
         </xsl:when>
         <xsl:when test="@type = 'lang'">
           <xsl:text>  aama:lang </xsl:text>
@@ -395,6 +399,9 @@
           <xsl:when test="ancestor::pdgm/common-properties/prop[@type='multiLex']">
             <xsl:value-of select="prop[@type='lexlabel']/@val"/>
           </xsl:when>
+          <xsl:when test="ancestor::pdgm/common-properties/prop[@type='mulabel']">
+            <xsl:value-of select="prop[@type='mulabel']/@val"/>
+          </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='lexlabel']/@val"/>
           </xsl:otherwise>
@@ -404,6 +411,7 @@
       <xsl:variable name="muref">
         <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='mulabel']/@val"/>
       </xsl:variable>
+      
       <xsl:if test="$lexref = '' and $muref = ''">
         <xsl:message> LEXREF: <xsl:value-of select="$lexref"/>
           <xsl:text> PDGM: </xsl:text>
@@ -418,7 +426,7 @@
         <xsl:value-of select="(//lexeme/prop[@type='lexlabel' and @val=$lexref])/../@id"/>
       </xsl:variable>
       <xsl:variable name="muid">
-        <xsl:value-of select="(//mu-term/prop[@type='mulabel' and @val=$muref])/../@id"/>
+        <xsl:value-of select="(//muterm/prop[@type='mulabel' and @val=$muref])/../@id"/>
       </xsl:variable>
       <xsl:if test="not($lexid) and not($muid)">
         <!-- <xsl:message> TID: <xsl:value-of select="@id"/> LEXREF: <xsl:value-of select="$lexref"/>
@@ -435,7 +443,7 @@
       </xsl:if>
 
       <xsl:if test="fn:string-length($muid) > 0">
-        <xsl:text>aamas:mu-term aama:</xsl:text>
+        <xsl:text>aamas:muterm aama:</xsl:text>
         <xsl:value-of select="$muid"/>
         <xsl:text>;
 	</xsl:text>

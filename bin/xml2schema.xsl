@@ -31,6 +31,7 @@
   <!-- ######################################################## -->
 <!-- 04/23/13: gbgg calqued two entries for "Mu-term" based on two etries for "Lexeme"-->
 <!-- 05/08/13: gbgg modified program to accommodate lang prefixes-->
+<!-- 06/13/13: gbgg [Mm]uterm substituted for [Mm]u-term -->
   <xsl:template match="/">
     <!-- n3 header -->
     <!-- @prefix xsd:	 &lt;http://www.w3.org/2001/XMLSchema#> . -->
@@ -63,10 +64,10 @@
       <xsl:text>aamas:muProperty rdfs:subPropertyOf rdfs:Property .&#10;</xsl:text>
       <xsl:text>aamas:Cluster rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
       <xsl:text>aamas:Lexeme rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
-     <xsl:text>aamas:Mu-term rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
+     <xsl:text>aamas:Muterm rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
       <xsl:text>aamas:MuScheme rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
       <xsl:text>aamas:Term rdf:type aamas:Lexeme .&#10;</xsl:text>
-      <xsl:text>aamas:Term rdf:type aamas:Mu-term .&#10;</xsl:text>
+      <xsl:text>aamas:Term rdf:type aamas:Muterm .&#10;</xsl:text>
       <xsl:text>aamas:Term rdf:type aamas:MuScheme .&#10;</xsl:text>
       <xsl:text>aamas:Token rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
       <xsl:text>aamas:Text rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
