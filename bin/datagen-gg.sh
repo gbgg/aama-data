@@ -8,7 +8,7 @@ echo > logs/datagen.log
 
 for d in `ls -d $1`
 do
-    bin/xml2data.sh $d  $2|| echo FAILURE xml2data $d >> logs/datagen.log
+    bin/xml2data-gg.sh $d  $2|| echo FAILURE xml2data-gg $d >> logs/datagen.log
 
     bin/data2rdf.sh $d 
 

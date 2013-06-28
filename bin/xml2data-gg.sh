@@ -27,7 +27,7 @@
 			-xi \
 			-s:$f \
 			-o:${f%-pdgms\.xml}.data.ttl \
-			-xsl:bin/xml2data.xsl \
+			-xsl:bin/xml2data-gg.xsl \
 			lang=$lang \
 			abbr=$abb;
 			#lang=`dirname ${f#data/}`;

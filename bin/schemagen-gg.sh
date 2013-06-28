@@ -9,7 +9,7 @@ echo > logs/schemagen.log
 
 for d in `ls -d $1`
 do
-    bin/xml2schema.sh $d  $2|| echo FAILURE xml2schema $d >> logs/schemagen.log
+    bin/xml2schema-gg.sh $d  $2|| echo FAILURE xml2schema-gg $d >> logs/schemagen.log
 
     bin/uniqschema.sh $d
 

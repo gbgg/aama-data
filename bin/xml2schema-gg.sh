@@ -21,7 +21,7 @@ do
 	    -xi \
 	    -s:$f \
 	    -o:tmp/`basename ${f%-pdgms\.xml}`.schema.ttl \
-	    -xsl:bin/xml2schema.xsl \
+	    -xsl:bin/xml2schema-gg.xsl \
 		language=$lang \
 		abbr=$abb;
 	# set +x;
