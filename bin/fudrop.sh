@@ -2,8 +2,7 @@
 # delete default fuseki graph
 # usage:  fuclear
 
-# Has no effect. Returns: "204: no content". Also in Fuseki interface.
-
+# Doesn't work. Error 500: Quad: object cannot be null. (beja-arteiga)
 . bin/constants.sh
 
 echo "fuclear.log" > logs/fuclear.log;
@@ -12,5 +11,5 @@ graph="<http://oi.uchicago.edu/aama/$1>"
 
 echo "clearing graph $graph"
 # set -x
-${FUSEKIDIR}/s-update -v --service http://localhost:3030/aama/update "CLEAR DEFAULT" 2>&1 | >> logs/fuclear.log
+${FUSEKIDIR}/s-update -v --service http://localhost:3030/aama/update "DROP ALL" 2>&1 | >> logs/fuclear.log
 # set +x

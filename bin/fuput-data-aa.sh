@@ -17,12 +17,12 @@ for f in `find $1 -name *.xml`
 do
     lang=`dirname ${f#data/}`
     echo $lang
-    fn=data/$lang/`basename ${f%-pdgms.xml}`.data-aa.rdf
+    fn=data/$lang/`basename ${f%-pdgms.xml}`.data.rdf
     graph="http://oi.uchicago.edu/aama/$lang"
     #echo putting $fn to $graph;
     echo putting $fn to default graph;
     #${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn 2>&1 >>logs/fuput.log
-    ${FUSEKIDIR}/s-put  http://localhost:3030/aama/data 'default' $fn 2>&1 >>logs/fuput.log
+    ${FUSEKIDIR}/s-put  http://localhost:3030/aamaData/data 'default' $fn 2>&1 >>logs/fuput.log
  	#version=`${FUSEKIDIR}/s-put --version`
 	#echo $version
 done

@@ -7,10 +7,19 @@
 # or more languages. (For the moment, cf. pdgm-display-comp.sh for multi-lingual 
 # paradigms.)
 
+# Obligatory argument qstring, format: ARG1^ARG2^ . . .
+# Where each ARG has structure:
+# [lang]+[property]=[value]:[property]=[value]:[property]=[value]: . . .
+# Example qstring: 
+# "beja-arteiga+tam=Aorist:polarity=Affirmative:conjClass=Prefix:rootClass=CCC^
+# oromo+tam=Past:polarity=Affirmative:derivedStem=Base"
+
+
+
 #This script differs from pdgm-display.sh only in that it takes as argument a query 
 # string string of format  ARG1^ARG2 where each ARG has structure:
-#	langName+prop=val:prop=val: . . .  
-# and passes it to pdgmtemplate2query-comp.pl. Otherwise it is the same,
+#	langName+prop=val:prop=val: . . .  as in pdgm-display.sh.
+# The qstring is passed to pdgmtemplate2query-comp.pl. Otherwise it is the same,
 # and should be able to be unified with it.
 
 # "Finite verb" is operationally defined as any form of  a verb that is marked for a 
@@ -29,7 +38,6 @@
 # and transforms it to various display formats using pdgmtsv2table.pl .
 # The script is based on an earlier query-output-display.sh.
 
-# Default qstring: "beja-arteiga+tam=Aorist:polarity=Affirmative:conjClass=Prefix:rootClass=CCC^oromo+tam=Past:polarity=Affirmative:derivedStem=Base"
 
 . bin/constants.sh
 

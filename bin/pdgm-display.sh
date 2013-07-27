@@ -7,6 +7,10 @@
 # or more languages. (For the moment, cf. pdgm-display-comp.sh for multi-lingual 
 # paradigms.)
 
+# Obligatory argument qstring, format:
+# [lang]+[property]=[value]:[property]=[value]:[property]=[value]: . . .
+# Example qstring: "oromo+tam=Present:polarity=Affirmative:clauseType=Main"
+
 # "Finite verb" is operationally defined as any form of  a verb that is marked for a 
 # value of tam, and is marked also at least for person  (optionally also for gender 
 # and number). 
@@ -23,7 +27,6 @@
 # and transforms it to various display formats using pdgmtsv2table.pl .
 # The script is based on an earlier query-output-display.sh.
 
-# Default qstring "oromo+tam=Present:polarity=Affirmative:clauseType=Main"
 
 . bin/constants.sh
 

@@ -5,9 +5,6 @@ PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
 PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
-PREFIX aamav:	 <http://id.oi.uchicago.edu/aama/2013/values/>
-PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
-PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
 
 SELECT (COUNT(?s) AS ?sTotal)
 WHERE
@@ -15,36 +12,3 @@ WHERE
 	?s ?p ?o
 }
 
-# 2. COUNT ALL TRIPLES WITH aama:kijee-bala AS ?o
-
-PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
-PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
-PREFIX aamav:	 <http://id.oi.uchicago.edu/aama/2013/values/>
-PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
-PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
-
-SELECT (COUNT(?o) AS ?oTotal)
-WHERE
-{
-        ?s ?p ?o .
-		?s ?p aama:Oromo .
-}
-
-#3. LIST ALL TRIPLES
-
-PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
-PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
-PREFIX aamav:	 <http://id.oi.uchicago.edu/aama/2013/values/>
-PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
-PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
-
-SELECT ?s ?p ?o
-WHERE
-{
-	?s ?p ?o
-}
-ORDER BY ?p

@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX afr:   <http://id.oi.uchicago.edu/aama/2013/afar/>
+PREFIX Afr:   <http://id.oi.uchicago.edu/aama/2013/Afar/>
+
+SELECT ?conjClass ?pdgmSubType ?pdgmType ?polarity ?tokenType  ?num ?pers ?gen ?token
+WHERE
+{
+	GRAPH aamag:afar
+	{
+		?s	afr:pos	Afr:Verb . 
+		?s	aama:lang	aama:Afar .
+		?s	afr:tam	Afr:Present . 
+		OPTIONAL { ?s	afr:conjClass	?QconjClass . 
+ 		?QconjClass	rdfs:label	?conjClass . }
+		OPTIONAL { ?s	afr:pdgmSubType	?QpdgmSubType . 
+ 		?QpdgmSubType	rdfs:label	?pdgmSubType . }
+		OPTIONAL { ?s	afr:pdgmType	?QpdgmType . 
+ 		?QpdgmType	rdfs:label	?pdgmType . }
+		OPTIONAL { ?s	afr:polarity	?Qpolarity . 
+ 		?Qpolarity	rdfs:label	?polarity . }
+		OPTIONAL { ?s	afr:tokenType	?QtokenType . 
+ 		?QtokenType	rdfs:label	?tokenType . }
+		OPTIONAL { ?s	afr:number	?number . 
+		?number	rdfs:label	?num . }
+		?s	afr:person	?person . 
+		?person	rdfs:label	?pers . 
+		OPTIONAL { ?s	afr:gender	?gender . 
+		?gender	rdfs:label	?gen . }
+		?s	afr:token	?token . 
+	}
+}
+ORDER BY ?conjClass ?pdgmSubType ?pdgmType ?polarity ?tokenType   DESC(?num) ?pers DESC(?gen)

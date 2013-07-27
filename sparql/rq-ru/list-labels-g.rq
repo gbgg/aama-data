@@ -10,7 +10,10 @@ PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
 SELECT DISTINCT  ?label ?predicate
 WHERE
 {
+	GRAPH aamag:beja-arteiga
+		{
 			?predicate rdfs:label ?label .
+		}
 }
 ORDER BY ?label
 
