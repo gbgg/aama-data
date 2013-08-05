@@ -1,0 +1,16 @@
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+		
+SELECT DISTINCT  ?language ?property ?value
+WHERE
+{
+  GRAPH ?graph
+  { 
+		?s ?prop ?val .
+        ?s aamas:lang ?lang .
+		?val rdfs:label ?value .
+		?prop rdfs:label ?property .
+		?lang rdfs:label ?language .
+	}
+}
+ORDER BY ?language ?property ?value
