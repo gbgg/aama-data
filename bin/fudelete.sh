@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Does not work for beja-arteiga; get message:
+# Does not work for any final graph; get message:
 # Error 500: Quad: object cannot be null. Same message in Fuseki interface.
 
 usage() {
