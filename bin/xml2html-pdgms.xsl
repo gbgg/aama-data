@@ -25,7 +25,7 @@
 	<xsl:template match="/">
 		<html>
 			<head>
-				<title>Paradigm HTML Display</title>
+				<title><xsl:value-of select="$lang"/> Paradigm HTML Display</title>
 			</head>
 			<body bgcolor="#fffccc">
 				<h1><xsl:value-of select="upper-case($lang)"/> PARADIGMS</h1>

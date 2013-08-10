@@ -207,7 +207,7 @@
           <xsl:text>  rdfs:comment </xsl:text>
         </xsl:when>
         <xsl:when test="@type = 'lang'">
-          <xsl:text>  aama:lang </xsl:text>
+          <xsl:text>  aamas:lang </xsl:text>
         </xsl:when>
         <xsl:otherwise>
           <xsl:text>  </xsl:text>
@@ -345,8 +345,11 @@
       <xsl:variable name="muref">
         <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='mulabel']/@val"/>
       </xsl:variable>
-
-      <xsl:if test="$lexref = '' and $muref = ''">
+      <xsl:variable name="classref">
+        <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='classification']/@val"/>
+      </xsl:variable>
+      
+      <xsl:if test="$lexref = '' and $muref = '' and $classref = ''">
         <xsl:message> LEXREF: <xsl:value-of select="$lexref"/>
           <xsl:text> PDGM: </xsl:text>
           <xsl:value-of select="ancestor::pdgm/pdgmlabel"/>
