@@ -17,7 +17,7 @@ In the current revised data-set, note:
 			a. Terms
 			b. Lexemes (or "l-terms"): e.g. "ktb 'write'".
 			c. Muterms ("m-terms",  "µ-terms"): e.g. "PRO".
-	6. Every Term is associated with either a Lexeme for a Muterm. In exceptional cases a term involved in a "paradigm" which is not a term-cluster but rather a cross-classification table is associated instead with a "classLabel". (cf. Arbore, "Sentence Focus Types")
+	6. Every Term is associated with either a Lexeme or a Muterm. In exceptional cases a term involved in a "paradigm" which is not a term-cluster but rather a cross-classification table is associated instead with a "classLabel". (cf. Arbore, "Sentence Focus Types")
 	7. Lexemes are registered in the archive in a conventional "short form", with summary lemma, gloss, and other relevant morphosyntactic information.
 	8. In the present state of the archive, where the data-source does not provide an easily usable lexeme, a provisional "dummy" lexeme is generated (by bin/lexadd.sh). As data-revision and language research goes on, these "dummy" lexemes will be gradually replaced by conventional ones.
 	9. Muterms are registered in an experimental format calqued on that used for lexemes.
