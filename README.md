@@ -12,7 +12,7 @@ In the current revised data-set, note:
 	1. For each language single lc, 3-character ns prefix is used for the URI of language-specific morphosyntactic properties and values. List of proposed prefixes will be found in bin/lname-pref.txt.
 	2. URIs of archive-wide morphosyntactic properties (e.g., "lang", "gloss", "lemma" . . .) are assigned the ns prefix "aamas:".
 	3. Other URIs, in particular entity IDs, have ns prefix "aama:"
-	4. Inference procedures and notations are being developed and incorporated to associate language-specific properties and values, e.g. "orm:Present", with general morphosyntactic properties and values, e.g. "aamas:Present".
+		4. Inference procedures and notations are being developed and incorporated to associate language-specific properties and values, e.g. "orm:Present", with general morphosyntactic properties and values, e.g. "aamas:Present".
 	5. Among the important entity-types are:
 			a. Terms
 			b. Lexemes (or "l-terms"): e.g. "ktb 'write'".
