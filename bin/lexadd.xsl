@@ -22,7 +22,11 @@
   		 pass to make sure that every termcluster has either a lexlabel, a mulabel, 
   		 or a multiLex property, and in the last case, to add to the log file (lexadd) 
   		 a dummy lexeme with the appropriate lexlabel, in case a full lexeme does not exist. -->
-	<!-- 06/11/13: Cf. docs/notes/lexemes-w-id-mlex.txt -->
+  <!-- 06/11/13: Cf. docs/notes/lexemes-w-id-mlex.txt -->
+  <!-- 08/13/13: revised program so that it:
+                    1. writes out a dummy multilex lexeme for each multilex termcluster
+                    2. checks for valid lexlabel in terms w/i multilex termcluster, writes out newlex if not valid
+                    3. wites out ddummy muterm entry for termclusters with mulabel -->
 
   <xsl:template match="/">
     <xsl:value-of select="$f"/>
@@ -34,46 +38,67 @@
     <xsl:choose>
       <xsl:when test="prop[fn:matches(@type, '.*multiLex.*')]">
         <xsl:variable name="multiLex" select="prop[@type='multiLex']/@val"/>
+        <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
+        <xsl:text>&#10;</xsl:text>
+        <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
+        <xsl:text>&lt;lexeme id="mlex_</xsl:text>
+        <xsl:value-of select="$multiLex"/>
+        <xsl:text>-</xsl:text>
+        <xsl:value-of select="$lang"/>
+        <xsl:text>"&gt;
+              &lt;prop type="gloss" val="[x]"/&gt;
+              &lt;prop type="lang" val="</xsl:text>
+        <xsl:value-of select="$lang"/>
+        <xsl:text>"/&gt;
+              &lt;prop type="lemma" val="[y]"/&gt;
+              &lt;prop type="lexlabel" val="</xsl:text>
+        <xsl:value-of select="$multiLex"/>
+        <xsl:text>"/&gt;
+            &lt;/lexeme&gt;</xsl:text>
         <xsl:for-each select="../termcluster/term">
-          <xsl:variable name="lexref" select="replace(prop[@type='lexlabel']/@val, '\?', '_')"/>
-          <xsl:if test="not(//lexeme/prop[@type='lexlabel' and @val=$lexref])">
-            <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
-            <xsl:text>&#10;</xsl:text>
-            <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
-            <xsl:text>&lt;lexeme id="mlex_</xsl:text>
-            <xsl:value-of select="$multiLex"/><xsl:text>-</xsl:text><xsl:value-of select="$lexref"/>
-            <xsl:text>"&gt;
+          <xsl:if test="prop[fn:matches(@type, '.*lexlabel.*')]">
+            <xsl:variable name="lexref" select="replace(prop[@type='lexlabel']/@val, '\?', '_')"/>
+            <xsl:if test="not(//lexeme/prop[@type='lexlabel' and @val=$lexref])">
+              <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
+              <xsl:text>&#10;</xsl:text>
+              <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
+              <xsl:text>&lt;lexeme id="newlex_</xsl:text>
+              <xsl:value-of select="$lexref"/>
+              <xsl:text>-</xsl:text>
+              <xsl:value-of select="$lang"/>
+              <xsl:text>"&gt;
               &lt;prop type="gloss" val="[x]"/&gt;
               &lt;prop type="lang" val="</xsl:text>
               <xsl:value-of select="$lang"/>
-            <xsl:text>"/&gt;
+              <xsl:text>"/&gt;
               &lt;prop type="lemma" val="[y]"/&gt;
               &lt;prop type="lexlabel" val="</xsl:text>
-            <xsl:value-of select="$lexref"/>
-            <xsl:text>"/&gt;
+              <xsl:value-of select="$lexref"/>
+              <xsl:text>"/&gt;
             &lt;/lexeme&gt;</xsl:text>
+            </xsl:if>
           </xsl:if>
         </xsl:for-each>
       </xsl:when>
-      <xsl:when test="prop[fn:matches(@type, '.*lexlabel.*')]">
-          <xsl:variable name="lexref" select="prop[@type='lexlabel']/@val"/>
-          <xsl:if test="not(//lexeme/prop[@type='lexlabel' and @val=$lexref])">
-            <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
-            <xsl:text>&#10;</xsl:text>
-            <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
-            <xsl:text>&lt;lexeme id="newlex_</xsl:text>
-            <xsl:value-of select="$lexref"/>
-            <xsl:text>"&gt;
+      <xsl:when test="prop[fn:matches(@type, '.*mulabel.*')]">
+        <xsl:variable name="muref" select="prop[@type='mulabel']/@val"/>
+        <xsl:if test="not(//muterm/prop[@type='mulabel' and @val=$muref])">
+          <!--write to output file tmp/lexcheck/lexadd.[lang]-pdgms.xml.txt -->
+          <xsl:text>&#10;</xsl:text>
+          <!--<xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>-->
+          <xsl:text>&lt;muterm id="</xsl:text><xsl:value-of select="$lang"/>
+          <xsl:text>-</xsl:text><xsl:value-of select="$muref"/><xsl:text>"/$gt;</xsl:text>
+          <xsl:text>
               &lt;prop type="gloss" val="[x]"/&gt;
               &lt;prop type="lang" val="</xsl:text>
-              <xsl:value-of select="$lang"/>
-            <xsl:text>"/&gt;
+          <xsl:value-of select="$lang"/>
+          <xsl:text>"/&gt;
               &lt;prop type="lemma" val="[y]"/&gt;
               &lt;prop type="lexlabel" val="</xsl:text>
-            <xsl:value-of select="$lexref"/>
-            <xsl:text>"/&gt;
-            &lt;/lexeme&gt;</xsl:text>
-          </xsl:if>
+          <xsl:value-of select="$muref"/>
+          <xsl:text>"/&gt;
+            &lt;/muterm&gt;</xsl:text>
+        </xsl:if>
       </xsl:when>
       <xsl:when
         test="not(prop[fn:matches(@type,'.*lexlabel.*')] or prop[fn:matches(@type,'.*mulabel.*')] or prop[fn:matches(@type, '.*multiLex.*')])">
