@@ -345,11 +345,14 @@
       <xsl:variable name="muref">
         <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='mulabel']/@val"/>
       </xsl:variable>
+      <xsl:variable name="mlexref">
+        <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='multiLex']/@val"/>
+      </xsl:variable>
       <xsl:variable name="classref">
         <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='classification']/@val"/>
       </xsl:variable>
       
-      <xsl:if test="$lexref = '' and $muref = '' and $classref = ''">
+      <xsl:if test="$lexref = '' and $muref = '' and $mlexref = '' and $classref = ''">
         <xsl:message> LEXREF: <xsl:value-of select="$lexref"/>
           <xsl:text> PDGM: </xsl:text>
           <xsl:value-of select="ancestor::pdgm/pdgmlabel"/>
