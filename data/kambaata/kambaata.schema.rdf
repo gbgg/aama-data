@@ -3,6 +3,908 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:aama="http://id.oi.uchicago.edu/aama/2013/"
-	xmlns:aamas="http://id.oi.uchicago.edu/aama/2013/schema/">
+	xmlns:aamas="http://id.oi.uchicago.edu/aama/2013/schema/"
+	xmlns:kam="http://id.oi.uchicago.edu/aama/2013/kambaata/">
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/Kambaata">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Language"/>
+	<rdfs:label>Kambaata</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Cluster">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Lexeme">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Cluster"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/MuExponent">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/muProperty">
+	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Property"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/MuScheme">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Cluster"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Muterm">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Cluster"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Term">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Lexeme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuScheme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Text">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Token">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Accusative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Case"/>
+	<rdfs:label>Accusative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Aff">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity"/>
+	<rdfs:label>Aff</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Affirmative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity"/>
+	<rdfs:label>Affirmative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Benefactive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+	<rdfs:label>Benefactive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/case">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Case">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/case">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Case">
+	<rdfs:label>case exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/case">
+	<rdfs:label>case</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Case"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Case">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/case">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Causative1">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+	<rdfs:label>Causative1</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Causative2">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+	<rdfs:label>Causative2</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/class">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Class">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/class">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Class">
+	<rdfs:label>class exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/class">
+	<rdfs:label>class</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Class">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/class">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Combination">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+	<rdfs:label>Combination</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Common">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender"/>
+	<rdfs:label>Common</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/deixis">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Deixis">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/deixis">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Deixis">
+	<rdfs:label>deixis exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/deixis">
+	<rdfs:label>deixis</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Deixis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Deixis">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/deixis">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Demonstrative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass"/>
+	<rdfs:label>Demonstrative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/DervStem">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/VerbMorphClass"/>
+	<rdfs:label>DervStem</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Far">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Deixis"/>
+	<rdfs:label>Far</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Fem">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender"/>
+	<rdfs:label>Fem</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gender">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gender">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender">
+	<rdfs:label>gender exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gender">
+	<rdfs:label>gender</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gender">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gloss">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Gloss">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gloss">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Text"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Gloss">
+	<rdfs:label>gloss exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/gloss">
+	<rdfs:label>gloss</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Gloss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Gloss">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Imperfect">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>Imperfect</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Imprtv">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>Imprtv</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Independent">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass"/>
+	<rdfs:label>Independent</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Interrogative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass"/>
+	<rdfs:label>Interrogative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/interrogClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/interrogClass">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass">
+	<rdfs:label>interrogClass exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/interrogClass">
+	<rdfs:label>interrogClass</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/interrogClass">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogProHow">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+	<rdfs:label>InterrogProHow</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogProHowMany">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+	<rdfs:label>InterrogProHowMany</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogProWhat">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+	<rdfs:label>InterrogProWhat</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogProWhen">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+	<rdfs:label>InterrogProWhen</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogProWhere">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+	<rdfs:label>InterrogProWhere</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogProWho">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/InterrogClass"/>
+	<rdfs:label>InterrogProWho</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Jussive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>Jussive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/lemma">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Lemma">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/lemma">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Text"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Lemma">
+	<rdfs:label>lemma exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/lemma">
+	<rdfs:label>lemma</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Lemma"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Lemma">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Masc">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender"/>
+	<rdfs:label>Masc</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/mulabel">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Mulabel">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/mulabel">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/Label"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Mulabel">
+	<rdfs:label>mulabel exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/mulabel">
+	<rdfs:label>mulabel</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Mulabel"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Mulabel">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Near">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Deixis"/>
+	<rdfs:label>Near</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Neg">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity"/>
+	<rdfs:label>Neg</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Negative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity"/>
+	<rdfs:label>Negative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Nominative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Case"/>
+	<rdfs:label>Nominative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/number">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Number">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/number">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Number">
+	<rdfs:label>number exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/number">
+	<rdfs:label>number</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Number"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Number">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/number">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Passive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+	<rdfs:label>Passive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/PastProg">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>PastProg</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/PastProgressive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>PastProgressive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/person">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Person">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/person">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Person">
+	<rdfs:label>person exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/person">
+	<rdfs:label>person</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Person"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Person">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/person">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Person1">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Person"/>
+	<rdfs:label>Person1</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Person2">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Person"/>
+	<rdfs:label>Person2</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Person3">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Person"/>
+	<rdfs:label>Person3</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Plural">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Number"/>
+	<rdfs:label>Plural</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/polarity">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/polarity">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity">
+	<rdfs:label>polarity exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/polarity">
+	<rdfs:label>polarity</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Polarity">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/polarity">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Polite">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Gender"/>
+	<rdfs:label>Polite</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/pos">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Pos">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/pos">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Pos">
+	<rdfs:label>pos exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/pos">
+	<rdfs:label>pos</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Pos"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Pos">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/pos">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Possessive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Case"/>
+	<rdfs:label>Possessive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/PresentPerfect">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>PresentPerfect</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/PresentProgressive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>PresentProgressive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/PresPerf">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>PresPerf</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/PresProg">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>PresProg</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Pro">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Pos"/>
+	<rdfs:label>Pro</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/proClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/proClass">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass">
+	<rdfs:label>proClass exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/proClass">
+	<rdfs:label>proClass</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/proClass">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Reduplicated">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Class"/>
+	<rdfs:label>Reduplicated</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/SimplePerf">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>SimplePerf</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/SimplePerfect">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+	<rdfs:label>SimplePerfect</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Singular">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Number"/>
+	<rdfs:label>Singular</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/SubjMarkerTemplates">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/VerbMorphClass"/>
+	<rdfs:label>SubjMarkerTemplates</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Suffix">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/ProClass"/>
+	<rdfs:label>Suffix</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/tam">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/tam">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam">
+	<rdfs:label>tam exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/tam">
+	<rdfs:label>tam</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Tam">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/tam">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Token"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token">
+	<rdfs:label>token exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token">
+	<rdfs:label>token</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Token"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-medialVow">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-medialVow">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-medialVow">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Token"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-medialVow">
+	<rdfs:label>token-medialVow exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-medialVow">
+	<rdfs:label>token-medialVow</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-medialVow"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-medialVow">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-person1">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person1">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-person1">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Token"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person1">
+	<rdfs:label>token-person1 exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-person1">
+	<rdfs:label>token-person1</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person1">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-person2">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person2">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-person2">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Token"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person2">
+	<rdfs:label>token-person2 exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-person2">
+	<rdfs:label>token-person2</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-person2">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-stemFinGem">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-stemFinGem">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-stemFinGem">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Text"/>
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-stemFinGem">
+	<rdfs:label>token-stemFinGem exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/token-stemFinGem">
+	<rdfs:label>token-stemFinGem</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-stemFinGem"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Token-stemFinGem">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/Verb">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/Pos"/>
+	<rdfs:label>Verb</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/verbMorphClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/VerbMorphClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Kambaata"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/verbMorphClass">
+	<rdfs:Domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/VerbMorphClass">
+	<rdfs:label>verbMorphClass exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/verbMorphClass">
+	<rdfs:label>verbMorphClass</rdfs:label>
+	<rdfs:Range rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/VerbMorphClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/VerbMorphClass">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/kambaata/verbMorphClass">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/kambaata/muProperty"/>
+</rdf:Description>
 
 </rdf:RDF>

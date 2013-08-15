@@ -460,6 +460,16 @@
         <xsl:value-of select="@val"/>
         <xsl:text>"</xsl:text>
       </xsl:when>
+      <xsl:when test="@type = 'token-person1'">
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="@val"/>
+        <xsl:text>"</xsl:text>
+      </xsl:when>
+      <xsl:when test="@type = 'token-person2'">
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="@val"/>
+        <xsl:text>"</xsl:text>
+      </xsl:when>
       <xsl:when test="@type = 'token-aux'">
         <xsl:text>"</xsl:text>
         <xsl:value-of select="@val"/>
