@@ -351,7 +351,7 @@
       <xsl:variable name="classref">
         <xsl:value-of select="ancestor::pdgm/common-properties/prop[@type='classification']/@val"/>
       </xsl:variable>
-      
+
       <xsl:if test="$lexref = '' and $muref = '' and $mlexref = '' and $classref = ''">
         <xsl:message> LEXREF: <xsl:value-of select="$lexref"/>
           <xsl:text> PDGM: </xsl:text>
@@ -405,7 +405,7 @@
   <xsl:template match="pdgm/pdgmName"/>
   <xsl:template match="pdgm/note"/>
   <xsl:template match="common-properties"/>
-
+<!--if term doesn't have its own props, end ttl sequence with "."-->
   <!-- ############################################ -->
   <xsl:template match="prop">
 
@@ -827,9 +827,19 @@
     </xsl:if>
     <xsl:if test="position() = last()">
       <xsl:choose>
+        <!--<xsl:when test="ancestor::pdgm/common-properties/prop[@type='multiLex']">        -->
         <xsl:when test="name(..) = 'common-properties'">
-          <xsl:text> ;
+          <xsl:choose>
+            <xsl:when test="../../termcluster/term/prop">
+              <xsl:text> ;
 	</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>
+	.
+</xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:when>
         <xsl:otherwise>
           <xsl:text>
