@@ -3,13 +3,17 @@ prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT DISTINCT ?label ?pred ?lang
+SELECT DISTINCT ?label ?pred ?language
 WHERE {
-GRAPH <http://oi.uchicago.edu/aama/%lang%> {
-      ?pred aama:lang <http://id.oi.uchicago.edu/aama/2013/%Lang%> .
-      ?pred aama:lang ?lang .
-      ?pred rdfs:label ?label .
-#      ?pred rdfs:subClassOf <http://id.oi.uchicago.edu/aama/2013/%Lang%/MuExponent> .
+GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
+      # Following is not necessary if restricting query to a lang's graph
+	  ?pred aamas:lang <http://id.oi.uchicago.edu/aama/2013/%Lang%> .
+      ?pred aamas:lang ?lang .
+      ?lang rdfs:label ?language .
+     ?pred rdfs:label ?label .
+     ?pred rdfs:subClassOf <http://id.oi.uchicago.edu/aama/2013/%lang%/MuExponent> .
+	 # Following can substitute for above if MuExponent/muProperty part of aamas:
+     #?pred rdfs:subClassOf aamas:MuExponent> .
 }}
 ORDER BY ASC(?pred)
 
