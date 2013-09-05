@@ -1,14 +1,11 @@
 #!/bin/bash
-# usage:  fuquery <dir> <qry>
-# where <qry> is a skeleton in <aama>/sparql.  See
-# exponents.local.skel.rq for an example.
+# usage:  fuquery-prop-val.sh <dir> 
+# The template <aama>/sparql/templates is hard-coded into the script.
 
 # Cf. sparql/templates/README.txt
 
 # example:
-#    <aama> $ bin/fuquery.sh data/alaaba sparql/exponents.local.skel.rq
-# example:
-#    <aama> $ bin/fuquery.sh data/oromo sparql/templates/properties.template
+#    <aama> $ bin/fuquery.sh data/alaaba 
 
 . bin/constants.sh
 
@@ -21,11 +18,11 @@ do
     #of=`basename ${2#sparql/templates/}`
 	of=propval.template
 	echo of = $of
-    localqry="sparql/prop-val/${of%.template}.$lang.rq"
+    localqry="tmp/prop-val/${of%.template}.$lang.rq"
 	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
     echo $localqry
-    #sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
-    sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" sparql/templates/propval.template > $localqry
+    sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
+    #sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" sparql/templates/propval.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
 	perl pl/propvaltsv2table.pl $response
 done
