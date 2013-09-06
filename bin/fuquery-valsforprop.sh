@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage:  fuquery-prop-val.sh <dir> 
+# usage:  fuquery-vals-for-prop.sh <dir> prop
 # The template <aama>/sparql/templates is hard-coded into the script.
 
 # Cf. sparql/templates/README.txt
@@ -13,18 +13,21 @@ echo "fuquery.log" > logs/fuquery.log;
 for f in `find $1 -name *.html`
 do
     lang=`basename ${f%-pdgms.html}`
-    Lang="${lang[@]^}"
-    echo querying $Lang $lang
+	type=$2
+    #Lang="${lang[@]^}"
+    echo querying $lang for $type values
     #of=`basename ${2#sparql/templates/}`
-	of=propval.template
-	echo of = $of
+	of=valsforprop.template
+	#out=valsforprop-$type
+	echo out = $out
+	#echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
 	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
-    echo $localqry
+    #echo $localqry
     #sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
-    sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" sparql/templates/propval.template > $localqry
+    sed -e "s/%type%/${type}/g" -e "s/%lang%/${lang}/g" sparql/templates/valsforprop.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	perl pl/propvaltsv2table.pl $response
+	perl pl/valforproptsv2table.pl $response $type
 done
 
 #./s-query \

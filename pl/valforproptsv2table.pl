@@ -6,13 +6,12 @@
 # into a table-like text output for text display 
 # It is invoked by fuquery-prop-val.sh
 
-my ($propvalfile) = @ARGV;
-my $textfile = $propvalfile;
+my ($propvalfile, $type) = @ARGV;
+my $textfile = "valsforprop-".$type.".txt";
 print "pvfile = $propvalfile\n";
-$textfile =~ s/-resp\.tsv/.txt/;
 print "textfile = $textfile\n";
-my $lang = $textfile;
-$lang =~ s/tmp\/prop-val\/.*?\.(.*?)\.txt/\1/;
+my $lang = $propvalfile;
+$lang =~ s/tmp\/prop-val\/.*?\.(.*?)-resp\.tsv/\1/;
 $lang = uc($lang);
 #my $htmlfile = $tsvfile;
 # $htmlfile =~ s/\.tsv/.html/;
@@ -21,8 +20,8 @@ print "Language = $lang\n";
 
 undef $/;
 my ($header, $pdgmrows, $pheader, $vheader, $sheader, $lenp, $lenv, $lens);
-my (@header, @pvrows);
-my (%propvals);
+my (@header, @vrows);
+my (%propvals); #?
 
 open(IN, $propvalfile) or die "cannot open $propvalfile for reading";
 while (<IN>)
@@ -31,37 +30,37 @@ while (<IN>)
 	$data =~ s/"//g;
 	$data =~ s/⊤/ /g;
 	# Get first line for header
-	($header, $pvrows) = split(/\n/, $data, 2);
+	($header, $vrows) = split(/\n/, $data, 2);
 	$header =~ s/\?//g;
 	#$header = "property\tvalue";
 	#print "header = $header\n";
 	#exit;
 	#$header = "schema\t".$header;
-	($pheader, $vheader) =split(/\t/, $header);
-	$sheader = "schema";
+	#($pheader, $vheader) =split(/\t/, $header);
+	#$sheader = "schema";
 	
 	# Initialize colwidths with header
-	$lens = length($sheader);
-	$lenp = length($pheader);
-	$lenv = length($vheader);
+	$lenl = length($lang);
+	$lenp = length($type);
+	$lenv = length($header);
 
-	@pvrows = split '\n', $pvrows;
-    foreach my $pvrow (@pvrows)
+	@vrows = split '\n', $vrows;
+    foreach my $vrow (@vrows)
     {
-		my ($prop, $val) = split('\t', $pvrow);
-		my $proplen = length($prop);
-		my $lv = length($val);
-		my $ls = index($prop, "/");
-		my $lp = $proplen - $ls;
-		if ($ls > $lens) {$lens = $ls;}
-		if ($lp > $lenp) {$lenp = $lp;}
+		#my ($prop, $val) = split('\t', $pvrow);
+		#my $proplen = length($prop);
+		my $lv = length($vrow);
+		#my $ls = index($prop, "/");
+		#my $lp = $proplen - $ls;
+		#if ($ls > $lens) {$lens = $ls;}
+		#if ($lp > $lenp) {$lenp = $lp;}
 		if ($lv > $lenv) {$lenv = $lv;}
-		$propvals{$prop} .= $val.' ';
+		#$propvals{$prop} .= $val.' ';
 	}
 }
 close(IN); 
-my $format ="| %-".$lens."s | %-".$lenp."s | %s\n";
-my $tablewidth = $lens + $lenp + $lenv + 15;
+my $format ="| %-".$lenl."s | %-".$lenp."s | %s\n";
+my $tablewidth = $lenl + $lenp + $lenv + 15;
 
 # print pdgm tsv data and header to tab-delimited tsv file
 #unlink $tsvfile;
@@ -69,12 +68,12 @@ my $tablewidth = $lens + $lenp + $lenv + 15;
 #select(OUT);
 print "-" x $tablewidth;
 print "\n";
-printf $format, $sheader, $pheader, $vheader;
+printf $format, "language, property, value";
 print "=" x $tablewidth;
 print "\n";
-
+[9/10/13 -- BEGIN HERE]
 my ($schema, $property);
-foreach my $prop (sort keys %propvals)
+foreach my $value (sort @vrows)
 {
 	if ($prop =~ /\//)
 	{
