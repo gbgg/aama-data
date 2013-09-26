@@ -5,19 +5,17 @@ PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
 PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 
-#SELECT DISTINCT ?g ?language ?prop1
-SELECT DISTINCT ?g ?tam
+SELECT DISTINCT  ?language ?prop1
 WHERE 
 {
-	GRAPH ?g {
-		#?s ?p ?o ;
-		?s aama:tam  ?tam .
-		#aama:person ?person ;
-		#aamas:lang ?lang .
-		#?lang rdfs:label ?language .
-	   #?p rdfs:label ?prop1 .
-	   #?o rdfs:label ?val1  .
-		#FILTER (?p NOT IN ( aamas:lang, aama:gender, aama:number, aama:person, aama:pos, rdf:type))
-	}
+	?s ?p ?o ;
+    aama:tam  ?tam ;
+	aama:person ?person ;
+	aamas:lang ?lang .
+	?lang rdfs:label ?language .
+   ?p rdfs:label ?prop1 .
+   ?o rdfs:label ?val1  .
+  	FILTER (?p NOT IN ( aamas:lang, aama:langVar, aama:gender, aama:number, aama:person, aama:pos, rdf:type))
+ 
 }
-#ORDER BY  ?language ?prop1
+ORDER BY  ?language ?variant ?prop1

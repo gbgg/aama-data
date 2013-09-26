@@ -17,8 +17,8 @@
 
 use File::Copy;
 my ($qstring, $queryfile) = @ARGV;
-#print "Query string = $qstring\n";
 #print "Query file = $queryfile\n";
+#print "Query string = $qstring\n";
 my ($langname, $specifiedprops) = split(/\+/, $qstring);
 my ($txtfile) = "sparql/pdgms/pdgm-finite-props.txt";
 #my $queryfile = "sparql/pdgms/output/$langname";
@@ -48,7 +48,7 @@ while (<IN>)
 
 my ($lang, $qprops) = split(/,\s*/, $queryprops, 2);
 #print "qprops = $qprops\n";
-my $Lang = ucfirst($lang);
+#my $lang = ucfirst($lang);
 my $Langname = ucfirst($langname);
 my @select = split(/,\s* /, $qprops);
 my $selection = "";
@@ -71,19 +71,18 @@ print "PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>\n";
 print "PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>\n";
 print "PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>\n";
 print "PREFIX $lang:   <http://id.oi.uchicago.edu/aama/2013/$langname/>\n";
-print "PREFIX $Lang:   <http://id.oi.uchicago.edu/aama/2013/$Langname/>\n";
 
 print "\n";
 # Iterate through @select if want all values in table
 print "SELECT $selection ?num ?pers ?gen ?token\n";
 print "WHERE\n{\n";
 print "\tGRAPH aamag:$langname\n\t{\n";
-print "\t\t?s\t$lang:pos\t$Lang:Verb . \n";
-print "\t\t?s\taama:lang\taama:$Langname .\n";
+print "\t\t?s\t$lang:pos\t$lang:Verb . \n";
+print "\t\t?s\taamas:lang\taama:$Langname .\n";
 # Iterate through @select if want all values in table
 foreach my $specifiedprop (sort keys %specifiedprops)
 {
-	print "\t\t?s\t$lang:$specifiedprop\t$Lang:$specifiedprops{$specifiedprop} . \n";
+	print "\t\t?s\t$lang:$specifiedprop\t$lang:$specifiedprops{$specifiedprop} . \n";
 }
 foreach my $queryprop (@queryproplist) 
 {

@@ -65,8 +65,8 @@ my $tablewidth = $lens + $lenp + $lenv + 15;
 
 # print pdgm tsv data and header to tab-delimited tsv file
 #unlink $tsvfile;
-#open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
-#select(OUT);
+open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
+select(OUT);
 print "-" x $tablewidth;
 print "\n";
 printf $format, $sheader, $pheader, $vheader;

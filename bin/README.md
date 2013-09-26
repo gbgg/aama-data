@@ -30,7 +30,7 @@
 			> Generates and runs <aama>/sparql/exponents.afar.rq
 		* fuquery-default.sh
 		* fuquery-gen.sh: runs SOH s-query on specific sparql query file. Cf. query files in sparql/rq-ru/ and sparql/pdgms).
-		* fuquery-prop-val.sh
+		* fuquery-prop-val.sh: fuquery.sh with template specialized for list of props and vals in a language
 		* fuquery-trial1.sh
 		* fuquery-valsforprop.sh
 		* fuqueries.sh: runs
