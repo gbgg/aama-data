@@ -11,9 +11,7 @@
   <!-- ################################################################ -->
   <!--04/19/13: gbgg added pdgmlabel to output-->
   <!--09/23/13: gbgg 
-		This program is adapted from lexcheck-gg.xsl  to pick out terms which do not
-         have a unitary "token" property (many of them will have a "token-. . ." property). tokencheckadd.xsl has been created as a second
-		 pass to create a "token" property from succession of "token-..."s) -->
+		This program is adapted from lexcheck-gg.xsl  to pick out terms which do not have a unitary "token" property (many of them will have a "token-. . ." property). A group of adhoc Find/Replace patterns have been created (bin/token-insert.txt, in lieu of a tokencheckadd.xs)l  to insert a "token" property from succession of "token-..."s) -->
 		 
     <xsl:template match="/">
     <xsl:value-of select="$f"/>
@@ -23,13 +21,14 @@
 
   <xsl:template match="term">
     <xsl:if
-      test="not(prop[@type='token']) ">
+      test="not(prop[@type='token']) and not(../../common-properties/prop[@type='token'])">
       <xsl:message> FAIL: pid=<xsl:value-of select="../../pdgmlabel"/>
       </xsl:message>
       <xsl:value-of select="../../pdgmlabel"/>
-	<xsl:text> (</xsl:text>
+	  <xsl:text>&#10;</xsl:text>
+	<!--<xsl:text> (</xsl:text>
       <xsl:value-of select="../../@pid"/>
-	<xsl:text>)&#10;</xsl:text>
+	<xsl:text>)&#10;</xsl:text>-->
     </xsl:if>
   </xsl:template>
 </xsl:stylesheet>

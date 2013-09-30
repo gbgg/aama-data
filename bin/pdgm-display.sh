@@ -45,7 +45,7 @@ echo "Localqry = $localqry"
 echo "Response = $response"
 #echo "Title = $title"
 
-mv sparql/pdgms/output/$lang* sparql/pdgms/output/back/
+#mv sparql/pdgms/output/$lang* sparql/pdgms/output/back/
 #mv *.tsv back/
 perl pl/qstring2query.pl $qstring $localqry
 

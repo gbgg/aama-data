@@ -8,7 +8,7 @@
 
 my ($propvalfile) = @ARGV;
 my $textfile = $propvalfile;
-print "pvfile = $propvalfile\n";
+print "tsvfile = $propvalfile\n";
 $textfile =~ s/-resp\.tsv/.txt/;
 print "textfile = $textfile\n";
 my $lang = $textfile;
@@ -16,7 +16,7 @@ $lang =~ s/tmp\/prop-val\/.*?\.(.*?)\.txt/\1/;
 $lang = uc($lang);
 #my $htmlfile = $tsvfile;
 # $htmlfile =~ s/\.tsv/.html/;
-print "Language = $lang\n";
+#print "Language = $lang\n";
 #print "HTML file = $htmlfile\n\n";
 
 undef $/;
@@ -62,6 +62,38 @@ while (<IN>)
 close(IN); 
 my $format ="| %-".$lens."s | %-".$lenp."s | %s\n";
 my $tablewidth = $lens + $lenp + $lenv + 15;
+
+# print pdgm table file to STDOUT
+select STDOUT;
+#print "Format= $format\n";
+#print "Tablewidth= $tablewidth\n\n";
+print "-" x $tablewidth;
+print "\n";
+printf $format, $sheader, $pheader, $vheader;
+print "=" x $tablewidth;
+print "\n";
+my ($schema, $property);
+foreach my $prop (sort keys %propvals)
+{
+	if ($prop =~ /\//)
+	{
+		($schema, $property) = split(/\//, $prop);
+	} else
+	{
+		$schema = ' ';
+		$property = $prop;
+	}
+	my $vals = $propvals{$prop};
+	my ($firstval, $restvals) = split(/ /, $vals, 2);
+	my @restvals = split(/ /, $restvals);
+	printf $format, $schema, $property, $firstval;
+	foreach my $restval (@restvals)
+	{
+		printf $format, " ", " ", $restval;
+	}
+}
+print "-" x $tablewidth;
+print "\n";
 
 # print pdgm tsv data and header to tab-delimited tsv file
 #unlink $tsvfile;

@@ -16,13 +16,13 @@ do
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang}
-    echo querying $Lang $lang -- $abbrev
+    #echo querying $Lang $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
 	of=pdgm-finite-props.template
-	echo of = $of
+	#echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
 	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
-    echo $localqry
+    #echo $localqry
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-finite-props.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response

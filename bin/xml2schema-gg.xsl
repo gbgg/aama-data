@@ -128,16 +128,16 @@
       <xsl:otherwise>
         <xsl:variable name="prop">
           <xsl:choose>
-            <xsl:when test="fn:matches(@type, 'auxAdjunct')"/>
-            <xsl:when test="fn:matches(@type, 'attributes')"/>
+            <!--<xsl:when test="fn:matches(@type, 'auxAdjunct')"/>
+            <xsl:when test="fn:matches(@type, 'attributes')"/>-->
             <xsl:when test="fn:matches(@type, '[eE]xample')"/>
             <xsl:when test="fn:matches(@type, '[gG]loss')"/>
             <xsl:when test="fn:matches(@type, '[lL]emma')"/>
             <xsl:when test="fn:matches(@type, '[lL]abel')"/>
             <xsl:when test="fn:matches(@type, 'note')"/>
-            <xsl:when test="fn:matches(@type, 'stem')"/>
+            <!--<xsl:when test="fn:matches(@type, 'stem')"/>
             <xsl:when test="fn:matches(@type, 'structAux')"/>
-            <xsl:when test="fn:matches(@type, 'structMain')"/>
+            <xsl:when test="fn:matches(@type, 'structMain')"/>-->
             <xsl:when test="fn:matches(@type, '[tT]oken.*')"/>
             <xsl:when test="fn:matches(@val, '_NULL')"/>
             <xsl:otherwise>
@@ -153,12 +153,12 @@
         <xsl:value-of select="@type"/>
 
         <xsl:choose>
-          <xsl:when test="fn:matches(@type, 'attributes')">
+          <!--<xsl:when test="fn:matches(@type, 'attributes')">
             <xsl:text> rdf:type aamas:Text </xsl:text>
           </xsl:when>
           <xsl:when test="fn:matches(@type, 'auxAdjunct')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
-          </xsl:when>
+          </xsl:when>-->
           <xsl:when test="fn:matches(@type, '[eE]xample')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
           </xsl:when>
@@ -174,7 +174,7 @@
           <xsl:when test="fn:matches(@type, 'note')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
           </xsl:when>
-          <xsl:when test="fn:matches(@type, 'stem')">
+          <!--<xsl:when test="fn:matches(@type, 'stem')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
           </xsl:when>
           <xsl:when test="fn:matches(@type, 'structAux')">
@@ -182,7 +182,7 @@
           </xsl:when>
           <xsl:when test="fn:matches(@type, 'structMain')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
-          </xsl:when>
+          </xsl:when>-->
           <xsl:when test="fn:matches(@type, '[tT]oken.*')">
             <xsl:text> rdf:type aamas:Token</xsl:text>
           </xsl:when>
@@ -241,16 +241,16 @@
         <xsl:text> .&#10;</xsl:text>
 
         <xsl:choose>
-          <xsl:when test="fn:matches(@type, 'attributes')"/>
-          <xsl:when test="fn:matches(@type, 'auxAdjunct')"/>
+          <!--<xsl:when test="fn:matches(@type, 'attributes')"/>
+          <xsl:when test="fn:matches(@type, 'auxAdjunct')"/>-->
           <xsl:when test="fn:matches(@type, '[eE]xample')"/>
           <xsl:when test="fn:matches(@type, '[gG]loss')"/>
           <xsl:when test="fn:matches(@type, '[lL]emma')"/>
           <xsl:when test="fn:matches(@type, '[lL]abel')"/>
           <xsl:when test="fn:matches(@type, 'note')"/>
-          <xsl:when test="fn:matches(@type, 'stem')"/>
+          <!--<xsl:when test="fn:matches(@type, 'stem')"/>
           <xsl:when test="fn:matches(@type, 'structAux')"/>
-          <xsl:when test="fn:matches(@type, 'structMain')"/>
+          <xsl:when test="fn:matches(@type, 'structMain')"/>-->
           <xsl:when test="fn:matches(@type, '[tT]oken')"/>
           <xsl:when test="fn:matches(@val, '_NULL')"/>
           <xsl:otherwise>

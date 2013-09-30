@@ -1,9 +1,10 @@
-﻿@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
 @prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
-@prefix orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/> .
 
+    
+@prefix orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/> .
 aama:Oromo a aamas:Language .
 aama:Oromo rdfs:label "Oromo" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
@@ -17,25 +18,6 @@ aamas:Term rdf:type aamas:MuScheme .
 aamas:Term rdf:type aamas:Muterm .
 aamas:Text rdfs:subClassOf rdfs:Class .
 aamas:Token rdfs:subClassOf rdfs:Class .
-
-aamas:lemma rdf:type aamas:Text .
-aamas:lemma rdfs:Domain aamas:Lexeme .
-aamas:Lemma rdfs:label "lemma exponents" .
-aamas:lemma rdfs:label "lemma" .
-aamas:lemma rdfs:Range aamas:Lemma .
-aamas:Lemma rdfs:subClassOf aamas:MuExponent .
-
-aamas:gloss rdf:type aamas:Text .
-aamas:gloss rdfs:Domain aamas:Lexeme .
-aamas:Gloss rdfs:label "gloss exponents" .
-aamas:gloss rdfs:label "gloss" .
-aamas:gloss rdfs:Range aamas:Gloss .
-aamas:Gloss rdfs:subClassOf aamas:MuExponent .
-
-
-
-
-
 orm:Absolutive aamas:lang aama:Oromo .
 orm:Absolutive rdf:type orm:Case .
 orm:Absolutive rdfs:label "Absolutive" .
@@ -110,7 +92,14 @@ orm:gender rdfs:label "gender" .
 orm:gender rdfs:Range orm:Gender .
 orm:Gender rdfs:subClassOf orm:MuExponent .
 orm:gender rdfs:subPropertyOf orm:muProperty .
-
+orm:gloss aamas:lang aama:Oromo .
+orm:Gloss aamas:lang aama:Oromo .
+orm:gloss rdf:type aamas:Text .
+orm:gloss rdfs:Domain aamas:Term .
+orm:Gloss rdfs:label "gloss exponents" .
+orm:gloss rdfs:label "gloss" .
+orm:gloss rdfs:Range orm:Gloss .
+orm:Gloss rdfs:subClassOf orm:MuExponent .
 orm:Ha-Verb_pres-aff-sub aamas:lang aama:Oromo .
 orm:Ha-Verb_pres-aff-sub rdf:type orm:Structure .
 orm:Ha-Verb_pres-aff-sub rdfs:label "ha-Verb_pres-aff-sub" .
@@ -126,7 +115,14 @@ orm:Independent rdfs:label "Independent" .
 orm:Jussive aamas:lang aama:Oromo .
 orm:Jussive rdf:type orm:Tam .
 orm:Jussive rdfs:label "Jussive" .
-
+orm:lemma aamas:lang aama:Oromo .
+orm:Lemma aamas:lang aama:Oromo .
+orm:lemma rdf:type aamas:Text .
+orm:lemma rdfs:Domain aamas:Term .
+orm:Lemma rdfs:label "lemma exponents" .
+orm:lemma rdfs:label "lemma" .
+orm:lemma rdfs:Range orm:Lemma .
+orm:Lemma rdfs:subClassOf orm:MuExponent .
 orm:M aamas:lang aama:Oromo .
 orm:M rdf:type orm:DerivedStem .
 orm:M rdfs:label "M" .
