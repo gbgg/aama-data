@@ -10,7 +10,7 @@ aama:Kemant rdfs:label "Kemant" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -21,6 +21,9 @@ aamas:Token rdfs:subClassOf rdfs:Class .
 kem:Affirmative aamas:lang aama:Kemant .
 kem:Affirmative rdf:type kem:Polarity .
 kem:Affirmative rdfs:label "Affirmative" .
+kem:Affix aamas:lang aama:Kemant .
+kem:Affix rdf:type kem:FormType .
+kem:Affix rdfs:label "Affix" .
 kem:AgentNoun aamas:lang aama:Kemant .
 kem:AGENTNOUN aamas:lang aama:Kemant .
 kem:AgentNoun rdf:type kem:FiniteForm .
@@ -29,10 +32,10 @@ kem:AgentNoun rdfs:label "AgentNoun" .
 kem:AGENTNOUN rdfs:label "AGENTNOUN" .
 kem:aspect aamas:lang aama:Kemant .
 kem:Aspect aamas:lang aama:Kemant .
-kem:aspect rdfs:Domain aamas:Term .
+kem:aspect rdfs:domain aamas:Term .
 kem:Aspect rdfs:label "aspect exponents" .
 kem:aspect rdfs:label "aspect" .
-kem:aspect rdfs:Range kem:Aspect .
+kem:aspect rdfs:range kem:Aspect .
 kem:Aspect rdfs:subClassOf kem:MuExponent .
 kem:aspect rdfs:subPropertyOf kem:muProperty .
 kem:A-subordinate aamas:lang aama:Kemant .
@@ -59,10 +62,10 @@ kem:Copula rdf:type kem:PdgmSubType .
 kem:Copula rdfs:label "Copula" .
 kem:derivedStem aamas:lang aama:Kemant .
 kem:DerivedStem aamas:lang aama:Kemant .
-kem:derivedStem rdfs:Domain aamas:Term .
+kem:derivedStem rdfs:domain aamas:Term .
 kem:DerivedStem rdfs:label "derivedStem exponents" .
 kem:derivedStem rdfs:label "derivedStem" .
-kem:derivedStem rdfs:Range kem:DerivedStem .
+kem:derivedStem rdfs:range kem:DerivedStem .
 kem:DerivedStem rdfs:subClassOf kem:MuExponent .
 kem:derivedStem rdfs:subPropertyOf kem:muProperty .
 kem:DervStem aamas:lang aama:Kemant .
@@ -83,29 +86,37 @@ kem:Fem rdf:type kem:GenderHeadRel .
 kem:Fem rdfs:label "Fem" .
 kem:finiteForm aamas:lang aama:Kemant .
 kem:FiniteForm aamas:lang aama:Kemant .
-kem:finiteForm rdfs:Domain aamas:Term .
+kem:finiteForm rdfs:domain aamas:Term .
 kem:FiniteForm rdfs:label "finiteForm exponents" .
 kem:finiteForm rdfs:label "finiteForm" .
-kem:finiteForm rdfs:Range kem:FiniteForm .
+kem:finiteForm rdfs:range kem:FiniteForm .
 kem:FiniteForm rdfs:subClassOf kem:MuExponent .
 kem:finiteForm rdfs:subPropertyOf kem:muProperty .
 kem:FiniteVerb aamas:lang aama:Kemant .
 kem:FiniteVerb rdf:type kem:PdgmSubType .
 kem:FiniteVerb rdfs:label "FiniteVerb" .
+kem:formType aamas:lang aama:Kemant .
+kem:FormType aamas:lang aama:Kemant .
+kem:formType rdfs:domain aamas:Term .
+kem:FormType rdfs:label "formType exponents" .
+kem:formType rdfs:label "formType" .
+kem:formType rdfs:range kem:FormType .
+kem:FormType rdfs:subClassOf kem:MuExponent .
+kem:formType rdfs:subPropertyOf kem:muProperty .
 kem:gender aamas:lang aama:Kemant .
 kem:Gender aamas:lang aama:Kemant .
-kem:gender rdfs:Domain aamas:Term .
+kem:gender rdfs:domain aamas:Term .
 kem:Gender rdfs:label "gender exponents" .
 kem:gender rdfs:label "gender" .
-kem:gender rdfs:Range kem:Gender .
+kem:gender rdfs:range kem:Gender .
 kem:Gender rdfs:subClassOf kem:MuExponent .
 kem:gender rdfs:subPropertyOf kem:muProperty .
 kem:genderHeadRel aamas:lang aama:Kemant .
 kem:GenderHeadRel aamas:lang aama:Kemant .
-kem:genderHeadRel rdfs:Domain aamas:Term .
+kem:genderHeadRel rdfs:domain aamas:Term .
 kem:GenderHeadRel rdfs:label "genderHeadRel exponents" .
 kem:genderHeadRel rdfs:label "genderHeadRel" .
-kem:genderHeadRel rdfs:Range kem:GenderHeadRel .
+kem:genderHeadRel rdfs:range kem:GenderHeadRel .
 kem:GenderHeadRel rdfs:subClassOf kem:MuExponent .
 kem:genderHeadRel rdfs:subPropertyOf kem:muProperty .
 kem:Gerund aamas:lang aama:Kemant .
@@ -114,10 +125,10 @@ kem:Gerund rdfs:label "Gerund" .
 kem:gloss aamas:lang aama:Kemant .
 kem:Gloss aamas:lang aama:Kemant .
 kem:gloss rdf:type aamas:Text .
-kem:gloss rdfs:Domain aamas:Term .
+kem:gloss rdfs:domain aamas:Term .
 kem:Gloss rdfs:label "gloss exponents" .
 kem:gloss rdfs:label "gloss" .
-kem:gloss rdfs:Range kem:Gloss .
+kem:gloss rdfs:range kem:Gloss .
 kem:Gloss rdfs:subClassOf kem:MuExponent .
 kem:Imperative aamas:lang aama:Kemant .
 kem:Imperative rdf:type kem:Tam .
@@ -147,10 +158,10 @@ kem:Jussive2 rdfs:label "Jussive2" .
 kem:lemma aamas:lang aama:Kemant .
 kem:Lemma aamas:lang aama:Kemant .
 kem:lemma rdf:type aamas:Text .
-kem:lemma rdfs:Domain aamas:Term .
+kem:lemma rdfs:domain aamas:Term .
 kem:Lemma rdfs:label "lemma exponents" .
 kem:lemma rdfs:label "lemma" .
-kem:lemma rdfs:Range kem:Lemma .
+kem:lemma rdfs:range kem:Lemma .
 kem:Lemma rdfs:subClassOf kem:MuExponent .
 kem:M aamas:lang aama:Kemant .
 kem:M rdf:type kem:DerivedStem .
@@ -163,17 +174,17 @@ kem:MuExponent rdfs:subClassOf aamas:MuExponent .
 kem:mulabel aamas:lang aama:Kemant .
 kem:Mulabel aamas:lang aama:Kemant .
 kem:mulabel rdf:type aama:Label .
-kem:mulabel rdfs:Domain aamas:Term .
+kem:mulabel rdfs:domain aamas:Term .
 kem:Mulabel rdfs:label "mulabel exponents" .
 kem:mulabel rdfs:label "mulabel" .
-kem:mulabel rdfs:Range kem:Mulabel .
+kem:mulabel rdfs:range kem:Mulabel .
 kem:Mulabel rdfs:subClassOf kem:MuExponent .
 kem:multiLex aamas:lang aama:Kemant .
 kem:MultiLex aamas:lang aama:Kemant .
-kem:multiLex rdfs:Domain aamas:Term .
+kem:multiLex rdfs:domain aamas:Term .
 kem:MultiLex rdfs:label "multiLex exponents" .
 kem:multiLex rdfs:label "multiLex" .
-kem:multiLex rdfs:Range kem:MultiLex .
+kem:multiLex rdfs:range kem:MultiLex .
 kem:MultiLex rdfs:subClassOf kem:MuExponent .
 kem:multiLex rdfs:subPropertyOf kem:muProperty .
 kem:muProperty rdfs:subPropertyOf aamas:muProperty .
@@ -185,10 +196,10 @@ kem:Noun rdf:type kem:Pos .
 kem:Noun rdfs:label "Noun" .
 kem:nounClass aamas:lang aama:Kemant .
 kem:NounClass aamas:lang aama:Kemant .
-kem:nounClass rdfs:Domain aamas:Term .
+kem:nounClass rdfs:domain aamas:Term .
 kem:NounClass rdfs:label "nounClass exponents" .
 kem:nounClass rdfs:label "nounClass" .
-kem:nounClass rdfs:Range kem:NounClass .
+kem:nounClass rdfs:range kem:NounClass .
 kem:NounClass rdfs:subClassOf kem:MuExponent .
 kem:nounClass rdfs:subPropertyOf kem:muProperty .
 kem:N-subordinate aamas:lang aama:Kemant .
@@ -196,34 +207,34 @@ kem:N-subordinate rdf:type kem:Tam .
 kem:N-subordinate rdfs:label "N-subordinate" .
 kem:number aamas:lang aama:Kemant .
 kem:Number aamas:lang aama:Kemant .
-kem:number rdfs:Domain aamas:Term .
+kem:number rdfs:domain aamas:Term .
 kem:Number rdfs:label "number exponents" .
 kem:number rdfs:label "number" .
-kem:number rdfs:Range kem:Number .
+kem:number rdfs:range kem:Number .
 kem:Number rdfs:subClassOf kem:MuExponent .
 kem:number rdfs:subPropertyOf kem:muProperty .
 kem:numHeadRel aamas:lang aama:Kemant .
 kem:NumHeadRel aamas:lang aama:Kemant .
-kem:numHeadRel rdfs:Domain aamas:Term .
+kem:numHeadRel rdfs:domain aamas:Term .
 kem:NumHeadRel rdfs:label "numHeadRel exponents" .
 kem:numHeadRel rdfs:label "numHeadRel" .
-kem:numHeadRel rdfs:Range kem:NumHeadRel .
+kem:numHeadRel rdfs:range kem:NumHeadRel .
 kem:NumHeadRel rdfs:subClassOf kem:MuExponent .
 kem:numHeadRel rdfs:subPropertyOf kem:muProperty .
 kem:pdgmSubType aamas:lang aama:Kemant .
 kem:PdgmSubType aamas:lang aama:Kemant .
-kem:pdgmSubType rdfs:Domain aamas:Term .
+kem:pdgmSubType rdfs:domain aamas:Term .
 kem:PdgmSubType rdfs:label "pdgmSubType exponents" .
 kem:pdgmSubType rdfs:label "pdgmSubType" .
-kem:pdgmSubType rdfs:Range kem:PdgmSubType .
+kem:pdgmSubType rdfs:range kem:PdgmSubType .
 kem:PdgmSubType rdfs:subClassOf kem:MuExponent .
 kem:pdgmSubType rdfs:subPropertyOf kem:muProperty .
 kem:pdgmType aamas:lang aama:Kemant .
 kem:PdgmType aamas:lang aama:Kemant .
-kem:pdgmType rdfs:Domain aamas:Term .
+kem:pdgmType rdfs:domain aamas:Term .
 kem:PdgmType rdfs:label "pdgmType exponents" .
 kem:pdgmType rdfs:label "pdgmType" .
-kem:pdgmType rdfs:Range kem:PdgmType .
+kem:pdgmType rdfs:range kem:PdgmType .
 kem:PdgmType rdfs:subClassOf kem:MuExponent .
 kem:pdgmType rdfs:subPropertyOf kem:muProperty .
 kem:Perfective aamas:lang aama:Kemant .
@@ -235,10 +246,10 @@ kem:PerfectiveComp rdf:type kem:Tam .
 kem:PerfectiveComp rdfs:label "PerfectiveComp" .
 kem:person aamas:lang aama:Kemant .
 kem:Person aamas:lang aama:Kemant .
-kem:person rdfs:Domain aamas:Term .
+kem:person rdfs:domain aamas:Term .
 kem:Person rdfs:label "person exponents" .
 kem:person rdfs:label "person" .
-kem:person rdfs:Range kem:Person .
+kem:person rdfs:range kem:Person .
 kem:Person rdfs:subClassOf kem:MuExponent .
 kem:person rdfs:subPropertyOf kem:muProperty .
 kem:Person1 aamas:lang aama:Kemant .
@@ -256,26 +267,26 @@ kem:Plural rdf:type kem:NumHeadRel .
 kem:Plural rdfs:label "Plural" .
 kem:polarity aamas:lang aama:Kemant .
 kem:Polarity aamas:lang aama:Kemant .
-kem:polarity rdfs:Domain aamas:Term .
+kem:polarity rdfs:domain aamas:Term .
 kem:Polarity rdfs:label "polarity exponents" .
 kem:polarity rdfs:label "polarity" .
-kem:polarity rdfs:Range kem:Polarity .
+kem:polarity rdfs:range kem:Polarity .
 kem:Polarity rdfs:subClassOf kem:MuExponent .
 kem:polarity rdfs:subPropertyOf kem:muProperty .
 kem:pos aamas:lang aama:Kemant .
 kem:Pos aamas:lang aama:Kemant .
-kem:pos rdfs:Domain aamas:Term .
+kem:pos rdfs:domain aamas:Term .
 kem:Pos rdfs:label "pos exponents" .
 kem:pos rdfs:label "pos" .
-kem:pos rdfs:Range kem:Pos .
+kem:pos rdfs:range kem:Pos .
 kem:Pos rdfs:subClassOf kem:MuExponent .
 kem:pos rdfs:subPropertyOf kem:muProperty .
 kem:proClass aamas:lang aama:Kemant .
 kem:ProClass aamas:lang aama:Kemant .
-kem:proClass rdfs:Domain aamas:Term .
+kem:proClass rdfs:domain aamas:Term .
 kem:ProClass rdfs:label "proClass exponents" .
 kem:proClass rdfs:label "proClass" .
-kem:proClass rdfs:Range kem:ProClass .
+kem:proClass rdfs:range kem:ProClass .
 kem:ProClass rdfs:subClassOf kem:MuExponent .
 kem:proClass rdfs:subPropertyOf kem:muProperty .
 kem:Pronoun aamas:lang aama:Kemant .
@@ -283,10 +294,10 @@ kem:Pronoun rdf:type kem:Pos .
 kem:Pronoun rdfs:label "Pronoun" .
 kem:proSet aamas:lang aama:Kemant .
 kem:ProSet aamas:lang aama:Kemant .
-kem:proSet rdfs:Domain aamas:Term .
+kem:proSet rdfs:domain aamas:Term .
 kem:ProSet rdfs:label "proSet exponents" .
 kem:proSet rdfs:label "proSet" .
-kem:proSet rdfs:Range kem:ProSet .
+kem:proSet rdfs:range kem:ProSet .
 kem:ProSet rdfs:subClassOf kem:MuExponent .
 kem:proSet rdfs:subPropertyOf kem:muProperty .
 kem:ProSetA aamas:lang aama:Kemant .
@@ -316,60 +327,52 @@ kem:SubjMarker rdf:type kem:PdgmSubType .
 kem:SubjMarker rdfs:label "SubjMarker" .
 kem:tam aamas:lang aama:Kemant .
 kem:Tam aamas:lang aama:Kemant .
-kem:tam rdfs:Domain aamas:Term .
+kem:tam rdfs:domain aamas:Term .
 kem:Tam rdfs:label "tam exponents" .
 kem:tam rdfs:label "tam" .
-kem:tam rdfs:Range kem:Tam .
+kem:tam rdfs:range kem:Tam .
 kem:Tam rdfs:subClassOf kem:MuExponent .
 kem:tam rdfs:subPropertyOf kem:muProperty .
 kem:token aamas:lang aama:Kemant .
 kem:Token aamas:lang aama:Kemant .
 kem:token rdf:type aamas:Token .
-kem:token rdfs:Domain aamas:Term .
+kem:token rdfs:domain aamas:Term .
 kem:Token rdfs:label "token exponents" .
 kem:token rdfs:label "token" .
-kem:token rdfs:Range kem:Token .
+kem:token rdfs:range kem:Token .
 kem:Token rdfs:subClassOf kem:MuExponent .
-kem:token1 aamas:lang aama:Kemant .
-kem:Token1 aamas:lang aama:Kemant .
-kem:token1 rdf:type aamas:Token .
-kem:token1 rdfs:Domain aamas:Term .
-kem:Token1 rdfs:label "token1 exponents" .
-kem:token1 rdfs:label "token1" .
-kem:token1 rdfs:Range kem:Token1 .
-kem:Token1 rdfs:subClassOf kem:MuExponent .
-kem:token2 aamas:lang aama:Kemant .
-kem:Token2 aamas:lang aama:Kemant .
-kem:token2 rdf:type aamas:Token .
-kem:token2 rdfs:Domain aamas:Term .
-kem:Token2 rdfs:label "token2 exponents" .
-kem:token2 rdfs:label "token2" .
-kem:token2 rdfs:Range kem:Token2 .
-kem:Token2 rdfs:subClassOf kem:MuExponent .
+kem:token-1 aamas:lang aama:Kemant .
+kem:Token-1 aamas:lang aama:Kemant .
+kem:token-1 rdf:type aamas:Token .
+kem:token-1 rdfs:domain aamas:Term .
+kem:Token-1 rdfs:label "token-1 exponents" .
+kem:token-1 rdfs:label "token-1" .
+kem:token-1 rdfs:range kem:Token-1 .
+kem:Token-1 rdfs:subClassOf kem:MuExponent .
+kem:token-2 aamas:lang aama:Kemant .
+kem:Token-2 aamas:lang aama:Kemant .
+kem:token-2 rdf:type aamas:Token .
+kem:token-2 rdfs:domain aamas:Term .
+kem:Token-2 rdfs:label "token-2 exponents" .
+kem:token-2 rdfs:label "token-2" .
+kem:token-2 rdfs:range kem:Token-2 .
+kem:Token-2 rdfs:subClassOf kem:MuExponent .
 kem:token-baseForm aamas:lang aama:Kemant .
 kem:Token-baseForm aamas:lang aama:Kemant .
 kem:token-baseForm rdf:type aamas:Token .
-kem:token-baseForm rdfs:Domain aamas:Term .
+kem:token-baseForm rdfs:domain aamas:Term .
 kem:Token-baseForm rdfs:label "token-baseForm exponents" .
 kem:token-baseForm rdfs:label "token-baseForm" .
-kem:token-baseForm rdfs:Range kem:Token-baseForm .
+kem:token-baseForm rdfs:range kem:Token-baseForm .
 kem:Token-baseForm rdfs:subClassOf kem:MuExponent .
 kem:token-numGloss aamas:lang aama:Kemant .
 kem:Token-numGloss aamas:lang aama:Kemant .
 kem:token-numGloss rdf:type aamas:Text .
-kem:token-numGloss rdfs:Domain aamas:Term .
+kem:token-numGloss rdfs:domain aamas:Term .
 kem:Token-numGloss rdfs:label "token-numGloss exponents" .
 kem:token-numGloss rdfs:label "token-numGloss" .
-kem:token-numGloss rdfs:Range kem:Token-numGloss .
+kem:token-numGloss rdfs:range kem:Token-numGloss .
 kem:Token-numGloss rdfs:subClassOf kem:MuExponent .
-kem:tokenType aamas:lang aama:Kemant .
-kem:TokenType aamas:lang aama:Kemant .
-kem:tokenType rdf:type aamas:Token .
-kem:tokenType rdfs:Domain aamas:Term .
-kem:TokenType rdfs:label "tokenType exponents" .
-kem:tokenType rdfs:label "tokenType" .
-kem:tokenType rdfs:Range kem:TokenType .
-kem:TokenType rdfs:subClassOf kem:MuExponent .
 kem:Verb aamas:lang aama:Kemant .
 kem:Verb rdf:type kem:Pos .
 kem:Verb rdfs:label "Verb" .
@@ -378,10 +381,10 @@ kem:VERBINTERROGATIVE rdf:type kem:MultiLex .
 kem:VERBINTERROGATIVE rdfs:label "VERBINTERROGATIVE" .
 kem:vSubjectSet aamas:lang aama:Kemant .
 kem:VSubjectSet aamas:lang aama:Kemant .
-kem:vSubjectSet rdfs:Domain aamas:Term .
+kem:vSubjectSet rdfs:domain aamas:Term .
 kem:VSubjectSet rdfs:label "vSubjectSet exponents" .
 kem:vSubjectSet rdfs:label "vSubjectSet" .
-kem:vSubjectSet rdfs:Range kem:VSubjectSet .
+kem:vSubjectSet rdfs:range kem:VSubjectSet .
 kem:VSubjectSet rdfs:subClassOf kem:MuExponent .
 kem:vSubjectSet rdfs:subPropertyOf kem:muProperty .
 kem:VSubjSetA aamas:lang aama:Kemant .

@@ -10,7 +10,7 @@ aama:Iraqw rdfs:label "Iraqw" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -18,17 +18,20 @@ aamas:Term rdf:type aamas:MuScheme .
 aamas:Term rdf:type aamas:Muterm .
 aamas:Text rdfs:subClassOf rdfs:Class .
 aamas:Token rdfs:subClassOf rdfs:Class .
+irq:{ aamas:lang aama:Iraqw .
+irq:{ rdf:type irq:Attributes .
+irq:{ rdfs:label "{" .
 irq:Affirmative aamas:lang aama:Iraqw .
 irq:Affirmative rdf:type irq:Polarity .
 irq:Affirmative rdfs:label "Affirmative" .
 irq:attributes aamas:lang aama:Iraqw .
 irq:Attributes aamas:lang aama:Iraqw .
-irq:attributes rdf:type aamas:Text  .
-irq:attributes rdfs:Domain aamas:Term .
+irq:attributes rdfs:domain aamas:Term .
 irq:Attributes rdfs:label "attributes exponents" .
 irq:attributes rdfs:label "attributes" .
-irq:attributes rdfs:Range irq:Attributes .
+irq:attributes rdfs:range irq:Attributes .
 irq:Attributes rdfs:subClassOf irq:MuExponent .
+irq:attributes rdfs:subPropertyOf irq:muProperty .
 irq:Background aamas:lang aama:Iraqw .
 irq:Background rdf:type irq:SelectorCategory .
 irq:Background rdf:type irq:SelectorTense .
@@ -42,10 +45,10 @@ irq:Case rdf:type irq:SelectorClass .
 irq:Case rdfs:label "Case" .
 irq:category aamas:lang aama:Iraqw .
 irq:Category aamas:lang aama:Iraqw .
-irq:category rdfs:Domain aamas:Term .
+irq:category rdfs:domain aamas:Term .
 irq:Category rdfs:label "category exponents" .
 irq:category rdfs:label "category" .
-irq:category rdfs:Range irq:Category .
+irq:category rdfs:range irq:Category .
 irq:Category rdfs:subClassOf irq:MuExponent .
 irq:category rdfs:subPropertyOf irq:muProperty .
 irq:Causative aamas:lang aama:Iraqw .
@@ -125,10 +128,10 @@ irq:Conj3e rdf:type irq:ConjClass .
 irq:Conj3e rdfs:label "Conj3e" .
 irq:conjClass aamas:lang aama:Iraqw .
 irq:ConjClass aamas:lang aama:Iraqw .
-irq:conjClass rdfs:Domain aamas:Term .
+irq:conjClass rdfs:domain aamas:Term .
 irq:ConjClass rdfs:label "conjClass exponents" .
 irq:conjClass rdfs:label "conjClass" .
-irq:conjClass rdfs:Range irq:ConjClass .
+irq:conjClass rdfs:range irq:ConjClass .
 irq:ConjClass rdfs:subClassOf irq:MuExponent .
 irq:conjClass rdfs:subPropertyOf irq:muProperty .
 irq:Consecutive aamas:lang aama:Iraqw .
@@ -144,10 +147,10 @@ irq:Copula rdf:type irq:SelectorBE .
 irq:Copula rdfs:label "Copula" .
 irq:demonstrative aamas:lang aama:Iraqw .
 irq:Demonstrative aamas:lang aama:Iraqw .
-irq:demonstrative rdfs:Domain aamas:Term .
+irq:demonstrative rdfs:domain aamas:Term .
 irq:Demonstrative rdfs:label "demonstrative exponents" .
 irq:demonstrative rdfs:label "demonstrative" .
-irq:demonstrative rdfs:Range irq:Demonstrative .
+irq:demonstrative rdfs:range irq:Demonstrative .
 irq:Demonstrative rdfs:subClassOf irq:MuExponent .
 irq:demonstrative rdfs:subPropertyOf irq:muProperty .
 irq:Dependent aamas:lang aama:Iraqw .
@@ -155,10 +158,10 @@ irq:Dependent rdf:type irq:SelectorBE .
 irq:Dependent rdfs:label "Dependent" .
 irq:derivedStem aamas:lang aama:Iraqw .
 irq:DerivedStem aamas:lang aama:Iraqw .
-irq:derivedStem rdfs:Domain aamas:Term .
+irq:derivedStem rdfs:domain aamas:Term .
 irq:DerivedStem rdfs:label "derivedStem exponents" .
 irq:derivedStem rdfs:label "derivedStem" .
-irq:derivedStem rdfs:Range irq:DerivedStem .
+irq:derivedStem rdfs:range irq:DerivedStem .
 irq:DerivedStem rdfs:subClassOf irq:MuExponent .
 irq:derivedStem rdfs:subPropertyOf irq:muProperty .
 irq:DervStemSuff aamas:lang aama:Iraqw .
@@ -191,10 +194,10 @@ irq:Fem rdf:type irq:HeadGen .
 irq:Fem rdfs:label "Fem" .
 irq:form aamas:lang aama:Iraqw .
 irq:Form aamas:lang aama:Iraqw .
-irq:form rdfs:Domain aamas:Term .
+irq:form rdfs:domain aamas:Term .
 irq:Form rdfs:label "form exponents" .
 irq:form rdfs:label "form" .
-irq:form rdfs:Range irq:Form .
+irq:form rdfs:range irq:Form .
 irq:Form rdfs:subClassOf irq:MuExponent .
 irq:form rdfs:subPropertyOf irq:muProperty .
 irq:Full aamas:lang aama:Iraqw .
@@ -202,45 +205,45 @@ irq:Full rdf:type irq:Form .
 irq:Full rdfs:label "Full" .
 irq:gender aamas:lang aama:Iraqw .
 irq:Gender aamas:lang aama:Iraqw .
-irq:gender rdfs:Domain aamas:Term .
+irq:gender rdfs:domain aamas:Term .
 irq:Gender rdfs:label "gender exponents" .
 irq:gender rdfs:label "gender" .
-irq:gender rdfs:Range irq:Gender .
+irq:gender rdfs:range irq:Gender .
 irq:Gender rdfs:subClassOf irq:MuExponent .
 irq:gender rdfs:subPropertyOf irq:muProperty .
 irq:genderHead aamas:lang aama:Iraqw .
 irq:GenderHead aamas:lang aama:Iraqw .
-irq:genderHead rdfs:Domain aamas:Term .
+irq:genderHead rdfs:domain aamas:Term .
 irq:GenderHead rdfs:label "genderHead exponents" .
 irq:genderHead rdfs:label "genderHead" .
-irq:genderHead rdfs:Range irq:GenderHead .
+irq:genderHead rdfs:range irq:GenderHead .
 irq:GenderHead rdfs:subClassOf irq:MuExponent .
 irq:genderHead rdfs:subPropertyOf irq:muProperty .
 irq:genderObj aamas:lang aama:Iraqw .
 irq:GenderObj aamas:lang aama:Iraqw .
-irq:genderObj rdfs:Domain aamas:Term .
+irq:genderObj rdfs:domain aamas:Term .
 irq:GenderObj rdfs:label "genderObj exponents" .
 irq:genderObj rdfs:label "genderObj" .
-irq:genderObj rdfs:Range irq:GenderObj .
+irq:genderObj rdfs:range irq:GenderObj .
 irq:GenderObj rdfs:subClassOf irq:MuExponent .
 irq:genderObj rdfs:subPropertyOf irq:muProperty .
 irq:gloss aamas:lang aama:Iraqw .
 irq:Gloss aamas:lang aama:Iraqw .
 irq:gloss rdf:type aamas:Text .
-irq:gloss rdfs:Domain aamas:Term .
+irq:gloss rdfs:domain aamas:Term .
 irq:Gloss rdfs:label "gloss exponents" .
 irq:gloss rdfs:label "gloss" .
-irq:gloss rdfs:Range irq:Gloss .
+irq:gloss rdfs:range irq:Gloss .
 irq:Gloss rdfs:subClassOf irq:MuExponent .
 irq:Habitual aamas:lang aama:Iraqw .
 irq:Habitual rdf:type irq:DerivedStem .
 irq:Habitual rdfs:label "Habitual" .
 irq:headGen aamas:lang aama:Iraqw .
 irq:HeadGen aamas:lang aama:Iraqw .
-irq:headGen rdfs:Domain aamas:Term .
+irq:headGen rdfs:domain aamas:Term .
 irq:HeadGen rdfs:label "headGen exponents" .
 irq:headGen rdfs:label "headGen" .
-irq:headGen rdfs:Range irq:HeadGen .
+irq:headGen rdfs:range irq:HeadGen .
 irq:HeadGen rdfs:subClassOf irq:MuExponent .
 irq:headGen rdfs:subPropertyOf irq:muProperty .
 irq:Hither aamas:lang aama:Iraqw .
@@ -258,10 +261,10 @@ irq:Impersonal rdf:type irq:PersSubj .
 irq:Impersonal rdfs:label "Impersonal" .
 irq:imprtvClass aamas:lang aama:Iraqw .
 irq:ImprtvClass aamas:lang aama:Iraqw .
-irq:imprtvClass rdfs:Domain aamas:Term .
+irq:imprtvClass rdfs:domain aamas:Term .
 irq:ImprtvClass rdfs:label "imprtvClass exponents" .
 irq:imprtvClass rdfs:label "imprtvClass" .
-irq:imprtvClass rdfs:Range irq:ImprtvClass .
+irq:imprtvClass rdfs:range irq:ImprtvClass .
 irq:ImprtvClass rdfs:subClassOf irq:MuExponent .
 irq:imprtvClass rdfs:subPropertyOf irq:muProperty .
 irq:Inchoative aamas:lang aama:Iraqw .
@@ -289,10 +292,10 @@ irq:Irreg rdfs:label "Irreg" .
 irq:lemma aamas:lang aama:Iraqw .
 irq:Lemma aamas:lang aama:Iraqw .
 irq:lemma rdf:type aamas:Text .
-irq:lemma rdfs:Domain aamas:Term .
+irq:lemma rdfs:domain aamas:Term .
 irq:Lemma rdfs:label "lemma exponents" .
 irq:lemma rdfs:label "lemma" .
-irq:lemma rdfs:Range irq:Lemma .
+irq:lemma rdfs:range irq:Lemma .
 irq:Lemma rdfs:subClassOf irq:MuExponent .
 irq:Locative aamas:lang aama:Iraqw .
 irq:Locative rdf:type irq:SelectorBE .
@@ -311,20 +314,20 @@ irq:Midway rdf:type irq:Demonstrative .
 irq:Midway rdfs:label "Midway" .
 irq:mood aamas:lang aama:Iraqw .
 irq:Mood aamas:lang aama:Iraqw .
-irq:mood rdfs:Domain aamas:Term .
+irq:mood rdfs:domain aamas:Term .
 irq:Mood rdfs:label "mood exponents" .
 irq:mood rdfs:label "mood" .
-irq:mood rdfs:Range irq:Mood .
+irq:mood rdfs:range irq:Mood .
 irq:Mood rdfs:subClassOf irq:MuExponent .
 irq:mood rdfs:subPropertyOf irq:muProperty .
 irq:MuExponent rdfs:subClassOf aamas:MuExponent .
 irq:mulabel aamas:lang aama:Iraqw .
 irq:Mulabel aamas:lang aama:Iraqw .
 irq:mulabel rdf:type aama:Label .
-irq:mulabel rdfs:Domain aamas:Term .
+irq:mulabel rdfs:domain aamas:Term .
 irq:Mulabel rdfs:label "mulabel exponents" .
 irq:mulabel rdfs:label "mulabel" .
-irq:mulabel rdfs:Range irq:Mulabel .
+irq:mulabel rdfs:range irq:Mulabel .
 irq:Mulabel rdfs:subClassOf irq:MuExponent .
 irq:muProperty rdfs:subPropertyOf aamas:muProperty .
 irq:Near1 aamas:lang aama:Iraqw .
@@ -345,34 +348,34 @@ irq:Noun rdf:type irq:PosHead .
 irq:Noun rdfs:label "Noun" .
 irq:number aamas:lang aama:Iraqw .
 irq:Number aamas:lang aama:Iraqw .
-irq:number rdfs:Domain aamas:Term .
+irq:number rdfs:domain aamas:Term .
 irq:Number rdfs:label "number exponents" .
 irq:number rdfs:label "number" .
-irq:number rdfs:Range irq:Number .
+irq:number rdfs:range irq:Number .
 irq:Number rdfs:subClassOf irq:MuExponent .
 irq:number rdfs:subPropertyOf irq:muProperty .
 irq:numHead aamas:lang aama:Iraqw .
 irq:NumHead aamas:lang aama:Iraqw .
-irq:numHead rdfs:Domain aamas:Term .
+irq:numHead rdfs:domain aamas:Term .
 irq:NumHead rdfs:label "numHead exponents" .
 irq:numHead rdfs:label "numHead" .
-irq:numHead rdfs:Range irq:NumHead .
+irq:numHead rdfs:range irq:NumHead .
 irq:NumHead rdfs:subClassOf irq:MuExponent .
 irq:numHead rdfs:subPropertyOf irq:muProperty .
 irq:numObj aamas:lang aama:Iraqw .
 irq:NumObj aamas:lang aama:Iraqw .
-irq:numObj rdfs:Domain aamas:Term .
+irq:numObj rdfs:domain aamas:Term .
 irq:NumObj rdfs:label "numObj exponents" .
 irq:numObj rdfs:label "numObj" .
-irq:numObj rdfs:Range irq:NumObj .
+irq:numObj rdfs:range irq:NumObj .
 irq:NumObj rdfs:subClassOf irq:MuExponent .
 irq:numObj rdfs:subPropertyOf irq:muProperty .
 irq:numSubj aamas:lang aama:Iraqw .
 irq:NumSubj aamas:lang aama:Iraqw .
-irq:numSubj rdfs:Domain aamas:Term .
+irq:numSubj rdfs:domain aamas:Term .
 irq:NumSubj rdfs:label "numSubj exponents" .
 irq:numSubj rdfs:label "numSubj" .
-irq:numSubj rdfs:Range irq:NumSubj .
+irq:numSubj rdfs:range irq:NumSubj .
 irq:NumSubj rdfs:subClassOf irq:MuExponent .
 irq:numSubj rdfs:subPropertyOf irq:muProperty .
 irq:Object aamas:lang aama:Iraqw .
@@ -396,10 +399,10 @@ irq:PastQ rdfs:label "PastQ" .
 irq:pdgmLexLabel aamas:lang aama:Iraqw .
 irq:PdgmLexLabel aamas:lang aama:Iraqw .
 irq:pdgmLexLabel rdf:type aama:Label .
-irq:pdgmLexLabel rdfs:Domain aamas:Term .
+irq:pdgmLexLabel rdfs:domain aamas:Term .
 irq:PdgmLexLabel rdfs:label "pdgmLexLabel exponents" .
 irq:pdgmLexLabel rdfs:label "pdgmLexLabel" .
-irq:pdgmLexLabel rdfs:Range irq:PdgmLexLabel .
+irq:pdgmLexLabel rdfs:range irq:PdgmLexLabel .
 irq:PdgmLexLabel rdfs:subClassOf irq:MuExponent .
 irq:Perfect aamas:lang aama:Iraqw .
 irq:Perfect rdf:type irq:SelectorCategory .
@@ -410,18 +413,18 @@ irq:Pers_dem rdf:type irq:ProClass .
 irq:Pers_dem rdfs:label "Pers_dem" .
 irq:persObj aamas:lang aama:Iraqw .
 irq:PersObj aamas:lang aama:Iraqw .
-irq:persObj rdfs:Domain aamas:Term .
+irq:persObj rdfs:domain aamas:Term .
 irq:PersObj rdfs:label "persObj exponents" .
 irq:persObj rdfs:label "persObj" .
-irq:persObj rdfs:Range irq:PersObj .
+irq:persObj rdfs:range irq:PersObj .
 irq:PersObj rdfs:subClassOf irq:MuExponent .
 irq:persObj rdfs:subPropertyOf irq:muProperty .
 irq:person aamas:lang aama:Iraqw .
 irq:Person aamas:lang aama:Iraqw .
-irq:person rdfs:Domain aamas:Term .
+irq:person rdfs:domain aamas:Term .
 irq:Person rdfs:label "person exponents" .
 irq:person rdfs:label "person" .
-irq:person rdfs:Range irq:Person .
+irq:person rdfs:range irq:Person .
 irq:Person rdfs:subClassOf irq:MuExponent .
 irq:person rdfs:subPropertyOf irq:muProperty .
 irq:Person1 aamas:lang aama:Iraqw .
@@ -443,10 +446,10 @@ irq:Person3 rdf:type irq:PersSubj .
 irq:Person3 rdfs:label "Person3" .
 irq:persSubj aamas:lang aama:Iraqw .
 irq:PersSubj aamas:lang aama:Iraqw .
-irq:persSubj rdfs:Domain aamas:Term .
+irq:persSubj rdfs:domain aamas:Term .
 irq:PersSubj rdfs:label "persSubj exponents" .
 irq:persSubj rdfs:label "persSubj" .
-irq:persSubj rdfs:Range irq:PersSubj .
+irq:persSubj rdfs:range irq:PersSubj .
 irq:PersSubj rdfs:subClassOf irq:MuExponent .
 irq:persSubj rdfs:subPropertyOf irq:muProperty .
 irq:Plural aamas:lang aama:Iraqw .
@@ -457,26 +460,26 @@ irq:Plural rdf:type irq:NumSubj .
 irq:Plural rdfs:label "Plural" .
 irq:polarity aamas:lang aama:Iraqw .
 irq:Polarity aamas:lang aama:Iraqw .
-irq:polarity rdfs:Domain aamas:Term .
+irq:polarity rdfs:domain aamas:Term .
 irq:Polarity rdfs:label "polarity exponents" .
 irq:polarity rdfs:label "polarity" .
-irq:polarity rdfs:Range irq:Polarity .
+irq:polarity rdfs:range irq:Polarity .
 irq:Polarity rdfs:subClassOf irq:MuExponent .
 irq:polarity rdfs:subPropertyOf irq:muProperty .
 irq:pos aamas:lang aama:Iraqw .
 irq:Pos aamas:lang aama:Iraqw .
-irq:pos rdfs:Domain aamas:Term .
+irq:pos rdfs:domain aamas:Term .
 irq:Pos rdfs:label "pos exponents" .
 irq:pos rdfs:label "pos" .
-irq:pos rdfs:Range irq:Pos .
+irq:pos rdfs:range irq:Pos .
 irq:Pos rdfs:subClassOf irq:MuExponent .
 irq:pos rdfs:subPropertyOf irq:muProperty .
 irq:posHead aamas:lang aama:Iraqw .
 irq:PosHead aamas:lang aama:Iraqw .
-irq:posHead rdfs:Domain aamas:Term .
+irq:posHead rdfs:domain aamas:Term .
 irq:PosHead rdfs:label "posHead exponents" .
 irq:posHead rdfs:label "posHead" .
-irq:posHead rdfs:Range irq:PosHead .
+irq:posHead rdfs:range irq:PosHead .
 irq:PosHead rdfs:subClassOf irq:MuExponent .
 irq:posHead rdfs:subPropertyOf irq:muProperty .
 irq:Possessive aamas:lang aama:Iraqw .
@@ -494,10 +497,10 @@ irq:Pro rdf:type irq:PosHead .
 irq:Pro rdfs:label "Pro" .
 irq:proClass aamas:lang aama:Iraqw .
 irq:ProClass aamas:lang aama:Iraqw .
-irq:proClass rdfs:Domain aamas:Term .
+irq:proClass rdfs:domain aamas:Term .
 irq:ProClass rdfs:label "proClass exponents" .
 irq:proClass rdfs:label "proClass" .
-irq:proClass rdfs:Range irq:ProClass .
+irq:proClass rdfs:range irq:ProClass .
 irq:ProClass rdfs:subClassOf irq:MuExponent .
 irq:proClass rdfs:subPropertyOf irq:muProperty .
 irq:Prohibitive aamas:lang aama:Iraqw .
@@ -540,26 +543,26 @@ irq:Selector rdf:type irq:VerbMorphClass .
 irq:Selector rdfs:label "Selector" .
 irq:selectorBE aamas:lang aama:Iraqw .
 irq:SelectorBE aamas:lang aama:Iraqw .
-irq:selectorBE rdfs:Domain aamas:Term .
+irq:selectorBE rdfs:domain aamas:Term .
 irq:SelectorBE rdfs:label "selectorBE exponents" .
 irq:selectorBE rdfs:label "selectorBE" .
-irq:selectorBE rdfs:Range irq:SelectorBE .
+irq:selectorBE rdfs:range irq:SelectorBE .
 irq:SelectorBE rdfs:subClassOf irq:MuExponent .
 irq:selectorBE rdfs:subPropertyOf irq:muProperty .
 irq:selectorCategory aamas:lang aama:Iraqw .
 irq:SelectorCategory aamas:lang aama:Iraqw .
-irq:selectorCategory rdfs:Domain aamas:Term .
+irq:selectorCategory rdfs:domain aamas:Term .
 irq:SelectorCategory rdfs:label "selectorCategory exponents" .
 irq:selectorCategory rdfs:label "selectorCategory" .
-irq:selectorCategory rdfs:Range irq:SelectorCategory .
+irq:selectorCategory rdfs:range irq:SelectorCategory .
 irq:SelectorCategory rdfs:subClassOf irq:MuExponent .
 irq:selectorCategory rdfs:subPropertyOf irq:muProperty .
 irq:selectorClass aamas:lang aama:Iraqw .
 irq:SelectorClass aamas:lang aama:Iraqw .
-irq:selectorClass rdfs:Domain aamas:Term .
+irq:selectorClass rdfs:domain aamas:Term .
 irq:SelectorClass rdfs:label "selectorClass exponents" .
 irq:selectorClass rdfs:label "selectorClass" .
-irq:selectorClass rdfs:Range irq:SelectorClass .
+irq:selectorClass rdfs:range irq:SelectorClass .
 irq:SelectorClass rdfs:subClassOf irq:MuExponent .
 irq:selectorClass rdfs:subPropertyOf irq:muProperty .
 irq:SelectorForms aamas:lang aama:Iraqw .
@@ -570,18 +573,18 @@ irq:SelectorForms2 rdf:type irq:VerbMorphClass .
 irq:SelectorForms2 rdfs:label "SelectorForms2" .
 irq:selectorMood aamas:lang aama:Iraqw .
 irq:SelectorMood aamas:lang aama:Iraqw .
-irq:selectorMood rdfs:Domain aamas:Term .
+irq:selectorMood rdfs:domain aamas:Term .
 irq:SelectorMood rdfs:label "selectorMood exponents" .
 irq:selectorMood rdfs:label "selectorMood" .
-irq:selectorMood rdfs:Range irq:SelectorMood .
+irq:selectorMood rdfs:range irq:SelectorMood .
 irq:SelectorMood rdfs:subClassOf irq:MuExponent .
 irq:selectorMood rdfs:subPropertyOf irq:muProperty .
 irq:selectorTense aamas:lang aama:Iraqw .
 irq:SelectorTense aamas:lang aama:Iraqw .
-irq:selectorTense rdfs:Domain aamas:Term .
+irq:selectorTense rdfs:domain aamas:Term .
 irq:SelectorTense rdfs:label "selectorTense exponents" .
 irq:selectorTense rdfs:label "selectorTense" .
-irq:selectorTense rdfs:Range irq:SelectorTense .
+irq:selectorTense rdfs:range irq:SelectorTense .
 irq:SelectorTense rdfs:subClassOf irq:MuExponent .
 irq:selectorTense rdfs:subPropertyOf irq:muProperty .
 irq:SelMood aamas:lang aama:Iraqw .
@@ -616,10 +619,10 @@ irq:Subordiate rdf:type irq:Polarity .
 irq:Subordiate rdfs:label "Subordiate" .
 irq:tam aamas:lang aama:Iraqw .
 irq:Tam aamas:lang aama:Iraqw .
-irq:tam rdfs:Domain aamas:Term .
+irq:tam rdfs:domain aamas:Term .
 irq:Tam rdfs:label "tam exponents" .
 irq:tam rdfs:label "tam" .
-irq:tam rdfs:Range irq:Tam .
+irq:tam rdfs:range irq:Tam .
 irq:Tam rdfs:subClassOf irq:MuExponent .
 irq:tam rdfs:subPropertyOf irq:muProperty .
 irq:TenseFormation aamas:lang aama:Iraqw .
@@ -634,82 +637,66 @@ irq:TenseFormation2 rdfs:label "TenseFormation2" .
 irq:token aamas:lang aama:Iraqw .
 irq:Token aamas:lang aama:Iraqw .
 irq:token rdf:type aamas:Token .
-irq:token rdfs:Domain aamas:Term .
+irq:token rdfs:domain aamas:Term .
 irq:Token rdfs:label "token exponents" .
 irq:token rdfs:label "token" .
-irq:token rdfs:Range irq:Token .
+irq:token rdfs:range irq:Token .
 irq:Token rdfs:subClassOf irq:MuExponent .
-irq:token_IMPRS_HIY aamas:lang aama:Iraqw .
-irq:Token_IMPRS_HIY aamas:lang aama:Iraqw .
-irq:token_IMPRS_HIY rdf:type aamas:Token .
-irq:token_IMPRS_HIY rdfs:Domain aamas:Term .
-irq:Token_IMPRS_HIY rdfs:label "token_IMPRS_HIY exponents" .
-irq:token_IMPRS_HIY rdfs:label "token_IMPRS_HIY" .
-irq:token_IMPRS_HIY rdfs:Range irq:Token_IMPRS_HIY .
-irq:Token_IMPRS_HIY rdfs:subClassOf irq:MuExponent .
 irq:token-note aamas:lang aama:Iraqw .
 irq:Token-note aamas:lang aama:Iraqw .
 irq:token-note rdf:type aamas:Text .
-irq:token-note rdfs:Domain aamas:Term .
+irq:token-note rdfs:domain aamas:Term .
 irq:Token-note rdfs:label "token-note exponents" .
 irq:token-note rdfs:label "token-note" .
-irq:token-note rdfs:Range irq:Token-note .
+irq:token-note rdfs:range irq:Token-note .
 irq:Token-note rdfs:subClassOf irq:MuExponent .
 irq:token-persObj aamas:lang aama:Iraqw .
 irq:Token-persObj aamas:lang aama:Iraqw .
 irq:token-persObj rdf:type aamas:Token .
-irq:token-persObj rdfs:Domain aamas:Term .
+irq:token-persObj rdfs:domain aamas:Term .
 irq:Token-persObj rdfs:label "token-persObj exponents" .
 irq:token-persObj rdfs:label "token-persObj" .
-irq:token-persObj rdfs:Range irq:Token-persObj .
+irq:token-persObj rdfs:range irq:Token-persObj .
 irq:Token-persObj rdfs:subClassOf irq:MuExponent .
 irq:token-selBE aamas:lang aama:Iraqw .
 irq:Token-selBE aamas:lang aama:Iraqw .
 irq:token-selBE rdf:type aamas:Token .
-irq:token-selBE rdfs:Domain aamas:Term .
+irq:token-selBE rdfs:domain aamas:Term .
 irq:Token-selBE rdfs:label "token-selBE exponents" .
 irq:token-selBE rdfs:label "token-selBE" .
-irq:token-selBE rdfs:Range irq:Token-selBE .
+irq:token-selBE rdfs:range irq:Token-selBE .
 irq:Token-selBE rdfs:subClassOf irq:MuExponent .
 irq:token-selector aamas:lang aama:Iraqw .
 irq:Token-selector aamas:lang aama:Iraqw .
 irq:token-selector rdf:type aamas:Token .
-irq:token-selector rdfs:Domain aamas:Term .
+irq:token-selector rdfs:domain aamas:Term .
 irq:Token-selector rdfs:label "token-selector exponents" .
 irq:token-selector rdfs:label "token-selector" .
-irq:token-selector rdfs:Range irq:Token-selector .
+irq:token-selector rdfs:range irq:Token-selector .
 irq:Token-selector rdfs:subClassOf irq:MuExponent .
-irq:token-selectorConst aamas:lang aama:Iraqw .
-irq:Token-selectorConst aamas:lang aama:Iraqw .
-irq:token-selectorConst rdf:type aamas:Token .
-irq:token-selectorConst rdfs:Domain aamas:Term .
-irq:Token-selectorConst rdfs:label "token-selectorConst exponents" .
-irq:token-selectorConst rdfs:label "token-selectorConst" .
-irq:token-selectorConst rdfs:Range irq:Token-selectorConst .
-irq:Token-selectorConst rdfs:subClassOf irq:MuExponent .
 irq:token-selMood aamas:lang aama:Iraqw .
 irq:Token-selMood aamas:lang aama:Iraqw .
 irq:token-selMood rdf:type aamas:Token .
-irq:token-selMood rdfs:Domain aamas:Term .
+irq:token-selMood rdfs:domain aamas:Term .
 irq:Token-selMood rdfs:label "token-selMood exponents" .
 irq:token-selMood rdfs:label "token-selMood" .
-irq:token-selMood rdfs:Range irq:Token-selMood .
+irq:token-selMood rdfs:range irq:Token-selMood .
 irq:Token-selMood rdfs:subClassOf irq:MuExponent .
 irq:token-selTense aamas:lang aama:Iraqw .
 irq:Token-selTense aamas:lang aama:Iraqw .
 irq:token-selTense rdf:type aamas:Token .
-irq:token-selTense rdfs:Domain aamas:Term .
+irq:token-selTense rdfs:domain aamas:Term .
 irq:Token-selTense rdfs:label "token-selTense exponents" .
 irq:token-selTense rdfs:label "token-selTense" .
-irq:token-selTense rdfs:Range irq:Token-selTense .
+irq:token-selTense rdfs:range irq:Token-selTense .
 irq:Token-selTense rdfs:subClassOf irq:MuExponent .
 irq:token-suffix aamas:lang aama:Iraqw .
 irq:Token-suffix aamas:lang aama:Iraqw .
 irq:token-suffix rdf:type aamas:Token .
-irq:token-suffix rdfs:Domain aamas:Term .
+irq:token-suffix rdfs:domain aamas:Term .
 irq:Token-suffix rdfs:label "token-suffix exponents" .
 irq:token-suffix rdfs:label "token-suffix" .
-irq:token-suffix rdfs:Range irq:Token-suffix .
+irq:token-suffix rdfs:range irq:Token-suffix .
 irq:Token-suffix rdfs:subClassOf irq:MuExponent .
 irq:Verb aamas:lang aama:Iraqw .
 irq:Verb rdf:type irq:Pos .
@@ -719,9 +706,9 @@ irq:Verbaliser rdf:type irq:DerivedStem .
 irq:Verbaliser rdfs:label "Verbaliser" .
 irq:verbMorphClass aamas:lang aama:Iraqw .
 irq:VerbMorphClass aamas:lang aama:Iraqw .
-irq:verbMorphClass rdfs:Domain aamas:Term .
+irq:verbMorphClass rdfs:domain aamas:Term .
 irq:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 irq:verbMorphClass rdfs:label "verbMorphClass" .
-irq:verbMorphClass rdfs:Range irq:VerbMorphClass .
+irq:verbMorphClass rdfs:range irq:VerbMorphClass .
 irq:VerbMorphClass rdfs:subClassOf irq:MuExponent .
 irq:verbMorphClass rdfs:subPropertyOf irq:muProperty .

@@ -10,7 +10,7 @@ aama:Tsamakko rdfs:label "Tsamakko" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -18,6 +18,9 @@ aamas:Term rdf:type aamas:MuScheme .
 aamas:Term rdf:type aamas:Muterm .
 aamas:Text rdfs:subClassOf rdfs:Class .
 aamas:Token rdfs:subClassOf rdfs:Class .
+tsm:{ aamas:lang aama:Tsamakko .
+tsm:{ rdf:type tsm:Attributes .
+tsm:{ rdfs:label "{" .
 tsm:AClass aamas:lang aama:Tsamakko .
 tsm:AClass rdf:type tsm:DefMarker .
 tsm:AClass rdfs:label "aClass" .
@@ -29,26 +32,26 @@ tsm:Aorist rdf:type tsm:Tam .
 tsm:Aorist rdfs:label "Aorist" .
 tsm:attributes aamas:lang aama:Tsamakko .
 tsm:Attributes aamas:lang aama:Tsamakko .
-tsm:attributes rdf:type aamas:Text  .
-tsm:attributes rdfs:Domain aamas:Term .
+tsm:attributes rdfs:domain aamas:Term .
 tsm:Attributes rdfs:label "attributes exponents" .
 tsm:attributes rdfs:label "attributes" .
-tsm:attributes rdfs:Range tsm:Attributes .
+tsm:attributes rdfs:range tsm:Attributes .
 tsm:Attributes rdfs:subClassOf tsm:MuExponent .
+tsm:attributes rdfs:subPropertyOf tsm:muProperty .
 tsm:case aamas:lang aama:Tsamakko .
 tsm:Case aamas:lang aama:Tsamakko .
-tsm:case rdfs:Domain aamas:Term .
+tsm:case rdfs:domain aamas:Term .
 tsm:Case rdfs:label "case exponents" .
 tsm:case rdfs:label "case" .
-tsm:case rdfs:Range tsm:Case .
+tsm:case rdfs:range tsm:Case .
 tsm:Case rdfs:subClassOf tsm:MuExponent .
 tsm:case rdfs:subPropertyOf tsm:muProperty .
 tsm:category aamas:lang aama:Tsamakko .
 tsm:Category aamas:lang aama:Tsamakko .
-tsm:category rdfs:Domain aamas:Term .
+tsm:category rdfs:domain aamas:Term .
 tsm:Category rdfs:label "category exponents" .
 tsm:category rdfs:label "category" .
-tsm:category rdfs:Range tsm:Category .
+tsm:category rdfs:range tsm:Category .
 tsm:Category rdfs:subClassOf tsm:MuExponent .
 tsm:category rdfs:subPropertyOf tsm:muProperty .
 tsm:Causative1 aamas:lang aama:Tsamakko .
@@ -80,18 +83,18 @@ tsm:ConjB rdf:type tsm:Conjuctive .
 tsm:ConjB rdfs:label "ConjB" .
 tsm:conjClass aamas:lang aama:Tsamakko .
 tsm:ConjClass aamas:lang aama:Tsamakko .
-tsm:conjClass rdfs:Domain aamas:Term .
+tsm:conjClass rdfs:domain aamas:Term .
 tsm:ConjClass rdfs:label "conjClass exponents" .
 tsm:conjClass rdfs:label "conjClass" .
-tsm:conjClass rdfs:Range tsm:ConjClass .
+tsm:conjClass rdfs:range tsm:ConjClass .
 tsm:ConjClass rdfs:subClassOf tsm:MuExponent .
 tsm:conjClass rdfs:subPropertyOf tsm:muProperty .
 tsm:conjuctive aamas:lang aama:Tsamakko .
 tsm:Conjuctive aamas:lang aama:Tsamakko .
-tsm:conjuctive rdfs:Domain aamas:Term .
+tsm:conjuctive rdfs:domain aamas:Term .
 tsm:Conjuctive rdfs:label "conjuctive exponents" .
 tsm:conjuctive rdfs:label "conjuctive" .
-tsm:conjuctive rdfs:Range tsm:Conjuctive .
+tsm:conjuctive rdfs:range tsm:Conjuctive .
 tsm:Conjuctive rdfs:subClassOf tsm:MuExponent .
 tsm:conjuctive rdfs:subPropertyOf tsm:muProperty .
 tsm:Consecutive aamas:lang aama:Tsamakko .
@@ -115,19 +118,19 @@ tsm:Dative rdfs:label "Dative" .
 tsm:defMarker aamas:lang aama:Tsamakko .
 tsm:DefMarker aamas:lang aama:Tsamakko .
 tsm:DefMarker rdf:type tsm:ProClass .
-tsm:defMarker rdfs:Domain aamas:Term .
+tsm:defMarker rdfs:domain aamas:Term .
 tsm:DefMarker rdfs:label "defMarker exponents" .
 tsm:defMarker rdfs:label "defMarker" .
 tsm:DefMarker rdfs:label "DefMarker" .
-tsm:defMarker rdfs:Range tsm:DefMarker .
+tsm:defMarker rdfs:range tsm:DefMarker .
 tsm:DefMarker rdfs:subClassOf tsm:MuExponent .
 tsm:defMarker rdfs:subPropertyOf tsm:muProperty .
 tsm:deixis aamas:lang aama:Tsamakko .
 tsm:Deixis aamas:lang aama:Tsamakko .
-tsm:deixis rdfs:Domain aamas:Term .
+tsm:deixis rdfs:domain aamas:Term .
 tsm:Deixis rdfs:label "deixis exponents" .
 tsm:deixis rdfs:label "deixis" .
-tsm:deixis rdfs:Range tsm:Deixis .
+tsm:deixis rdfs:range tsm:Deixis .
 tsm:Deixis rdfs:subClassOf tsm:MuExponent .
 tsm:deixis rdfs:subPropertyOf tsm:muProperty .
 tsm:Demonstrative aamas:lang aama:Tsamakko .
@@ -135,18 +138,18 @@ tsm:Demonstrative rdf:type tsm:ProClass .
 tsm:Demonstrative rdfs:label "Demonstrative" .
 tsm:derivedClass aamas:lang aama:Tsamakko .
 tsm:DerivedClass aamas:lang aama:Tsamakko .
-tsm:derivedClass rdfs:Domain aamas:Term .
+tsm:derivedClass rdfs:domain aamas:Term .
 tsm:DerivedClass rdfs:label "derivedClass exponents" .
 tsm:derivedClass rdfs:label "derivedClass" .
-tsm:derivedClass rdfs:Range tsm:DerivedClass .
+tsm:derivedClass rdfs:range tsm:DerivedClass .
 tsm:DerivedClass rdfs:subClassOf tsm:MuExponent .
 tsm:derivedClass rdfs:subPropertyOf tsm:muProperty .
 tsm:derivedStem aamas:lang aama:Tsamakko .
 tsm:DerivedStem aamas:lang aama:Tsamakko .
-tsm:derivedStem rdfs:Domain aamas:Term .
+tsm:derivedStem rdfs:domain aamas:Term .
 tsm:DerivedStem rdfs:label "derivedStem exponents" .
 tsm:derivedStem rdfs:label "derivedStem" .
-tsm:derivedStem rdfs:Range tsm:DerivedStem .
+tsm:derivedStem rdfs:range tsm:DerivedStem .
 tsm:DerivedStem rdfs:subClassOf tsm:MuExponent .
 tsm:derivedStem rdfs:subPropertyOf tsm:muProperty .
 tsm:DervStemFormation aamas:lang aama:Tsamakko .
@@ -173,18 +176,18 @@ tsm:Future rdf:type tsm:Tam .
 tsm:Future rdfs:label "Future" .
 tsm:gender aamas:lang aama:Tsamakko .
 tsm:Gender aamas:lang aama:Tsamakko .
-tsm:gender rdfs:Domain aamas:Term .
+tsm:gender rdfs:domain aamas:Term .
 tsm:Gender rdfs:label "gender exponents" .
 tsm:gender rdfs:label "gender" .
-tsm:gender rdfs:Range tsm:Gender .
+tsm:gender rdfs:range tsm:Gender .
 tsm:Gender rdfs:subClassOf tsm:MuExponent .
 tsm:gender rdfs:subPropertyOf tsm:muProperty .
 tsm:genderObj aamas:lang aama:Tsamakko .
 tsm:GenderObj aamas:lang aama:Tsamakko .
-tsm:genderObj rdfs:Domain aamas:Term .
+tsm:genderObj rdfs:domain aamas:Term .
 tsm:GenderObj rdfs:label "genderObj exponents" .
 tsm:genderObj rdfs:label "genderObj" .
-tsm:genderObj rdfs:Range tsm:GenderObj .
+tsm:genderObj rdfs:range tsm:GenderObj .
 tsm:GenderObj rdfs:subClassOf tsm:MuExponent .
 tsm:genderObj rdfs:subPropertyOf tsm:muProperty .
 tsm:Generic aamas:lang aama:Tsamakko .
@@ -193,10 +196,10 @@ tsm:Generic rdfs:label "Generic" .
 tsm:gloss aamas:lang aama:Tsamakko .
 tsm:Gloss aamas:lang aama:Tsamakko .
 tsm:gloss rdf:type aamas:Text .
-tsm:gloss rdfs:Domain aamas:Term .
+tsm:gloss rdfs:domain aamas:Term .
 tsm:Gloss rdfs:label "gloss exponents" .
 tsm:gloss rdfs:label "gloss" .
-tsm:gloss rdfs:Range tsm:Gloss .
+tsm:gloss rdfs:range tsm:Gloss .
 tsm:Gloss rdfs:subClassOf tsm:MuExponent .
 tsm:Imperative aamas:lang aama:Tsamakko .
 tsm:Imperative rdf:type tsm:Tam .
@@ -225,10 +228,10 @@ tsm:Jussive rdfs:label "Jussive" .
 tsm:lemma aamas:lang aama:Tsamakko .
 tsm:Lemma aamas:lang aama:Tsamakko .
 tsm:lemma rdf:type aamas:Text .
-tsm:lemma rdfs:Domain aamas:Term .
+tsm:lemma rdfs:domain aamas:Term .
 tsm:Lemma rdfs:label "lemma exponents" .
 tsm:lemma rdfs:label "lemma" .
-tsm:lemma rdfs:Range tsm:Lemma .
+tsm:lemma rdfs:range tsm:Lemma .
 tsm:Lemma rdfs:subClassOf tsm:MuExponent .
 tsm:Locative aamas:lang aama:Tsamakko .
 tsm:Locative rdf:type tsm:Case .
@@ -245,10 +248,10 @@ tsm:MuExponent rdfs:subClassOf aamas:MuExponent .
 tsm:mulabel aamas:lang aama:Tsamakko .
 tsm:Mulabel aamas:lang aama:Tsamakko .
 tsm:mulabel rdf:type aama:Label .
-tsm:mulabel rdfs:Domain aamas:Term .
+tsm:mulabel rdfs:domain aamas:Term .
 tsm:Mulabel rdfs:label "mulabel exponents" .
 tsm:mulabel rdfs:label "mulabel" .
-tsm:mulabel rdfs:Range tsm:Mulabel .
+tsm:mulabel rdfs:range tsm:Mulabel .
 tsm:Mulabel rdfs:subClassOf tsm:MuExponent .
 tsm:muProperty rdfs:subPropertyOf aamas:muProperty .
 tsm:Negative aamas:lang aama:Tsamakko .
@@ -262,18 +265,18 @@ tsm:Normal rdf:type tsm:DerivedClass .
 tsm:Normal rdfs:label "Normal" .
 tsm:number aamas:lang aama:Tsamakko .
 tsm:Number aamas:lang aama:Tsamakko .
-tsm:number rdfs:Domain aamas:Term .
+tsm:number rdfs:domain aamas:Term .
 tsm:Number rdfs:label "number exponents" .
 tsm:number rdfs:label "number" .
-tsm:number rdfs:Range tsm:Number .
+tsm:number rdfs:range tsm:Number .
 tsm:Number rdfs:subClassOf tsm:MuExponent .
 tsm:number rdfs:subPropertyOf tsm:muProperty .
 tsm:numObj aamas:lang aama:Tsamakko .
 tsm:NumObj aamas:lang aama:Tsamakko .
-tsm:numObj rdfs:Domain aamas:Term .
+tsm:numObj rdfs:domain aamas:Term .
 tsm:NumObj rdfs:label "numObj exponents" .
 tsm:numObj rdfs:label "numObj" .
-tsm:numObj rdfs:Range tsm:NumObj .
+tsm:numObj rdfs:range tsm:NumObj .
 tsm:NumObj rdfs:subClassOf tsm:MuExponent .
 tsm:numObj rdfs:subPropertyOf tsm:muProperty .
 tsm:O-assim aamas:lang aama:Tsamakko .
@@ -294,17 +297,17 @@ tsm:Past rdfs:label "Past" .
 tsm:pdgmLexLabel aamas:lang aama:Tsamakko .
 tsm:PdgmLexLabel aamas:lang aama:Tsamakko .
 tsm:pdgmLexLabel rdf:type aama:Label .
-tsm:pdgmLexLabel rdfs:Domain aamas:Term .
+tsm:pdgmLexLabel rdfs:domain aamas:Term .
 tsm:PdgmLexLabel rdfs:label "pdgmLexLabel exponents" .
 tsm:pdgmLexLabel rdfs:label "pdgmLexLabel" .
-tsm:pdgmLexLabel rdfs:Range tsm:PdgmLexLabel .
+tsm:pdgmLexLabel rdfs:range tsm:PdgmLexLabel .
 tsm:PdgmLexLabel rdfs:subClassOf tsm:MuExponent .
 tsm:person aamas:lang aama:Tsamakko .
 tsm:Person aamas:lang aama:Tsamakko .
-tsm:person rdfs:Domain aamas:Term .
+tsm:person rdfs:domain aamas:Term .
 tsm:Person rdfs:label "person exponents" .
 tsm:person rdfs:label "person" .
-tsm:person rdfs:Range tsm:Person .
+tsm:person rdfs:range tsm:Person .
 tsm:Person rdfs:subClassOf tsm:MuExponent .
 tsm:person rdfs:subPropertyOf tsm:muProperty .
 tsm:Person1 aamas:lang aama:Tsamakko .
@@ -322,18 +325,18 @@ tsm:Plural rdf:type tsm:NumObj .
 tsm:Plural rdfs:label "Plural" .
 tsm:polarity aamas:lang aama:Tsamakko .
 tsm:Polarity aamas:lang aama:Tsamakko .
-tsm:polarity rdfs:Domain aamas:Term .
+tsm:polarity rdfs:domain aamas:Term .
 tsm:Polarity rdfs:label "polarity exponents" .
 tsm:polarity rdfs:label "polarity" .
-tsm:polarity rdfs:Range tsm:Polarity .
+tsm:polarity rdfs:range tsm:Polarity .
 tsm:Polarity rdfs:subClassOf tsm:MuExponent .
 tsm:polarity rdfs:subPropertyOf tsm:muProperty .
 tsm:pos aamas:lang aama:Tsamakko .
 tsm:Pos aamas:lang aama:Tsamakko .
-tsm:pos rdfs:Domain aamas:Term .
+tsm:pos rdfs:domain aamas:Term .
 tsm:Pos rdfs:label "pos exponents" .
 tsm:pos rdfs:label "pos" .
-tsm:pos rdfs:Range tsm:Pos .
+tsm:pos rdfs:range tsm:Pos .
 tsm:Pos rdfs:subClassOf tsm:MuExponent .
 tsm:pos rdfs:subPropertyOf tsm:muProperty .
 tsm:PossInd aamas:lang aama:Tsamakko .
@@ -347,10 +350,10 @@ tsm:Pro rdf:type tsm:Pos .
 tsm:Pro rdfs:label "Pro" .
 tsm:proClass aamas:lang aama:Tsamakko .
 tsm:ProClass aamas:lang aama:Tsamakko .
-tsm:proClass rdfs:Domain aamas:Term .
+tsm:proClass rdfs:domain aamas:Term .
 tsm:ProClass rdfs:label "proClass exponents" .
 tsm:proClass rdfs:label "proClass" .
-tsm:proClass rdfs:Range tsm:ProClass .
+tsm:proClass rdfs:range tsm:ProClass .
 tsm:ProClass rdfs:subClassOf tsm:MuExponent .
 tsm:proClass rdfs:subPropertyOf tsm:muProperty .
 tsm:ProParticle aamas:lang aama:Tsamakko .
@@ -377,10 +380,10 @@ tsm:SseClass rdf:type tsm:DefMarker .
 tsm:SseClass rdfs:label "SseClass" .
 tsm:stemShape aamas:lang aama:Tsamakko .
 tsm:StemShape aamas:lang aama:Tsamakko .
-tsm:stemShape rdfs:Domain aamas:Term .
+tsm:stemShape rdfs:domain aamas:Term .
 tsm:StemShape rdfs:label "stemShape exponents" .
 tsm:stemShape rdfs:label "stemShape" .
-tsm:stemShape rdfs:Range tsm:StemShape .
+tsm:stemShape rdfs:range tsm:StemShape .
 tsm:StemShape rdfs:subClassOf tsm:MuExponent .
 tsm:stemShape rdfs:subPropertyOf tsm:muProperty .
 tsm:Subject aamas:lang aama:Tsamakko .
@@ -394,10 +397,10 @@ tsm:Subordinate rdf:type tsm:Polarity .
 tsm:Subordinate rdfs:label "Subordinate" .
 tsm:suffixSet aamas:lang aama:Tsamakko .
 tsm:SuffixSet aamas:lang aama:Tsamakko .
-tsm:suffixSet rdfs:Domain aamas:Term .
+tsm:suffixSet rdfs:domain aamas:Term .
 tsm:SuffixSet rdfs:label "suffixSet exponents" .
 tsm:suffixSet rdfs:label "suffixSet" .
-tsm:suffixSet rdfs:Range tsm:SuffixSet .
+tsm:suffixSet rdfs:range tsm:SuffixSet .
 tsm:SuffixSet rdfs:subClassOf tsm:MuExponent .
 tsm:suffixSet rdfs:subPropertyOf tsm:muProperty .
 tsm:SuffSet1 aamas:lang aama:Tsamakko .
@@ -417,10 +420,10 @@ tsm:SuffSet5 rdf:type tsm:SuffixSet .
 tsm:SuffSet5 rdfs:label "SuffSet5" .
 tsm:tam aamas:lang aama:Tsamakko .
 tsm:Tam aamas:lang aama:Tsamakko .
-tsm:tam rdfs:Domain aamas:Term .
+tsm:tam rdfs:domain aamas:Term .
 tsm:Tam rdfs:label "tam exponents" .
 tsm:tam rdfs:label "tam" .
-tsm:tam rdfs:Range tsm:Tam .
+tsm:tam rdfs:range tsm:Tam .
 tsm:Tam rdfs:subClassOf tsm:MuExponent .
 tsm:tam rdfs:subPropertyOf tsm:muProperty .
 tsm:TenseSuffSets aamas:lang aama:Tsamakko .
@@ -429,19 +432,11 @@ tsm:TenseSuffSets rdfs:label "TenseSuffSets" .
 tsm:token aamas:lang aama:Tsamakko .
 tsm:Token aamas:lang aama:Tsamakko .
 tsm:token rdf:type aamas:Token .
-tsm:token rdfs:Domain aamas:Term .
+tsm:token rdfs:domain aamas:Term .
 tsm:Token rdfs:label "token exponents" .
 tsm:token rdfs:label "token" .
-tsm:token rdfs:Range tsm:Token .
+tsm:token rdfs:range tsm:Token .
 tsm:Token rdfs:subClassOf tsm:MuExponent .
-tsm:token-suffix aamas:lang aama:Tsamakko .
-tsm:Token-suffix aamas:lang aama:Tsamakko .
-tsm:token-suffix rdf:type aamas:Token .
-tsm:token-suffix rdfs:Domain aamas:Term .
-tsm:Token-suffix rdfs:label "token-suffix exponents" .
-tsm:token-suffix rdfs:label "token-suffix" .
-tsm:token-suffix rdfs:Range tsm:Token-suffix .
-tsm:Token-suffix rdfs:subClassOf tsm:MuExponent .
 tsm:Verb aamas:lang aama:Tsamakko .
 tsm:Verb rdf:type tsm:Pos .
 tsm:Verb rdfs:label "Verb" .
@@ -450,9 +445,9 @@ tsm:Verbaliser rdf:type tsm:DerivedClass .
 tsm:Verbaliser rdfs:label "Verbaliser" .
 tsm:verbMorphClass aamas:lang aama:Tsamakko .
 tsm:VerbMorphClass aamas:lang aama:Tsamakko .
-tsm:verbMorphClass rdfs:Domain aamas:Term .
+tsm:verbMorphClass rdfs:domain aamas:Term .
 tsm:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 tsm:verbMorphClass rdfs:label "verbMorphClass" .
-tsm:verbMorphClass rdfs:Range tsm:VerbMorphClass .
+tsm:verbMorphClass rdfs:range tsm:VerbMorphClass .
 tsm:VerbMorphClass rdfs:subClassOf tsm:MuExponent .
 tsm:verbMorphClass rdfs:subPropertyOf tsm:muProperty .

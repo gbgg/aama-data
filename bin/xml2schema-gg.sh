@@ -12,7 +12,8 @@ do
     do
 	l=`dirname ${f#data/}`;
 	lang=`basename ${f%-pdgms\.xml}`;
-	abb=$2
+	abb=`grep $lang bin/lname-pref.txt`
+	abb=${abb#$lang=}
 	echo "lang is $lang"
 	echo "abb is $abb"
 	echo generating schema for $l in tmp/`basename ${f%-pdgms\.xml}`.schema.ttl

@@ -15,7 +15,7 @@ do
     lang=`basename ${f%-pdgms.html}`
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
-	abbrev=${labbrev#$lang}
+	abbrev=${labbrev#$lang=}
     #echo querying $Lang $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
 	of=pdgm-finite-props.template

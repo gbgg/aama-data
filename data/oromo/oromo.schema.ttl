@@ -10,7 +10,7 @@ aama:Oromo rdfs:label "Oromo" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -29,33 +29,36 @@ orm:Base rdf:type orm:DerivedStem .
 orm:Base rdfs:label "Base" .
 orm:case aamas:lang aama:Oromo .
 orm:Case aamas:lang aama:Oromo .
-orm:case rdfs:Domain aamas:Term .
+orm:case rdfs:domain aamas:Term .
 orm:Case rdfs:label "case exponents" .
 orm:case rdfs:label "case" .
-orm:case rdfs:Range orm:Case .
+orm:case rdfs:range orm:Case .
 orm:Case rdfs:subClassOf orm:MuExponent .
 orm:case rdfs:subPropertyOf orm:muProperty .
 orm:clauseType aamas:lang aama:Oromo .
 orm:ClauseType aamas:lang aama:Oromo .
-orm:clauseType rdfs:Domain aamas:Term .
+orm:clauseType rdfs:domain aamas:Term .
 orm:ClauseType rdfs:label "clauseType exponents" .
 orm:clauseType rdfs:label "clauseType" .
-orm:clauseType rdfs:Range orm:ClauseType .
+orm:clauseType rdfs:range orm:ClauseType .
 orm:ClauseType rdfs:subClassOf orm:MuExponent .
 orm:clauseType rdfs:subPropertyOf orm:muProperty .
 orm:Common aamas:lang aama:Oromo .
 orm:Common rdf:type orm:Gender .
 orm:Common rdf:type orm:Polarity .
 orm:Common rdfs:label "Common" .
+orm:CompoundTense aamas:lang aama:Oromo .
+orm:CompoundTense rdf:type orm:FormType .
+orm:CompoundTense rdfs:label "CompoundTense" .
 orm:Conditional aamas:lang aama:Oromo .
 orm:Conditional rdf:type orm:Tam .
 orm:Conditional rdfs:label "Conditional" .
 orm:copType aamas:lang aama:Oromo .
 orm:CopType aamas:lang aama:Oromo .
-orm:copType rdfs:Domain aamas:Term .
+orm:copType rdfs:domain aamas:Term .
 orm:CopType rdfs:label "copType exponents" .
 orm:copType rdfs:label "copType" .
-orm:copType rdfs:Range orm:CopType .
+orm:copType rdfs:range orm:CopType .
 orm:CopType rdfs:subClassOf orm:MuExponent .
 orm:copType rdfs:subPropertyOf orm:muProperty .
 orm:Copula aamas:lang aama:Oromo .
@@ -63,10 +66,10 @@ orm:Copula rdf:type orm:PdgmSubType .
 orm:Copula rdfs:label "Copula" .
 orm:derivedStem aamas:lang aama:Oromo .
 orm:DerivedStem aamas:lang aama:Oromo .
-orm:derivedStem rdfs:Domain aamas:Term .
+orm:derivedStem rdfs:domain aamas:Term .
 orm:DerivedStem rdfs:label "derivedStem exponents" .
 orm:derivedStem rdfs:label "derivedStem" .
-orm:derivedStem rdfs:Range orm:DerivedStem .
+orm:derivedStem rdfs:range orm:DerivedStem .
 orm:DerivedStem rdfs:subClassOf orm:MuExponent .
 orm:derivedStem rdfs:subPropertyOf orm:muProperty .
 orm:Existence aamas:lang aama:Oromo .
@@ -75,6 +78,14 @@ orm:Existence rdfs:label "Existence" .
 orm:Fem aamas:lang aama:Oromo .
 orm:Fem rdf:type orm:Gender .
 orm:Fem rdfs:label "Fem" .
+orm:formType aamas:lang aama:Oromo .
+orm:FormType aamas:lang aama:Oromo .
+orm:formType rdfs:domain aamas:Term .
+orm:FormType rdfs:label "formType exponents" .
+orm:formType rdfs:label "formType" .
+orm:formType rdfs:range orm:FormType .
+orm:FormType rdfs:subClassOf orm:MuExponent .
+orm:formType rdfs:subPropertyOf orm:muProperty .
 orm:FutureDefinite aamas:lang aama:Oromo .
 orm:FutureDefinite rdf:type orm:Tam .
 orm:FutureDefinite rdfs:label "FutureDefinite" .
@@ -86,19 +97,19 @@ orm:FuturePerfect rdf:type orm:Tam .
 orm:FuturePerfect rdfs:label "FuturePerfect" .
 orm:gender aamas:lang aama:Oromo .
 orm:Gender aamas:lang aama:Oromo .
-orm:gender rdfs:Domain aamas:Term .
+orm:gender rdfs:domain aamas:Term .
 orm:Gender rdfs:label "gender exponents" .
 orm:gender rdfs:label "gender" .
-orm:gender rdfs:Range orm:Gender .
+orm:gender rdfs:range orm:Gender .
 orm:Gender rdfs:subClassOf orm:MuExponent .
 orm:gender rdfs:subPropertyOf orm:muProperty .
 orm:gloss aamas:lang aama:Oromo .
 orm:Gloss aamas:lang aama:Oromo .
 orm:gloss rdf:type aamas:Text .
-orm:gloss rdfs:Domain aamas:Term .
+orm:gloss rdfs:domain aamas:Term .
 orm:Gloss rdfs:label "gloss exponents" .
 orm:gloss rdfs:label "gloss" .
-orm:gloss rdfs:Range orm:Gloss .
+orm:gloss rdfs:range orm:Gloss .
 orm:Gloss rdfs:subClassOf orm:MuExponent .
 orm:Ha-Verb_pres-aff-sub aamas:lang aama:Oromo .
 orm:Ha-Verb_pres-aff-sub rdf:type orm:Structure .
@@ -118,10 +129,10 @@ orm:Jussive rdfs:label "Jussive" .
 orm:lemma aamas:lang aama:Oromo .
 orm:Lemma aamas:lang aama:Oromo .
 orm:lemma rdf:type aamas:Text .
-orm:lemma rdfs:Domain aamas:Term .
+orm:lemma rdfs:domain aamas:Term .
 orm:Lemma rdfs:label "lemma exponents" .
 orm:lemma rdfs:label "lemma" .
-orm:lemma rdfs:Range orm:Lemma .
+orm:lemma rdfs:range orm:Lemma .
 orm:Lemma rdfs:subClassOf orm:MuExponent .
 orm:M aamas:lang aama:Oromo .
 orm:M rdf:type orm:DerivedStem .
@@ -136,10 +147,10 @@ orm:MuExponent rdfs:subClassOf aamas:MuExponent .
 orm:mulabel aamas:lang aama:Oromo .
 orm:Mulabel aamas:lang aama:Oromo .
 orm:mulabel rdf:type aama:Label .
-orm:mulabel rdfs:Domain aamas:Term .
+orm:mulabel rdfs:domain aamas:Term .
 orm:Mulabel rdfs:label "mulabel exponents" .
 orm:mulabel rdfs:label "mulabel" .
-orm:mulabel rdfs:Range orm:Mulabel .
+orm:mulabel rdfs:range orm:Mulabel .
 orm:Mulabel rdfs:subClassOf orm:MuExponent .
 orm:muProperty rdfs:subPropertyOf aamas:muProperty .
 orm:Negative aamas:lang aama:Oromo .
@@ -150,10 +161,10 @@ orm:NonFinite rdf:type orm:NonFiniteForm .
 orm:NonFinite rdfs:label "NonFinite" .
 orm:nonFiniteForm aamas:lang aama:Oromo .
 orm:NonFiniteForm aamas:lang aama:Oromo .
-orm:nonFiniteForm rdfs:Domain aamas:Term .
+orm:nonFiniteForm rdfs:domain aamas:Term .
 orm:NonFiniteForm rdfs:label "nonFiniteForm exponents" .
 orm:nonFiniteForm rdfs:label "nonFiniteForm" .
-orm:nonFiniteForm rdfs:Range orm:NonFiniteForm .
+orm:nonFiniteForm rdfs:range orm:NonFiniteForm .
 orm:NonFiniteForm rdfs:subClassOf orm:MuExponent .
 orm:nonFiniteForm rdfs:subPropertyOf orm:muProperty .
 orm:NonPast-nonPres aamas:lang aama:Oromo .
@@ -161,10 +172,10 @@ orm:NonPast-nonPres rdf:type orm:Tam .
 orm:NonPast-nonPres rdfs:label "NonPast-nonPres" .
 orm:number aamas:lang aama:Oromo .
 orm:Number aamas:lang aama:Oromo .
-orm:number rdfs:Domain aamas:Term .
+orm:number rdfs:domain aamas:Term .
 orm:Number rdfs:label "number exponents" .
 orm:number rdfs:label "number" .
-orm:number rdfs:Range orm:Number .
+orm:number rdfs:range orm:Number .
 orm:Number rdfs:subClassOf orm:MuExponent .
 orm:number rdfs:subPropertyOf orm:muProperty .
 orm:Occurrence aamas:lang aama:Oromo .
@@ -178,10 +189,10 @@ orm:PastProgressive rdf:type orm:Tam .
 orm:PastProgressive rdfs:label "PastProgressive" .
 orm:pdgmSubType aamas:lang aama:Oromo .
 orm:PdgmSubType aamas:lang aama:Oromo .
-orm:pdgmSubType rdfs:Domain aamas:Term .
+orm:pdgmSubType rdfs:domain aamas:Term .
 orm:PdgmSubType rdfs:label "pdgmSubType exponents" .
 orm:pdgmSubType rdfs:label "pdgmSubType" .
-orm:pdgmSubType rdfs:Range orm:PdgmSubType .
+orm:pdgmSubType rdfs:range orm:PdgmSubType .
 orm:PdgmSubType rdfs:subClassOf orm:MuExponent .
 orm:pdgmSubType rdfs:subPropertyOf orm:muProperty .
 orm:Perfect aamas:lang aama:Oromo .
@@ -189,10 +200,10 @@ orm:Perfect rdf:type orm:Tam .
 orm:Perfect rdfs:label "Perfect" .
 orm:person aamas:lang aama:Oromo .
 orm:Person aamas:lang aama:Oromo .
-orm:person rdfs:Domain aamas:Term .
+orm:person rdfs:domain aamas:Term .
 orm:Person rdfs:label "person exponents" .
 orm:person rdfs:label "person" .
-orm:person rdfs:Range orm:Person .
+orm:person rdfs:range orm:Person .
 orm:Person rdfs:subClassOf orm:MuExponent .
 orm:person rdfs:subPropertyOf orm:muProperty .
 orm:Person1 aamas:lang aama:Oromo .
@@ -215,18 +226,18 @@ orm:Plural rdf:type orm:Number .
 orm:Plural rdfs:label "Plural" .
 orm:polarity aamas:lang aama:Oromo .
 orm:Polarity aamas:lang aama:Oromo .
-orm:polarity rdfs:Domain aamas:Term .
+orm:polarity rdfs:domain aamas:Term .
 orm:Polarity rdfs:label "polarity exponents" .
 orm:polarity rdfs:label "polarity" .
-orm:polarity rdfs:Range orm:Polarity .
+orm:polarity rdfs:range orm:Polarity .
 orm:Polarity rdfs:subClassOf orm:MuExponent .
 orm:polarity rdfs:subPropertyOf orm:muProperty .
 orm:pos aamas:lang aama:Oromo .
 orm:Pos aamas:lang aama:Oromo .
-orm:pos rdfs:Domain aamas:Term .
+orm:pos rdfs:domain aamas:Term .
 orm:Pos rdfs:label "pos exponents" .
 orm:pos rdfs:label "pos" .
-orm:pos rdfs:Range orm:Pos .
+orm:pos rdfs:range orm:Pos .
 orm:Pos rdfs:subClassOf orm:MuExponent .
 orm:pos rdfs:subPropertyOf orm:muProperty .
 orm:Possessive aamas:lang aama:Oromo .
@@ -243,10 +254,10 @@ orm:PresentProgressive rdf:type orm:Tam .
 orm:PresentProgressive rdfs:label "PresentProgressive" .
 orm:proClass aamas:lang aama:Oromo .
 orm:ProClass aamas:lang aama:Oromo .
-orm:proClass rdfs:Domain aamas:Term .
+orm:proClass rdfs:domain aamas:Term .
 orm:ProClass rdfs:label "proClass exponents" .
 orm:proClass rdfs:label "proClass" .
-orm:proClass rdfs:Range orm:ProClass .
+orm:proClass rdfs:range orm:ProClass .
 orm:ProClass rdfs:subClassOf orm:MuExponent .
 orm:proClass rdfs:subPropertyOf orm:muProperty .
 orm:Pronoun aamas:lang aama:Oromo .
@@ -261,28 +272,12 @@ orm:S rdfs:label "S" .
 orm:Singular aamas:lang aama:Oromo .
 orm:Singular rdf:type orm:Number .
 orm:Singular rdfs:label "Singular" .
-orm:structAux aamas:lang aama:Oromo .
-orm:StructAux aamas:lang aama:Oromo .
-orm:structAux rdf:type aamas:Text .
-orm:structAux rdfs:Domain aamas:Term .
-orm:StructAux rdfs:label "structAux exponents" .
-orm:structAux rdfs:label "structAux" .
-orm:structAux rdfs:Range orm:StructAux .
-orm:StructAux rdfs:subClassOf orm:MuExponent .
-orm:structMain aamas:lang aama:Oromo .
-orm:StructMain aamas:lang aama:Oromo .
-orm:structMain rdf:type aamas:Text .
-orm:structMain rdfs:Domain aamas:Term .
-orm:StructMain rdfs:label "structMain exponents" .
-orm:structMain rdfs:label "structMain" .
-orm:structMain rdfs:Range orm:StructMain .
-orm:StructMain rdfs:subClassOf orm:MuExponent .
 orm:structure aamas:lang aama:Oromo .
 orm:Structure aamas:lang aama:Oromo .
-orm:structure rdfs:Domain aamas:Term .
+orm:structure rdfs:domain aamas:Term .
 orm:Structure rdfs:label "structure exponents" .
 orm:structure rdfs:label "structure" .
-orm:structure rdfs:Range orm:Structure .
+orm:structure rdfs:range orm:Structure .
 orm:Structure rdfs:subClassOf orm:MuExponent .
 orm:structure rdfs:subPropertyOf orm:muProperty .
 orm:Subject aamas:lang aama:Oromo .
@@ -296,52 +291,68 @@ orm:T rdf:type orm:DerivedStem .
 orm:T rdfs:label "T" .
 orm:tam aamas:lang aama:Oromo .
 orm:Tam aamas:lang aama:Oromo .
-orm:tam rdfs:Domain aamas:Term .
+orm:tam rdfs:domain aamas:Term .
 orm:Tam rdfs:label "tam exponents" .
 orm:tam rdfs:label "tam" .
-orm:tam rdfs:Range orm:Tam .
+orm:tam rdfs:range orm:Tam .
 orm:Tam rdfs:subClassOf orm:MuExponent .
 orm:tam rdfs:subPropertyOf orm:muProperty .
 orm:token aamas:lang aama:Oromo .
 orm:Token aamas:lang aama:Oromo .
 orm:token rdf:type aamas:Token .
-orm:token rdfs:Domain aamas:Term .
+orm:token rdfs:domain aamas:Term .
 orm:Token rdfs:label "token exponents" .
 orm:token rdfs:label "token" .
-orm:token rdfs:Range orm:Token .
+orm:token rdfs:range orm:Token .
 orm:Token rdfs:subClassOf orm:MuExponent .
 orm:token-aux aamas:lang aama:Oromo .
 orm:Token-aux aamas:lang aama:Oromo .
 orm:token-aux rdf:type aamas:Token .
-orm:token-aux rdfs:Domain aamas:Term .
+orm:token-aux rdfs:domain aamas:Term .
 orm:Token-aux rdfs:label "token-aux exponents" .
 orm:token-aux rdfs:label "token-aux" .
-orm:token-aux rdfs:Range orm:Token-aux .
+orm:token-aux rdfs:range orm:Token-aux .
 orm:Token-aux rdfs:subClassOf orm:MuExponent .
 orm:token-encliticized aamas:lang aama:Oromo .
 orm:Token-encliticized aamas:lang aama:Oromo .
 orm:token-encliticized rdf:type aamas:Token .
-orm:token-encliticized rdfs:Domain aamas:Term .
+orm:token-encliticized rdfs:domain aamas:Term .
 orm:Token-encliticized rdfs:label "token-encliticized exponents" .
 orm:token-encliticized rdfs:label "token-encliticized" .
-orm:token-encliticized rdfs:Range orm:Token-encliticized .
+orm:token-encliticized rdfs:range orm:Token-encliticized .
 orm:Token-encliticized rdfs:subClassOf orm:MuExponent .
 orm:token-main aamas:lang aama:Oromo .
 orm:Token-main aamas:lang aama:Oromo .
 orm:token-main rdf:type aamas:Token .
-orm:token-main rdfs:Domain aamas:Term .
+orm:token-main rdfs:domain aamas:Term .
 orm:Token-main rdfs:label "token-main exponents" .
 orm:token-main rdfs:label "token-main" .
-orm:token-main rdfs:Range orm:Token-main .
+orm:token-main rdfs:range orm:Token-main .
 orm:Token-main rdfs:subClassOf orm:MuExponent .
-orm:tokenType aamas:lang aama:Oromo .
-orm:TokenType aamas:lang aama:Oromo .
-orm:tokenType rdf:type aamas:Token .
-orm:tokenType rdfs:Domain aamas:Term .
-orm:TokenType rdfs:label "tokenType exponents" .
-orm:tokenType rdfs:label "tokenType" .
-orm:tokenType rdfs:Range orm:TokenType .
-orm:TokenType rdfs:subClassOf orm:MuExponent .
+orm:token-structAux aamas:lang aama:Oromo .
+orm:Token-structAux aamas:lang aama:Oromo .
+orm:token-structAux rdf:type aamas:Token .
+orm:token-structAux rdfs:domain aamas:Term .
+orm:Token-structAux rdfs:label "token-structAux exponents" .
+orm:token-structAux rdfs:label "token-structAux" .
+orm:token-structAux rdfs:range orm:Token-structAux .
+orm:Token-structAux rdfs:subClassOf orm:MuExponent .
+orm:token-structMain aamas:lang aama:Oromo .
+orm:Token-structMain aamas:lang aama:Oromo .
+orm:token-structMain rdf:type aamas:Token .
+orm:token-structMain rdfs:domain aamas:Term .
+orm:Token-structMain rdfs:label "token-structMain exponents" .
+orm:token-structMain rdfs:label "token-structMain" .
+orm:token-structMain rdfs:range orm:Token-structMain .
+orm:Token-structMain rdfs:subClassOf orm:MuExponent .
+orm:token-structure aamas:lang aama:Oromo .
+orm:Token-structure aamas:lang aama:Oromo .
+orm:token-structure rdf:type aamas:Token .
+orm:token-structure rdfs:domain aamas:Term .
+orm:Token-structure rdfs:label "token-structure exponents" .
+orm:token-structure rdfs:label "token-structure" .
+orm:token-structure rdfs:range orm:Token-structure .
+orm:Token-structure rdfs:subClassOf orm:MuExponent .
 orm:Verb aamas:lang aama:Oromo .
 orm:Verb rdf:type orm:Pos .
 orm:Verb rdfs:label "Verb" .

@@ -10,7 +10,7 @@ aama:Syriac rdfs:label "Syriac" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -23,10 +23,10 @@ syr:Accusative rdf:type syr:Case .
 syr:Accusative rdfs:label "Accusative" .
 syr:case aamas:lang aama:Syriac .
 syr:Case aamas:lang aama:Syriac .
-syr:case rdfs:Domain aamas:Term .
+syr:case rdfs:domain aamas:Term .
 syr:Case rdfs:label "case exponents" .
 syr:case rdfs:label "case" .
-syr:case rdfs:Range syr:Case .
+syr:case rdfs:range syr:Case .
 syr:Case rdfs:subClassOf syr:MuExponent .
 syr:case rdfs:subPropertyOf syr:muProperty .
 syr:Common aamas:lang aama:Syriac .
@@ -34,10 +34,10 @@ syr:Common rdf:type syr:Gender .
 syr:Common rdfs:label "Common" .
 syr:deixis aamas:lang aama:Syriac .
 syr:Deixis aamas:lang aama:Syriac .
-syr:deixis rdfs:Domain aamas:Term .
+syr:deixis rdfs:domain aamas:Term .
 syr:Deixis rdfs:label "deixis exponents" .
 syr:deixis rdfs:label "deixis" .
-syr:deixis rdfs:Range syr:Deixis .
+syr:deixis rdfs:range syr:Deixis .
 syr:Deixis rdfs:subClassOf syr:MuExponent .
 syr:deixis rdfs:subPropertyOf syr:muProperty .
 syr:Demostrative aamas:lang aama:Syriac .
@@ -51,18 +51,34 @@ syr:Fem rdf:type syr:Gender .
 syr:Fem rdfs:label "Fem" .
 syr:gender aamas:lang aama:Syriac .
 syr:Gender aamas:lang aama:Syriac .
-syr:gender rdfs:Domain aamas:Term .
+syr:gender rdfs:domain aamas:Term .
 syr:Gender rdfs:label "gender exponents" .
 syr:gender rdfs:label "gender" .
-syr:gender rdfs:Range syr:Gender .
+syr:gender rdfs:range syr:Gender .
 syr:Gender rdfs:subClassOf syr:MuExponent .
 syr:gender rdfs:subPropertyOf syr:muProperty .
 syr:Genitive aamas:lang aama:Syriac .
 syr:Genitive rdf:type syr:Case .
 syr:Genitive rdfs:label "Genitive" .
+syr:gloss aamas:lang aama:Syriac .
+syr:Gloss aamas:lang aama:Syriac .
+syr:gloss rdf:type aamas:Text .
+syr:gloss rdfs:domain aamas:Term .
+syr:Gloss rdfs:label "gloss exponents" .
+syr:gloss rdfs:label "gloss" .
+syr:gloss rdfs:range syr:Gloss .
+syr:Gloss rdfs:subClassOf syr:MuExponent .
 syr:Independent aamas:lang aama:Syriac .
 syr:Independent rdf:type syr:ProClass .
 syr:Independent rdfs:label "Independent" .
+syr:lemma aamas:lang aama:Syriac .
+syr:Lemma aamas:lang aama:Syriac .
+syr:lemma rdf:type aamas:Text .
+syr:lemma rdfs:domain aamas:Term .
+syr:Lemma rdfs:label "lemma exponents" .
+syr:lemma rdfs:label "lemma" .
+syr:lemma rdfs:range syr:Lemma .
+syr:Lemma rdfs:subClassOf syr:MuExponent .
 syr:Masc aamas:lang aama:Syriac .
 syr:Masc rdf:type syr:Gender .
 syr:Masc rdfs:label "Masc" .
@@ -70,10 +86,10 @@ syr:MuExponent rdfs:subClassOf aamas:MuExponent .
 syr:mulabel aamas:lang aama:Syriac .
 syr:Mulabel aamas:lang aama:Syriac .
 syr:mulabel rdf:type aama:Label .
-syr:mulabel rdfs:Domain aamas:Term .
+syr:mulabel rdfs:domain aamas:Term .
 syr:Mulabel rdfs:label "mulabel exponents" .
 syr:mulabel rdfs:label "mulabel" .
-syr:mulabel rdfs:Range syr:Mulabel .
+syr:mulabel rdfs:range syr:Mulabel .
 syr:Mulabel rdfs:subClassOf syr:MuExponent .
 syr:muProperty rdfs:subPropertyOf aamas:muProperty .
 syr:Near aamas:lang aama:Syriac .
@@ -81,18 +97,18 @@ syr:Near rdf:type syr:Deixis .
 syr:Near rdfs:label "Near" .
 syr:number aamas:lang aama:Syriac .
 syr:Number aamas:lang aama:Syriac .
-syr:number rdfs:Domain aamas:Term .
+syr:number rdfs:domain aamas:Term .
 syr:Number rdfs:label "number exponents" .
 syr:number rdfs:label "number" .
-syr:number rdfs:Range syr:Number .
+syr:number rdfs:range syr:Number .
 syr:Number rdfs:subClassOf syr:MuExponent .
 syr:number rdfs:subPropertyOf syr:muProperty .
 syr:numHead aamas:lang aama:Syriac .
 syr:NumHead aamas:lang aama:Syriac .
-syr:numHead rdfs:Domain aamas:Term .
+syr:numHead rdfs:domain aamas:Term .
 syr:NumHead rdfs:label "numHead exponents" .
 syr:numHead rdfs:label "numHead" .
-syr:numHead rdfs:Range syr:NumHead .
+syr:numHead rdfs:range syr:NumHead .
 syr:NumHead rdfs:subClassOf syr:MuExponent .
 syr:numHead rdfs:subPropertyOf syr:muProperty .
 syr:ObjCliticImprtv aamas:lang aama:Syriac .
@@ -106,10 +122,10 @@ syr:Object rdf:type syr:Case .
 syr:Object rdfs:label "Object" .
 syr:person aamas:lang aama:Syriac .
 syr:Person aamas:lang aama:Syriac .
-syr:person rdfs:Domain aamas:Term .
+syr:person rdfs:domain aamas:Term .
 syr:Person rdfs:label "person exponents" .
 syr:person rdfs:label "person" .
-syr:person rdfs:Range syr:Person .
+syr:person rdfs:range syr:Person .
 syr:Person rdfs:subClassOf syr:MuExponent .
 syr:person rdfs:subPropertyOf syr:muProperty .
 syr:Person1 aamas:lang aama:Syriac .
@@ -127,10 +143,10 @@ syr:Plural rdf:type syr:NumHead .
 syr:Plural rdfs:label "Plural" .
 syr:pos aamas:lang aama:Syriac .
 syr:Pos aamas:lang aama:Syriac .
-syr:pos rdfs:Domain aamas:Term .
+syr:pos rdfs:domain aamas:Term .
 syr:Pos rdfs:label "pos exponents" .
 syr:pos rdfs:label "pos" .
-syr:pos rdfs:Range syr:Pos .
+syr:pos rdfs:range syr:Pos .
 syr:Pos rdfs:subClassOf syr:MuExponent .
 syr:pos rdfs:subPropertyOf syr:muProperty .
 syr:PossClitic aamas:lang aama:Syriac .
@@ -141,10 +157,10 @@ syr:Pro rdf:type syr:Pos .
 syr:Pro rdfs:label "Pro" .
 syr:proClass aamas:lang aama:Syriac .
 syr:ProClass aamas:lang aama:Syriac .
-syr:proClass rdfs:Domain aamas:Term .
+syr:proClass rdfs:domain aamas:Term .
 syr:ProClass rdfs:label "proClass exponents" .
 syr:proClass rdfs:label "proClass" .
-syr:proClass rdfs:Range syr:ProClass .
+syr:proClass rdfs:range syr:ProClass .
 syr:ProClass rdfs:subClassOf syr:MuExponent .
 syr:proClass rdfs:subPropertyOf syr:muProperty .
 syr:Singular aamas:lang aama:Syriac .
@@ -154,24 +170,16 @@ syr:Singular rdfs:label "Singular" .
 syr:token aamas:lang aama:Syriac .
 syr:Token aamas:lang aama:Syriac .
 syr:token rdf:type aamas:Token .
-syr:token rdfs:Domain aamas:Term .
+syr:token rdfs:domain aamas:Term .
 syr:Token rdfs:label "token exponents" .
 syr:token rdfs:label "token" .
-syr:token rdfs:Range syr:Token .
+syr:token rdfs:range syr:Token .
 syr:Token rdfs:subClassOf syr:MuExponent .
 syr:token-environment aamas:lang aama:Syriac .
 syr:Token-environment aamas:lang aama:Syriac .
 syr:token-environment rdf:type aamas:Token .
-syr:token-environment rdfs:Domain aamas:Term .
+syr:token-environment rdfs:domain aamas:Term .
 syr:Token-environment rdfs:label "token-environment exponents" .
 syr:token-environment rdfs:label "token-environment" .
-syr:token-environment rdfs:Range syr:Token-environment .
+syr:token-environment rdfs:range syr:Token-environment .
 syr:Token-environment rdfs:subClassOf syr:MuExponent .
-syr:token-environmet aamas:lang aama:Syriac .
-syr:Token-environmet aamas:lang aama:Syriac .
-syr:token-environmet rdf:type aamas:Token .
-syr:token-environmet rdfs:Domain aamas:Term .
-syr:Token-environmet rdfs:label "token-environmet exponents" .
-syr:token-environmet rdfs:label "token-environmet" .
-syr:token-environmet rdfs:Range syr:Token-environmet .
-syr:Token-environmet rdfs:subClassOf syr:MuExponent .

@@ -10,7 +10,7 @@ aama:Khamtanga rdfs:label "Khamtanga" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -54,11 +54,11 @@ khm:Cardinal rdfs:label "Cardinal" .
 khm:case aamas:lang aama:Khamtanga .
 khm:Case aamas:lang aama:Khamtanga .
 khm:Case rdf:type khm:NounMorphClass .
-khm:case rdfs:Domain aamas:Term .
+khm:case rdfs:domain aamas:Term .
 khm:Case rdfs:label "case exponents" .
 khm:case rdfs:label "case" .
 khm:Case rdfs:label "Case" .
-khm:case rdfs:Range khm:Case .
+khm:case rdfs:range khm:Case .
 khm:Case rdfs:subClassOf khm:MuExponent .
 khm:case rdfs:subPropertyOf khm:muProperty .
 khm:Causal aamas:lang aama:Khamtanga .
@@ -66,10 +66,10 @@ khm:Causal rdf:type khm:Tam .
 khm:Causal rdfs:label "Causal" .
 khm:clauseType aamas:lang aama:Khamtanga .
 khm:ClauseType aamas:lang aama:Khamtanga .
-khm:clauseType rdfs:Domain aamas:Term .
+khm:clauseType rdfs:domain aamas:Term .
 khm:ClauseType rdfs:label "clauseType exponents" .
 khm:clauseType rdfs:label "clauseType" .
-khm:clauseType rdfs:Range khm:ClauseType .
+khm:clauseType rdfs:range khm:ClauseType .
 khm:ClauseType rdfs:subClassOf khm:MuExponent .
 khm:clauseType rdfs:subPropertyOf khm:muProperty .
 khm:Comitative aamas:lang aama:Khamtanga .
@@ -81,6 +81,7 @@ khm:Common rdf:type khm:Gender .
 khm:Common rdf:type khm:GenderHead .
 khm:Common rdf:type khm:GenderPoss .
 khm:Common rdf:type khm:Person .
+khm:Common rdf:type khm:StemClass .
 khm:Common rdfs:label "Common" .
 khm:Comparative aamas:lang aama:Khamtanga .
 khm:Comparative rdf:type khm:Tam .
@@ -102,10 +103,10 @@ khm:Conditional3 rdf:type khm:Tam .
 khm:Conditional3 rdfs:label "Conditional3" .
 khm:conjClass aamas:lang aama:Khamtanga .
 khm:ConjClass aamas:lang aama:Khamtanga .
-khm:conjClass rdfs:Domain aamas:Term .
+khm:conjClass rdfs:domain aamas:Term .
 khm:ConjClass rdfs:label "conjClass exponents" .
 khm:conjClass rdfs:label "conjClass" .
-khm:conjClass rdfs:Range khm:ConjClass .
+khm:conjClass rdfs:range khm:ConjClass .
 khm:ConjClass rdfs:subClassOf khm:MuExponent .
 khm:conjClass rdfs:subPropertyOf khm:muProperty .
 khm:Conjugation1 aamas:lang aama:Khamtanga .
@@ -129,6 +130,9 @@ khm:Conjugation5b rdfs:label "Conjugation5b" .
 khm:Consecutive aamas:lang aama:Khamtanga .
 khm:Consecutive rdf:type khm:Tam .
 khm:Consecutive rdfs:label "Consecutive" .
+khm:Consonant aamas:lang aama:Khamtanga .
+khm:Consonant rdf:type khm:StemClass .
+khm:Consonant rdfs:label "Consonant" .
 khm:CopulaExist aamas:lang aama:Khamtanga .
 khm:CopulaExist rdf:type khm:VerbMorphClass .
 khm:CopulaExist rdfs:label "CopulaExist" .
@@ -137,10 +141,10 @@ khm:CoTemporal rdf:type khm:Tam .
 khm:CoTemporal rdfs:label "CoTemporal" .
 khm:defClass aamas:lang aama:Khamtanga .
 khm:DefClass aamas:lang aama:Khamtanga .
-khm:defClass rdfs:Domain aamas:Term .
+khm:defClass rdfs:domain aamas:Term .
 khm:DefClass rdfs:label "defClass exponents" .
 khm:defClass rdfs:label "defClass" .
-khm:defClass rdfs:Range khm:DefClass .
+khm:defClass rdfs:range khm:DefClass .
 khm:DefClass rdfs:subClassOf khm:MuExponent .
 khm:defClass rdfs:subPropertyOf khm:muProperty .
 khm:Definite aamas:lang aama:Khamtanga .
@@ -148,10 +152,10 @@ khm:Definite rdf:type khm:DefClass .
 khm:Definite rdfs:label "Definite" .
 khm:deixis aamas:lang aama:Khamtanga .
 khm:Deixis aamas:lang aama:Khamtanga .
-khm:deixis rdfs:Domain aamas:Term .
+khm:deixis rdfs:domain aamas:Term .
 khm:Deixis rdfs:label "deixis exponents" .
 khm:deixis rdfs:label "deixis" .
-khm:deixis rdfs:Range khm:Deixis .
+khm:deixis rdfs:range khm:Deixis .
 khm:Deixis rdfs:subClassOf khm:MuExponent .
 khm:deixis rdfs:subPropertyOf khm:muProperty .
 khm:DEMEXX aamas:lang aama:Khamtanga .
@@ -180,27 +184,27 @@ khm:Gemination rdfs:label "Gemination" .
 khm:gender aamas:lang aama:Khamtanga .
 khm:Gender aamas:lang aama:Khamtanga .
 khm:Gender rdf:type khm:NounMorphClass .
-khm:gender rdfs:Domain aamas:Term .
+khm:gender rdfs:domain aamas:Term .
 khm:Gender rdfs:label "gender exponents" .
 khm:gender rdfs:label "gender" .
 khm:Gender rdfs:label "Gender" .
-khm:gender rdfs:Range khm:Gender .
+khm:gender rdfs:range khm:Gender .
 khm:Gender rdfs:subClassOf khm:MuExponent .
 khm:gender rdfs:subPropertyOf khm:muProperty .
 khm:genderHead aamas:lang aama:Khamtanga .
 khm:GenderHead aamas:lang aama:Khamtanga .
-khm:genderHead rdfs:Domain aamas:Term .
+khm:genderHead rdfs:domain aamas:Term .
 khm:GenderHead rdfs:label "genderHead exponents" .
 khm:genderHead rdfs:label "genderHead" .
-khm:genderHead rdfs:Range khm:GenderHead .
+khm:genderHead rdfs:range khm:GenderHead .
 khm:GenderHead rdfs:subClassOf khm:MuExponent .
 khm:genderHead rdfs:subPropertyOf khm:muProperty .
 khm:genderPoss aamas:lang aama:Khamtanga .
 khm:GenderPoss aamas:lang aama:Khamtanga .
-khm:genderPoss rdfs:Domain aamas:Term .
+khm:genderPoss rdfs:domain aamas:Term .
 khm:GenderPoss rdfs:label "genderPoss exponents" .
 khm:genderPoss rdfs:label "genderPoss" .
-khm:genderPoss rdfs:Range khm:GenderPoss .
+khm:genderPoss rdfs:range khm:GenderPoss .
 khm:GenderPoss rdfs:subClassOf khm:MuExponent .
 khm:genderPoss rdfs:subPropertyOf khm:muProperty .
 khm:General aamas:lang aama:Khamtanga .
@@ -212,10 +216,10 @@ khm:Gerund rdfs:label "Gerund" .
 khm:gloss aamas:lang aama:Khamtanga .
 khm:Gloss aamas:lang aama:Khamtanga .
 khm:gloss rdf:type aamas:Text .
-khm:gloss rdfs:Domain aamas:Term .
+khm:gloss rdfs:domain aamas:Term .
 khm:Gloss rdfs:label "gloss exponents" .
 khm:gloss rdfs:label "gloss" .
-khm:gloss rdfs:Range khm:Gloss .
+khm:gloss rdfs:range khm:Gloss .
 khm:Gloss rdfs:subClassOf khm:MuExponent .
 khm:Imperative aamas:lang aama:Khamtanga .
 khm:Imperative rdf:type khm:Tam .
@@ -238,13 +242,16 @@ khm:Interrogative rdfs:label "Interrogative" .
 khm:Jussive aamas:lang aama:Khamtanga .
 khm:Jussive rdf:type khm:Tam .
 khm:Jussive rdfs:label "Jussive" .
+khm:Kinship aamas:lang aama:Khamtanga .
+khm:Kinship rdf:type khm:StemClass .
+khm:Kinship rdfs:label "kinship" .
 khm:lemma aamas:lang aama:Khamtanga .
 khm:Lemma aamas:lang aama:Khamtanga .
 khm:lemma rdf:type aamas:Text .
-khm:lemma rdfs:Domain aamas:Term .
+khm:lemma rdfs:domain aamas:Term .
 khm:Lemma rdfs:label "lemma exponents" .
 khm:lemma rdfs:label "lemma" .
-khm:lemma rdfs:Range khm:Lemma .
+khm:lemma rdfs:range khm:Lemma .
 khm:Lemma rdfs:subClassOf khm:MuExponent .
 khm:Locative aamas:lang aama:Khamtanga .
 khm:Locative rdf:type khm:Case .
@@ -261,17 +268,17 @@ khm:MuExponent rdfs:subClassOf aamas:MuExponent .
 khm:mulabel aamas:lang aama:Khamtanga .
 khm:Mulabel aamas:lang aama:Khamtanga .
 khm:mulabel rdf:type aama:Label .
-khm:mulabel rdfs:Domain aamas:Term .
+khm:mulabel rdfs:domain aamas:Term .
 khm:Mulabel rdfs:label "mulabel exponents" .
 khm:mulabel rdfs:label "mulabel" .
-khm:mulabel rdfs:Range khm:Mulabel .
+khm:mulabel rdfs:range khm:Mulabel .
 khm:Mulabel rdfs:subClassOf khm:MuExponent .
 khm:multiLex aamas:lang aama:Khamtanga .
 khm:MultiLex aamas:lang aama:Khamtanga .
-khm:multiLex rdfs:Domain aamas:Term .
+khm:multiLex rdfs:domain aamas:Term .
 khm:MultiLex rdfs:label "multiLex exponents" .
 khm:multiLex rdfs:label "multiLex" .
-khm:multiLex rdfs:Range khm:MultiLex .
+khm:multiLex rdfs:range khm:MultiLex .
 khm:MultiLex rdfs:subClassOf khm:MuExponent .
 khm:multiLex rdfs:subPropertyOf khm:muProperty .
 khm:muProperty rdfs:subPropertyOf aamas:muProperty .
@@ -289,10 +296,10 @@ khm:NOMNUMBEREXX rdf:type khm:MultiLex .
 khm:NOMNUMBEREXX rdfs:label "NOMNUMBEREXX" .
 khm:nonFiniteForm aamas:lang aama:Khamtanga .
 khm:NonFiniteForm aamas:lang aama:Khamtanga .
-khm:nonFiniteForm rdfs:Domain aamas:Term .
+khm:nonFiniteForm rdfs:domain aamas:Term .
 khm:NonFiniteForm rdfs:label "nonFiniteForm exponents" .
 khm:nonFiniteForm rdfs:label "nonFiniteForm" .
-khm:nonFiniteForm rdfs:Range khm:NonFiniteForm .
+khm:nonFiniteForm rdfs:range khm:NonFiniteForm .
 khm:NonFiniteForm rdfs:subClassOf khm:MuExponent .
 khm:nonFiniteForm rdfs:subPropertyOf khm:muProperty .
 khm:Noun aamas:lang aama:Khamtanga .
@@ -303,28 +310,28 @@ khm:NOUNCASE rdf:type khm:MultiLex .
 khm:NOUNCASE rdfs:label "NOUNCASE" .
 khm:nounMorphClass aamas:lang aama:Khamtanga .
 khm:NounMorphClass aamas:lang aama:Khamtanga .
-khm:nounMorphClass rdfs:Domain aamas:Term .
+khm:nounMorphClass rdfs:domain aamas:Term .
 khm:NounMorphClass rdfs:label "nounMorphClass exponents" .
 khm:nounMorphClass rdfs:label "nounMorphClass" .
-khm:nounMorphClass rdfs:Range khm:NounMorphClass .
+khm:nounMorphClass rdfs:range khm:NounMorphClass .
 khm:NounMorphClass rdfs:subClassOf khm:MuExponent .
 khm:nounMorphClass rdfs:subPropertyOf khm:muProperty .
 khm:number aamas:lang aama:Khamtanga .
 khm:Number aamas:lang aama:Khamtanga .
 khm:Number rdf:type khm:NounMorphClass .
-khm:number rdfs:Domain aamas:Term .
+khm:number rdfs:domain aamas:Term .
 khm:Number rdfs:label "number exponents" .
 khm:number rdfs:label "number" .
 khm:Number rdfs:label "Number" .
-khm:number rdfs:Range khm:Number .
+khm:number rdfs:range khm:Number .
 khm:Number rdfs:subClassOf khm:MuExponent .
 khm:number rdfs:subPropertyOf khm:muProperty .
 khm:numClass aamas:lang aama:Khamtanga .
 khm:NumClass aamas:lang aama:Khamtanga .
-khm:numClass rdfs:Domain aamas:Term .
+khm:numClass rdfs:domain aamas:Term .
 khm:NumClass rdfs:label "numClass exponents" .
 khm:numClass rdfs:label "numClass" .
-khm:numClass rdfs:Range khm:NumClass .
+khm:numClass rdfs:range khm:NumClass .
 khm:NumClass rdfs:subClassOf khm:MuExponent .
 khm:numClass rdfs:subPropertyOf khm:muProperty .
 khm:Numeral aamas:lang aama:Khamtanga .
@@ -332,10 +339,10 @@ khm:Numeral rdf:type khm:NounMorphClass .
 khm:Numeral rdfs:label "Numeral" .
 khm:numHead aamas:lang aama:Khamtanga .
 khm:NumHead aamas:lang aama:Khamtanga .
-khm:numHead rdfs:Domain aamas:Term .
+khm:numHead rdfs:domain aamas:Term .
 khm:NumHead rdfs:label "numHead exponents" .
 khm:numHead rdfs:label "numHead" .
-khm:numHead rdfs:Range khm:NumHead .
+khm:numHead rdfs:range khm:NumHead .
 khm:NumHead rdfs:subClassOf khm:MuExponent .
 khm:numHead rdfs:subPropertyOf khm:muProperty .
 khm:Object aamas:lang aama:Khamtanga .
@@ -355,18 +362,18 @@ khm:PastTemporal rdf:type khm:Tam .
 khm:PastTemporal rdfs:label "PastTemporal" .
 khm:pdgmType aamas:lang aama:Khamtanga .
 khm:PdgmType aamas:lang aama:Khamtanga .
-khm:pdgmType rdfs:Domain aamas:Term .
+khm:pdgmType rdfs:domain aamas:Term .
 khm:PdgmType rdfs:label "pdgmType exponents" .
 khm:pdgmType rdfs:label "pdgmType" .
-khm:pdgmType rdfs:Range khm:PdgmType .
+khm:pdgmType rdfs:range khm:PdgmType .
 khm:PdgmType rdfs:subClassOf khm:MuExponent .
 khm:pdgmType rdfs:subPropertyOf khm:muProperty .
 khm:person aamas:lang aama:Khamtanga .
 khm:Person aamas:lang aama:Khamtanga .
-khm:person rdfs:Domain aamas:Term .
+khm:person rdfs:domain aamas:Term .
 khm:Person rdfs:label "person exponents" .
 khm:person rdfs:label "person" .
-khm:person rdfs:Range khm:Person .
+khm:person rdfs:range khm:Person .
 khm:Person rdfs:subClassOf khm:MuExponent .
 khm:person rdfs:subPropertyOf khm:muProperty .
 khm:Person1 aamas:lang aama:Khamtanga .
@@ -384,18 +391,18 @@ khm:Plural rdf:type khm:NumHead .
 khm:Plural rdfs:label "Plural" .
 khm:pluralClass aamas:lang aama:Khamtanga .
 khm:PluralClass aamas:lang aama:Khamtanga .
-khm:pluralClass rdfs:Domain aamas:Term .
+khm:pluralClass rdfs:domain aamas:Term .
 khm:PluralClass rdfs:label "pluralClass exponents" .
 khm:pluralClass rdfs:label "pluralClass" .
-khm:pluralClass rdfs:Range khm:PluralClass .
+khm:pluralClass rdfs:range khm:PluralClass .
 khm:PluralClass rdfs:subClassOf khm:MuExponent .
 khm:pluralClass rdfs:subPropertyOf khm:muProperty .
 khm:polarity aamas:lang aama:Khamtanga .
 khm:Polarity aamas:lang aama:Khamtanga .
-khm:polarity rdfs:Domain aamas:Term .
+khm:polarity rdfs:domain aamas:Term .
 khm:Polarity rdfs:label "polarity exponents" .
 khm:polarity rdfs:label "polarity" .
-khm:polarity rdfs:Range khm:Polarity .
+khm:polarity rdfs:range khm:Polarity .
 khm:Polarity rdfs:subClassOf khm:MuExponent .
 khm:polarity rdfs:subPropertyOf khm:muProperty .
 khm:Polite aamas:lang aama:Khamtanga .
@@ -403,10 +410,10 @@ khm:Polite rdf:type khm:Gender .
 khm:Polite rdfs:label "Polite" .
 khm:pos aamas:lang aama:Khamtanga .
 khm:Pos aamas:lang aama:Khamtanga .
-khm:pos rdfs:Domain aamas:Term .
+khm:pos rdfs:domain aamas:Term .
 khm:Pos rdfs:label "pos exponents" .
 khm:pos rdfs:label "pos" .
-khm:pos rdfs:Range khm:Pos .
+khm:pos rdfs:range khm:Pos .
 khm:Pos rdfs:subClassOf khm:MuExponent .
 khm:pos rdfs:subPropertyOf khm:muProperty .
 khm:Possessive aamas:lang aama:Khamtanga .
@@ -423,10 +430,10 @@ khm:PresentInterrog rdf:type khm:Tam .
 khm:PresentInterrog rdfs:label "PresentInterrog" .
 khm:proClass aamas:lang aama:Khamtanga .
 khm:ProClass aamas:lang aama:Khamtanga .
-khm:proClass rdfs:Domain aamas:Term .
+khm:proClass rdfs:domain aamas:Term .
 khm:ProClass rdfs:label "proClass exponents" .
 khm:proClass rdfs:label "proClass" .
-khm:proClass rdfs:Range khm:ProClass .
+khm:proClass rdfs:range khm:ProClass .
 khm:ProClass rdfs:subClassOf khm:MuExponent .
 khm:proClass rdfs:subPropertyOf khm:muProperty .
 khm:Pronoun aamas:lang aama:Khamtanga .
@@ -453,12 +460,12 @@ khm:Singular rdf:type khm:NumHead .
 khm:Singular rdfs:label "Singular" .
 khm:stemClass aamas:lang aama:Khamtanga .
 khm:StemClass aamas:lang aama:Khamtanga .
-khm:stemClass rdf:type aamas:Text .
-khm:stemClass rdfs:Domain aamas:Term .
+khm:stemClass rdfs:domain aamas:Term .
 khm:StemClass rdfs:label "stemClass exponents" .
 khm:stemClass rdfs:label "stemClass" .
-khm:stemClass rdfs:Range khm:StemClass .
+khm:stemClass rdfs:range khm:StemClass .
 khm:StemClass rdfs:subClassOf khm:MuExponent .
+khm:stemClass rdfs:subPropertyOf khm:muProperty .
 khm:SubAdv aamas:lang aama:Khamtanga .
 khm:SubAdv rdf:type khm:ClauseType .
 khm:SubAdv rdfs:label "SubAdv" .
@@ -473,10 +480,10 @@ khm:Suffixation rdf:type khm:PluralClass .
 khm:Suffixation rdfs:label "Suffixation" .
 khm:tam aamas:lang aama:Khamtanga .
 khm:Tam aamas:lang aama:Khamtanga .
-khm:tam rdfs:Domain aamas:Term .
+khm:tam rdfs:domain aamas:Term .
 khm:Tam rdfs:label "tam exponents" .
 khm:tam rdfs:label "tam" .
-khm:tam rdfs:Range khm:Tam .
+khm:tam rdfs:range khm:Tam .
 khm:Tam rdfs:subClassOf khm:MuExponent .
 khm:tam rdfs:subPropertyOf khm:muProperty .
 khm:Temporal aamas:lang aama:Khamtanga .
@@ -485,26 +492,26 @@ khm:Temporal rdfs:label "Temporal" .
 khm:token aamas:lang aama:Khamtanga .
 khm:Token aamas:lang aama:Khamtanga .
 khm:token rdf:type aamas:Token .
-khm:token rdfs:Domain aamas:Term .
+khm:token rdfs:domain aamas:Term .
 khm:Token rdfs:label "token exponents" .
 khm:token rdfs:label "token" .
-khm:token rdfs:Range khm:Token .
+khm:token rdfs:range khm:Token .
 khm:Token rdfs:subClassOf khm:MuExponent .
 khm:token-gloss aamas:lang aama:Khamtanga .
 khm:Token-gloss aamas:lang aama:Khamtanga .
 khm:token-gloss rdf:type aamas:Text .
-khm:token-gloss rdfs:Domain aamas:Term .
+khm:token-gloss rdfs:domain aamas:Term .
 khm:Token-gloss rdfs:label "token-gloss exponents" .
 khm:token-gloss rdfs:label "token-gloss" .
-khm:token-gloss rdfs:Range khm:Token-gloss .
+khm:token-gloss rdfs:range khm:Token-gloss .
 khm:Token-gloss rdfs:subClassOf khm:MuExponent .
 khm:token-numGloss aamas:lang aama:Khamtanga .
 khm:Token-numGloss aamas:lang aama:Khamtanga .
 khm:token-numGloss rdf:type aamas:Text .
-khm:token-numGloss rdfs:Domain aamas:Term .
+khm:token-numGloss rdfs:domain aamas:Term .
 khm:Token-numGloss rdfs:label "token-numGloss exponents" .
 khm:token-numGloss rdfs:label "token-numGloss" .
-khm:token-numGloss rdfs:Range khm:Token-numGloss .
+khm:token-numGloss rdfs:range khm:Token-numGloss .
 khm:Token-numGloss rdfs:subClassOf khm:MuExponent .
 khm:Verb aamas:lang aama:Khamtanga .
 khm:Verb rdf:type khm:Pos .
@@ -517,9 +524,12 @@ khm:VerbalNoun rdfs:label "VerbalNoun" .
 khm:VERBALNOUN rdfs:label "VERBALNOUN" .
 khm:verbMorphClass aamas:lang aama:Khamtanga .
 khm:VerbMorphClass aamas:lang aama:Khamtanga .
-khm:verbMorphClass rdfs:Domain aamas:Term .
+khm:verbMorphClass rdfs:domain aamas:Term .
 khm:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 khm:verbMorphClass rdfs:label "verbMorphClass" .
-khm:verbMorphClass rdfs:Range khm:VerbMorphClass .
+khm:verbMorphClass rdfs:range khm:VerbMorphClass .
 khm:VerbMorphClass rdfs:subClassOf khm:MuExponent .
 khm:verbMorphClass rdfs:subPropertyOf khm:muProperty .
+khm:Vowel aamas:lang aama:Khamtanga .
+khm:Vowel rdf:type khm:StemClass .
+khm:Vowel rdfs:label "Vowel" .

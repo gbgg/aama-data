@@ -24,6 +24,8 @@
   <!-- 05/08/13: gbgg modified program to accommodate lang prefixes-->
   <!-- 06/13/13: gbgg [Mm]uterm substituted for [Mm]u-term -->
   <!-- 08/08/13: gbgg uniform lang @prefix (e.g. no orm/Orm, only orm), extension of aamas: -->
+  <!-- 10/02/13: gbgg xml2data/schema updated for aama "token" and "text" nodes; rdf/rdfs normalized -->
+
   <xsl:template match="/">
     <!-- n3 header -->
     <!-- @prefix xsd:	 &lt;http://www.w3.org/2001/XMLSchema#> . -->
@@ -60,7 +62,7 @@
     <!--     </xsl:message> -->
 
     <xsl:text>aamas:MuExponent rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
-    <xsl:text>aamas:muProperty rdfs:subPropertyOf rdfs:Property .&#10;</xsl:text>
+    <xsl:text>aamas:muProperty rdfs:subPropertyOf rdf:Property .&#10;</xsl:text>
     <xsl:text>aamas:Cluster rdfs:subClassOf rdfs:Class .&#10;</xsl:text>
     <xsl:text>aamas:Lexeme rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
     <xsl:text>aamas:Muterm rdfs:subClassOf aamas:Cluster .&#10;</xsl:text>
@@ -128,16 +130,11 @@
       <xsl:otherwise>
         <xsl:variable name="prop">
           <xsl:choose>
-            <!--<xsl:when test="fn:matches(@type, 'auxAdjunct')"/>
-            <xsl:when test="fn:matches(@type, 'attributes')"/>-->
             <xsl:when test="fn:matches(@type, '[eE]xample')"/>
             <xsl:when test="fn:matches(@type, '[gG]loss')"/>
             <xsl:when test="fn:matches(@type, '[lL]emma')"/>
             <xsl:when test="fn:matches(@type, '[lL]abel')"/>
             <xsl:when test="fn:matches(@type, 'note')"/>
-            <!--<xsl:when test="fn:matches(@type, 'stem')"/>
-            <xsl:when test="fn:matches(@type, 'structAux')"/>
-            <xsl:when test="fn:matches(@type, 'structMain')"/>-->
             <xsl:when test="fn:matches(@type, '[tT]oken.*')"/>
             <xsl:when test="fn:matches(@val, '_NULL')"/>
             <xsl:otherwise>
@@ -153,12 +150,6 @@
         <xsl:value-of select="@type"/>
 
         <xsl:choose>
-          <!--<xsl:when test="fn:matches(@type, 'attributes')">
-            <xsl:text> rdf:type aamas:Text </xsl:text>
-          </xsl:when>
-          <xsl:when test="fn:matches(@type, 'auxAdjunct')">
-            <xsl:text> rdf:type aamas:Text</xsl:text>
-          </xsl:when>-->
           <xsl:when test="fn:matches(@type, '[eE]xample')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
           </xsl:when>
@@ -174,15 +165,6 @@
           <xsl:when test="fn:matches(@type, 'note')">
             <xsl:text> rdf:type aamas:Text</xsl:text>
           </xsl:when>
-          <!--<xsl:when test="fn:matches(@type, 'stem')">
-            <xsl:text> rdf:type aamas:Text</xsl:text>
-          </xsl:when>
-          <xsl:when test="fn:matches(@type, 'structAux')">
-            <xsl:text> rdf:type aamas:Text</xsl:text>
-          </xsl:when>
-          <xsl:when test="fn:matches(@type, 'structMain')">
-            <xsl:text> rdf:type aamas:Text</xsl:text>
-          </xsl:when>-->
           <xsl:when test="fn:matches(@type, '[tT]oken.*')">
             <xsl:text> rdf:type aamas:Token</xsl:text>
           </xsl:when>
@@ -213,10 +195,10 @@
         <!-- schema stuff -->
         <xsl:value-of select="$l-pref"/>
         <xsl:value-of select="@type"/>
-        <xsl:text> rdfs:Domain aamas:Term .&#10;</xsl:text>
+        <xsl:text> rdfs:domain aamas:Term .&#10;</xsl:text>
         <xsl:value-of select="$l-pref"/>
         <xsl:value-of select="@type"/>
-        <xsl:text> rdfs:Range </xsl:text>
+        <xsl:text> rdfs:range </xsl:text>
         <xsl:value-of select="$l-pref"/>
         <xsl:value-of select="aama:upcase-first(@type)"/>
         <xsl:text> .&#10;</xsl:text>
@@ -241,16 +223,11 @@
         <xsl:text> .&#10;</xsl:text>
 
         <xsl:choose>
-          <!--<xsl:when test="fn:matches(@type, 'attributes')"/>
-          <xsl:when test="fn:matches(@type, 'auxAdjunct')"/>-->
           <xsl:when test="fn:matches(@type, '[eE]xample')"/>
           <xsl:when test="fn:matches(@type, '[gG]loss')"/>
           <xsl:when test="fn:matches(@type, '[lL]emma')"/>
           <xsl:when test="fn:matches(@type, '[lL]abel')"/>
           <xsl:when test="fn:matches(@type, 'note')"/>
-          <!--<xsl:when test="fn:matches(@type, 'stem')"/>
-          <xsl:when test="fn:matches(@type, 'structAux')"/>
-          <xsl:when test="fn:matches(@type, 'structMain')"/>-->
           <xsl:when test="fn:matches(@type, '[tT]oken')"/>
           <xsl:when test="fn:matches(@val, '_NULL')"/>
           <xsl:otherwise>
@@ -260,12 +237,6 @@
 
             <xsl:call-template name="uri">
               <xsl:with-param name="path">
-                <!--	   <xsl:value-of select="aama:upcase-first($lang)"/>
-	   <xsl:text>/</xsl:text>
-
-	   <xsl:value-of select="aama:upcase-first(@type)"/>
-	   <xsl:text>/</xsl:text>
--->
                 <xsl:value-of select="aama:upcase-first(@val)"/>
               </xsl:with-param>
             </xsl:call-template>
@@ -278,11 +249,6 @@
 
             <xsl:call-template name="uri">
               <xsl:with-param name="path">
-                <!--    <xsl:value-of select="aama:upcase-first($lang)"/>
-    <xsl:text>/</xsl:text>
-
-    <xsl:value-of select="aama:upcase-first(@type)"/>
-    <xsl:text>/</xsl:text>-->
                 <xsl:value-of select="aama:upcase-first(@val)"/>
               </xsl:with-param>
             </xsl:call-template>
@@ -294,11 +260,6 @@
 
             <xsl:call-template name="uri">
               <xsl:with-param name="path">
-                <!--    <xsl:value-of select="aama:upcase-first($lang)"/>
-    <xsl:text>/</xsl:text>
-
-    <xsl:value-of select="aama:upcase-first(@type)"/>
-    <xsl:text>/</xsl:text>-->
                 <xsl:value-of select="aama:upcase-first(@val)"/>
               </xsl:with-param>
             </xsl:call-template>

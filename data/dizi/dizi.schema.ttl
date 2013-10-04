@@ -10,7 +10,7 @@ aama:Dizi rdfs:label "Dizi" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -32,10 +32,10 @@ diz:AuxNegSuff rdf:type diz:VerbMorphClass .
 diz:AuxNegSuff rdfs:label "AuxNegSuff" .
 diz:case aamas:lang aama:Dizi .
 diz:Case aamas:lang aama:Dizi .
-diz:case rdfs:Domain aamas:Term .
+diz:case rdfs:domain aamas:Term .
 diz:Case rdfs:label "case exponents" .
 diz:case rdfs:label "case" .
-diz:case rdfs:Range diz:Case .
+diz:case rdfs:range diz:Case .
 diz:Case rdfs:subClassOf diz:MuExponent .
 diz:case rdfs:subPropertyOf diz:muProperty .
 diz:Causative aamas:lang aama:Dizi .
@@ -49,6 +49,7 @@ diz:CommandForms rdf:type diz:MorphClass .
 diz:CommandForms rdfs:label "CommandForms" .
 diz:Common aamas:lang aama:Dizi .
 diz:Common rdf:type diz:Gender .
+diz:Common rdf:type diz:Gender-negAux .
 diz:Common rdfs:label "Common" .
 diz:Conditional aamas:lang aama:Dizi .
 diz:Conditional rdf:type diz:NonMainForm .
@@ -58,10 +59,10 @@ diz:Coordinate rdf:type diz:NonMainForm .
 diz:Coordinate rdfs:label "Coordinate" .
 diz:derivedStem aamas:lang aama:Dizi .
 diz:DerivedStem aamas:lang aama:Dizi .
-diz:derivedStem rdfs:Domain aamas:Term .
+diz:derivedStem rdfs:domain aamas:Term .
 diz:DerivedStem rdfs:label "derivedStem exponents" .
 diz:derivedStem rdfs:label "derivedStem" .
-diz:derivedStem rdfs:Range diz:DerivedStem .
+diz:derivedStem rdfs:range diz:DerivedStem .
 diz:DerivedStem rdfs:subClassOf diz:MuExponent .
 diz:derivedStem rdfs:subPropertyOf diz:muProperty .
 diz:DervStem aamas:lang aama:Dizi .
@@ -78,44 +79,37 @@ diz:Du rdf:type diz:Number .
 diz:Du rdfs:label "Du" .
 diz:Fem aamas:lang aama:Dizi .
 diz:Fem rdf:type diz:Gender .
+diz:Fem rdf:type diz:Gender-negAux .
 diz:Fem rdfs:label "Fem" .
 diz:Future aamas:lang aama:Dizi .
 diz:Future rdf:type diz:Tam .
 diz:Future rdfs:label "Future" .
 diz:gender aamas:lang aama:Dizi .
 diz:Gender aamas:lang aama:Dizi .
-diz:gender rdfs:Domain aamas:Term .
+diz:gender rdfs:domain aamas:Term .
 diz:Gender rdfs:label "gender exponents" .
 diz:gender rdfs:label "gender" .
-diz:gender rdfs:Range diz:Gender .
+diz:gender rdfs:range diz:Gender .
 diz:Gender rdfs:subClassOf diz:MuExponent .
 diz:gender rdfs:subPropertyOf diz:muProperty .
-diz:gentoken aamas:lang aama:Dizi .
-diz:Gentoken aamas:lang aama:Dizi .
-diz:gentoken rdf:type aamas:Token .
-diz:gentoken rdfs:Domain aamas:Term .
-diz:Gentoken rdfs:label "gentoken exponents" .
-diz:gentoken rdfs:label "gentoken" .
-diz:gentoken rdfs:Range diz:Gentoken .
-diz:Gentoken rdfs:subClassOf diz:MuExponent .
-diz:gentoken-negAux aamas:lang aama:Dizi .
-diz:Gentoken-negAux aamas:lang aama:Dizi .
-diz:gentoken-negAux rdf:type aamas:Token .
-diz:gentoken-negAux rdfs:Domain aamas:Term .
-diz:Gentoken-negAux rdfs:label "gentoken-negAux exponents" .
-diz:gentoken-negAux rdfs:label "gentoken-negAux" .
-diz:gentoken-negAux rdfs:Range diz:Gentoken-negAux .
-diz:Gentoken-negAux rdfs:subClassOf diz:MuExponent .
+diz:gender-negAux aamas:lang aama:Dizi .
+diz:Gender-negAux aamas:lang aama:Dizi .
+diz:gender-negAux rdfs:domain aamas:Term .
+diz:Gender-negAux rdfs:label "gender-negAux exponents" .
+diz:gender-negAux rdfs:label "gender-negAux" .
+diz:gender-negAux rdfs:range diz:Gender-negAux .
+diz:Gender-negAux rdfs:subClassOf diz:MuExponent .
+diz:gender-negAux rdfs:subPropertyOf diz:muProperty .
 diz:Gerund aamas:lang aama:Dizi .
 diz:Gerund rdf:type diz:NonMainForm .
 diz:Gerund rdfs:label "Gerund" .
 diz:gloss aamas:lang aama:Dizi .
 diz:Gloss aamas:lang aama:Dizi .
 diz:gloss rdf:type aamas:Text .
-diz:gloss rdfs:Domain aamas:Term .
+diz:gloss rdfs:domain aamas:Term .
 diz:Gloss rdfs:label "gloss exponents" .
 diz:gloss rdfs:label "gloss" .
-diz:gloss rdfs:Range diz:Gloss .
+diz:gloss rdfs:range diz:Gloss .
 diz:Gloss rdfs:subClassOf diz:MuExponent .
 diz:Imperative aamas:lang aama:Dizi .
 diz:Imperative rdf:type diz:Tam .
@@ -141,37 +135,38 @@ diz:Jussive rdfs:label "Jussive" .
 diz:lemma aamas:lang aama:Dizi .
 diz:Lemma aamas:lang aama:Dizi .
 diz:lemma rdf:type aamas:Text .
-diz:lemma rdfs:Domain aamas:Term .
+diz:lemma rdfs:domain aamas:Term .
 diz:Lemma rdfs:label "lemma exponents" .
 diz:lemma rdfs:label "lemma" .
-diz:lemma rdfs:Range diz:Lemma .
+diz:lemma rdfs:range diz:Lemma .
 diz:Lemma rdfs:subClassOf diz:MuExponent .
 diz:Masc aamas:lang aama:Dizi .
 diz:Masc rdf:type diz:Gender .
+diz:Masc rdf:type diz:Gender-negAux .
 diz:Masc rdfs:label "Masc" .
 diz:morphClass aamas:lang aama:Dizi .
 diz:MorphClass aamas:lang aama:Dizi .
-diz:morphClass rdfs:Domain aamas:Term .
+diz:morphClass rdfs:domain aamas:Term .
 diz:MorphClass rdfs:label "morphClass exponents" .
 diz:morphClass rdfs:label "morphClass" .
-diz:morphClass rdfs:Range diz:MorphClass .
+diz:morphClass rdfs:range diz:MorphClass .
 diz:MorphClass rdfs:subClassOf diz:MuExponent .
 diz:morphClass rdfs:subPropertyOf diz:muProperty .
 diz:MuExponent rdfs:subClassOf aamas:MuExponent .
 diz:mulabel aamas:lang aama:Dizi .
 diz:Mulabel aamas:lang aama:Dizi .
 diz:mulabel rdf:type aama:Label .
-diz:mulabel rdfs:Domain aamas:Term .
+diz:mulabel rdfs:domain aamas:Term .
 diz:Mulabel rdfs:label "mulabel exponents" .
 diz:mulabel rdfs:label "mulabel" .
-diz:mulabel rdfs:Range diz:Mulabel .
+diz:mulabel rdfs:range diz:Mulabel .
 diz:Mulabel rdfs:subClassOf diz:MuExponent .
 diz:multiLex aamas:lang aama:Dizi .
 diz:MultiLex aamas:lang aama:Dizi .
-diz:multiLex rdfs:Domain aamas:Term .
+diz:multiLex rdfs:domain aamas:Term .
 diz:MultiLex rdfs:label "multiLex exponents" .
 diz:multiLex rdfs:label "multiLex" .
-diz:multiLex rdfs:Range diz:MultiLex .
+diz:multiLex rdfs:range diz:MultiLex .
 diz:MultiLex rdfs:subClassOf diz:MuExponent .
 diz:multiLex rdfs:subPropertyOf diz:muProperty .
 diz:muProperty rdfs:subPropertyOf aamas:muProperty .
@@ -192,18 +187,18 @@ diz:NonMainClauseForms rdf:type diz:VerbMorphClass .
 diz:NonMainClauseForms rdfs:label "NonMainClauseForms" .
 diz:nonMainForm aamas:lang aama:Dizi .
 diz:NonMainForm aamas:lang aama:Dizi .
-diz:nonMainForm rdfs:Domain aamas:Term .
+diz:nonMainForm rdfs:domain aamas:Term .
 diz:NonMainForm rdfs:label "nonMainForm exponents" .
 diz:nonMainForm rdfs:label "nonMainForm" .
-diz:nonMainForm rdfs:Range diz:NonMainForm .
+diz:nonMainForm rdfs:range diz:NonMainForm .
 diz:NonMainForm rdfs:subClassOf diz:MuExponent .
 diz:nonMainForm rdfs:subPropertyOf diz:muProperty .
 diz:number aamas:lang aama:Dizi .
 diz:Number aamas:lang aama:Dizi .
-diz:number rdfs:Domain aamas:Term .
+diz:number rdfs:domain aamas:Term .
 diz:Number rdfs:label "number exponents" .
 diz:number rdfs:label "number" .
-diz:number rdfs:Range diz:Number .
+diz:number rdfs:range diz:Number .
 diz:Number rdfs:subClassOf diz:MuExponent .
 diz:number rdfs:subPropertyOf diz:muProperty .
 diz:Passive aamas:lang aama:Dizi .
@@ -217,10 +212,10 @@ diz:Perfect rdf:type diz:Tam .
 diz:Perfect rdfs:label "Perfect" .
 diz:person aamas:lang aama:Dizi .
 diz:Person aamas:lang aama:Dizi .
-diz:person rdfs:Domain aamas:Term .
+diz:person rdfs:domain aamas:Term .
 diz:Person rdfs:label "person exponents" .
 diz:person rdfs:label "person" .
-diz:person rdfs:Range diz:Person .
+diz:person rdfs:range diz:Person .
 diz:Person rdfs:subClassOf diz:MuExponent .
 diz:person rdfs:subPropertyOf diz:muProperty .
 diz:Person1 aamas:lang aama:Dizi .
@@ -243,10 +238,10 @@ diz:Pol rdf:type diz:Number .
 diz:Pol rdfs:label "Pol" .
 diz:polarity aamas:lang aama:Dizi .
 diz:Polarity aamas:lang aama:Dizi .
-diz:polarity rdfs:Domain aamas:Term .
+diz:polarity rdfs:domain aamas:Term .
 diz:Polarity rdfs:label "polarity exponents" .
 diz:polarity rdfs:label "polarity" .
-diz:polarity rdfs:Range diz:Polarity .
+diz:polarity rdfs:range diz:Polarity .
 diz:Polarity rdfs:subClassOf diz:MuExponent .
 diz:polarity rdfs:subPropertyOf diz:muProperty .
 diz:Polite aamas:lang aama:Dizi .
@@ -254,10 +249,10 @@ diz:Polite rdf:type diz:Number .
 diz:Polite rdfs:label "Polite" .
 diz:pos aamas:lang aama:Dizi .
 diz:Pos aamas:lang aama:Dizi .
-diz:pos rdfs:Domain aamas:Term .
+diz:pos rdfs:domain aamas:Term .
 diz:Pos rdfs:label "pos exponents" .
 diz:pos rdfs:label "pos" .
-diz:pos rdfs:Range diz:Pos .
+diz:pos rdfs:range diz:Pos .
 diz:Pos rdfs:subClassOf diz:MuExponent .
 diz:pos rdfs:subPropertyOf diz:muProperty .
 diz:PossPref aamas:lang aama:Dizi .
@@ -271,10 +266,10 @@ diz:Pro rdf:type diz:Pos .
 diz:Pro rdfs:label "Pro" .
 diz:proClass aamas:lang aama:Dizi .
 diz:ProClass aamas:lang aama:Dizi .
-diz:proClass rdfs:Domain aamas:Term .
+diz:proClass rdfs:domain aamas:Term .
 diz:ProClass rdfs:label "proClass exponents" .
 diz:proClass rdfs:label "proClass" .
-diz:proClass rdfs:Range diz:ProClass .
+diz:proClass rdfs:range diz:ProClass .
 diz:ProClass rdfs:subClassOf diz:MuExponent .
 diz:proClass rdfs:subPropertyOf diz:muProperty .
 diz:ProInd aamas:lang aama:Dizi .
@@ -303,10 +298,10 @@ diz:SubjSuff rdf:type diz:VerbMorphClass .
 diz:SubjSuff rdfs:label "SubjSuff" .
 diz:tam aamas:lang aama:Dizi .
 diz:Tam aamas:lang aama:Dizi .
-diz:tam rdfs:Domain aamas:Term .
+diz:tam rdfs:domain aamas:Term .
 diz:Tam rdfs:label "tam exponents" .
 diz:tam rdfs:label "tam" .
-diz:tam rdfs:Range diz:Tam .
+diz:tam rdfs:range diz:Tam .
 diz:Tam rdfs:subClassOf diz:MuExponent .
 diz:tam rdfs:subPropertyOf diz:muProperty .
 diz:Temporal aamas:lang aama:Dizi .
@@ -321,116 +316,108 @@ diz:TENSEASPSUFF rdfs:label "TENSEASPSUFF" .
 diz:token aamas:lang aama:Dizi .
 diz:Token aamas:lang aama:Dizi .
 diz:token rdf:type aamas:Token .
-diz:token rdfs:Domain aamas:Term .
+diz:token rdfs:domain aamas:Term .
 diz:Token rdfs:label "token exponents" .
 diz:token rdfs:label "token" .
-diz:token rdfs:Range diz:Token .
+diz:token rdfs:range diz:Token .
 diz:Token rdfs:subClassOf diz:MuExponent .
 diz:token-baseForm aamas:lang aama:Dizi .
 diz:Token-baseForm aamas:lang aama:Dizi .
 diz:token-baseForm rdf:type aamas:Token .
-diz:token-baseForm rdfs:Domain aamas:Term .
+diz:token-baseForm rdfs:domain aamas:Term .
 diz:Token-baseForm rdfs:label "token-baseForm exponents" .
 diz:token-baseForm rdfs:label "token-baseForm" .
-diz:token-baseForm rdfs:Range diz:Token-baseForm .
+diz:token-baseForm rdfs:range diz:Token-baseForm .
 diz:Token-baseForm rdfs:subClassOf diz:MuExponent .
 diz:token-baseGloss aamas:lang aama:Dizi .
 diz:Token-baseGloss aamas:lang aama:Dizi .
 diz:token-baseGloss rdf:type aamas:Text .
-diz:token-baseGloss rdfs:Domain aamas:Term .
+diz:token-baseGloss rdfs:domain aamas:Term .
 diz:Token-baseGloss rdfs:label "token-baseGloss exponents" .
 diz:token-baseGloss rdfs:label "token-baseGloss" .
-diz:token-baseGloss rdfs:Range diz:Token-baseGloss .
+diz:token-baseGloss rdfs:range diz:Token-baseGloss .
 diz:Token-baseGloss rdfs:subClassOf diz:MuExponent .
 diz:token-BeachyRef aamas:lang aama:Dizi .
 diz:Token-BeachyRef aamas:lang aama:Dizi .
 diz:token-BeachyRef rdf:type aamas:Token .
-diz:token-BeachyRef rdfs:Domain aamas:Term .
+diz:token-BeachyRef rdfs:domain aamas:Term .
 diz:Token-BeachyRef rdfs:label "token-BeachyRef exponents" .
 diz:token-BeachyRef rdfs:label "token-BeachyRef" .
-diz:token-BeachyRef rdfs:Range diz:Token-BeachyRef .
+diz:token-BeachyRef rdfs:range diz:Token-BeachyRef .
 diz:Token-BeachyRef rdfs:subClassOf diz:MuExponent .
 diz:token-dervForm aamas:lang aama:Dizi .
 diz:Token-dervForm aamas:lang aama:Dizi .
 diz:token-dervForm rdf:type aamas:Token .
-diz:token-dervForm rdfs:Domain aamas:Term .
+diz:token-dervForm rdfs:domain aamas:Term .
 diz:Token-dervForm rdfs:label "token-dervForm exponents" .
 diz:token-dervForm rdfs:label "token-dervForm" .
-diz:token-dervForm rdfs:Range diz:Token-dervForm .
+diz:token-dervForm rdfs:range diz:Token-dervForm .
 diz:Token-dervForm rdfs:subClassOf diz:MuExponent .
 diz:token-dervGloss aamas:lang aama:Dizi .
 diz:Token-dervGloss aamas:lang aama:Dizi .
 diz:token-dervGloss rdf:type aamas:Text .
-diz:token-dervGloss rdfs:Domain aamas:Term .
+diz:token-dervGloss rdfs:domain aamas:Term .
 diz:Token-dervGloss rdfs:label "token-dervGloss exponents" .
 diz:token-dervGloss rdfs:label "token-dervGloss" .
-diz:token-dervGloss rdfs:Range diz:Token-dervGloss .
+diz:token-dervGloss rdfs:range diz:Token-dervGloss .
 diz:Token-dervGloss rdfs:subClassOf diz:MuExponent .
 diz:token-exA aamas:lang aama:Dizi .
 diz:Token-exA aamas:lang aama:Dizi .
 diz:token-exA rdf:type aamas:Token .
-diz:token-exA rdfs:Domain aamas:Term .
+diz:token-exA rdfs:domain aamas:Term .
 diz:Token-exA rdfs:label "token-exA exponents" .
 diz:token-exA rdfs:label "token-exA" .
-diz:token-exA rdfs:Range diz:Token-exA .
+diz:token-exA rdfs:range diz:Token-exA .
 diz:Token-exA rdfs:subClassOf diz:MuExponent .
 diz:token-exQ aamas:lang aama:Dizi .
 diz:Token-exQ aamas:lang aama:Dizi .
 diz:token-exQ rdf:type aamas:Token .
-diz:token-exQ rdfs:Domain aamas:Term .
+diz:token-exQ rdfs:domain aamas:Term .
 diz:Token-exQ rdfs:label "token-exQ exponents" .
 diz:token-exQ rdfs:label "token-exQ" .
-diz:token-exQ rdfs:Range diz:Token-exQ .
+diz:token-exQ rdfs:range diz:Token-exQ .
 diz:Token-exQ rdfs:subClassOf diz:MuExponent .
 diz:token-glossExA aamas:lang aama:Dizi .
 diz:Token-glossExA aamas:lang aama:Dizi .
 diz:token-glossExA rdf:type aamas:Text .
-diz:token-glossExA rdfs:Domain aamas:Term .
+diz:token-glossExA rdfs:domain aamas:Term .
 diz:Token-glossExA rdfs:label "token-glossExA exponents" .
 diz:token-glossExA rdfs:label "token-glossExA" .
-diz:token-glossExA rdfs:Range diz:Token-glossExA .
+diz:token-glossExA rdfs:range diz:Token-glossExA .
 diz:Token-glossExA rdfs:subClassOf diz:MuExponent .
 diz:token-glossExQ aamas:lang aama:Dizi .
 diz:Token-glossExQ aamas:lang aama:Dizi .
 diz:token-glossExQ rdf:type aamas:Text .
-diz:token-glossExQ rdfs:Domain aamas:Term .
+diz:token-glossExQ rdfs:domain aamas:Term .
 diz:Token-glossExQ rdfs:label "token-glossExQ exponents" .
 diz:token-glossExQ rdfs:label "token-glossExQ" .
-diz:token-glossExQ rdfs:Range diz:Token-glossExQ .
+diz:token-glossExQ rdfs:range diz:Token-glossExQ .
 diz:Token-glossExQ rdfs:subClassOf diz:MuExponent .
-diz:token-main aamas:lang aama:Dizi .
-diz:Token-main aamas:lang aama:Dizi .
-diz:token-main rdf:type aamas:Token .
-diz:token-main rdfs:Domain aamas:Term .
-diz:Token-main rdfs:label "token-main exponents" .
-diz:token-main rdfs:label "token-main" .
-diz:token-main rdfs:Range diz:Token-main .
-diz:Token-main rdfs:subClassOf diz:MuExponent .
 diz:token-remark aamas:lang aama:Dizi .
 diz:Token-remark aamas:lang aama:Dizi .
 diz:token-remark rdf:type aamas:Token .
-diz:token-remark rdfs:Domain aamas:Term .
+diz:token-remark rdfs:domain aamas:Term .
 diz:Token-remark rdfs:label "token-remark exponents" .
 diz:token-remark rdfs:label "token-remark" .
-diz:token-remark rdfs:Range diz:Token-remark .
+diz:token-remark rdfs:range diz:Token-remark .
 diz:Token-remark rdfs:subClassOf diz:MuExponent .
 diz:token-structure aamas:lang aama:Dizi .
 diz:Token-structure aamas:lang aama:Dizi .
 diz:token-structure rdf:type aamas:Token .
-diz:token-structure rdfs:Domain aamas:Term .
+diz:token-structure rdfs:domain aamas:Term .
 diz:Token-structure rdfs:label "token-structure exponents" .
 diz:token-structure rdfs:label "token-structure" .
-diz:token-structure rdfs:Range diz:Token-structure .
+diz:token-structure rdfs:range diz:Token-structure .
 diz:Token-structure rdfs:subClassOf diz:MuExponent .
 diz:Verb aamas:lang aama:Dizi .
 diz:Verb rdf:type diz:Pos .
 diz:Verb rdfs:label "Verb" .
 diz:verbMorphClass aamas:lang aama:Dizi .
 diz:VerbMorphClass aamas:lang aama:Dizi .
-diz:verbMorphClass rdfs:Domain aamas:Term .
+diz:verbMorphClass rdfs:domain aamas:Term .
 diz:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 diz:verbMorphClass rdfs:label "verbMorphClass" .
-diz:verbMorphClass rdfs:Range diz:VerbMorphClass .
+diz:verbMorphClass rdfs:range diz:VerbMorphClass .
 diz:VerbMorphClass rdfs:subClassOf diz:MuExponent .
 diz:verbMorphClass rdfs:subPropertyOf diz:muProperty .
 diz:Voc aamas:lang aama:Dizi .

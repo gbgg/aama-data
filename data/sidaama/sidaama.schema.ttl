@@ -10,7 +10,7 @@ aama:Sidaama rdfs:label "Sidaama" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -18,6 +18,9 @@ aamas:Term rdf:type aamas:MuScheme .
 aamas:Term rdf:type aamas:Muterm .
 aamas:Text rdfs:subClassOf rdfs:Class .
 aamas:Token rdfs:subClassOf rdfs:Class .
+sid:{ aamas:lang aama:Sidaama .
+sid:{ rdf:type sid:Attributes .
+sid:{ rdfs:label "{" .
 sid:A aamas:lang aama:Sidaama .
 sid:A rdf:type sid:PassiveReciprocalClass .
 sid:A rdfs:label "A" .
@@ -35,29 +38,29 @@ sid:Affirmative rdf:type sid:Polarity .
 sid:Affirmative rdfs:label "Affirmative" .
 sid:aspect aamas:lang aama:Sidaama .
 sid:Aspect aamas:lang aama:Sidaama .
-sid:aspect rdfs:Domain aamas:Term .
+sid:aspect rdfs:domain aamas:Term .
 sid:Aspect rdfs:label "aspect exponents" .
 sid:aspect rdfs:label "aspect" .
-sid:aspect rdfs:Range sid:Aspect .
+sid:aspect rdfs:range sid:Aspect .
 sid:Aspect rdfs:subClassOf sid:MuExponent .
 sid:aspect rdfs:subPropertyOf sid:muProperty .
 sid:attributes aamas:lang aama:Sidaama .
 sid:Attributes aamas:lang aama:Sidaama .
-sid:attributes rdf:type aamas:Text  .
-sid:attributes rdfs:Domain aamas:Term .
+sid:attributes rdfs:domain aamas:Term .
 sid:Attributes rdfs:label "attributes exponents" .
 sid:attributes rdfs:label "attributes" .
-sid:attributes rdfs:Range sid:Attributes .
+sid:attributes rdfs:range sid:Attributes .
 sid:Attributes rdfs:subClassOf sid:MuExponent .
+sid:attributes rdfs:subPropertyOf sid:muProperty .
 sid:B aamas:lang aama:Sidaama .
 sid:B rdf:type sid:PassiveReciprocalClass .
 sid:B rdfs:label "B" .
 sid:case aamas:lang aama:Sidaama .
 sid:Case aamas:lang aama:Sidaama .
-sid:case rdfs:Domain aamas:Term .
+sid:case rdfs:domain aamas:Term .
 sid:Case rdfs:label "case exponents" .
 sid:case rdfs:label "case" .
-sid:case rdfs:Range sid:Case .
+sid:case rdfs:range sid:Case .
 sid:Case rdfs:subClassOf sid:MuExponent .
 sid:case rdfs:subPropertyOf sid:muProperty .
 sid:Case-FN40 aamas:lang aama:Sidaama .
@@ -90,11 +93,11 @@ sid:Causative1 rdfs:label "Causative1" .
 sid:causative1Causative2 aamas:lang aama:Sidaama .
 sid:Causative1Causative2 aamas:lang aama:Sidaama .
 sid:Causative1Causative2 rdf:type sid:DerivedStem .
-sid:causative1Causative2 rdfs:Domain aamas:Term .
+sid:causative1Causative2 rdfs:domain aamas:Term .
 sid:Causative1Causative2 rdfs:label "causative1Causative2 exponents" .
 sid:causative1Causative2 rdfs:label "causative1Causative2" .
 sid:Causative1Causative2 rdfs:label "Causative1Causative2" .
-sid:causative1Causative2 rdfs:Range sid:Causative1Causative2 .
+sid:causative1Causative2 rdfs:range sid:Causative1Causative2 .
 sid:Causative1Causative2 rdfs:subClassOf sid:MuExponent .
 sid:causative1Causative2 rdfs:subPropertyOf sid:muProperty .
 sid:Causative2 aamas:lang aama:Sidaama .
@@ -102,18 +105,18 @@ sid:Causative2 rdf:type sid:DerivedStem .
 sid:Causative2 rdfs:label "Causative2" .
 sid:classification aamas:lang aama:Sidaama .
 sid:Classification aamas:lang aama:Sidaama .
-sid:classification rdfs:Domain aamas:Term .
+sid:classification rdfs:domain aamas:Term .
 sid:Classification rdfs:label "classification exponents" .
 sid:classification rdfs:label "classification" .
-sid:classification rdfs:Range sid:Classification .
+sid:classification rdfs:range sid:Classification .
 sid:Classification rdfs:subClassOf sid:MuExponent .
 sid:classification rdfs:subPropertyOf sid:muProperty .
 sid:clauseType aamas:lang aama:Sidaama .
 sid:ClauseType aamas:lang aama:Sidaama .
-sid:clauseType rdfs:Domain aamas:Term .
+sid:clauseType rdfs:domain aamas:Term .
 sid:ClauseType rdfs:label "clauseType exponents" .
 sid:clauseType rdfs:label "clauseType" .
-sid:clauseType rdfs:Range sid:ClauseType .
+sid:clauseType rdfs:range sid:ClauseType .
 sid:ClauseType rdfs:subClassOf sid:MuExponent .
 sid:clauseType rdfs:subPropertyOf sid:muProperty .
 sid:Common aamas:lang aama:Sidaama .
@@ -129,10 +132,10 @@ sid:Compound rdf:type sid:PdgmType .
 sid:Compound rdfs:label "Compound" .
 sid:configuration aamas:lang aama:Sidaama .
 sid:Configuration aamas:lang aama:Sidaama .
-sid:configuration rdfs:Domain aamas:Term .
+sid:configuration rdfs:domain aamas:Term .
 sid:Configuration rdfs:label "configuration exponents" .
 sid:configuration rdfs:label "configuration" .
-sid:configuration rdfs:Range sid:Configuration .
+sid:configuration rdfs:range sid:Configuration .
 sid:Configuration rdfs:subClassOf sid:MuExponent .
 sid:configuration rdfs:subPropertyOf sid:muProperty .
 sid:Connective aamas:lang aama:Sidaama .
@@ -144,10 +147,10 @@ sid:Continuous rdf:type sid:Tam .
 sid:Continuous rdfs:label "Continuous" .
 sid:deixis aamas:lang aama:Sidaama .
 sid:Deixis aamas:lang aama:Sidaama .
-sid:deixis rdfs:Domain aamas:Term .
+sid:deixis rdfs:domain aamas:Term .
 sid:Deixis rdfs:label "deixis exponents" .
 sid:deixis rdfs:label "deixis" .
-sid:deixis rdfs:Range sid:Deixis .
+sid:deixis rdfs:range sid:Deixis .
 sid:Deixis rdfs:subClassOf sid:MuExponent .
 sid:deixis rdfs:subPropertyOf sid:muProperty .
 sid:DemAdnom aamas:lang aama:Sidaama .
@@ -173,10 +176,10 @@ sid:DenominalDeadjectival rdf:type sid:DerivedStem .
 sid:DenominalDeadjectival rdfs:label "DenominalDeadjectival" .
 sid:derivedStem aamas:lang aama:Sidaama .
 sid:DerivedStem aamas:lang aama:Sidaama .
-sid:derivedStem rdfs:Domain aamas:Term .
+sid:derivedStem rdfs:domain aamas:Term .
 sid:DerivedStem rdfs:label "derivedStem exponents" .
 sid:derivedStem rdfs:label "derivedStem" .
-sid:derivedStem rdfs:Range sid:DerivedStem .
+sid:derivedStem rdfs:range sid:DerivedStem .
 sid:DerivedStem rdfs:subClassOf sid:MuExponent .
 sid:derivedStem rdfs:subPropertyOf sid:muProperty .
 sid:DervStem aamas:lang aama:Sidaama .
@@ -190,10 +193,10 @@ sid:DirAT rdf:type sid:Direction .
 sid:DirAT rdfs:label "DirAT" .
 sid:direction aamas:lang aama:Sidaama .
 sid:Direction aamas:lang aama:Sidaama .
-sid:direction rdfs:Domain aamas:Term .
+sid:direction rdfs:domain aamas:Term .
 sid:Direction rdfs:label "direction exponents" .
 sid:direction rdfs:label "direction" .
-sid:direction rdfs:Range sid:Direction .
+sid:direction rdfs:range sid:Direction .
 sid:Direction rdfs:subClassOf sid:MuExponent .
 sid:direction rdfs:subPropertyOf sid:muProperty .
 sid:DirFROM aamas:lang aama:Sidaama .
@@ -210,10 +213,10 @@ sid:Fem rdf:type sid:Gender .
 sid:Fem rdfs:label "Fem" .
 sid:gender aamas:lang aama:Sidaama .
 sid:Gender aamas:lang aama:Sidaama .
-sid:gender rdfs:Domain aamas:Term .
+sid:gender rdfs:domain aamas:Term .
 sid:Gender rdfs:label "gender exponents" .
 sid:gender rdfs:label "gender" .
-sid:gender rdfs:Range sid:Gender .
+sid:gender rdfs:range sid:Gender .
 sid:Gender rdfs:subClassOf sid:MuExponent .
 sid:gender rdfs:subPropertyOf sid:muProperty .
 sid:Genitive aamas:lang aama:Sidaama .
@@ -222,10 +225,10 @@ sid:Genitive rdfs:label "Genitive" .
 sid:gloss aamas:lang aama:Sidaama .
 sid:Gloss aamas:lang aama:Sidaama .
 sid:gloss rdf:type aamas:Text .
-sid:gloss rdfs:Domain aamas:Term .
+sid:gloss rdfs:domain aamas:Term .
 sid:Gloss rdfs:label "gloss exponents" .
 sid:gloss rdfs:label "gloss" .
-sid:gloss rdfs:Range sid:Gloss .
+sid:gloss rdfs:range sid:Gloss .
 sid:Gloss rdfs:subClassOf sid:MuExponent .
 sid:Here aamas:lang aama:Sidaama .
 sid:Here rdf:type sid:Deixis .
@@ -259,10 +262,10 @@ sid:Interrogative rdf:type sid:ProClass .
 sid:Interrogative rdfs:label "Interrogative" .
 sid:interrogClass aamas:lang aama:Sidaama .
 sid:InterrogClass aamas:lang aama:Sidaama .
-sid:interrogClass rdfs:Domain aamas:Term .
+sid:interrogClass rdfs:domain aamas:Term .
 sid:InterrogClass rdfs:label "interrogClass exponents" .
 sid:interrogClass rdfs:label "interrogClass" .
-sid:interrogClass rdfs:Range sid:InterrogClass .
+sid:interrogClass rdfs:range sid:InterrogClass .
 sid:InterrogClass rdfs:subClassOf sid:MuExponent .
 sid:interrogClass rdfs:subPropertyOf sid:muProperty .
 sid:InterrogProWhat aamas:lang aama:Sidaama .
@@ -283,10 +286,10 @@ sid:InterrogProWho rdfs:label "InterrogProWho" .
 sid:lemma aamas:lang aama:Sidaama .
 sid:Lemma aamas:lang aama:Sidaama .
 sid:lemma rdf:type aamas:Text .
-sid:lemma rdfs:Domain aamas:Term .
+sid:lemma rdfs:domain aamas:Term .
 sid:Lemma rdfs:label "lemma exponents" .
 sid:lemma rdfs:label "lemma" .
-sid:lemma rdfs:Range sid:Lemma .
+sid:lemma rdfs:range sid:Lemma .
 sid:Lemma rdfs:subClassOf sid:MuExponent .
 sid:MainGeneral aamas:lang aama:Sidaama .
 sid:MainGeneral rdf:type sid:ClauseType .
@@ -297,21 +300,21 @@ sid:Masc rdfs:label "Masc" .
 sid:middleClass aamas:lang aama:Sidaama .
 sid:MiddleClass aamas:lang aama:Sidaama .
 sid:MiddleClass rdf:type sid:DerivedStem .
-sid:middleClass rdfs:Domain aamas:Term .
+sid:middleClass rdfs:domain aamas:Term .
 sid:MiddleClass rdfs:label "middleClass exponents" .
 sid:middleClass rdfs:label "middleClass" .
 sid:MiddleClass rdfs:label "MiddleClass" .
-sid:middleClass rdfs:Range sid:MiddleClass .
+sid:middleClass rdfs:range sid:MiddleClass .
 sid:MiddleClass rdfs:subClassOf sid:MuExponent .
 sid:middleClass rdfs:subPropertyOf sid:muProperty .
 sid:MuExponent rdfs:subClassOf aamas:MuExponent .
 sid:mulabel aamas:lang aama:Sidaama .
 sid:Mulabel aamas:lang aama:Sidaama .
 sid:mulabel rdf:type aama:Label .
-sid:mulabel rdfs:Domain aamas:Term .
+sid:mulabel rdfs:domain aamas:Term .
 sid:Mulabel rdfs:label "mulabel exponents" .
 sid:mulabel rdfs:label "mulabel" .
-sid:mulabel rdfs:Range sid:Mulabel .
+sid:mulabel rdfs:range sid:Mulabel .
 sid:Mulabel rdfs:subClassOf sid:MuExponent .
 sid:muProperty rdfs:subPropertyOf aamas:muProperty .
 sid:Negative aamas:lang aama:Sidaama .
@@ -325,10 +328,10 @@ sid:Nominative rdf:type sid:Case .
 sid:Nominative rdfs:label "Nominative" .
 sid:number aamas:lang aama:Sidaama .
 sid:Number aamas:lang aama:Sidaama .
-sid:number rdfs:Domain aamas:Term .
+sid:number rdfs:domain aamas:Term .
 sid:Number rdfs:label "number exponents" .
 sid:number rdfs:label "number" .
-sid:number rdfs:Range sid:Number .
+sid:number rdfs:range sid:Number .
 sid:Number rdfs:subClassOf sid:MuExponent .
 sid:number rdfs:subPropertyOf sid:muProperty .
 sid:ObjSuff aamas:lang aama:Sidaama .
@@ -347,27 +350,27 @@ sid:Passive rdfs:label "Passive" .
 sid:passiveReciprocalClass aamas:lang aama:Sidaama .
 sid:PassiveReciprocalClass aamas:lang aama:Sidaama .
 sid:PassiveReciprocalClass rdf:type sid:DerivedStem .
-sid:passiveReciprocalClass rdfs:Domain aamas:Term .
+sid:passiveReciprocalClass rdfs:domain aamas:Term .
 sid:PassiveReciprocalClass rdfs:label "passiveReciprocalClass exponents" .
 sid:passiveReciprocalClass rdfs:label "passiveReciprocalClass" .
 sid:PassiveReciprocalClass rdfs:label "PassiveReciprocalClass" .
-sid:passiveReciprocalClass rdfs:Range sid:PassiveReciprocalClass .
+sid:passiveReciprocalClass rdfs:range sid:PassiveReciprocalClass .
 sid:PassiveReciprocalClass rdfs:subClassOf sid:MuExponent .
 sid:passiveReciprocalClass rdfs:subPropertyOf sid:muProperty .
 sid:pdgmLexLabel aamas:lang aama:Sidaama .
 sid:PdgmLexLabel aamas:lang aama:Sidaama .
 sid:pdgmLexLabel rdf:type aama:Label .
-sid:pdgmLexLabel rdfs:Domain aamas:Term .
+sid:pdgmLexLabel rdfs:domain aamas:Term .
 sid:PdgmLexLabel rdfs:label "pdgmLexLabel exponents" .
 sid:pdgmLexLabel rdfs:label "pdgmLexLabel" .
-sid:pdgmLexLabel rdfs:Range sid:PdgmLexLabel .
+sid:pdgmLexLabel rdfs:range sid:PdgmLexLabel .
 sid:PdgmLexLabel rdfs:subClassOf sid:MuExponent .
 sid:pdgmType aamas:lang aama:Sidaama .
 sid:PdgmType aamas:lang aama:Sidaama .
-sid:pdgmType rdfs:Domain aamas:Term .
+sid:pdgmType rdfs:domain aamas:Term .
 sid:PdgmType rdfs:label "pdgmType exponents" .
 sid:pdgmType rdfs:label "pdgmType" .
-sid:pdgmType rdfs:Range sid:PdgmType .
+sid:pdgmType rdfs:range sid:PdgmType .
 sid:PdgmType rdfs:subClassOf sid:MuExponent .
 sid:pdgmType rdfs:subPropertyOf sid:muProperty .
 sid:PersNumTenseSuff aamas:lang aama:Sidaama .
@@ -375,10 +378,10 @@ sid:PersNumTenseSuff rdf:type sid:VerbMorphClass .
 sid:PersNumTenseSuff rdfs:label "PersNumTenseSuff" .
 sid:person aamas:lang aama:Sidaama .
 sid:Person aamas:lang aama:Sidaama .
-sid:person rdfs:Domain aamas:Term .
+sid:person rdfs:domain aamas:Term .
 sid:Person rdfs:label "person exponents" .
 sid:person rdfs:label "person" .
-sid:person rdfs:Range sid:Person .
+sid:person rdfs:range sid:Person .
 sid:Person rdfs:subClassOf sid:MuExponent .
 sid:person rdfs:subPropertyOf sid:muProperty .
 sid:Person1 aamas:lang aama:Sidaama .
@@ -395,26 +398,26 @@ sid:Plural rdf:type sid:Number .
 sid:Plural rdfs:label "Plural" .
 sid:polarity aamas:lang aama:Sidaama .
 sid:Polarity aamas:lang aama:Sidaama .
-sid:polarity rdfs:Domain aamas:Term .
+sid:polarity rdfs:domain aamas:Term .
 sid:Polarity rdfs:label "polarity exponents" .
 sid:polarity rdfs:label "polarity" .
-sid:polarity rdfs:Range sid:Polarity .
+sid:polarity rdfs:range sid:Polarity .
 sid:Polarity rdfs:subClassOf sid:MuExponent .
 sid:polarity rdfs:subPropertyOf sid:muProperty .
 sid:pos aamas:lang aama:Sidaama .
 sid:Pos aamas:lang aama:Sidaama .
-sid:pos rdfs:Domain aamas:Term .
+sid:pos rdfs:domain aamas:Term .
 sid:Pos rdfs:label "pos exponents" .
 sid:pos rdfs:label "pos" .
-sid:pos rdfs:Range sid:Pos .
+sid:pos rdfs:range sid:Pos .
 sid:Pos rdfs:subClassOf sid:MuExponent .
 sid:pos rdfs:subPropertyOf sid:muProperty .
 sid:posClass aamas:lang aama:Sidaama .
 sid:PosClass aamas:lang aama:Sidaama .
-sid:posClass rdfs:Domain aamas:Term .
+sid:posClass rdfs:domain aamas:Term .
 sid:PosClass rdfs:label "posClass exponents" .
 sid:posClass rdfs:label "posClass" .
-sid:posClass rdfs:Range sid:PosClass .
+sid:posClass rdfs:range sid:PosClass .
 sid:PosClass rdfs:subClassOf sid:MuExponent .
 sid:posClass rdfs:subPropertyOf sid:muProperty .
 sid:PresentPerfect aamas:lang aama:Sidaama .
@@ -429,10 +432,10 @@ sid:Pro rdf:type sid:Pos .
 sid:Pro rdfs:label "Pro" .
 sid:proClass aamas:lang aama:Sidaama .
 sid:ProClass aamas:lang aama:Sidaama .
-sid:proClass rdfs:Domain aamas:Term .
+sid:proClass rdfs:domain aamas:Term .
 sid:ProClass rdfs:label "proClass exponents" .
 sid:proClass rdfs:label "proClass" .
-sid:proClass rdfs:Range sid:ProClass .
+sid:proClass rdfs:range sid:ProClass .
 sid:ProClass rdfs:subClassOf sid:MuExponent .
 sid:proClass rdfs:subPropertyOf sid:muProperty .
 sid:ProInd aamas:lang aama:Sidaama .
@@ -474,10 +477,10 @@ sid:SuffStructure rdf:type sid:VerbMorphClass .
 sid:SuffStructure rdfs:label "SuffStructure" .
 sid:tam aamas:lang aama:Sidaama .
 sid:Tam aamas:lang aama:Sidaama .
-sid:tam rdfs:Domain aamas:Term .
+sid:tam rdfs:domain aamas:Term .
 sid:Tam rdfs:label "tam exponents" .
 sid:tam rdfs:label "tam" .
-sid:tam rdfs:Range sid:Tam .
+sid:tam rdfs:range sid:Tam .
 sid:Tam rdfs:subClassOf sid:MuExponent .
 sid:tam rdfs:subPropertyOf sid:muProperty .
 sid:TensePersNumGenTemplate aamas:lang aama:Sidaama .
@@ -495,76 +498,68 @@ sid:ThisArea rdfs:label "ThisArea" .
 sid:token aamas:lang aama:Sidaama .
 sid:Token aamas:lang aama:Sidaama .
 sid:token rdf:type aamas:Token .
-sid:token rdfs:Domain aamas:Term .
+sid:token rdfs:domain aamas:Term .
 sid:Token rdfs:label "token exponents" .
 sid:token rdfs:label "token" .
-sid:token rdfs:Range sid:Token .
+sid:token rdfs:range sid:Token .
 sid:Token rdfs:subClassOf sid:MuExponent .
 sid:token-genF aamas:lang aama:Sidaama .
 sid:Token-genF aamas:lang aama:Sidaama .
 sid:token-genF rdf:type aamas:Token .
-sid:token-genF rdfs:Domain aamas:Term .
+sid:token-genF rdfs:domain aamas:Term .
 sid:Token-genF rdfs:label "token-genF exponents" .
 sid:token-genF rdfs:label "token-genF" .
-sid:token-genF rdfs:Range sid:Token-genF .
+sid:token-genF rdfs:range sid:Token-genF .
 sid:Token-genF rdfs:subClassOf sid:MuExponent .
 sid:token-genM aamas:lang aama:Sidaama .
 sid:Token-genM aamas:lang aama:Sidaama .
 sid:token-genM rdf:type aamas:Token .
-sid:token-genM rdfs:Domain aamas:Term .
+sid:token-genM rdfs:domain aamas:Term .
 sid:Token-genM rdfs:label "token-genM exponents" .
 sid:token-genM rdfs:label "token-genM" .
-sid:token-genM rdfs:Range sid:Token-genM .
+sid:token-genM rdfs:range sid:Token-genM .
 sid:Token-genM rdfs:subClassOf sid:MuExponent .
 sid:token-notes aamas:lang aama:Sidaama .
 sid:Token-notes aamas:lang aama:Sidaama .
 sid:token-notes rdf:type aamas:Text .
-sid:token-notes rdfs:Domain aamas:Term .
+sid:token-notes rdfs:domain aamas:Term .
 sid:Token-notes rdfs:label "token-notes exponents" .
 sid:token-notes rdfs:label "token-notes" .
-sid:token-notes rdfs:Range sid:Token-notes .
+sid:token-notes rdfs:range sid:Token-notes .
 sid:Token-notes rdfs:subClassOf sid:MuExponent .
 sid:token-numPers aamas:lang aama:Sidaama .
 sid:Token-numPers aamas:lang aama:Sidaama .
 sid:token-numPers rdf:type aamas:Token .
-sid:token-numPers rdfs:Domain aamas:Term .
+sid:token-numPers rdfs:domain aamas:Term .
 sid:Token-numPers rdfs:label "token-numPers exponents" .
 sid:token-numPers rdfs:label "token-numPers" .
-sid:token-numPers rdfs:Range sid:Token-numPers .
+sid:token-numPers rdfs:range sid:Token-numPers .
 sid:Token-numPers rdfs:subClassOf sid:MuExponent .
 sid:token-structure aamas:lang aama:Sidaama .
 sid:Token-structure aamas:lang aama:Sidaama .
 sid:token-structure rdf:type aamas:Token .
-sid:token-structure rdfs:Domain aamas:Term .
+sid:token-structure rdfs:domain aamas:Term .
 sid:Token-structure rdfs:label "token-structure exponents" .
 sid:token-structure rdfs:label "token-structure" .
-sid:token-structure rdfs:Range sid:Token-structure .
+sid:token-structure rdfs:range sid:Token-structure .
 sid:Token-structure rdfs:subClassOf sid:MuExponent .
-sid:token-suffix aamas:lang aama:Sidaama .
-sid:Token-suffix aamas:lang aama:Sidaama .
-sid:token-suffix rdf:type aamas:Token .
-sid:token-suffix rdfs:Domain aamas:Term .
-sid:Token-suffix rdfs:label "token-suffix exponents" .
-sid:token-suffix rdfs:label "token-suffix" .
-sid:token-suffix rdfs:Range sid:Token-suffix .
-sid:Token-suffix rdfs:subClassOf sid:MuExponent .
 sid:token-tense aamas:lang aama:Sidaama .
 sid:Token-tense aamas:lang aama:Sidaama .
 sid:token-tense rdf:type aamas:Token .
-sid:token-tense rdfs:Domain aamas:Term .
+sid:token-tense rdfs:domain aamas:Term .
 sid:Token-tense rdfs:label "token-tense exponents" .
 sid:token-tense rdfs:label "token-tense" .
-sid:token-tense rdfs:Range sid:Token-tense .
+sid:token-tense rdfs:range sid:Token-tense .
 sid:Token-tense rdfs:subClassOf sid:MuExponent .
 sid:Verb aamas:lang aama:Sidaama .
 sid:Verb rdf:type sid:Pos .
 sid:Verb rdfs:label "Verb" .
 sid:verbMorphClass aamas:lang aama:Sidaama .
 sid:VerbMorphClass aamas:lang aama:Sidaama .
-sid:verbMorphClass rdfs:Domain aamas:Term .
+sid:verbMorphClass rdfs:domain aamas:Term .
 sid:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 sid:verbMorphClass rdfs:label "verbMorphClass" .
-sid:verbMorphClass rdfs:Range sid:VerbMorphClass .
+sid:verbMorphClass rdfs:range sid:VerbMorphClass .
 sid:VerbMorphClass rdfs:subClassOf sid:MuExponent .
 sid:verbMorphClass rdfs:subPropertyOf sid:muProperty .
 sid:VerbNegation aamas:lang aama:Sidaama .

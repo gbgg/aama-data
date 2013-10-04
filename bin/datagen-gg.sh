@@ -1,14 +1,15 @@
 #!/bin/sh
-# usage:  bin/datagen.sh "dir" abbr
+# usage:  bin/datagen.sh "dir" 
 
 # 05/10/13: gbgg remodeled datagen on basis of schemagen.sh
+# 10/02/13:	abbr arg supplied by grep in xml2schema-gg.sh
 # old datagen.sh is now xml2data.sh fuput.sh 
 
 echo > logs/datagen.log
 
 for d in `ls -d $1`
 do
-    bin/xml2data-gg.sh $d  $2|| echo FAILURE xml2data-gg $d >> logs/datagen.log
+    bin/xml2data-gg.sh $d  || echo FAILURE xml2data-gg $d >> logs/datagen.log
 
     bin/data2rdf.sh $d 
 

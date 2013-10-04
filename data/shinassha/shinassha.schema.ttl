@@ -10,7 +10,7 @@ aama:Shinassha rdfs:label "Shinassha" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -18,6 +18,9 @@ aamas:Term rdf:type aamas:MuScheme .
 aamas:Term rdf:type aamas:Muterm .
 aamas:Text rdfs:subClassOf rdfs:Class .
 aamas:Token rdfs:subClassOf rdfs:Class .
+shn:{conjClass aamas:lang aama:Shinassha .
+shn:{conjClass rdf:type shn:Attributes .
+shn:{conjClass rdfs:label "{conjClass" .
 shn:Ablative aamas:lang aama:Shinassha .
 shn:Ablative rdf:type shn:Case .
 shn:Ablative rdfs:label "Ablative" .
@@ -41,12 +44,12 @@ shn:AoristPunctual rdf:type shn:Tam .
 shn:AoristPunctual rdfs:label "AoristPunctual" .
 shn:attributes aamas:lang aama:Shinassha .
 shn:Attributes aamas:lang aama:Shinassha .
-shn:attributes rdf:type aamas:Text  .
-shn:attributes rdfs:Domain aamas:Term .
+shn:attributes rdfs:domain aamas:Term .
 shn:Attributes rdfs:label "attributes exponents" .
 shn:attributes rdfs:label "attributes" .
-shn:attributes rdfs:Range shn:Attributes .
+shn:attributes rdfs:range shn:Attributes .
 shn:Attributes rdfs:subClassOf shn:MuExponent .
+shn:attributes rdfs:subPropertyOf shn:muProperty .
 shn:Aux aamas:lang aama:Shinassha .
 shn:Aux rdf:type shn:VClass .
 shn:Aux rdfs:label "Aux" .
@@ -56,10 +59,10 @@ shn:Benefactive rdf:type shn:DerivedStem .
 shn:Benefactive rdfs:label "Benefactive" .
 shn:case aamas:lang aama:Shinassha .
 shn:Case aamas:lang aama:Shinassha .
-shn:case rdfs:Domain aamas:Term .
+shn:case rdfs:domain aamas:Term .
 shn:Case rdfs:label "case exponents" .
 shn:case rdfs:label "case" .
-shn:case rdfs:Range shn:Case .
+shn:case rdfs:range shn:Case .
 shn:Case rdfs:subClassOf shn:MuExponent .
 shn:case rdfs:subPropertyOf shn:muProperty .
 shn:Causative aamas:lang aama:Shinassha .
@@ -78,10 +81,10 @@ shn:Common rdf:type shn:Person .
 shn:Common rdfs:label "Common" .
 shn:complement aamas:lang aama:Shinassha .
 shn:Complement aamas:lang aama:Shinassha .
-shn:complement rdfs:Domain aamas:Term .
+shn:complement rdfs:domain aamas:Term .
 shn:Complement rdfs:label "complement exponents" .
 shn:complement rdfs:label "complement" .
-shn:complement rdfs:Range shn:Complement .
+shn:complement rdfs:range shn:Complement .
 shn:Complement rdfs:subClassOf shn:MuExponent .
 shn:complement rdfs:subPropertyOf shn:muProperty .
 shn:Completative aamas:lang aama:Shinassha .
@@ -113,11 +116,11 @@ shn:conjClass aamas:lang aama:Shinassha .
 shn:ConjClass aamas:lang aama:Shinassha .
 shn:ConjClass rdf:type shn:Mood .
 shn:ConjClass rdf:type shn:Tam .
-shn:conjClass rdfs:Domain aamas:Term .
+shn:conjClass rdfs:domain aamas:Term .
 shn:ConjClass rdfs:label "conjClass exponents" .
 shn:conjClass rdfs:label "conjClass" .
 shn:ConjClass rdfs:label "ConjClass" .
-shn:conjClass rdfs:Range shn:ConjClass .
+shn:conjClass rdfs:range shn:ConjClass .
 shn:ConjClass rdfs:subClassOf shn:MuExponent .
 shn:conjClass rdfs:subPropertyOf shn:muProperty .
 shn:Copula aamas:lang aama:Shinassha .
@@ -128,10 +131,10 @@ shn:Dative rdf:type shn:Case .
 shn:Dative rdfs:label "Dative" .
 shn:derivedStem aamas:lang aama:Shinassha .
 shn:DerivedStem aamas:lang aama:Shinassha .
-shn:derivedStem rdfs:Domain aamas:Term .
+shn:derivedStem rdfs:domain aamas:Term .
 shn:DerivedStem rdfs:label "derivedStem exponents" .
 shn:derivedStem rdfs:label "derivedStem" .
-shn:derivedStem rdfs:Range shn:DerivedStem .
+shn:derivedStem rdfs:range shn:DerivedStem .
 shn:DerivedStem rdfs:subClassOf shn:MuExponent .
 shn:derivedStem rdfs:subPropertyOf shn:muProperty .
 shn:DervStem aamas:lang aama:Shinassha .
@@ -163,10 +166,10 @@ shn:FuturePunctual rdf:type shn:Tam .
 shn:FuturePunctual rdfs:label "FuturePunctual" .
 shn:gender aamas:lang aama:Shinassha .
 shn:Gender aamas:lang aama:Shinassha .
-shn:gender rdfs:Domain aamas:Term .
+shn:gender rdfs:domain aamas:Term .
 shn:Gender rdfs:label "gender exponents" .
 shn:gender rdfs:label "gender" .
-shn:gender rdfs:Range shn:Gender .
+shn:gender rdfs:range shn:Gender .
 shn:Gender rdfs:subClassOf shn:MuExponent .
 shn:gender rdfs:subPropertyOf shn:muProperty .
 shn:Gerund aamas:lang aama:Shinassha .
@@ -175,10 +178,10 @@ shn:Gerund rdfs:label "Gerund" .
 shn:gloss aamas:lang aama:Shinassha .
 shn:Gloss aamas:lang aama:Shinassha .
 shn:gloss rdf:type aamas:Text .
-shn:gloss rdfs:Domain aamas:Term .
+shn:gloss rdfs:domain aamas:Term .
 shn:Gloss rdfs:label "gloss exponents" .
 shn:gloss rdfs:label "gloss" .
-shn:gloss rdfs:Range shn:Gloss .
+shn:gloss rdfs:range shn:Gloss .
 shn:Gloss rdfs:subClassOf shn:MuExponent .
 shn:Habitual aamas:lang aama:Shinassha .
 shn:Habitual rdf:type shn:Tam .
@@ -232,10 +235,10 @@ shn:Jussive rdfs:label "Jussive" .
 shn:lemma aamas:lang aama:Shinassha .
 shn:Lemma aamas:lang aama:Shinassha .
 shn:lemma rdf:type aamas:Text .
-shn:lemma rdfs:Domain aamas:Term .
+shn:lemma rdfs:domain aamas:Term .
 shn:Lemma rdfs:label "lemma exponents" .
 shn:lemma rdfs:label "lemma" .
-shn:lemma rdfs:Range shn:Lemma .
+shn:lemma rdfs:range shn:Lemma .
 shn:Lemma rdfs:subClassOf shn:MuExponent .
 shn:Locative aamas:lang aama:Shinassha .
 shn:Locative rdf:type shn:Case .
@@ -248,20 +251,20 @@ shn:Monorad rdf:type shn:VerbMorphClass .
 shn:Monorad rdfs:label "Monorad" .
 shn:mood aamas:lang aama:Shinassha .
 shn:Mood aamas:lang aama:Shinassha .
-shn:mood rdfs:Domain aamas:Term .
+shn:mood rdfs:domain aamas:Term .
 shn:Mood rdfs:label "mood exponents" .
 shn:mood rdfs:label "mood" .
-shn:mood rdfs:Range shn:Mood .
+shn:mood rdfs:range shn:Mood .
 shn:Mood rdfs:subClassOf shn:MuExponent .
 shn:mood rdfs:subPropertyOf shn:muProperty .
 shn:MuExponent rdfs:subClassOf aamas:MuExponent .
 shn:mulabel aamas:lang aama:Shinassha .
 shn:Mulabel aamas:lang aama:Shinassha .
 shn:mulabel rdf:type aama:Label .
-shn:mulabel rdfs:Domain aamas:Term .
+shn:mulabel rdfs:domain aamas:Term .
 shn:Mulabel rdfs:label "mulabel exponents" .
 shn:mulabel rdfs:label "mulabel" .
-shn:mulabel rdfs:Range shn:Mulabel .
+shn:mulabel rdfs:range shn:Mulabel .
 shn:Mulabel rdfs:subClassOf shn:MuExponent .
 shn:muProperty rdfs:subPropertyOf aamas:muProperty .
 shn:Negative aamas:lang aama:Shinassha .
@@ -269,19 +272,19 @@ shn:Negative rdf:type shn:Polarity .
 shn:Negative rdfs:label "Negative" .
 shn:number aamas:lang aama:Shinassha .
 shn:Number aamas:lang aama:Shinassha .
-shn:number rdfs:Domain aamas:Term .
+shn:number rdfs:domain aamas:Term .
 shn:Number rdfs:label "number exponents" .
 shn:number rdfs:label "number" .
-shn:number rdfs:Range shn:Number .
+shn:number rdfs:range shn:Number .
 shn:Number rdfs:subClassOf shn:MuExponent .
 shn:number rdfs:subPropertyOf shn:muProperty .
 shn:pdgmLexLabel aamas:lang aama:Shinassha .
 shn:PdgmLexLabel aamas:lang aama:Shinassha .
 shn:pdgmLexLabel rdf:type aama:Label .
-shn:pdgmLexLabel rdfs:Domain aamas:Term .
+shn:pdgmLexLabel rdfs:domain aamas:Term .
 shn:PdgmLexLabel rdfs:label "pdgmLexLabel exponents" .
 shn:pdgmLexLabel rdfs:label "pdgmLexLabel" .
-shn:pdgmLexLabel rdfs:Range shn:PdgmLexLabel .
+shn:pdgmLexLabel rdfs:range shn:PdgmLexLabel .
 shn:PdgmLexLabel rdfs:subClassOf shn:MuExponent .
 shn:PerfectFuture aamas:lang aama:Shinassha .
 shn:PerfectFuture rdf:type shn:Tam .
@@ -294,10 +297,10 @@ shn:PerfectPreterite rdf:type shn:Tam .
 shn:PerfectPreterite rdfs:label "PerfectPreterite" .
 shn:person aamas:lang aama:Shinassha .
 shn:Person aamas:lang aama:Shinassha .
-shn:person rdfs:Domain aamas:Term .
+shn:person rdfs:domain aamas:Term .
 shn:Person rdfs:label "person exponents" .
 shn:person rdfs:label "person" .
-shn:person rdfs:Range shn:Person .
+shn:person rdfs:range shn:Person .
 shn:Person rdfs:subClassOf shn:MuExponent .
 shn:person rdfs:subPropertyOf shn:muProperty .
 shn:Person1 aamas:lang aama:Shinassha .
@@ -317,18 +320,18 @@ shn:Plural rdf:type shn:Number .
 shn:Plural rdfs:label "Plural" .
 shn:polarity aamas:lang aama:Shinassha .
 shn:Polarity aamas:lang aama:Shinassha .
-shn:polarity rdfs:Domain aamas:Term .
+shn:polarity rdfs:domain aamas:Term .
 shn:Polarity rdfs:label "polarity exponents" .
 shn:polarity rdfs:label "polarity" .
-shn:polarity rdfs:Range shn:Polarity .
+shn:polarity rdfs:range shn:Polarity .
 shn:Polarity rdfs:subClassOf shn:MuExponent .
 shn:polarity rdfs:subPropertyOf shn:muProperty .
 shn:pos aamas:lang aama:Shinassha .
 shn:Pos aamas:lang aama:Shinassha .
-shn:pos rdfs:Domain aamas:Term .
+shn:pos rdfs:domain aamas:Term .
 shn:Pos rdfs:label "pos exponents" .
 shn:pos rdfs:label "pos" .
-shn:pos rdfs:Range shn:Pos .
+shn:pos rdfs:range shn:Pos .
 shn:Pos rdfs:subClassOf shn:MuExponent .
 shn:pos rdfs:subPropertyOf shn:muProperty .
 shn:PossAdj aamas:lang aama:Shinassha .
@@ -375,10 +378,10 @@ shn:Pro rdf:type shn:Pos .
 shn:Pro rdfs:label "Pro" .
 shn:proClass aamas:lang aama:Shinassha .
 shn:ProClass aamas:lang aama:Shinassha .
-shn:proClass rdfs:Domain aamas:Term .
+shn:proClass rdfs:domain aamas:Term .
 shn:ProClass rdfs:label "proClass exponents" .
 shn:proClass rdfs:label "proClass" .
-shn:proClass rdfs:Range shn:ProClass .
+shn:proClass rdfs:range shn:ProClass .
 shn:ProClass rdfs:subClassOf shn:MuExponent .
 shn:proClass rdfs:subPropertyOf shn:muProperty .
 shn:Progressive aamas:lang aama:Shinassha .
@@ -410,61 +413,53 @@ shn:SubjunctivepdgmLex rdf:type shn:Mood .
 shn:SubjunctivepdgmLex rdfs:label "SubjunctivepdgmLex" .
 shn:tam aamas:lang aama:Shinassha .
 shn:Tam aamas:lang aama:Shinassha .
-shn:tam rdfs:Domain aamas:Term .
+shn:tam rdfs:domain aamas:Term .
 shn:Tam rdfs:label "tam exponents" .
 shn:tam rdfs:label "tam" .
-shn:tam rdfs:Range shn:Tam .
+shn:tam rdfs:range shn:Tam .
 shn:Tam rdfs:subClassOf shn:MuExponent .
 shn:tam rdfs:subPropertyOf shn:muProperty .
 shn:token aamas:lang aama:Shinassha .
 shn:Token aamas:lang aama:Shinassha .
 shn:token rdf:type aamas:Token .
-shn:token rdfs:Domain aamas:Term .
+shn:token rdfs:domain aamas:Term .
 shn:Token rdfs:label "token exponents" .
 shn:token rdfs:label "token" .
-shn:token rdfs:Range shn:Token .
+shn:token rdfs:range shn:Token .
 shn:Token rdfs:subClassOf shn:MuExponent .
 shn:token-aux aamas:lang aama:Shinassha .
 shn:Token-aux aamas:lang aama:Shinassha .
 shn:token-aux rdf:type aamas:Token .
-shn:token-aux rdfs:Domain aamas:Term .
+shn:token-aux rdfs:domain aamas:Term .
 shn:Token-aux rdfs:label "token-aux exponents" .
 shn:token-aux rdfs:label "token-aux" .
-shn:token-aux rdfs:Range shn:Token-aux .
+shn:token-aux rdfs:range shn:Token-aux .
 shn:Token-aux rdfs:subClassOf shn:MuExponent .
 shn:token-note aamas:lang aama:Shinassha .
 shn:Token-note aamas:lang aama:Shinassha .
 shn:token-note rdf:type aamas:Text .
-shn:token-note rdfs:Domain aamas:Term .
+shn:token-note rdfs:domain aamas:Term .
 shn:Token-note rdfs:label "token-note exponents" .
 shn:token-note rdfs:label "token-note" .
-shn:token-note rdfs:Range shn:Token-note .
+shn:token-note rdfs:range shn:Token-note .
 shn:Token-note rdfs:subClassOf shn:MuExponent .
 shn:token-stemVowel aamas:lang aama:Shinassha .
 shn:Token-stemVowel aamas:lang aama:Shinassha .
-shn:token-stemVowel rdf:type aamas:Text .
-shn:token-stemVowel rdfs:Domain aamas:Term .
+shn:token-stemVowel rdf:type aamas:Token .
+shn:token-stemVowel rdfs:domain aamas:Term .
 shn:Token-stemVowel rdfs:label "token-stemVowel exponents" .
 shn:token-stemVowel rdfs:label "token-stemVowel" .
-shn:token-stemVowel rdfs:Range shn:Token-stemVowel .
+shn:token-stemVowel rdfs:range shn:Token-stemVowel .
 shn:Token-stemVowel rdfs:subClassOf shn:MuExponent .
-shn:token-suffix aamas:lang aama:Shinassha .
-shn:Token-suffix aamas:lang aama:Shinassha .
-shn:token-suffix rdf:type aamas:Token .
-shn:token-suffix rdfs:Domain aamas:Term .
-shn:Token-suffix rdfs:label "token-suffix exponents" .
-shn:token-suffix rdfs:label "token-suffix" .
-shn:token-suffix rdfs:Range shn:Token-suffix .
-shn:Token-suffix rdfs:subClassOf shn:MuExponent .
 shn:U aamas:lang aama:Shinassha .
 shn:U rdf:type shn:Tam .
 shn:U rdfs:label "U" .
 shn:vClass aamas:lang aama:Shinassha .
 shn:VClass aamas:lang aama:Shinassha .
-shn:vClass rdfs:Domain aamas:Term .
+shn:vClass rdfs:domain aamas:Term .
 shn:VClass rdfs:label "vClass exponents" .
 shn:vClass rdfs:label "vClass" .
-shn:vClass rdfs:Range shn:VClass .
+shn:vClass rdfs:range shn:VClass .
 shn:VClass rdfs:subClassOf shn:MuExponent .
 shn:vClass rdfs:subPropertyOf shn:muProperty .
 shn:Verb aamas:lang aama:Shinassha .
@@ -472,9 +467,9 @@ shn:Verb rdf:type shn:Pos .
 shn:Verb rdfs:label "Verb" .
 shn:verbMorphClass aamas:lang aama:Shinassha .
 shn:VerbMorphClass aamas:lang aama:Shinassha .
-shn:verbMorphClass rdfs:Domain aamas:Term .
+shn:verbMorphClass rdfs:domain aamas:Term .
 shn:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 shn:verbMorphClass rdfs:label "verbMorphClass" .
-shn:verbMorphClass rdfs:Range shn:VerbMorphClass .
+shn:verbMorphClass rdfs:range shn:VerbMorphClass .
 shn:VerbMorphClass rdfs:subClassOf shn:MuExponent .
 shn:verbMorphClass rdfs:subPropertyOf shn:muProperty .

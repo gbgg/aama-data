@@ -180,8 +180,8 @@
 					<xsl:for-each select="termcluster/term[1]/prop">
 <!--						<xsl:sort select="@type='gender' and @val='Masc'" />
 						<xsl:sort select="@type='person'"/>
-						<xsl:sort select="@type='number'and @val='Singular'"/>
--->						<th align="left">
+						<xsl:sort select="@type='number'and @val='Singular'"/>-->
+						<th align="left">
 							<xsl:value-of select="./@type"/>
 						</th>
 					</xsl:for-each>
@@ -189,10 +189,13 @@
 				<xsl:for-each select="termcluster/term">
 					<tr>
 						<xsl:for-each select="prop">
-							<!--<xsl:sort select="@type='gender' and @val='Masc'" />
+<!--							<xsl:sort select="@type='gender' and @val='Masc'" />
 							<xsl:sort select="@type='person'"/>
-							<xsl:sort select="@type='number'and @val='Singular'"/>
--->							<td valign="top">
+							<xsl:sort select="@type='number'and @val='Singular'"/>-->
+<!--							<xsl:sort select="@type='gender'" />
+							<xsl:sort select="@type='person'"/>
+							<xsl:sort select="@type='number'"/>-->
+							<td valign="top">
 								<xsl:value-of select="./@val"/>
 							</td>
 						</xsl:for-each>

@@ -10,7 +10,7 @@ aama:Boni-jara rdfs:label "Boni-jara" .
 aamas:Cluster rdfs:subClassOf rdfs:Class .
 aamas:Lexeme rdfs:subClassOf aamas:Cluster .
 aamas:MuExponent rdfs:subClassOf rdfs:Class .
-aamas:muProperty rdfs:subPropertyOf rdfs:Property .
+aamas:muProperty rdfs:subPropertyOf rdf:Property .
 aamas:MuScheme rdfs:subClassOf aamas:Cluster .
 aamas:Muterm rdfs:subClassOf aamas:Cluster .
 aamas:Term rdf:type aamas:Lexeme .
@@ -27,12 +27,15 @@ boj:Adjective rdfs:label "Adjective" .
 boj:Affirmative aamas:lang aama:Boni-jara .
 boj:Affirmative rdf:type boj:Polarity .
 boj:Affirmative rdfs:label "Affirmative" .
+boj:Affix aamas:lang aama:Boni-jara .
+boj:Affix rdf:type boj:FormType .
+boj:Affix rdfs:label "Affix" .
 boj:aspect aamas:lang aama:Boni-jara .
 boj:Aspect aamas:lang aama:Boni-jara .
-boj:aspect rdfs:Domain aamas:Term .
+boj:aspect rdfs:domain aamas:Term .
 boj:Aspect rdfs:label "aspect exponents" .
 boj:aspect rdfs:label "aspect" .
-boj:aspect rdfs:Range boj:Aspect .
+boj:aspect rdfs:range boj:Aspect .
 boj:Aspect rdfs:subClassOf boj:MuExponent .
 boj:aspect rdfs:subPropertyOf boj:muProperty .
 boj:AspectSuff aamas:lang aama:Boni-jara .
@@ -46,18 +49,18 @@ boj:Clitic rdf:type boj:VerbMorphClass .
 boj:Clitic rdfs:label "Clitic" .
 boj:cliticClass aamas:lang aama:Boni-jara .
 boj:CliticClass aamas:lang aama:Boni-jara .
-boj:cliticClass rdfs:Domain aamas:Term .
+boj:cliticClass rdfs:domain aamas:Term .
 boj:CliticClass rdfs:label "cliticClass exponents" .
 boj:cliticClass rdfs:label "cliticClass" .
-boj:cliticClass rdfs:Range boj:CliticClass .
+boj:cliticClass rdfs:range boj:CliticClass .
 boj:CliticClass rdfs:subClassOf boj:MuExponent .
 boj:cliticClass rdfs:subPropertyOf boj:muProperty .
 boj:cliticType aamas:lang aama:Boni-jara .
 boj:CliticType aamas:lang aama:Boni-jara .
-boj:cliticType rdfs:Domain aamas:Term .
+boj:cliticType rdfs:domain aamas:Term .
 boj:CliticType rdfs:label "cliticType exponents" .
 boj:cliticType rdfs:label "cliticType" .
-boj:cliticType rdfs:Range boj:CliticType .
+boj:cliticType rdfs:range boj:CliticType .
 boj:CliticType rdfs:subClassOf boj:MuExponent .
 boj:cliticType rdfs:subPropertyOf boj:muProperty .
 boj:Comitative aamas:lang aama:Boni-jara .
@@ -71,10 +74,10 @@ boj:Common rdf:type boj:Polarity .
 boj:Common rdfs:label "Common" .
 boj:conjClass aamas:lang aama:Boni-jara .
 boj:ConjClass aamas:lang aama:Boni-jara .
-boj:conjClass rdfs:Domain aamas:Term .
+boj:conjClass rdfs:domain aamas:Term .
 boj:ConjClass rdfs:label "conjClass exponents" .
 boj:conjClass rdfs:label "conjClass" .
-boj:conjClass rdfs:Range boj:ConjClass .
+boj:conjClass rdfs:range boj:ConjClass .
 boj:ConjClass rdfs:subClassOf boj:MuExponent .
 boj:conjClass rdfs:subPropertyOf boj:muProperty .
 boj:DervSuff aamas:lang aama:Boni-jara .
@@ -87,21 +90,29 @@ boj:Focus aamas:lang aama:Boni-jara .
 boj:Focus rdf:type boj:CliticClass .
 boj:Focus rdf:type boj:ProClass .
 boj:Focus rdfs:label "Focus" .
+boj:formType aamas:lang aama:Boni-jara .
+boj:FormType aamas:lang aama:Boni-jara .
+boj:formType rdfs:domain aamas:Term .
+boj:FormType rdfs:label "formType exponents" .
+boj:formType rdfs:label "formType" .
+boj:formType rdfs:range boj:FormType .
+boj:FormType rdfs:subClassOf boj:MuExponent .
+boj:formType rdfs:subPropertyOf boj:muProperty .
 boj:gender aamas:lang aama:Boni-jara .
 boj:Gender aamas:lang aama:Boni-jara .
-boj:gender rdfs:Domain aamas:Term .
+boj:gender rdfs:domain aamas:Term .
 boj:Gender rdfs:label "gender exponents" .
 boj:gender rdfs:label "gender" .
-boj:gender rdfs:Range boj:Gender .
+boj:gender rdfs:range boj:Gender .
 boj:Gender rdfs:subClassOf boj:MuExponent .
 boj:gender rdfs:subPropertyOf boj:muProperty .
 boj:gloss aamas:lang aama:Boni-jara .
 boj:Gloss aamas:lang aama:Boni-jara .
 boj:gloss rdf:type aamas:Text .
-boj:gloss rdfs:Domain aamas:Term .
+boj:gloss rdfs:domain aamas:Term .
 boj:Gloss rdfs:label "gloss exponents" .
 boj:gloss rdfs:label "gloss" .
-boj:gloss rdfs:Range boj:Gloss .
+boj:gloss rdfs:range boj:Gloss .
 boj:Gloss rdfs:subClassOf boj:MuExponent .
 boj:Goal aamas:lang aama:Boni-jara .
 boj:Goal rdf:type boj:CliticClass .
@@ -124,10 +135,10 @@ boj:Infinitive rdfs:label "Infinitive" .
 boj:lemma aamas:lang aama:Boni-jara .
 boj:Lemma aamas:lang aama:Boni-jara .
 boj:lemma rdf:type aamas:Text .
-boj:lemma rdfs:Domain aamas:Term .
+boj:lemma rdfs:domain aamas:Term .
 boj:Lemma rdfs:label "lemma exponents" .
 boj:lemma rdfs:label "lemma" .
-boj:lemma rdfs:Range boj:Lemma .
+boj:lemma rdfs:range boj:Lemma .
 boj:Lemma rdfs:subClassOf boj:MuExponent .
 boj:Masc aamas:lang aama:Boni-jara .
 boj:Masc rdf:type boj:Gender .
@@ -137,20 +148,20 @@ boj:Medial rdf:type boj:CliticClass .
 boj:Medial rdfs:label "Medial" .
 boj:mood aamas:lang aama:Boni-jara .
 boj:Mood aamas:lang aama:Boni-jara .
-boj:mood rdfs:Domain aamas:Term .
+boj:mood rdfs:domain aamas:Term .
 boj:Mood rdfs:label "mood exponents" .
 boj:mood rdfs:label "mood" .
-boj:mood rdfs:Range boj:Mood .
+boj:mood rdfs:range boj:Mood .
 boj:Mood rdfs:subClassOf boj:MuExponent .
 boj:mood rdfs:subPropertyOf boj:muProperty .
 boj:MuExponent rdfs:subClassOf aamas:MuExponent .
 boj:mulabel aamas:lang aama:Boni-jara .
 boj:Mulabel aamas:lang aama:Boni-jara .
 boj:mulabel rdf:type aama:Label .
-boj:mulabel rdfs:Domain aamas:Term .
+boj:mulabel rdfs:domain aamas:Term .
 boj:Mulabel rdfs:label "mulabel exponents" .
 boj:mulabel rdfs:label "mulabel" .
-boj:mulabel rdfs:Range boj:Mulabel .
+boj:mulabel rdfs:range boj:Mulabel .
 boj:Mulabel rdfs:subClassOf boj:MuExponent .
 boj:muProperty rdfs:subPropertyOf aamas:muProperty .
 boj:NegationAffix aamas:lang aama:Boni-jara .
@@ -161,10 +172,10 @@ boj:Negative rdf:type boj:Polarity .
 boj:Negative rdfs:label "Negative" .
 boj:number aamas:lang aama:Boni-jara .
 boj:Number aamas:lang aama:Boni-jara .
-boj:number rdfs:Domain aamas:Term .
+boj:number rdfs:domain aamas:Term .
 boj:Number rdfs:label "number exponents" .
 boj:number rdfs:label "number" .
-boj:number rdfs:Range boj:Number .
+boj:number rdfs:range boj:Number .
 boj:Number rdfs:subClassOf boj:MuExponent .
 boj:number rdfs:subPropertyOf boj:muProperty .
 boj:Object aamas:lang aama:Boni-jara .
@@ -178,10 +189,10 @@ boj:Perfect rdf:type boj:Tam .
 boj:Perfect rdfs:label "Perfect" .
 boj:person aamas:lang aama:Boni-jara .
 boj:Person aamas:lang aama:Boni-jara .
-boj:person rdfs:Domain aamas:Term .
+boj:person rdfs:domain aamas:Term .
 boj:Person rdfs:label "person exponents" .
 boj:person rdfs:label "person" .
-boj:person rdfs:Range boj:Person .
+boj:person rdfs:range boj:Person .
 boj:Person rdfs:subClassOf boj:MuExponent .
 boj:person rdfs:subPropertyOf boj:muProperty .
 boj:Person1 aamas:lang aama:Boni-jara .
@@ -198,18 +209,18 @@ boj:Plural rdf:type boj:Number .
 boj:Plural rdfs:label "Plural" .
 boj:polarity aamas:lang aama:Boni-jara .
 boj:Polarity aamas:lang aama:Boni-jara .
-boj:polarity rdfs:Domain aamas:Term .
+boj:polarity rdfs:domain aamas:Term .
 boj:Polarity rdfs:label "polarity exponents" .
 boj:polarity rdfs:label "polarity" .
-boj:polarity rdfs:Range boj:Polarity .
+boj:polarity rdfs:range boj:Polarity .
 boj:Polarity rdfs:subClassOf boj:MuExponent .
 boj:polarity rdfs:subPropertyOf boj:muProperty .
 boj:pos aamas:lang aama:Boni-jara .
 boj:Pos aamas:lang aama:Boni-jara .
-boj:pos rdfs:Domain aamas:Term .
+boj:pos rdfs:domain aamas:Term .
 boj:Pos rdfs:label "pos exponents" .
 boj:pos rdfs:label "pos" .
-boj:pos rdfs:Range boj:Pos .
+boj:pos rdfs:range boj:Pos .
 boj:Pos rdfs:subClassOf boj:MuExponent .
 boj:pos rdfs:subPropertyOf boj:muProperty .
 boj:Possessive aamas:lang aama:Boni-jara .
@@ -223,10 +234,10 @@ boj:Present rdf:type boj:Tam .
 boj:Present rdfs:label "Present" .
 boj:proClass aamas:lang aama:Boni-jara .
 boj:ProClass aamas:lang aama:Boni-jara .
-boj:proClass rdfs:Domain aamas:Term .
+boj:proClass rdfs:domain aamas:Term .
 boj:ProClass rdfs:label "proClass exponents" .
 boj:proClass rdfs:label "proClass" .
-boj:proClass rdfs:Range boj:ProClass .
+boj:proClass rdfs:range boj:ProClass .
 boj:ProClass rdfs:subClassOf boj:MuExponent .
 boj:proClass rdfs:subPropertyOf boj:muProperty .
 boj:Proclitic aamas:lang aama:Boni-jara .
@@ -261,6 +272,7 @@ boj:Subjunctivepolarity rdf:type boj:Mood .
 boj:Subjunctivepolarity rdfs:label "Subjunctivepolarity" .
 boj:Suffix aamas:lang aama:Boni-jara .
 boj:Suffix rdf:type boj:ConjClass .
+boj:Suffix rdf:type boj:FormType .
 boj:Suffix rdfs:label "Suffix" .
 boj:Suffix1 aamas:lang aama:Boni-jara .
 boj:Suffix1 rdf:type boj:ConjClass .
@@ -279,36 +291,28 @@ boj:SuffixClass rdf:type boj:ConjClass .
 boj:SuffixClass rdfs:label "SuffixClass" .
 boj:tam aamas:lang aama:Boni-jara .
 boj:Tam aamas:lang aama:Boni-jara .
-boj:tam rdfs:Domain aamas:Term .
+boj:tam rdfs:domain aamas:Term .
 boj:Tam rdfs:label "tam exponents" .
 boj:tam rdfs:label "tam" .
-boj:tam rdfs:Range boj:Tam .
+boj:tam rdfs:range boj:Tam .
 boj:Tam rdfs:subClassOf boj:MuExponent .
 boj:tam rdfs:subPropertyOf boj:muProperty .
 boj:token aamas:lang aama:Boni-jara .
 boj:Token aamas:lang aama:Boni-jara .
 boj:token rdf:type aamas:Token .
-boj:token rdfs:Domain aamas:Term .
+boj:token rdfs:domain aamas:Term .
 boj:Token rdfs:label "token exponents" .
 boj:token rdfs:label "token" .
-boj:token rdfs:Range boj:Token .
+boj:token rdfs:range boj:Token .
 boj:Token rdfs:subClassOf boj:MuExponent .
 boj:token-note aamas:lang aama:Boni-jara .
 boj:Token-note aamas:lang aama:Boni-jara .
 boj:token-note rdf:type aamas:Text .
-boj:token-note rdfs:Domain aamas:Term .
+boj:token-note rdfs:domain aamas:Term .
 boj:Token-note rdfs:label "token-note exponents" .
 boj:token-note rdfs:label "token-note" .
-boj:token-note rdfs:Range boj:Token-note .
+boj:token-note rdfs:range boj:Token-note .
 boj:Token-note rdfs:subClassOf boj:MuExponent .
-boj:tokenType aamas:lang aama:Boni-jara .
-boj:TokenType aamas:lang aama:Boni-jara .
-boj:tokenType rdf:type aamas:Token .
-boj:tokenType rdfs:Domain aamas:Term .
-boj:TokenType rdfs:label "tokenType exponents" .
-boj:tokenType rdfs:label "tokenType" .
-boj:tokenType rdfs:Range boj:TokenType .
-boj:TokenType rdfs:subClassOf boj:MuExponent .
 boj:U aamas:lang aama:Boni-jara .
 boj:U rdf:type boj:Polarity .
 boj:U rdfs:label "U" .
@@ -320,9 +324,9 @@ boj:Verb rdf:type boj:Pos .
 boj:Verb rdfs:label "Verb" .
 boj:verbMorphClass aamas:lang aama:Boni-jara .
 boj:VerbMorphClass aamas:lang aama:Boni-jara .
-boj:verbMorphClass rdfs:Domain aamas:Term .
+boj:verbMorphClass rdfs:domain aamas:Term .
 boj:VerbMorphClass rdfs:label "verbMorphClass exponents" .
 boj:verbMorphClass rdfs:label "verbMorphClass" .
-boj:verbMorphClass rdfs:Range boj:VerbMorphClass .
+boj:verbMorphClass rdfs:range boj:VerbMorphClass .
 boj:VerbMorphClass rdfs:subClassOf boj:MuExponent .
 boj:verbMorphClass rdfs:subPropertyOf boj:muProperty .

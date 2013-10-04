@@ -18,9 +18,10 @@
 	do
 		echo "f is $f"
 		lang=`basename ${f%-pdgms\.xml}`;
-		abb=$2
+		abb=`grep $lang bin/lname-pref.txt`
+		abb=${abb#$lang=}
 		echo "lang is $lang"
-		#echo "abb is $abb"
+		echo "abb is $abb"
 		echo "generating ${f%-pdgms\.xml}.data.ttl  from  $f "
 		# set -x;
 		java  -jar ${JARDIR}/${SAXON} \
