@@ -411,6 +411,11 @@
         <xsl:value-of select="@val"/>
         <xsl:text>"</xsl:text>
       </xsl:when>
+      <xsl:when test="@type = 'note'">
+        <xsl:text>"</xsl:text>
+        <xsl:value-of select="@val"/>
+        <xsl:text>"</xsl:text>
+      </xsl:when>
       <!-- Not already taken care of?      -->
       <xsl:when test="@type = 'lang'">
         <xsl:text>aama:</xsl:text>

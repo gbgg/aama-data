@@ -3,6 +3,443 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 	xmlns:aama="http://id.oi.uchicago.edu/aama/2013/"
-	xmlns:aamas="http://id.oi.uchicago.edu/aama/2013/schema/">
+	xmlns:aamas="http://id.oi.uchicago.edu/aama/2013/schema/"
+	xmlns:bob="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/">
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Language"/>
+	<rdfs:label>Boni-kijee-bala</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Cluster">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Lexeme">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Cluster"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/MuExponent">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/muProperty">
+	<rdfs:subPropertyOf rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/MuScheme">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Cluster"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Muterm">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Cluster"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Term">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Lexeme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuScheme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Text">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/Token">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Affirmative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity"/>
+	<rdfs:label>Affirmative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Common">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person"/>
+	<rdfs:label>Common</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/conjClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/ConjClass">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/conjClass">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/ConjClass">
+	<rdfs:label>conjClass exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/conjClass">
+	<rdfs:label>conjClass</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/ConjClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/ConjClass">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/conjClass">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Fem">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender"/>
+	<rdfs:label>Fem</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gender">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gender">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender">
+	<rdfs:label>gender exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gender">
+	<rdfs:label>gender</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gender">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gloss">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gloss">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gloss">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Text"/>
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gloss">
+	<rdfs:label>gloss exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/gloss">
+	<rdfs:label>gloss</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gloss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gloss">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Imperative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam"/>
+	<rdfs:label>Imperative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Imperfect">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam"/>
+	<rdfs:label>Imperfect</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Infinitive">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam"/>
+	<rdfs:label>Infinitive</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/lemma">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Lemma">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/lemma">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Text"/>
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Lemma">
+	<rdfs:label>lemma exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/lemma">
+	<rdfs:label>lemma</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Lemma"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Lemma">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Masc">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Gender"/>
+	<rdfs:label>Masc</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Negative">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity"/>
+	<rdfs:label>Negative</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/number">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/number">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number">
+	<rdfs:label>number exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/number">
+	<rdfs:label>number</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/number">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Perfect">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam"/>
+	<rdfs:label>Perfect</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/person">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/person">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person">
+	<rdfs:label>person exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/person">
+	<rdfs:label>person</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/person">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person1">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person"/>
+	<rdfs:label>Person1</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person2">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person"/>
+	<rdfs:label>Person2</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person3">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Person"/>
+	<rdfs:label>Person3</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Plural">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number"/>
+	<rdfs:label>Plural</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/polarity">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/polarity">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity">
+	<rdfs:label>polarity exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/polarity">
+	<rdfs:label>polarity</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/polarity">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/pos">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Pos">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/pos">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Pos">
+	<rdfs:label>pos exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/pos">
+	<rdfs:label>pos</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Pos"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Pos">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/pos">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Singular">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Number"/>
+	<rdfs:label>Singular</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Suffix2">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/ConjClass"/>
+	<rdfs:label>Suffix2</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/tam">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/tam">
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam">
+	<rdfs:label>tam exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/tam">
+	<rdfs:label>tam</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Tam">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/tam">
+	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/muProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/token">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Token">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/token">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Token"/>
+	<rdfs:domain rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Token">
+	<rdfs:label>token exponents</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/token">
+	<rdfs:label>token</rdfs:label>
+	<rdfs:range rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Token"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Token">
+	<rdfs:subClassOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/MuExponent"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/U">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Polarity"/>
+	<rdfs:label>U</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Verb">
+	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Boni-kijee-bala"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/boni-kijee-bala/Pos"/>
+	<rdfs:label>Verb</rdfs:label>
+</rdf:Description>
 
 </rdf:RDF>
