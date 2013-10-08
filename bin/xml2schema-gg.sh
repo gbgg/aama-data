@@ -14,8 +14,8 @@ do
 	lang=`basename ${f%-pdgms\.xml}`;
 	abb=`grep $lang bin/lname-pref.txt`
 	abb=${abb#$lang=}
-	echo "lang is $lang"
-	echo "abb is $abb"
+	#echo "lang is $lang"
+	#echo "abb is $abb"
 	echo generating schema for $l in tmp/`basename ${f%-pdgms\.xml}`.schema.ttl
 	# set -x;
 	java  -jar ${JARDIR}/${SAXON} \

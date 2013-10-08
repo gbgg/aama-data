@@ -16,11 +16,11 @@
 	fs=`find $1 -name *xml`
     for f in $fs
 	do
-		echo "f is $f"
+		#echo "f is $f"
 		lang=`basename ${f%-pdgms\.xml}`;
 		abb=`grep $lang bin/lname-pref.txt`
 		abb=${abb#$lang=}
-		echo "lang is $lang"
+		#echo "lang is $lang"
 		echo "abb is $abb"
 		echo "generating ${f%-pdgms\.xml}.data.ttl  from  $f "
 		# set -x;
