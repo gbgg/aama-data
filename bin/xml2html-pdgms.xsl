@@ -13,8 +13,7 @@
 	
 	<xsl:strip-space elements="*"/>
 	
-	<xsl:param name="lang" required="yes"/>
-	<xsl:param name="langVar" required="no"/>
+	<xsl:param name="lang" required="no"/>
 	
 	<xsl:variable name="aamaURI">
 		<xsl:text>&lt;http://id.oi.uchicago.edu/aama/2013/</xsl:text>
@@ -178,7 +177,10 @@
 			<table border="0" cellpadding="5">
 				<tr>
 					<xsl:for-each select="termcluster/term[1]/prop">
-<!--						<xsl:sort select="@type='gender' and @val='Masc'" />
+						<!--						<xsl:sort select="@type='gender' and @val='Masc'" />
+						<xsl:sort select="@type='person'"/>
+						<xsl:sort select="@type='number'and @val='Singular'"/>-->
+						<!--						<xsl:sort select="@type='gender' and @val='Masc'" />
 						<xsl:sort select="@type='person'"/>
 						<xsl:sort select="@type='number'and @val='Singular'"/>-->
 						<th align="left">
@@ -187,14 +189,17 @@
 					</xsl:for-each>
 				</tr>
 				<xsl:for-each select="termcluster/term">
+					<xsl:sort select="prop[@type='number']/@val" order="descending"/>
+					<xsl:sort select="prop[@type='person']/@val"/>
+					<xsl:sort select="prop[@type='gender']/@val" order="descending"/>
 					<tr>
 						<xsl:for-each select="prop">
 <!--							<xsl:sort select="@type='gender' and @val='Masc'" />
 							<xsl:sort select="@type='person'"/>
 							<xsl:sort select="@type='number'and @val='Singular'"/>-->
-<!--							<xsl:sort select="@type='gender'" />
+<!--						<xsl:sort select="@type='number'"/>
 							<xsl:sort select="@type='person'"/>
-							<xsl:sort select="@type='number'"/>-->
+							<xsl:sort select="@type='gender'" />-->
 							<td valign="top">
 								<xsl:value-of select="./@val"/>
 							</td>
