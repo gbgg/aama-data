@@ -21,8 +21,7 @@
 	
 	<!-- ################################################ -->
 	
-	<xsl:template match="/">
-		<html>
+	<xsl:template match="/">		<html>
 			<head>
 				<title><xsl:value-of select="$lang"/> Paradigm HTML Display</title>
 			</head>
@@ -134,6 +133,7 @@
 	<xsl:template name="pdgm">
 		<h2>Paradigms</h2>
 		<xsl:for-each select="//pdgm">
+			<xsl:sort select="pdgmlabel"/>
 			<a>
 				<xsl:attribute name="name" select="termcluster/@key"></xsl:attribute>
 			</a>
@@ -177,12 +177,6 @@
 			<table border="0" cellpadding="5">
 				<tr>
 					<xsl:for-each select="termcluster/term[1]/prop">
-						<!--						<xsl:sort select="@type='gender' and @val='Masc'" />
-						<xsl:sort select="@type='person'"/>
-						<xsl:sort select="@type='number'and @val='Singular'"/>-->
-						<!--						<xsl:sort select="@type='gender' and @val='Masc'" />
-						<xsl:sort select="@type='person'"/>
-						<xsl:sort select="@type='number'and @val='Singular'"/>-->
 						<th align="left">
 							<xsl:value-of select="./@type"/>
 						</th>
@@ -194,12 +188,6 @@
 					<xsl:sort select="prop[@type='gender']/@val" order="descending"/>
 					<tr>
 						<xsl:for-each select="prop">
-<!--							<xsl:sort select="@type='gender' and @val='Masc'" />
-							<xsl:sort select="@type='person'"/>
-							<xsl:sort select="@type='number'and @val='Singular'"/>-->
-<!--						<xsl:sort select="@type='number'"/>
-							<xsl:sort select="@type='person'"/>
-							<xsl:sort select="@type='gender'" />-->
 							<td valign="top">
 								<xsl:value-of select="./@val"/>
 							</td>

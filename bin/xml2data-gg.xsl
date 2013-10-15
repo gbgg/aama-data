@@ -440,6 +440,10 @@
     <xsl:if test="position() = last()">
       <xsl:choose>
         <!--<xsl:when test="ancestor::pdgm/common-properties/prop[@type='multiLex']">        -->
+<!--WARNING: There is a problem with 'lexlabel' property in 'common-properties' section. 
+     As it stands, if last if 'lexlabel' is last property in 'common-properties' 
+     the current xsl will generate an empty triple with a final ';', which generates havoc with rdf generation. 
+     Current work-around: just don't let 'lexlabel' be last property.  TO BE FIXED!      -->
         <xsl:when test="name(..) = 'common-properties'">
           <xsl:choose>
             <xsl:when test="../../termcluster/term/prop">
