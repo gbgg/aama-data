@@ -11,8 +11,8 @@ my $filename = $pdgmfile;
 $filename =~ s/\.tsv//;
 my $textfile = $filename.".txt";
 my $htmlfile = $filename.".html";
-print "Text file = $textfile\n";
-print "HTML file = $htmlfile\n\n";
+#print "Text file = $textfile\n";
+#print "HTML file = $htmlfile\n\n";
 
 undef $/;
 my ($header, $pdgmrows);

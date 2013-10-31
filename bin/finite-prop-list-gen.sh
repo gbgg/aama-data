@@ -1,6 +1,9 @@
 #!/bin/bash
 # usage:  fuquery-prop-val.sh <dir> 
-# The template <aama>/sparql/templates/pdgm-finite-prop-list.template is hard-coded into the script.
+# Collects all cooccurrences of tam and person and 
+# generates sparql/pdgms/pdgms-finite-props.txt 
+# for use in bin/pdgm-display.sh
+#The template <aama>/sparql/templates/pdgm-finite-prop-list.template is hard-coded into the script.
 
 # Cf. sparql/templates/README.txt
 

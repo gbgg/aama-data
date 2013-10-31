@@ -1,11 +1,13 @@
 #!/bin/bash
-# usage:  fuquery-prop-val.sh <dir> 
+# usage:  finite-prop-val-lang.sh <dir> 
+# Script to generate table of the properties and their values which 
+# can occur in pdgm of finite verb
 # The template <aama>/sparql/templates is hard-coded into the script.
 
 # Cf. sparql/templates/README.txt
 
 # example:
-#    <aama> $ bin/fuquery.sh data/alaaba 
+#    <aama> $ bin/finite-prop-val-lang.sh data/beja-arteiga 
 
 . bin/constants.sh
 

@@ -2,11 +2,12 @@
 
 # rev 02/10/13
 # rev 05/31/13 adapted to be run by bin/pdgm-display.sh
+# rev 10/31/13 format of query string changed
 
 # This is a version of pdgmtemplate2query.pl,  constructs a SPARQL query 
-# from an @ARGV string of format: langName+prop=val:prop=val: . . .
+# from an @ARGV string of format: langName:prop=val,prop=val, . . .
 # where langName a language name whose pdgm-defining properties it looks
-# up in pdgm-finite-props.txt; and "prop=val:prop=val:..." is a set of
+# up in pdgm-finite-props.txt; and "prop=val,prop=val,..." is a set of
 # value specifications for one or more props.
 #   
 # The script is invoked by bin/pdgm-display.sh.  
@@ -19,12 +20,12 @@ use File::Copy;
 my ($qstring, $queryfile) = @ARGV;
 #print "Query file = $queryfile\n";
 #print "Query string = $qstring\n";
-my ($langname, $specifiedprops) = split(/\+/, $qstring);
+my ($langname, $specifiedprops) = split(/:/, $qstring);
 my ($txtfile) = "sparql/pdgms/pdgm-finite-props.txt";
 #my $queryfile = "sparql/pdgms/output/$langname";
 
 my %specifiedprops;
-my @specifiedprops = split(/:/, $specifiedprops);
+my @specifiedprops = split(/,/, $specifiedprops);
 foreach my $specifiedprop (@specifiedprops)
 {
 	my ($prop, $value) = split(/=/, $specifiedprop);
