@@ -6,13 +6,14 @@
 # into a table-formatted text output for display on STDOUT or in 
 # text file. It is invoked by pdgm-display.sh
 
-my ($pdgmfile) = @ARGV;
+my ($pdgmfile, $qstring) = @ARGV;
 my $filename = $pdgmfile;
 $filename =~ s/\.tsv//;
 my $textfile = $filename.".txt";
 my $htmlfile = $filename.".html";
 #print "Text file = $textfile\n";
 #print "HTML file = $htmlfile\n\n";
+#print "qstring=$qstring\n";
 
 undef $/;
 my ($header, $pdgmrows);
@@ -61,6 +62,13 @@ $format .= "\n";
 
 # print pdgm table file to STDOUT
 select STDOUT;
+print "\nPARADIGM\n\n";
+my(@queries) = split(/\+/,$qstring);
+foreach my $query (@queries)
+{ 
+	print "  $query\n";
+}
+print "\n";
 #print "Format= $format\n";
 #print "Tablewidth= $tablewidth\n\n";
 print "-" x $tablewidth;

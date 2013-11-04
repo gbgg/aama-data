@@ -18,7 +18,7 @@ do
     echo querying $lang for $type values
     #of=`basename ${2#sparql/templates/}`
 	of=valsforprop.template
-	#out=valsforprop-$type
+	out=valsforprop-$type
 	echo out = $out
 	#echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
