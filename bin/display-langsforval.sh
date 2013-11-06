@@ -1,5 +1,8 @@
 #!/bin/bash
-# usage:  fuquery-vals-for-prop.sh <dir> prop
+# usage: display-langsforval.sh <dir> val
+
+# 11/04/13: calqued on display-valsforprop.sh. Probably can be
+# eventually combined with it (certainly in UI).
 # The template <aama>/sparql/templates is hard-coded into the script.
 
 # Cf. sparql/templates/README.txt
@@ -8,27 +11,27 @@
 #    <aama> $ bin/fuquery.sh data/alaaba 
 
 . bin/constants.sh
+val=$2
+of=langsforval.template
+response="tmp/prop-val/${of%.template}.$val-resp.tsv"
 
 echo "fuquery.log" > logs/fuquery.log;
 for f in `find $1 -name *.html`
 do
     lang=`basename ${f%-pdgms.html}`
-	type=$2
     #Lang="${lang[@]^}"
-    echo querying $lang for $type values
+    #echo querying $lang for $type values
     #of=`basename ${2#sparql/templates/}`
-	of=valsforprop.template
-	out=valsforprop-$type
-	echo out = $out
+	out=langsforval-$type
+	#echo out = $out
 	#echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
-	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
     #echo $localqry
     #sed -e "s/%Lang%/${Lang}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
-    sed -e "s/%type%/${type}/g" -e "s/%lang%/${lang}/g" sparql/templates/valsforprop.template > $localqry
-    ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	perl pl/valforproptsv2table.pl $response $type
+    sed -e "s/%val%/${val}/g" -e "s/%lang%/${lang}/g" sparql/templates/langsforval.template > $localqry
+    ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry >> $response
 done
+perl pl/langsforvaltsv2table.pl $response $val
 
 #./s-query \
 #	--output=tsv  \

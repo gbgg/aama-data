@@ -8,20 +8,19 @@
 
 my ($propvalfile, $type) = @ARGV;
 my $textfile = "valsforprop-".$type.".txt";
-print "pvfile = $propvalfile\n";
-print "textfile = $textfile\n";
+#print "pvfile = $propvalfile\n";
+#print "textfile = $textfile\n";
 my $lang = $propvalfile;
 $lang =~ s/tmp\/prop-val\/.*?\.(.*?)-resp\.tsv/\1/;
 $lang = uc($lang);
 #my $htmlfile = $tsvfile;
 # $htmlfile =~ s/\.tsv/.html/;
-print "Language = $lang\n";
+#print "Language = $lang\n";
 #print "HTML file = $htmlfile\n\n";
 
 undef $/;
-my ($header, $pdgmrows, $pheader, $vheader, $sheader, $lenp, $lenv, $lens);
-my (@header, @vrows);
-my (%propvals); #?
+my ( $lenp, $lenv, $lenl);
+my (@vrows);
 
 open(IN, $propvalfile) or die "cannot open $propvalfile for reading";
 while (<IN>)
@@ -29,33 +28,18 @@ while (<IN>)
     my $data = $_;
 	$data =~ s/"//g;
 	$data =~ s/⊤/ /g;
-	# Get first line for header
-	($header, $vrows) = split(/\n/, $data, 2);
-	$header =~ s/\?//g;
-	#$header = "property\tvalue";
-	#print "header = $header\n";
-	#exit;
-	#$header = "schema\t".$header;
-	#($pheader, $vheader) =split(/\t/, $header);
-	#$sheader = "schema";
+	$data =~ s/\?valuelabel\n//;
 	
 	# Initialize colwidths with header
 	$lenl = length($lang);
 	$lenp = length($type);
-	$lenv = length($header);
+	$lenv = length($type);
 
-	@vrows = split '\n', $vrows;
+	@vrows = split '\n', $data;
     foreach my $vrow (@vrows)
     {
-		#my ($prop, $val) = split('\t', $pvrow);
-		#my $proplen = length($prop);
 		my $lv = length($vrow);
-		#my $ls = index($prop, "/");
-		#my $lp = $proplen - $ls;
-		#if ($ls > $lens) {$lens = $ls;}
-		#if ($lp > $lenp) {$lenp = $lp;}
 		if ($lv > $lenv) {$lenv = $lv;}
-		#$propvals{$prop} .= $val.' ';
 	}
 }
 close(IN); 
@@ -68,29 +52,12 @@ my $tablewidth = $lenl + $lenp + $lenv + 15;
 #select(OUT);
 print "-" x $tablewidth;
 print "\n";
-printf $format, "language, property, value";
+printf $format, $lang, $type, "value";
 print "=" x $tablewidth;
 print "\n";
-[9/10/13 -- BEGIN HERE]
-my ($schema, $property);
 foreach my $value (sort @vrows)
 {
-	if ($prop =~ /\//)
-	{
-		($schema, $property) = split(/\//, $prop);
-	} else
-	{
-		$schema = ' ';
-		$property = $prop;
-	}
-	my $vals = $propvals{$prop};
-	my ($firstval, $restvals) = split(/ /, $vals, 2);
-	my @restvals = split(/ /, $restvals);
-	printf $format, $schema, $property, $firstval;
-	foreach my $restval (@restvals)
-	{
-		printf $format, " ", " ", $restval;
-	}
+	printf $format, " ", " ", $value;
 }
 print "-" x $tablewidth;
 print "\n";
