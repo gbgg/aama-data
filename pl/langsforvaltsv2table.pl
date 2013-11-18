@@ -7,7 +7,7 @@
 # It is invoked by fuquery-prop-val.sh
 
 my ($langpropfile, $value) = @ARGV;
-my $textfile = "langsforval-".$type.".txt";
+my $textfile = "langsforval-".$value.".txt";
 #print "pvfile = $propvalfile\n";
 #print "textfile = $textfile\n";
 #my $value = $langpropfile;
@@ -43,7 +43,6 @@ while (<IN>)
 		my $lp = length($pred);
 		if ($lp > $lenp) {$lenp = $lp;}
 	}
-		
 }
 close(IN); 
 my $format ="| %-".$lenv."s | %-".$lenl."s | %-".$lenp."s\n";
