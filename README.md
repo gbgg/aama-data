@@ -8,6 +8,8 @@ Afro-Asiatic Morphological Archive: branch lang-data-rev
 
 You are currently looking at branch lang-data-rev, which will be the temporary repository for revised language data while questions of format are being formalized.
 
+In the absence of a UI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), shell and perl scripts for querying the archive will be found in aama/bin -- see bin/README.md.
+
 In the current revised data-set, note:
 	1. For each language single lc, 3-character ns prefix is used for the URI of language-specific morphosyntactic properties and values. List of proposed prefixes will be found in bin/lname-pref.txt.
 	2. URIs of archive-wide morphosyntactic properties (e.g., "lang", "gloss", "lemma" . . .) are assigned the ns prefix "aamas:".
@@ -23,17 +25,6 @@ In the current revised data-set, note:
 	9. Muterms are registered in an experimental format calqued on that used for lexemes.
 
 
-This branch currently contains proposed data revisions for:
-	afar
-	arbore
-	beja-arteiga
-	beja-atmaan
-	beja-beniamer
-	beja-bishari
-	beja-hadendowa
-	oromo
-
-The list will be extended as new languages are added.
 
 ---------------------------------------------------------------------------------
 
@@ -61,7 +52,7 @@ We will have:
 	<http://id.oi.uchicago.edu/aama/2013/oromo/Present>
 abbreviated:
 	orm:Present
-with prefixes definted as follows:
+with prefixes defined as follows:
 	@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
 	@prefix orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/> .
 
@@ -71,3 +62,4 @@ For the moment a list of language-specific prefixes can be found in docs/lname-p
 
 For inference and query purposes the lack of an archive-wide, e.g., aama:tam, can be compensated for by use of the rdfs:subPropertyOf predicate, as explained in 
 docs/subproperties-in-named-graphs.txt.
+
