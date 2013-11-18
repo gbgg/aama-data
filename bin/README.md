@@ -12,7 +12,7 @@
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
 -**usage**: display-valsfor prop.sh \<dir\> prop
--**example**: bin/display-valsfor prop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
+-**example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
 -**calls**: pl/valforproptsv2table.pl to format output
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
@@ -29,8 +29,8 @@ props in question,
 
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
 -**usage**: display-langvterms.sh \<dir\> qstring qlabel prop
--**example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms i beja-arteiga and beja-atmaan with 2f"*
--** calls**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl to form query template (with or without property names), pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl to format table output (with or without property names).
+-**example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
+-**calls**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl to form query template (with or without property names), pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl to format table output (with or without property names).
 
 5. **display-paradigms**: Displays finite verb paradigm(s) in one or more languages which meet *prop=val* constraints which need to be specified independently for each language. For the purposes of this display, a finite verb is taken to be a term whose *pos=Verb*, and which has a value for the properties *tam* and *person*. This query is more complicated, and has two steps:
 	1. 
