@@ -12,7 +12,7 @@
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
 - **usage**: display-valsfor prop.sh \<dir\> prop
-- **example**: bin/display-valsfor prop.sh "data/beja-arteiga data/beja-atmaan" tam "Display the values of the property tam for beja-arteiga and beja-atmaa"
+- **example**: bin/display-valsfor prop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
 - **calls**: pl/valforproptsv2table.pl to format output
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
