@@ -11,35 +11,35 @@
 
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
-- **usage**: display-valsfor prop.sh \<dir\> prop
-- **example**: bin/display-valsfor prop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
-- **calls**: pl/valforproptsv2table.pl to format output
+-**usage**: display-valsfor prop.sh \<dir\> prop
+-**example**: bin/display-valsfor prop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
+-**calls**: pl/valforproptsv2table.pl to format output
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
-- **usage**: display-langsforval.sh \<dir\> val
-- **example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist',and for what property?"*
-- **calls**: pl/langsforvaltsv2table.pl to format output
+-**usage**: display-langsforval.sh \<dir\> val
+-**example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist',and for what property?"*
+-**calls**: pl/langsforvaltsv2table.pl to format output
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
 props in question, 
-- **usage**: display-langspropval.sh \<dir\> qstring qlabel
-- **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
+-**usage**: display-langspropval.sh \<dir\> qstring qlabel
+-**example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
  *"What languages have 2f , and if so, in what pos and what num?"*
-- **calls**: pl/qstring2template.pl (to form query template), pl/langspvtsv2table.pl (to format output)
+-**calls**: pl/qstring2template.pl (to form query template), pl/langspvtsv2table.pl (to format output)
 
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
-- **usage**: display-langvterms.sh \<dir\> qstring qlabel prop
-- **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms i beja-arteiga and beja-atmaan with 2f"*
-- ** calls**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl to form query template (with or without property names), pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl to format table output (with or without property names).
+-**usage**: display-langvterms.sh \<dir\> qstring qlabel prop
+-**example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms i beja-arteiga and beja-atmaan with 2f"*
+-** calls**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl to form query template (with or without property names), pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl to format table output (with or without property names).
 
 5. **display-paradigms**: Displays finite verb paradigm(s) in one or more languages which meet *prop=val* constraints which need to be specified independently for each language. For the purposes of this display, a finite verb is taken to be a term whose *pos=Verb*, and which has a value for the properties *tam* and *person*. This query is more complicated, and has two steps:
 	1. 
-- **usage**: display-paradigms.sh <dir>
-- **example**: bin/display-paradigms.sh "data/beja-arteiga data/oromo" *"I want to see finite verb paradigms in these languages which meet the conditions to be specified."*
+-**usage**: display-paradigms.sh <dir>
+-**example**: bin/display-paradigms.sh "data/beja-arteiga data/oromo" *"I want to see finite verb paradigms in these languages which meet the conditions to be specified."*
 
 	2. In addition to png, each language has its own set of additional  properties which can or must be represented in any finite verb  paradigm. An initial display gives the relevant properties and values for each language in succession. After each language *prop=val* display, at the language prompt the querier must submit a comma-separated string of *prop=val* statements.
-	- **example of user input**: "beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present", then "oromo:clauseType=Main,derivedStem=Base,p;olarity=Affirmative,tam=Present" [The script then displays the suffixing present (mainClause, Base) tense of the two languages in a single paradigm.]
-	- **calls**: pl/finite-propvaltsv2table.pl to display prop-val possibilities for each language; pdgm-display.sh for the paradigm display, which in turn calls pl/qstring2query.pl to formulate a unified SPARQL query (not a query-template) for the languages in question, and pl/pdgmtsv2table.pl to format the tsv response file into table form.
+	-**example of user input**: "beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present", then "oromo:clauseType=Main,derivedStem=Base,p;olarity=Affirmative,tam=Present" [The script then displays the suffixing present (mainClause, Base) tense of the two languages in a single paradigm.]
+	-**calls**: pl/finite-propvaltsv2table.pl to display prop-val possibilities for each language; pdgm-display.sh for the paradigm display, which in turn calls pl/qstring2query.pl to formulate a unified SPARQL query (not a query-template) for the languages in question, and pl/pdgmtsv2table.pl to format the tsv response file into table form.
 
 
 
