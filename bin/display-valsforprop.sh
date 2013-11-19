@@ -7,7 +7,7 @@
 # Cf. sparql/templates/README.txt
 
 # example:
-#    <aama> $ bin/fuquery.sh data/alaaba 
+#   bin/display-valsfor prop.sh "data/beja-arteiga data/beja-atmaan" tam
 
 . bin/constants.sh
 

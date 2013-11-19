@@ -6,8 +6,8 @@
 * convert.sh converts data from */work/aamadata to */aama/data.
 
 ## Command-line Query and Display Utilities
-> Pending the development of a UI, the following scripts permit an ad-hoc querying and display of aama data which has been loaded into a fuseki datastore (cf. fuseki SOH tools, below).
-> For all of these scripts, the first argument, \<dir\>, is the directory where the data occurs (data/[LANG] for one language; "data/[LANG] data/[LANG] . . ." [with quotations marks!] for more than one language; "data/*" to search all languages). The perl scripts which transform the command-line query string into a template, and which transform the (here) tsv response into a STDOUT/txt/html display could undoubtedly be unified.
+> Pending the development of a UI, the following scripts permit an ad-hoc querying and display of the aama data which has been loaded into a fuseki datastore (cf. fuseki SOH tools, below).
+> For all of these scripts, the first argument, \<dir\>, is the directory where the data occurs (data/[LANG] for one language; "data/[LANG] data/[LANG] . . ." [with quotations marks!] for more than one language; "data/*" to search all languages). The perl scripts which transform the command-line query string into a SPARQL query or query-template, on the one hand, and those which transform the (here) tsv response into a STDOUT/txt/html display, on the other, overlap considerably and could perhaps be unified into single scripts (with subroutines).
 
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
@@ -17,7 +17,7 @@
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
 -**usage**: display-langsforval.sh \<dir\> val
--**example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist',and for what property?"*
+-**example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
 -**calls**: pl/langsforvaltsv2table.pl to format output
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
@@ -63,21 +63,12 @@ props in question,
 		* fuput-data-schema.sh
 		* fuput-schema.sh
 ### Datastore query
-	*fuquery.sh - generates a language-specific sparql query from     <aama>/sparql/templates/*.template, then runs it.  E.g.:
-			> <aama>/tools/fuquery.sh data/afar sparql/templates/exponents.template
-			> Generates and runs <aama>/sparql/exponents.afar.rq
-		* fuquery-default.sh
+	*fuquery.sh - generates a language-specific sparql query from     <aama>/sparql/templates/*.template, then runs it.  
+			-**example:<aama>/tools/fuquery.sh data/afar sparql/templates/exponents.template **Generates and runs <aama>/sparql/exponents.afar.rq"
 		* fuquery-gen.sh: runs SOH s-query on specific sparql query file. Cf. query files in sparql/rq-ru/ and sparql/pdgms).
-		* fuquery-prop-val.sh: fuquery.sh with template specialized for list of props and vals in a language
-		* fuquery-trial1.sh
-		* fuquery-valsforprop.sh
 		* fuqueries.sh: runs
 			* listgraphs.sh: what named graphs are currently present in datastore?
 			* count-triples.sh: how many triples are there in datastore?
-		* pdgm-display.sh: cmd-line version, for a given lang, takes arg string [lang]+[property]=[value]:[property]=[value]:[property]=[value]: . . . Uses:
-			* pl/qstring2query.pl: transforms input string to sparql query, which pdgm-display.sh submits to s-query
-			* pl/pdgmtsv2table.pl: formats tsv response as table
-		* pdgm-display-comp.sh: generalizes pdgm-display.sh to more than one language
 
 ============================================
 
@@ -87,43 +78,23 @@ props in question,
 * lname-pref.txt: contains abbreviations for languages
 
 1. git checkout lang-data-rev [no longer create new branch for each lang]
-2. Make html: bin/htmlgen.sh dir. Uses 
-	* xml2html-pdgms.xsl
-	* xml2html-pdgms-sort.xsl
-3. Do first-pas bin/lexcheck-gg.sh dir, make sure every term cluster has a lexlabel, mulabel, or classlabel. Uses:
-	* lexcheck-gg.xsl
-	* Corrections:
-		a. insert in each mu termcluster: <prop type="mulabel" val="[mulabel]"/>
-		b. insert lexlabels where missing: <prop type="lexlabel" val="[lexlabel]"/>
-		c. insert in each multiLex termcluster: <prop type="multiLex" val="[label]"/>
-		d. identify certain tables as: <prop type="classification" val="[name]/>
-		mark each terms with: <prop type="classlabel" val="[classlabel]"/>
-4. Do second-pass bin/lexadd.sh dir. Uses:
-		* lexadd.xsl
-			* Program outputs newlex, mlex, and muterm entries in log file
-				1. checks for valid lexlabel in termclusters, writes out newlex if not valid
-				2. writes out a dummy multilex lexeme for each multilex termcluster
-				3. checks for valid lexlabel in terms w/i multilex termduster, writes out newlex if not valid
-				4. writes out dummy muterm entry for tennclusters with mulabel
-		* edit dummy/tentative lexemes and add to xml
+2. Make html: bin/htmlgen.sh dir. -**calls**: xml2html-pdgms.xsl, xml2html-pdgms-sort.xsl
+3. Do first-pass bin/lexcheck-gg.sh dir, make sure every term cluster has a lexlabel, mulabel, or classlabel. -**calls**: lexcheck-gg.xsl. -**performs corrections**: 
+		* insert in each mu termcluster: \<prop type="mulabel" val="[mulabel]"/\>
+		* insert lexlabels where missing: \<prop type="lexlabel" val="[lexlabel]"/\>
+		* insert in each multiLex termcluster: \<prop type="multiLex" val="[label]"/\>
+		* identify certain tables as: \<prop type="classification" val="[name]/\>
+		* mark each term with: \<prop type="classlabel" val="[classlabel]"/\>
+4. Do second-pass bin/lexadd.sh dir. -**calls**: lexadd.xsl. 
+		*outputs newlex, mlex, and muterm entries in log file; 
+		* checks for valid lexlabel in termclusters, writes out newlex if not valid
+		* writes out a dummy multilex lexeme for each multilex termcluster
+		* checks for valid lexlabel in terms w/i multilex termcluster, writes out newlex if not valid
+		* writes out dummy muterm entry for tennclusters with mulabel
+		* [TODO: edit dummy/tentative lexemes and add to xml]
 5. Fireup fuseki: bin/fuseki.sh
-6. Generate .data.ttl/rdf: bin/datagen-gg.sh dir abbrev. Calls:
-		* xml2data-gg.sh. Uses
-				* xml2data-gg.xsl
-		* data2rdf.sh
-			* Variants:
-				* data2rdf-aa.sh
-				* datagen-aa.sh
-				* xml2data-aa.sh
-				* xml2data-aa.xsl
-7. Generate .schema.ttl/rdf: bin/schemagen-gg.sh dir abbrev (includes fupost & fuquery). Calls:
-	* xml2schema-gg.sh. Uses:
-		* xml2schema-gg.xsl
-	* uniqschema.sh
-	* schema2rdf.sh 
-	* fupost.sh
-	* fuquery-gen.sh sparql/rq-ru/count-triples.rq
-	* fuquery-gen.sh sparql/rq-ru/list-graphs.rq
+6. Generate .data.ttl/rdf: -**usage**: bin/datagen-gg.sh dir abbrev. -**calls**: xml2data-gg.sh, which in turn calls  xml2data-gg.xsl, data2rdf.sh. -**variants**: data2rdf-aa.sh, datagen-aa.sh, xml2data-aa.sh, xml2data-aa.xsl
+7. Generate .schema.ttl/rdf: -**usage**: bin/schemagen-gg.sh dir abbrev. -**calls**: xml2schema-gg.sh, xml2schema-gg.xsl, uniqschema.sh, schema2rdf.sh, fupost.sh, fuqueries.sh
 8. Regenerate bin/htmlgen.sh dir
 9. git add/commit until git status is clean
 10. close files in notepad++ and oxygen

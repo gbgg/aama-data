@@ -3,7 +3,7 @@
 # usage: display-langspropval.sh <dir> qstring qlabel
 # rev 11/08/13
 
-# The script is designed to list languages in which a set of one or more prop=val equivalences (co)-occur. In the first instance only the language names where set occurs will be displayed. A more detailed output will display in addition all the terms in each language where the set occurs. 
+# The script is designed to list languages in which a set of one or more prop=val equivalences (co)-occur. Here only the language names where set occurs will be displayed. The more detailed output of display-langvterms.sh displays in addition all the terms in each language where the set occurs. 
 
 # The script first uses qlabel to name the response (tsv) and template files, and calls qstring2template.pl to form the query template from a qstring with one or more prop=val
 # equations, separated by a comma:

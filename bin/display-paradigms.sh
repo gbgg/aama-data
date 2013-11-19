@@ -25,7 +25,7 @@ echo Please provide a label for query --
 read -e -p Query_Label: querylabel
 echo 
 echo " In addition to png, each language has its own set of additional "
-echo " properties which are necessarily represented in a finite verb "
+echo " properties which can or must be represented in any finite verb "
 echo " paradigm. The following table(s) list those properties and values"
 echo " for \"${1}\":"
 echo
