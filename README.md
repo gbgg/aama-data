@@ -8,7 +8,7 @@ Afro-Asiatic Morphological Archive: branch lang-data-rev
 
 You are currently looking at branch lang-data-rev, which will be the temporary repository for revised language data while questions of format are being formalized.
 
-In the absence of a UI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), shell and perl scripts for querying the archive will be found in aama/bin -- see bin/README.md.
+In the absence of a UI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), shell and perl scripts for querying the archive will be found in aama/bin -- see bin/README.md. 	
 
 In the current revised data-set, note:
 	1. For each language single lc, 3-character ns prefix is used for the URI of language-specific morphosyntactic properties and values. List of proposed prefixes will be found in bin/lname-pref.txt.

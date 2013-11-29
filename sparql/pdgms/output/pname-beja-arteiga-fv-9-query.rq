@@ -1,0 +1,36 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+
+SELECT ?num ?pers ?gen ?token 
+WHERE
+{
+	{
+		GRAPH aamag:beja-arteiga
+		{
+			?s	bar:pos	bar:Verb . 
+			?s	aamas:lang	aama:Beja-arteiga .
+			?s	aamas:lang	?lang .
+			?lang	rdfs:label	?langLabel . 
+			?s	?QPrefix 	bar:Prefix. 
+ 			?QPrefix	rdfs:label	?Prefix . 
+			?s	?QAffirmative 	bar:Affirmative. 
+ 			?QAffirmative	rdfs:label	?Affirmative . 
+			?s	?QCCC 	bar:CCC. 
+ 			?QCCC	rdfs:label	?CCC . 
+			?s	?QPresent 	bar:Present. 
+ 			?QPresent	rdfs:label	?Present . 
+			OPTIONAL { ?s	bar:number	?number . 
+			?number	rdfs:label	?num . }
+			?s	bar:person	?person . 
+			?person	rdfs:label	?pers . 
+			OPTIONAL { ?s	bar:gender	?gender . 
+			?gender	rdfs:label	?gen . }
+			?s	bar:token	?token . 
+		}
+	}
+}
+ORDER BY DESC(?num) ?pers DESC(?gen)

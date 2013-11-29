@@ -10,14 +10,15 @@
 # into a table-like text output for text display 
 # It is invoked by fuquery-prop-val.sh 
 
-my ($propvalfile) = @ARGV;
+my ($propvalfile, $nsv) = @ARGV;
+print "nsv = $nsv\n";
 my $textfile = $propvalfile;
-#print "tsvfile = $propvalfile\n";
+print "textfile = $propvalfile\n";
 $textfile =~ s/-resp\.tsv/.txt/;
 #print "textfile = $textfile\n";
 my $lang = $textfile;
 $lang =~ s/tmp\/prop-val\/.*?\.(.*?)\.txt/\1/;
-$lang = uc($lang);
+my $Lang = uc($lang);
 #my $htmlfile = $tsvfile;
 # $htmlfile =~ s/\.tsv/.html/;
 #print "Language = $lang\n";
@@ -98,6 +99,20 @@ foreach my $prop (sort keys %propvals)
 }
 print "-" x $tablewidth;
 print "\n";
+if ($nsv)
+{
+	my $nfvfile = "sparql/pdgms/output/pname-nfv-list-".$lang.".txt";
+	my $nfvpdgms;	
+	undef $/;
+	open(IN, "$nfvfile") or die "cannot open $nfvfile for reading"; 
+	while (<IN>)
+	{ 
+		$nfvpdgms = $_;
+	}
+	close(IN);
+	print "the paradigms are:\n$nfvpdgms\n";
+}
+#exit;
 
 # print pdgm tsv data and header to tab-delimited tsv file
 #unlink $tsvfile;
@@ -133,4 +148,3 @@ print "-" x $tablewidth;
 print "\n";
 
 close(OUT);
-

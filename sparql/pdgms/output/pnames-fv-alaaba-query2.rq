@@ -1,0 +1,34 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX alb:   <http://id.oi.uchicago.edu/aama/2013/alaaba/>
+
+SELECT DISTINCT ?langLabel ?clauseType	 ?polarity	 ?tam	 ?token-aspectMarking	 ?token-onlyVerb	 ?verbMorphClass	  ?lexeme
+WHERE
+{
+	{
+		GRAPH aamag:alaaba
+		{
+			?s	alb:pos	alb:Verb . 
+			?s	aamas:lang	aama:Alaaba .
+			?s	aamas:lang	?lang .
+			?lang	rdfs:label	?langLabel . 
+			OPTIONAL { ?s	alb:clauseType		?QclauseType	 . 
+ 			?QclauseType		rdfs:label	?clauseType	 . }
+			OPTIONAL { ?s	alb:polarity		?Qpolarity	 . 
+ 			?Qpolarity		rdfs:label	?polarity	 . }
+			OPTIONAL { ?s	alb:tam		?Qtam	 . 
+ 			?Qtam		rdfs:label	?tam	 . }
+			OPTIONAL { ?s	alb:token-aspectMarking		?Qtoken-aspectMarking	 . 
+ 			?Qtoken-aspectMarking		rdfs:label	?token-aspectMarking	 . }
+			OPTIONAL { ?s	alb:token-onlyVerb		?Qtoken-onlyVerb	 . 
+ 			?Qtoken-onlyVerb		rdfs:label	?token-onlyVerb	 . }
+			OPTIONAL { ?s	alb:verbMorphClass		?QverbMorphClass	 . 
+ 			?QverbMorphClass		rdfs:label	?verbMorphClass	 . }
+			?s	alb:person	?person . 
+		}
+	}
+}
+ORDER BY ?langLabel  ?clauseType	 ?polarity	 ?tam	 ?token-aspectMarking	 ?token-onlyVerb	 ?verbMorphClass	  

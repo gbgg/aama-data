@@ -7,8 +7,6 @@
 
 # Cf. sparql/templates/README.txt
 
-# example:
-#    <aama> $ bin/fuquery.sh data/alaaba 
 
 . bin/constants.sh
 response=sparql/pdgms/pdgm-prop-list.out
@@ -31,5 +29,5 @@ do
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-finite-prop-list.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry >> $response
 done
-#	perl pl/finite-proplist2text.pl $response
+	perl pl/finite-proplist2text.pl $response
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage:  display-paradigms.sh data/<lang>, display-paradigms.sh "data/<lang> data/<lang> . . .", display-paradigms.sh "data/*" 
+# usage:  display-paradigms.sh data/<lang> qlabel, display-paradigms.sh "data/<lang> data/<lang> . . ." qlabel, display-paradigms.sh "data/*" qlabel
 
 # 10/30/13
 #11/04/13 generalized to more than one language
@@ -20,9 +20,10 @@ echo "fuquery.log" > logs/fuquery.log;
 #echo " 'Finite verb' is operationally defined as any form of  a verb that" 
 #echo " is marked for a value of tam, and is marked also at least for" 
 #echo " person  (optionally also for gender and number). "
-echo
-echo Please provide a label for query --
-read -e -p Query_Label: querylabel
+#echo
+#echo Please provide a label for query --
+#read -e -p Query_Label: querylabel
+querylabel=$2
 echo 
 echo " In addition to png, each language has its own set of additional "
 echo " properties which can or must be represented in any finite verb "
@@ -37,16 +38,19 @@ do
 	abbrev=${labbrev#$lang=}
     #echo querying $Lang $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
-	of=pdgm-finite-props.template
+	of=pdgm-non-finite-props.template
 	#echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
 	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
-    #echo $localqry
+    echo "localqry=$localqry"
+	nsv="nsv"
+	echo "nsv=$nsv"
 
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
-    sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-finite-props.template > $localqry
+    sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-non-finite-props.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	perl pl/finite-propvaltsv2table.pl $response
+	perl pl/finite-propvaltsv2table.pl $response $nsv
+	
 	echo " Command line format:"
 	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . ."
 	echo "Example -- "
@@ -56,9 +60,9 @@ do
 	read -e -p $lang: propvalset
 	#echo "propvalset = $propvalset"
 	commandline="${commandline}+${lang}:${propvalset}"
-	#echo "commandline = $commandline"
+	echo "commandline = $commandline"
 done
 commandline=${commandline#*+}
-#echo "commandline = $commandline"
-#
-bin/pdgm-display.sh $commandline $querylabel
+echo "commandline = $commandline"
+
+bin/pdgm-nfv-display.sh $commandline $querylabel $nsv

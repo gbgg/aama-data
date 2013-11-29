@@ -38,7 +38,7 @@ props in question,
 -**example**: bin/display-paradigms.sh "data/beja-arteiga data/oromo" *"I want to see finite verb paradigms in these languages which meet the conditions to be specified."*
 
 	2. In addition to png, each language has its own set of additional  properties which can or must be represented in any finite verb  paradigm. An initial display gives the relevant properties and values for each language in succession. After each language *prop=val* display, at the language prompt the querier must submit a comma-separated string of *prop=val* statements.
-	-**example of user input**: "beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present", then "oromo:clauseType=Main,derivedStem=Base,p;olarity=Affirmative,tam=Present" [The script then displays the suffixing present (mainClause, Base) tense of the two languages in a single paradigm.]
+	-**example of user input**: (after display of beja-arteiga prop-vals)  "beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present", then (after display of oromo prop-vals)  "oromo:clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [The script then displays the suffixing present (mainClause, Base) tense of the two languages in a single paradigm.]
 	-**calls**: pl/finite-propvaltsv2table.pl to display prop-val possibilities for each language; pdgm-display.sh for the paradigm display, which in turn calls pl/qstring2query.pl to formulate a unified SPARQL query (not a query-template) for the languages in question, and pl/pdgmtsv2table.pl to format the tsv response file into table form.
 
 
@@ -90,7 +90,7 @@ props in question,
 		* checks for valid lexlabel in termclusters, writes out newlex if not valid
 		* writes out a dummy multilex lexeme for each multilex termcluster
 		* checks for valid lexlabel in terms w/i multilex termcluster, writes out newlex if not valid
-		* writes out dummy muterm entry for tennclusters with mulabel
+		* writes out dummy muterm entry for termclusters with mulabel
 		* [TODO: edit dummy/tentative lexemes and add to xml]
 5. Fireup fuseki: bin/fuseki.sh
 6. Generate .data.ttl/rdf: -**usage**: bin/datagen-gg.sh dir abbrev. -**calls**: xml2data-gg.sh, which in turn calls  xml2data-gg.xsl, data2rdf.sh. -**variants**: data2rdf-aa.sh, datagen-aa.sh, xml2data-aa.sh, xml2data-aa.xsl
