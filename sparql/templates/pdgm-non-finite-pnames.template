@@ -7,16 +7,16 @@ PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX %abbrev%: <http://id.oi.uchicago.edu/aama/2013/%lang%/>
 
-SELECT DISTINCT  ?property 
+SELECT DISTINCT  ?multiLexLabel ?property 
 WHERE {
 GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
 	?s ?p ?o ;
 	rdf:type aamas:Term ;
-	#%abbrev%:multiLex ?multiLex ;
+	%abbrev%:multiLex ?multiLex ;
 	%abbrev%:pos  %abbrev%:Verb .
 	NOT EXISTS {?s %abbrev%:person ?person }
    ?p rdfs:label ?property .
-   #?multiLex rdfs:label ?multiLexLabel .
-  	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:number, %abbrev%:person, %abbrev%:pos, rdf:type))
+   ?multiLex rdfs:label ?multiLexLabel .
+  	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:multiLex, %abbrev%:number, %abbrev%:person, %abbrev%:pos, rdf:type))
 }}
 ORDER BY ASC(?multiLexLabel) ASC(?property)

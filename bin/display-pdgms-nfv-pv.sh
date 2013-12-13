@@ -23,7 +23,6 @@ echo "fuquery.log" > logs/fuquery.log;
 #echo
 #echo Please provide a label for query --
 #read -e -p Query_Label: querylabel
-querylabel=$2
 echo 
 echo " In addition to png, each language has its own set of additional "
 echo " properties which can or must be represented in any finite verb "
@@ -38,21 +37,23 @@ do
 	abbrev=${labbrev#$lang=}
     #echo querying $Lang $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
-	of=pdgm-non-finite-props.template
+	of=pdgm-nfv-props.template
 	#echo of = $of
-    localqry="tmp/prop-val/${of%.template}.$lang.rq"
-	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
+	querylabel="${of%.template}.$lang"
+    localqry="sparql/pdgms/output/${of%.template}.$lang.rq"
+	response="sparql/pdgms/output/${of%.template}.$lang-resp.tsv"
     echo "localqry=$localqry"
 	nsv="nsv"
 	echo "nsv=$nsv"
 
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
-    sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-non-finite-props.template > $localqry
+    sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-nfv-props.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	perl pl/finite-propvaltsv2table.pl $response $nsv
+	# following works for both fv and nfv
+	perl pl/verb-propvaltsv2table.pl $response
 	
 	echo " Command line format:"
-	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . ."
+	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . .[  or Ctrl-C to exit ]"
 	echo "Example -- "
 	echo " oromo:tam=Present,polarity=Affirmative,clauseType=Main"
 	echo " [CR at prompt will return all finite-verb pdgms.]"
@@ -65,4 +66,4 @@ done
 commandline=${commandline#*+}
 echo "commandline = $commandline"
 
-bin/pdgm-nfv-display.sh $commandline $querylabel $nsv
+bin/pdgm-nfv-pv-display.sh $commandline $querylabel

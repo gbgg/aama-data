@@ -34,7 +34,7 @@ my ($qstring, $queryfile) = @ARGV;
 #print "Query string = $qstring\n";
 #print "Query file = $queryfile\n";
 
-my ($propsfile) = "sparql/pdgms/pdgm-finite-props.txt";
+my ($propsfile) = "sparql/pdgms/pdgm-finite-prop-list.txt";
 my $selection = "";
 my ($langname, $Langname, $specifiedprops);
 my (@langs, @Langs, @graphs);
@@ -46,7 +46,7 @@ foreach my $query (@queries)
 	($langname, $specifiedprops) = split(/:/, $query);
 	#print "langname = $langname\n";
 	#print "specifiedprops = $specifiedprops\n";
-	$graph{$glangname} = $langname;
+	#$graph{$glangname} = $langname;
 	#my $queryfile = "sparql/pdgms/output/$langname";
 
 	my %specifiedprops;

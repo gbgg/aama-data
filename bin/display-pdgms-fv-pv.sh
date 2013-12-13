@@ -21,6 +21,7 @@ echo "fuquery.log" > logs/fuquery.log;
 #echo " is marked for a value of tam, and is marked also at least for" 
 #echo " person  (optionally also for gender and number). "
 #echo
+querylabel=fv
 #echo Please provide a label for query --
 #read -e -p Query_Label: querylabel
 echo 
@@ -37,18 +38,18 @@ do
 	abbrev=${labbrev#$lang=}
     #echo querying $Lang $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
-	of=pdgm-finite-props.template
+	of=pdgm-fv-props.template
 	#echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
 	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
-    echo $localqry
+    echo "props query = $localqry"
 
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
-    sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-finite-props.template > $localqry
+    sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-fv-props.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	perl pl/finite-propvaltsv2table.pl $response
+	perl pl/verb-propvaltsv2table.pl $response
 	echo " Command line format:"
-	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . ."
+	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . .  [or Ctrl-C to exit]."
 	echo "Example -- "
 	echo " oromo:tam=Present,polarity=Affirmative,clauseType=Main"
 	echo " [CR at prompt will return all finite-verb pdgms.]"
@@ -56,9 +57,10 @@ do
 	read -e -p $lang: propvalset
 	#echo "propvalset = $propvalset"
 	commandline="${commandline}+${lang}:${propvalset}"
-	echo "commandline = $commandline"
+	#echo "commandline = $commandline"
+	echo
 done
 commandline=${commandline#*+}
-echo "commandline = $commandline"
+#echo "commandline = $commandline"
 #
 bin/pdgm-display.sh $commandline $querylabel

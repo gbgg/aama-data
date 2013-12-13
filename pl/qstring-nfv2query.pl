@@ -34,22 +34,21 @@ my ($qstring, $queryfile) = @ARGV;
 #print "Query string = $qstring\n";
 #print "Query file = $queryfile\n";
 
-my ($propsfile) = "sparql/pdgms/pdgm-nfv-prop-list.txt";
+my ($propsfile) = "sparql/pdgms/pdgm-non-finite-prop-list.txt";
 my $selection = "";
-my ($langname, $Langname, $specifiedprops);
+my ($lang, $langname, $Langname, $specifiedprops);
 my (@langs, @Langs, @graphs);
+my @queryproplist;
+my %specifiedprops;
 my (@queries) = split(/\+/, $qstring);
 foreach my $query (@queries)
 {
 	#print "query = $query\n";
-	my %graph;
 	($langname, $specifiedprops) = split(/:/, $query);
 	#print "langname = $langname\n";
 	#print "specifiedprops = $specifiedprops\n";
-	$graph{$glangname} = $langname;
 	#my $queryfile = "sparql/pdgms/output/$langname";
 
-	my %specifiedprops;
 	my @specifiedprops = split(/,/, $specifiedprops);
 	foreach my $specifiedprop (@specifiedprops)
 	{
@@ -63,32 +62,20 @@ foreach my $query (@queries)
 	#}
 	#$queryfile .= "-query.rq";
 	#print "Query = $queryfile\n";
-	my $specpropref = \%specifiedprops;
-	$graph{"specifiedprops"} = $specpropref;
 	undef $/;
 	my $queryprops;
-	my @queryproplist;
 	open(IN, $propsfile) || die "cannot open $propsfile for reading";
 	while (<IN>)
 	{ 
 		my $pdgmprops = $_;
 		my ($first, $props) = split("$langname : \"", $pdgmprops);
 		($queryprops, my $last) = split(/"\n/, $props, 2);
-		#print "$langname Queryprops = $queryprops\n\n";
+		print "$langname Queryprops = $queryprops\n\n";
 	}
-
-	my ($lang, $qprops) = split(/,\s*/, $queryprops, 2);
-	$langref = [$lang, $langname];
-	push(@langs, $langref);
-	$graph{"lang"} = $lang;
-	$graph{"langname"} = $langname;
-	#print "$lang qprops = $qprops\n";
-	my $Lang = ucfirst($lang);
-	my $Langname = ucfirst($langname);
-	$Langref = [$Lang, $Langname];
-	push(@Langs, $Langref);
-	$graph{"Lang"} = $Lang;
-	$graph{"Langname"} = $Langname;
+	close IN;
+	($lang, my $qprops) = split(/,\s*/, $queryprops, 2);
+	print "$lang qprops = $qprops\n";
+	$Langname = ucfirst($langname);
 	my @select = split(/,\s* /, $qprops);
 	foreach my $queryprop (@select)
 	 {  
@@ -106,14 +93,6 @@ foreach my $query (@queries)
 	#{
 		#print "Queryp = $queryp\n";
 	#}
-	my $querypropref = \@queryproplist;
-	$graph{"queryproplist"} = $querypropref;
-	#foreach my $graphelement (sort keys %graph)
-	#{
-		#print "$graphelement => $graph{$graphelement}\n";
-	#}
-	my $graphref = \%graph;
-	push(@graphs, $graphref);
 }	
 print "selection = $selection\n";
 
@@ -125,52 +104,32 @@ print "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n";
 print "PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>\n";
 print "PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>\n";
 print "PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>\n";
-foreach my $langref (@langs)
-{
-	print "PREFIX $langref->[0]:   <http://id.oi.uchicago.edu/aama/2013/$langref->[1]/>\n";
-}
+print "PREFIX $lang:   <http://id.oi.uchicago.edu/aama/2013/$langname/>\n";
 
 print "\n";
 # Iterate through @select if want all values in table
 print "SELECT $selection ?token\n";
 print "WHERE\n{\n";
-my $graphnum = 0;
-foreach my $graphref (@graphs)
+print "\t{\n";
+print "\t\tGRAPH aamag:$langname\n\t\t{\n";
+print "\t\t\t?s\t$lang:pos\t$lang:Verb . \n";
+print "\t\t\tNOT EXISTS {?s $lang:person ?person } .\n";
+print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
+print "\t\t\t?s\taamas:lang\t?lang .\n";
+print "\t\t\t?lang\trdfs:label\t?langLabel . \n";
+foreach my $specifiedprop (sort keys %specifiedprops)
 {
-	my $langname = $graphref->{"langname"};
-	my $lang = $graphref->{"lang"};
-	my $Lang = $graphref->{"Lang"};
-	my $Langname = $graphref->{"Langname"};
-	my $specifiedprops = $graphref->{"specifiedprops"};
-	my $queryproplist = $graphref->{"queryproplist"};
-	print "\t{\n";
-	print "\t\tGRAPH aamag:$langname\n\t\t{\n";
-	print "\t\t\t?s\t$lang:pos\t$lang:Verb . \n";
-	print "\t\t\tNOT EXISTS {?s $lang:person ?person } .\n";
-	print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
-	print "\t\t\t?s\taamas:lang\t?lang .\n";
-	print "\t\t\t?lang\trdfs:label\t?langLabel . \n";
-	# Iterate through @select if want all values in table
-	foreach my $specifiedprop (sort keys %{$specifiedprops})
-	{
-		print "\t\t\t?s\t$lang:$specifiedprop\t$lang:$specifiedprops->{$specifiedprop} . \n";
-	}
-	foreach my $queryprop (@{$queryproplist}) 
-	{
-		print "\t\t\tOPTIONAL { ?s\t$lang:$queryprop\t?Q$queryprop . \n";
-		print " \t\t\t?Q$queryprop\trdfs:label\t?$queryprop . }\n";
-	}
-	print "\t\t\t?s\t$lang:token\t?token . \n";
-	print "\t\t}\n";
-	print "\t}\n";
-	if ($#graphs > $graphnum)
-	{
-		print "\tUNION\n";
-	}else{
-		print "}\n";
-	}
-	$graphnum++;
+	print "\t\t\t?s\t$lang:$specifiedprop\t$lang:$specifiedprops{$specifiedprop} . \n";
 }
+foreach my $queryprop (@queryproplist) 
+{
+	print "\t\t\tOPTIONAL { ?s\t$lang:$queryprop\t?Q$queryprop . \n";
+	print " \t\t\t?Q$queryprop\trdfs:label\t?$queryprop . }\n";
+}
+print "\t\t\t?s\t$lang:token\t?token . \n";
+print "\t\t}\n";
+print "\t}\n";
+print "}\n";
 # Iterate through @select if want all values in table
 print "ORDER BY   $selection  \n";
 close(OUT); 

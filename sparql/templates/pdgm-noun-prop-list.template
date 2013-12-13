@@ -13,10 +13,9 @@ GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
 	?s ?p ?o ;
 	rdf:type aamas:Term ;
 	#%abbrev%:multiLex ?multiLex ;
-	%abbrev%:pos  %abbrev%:Verb .
-	NOT EXISTS {?s %abbrev%:person ?person }
+	%abbrev%:pos  %abbrev%:Noun .
    ?p rdfs:label ?property .
    #?multiLex rdfs:label ?multiLexLabel .
-  	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:number, %abbrev%:person, %abbrev%:pos, rdf:type))
+  	FILTER (?p NOT IN ( aamas:lang, %abbrev%:pos, rdf:type))
 }}
 ORDER BY ASC(?multiLexLabel) ASC(?property)

@@ -27,31 +27,27 @@ for f in `find $1 -name *.html`
 do
     lang=`basename ${f%-pdgms.html}`
     Lang="${lang[@]^}"
-	##pnamefile="sparql/pdgms/pname-$pos-list-$lang.txt";
-	##add fv/nfv
-	pnamefile="sparql/pdgms/pname-fv-list-$lang.txt";
+	pnamefile="sparql/pdgms/pname-pro-list-$lang.txt";
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
 	echo "pnamefile = $pnamefile"
 	echo 
-	echo " The following is a list of property values"
-	echo " for finite verbs in ${Lang}:"
+	echo " The following is a list of properties and values"
+	echo " for pro paradigms in ${lang}:"
 	echo
 	perl pl/pnames-print.pl $pnamefile
 	echo
-	echo "Choose pdgm number  or Ctrl-C to exit"
+	echo "Choose pdgm number or Ctrl-C to exit"
 	echo
 	read -e -p Number: pnumber
 	echo
-	## Find way to cycle through more than one number
-	localqry=sparql/pdgms/output/pname-$lang-fv-$pnumber-query.rq
-	response=sparql/pdgms/output/pname-$lang-fv-$pnumber-resp.tsv
-	rm $response
+	localqry=sparql/pdgms/output/pname-$lang-pro-$pnumber-query.rq
+	response=sparql/pdgms/output/pname-$lang-pro-$pnumber-resp.tsv
 	echo "Localqry = $localqry"
 	echo "Response = $response"
 	echo 
-	#title=" "
-	perl pl/qstring-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev 
+
+	perl pl/qstring-pro-pname2query.pl $pnamefile $pnumber $localqry $abbrev
 
 	${FUSEKIDIR}/s-query \
 		--output=tsv  \
@@ -59,5 +55,5 @@ do
 		--query=$localqry  \
 		> $response
 
-	perl pl/pdgm-fv-tsv2table.pl	$response 
+	perl pl/pdgmtsv2table.pl	$response $qstring
 done 

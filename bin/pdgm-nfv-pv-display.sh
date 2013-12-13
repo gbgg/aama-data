@@ -28,7 +28,6 @@
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$1
 qlabel=$2
-nfv=$3
 localqry=sparql/pdgms/output/$qlabel-query.rq
 response=sparql/pdgms/output/$qlabel-response.tsv
 # find way to parse qstring to give value string $vstring

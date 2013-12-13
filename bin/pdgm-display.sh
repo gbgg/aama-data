@@ -28,17 +28,17 @@
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$1
 qlabel=$2
+#echo "QLabel = $qlabel"
 localqry=sparql/pdgms/output/$qlabel-query.rq
 response=sparql/pdgms/output/$qlabel-response.tsv
 # find way to parse qstring to give value string $vstring
 # then give "title=$lang-$vstring" as argument to pdgmtsv2table.pl 
 # for output title
 
-echo "Query String = $qstring"
+#echo "Query String = $qstring"
 echo "Localqry = $localqry"
 echo "Response = $response"
 echo " "
-#echo "QLabel = $qlabel"
 
 #mv sparql/pdgms/output/$qlabel* sparql/pdgms/output/back/
 #mv *.tsv back/

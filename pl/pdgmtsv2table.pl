@@ -1,10 +1,10 @@
 ﻿#!/usr/local/bin/perl
 
-#06/03/13: adapted to bin/pdgm-display.sh
+#12/12/13: adapted to bin/display-pdgms-. . ..sh
 # The purpose of this version of pdgmtsv2table.pl is to 
 # transform a query.tsv file, output of a paradigm-formation query,
 # into a table-formatted text output for display on STDOUT or in 
-# text file. It is invoked by pdgm-display.sh
+# text (or html) file. It is invoked by pdgm-display.sh
 
 my ($pdgmfile, $title) = @ARGV;
 my $filename = $pdgmfile;
@@ -13,13 +13,16 @@ my $textfile = $filename.".txt";
 my $htmlfile = $filename.".html";
 #print "Text file = $textfile\n";
 #print "HTML file = $htmlfile\n\n";
-#print "qstring=$qstring\n";
 
+# $collength and @collength to zero out cols with no entries
+# @colwidths1/2, @header1/2. @pdgmrows1/2  are before and 
+# after zero-length cols are eliminated
 undef $/;
-my ($header, $pdgmrows);
-my (@header, @colwidths, @pdgmrows);
+my ($header, $pdgmrows1, $collength);
+my (@header1, @colwidths1, @pdgmrows1, @collength);
+my (@header2, @colwidths2, @pdgmrows2);
 
-# First get array @colwidths with maximum size cell in each col
+# First get array @colwidths1 with maximum size cell in each col
 open(IN, $pdgmfile) || die "cannot open $pdgmfile for reading";
 while (<IN>)
 { 
@@ -27,39 +30,68 @@ while (<IN>)
 	$data =~ s/"//g;
 	$data =~ s/⊤/ /g;
 	# Get first line for header
-	($header, $pdgmrows) = split(/\n/, $data, 2);
+	($header, $pdgmrows1) = split(/\n/, $data, 2);
 	$header =~ s/\?//g;
-	# Initialize colwidths with header
+	# Initialize colwidths1 with header
 	my $colwidths = $header;
-	@header = split('\t', $header);
-	@colwidths = split( '\t', $colwidths);
-	foreach my $colwidth (@colwidths)
+	@header1 = split('\t', $header);
+	@colwidths1 = split( '\t', $colwidths);
+	for (my $i = 0; $i <= $#colwidths1; $i++)
 	{
-		$colwidth = length($colwidth);
+		$colwidths1[$i] = length($colwidths1[$i]);
+		$collength[$i] = 0;
 	}
 	my $termid = "";
-    @pdgmrows = split '\n', $pdgmrows;
-    foreach my $pdgmrow (@pdgmrows)
+    @pdgmrows1 = split '\n', $pdgmrows1;
+    foreach my $pdgmrow (@pdgmrows1)
     {
+		#print "pdgmrow = $pdgmrow\n";
 		my @rowterms = split('\t', $pdgmrow);
 		for (my $i = 0; $i <= $#rowterms; $i++)
 		{
 			my $termwidth = length($rowterms[$i]);
-			if ($termwidth > $colwidths[$i]) {$colwidths[$i] = $termwidth;}
+			if ($termwidth > $colwidths1[$i]) {$colwidths1[$i] = $termwidth;}
+			if ($rowterms[$i] =~ /\w/) {$collength[$i] = 1;}
+			#print "rowterms[$i] = $rowterms[$i]\tcollength[$i] = $collength[$i]\n";
 		}
 	}
 }
 close(IN); 
+#print "collengths = @collength\n";
+# Make new @header2, @colwidths2, @pdgmrows2 
 
+for (my $i = 0; $i <= $#colwidths1; $i++)
+{
+	if ($collength[$i] == 1)
+	{
+		push(@colwidths2, $colwidths1[$i]);
+		push(@header2, $header1[$i]);
+	}
+}	
+#print "pdgmrows1 = \n$pdgmrows1\n";
+foreach my $pdgmrow (@pdgmrows1)
+{
+	#print "pdgmrow = $pdgmrow\n";
+	my @rowterms1 = split('\t', $pdgmrow);
+	my $rowterms2;
+	for (my $i = 0; $i <= $#rowterms1; $i++)
+	{
+		if ($collength[$i] == 1) {$rowterms2 .= $rowterms1[$i]."\t";}
+	}
+	$pdgmrows2 .= $rowterms2."\n";
+}
+#print "pdgmrows2 = \n$pdgmrows2\n";
+@pdgmrows2 = split(/\n/, $pdgmrows2);
+		
 my $format ="| ";
-my $tablewidth = 2*(@colwidths + 3) + 3;
-foreach my $colwidth (@colwidths)
+my $tablewidth = 2*(@colwidths2 + 3) + 3;
+foreach my $colwidth (@colwidths2)
 {
 	$format .= "%-".$colwidth."s | ";
 	$tablewidth += $colwidth;
 }
 $format .= "\n";
-
+#print "format = $format\n";
 # print pdgm table file to STDOUT
 select STDOUT;
 print "\nPARADIGM: $title\n";
@@ -73,10 +105,10 @@ print "\nPARADIGM: $title\n";
 #print "Tablewidth= $tablewidth\n\n";
 print "-" x $tablewidth;
 print "\n";
-printf $format, @header;
+printf $format, @header2;
 print "=" x $tablewidth;
 print "\n";
-foreach my $pdgmrow (@pdgmrows)
+foreach my $pdgmrow (@pdgmrows2)
  {
 	my @rowterms = split('\t', $pdgmrow);
 	printf $format, @rowterms;
@@ -84,11 +116,12 @@ foreach my $pdgmrow (@pdgmrows)
 print "-" x $tablewidth;
 print "\n";
 
+
 # print pdgm tsv data and header to tab-delimited txt file
 open(OUT, ">$textfile") || die "cannot open $textfile for output"; 
 select(OUT);
-print "$header\n";
-print "$pdgmrows\n";
+print "@header2\n";
+print "@pdgmrows2\n";
 close(OUT);
 
 # print pdgm to html table
@@ -106,14 +139,14 @@ print "        <h1>$filename</h1>\n";
 print "            <table>\n";
 print "                <thead>\n";
 print "                    <tr>\n";
-foreach my $heading (@header)
+foreach my $heading (@header2)
 {
 	print "                        <th align=\"left\">$heading</th>\n";
 }
 print "                    </tr>\n";
 print "                </thead>\n";
 print "                <tbody>\n";
-foreach my $pdgmrow (@pdgmrows)
+foreach my $pdgmrow (@pdgmrows2)
 {
 	print "<tr>\n";
 	my @rowterms = split('\t', $pdgmrow);
