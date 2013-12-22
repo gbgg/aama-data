@@ -58,7 +58,7 @@ foreach my $colwidth (@colwidths)
 	$tablewidth = $tablewidth + $colwidth;
 }
 #$format .= "\n";	
-print "format = \"$format\" tablewidth = $tablewidth\n";
+#print "format = \"$format\" tablewidth = $tablewidth\n";
 
 #open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
 #select(OUT);

@@ -47,7 +47,7 @@ while (<IN>)
 close(IN); 
 my $format ="| %-".$lenv."s | %-".$lenl."s | %-".$lenp."s\n";
 my $tablewidth = $lenv + $lenl + $lenp + 15;
-print "format = %$format%\n";
+#print "format = %$format%\n";
 # print pdgm tsv data and header to tab-delimited tsv file
 #unlink $tsvfile;
 #open(OUT, ">$textfile") or die "cannot open $textfile for output"; 

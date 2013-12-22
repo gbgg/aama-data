@@ -22,7 +22,7 @@ Obviously in a gui the prompts will be supplied by drop-down menus, etc. and use
 The individual scripts are:
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
--**usage**: bin/display-valsfor prop.sh \<dir\> prop
+-**usage**: bin/display-valsforprop.sh \<dir\> prop
 -**example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
 -**query**: pl/valforproptsv2table.pl to format output
 

@@ -22,7 +22,7 @@ do
 	bin/fudelete.sh $d
     # Use fupost.sh (or fuput.sh) to load data
 	bin/fupost.sh $d
-	# test count-triples.rq and list-graphs.rq
-	bin/fuqueries.sh
 done
+# test count-triples.rq and list-graphs.rq
+bin/fuqueries.sh
 
