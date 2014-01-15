@@ -33,8 +33,8 @@
 				<xsl:if test="analysis/lexemes">
 					<xsl:call-template name="lexemes"/>
 					</xsl:if> 
-				<xsl:if test="analysis/mu-terms">
-					<xsl:call-template name="mu-terms"/>
+				<xsl:if test="analysis/muterms">
+					<xsl:call-template name="muterms"/>
 					</xsl:if> 
 				<xsl:call-template name="pdgm"/>
 			</body>
@@ -88,7 +88,7 @@
 		</table>
 	</xsl:template>
 
-	<xsl:template name="mu-terms">
+	<xsl:template name="muterms">
 		<p><h2>Paradigm µ-Terms</h2></p>
 		<table>
 			<tbody>
@@ -104,7 +104,7 @@
 						<u>Value</u>
 					</th>
 				</tr>
-				<xsl:for-each select="//mu-term">
+				<xsl:for-each select="//muterm">
 					<xsl:sort select="./prop[@type='mulabel']/@val"/>
 					<tr>
 						<td><xsl:value-of select="./prop[@type='mulabel']/@val"/></td>

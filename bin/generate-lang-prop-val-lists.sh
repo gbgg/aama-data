@@ -10,6 +10,8 @@
 . bin/constants.sh
 response=tmp/prop-val/lang-prop-val-list.tsv
 mv $response "${response}.bck"
+filetag=$2
+echo "filetag = $filetag"
 echo "fuquery.log" > logs/fuquery.log;
 for f in `find $1 -name *-pdgms.xml`
 do
@@ -29,6 +31,6 @@ do
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/lang-prop-val-list.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry >> $response
 done
-	perl pl/lang-prop-val-list-tsv2table.pl $response
+	perl pl/lang-prop-val-list-tsv2table.pl $response $filetag
 
 #	perl pl/lang-prop-val-list-tsv2table.pl tmp/prop-val/lang-prop-val-list.tsv
