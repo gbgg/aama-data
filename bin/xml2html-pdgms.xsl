@@ -30,12 +30,13 @@
 				<xsl:if test="analysis/bibsource">
 					<xsl:call-template name="bibsource"/>					
 				</xsl:if>
+				<!--For the following two templates, now use generate-lex-lists.sh
 				<xsl:if test="analysis/lexemes">
 					<xsl:call-template name="lexemes"/>
 					</xsl:if> 
 				<xsl:if test="analysis/muterms">
 					<xsl:call-template name="muterms"/>
-					</xsl:if> 
+					</xsl:if>--> 
 				<xsl:call-template name="pdgm"/>
 			</body>
 		</html>
@@ -46,7 +47,7 @@
 		<p><xsl:value-of select="analysis/bibsource/bibid"/></p>
 	</xsl:template>
 
-	<xsl:template name="lexemes">
+	<!--<xsl:template name="lexemes">
 		<p><h2>Paradigm Lexemes</h2></p>
 		<table>
 			<tbody>
@@ -66,11 +67,9 @@
 					<xsl:sort select="./prop[@type='lexlabel']/@val"/>
 					<tr>
 						<td><xsl:value-of select="./prop[@type='lexlabel']/@val"/></td>
-<!--						<xsl:if test="@id='ID0'">-->
 							<td>id</td>
 							<td>=</td>
 							<td><xsl:value-of select="@id"/></td>
-<!--						</xsl:if>-->
 					</tr>
 					<xsl:for-each select="./prop">
 						<tr>
@@ -81,7 +80,7 @@
 						</tr>
 					</xsl:for-each>
 					<tr> 
-						<td> ----- </td>
+						<td> _____ </td>
 					</tr>
 				</xsl:for-each>
 			</tbody>
@@ -108,11 +107,9 @@
 					<xsl:sort select="./prop[@type='mulabel']/@val"/>
 					<tr>
 						<td><xsl:value-of select="./prop[@type='mulabel']/@val"/></td>
-<!--						<xsl:if test="@id='ID0'">-->
 							<td>id</td>
 							<td>=</td>
 							<td><xsl:value-of select="@id"/></td>
-<!--						</xsl:if>-->
 					</tr>
 					<xsl:for-each select="./prop">
 						<tr>
@@ -123,12 +120,12 @@
 						</tr>
 					</xsl:for-each>
 					<tr> 
-						<td> ----- </td>
+						<td> _____ </td>
 					</tr>
 				</xsl:for-each>
 			</tbody>
 		</table>
-	</xsl:template>
+	</xsl:template>-->
 
 	<xsl:template name="pdgm">
 		<h2>Paradigms</h2>

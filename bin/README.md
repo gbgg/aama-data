@@ -109,13 +109,21 @@ props in question,
 -**usage**: bin/generate-ttl-rdf.sh \<dir\> 
 -**example**: generate-ttl-rdf.sh data/beja-arteiga
 
-20. **generate-lang-prop-val-lists.sh**: Generates a tsv file of all lang-prop-val co-occurrences in <dir>, and then makes 4 tsv files (for dropping onto a spreadsheet or Word table) and html tables with entries: 
+20. **generate-lang-prop-val-lists.sh**: Generates a tsv file of all lang-prop-val co-occurrences in <dir>, and then makes 4 tables (in html form, or tsv for dropping onto a spreadsheet or Word table) with entries: 
 (1) *lang	prop: val, val, val, ...* (all the values for each prop in each language), (2) *prop val: lang, lang, lang, ...* (all the languages in which a given prop has a given val), (3) *val	prop: lang, lang, lang, ...* (all the languages in which a given val is associated with a given prop), (4) *prop	lang: val, val, val, ...* (all the values associated with a given prop in a given language)
+-**usage**: bin/generate-lang-prop-val-lists.sh \<dir\> file-tag
+-**example**: *generate-lang-prop-val-lists.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" bejaTest* will generate the tables of permutations of lang-prop-val for all the beja languages and put the files in tmp/prop-val/ . . . -bejaTest.html/txt.
+
+21. **generate-lex-lists.sh**: Calls xml2html-lexlist.xsl to generate from the LANG-pdgms.xml file an html file of all lexemes and muterms in <dir>, to be used for updating and standardizing lexical information in xml file.
 -**usage**: bin/generate-lang-prop-val-lists.sh \<dir\> 
--**example**: generate-lang-prop-val-lists.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" will generate the permutations of prop-val lists for all the beja languages.
+-**example**: *generate-lex-lists.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" .
+
+22. **generate-pdgms-html.sh**: Calls xml2html-pdgms.xsl to generate from the LANG-pdgms.xml file an html file of all pdgms in <dir>, to be used for updating and standardizing, and comparing datastore pdgm info with pdgm information in xml file.
+-**usage**: bin/generate-pdgms-html.sh \<dir\> 
+-**example**: *generate-pdgms-html.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" .
 
 
-21. **fuquery-gen.sh**: A script for running any well-formed SPARQL query file, QUERY.rq, against the fuseki triplestore. The directory bin/ also contains the script fuqueries.sh, which uses fuquery-gen.sh to run sparql/rq-ru/count-triples.rq (yields number of triples in triplestore) and sparql/rq-ru/list-graphs.rq (lists the sub-graphs, i.e. the languages, contained in the triplestore); these are run by generate-ttl-rdf.sh as a test after a regenerate-delete-post operation.
+23. **fuquery-gen.sh**: A script for running any well-formed SPARQL query file, QUERY.rq, against the fuseki triplestore. The directory bin/ also contains the script fuqueries.sh, which uses fuquery-gen.sh to run sparql/rq-ru/count-triples.rq (yields number of triples in triplestore) and sparql/rq-ru/list-graphs.rq (lists the sub-graphs, i.e. the languages, contained in the triplestore); these are run by generate-ttl-rdf.sh as a test after a regenerate-delete-post operation.
 -**usage**: bin/fuquery-gen.sh QUERYFILE.rq
 
 
