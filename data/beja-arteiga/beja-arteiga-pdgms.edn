@@ -20,7 +20,7 @@
 	  :pos {:Noun, :Pronoun, :Verb}
 	  :postpositionClass {:A, :B}
 	  :proClass {:DefMarker, :Demonstrative, :Independent, :PossObj, :ProComp}
-	  :rootClass {:CCC, :CCY, :CVC}
+	  :rootClass {:CCC, :CCY, :CVC, :Invar}
 	  :tam {:Aorist, :Common, :Future, :Imperative, :Jussive, :Optative, :Past, :Present}
 	  :tamStemClass {:AoristClass, :ModClass, :NegClass, :PartClass, :PastClass, :PresClass, :PresSgClass}
 	  ]
@@ -34,13 +34,8 @@
 }
 :lexemes {
   :COPULA {:gloss "Copula", :lemma "Copula", }
-  :_eegrim {:gloss "[x]", :lemma "[y]", }
-  :_ibaab {:gloss "[x]", :lemma "[y]", }
-  :_oos {:gloss "[x]", :lemma "[y]", }
   :ab {:pluralClass :A, :token-plural "aba", :gloss "[x]", :lemma "?àb", :pos :Noun}
-  :ad {:gloss "[x]", :lemma "[y]", }
-  :ad1 {:conjClass :Suffix, :derivedStem :B, :derivedStemAug :Simple, :lemma "?ad-", :gloss "tremble"}
-  :ad2 {:conjClass :Suffix, :derivedStem :B, :derivedStemAug :Simple, :lemma "?ad-àa", :gloss "tremble"}
+  :ad {:gloss "tremble", :lemma "?ad", }
   :adum {:conjClass :Suffix, :derivedStem :SM, :derivedStemAug :Intensive, :lemma "?adum-sam-", :gloss "speak with one another"}
   :as {:gloss "[x]", :lemma "[y]", }
   :baaba {:pluralClass :C, :token-plural "baabà", :gloss "[x]", :lemma "baabà", :pos :Noun}
@@ -56,7 +51,7 @@
   :dif1 {:conjClass :Prefix, :derivedStem :S2, :derivedStemAug :Simple, :rootClass :CVC, :lemma "-šišoo-dif-", :gloss "see that s.o. has s.th. dyed "}
   :dif2 {:conjClass :Prefix, :derivedStem :T, :derivedStemAug :Intensive, :rootClass :CVC, :lemma "-too-daaf-", :gloss "be dyed, tanned (see fn. 29) "}
   :dir {:conjClass :Prefix, :derivedStem :B, :derivedStemAug :Simple, :rootClass :CVC, :lemma "dir-à", :gloss "kill"}
-  :dlb {:gloss "[x]", :lemma "[y]", }
+  :dlb {:gloss "buy", :lemma "dilib", }
   :dmy {:conjClass :Prefix, :derivedStem :S, :derivedStemAug :Simple, :rootClass :CCY, :lemma "-š-dam-", :gloss "make ... stink "}
   :doob {:conjClass :Suffix, :derivedStem :B, :derivedStemAug :Simple, :lemma "doob-àa", :gloss "marry"}
   :dírim {:pluralClass :A, :token-plural "dirmà", :gloss "[x]", :lemma "dírim", :pos :Noun}
@@ -109,7 +104,6 @@
   :rkwy {:conjClass :Prefix, :derivedStem :S, :derivedStemAug :Simple, :rootClass :CCY, :lemma "-s-rakw-", :gloss "make ... fear"}
   :rsd {:conjClass :Prefix, :derivedStem :S, :derivedStemAug :Simple, :rootClass :CCC, :lemma "-š-rašid-", :gloss "cause to tend cattle "}
   :sa {:conjClass :Prefix, :derivedStem :R, :derivedStemAug :Simple, :rootClass :CVC, :lemma "-sa?-", :gloss "sit (down) "}
-  :sa_ {:gloss "[x]", :lemma "[y]", }
   :san {:pluralClass :A, :token-plural "sanà", :gloss "[x]", :lemma "sàn", :pos :Noun}
   :sar {:conjClass :Prefix, :derivedStem :R, :derivedStemAug :Simple, :rootClass :CVC, :lemma "-sar-", :gloss "stay awake"}
   :sbb {:conjClass :Prefix, :derivedStem :R, :derivedStemAug :Simple, :rootClass :CCC, :lemma "-šbab-", :gloss "look at oneself"}
@@ -300,29 +294,29 @@
 	    :pos :Verb}
     :terms [[:conjClass, :rootClass, :token, :lexeme]  ;; schema
 	    [:Prefix, :CCC, "finìk-a", :fnk],
-	    [:Suffix, "raat-àa", :raat],
-	    [:Suffix, "šuum-àa", :suum],
-	    [:Suffix, "tam-àa", :tam],
-	    [:Suffix, "rih-àa", :rih],
+	    [:Suffix, :Invar, "raat-àa", :raat],
+	    [:Suffix, :Invar, "šuum-àa", :suum],
+	    [:Suffix, :Invar, "tam-àa", :tam],
+	    [:Suffix, :Invar, "rih-àa", :rih],
 	    [:Prefix, :CVC, "liw-à", :liw],
 	    [:Prefix, :CCC, "kwibìs-a", :kwbs],
 	    [:Prefix, :CCC, "dibìl-a", :dbl],
-	    [:Suffix, "nuun-àa", :nuun],
-	    [:Suffix, "kileew-àa", :kileew],
+	    [:Suffix, :Invar, "nuun-àa", :nuun],
+	    [:Suffix, :Invar, "kileew-àa", :kileew],
 	    [:Prefix, :CCY, "digiì-a", :dgy],
 	    [:Prefix, :CCC, "dilìb-a", :dlb],
 	    [:Prefix, :CVC, "dir-à", :dir],
 	    [:Prefix, :CVC, "bis-à", :bid],
 	    [:Prefix, :CCC, "kitìb-a", :ktb],
-	    [:Suffix, "?ad-àa", :ad],
+	    [:Suffix, :Invar, "?ad-àa", :ad],
 	    [:Prefix, :CVC, "rib-à", :rib],
 	    [:Prefix, :CCC, "kitìm-a", :ktm],
 	    [:Prefix, :CVC, "min-à", :min],
 	    [:Prefix, :CVC, "díf-a", :dif],
 	    [:Prefix, :CCY, "miriì-a", :mry],
-	    [:Suffix, "gwa?-àa", :gwa],
+	    [:Suffix, :Invar, "gwa?-àa", :gwa],
 	    [:Prefix, :CCY, "šifiì-a", :sfy],
-	    [:Suffix, "doob-àa", :doob],
+	    [:Suffix, :Invar, "doob-àa", :doob],
 	    [:Prefix, :CCY, "firiì-a", :fry]]
     }
     {:label "beja_H-VPrefNegCVCOpt"
@@ -911,66 +905,66 @@
     :common {:multiLex :DERVSTEMFORM,
 	    :pdgmType :Structure,
 	    :pos :Verb}
-    :terms [[:conjClass, :derivedStem, :derivedStemAug, :lexeme, :token, :token-gloss]  ;; schema
-	    [:Suffix, :M, :Simple, :tam, "tam-am-", "be eaten"],
+    :terms [[:conjClass, :derivedStem, :derivedStemAug, :lexeme, :rootClass, :token, :token-gloss]  ;; schema
+	    [:Suffix, :M, :Simple, :tam, :Invar, "tam-am-", "be eaten"],
 	    [:Prefix, :B, :Simple, :ktb, :CCC, "kitìb-", "write"],
 	    [:Prefix, :S2, :Simple, :dgy, :CCY, "-sis-dag-", "see that s.o makes s.o. bring s.th. back "],
 	    [:Prefix, :SM, :Intensive, :dir, :CVC, "-moo-daar-", "kill one another"],
 	    [:Prefix, :T, :Intensive, :fry, :CCY, "-t-faraay-", "be born"],
-	    [:Suffix, :S2, :Simple, :hamasee, "hamašee-šiiš-", "cause to blind"],
+	    [:Suffix, :S2, :Simple, :hamasee, :Invar, "hamašee-šiiš-", "cause to blind"],
 	    [:Prefix, :R, :Simple, :sbb, :CCC, "-šbab-", "look at oneself"],
 	    [:Prefix, :M, :Intensive, :niy, :CVC, "-mee-niiy-", "be milked"],
-	    [:Suffix, :B, :Simple, :kileew, "kileew-", "guard, take prisoner"],
+	    [:Suffix, :B, :Simple, :kileew, :Invar, "kileew-", "guard, take prisoner"],
 	    [:Prefix, :SM, :Intensive, :dlb, :CCC, "-m-dalaab-", "buy ... together"],
-	    [:Suffix, :SM, :Intensive, :doob, "daab-sam-", "run together"],
+	    [:Suffix, :SM, :Intensive, :doob, :Invar, "daab-sam-", "run together"],
 	    [:Prefix, :S, :Simple, :bis, :CVC, "-soo-bis-", "cause to bury"],
 	    [:Prefix, :R, :Simple, :sar, :CVC, "-sar-", "stay awake"],
 	    [:Prefix, :B, :Simple, :mry, :CCY, "miriì-", "find"],
 	    [:Prefix, :S2, :Simple, :dif2, :CVC, "-šišoo-dif-", "see that s.o. has s.th. dyed "],
 	    [:Prefix, :T, :Intensive, :dif2, :CVC, "-too-daaf-", "be dyed, tanned (see fn. 29) "],
-	    [:Suffix, :B, :Simple, :suum, "šuum-", "enter"],
-	    [:Suffix, :M, :Simple, :raat, "raat-am-", "be asked, ask oneself"],
+	    [:Suffix, :B, :Simple, :suum, :Invar, "šuum-", "enter"],
+	    [:Suffix, :M, :Simple, :raat, :Invar, "raat-am-", "be asked, ask oneself"],
 	    [:Prefix, :S, :Simple, :sbb, :CCC, "-š-šabib-", "let ... look at"],
 	    [:Prefix, :S, :Simple, :sgy, :CCY, "-š-šagw-", "make ... do wrong"],
 	    [:Prefix, :S, :Simple, :liw, :CVC, "-soo-liw-", "make ... burn"],
 	    [:Prefix, :S, :Simple, :dif2, :CVC, "-šoo-dif-", "cause to dye tan"],
-	    [:Suffix, :B, :Simple, :tam, "tam-", "eat"],
+	    [:Suffix, :B, :Simple, :tam, :Invar, "tam-", "eat"],
 	    [:Prefix, :B, :Simple, :fry, :CCY, "firiì-", "give birth"],
 	    [:Prefix, :T, :Intensive, :ktb, :CCC, "-t-kataab-", "be written "],
 	    [:Prefix, :B, :Simple, :dif, :CVC, "díf-", "go away"],
-	    [:Suffix, :B, :Simple, :gwa, "gwa?-", "drink"],
-	    [:Suffix, :B, :Simple, :doob, "doob-", "marry"],
-	    [:Suffix, :SM, :Intensive, :yak, "yak-sam-", "rise up against one another"],
-	    [:Suffix, :S, :Simple, :kadaw, "kadaw-š-", "jingle, rattle (tr.)"],
+	    [:Suffix, :B, :Simple, :gwa, :Invar, "gwa?-", "drink"],
+	    [:Suffix, :B, :Simple, :doob, :Invar, "doob-", "marry"],
+	    [:Suffix, :SM, :Intensive, :yak, :Invar, "yak-sam-", "rise up against one another"],
+	    [:Suffix, :S, :Simple, :kadaw, :Invar, "kadaw-š-", "jingle, rattle (tr.)"],
 	    [:Prefix, :T, :Intensive, :sgwd, :CCC, "-š-t-agwaad-", "be washed-3"],
-	    [:Suffix, :SM, :Intensive, :adum, "?adum-sam-", "speak with one another"],
+	    [:Suffix, :SM, :Intensive, :adum, :Invar, "?adum-sam-", "speak with one another"],
 	    [:Prefix, :M, :Intensive, :bdn, :CCC, "-mee-bdaan-", "be forgotten"],
 	    [:Prefix, :S, :Simple, :rsd, :CCC, "-š-rašid-", "cause to tend cattle "],
-	    [:Suffix, :B, :Simple, :raat, "raat-", "ask"],
+	    [:Suffix, :B, :Simple, :raat, :Invar, "raat-", "ask"],
 	    [:Prefix, :B, :Simple, :dgy, :CCY, "digiì-", "bring back"],
 	    [:Prefix, :S, :Intensive, :dgy, :CCY, "-s-daag-", "make ... bring back many"],
-	    [:Prefix, :R, :Simple, :sa?, :CVC, "-sa?-", "sit (down) "],
-	    [:Suffix, :M, :Simple, :hug, "hug-am-", "be ground"],
+	    [:Prefix, :R, :Simple, :sa, :CVC, "-sa?-", "sit (down) "],
+	    [:Suffix, :M, :Simple, :hug, :Invar, "hug-am-", "be ground"],
 	    [:Prefix, :S, :Simple, :rkwy, :CCY, "-s-rakw-", "make ... fear"],
-	    [:Suffix, :S, :Simple, :?oos, "?ooš-iš-", "make ... urinate"],
+	    [:Suffix, :S, :Simple, :oos, "?ooš-iš-", "make ... urinate"],
 	    [:Prefix, :B, :Simple, :liw, :CVC, "liw-", "burn (trans.)"],
-	    [:Suffix, :B, :Simple, :nuun, "nuun-", "hand over"],
+	    [:Suffix, :B, :Simple, :nuun, :Invar, "nuun-", "hand over"],
 	    [:Prefix, :S, :Intensive, :msw, :CCC, "-s-maasiw-", "let ... hear"],
 	    [:Prefix, :S, :Simple, :dbl, :CCC, "-s-dabil-", "cause to collect"],
 	    [:Prefix, :B, :Simple, :dbl, :CCC, "dibìl-", "collect"],
 	    [:Prefix, :T, :Intensive, :dir, :CVC, "-too-daar-", "be killed"],
 	    [:Prefix, :B, :Simple, :min, :CVC, "min-", "shave"],
-	    [:Suffix, :S, :Simple, :tam, "tam-s-", "feed"],
-	    [:Suffix, :B, :Simple, :rih, "rih-", "see"],
+	    [:Suffix, :S, :Simple, :tam, :Invar, "tam-s-", "feed"],
+	    [:Suffix, :B, :Simple, :rih, :Invar, "rih-", "see"],
 	    [:Prefix, :SM, :Intensive, :bis, :CVC, "-moo-baas-", "help to bury, bury ... together"],
 	    [:Prefix, :B, :Simple, :bis, :CVC, "bis-", "bury"],
 	    [:Prefix, :S, :Simple, :ktm, :CCC, "-s-katim-", "cause to arrive"],
 	    [:Prefix, :T, :Intensive, :min, :CVC, "-too-maan-", "be shaved"],
-	    [:Suffix, :S2, :Simple, :tam, "tam-siis-", "cause to feed"],
+	    [:Suffix, :S2, :Simple, :tam, :Invar, "tam-siis-", "cause to feed"],
 	    [:Prefix, :SM, :Intensive, :dgy, :CCY, "-m-dagaay-", "help to bring back"],
 	    [:Prefix, :R, :Simple, :min, :CVC, "-man-", "shave oneself"],
 	    [:Prefix, :S2, :Simple, :dbl, :CCC, "-sis-dabil-", "see that s.o. has s.th. collected, see that s.o. makes s.o. collect s.th. "],
-	    [:Prefix, :T, :Intensive, :dlb, :CCC, "-t-dabaal-", "be collected-2"],
+	    [:Prefix, :T, :Intensive, :dbl, :CCC, "-t-dabaal-", "be collected-2"],
 	    [:Prefix, :B, :Simple, :dlb, :CCC, "dilìb-", "buy"],
 	    [:Prefix, :R, :Simple, :liw, :CVC, "-law-", "burn oneself"],
 	    [:Prefix, :S, :Intensive, :dir, :CVC, "-s-daar-", "make ... kill many"],
@@ -981,33 +975,33 @@
 	    [:Prefix, :M, :Intensive, :swy, :CCY, "-mee-šwaay-", "help to mix"],
 	    [:Prefix, :R, :Simple, :gnf, :CCC, "-gnaf-", "kneel down"],
 	    [:Prefix, :T, :Intensive, :dgy, :CCY, "-t-dagaay-", "be brought back"],
-	    [:Suffix, :SM, :Intensive, :tam, "tam-sam-", "eat one another, eat together"],
+	    [:Suffix, :SM, :Intensive, :tam, :Invar, "tam-sam-", "eat one another, eat together"],
 	    [:Prefix, :B, :Simple, :fnk, :CCC, "finìk-", "bite"],
-	    [:Suffix, :M, :Simple, :?eegrim, "?eegrim-am-", "turn grey"],
+	    [:Suffix, :M, :Simple, :eegrim, :Invar, "?eegrim-am-", "turn grey"],
 	    [:Prefix, :R, :Simple, :hmy, :CCY, "-hme-", "cover oneself "],
 	    [:Prefix, :SM, :Intensive, :tib, :CVC, "-moo-taab-", "help to fill"],
-	    [:Suffix, :M, :Simple, :reeh, "reeh-am-", "rest oneself, be made at ease"],
+	    [:Suffix, :M, :Simple, :reeh, :Invar, "reeh-am-", "rest oneself, be made at ease"],
 	    [:Prefix, :T, :Intensive, :sik, :CVC, "-too-šaak-", "be hunted"],
 	    [:Prefix, :B, :Simple, :kwbs, :CCC, "kwibìs-", "hide"],
 	    [:Prefix, :T, :Intensive, :hby, :CCY, "-t-habaay-", "be forbidden, prevented"],
-	    [:Suffix, :M, :Simple, :fid, "fid-am-", "blow one's nose"],
+	    [:Suffix, :M, :Simple, :fid, :Invar, "fid-am-", "blow one's nose"],
 	    [:Prefix, :R, :Simple, :skt, :CCC, "-skat-", "choke oneself"],
 	    [:Prefix, :SM, :Intensive, :gid, :CVC, "-moo-gaad-", "throw at one another"],
 	    [:Prefix, :SM, :Intensive, :rgg, :CCC, "-m-ragaag-", "help to drive away "],
 	    [:Prefix, :B, :Simple, :rib, :CVC, "rib-", "refuse"],
 	    [:Prefix, :B, :Simple, :sfy, :CCY, "šifiì-", "drink milk"],
-	    [:Suffix, :B, :Simple, :ad, "?ad-", "tremble"],
+	    [:Suffix, :B, :Simple, :ad, :Invar, "?ad-", "tremble"],
 	    [:Prefix, :S, :Simple, :dmy, :CCY, "-š-dam-", "make ... stink "],
 	    [:Prefix, :R, :Simple, :fif, :CVC, "-faf-", "boil over"],
 	    [:Prefix, :T, :Intensive, :khn, :CCC, "-t-kahaan-", "be loved "],
-	    [:Suffix, :S, :Simple, :?ibaab, "?ibaab-s-", "send on a journey"],
+	    [:Suffix, :S, :Simple, :ibaab, :Invar, "?ibaab-s-", "send on a journey"],
 	    [:Prefix, :R, :Simple, :mkr, :CCC, "-mkar-", "take advice"],
 	    [:Prefix, :R, :Simple, :dgy, :CCY, "-dge-", "return (intr.)"],
 	    [:Prefix, :SM, :Intensive, :min, :CVC, "-moo-maan-", "shave one another"],
-	    [:Suffix, :S, :Simple, :rih, "rih-is-", "make ... see show"],
+	    [:Suffix, :S, :Simple, :rih, :Invar, "rih-is-", "make ... see show"],
 	    [:Prefix, :B, :Simple, :ktm, :CCC, "kitìm-", "arrive"],
-	    [:Suffix, :S, :Simple, :as, "?as-is-", "make ... shut"],
-	    [:Suffix, :S, :Simple, :hamas, "hamašee-š-", "blind"],
+	    [:Suffix, :S, :Simple, :as, :Invar, "?as-is-", "make ... shut"],
+	    [:Suffix, :S, :Simple, :hamas, :Invar, "hamašee-š-", "blind"],
 	    [:Prefix, :T, :Intensive, :frk, :CCC, "-t-faraak-", "be dug"],
 	    [:Prefix, :T, :Intensive, :bis, :CVC, "-too-baas-", "be buried"]]
     }
