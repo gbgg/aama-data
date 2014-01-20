@@ -1,22 +1,23 @@
-AAMADATA_HOME=..
-XSLHOME=${AAMADATA_HOME}/tools
-JARDIR=/usr/local/jar
-SAXON=saxon9.jar
+AAMATOOLS_HOME=./bin
+XSLHOME=${AAMATOOLS_HOME}
+#JARDIR=/usr/local/jar
+#SAXON=saxon9.jar
+
+JARDIR=../../../usr/local/jar
+SAXON=saxon9pe.jar
 
 default:
-	echo "Usage: make n3 F=<filename> LANG=<lang>"
+	echo "Usage: make edn F=<filename>"
+	echo "    <filename> includes path"
 
-n3:
+# convert xml data to edn, put results in same dir as source
+# put this makefile wherever convenient (e.g. ./bin/)
+# run e.g. $ make edn -f bin/Makefile F=data/beja-bishari/beja-bishari-pdgms.xml
+
+edn:
+	LANG=${F%-pdgms}
 	java  -jar ${JARDIR}/${SAXON} \
 	-xi \
-	-s:${F}.xml \
-	-xsl:${XSLHOME}/xml2n3.xsl \
-	lang=${LANG} > ${F}.n3 ;
-
-dump:
-	java  -jar ${JARDIR}/${SAXON} \
-	-xi \
-	-s:${F}.xml \
-	-xsl:${XSLHOME}/propdump.xsl;
-
-
+	-s:${F} \
+	-xsl:${XSLHOME}/xml2edn.xsl \
+	lang=${LANG} > `dirname ${F}`/`basename ${F} .xml`.edn ;

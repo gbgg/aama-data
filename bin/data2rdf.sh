@@ -2,14 +2,16 @@
 # dependency:  rdf2rdf
 # usage:  data2rdf "dir"
 # examples:
-#    aama/$ tools/data2rdf "data/*" --  converts everything
-#    aama/$ tools/data2rdfdata2rdf "data/alaaba" -- converts only alaabe
-#    aama/$ tools/data2rdfdata2rdf "data/alaaba data/burji data/coptic" -- converts three files
-#    aama/$ tools/data2rdfdata2rdf "schema" -- converts only schema
+#    aama/$ bin/data2rdf "data/*" --  converts everything
+#    aama/$ bin/data2rdfdata2rdf "data/alaaba" -- converts only alaabe
+#    aama/$ bin/data2rdfdata2rdf "data/alaaba data/burji data/coptic" -- converts three files
+#    aama/$ bin/data2rdfdata2rdf "schema" -- converts only schema
 # cumulative logfile written to logs/data2rdf.log
 # each lang/var gets its own logfile
 
-. tools/constants.sh
+# 04/22/2013: gbgg modified constants.sh
+
+. bin/constants.sh
 
 echo "data2rdf" > logs/data2rdf.log;
 
@@ -19,7 +21,7 @@ do
     lang=${l1#data/}
     from=data/$lang/`basename ${f%-pdgms.xml}`.data.ttl
     to=data/$lang/`basename ${f%-pdgms.xml}`.data.rdf
-    # echo "$lang: rdfizing "$from to $to
+    echo "$lang: rdfizing "$from to $to
 
     java -jar ${RDF2RDF} $from $to
 

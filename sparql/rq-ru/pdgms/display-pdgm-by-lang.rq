@@ -1,0 +1,91 @@
+﻿# In following use of  FROM NAMED doesn't seem to make any difference
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://id.oi.uchicago.edu/aama/2013/graph/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
+
+SELECT ?g ?polarity ?clause ?num ?pers ?gen ?token
+#FROM NAMED aamag:oromo
+WHERE
+{
+	GRAPH ?g {
+		?s orm:tam Orm:Present .
+		OPTIONAL { ?s orm:clauseType ?clauseType .
+		   ?clauseType rdfs:label ?clause . }
+		?s orm:polarity ?pol .
+		?pol rdfs:label ?polarity .
+		?s orm:derivedStem Orm:Base .
+		#?s aama:lang aama:Oromo .
+		?s orm:number ?number .
+		?number rdfs:label ?num .
+		?s orm:person ?person .
+		?person rdfs:label ?pers .
+		?s orm:gender ?gender .
+		?gender rdfs:label ?gen .
+		?s orm:token ?token .
+	}
+}
+ORDER BY ?polarity ?clause DESC(?num) ?pers DESC(?gen)
+
+# Or simply
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://id.oi.uchicago.edu/aama/2013/graph/>
+PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
+PREFIX Orm:   <http://id.oi.uchicago.edu/aama/2013/Oromo/>
+
+SELECT ?polarity ?clause ?num ?pers ?gen ?token
+WHERE
+{
+		?s orm:tam Orm:Present .
+		OPTIONAL { ?s orm:clauseType ?clauseType .
+		   ?clauseType rdfs:label ?clause . }
+		?s orm:polarity ?pol .
+		?pol rdfs:label ?polarity .
+		?s orm:derivedStem Orm:Base .
+		#?s aama:lang aama:Oromo .
+		?s orm:number ?number .
+		?number rdfs:label ?num .
+		?s orm:person ?person .
+		?person rdfs:label ?pers .
+		?s orm:gender ?gender .
+		?gender rdfs:label ?gen .
+		?s orm:token ?token .
+}
+ORDER BY ?polarity ?clause DESC(?num) ?pers DESC(?gen)
+
+ # arteiga 
+PREFIX rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+PREFIX Bar:   <http://id.oi.uchicago.edu/aama/2013/Beja-arteiga/>
+
+SELECT  ?polarity ?conj ?root ?num ?pers ?gen ?token
+WHERE
+{
+	?s bar:tam Bar:Present .
+	?s bar:polarity ?pol .
+	?s bar:conjClass ?conjClass .
+	?conjClass rdfs:label ?conj .
+	?s bar:rootClass ?rootClass .
+	?rootClass rdfs:label ?root .
+	?pol rdfs:label ?polarity .
+	#?s aama:lang aama:Beja-arteiga .
+	?s bar:number ?number .
+	?number rdfs:label ?num .
+	?s bar:person ?person .
+	?person rdfs:label ?pers .
+	?s bar:gender ?gender .
+	?gender rdfs:label ?gen .
+	?s bar:token ?token .
+}
+ORDER BY ?polarity?root DESC(?num) ?pers DESC(?gen)
+
+beja-arteiga : "conjClass, tam, polarity, rootClass"

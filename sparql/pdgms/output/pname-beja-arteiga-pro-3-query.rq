@@ -1,0 +1,37 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+
+SELECT  ?case ?gender ?number ?person  ?token 
+WHERE
+{
+	{
+		GRAPH aamag:beja-arteiga
+		{
+			?s	bar:pos	bar:Pronoun . 
+			?s	aamas:lang	aama:Beja-arteiga .
+			?s	bar:proClass	bar:Independent .
+			?s	aamas:lang	?lang .
+			?lang	rdfs:label	?langLabel . 
+			OPTIONAL { ?s	bar:case	?Qcase . 
+ 			?Qcase	rdfs:label	?case . }
+			OPTIONAL { ?s	bar:gender	?Qgender . 
+ 			?Qgender	rdfs:label	?gender . }
+			OPTIONAL { ?s	bar:number	?Qnumber . 
+ 			?Qnumber	rdfs:label	?number . }
+			OPTIONAL { ?s	bar:person	?Qperson . 
+ 			?Qperson	rdfs:label	?person . }
+			OPTIONAL { ?s	bar:number	?number . 
+			?number	rdfs:label	?num . }
+			OPTIONAL {?s	bar:person	?person . 
+			?person	rdfs:label	?pers . }
+			OPTIONAL { ?s	bar:gender	?gender . 
+			?gender	rdfs:label	?gen . }
+			?s	bar:token	?token . 
+		}
+	}
+}
+ORDER BY  ?case ?gender ?number ?person   DESC(?num) ?pers DESC(?gen)

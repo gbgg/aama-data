@@ -1,0 +1,14 @@
+# filename: ex439.rq
+prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?class ?subClass 
+WHERE {
+GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
+	   ?subClass rdfs:subClassOf+ rdfs:Class .
+	  ?subClass rdfs:subClassOf ?class
+	}
+}
+ORDER BY DESC(?class) ?subClass

@@ -1,0 +1,24 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+
+SELECT DISTINCT  ?language ?token ?oLabel
+WHERE 
+{
+GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
+	?s ?p ?o ;
+	<http://id.oi.uchicago.edu/aama/2013/%lang%/gender> <http://id.oi.uchicago.edu/aama/2013/%lang%/Fem> ;
+	<http://id.oi.uchicago.edu/aama/2013/%lang%/person> <http://id.oi.uchicago.edu/aama/2013/%lang%/Person2> ;
+<http://id.oi.uchicago.edu/aama/2013/%lang%/token> ?token ;
+	aamas:lang aama:%Lang% .
+	aama:%Lang% rdfs:label ?language .
+	?p rdfs:label ?pLabel .
+	?o rdfs:label ?oLabel .
+FILTER (?p NOT IN (
+		<http://id.oi.uchicago.edu/aama/2013/%lang%/person> , 
+		<http://id.oi.uchicago.edu/aama/2013/%lang%/gender> 		))
+	}
+}
+ORDER BY ?language ?token ?oLabel 

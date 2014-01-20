@@ -1,5 +1,4 @@
 #!/bin/bash
-;; generate roots from lisaan
 
 arURI="http://id.oi.uchicago.edu/aama/2013/Arabic"
 

@@ -1,0 +1,28 @@
+﻿		#output-pdgmids.rq (-- to be saved as LANG(-LANGVAR)-pdgm-pids.tsv)
+		# This will return all the pid (paradigm IDs), paradigm names, and paradigm notes
+		#  in the archive (relies on fact that ?pid is subject only of triples that say it is an
+		# instance of aama:pid, and that aama:pid has as predicate either an aama:pdgmlabel or an aama:pdgmnote.
+		# (substitute archive language and variety name for <LANG> and <LANGVAR>)
+
+		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+		PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+
+		SELECT DISTINCT ?qpid ?qp ?qo
+		WHERE
+		{
+			?pid ?p ?o .
+			?s aama:pid ?pid .
+			?s aama:lang aama:oromo .
+			OPTIONAL  { ?s aama:langvar ?langVar . }
+			BIND (CONCAT("aama:", SUBSTR(str(?pid), 41)) AS ?qpid)
+			BIND (IF(regex(str(?p), "www.w3"),
+					  "a",
+					  CONCAT("aama:", SUBSTR(str(?p), 41))
+						) AS ?qp )
+			BIND (IF(regex(str(?o), "oi.uchicago"),
+					  CONCAT("aama:", SUBSTR(str(?o), 41)),
+					  ?o
+						) AS ?qo )
+		}
+		ORDER BY ?qpid ?qp

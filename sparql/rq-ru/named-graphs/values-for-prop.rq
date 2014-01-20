@@ -1,0 +1,21 @@
+prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/>
+prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT  ?value
+WHERE {
+#GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
+GRAPH <http://oi.uchicago.edu/aama/2013/graph/oromo> {
+	  #?pred aamas:lang ?lang .
+	  #?lang rdfs:label ?language .
+      ?pred rdfs:label ?value .
+      #?pred rdf:type <http://id.oi.uchicago.edu/aama/2013/%lang%/%type%> .
+      ?pred rdf:type <http://id.oi.uchicago.edu/aama/2013/oromo/Tam> .
+	  # Too many of the following, use separate: lexeme~lexlemma.template
+	  # FILTER NOT EXISTS {?pred rdf:type aamas:Lexeme }
+	   #MINUS {?pred rdf:type aamas:Lexeme }
+	  # For readability
+      #BIND (SUBSTR(str(?type), 37) AS ?property)
+}}
+ORDER BY ASC(?value)

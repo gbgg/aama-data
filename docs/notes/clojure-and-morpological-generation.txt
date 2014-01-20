@@ -1,0 +1,160 @@
+Morning!
+
+Just finished some code you might find interesting.  It dawned on me yesterday that Clojure makes it relatively easy to generate  conjugations, so today I implemented an Arabic Verb Conjugator.  So I can do something like this:
+
+        (conjugate "ktb" :v3)
+
+and the output will be the complete form 3 conjugation of ktb (see below).  Since I have the complete list of roots from the Lisaan al-Arab, this means we can generate paradigms for any Arabic verb, and eventually any noun.  We don't have to load all the data into the database; we can just load the roots and display the available conjugations.  All the paradigm data will be generated dynamically on the backend rather than stored.  Kinda cool.  I haven't yet implemented support for e.g. "weak" radicals, so it won't do lexemes like "qAl" properly yet, but that shouldn't be too hard.
+
+The nice thing about Clojure is that its syntax works very well for morphological description.  For example, here is the design I came up with for Arabic form 3:
+
+(def v3-perfect-active
+  ^{:aspect :perfect, :voice :active, :mood :indicative}
+  #{ ^{:number :sg}
+     {:fa?ala ^{:v :m, :p :3} ["" :fa?al "a"]
+      :fa?alat ^{:v :f, :p :3} ["" :fa?al "at°"]
+      :fa?alta ^{:v :m, :p :2} ["" :fa?al "°ta"]
+      :fa?alti ^{:v :f, :p :2} ["" :fa?al "°ti"]
+      :fa?altu ^{:v :c, :p :1} ["" :fa?al "°tu"]}
+     ^{:number :dual}
+     {:fa?ala?     ^{:v :m, :p :3} ["" :fa?al "a?"]
+      :fa?alata?   ^{:v :f, :p :3} ["" :fa?al "ata?"]
+      :fa?altuma?  ^{:v :m, :p :2} ["" :fa?al "tuma?"]
+      :fa?altuma?F ^{:v :f, :p :2} ["" :fa?al "tuma?"]}
+     ^{:number :pl}
+     {:fa?aluw    ^{:v :m, :p :3} ["" :fa?al "uw?"]
+      :fa?alna    ^{:v :m, :p :3} ["" :fa?al "°na"]
+      :fa?altum   ^{:v :m, :p :2} ["" :fa?al "°tum"]
+      :fa?altun²a ^{:v :m, :p :2} ["" :fa?al "°tun²a"]
+      :fa?alna?   ^{:v :m, :p :1} ["" :fa?al "°na?"]}
+     })
+and similar for the other combinations of voice, aspect, etc. The caret ^ marks metadata.  This is actual Clojure code, not a data format like json. #{} is a set, {} is a map of key-value pairs, [] is a vector (i.e. array).  Each entry associates a key (e.g. :fa?ala) with a schema consisting of prefix, stem tag, and suffix (e.g.   ["" :fa?al "ta"]).  The stem tag is used to look up a stem schema, which is implemented as a function - apply it to a root, and it generates the appropriate stem.  Here's chunk of the stem schemata table:
+
+(def arabic-stems
+  { ;; v1 active                                                                                                               
+   :fa?al #(join [%1 "a" %2 "a" %3])
+   :fa?ul #(join [%1 "a" %2 "u" %3])
+   :fa?il #(join [%1 "a" %2 "i" %3])
+   :f?al   #(join [%1 "°" %2 "a" %3])
+   :f?ul   #(join [%1 "°" %2 "u" %3])
+   :f?il   #(join [%1 "°" %2 "i" %3])
+   ;; v1 passive                                                                                                               
+   :fu?il #(join [%1 "u" %2 "i" %3])
+   ;; :f?al   #(join [%1 "°" %2 "a" %3])                                                                                       
+   ;; v2                                                                                                                       
+   :fa?²al #(join [%1 "a" %2 "²" "a" %3])
+  …etc.
+
+Here #(…) is an anonymous (lambda) function, and %1, %2, %3 allow access to the arguments.  The functions here just insert the three radicals in the stem pattern and join turns the vector/array into a string.  Simple, no?
+
+It may not be obvious, but this would make a great data format for aama, or for any language.  Since Clojure is a lisp dialect, we can implement any sort of morphological formation rules straightforwardly as Clojure functions.  Next step somewhere down the line is to figure out how to do something like this for all the other aama languages.  In the case of Arabic, because it is so regular, we can use such morphological descriptions to dynamically generate data; in the case of the other aama languages, we can use this format (details to be determined) to describe the data and then generate the RDF data we need, effectively replacing our *.txt and *.xml files.  I'm not going to do that now because I want to focus on getting the GUI running, but once that's done and we get back to data quality (and support for other people's data) this will be worth looking into.
+
+I'm planning to upload my data tomorrow.  The bad news is I'm going to use github instead of bitbucket.  Git is pretty much the same as mercurial, but it has some features that make it more attractive.  In particular, git "branches" make it very easy to experiment without polluting the repo - if the experiment doesn't work out you just drop it.  See http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging or just google around on "git branch".  Stash is also useful:  http://git-scm.com/book/en/Git-Tools-Stashing.  Also, both Cappuccino and Clojure are hosted on github - it seems to be where the cool kids hang out.
+
+Cheers,
+
+Gregg
+
+Sample output (unsorted) from (conjugate "?rb" :nsr), where :nsr means the a-u conjugation.  Note that these are Clojure maps of key-value pairings.  Next step would be to generate RDF or JSON for display in our GUI.
+
+{:token "?a?°rub°", :g :c, :voice :active, :mood :jussive, :number :sg, :p :1}                                                 
+{:token "ta?°rub°", :g :m, :voice :active, :mood :jussive, :number :sg, :p :2}                                                 
+{:token "ta?°rubiy", :g :f, :voice :active, :mood :jussive, :number :sg, :p :2}                                                
+{:token "ya?°rub°", :g :m, :voice :active, :mood :jussive, :number :sg, :p :3}                                                 
+{:token "ta?°rub°", :g :f, :voice :active, :mood :jussive, :number :sg, :p :3}                                                 
+{:token "na?°rub°", :g :m, :voice :active, :mood :jussive, :number :pl, :p :3}                                                 
+{:token "ta?°rubuw?", :g :m, :voice :active, :mood :jussive, :number :pl, :p :3}                                               
+{:token "ta?°rubuw?", :g :m, :voice :active, :mood :jussive, :number :pl, :p :3}                                               
+{:token "ya?°rub°na", :g :m, :voice :active, :mood :jussive, :number :pl, :p :3}                                               
+{:token "ya?°rubuw?", :g :m, :voice :active, :mood :subjunctive, :number :pl, :p :3}                                           
+{:token "ta?°ruba?", :g :f, :voice :active, :mood :subjunctive, :number :dual, :p :2}                                          
+{:token "ta?°ruba?", :g :m, :voice :active, :mood :subjunctive, :number :dual, :p :2}                                          
+{:token "?u?°rab°", :g :c, :voice :passive, :mood :jussive, :number :sg, :p :1}                                                
+{:token "tu?°rab°", :g :m, :voice :passive, :mood :jussive, :number :sg, :p :2}                                                
+{:token "tu?°rabiy", :g :f, :voice :passive, :mood :jussive, :number :sg, :p :2}                                               
+{:token "yu?°rab°", :g :m, :voice :passive, :mood :jussive, :number :sg, :p :3}                                                
+{:token "tu?°rab°", :g :f, :voice :passive, :mood :jussive, :number :sg, :p :3}                                                
+{:token "nu?°rab°", :g :m, :voice :passive, :mood :jussive, :number :pl, :p :3}                                                
+{:token "tu?°rabuw?", :g :m, :voice :passive, :mood :jussive, :number :pl, :p :3}                                              
+{:token "tu?°rabuw?", :g :m, :voice :passive, :mood :jussive, :number :pl, :p :3}                                              
+{:token "yu?°rab°na", :g :m, :voice :passive, :mood :jussive, :number :pl, :p :3}                                              
+{:token "yu?°rabuw?", :g :m, :voice :passive, :mood :jussive, :number :pl, :p :3}                                              
+{:token "tu?°raba?", :g :f, :voice :passive, :mood :jussive, :number :dual, :p :3}                                             
+{:token "yu?°raba?", :g :m, :voice :passive, :mood :jussive, :number :dual, :p :3}                                             
+{:token "tu?°raba?", :g :f, :voice :passive, :mood :jussive, :number :dual, :p :2}                                             
+{:token "tu?°raba?", :g :m, :voice :passive, :mood :jussive, :number :dual, :p :2}                                             
+{:token "?u?°raba", :g :c, :voice :passive, :mood :subjunctive, :number :sg, :p :1}                                            
+{:token "tu?°raba", :g :m, :voice :passive, :mood :subjunctive, :number :sg, :p :2}                                            
+{:token "tu?°rabiy", :g :f, :voice :passive, :mood :subjunctive, :number :sg, :p :2}                                           
+{:token "yu?°raba", :g :m, :voice :passive, :mood :subjunctive, :number :sg, :p :3}                                            
+{:token "tu?°raba", :g :f, :voice :passive, :mood :subjunctive, :number :sg, :p :3}                                            
+{:token "nu?°raba", :g :m, :voice :passive, :mood :subjunctive, :number :pl, :p :3}                                            
+{:token "tu?°rabuw?", :g :m, :voice :passive, :mood :subjunctive, :number :pl, :p :3}                                          
+{:token "tu?°rabuw?", :g :m, :voice :passive, :mood :subjunctive, :number :pl, :p :3}                                          
+{:token "yu?°rab°na", :g :m, :voice :passive, :mood :subjunctive, :number :pl, :p :3}                                          
+{:token "yu?°rabuw?", :g :m, :voice :passive, :mood :subjunctive, :number :pl, :p :3}                                          
+{:token "tu?°raba?", :g :f, :voice :passive, :mood :subjunctive, :number :dual, :p :3}                                         
+{:token "yu?°raba?", :g :m, :voice :passive, :mood :subjunctive, :number :dual, :p :3}                                         
+{:token "tu?°raba?", :g :f, :voice :passive, :mood :subjunctive, :number :dual, :p :2}                                         
+{:token "tu?°raba?", :g :m, :voice :passive, :mood :subjunctive, :number :dual, :p :2}                                         
+{:token "?a?°rubu", :g :c, :voice :active, :aspect :imperfect, :mood :indicative, :number :sg, :p :1}                          
+{:token "ta?°rubu", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :sg, :p :2}                          
+{:token "ta?°rubiy°na", :g :f, :voice :active, :aspect :imperfect, :mood :indicative, :number :sg, :p :2}                      
+{:token "ya?°rubu", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :sg, :p :3}                          
+{:token "ta?°rubu", :g :f, :voice :active, :aspect :imperfect, :mood :indicative, :number :sg, :p :3}                          
+{:token "ta?°ruba?°ni", :g :f, :voice :active, :aspect :imperfect, :mood :indicative, :number :dual, :p :3}                    
+{:token "ya?°ruba?°ni", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :dual, :p :3}                    
+{:token "na?°rubu", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                          
+{:token "ta?°rubuw°na", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                      
+{:token "ta?°rubuw°na", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                      
+{:token "ya?°rub°na", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                        
+{:token "ya?°rubuw°na", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                      
+{:token "ta?°ruba?°ni", :g :f, :voice :active, :aspect :imperfect, :mood :indicative, :number :dual, :p :2}                    
+{:token "ta?°ruba?°ni", :g :m, :voice :active, :aspect :imperfect, :mood :indicative, :number :dual, :p :2}                    
+{:token "?u?°rabu", :g :c, :voice :passive, :aspect :imperfect, :mood :indicative, :number :sg, :p :1}                         
+{:token "tu?°rabu", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :sg, :p :2}                         
+{:token "tu?°rabiy°na", :g :f, :voice :passive, :aspect :imperfect, :mood :indicative, :number :sg, :p :2}                     
+{:token "yu?°rabu", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :sg, :p :3}                         
+{:token "tu?°rabu", :g :f, :voice :passive, :aspect :imperfect, :mood :indicative, :number :sg, :p :3}                         
+{:token "tu?°raba?°ni", :g :f, :voice :passive, :aspect :imperfect, :mood :indicative, :number :dual, :p :3}                   
+{:token "yu?°raba?°ni", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :dual, :p :3}                   
+{:token "nu?°rabu", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                         
+{:token "tu?°rabuw°na", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                     
+{:token "tu?°rabuw°na", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                     
+{:token "yu?°rab°na", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                       
+{:token "yu?°rabuw°na", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :pl, :p :3}                     
+{:token "tu?°raba?°ni", :g :f, :voice :passive, :aspect :imperfect, :mood :indicative, :number :dual, :p :2}                   
+{:token "tu?°raba?°ni", :g :m, :voice :passive, :aspect :imperfect, :mood :indicative, :number :dual, :p :2}                   
+{:token "?arub°tu", :g :c, :voice :active, :aspect :perfect, :mood :indicative, :number :sg, :p :1}                            
+{:token "?arub°ta", :g :m, :voice :active, :aspect :perfect, :mood :indicative, :number :sg, :p :2}                            
+{:token "?arub°ti", :g :f, :voice :active, :aspect :perfect, :mood :indicative, :number :sg, :p :2}                            
+{:token "?aruba", :g :m, :voice :active, :aspect :perfect, :mood :indicative, :number :sg, :p :3}                              
+{:token "?arubat°", :g :f, :voice :active, :aspect :perfect, :mood :indicative, :number :sg, :p :3}                            
+{:token "?arubata?", :g :f, :voice :active, :aspect :perfect, :mood :indicative, :number :dual, :p :3}                         
+{:token "?aruba?", :g :m, :voice :active, :aspect :perfect, :mood :indicative, :number :dual, :p :3}                           
+{:token "?arub°na", :g :f, :voice :active, :aspect :perfect, :mood :indicative, :number :pl, :p :3}                            
+{:token "?arubuw?", :g :m, :voice :active, :aspect :perfect, :mood :indicative, :number :pl, :p :3}                            
+{:token "?arubtuma?", :g :f, :voice :active, :aspect :perfect, :mood :indicative, :number :dual, :p :2}                        
+{:token "?arubtuma?", :g :m, :voice :active, :aspect :perfect, :mood :indicative, :number :dual, :p :2}                        
+{:token "?arub°tun²a", :g :f, :voice :active, :aspect :perfect, :mood :indicative, :number :pl, :p :2}                         
+{:token "?arub°tum", :g :m, :voice :active, :aspect :perfect, :mood :indicative, :number :pl, :p :2}                           
+{:token "?arub°na?", :g :c, :voice :active, :aspect :perfect, :mood :indicative, :number :pl, :p :1}                           
+{:token "?urib°tu", :g :c, :voice :passive, :aspect :perfect, :mood :indicative, :number :sg, :p :1}                           
+{:token "?urib°ta", :g :m, :voice :passive, :aspect :perfect, :mood :indicative, :number :sg, :p :2}                           
+{:token "?urib°ti", :g :f, :voice :passive, :aspect :perfect, :mood :indicative, :number :sg, :p :2}                           
+{:token "?uriba", :g :m, :voice :passive, :aspect :perfect, :mood :indicative, :number :sg, :p :3}                             
+{:token "?uribat°", :g :f, :voice :passive, :aspect :perfect, :mood :indicative, :number :sg, :p :3}                           
+{:token "?uribata?", :g :f, :voice :passive, :aspect :perfect, :mood :indicative, :number :dual, :p :3}                        
+{:token "?uribata?", :g :m, :voice :passive, :aspect :perfect, :mood :indicative, :number :dual, :p :3}                        
+{:token "?uribata?", :g :f, :voice :passive, :aspect :perfect, :mood :indicative, :number :dual, :p :3}                        
+{:token "?uriba?", :g :m, :voice :passive, :aspect :perfect, :mood :indicative, :number :dual, :p :3}                          
+{:token "?urib°na", :g :f, :voice :passive, :aspect :perfect, :mood :indicative, :number :pl, :p :3}                           
+{:token "?uribuw?", :g :m, :voice :passive, :aspect :perfect, :mood :indicative, :number :pl, :p :3}                           
+{:token "?urib°tun²a", :g :f, :voice :passive, :aspect :perfect, :mood :indicative, :number :pl, :p :2}                        
+{:token "?urib°tum", :g :m, :voice :passive, :aspect :perfect, :mood :indicative, :number :pl, :p :2}                          
+{:token "?urib°na?", :g :c, :voice :passive, :aspect :perfect, :mood :indicative, :number :pl, :p :1}                          
+                                     
+
+
+Gregg Reynolds
+gar@mobileink.com

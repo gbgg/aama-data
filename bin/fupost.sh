@@ -8,14 +8,17 @@
 # cumulative logfile written to logs/fupost.log
 # each lang/var gets its own logfile
 
-echo "fupost.log" > logs/fupost.log;
+# 07/13/13: cf. fupost-default.sh for loading data into single default graph
+
+. bin/constants.sh
+
+echo "fuload.log" > logs/fuload.log;
 for f in `find $1 -name *.rdf`
 do
     l=${f%.rdf}
     lang=${l#data/}
-    langpath=`dirname ${lang/\/\///}`
-    ll=`echo $langpath | tr '[:lower:]' '[:upper:]'`
-    graph="http://oi.uchicago.edu/GRAPH/AAMA/$ll"
+    graph="http://oi.uchicago.edu/aama/2013/graph/`dirname ${lang/\/\///}`"
     echo posting $f to $graph;
-    s-post -v http://localhost:3030/aama/data $graph  $f 2>&1 >>logs/fupost.log
+    ${FUSEKIDIR}/s-post -v http://localhost:3030/aama/data $graph  $f 2>&1 >>logs/fuload.log
+	#${FUSEKIDIR}/s-post -v http://localhost:3030/aamaData/data 'default'   $f 2>&1 >>logs/fuload.log
 done

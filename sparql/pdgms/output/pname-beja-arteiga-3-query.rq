@@ -1,0 +1,34 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+
+SELECT  ?conjClass ?derivedStem ?nonFiniteForm ?participle ?token ?tokenaffix ?tokengloss  
+WHERE
+{
+	{
+		GRAPH aamag:beja-arteiga
+		{
+			?s	bar:pos	bar:Verb . 
+			NOT EXISTS {?s bar:person ?person } .
+			?s	aamas:lang	aama:Beja-arteiga .
+			?s	bar:multiLex	bar:VERBALPARTICIPLES .
+			?s	aamas:lang	?lang .
+			?lang	rdfs:label	?langLabel . 
+			OPTIONAL { ?s	bar:conjClass	?QconjClass . 
+ 			?QconjClass	rdfs:label	?conjClass . }
+			OPTIONAL { ?s	bar:derivedStem	?QderivedStem . 
+ 			?QderivedStem	rdfs:label	?derivedStem . }
+			OPTIONAL { ?s	bar:nonFiniteForm	?QnonFiniteForm . 
+ 			?QnonFiniteForm	rdfs:label	?nonFiniteForm . }
+			OPTIONAL { ?s	bar:participle	?Qparticiple . 
+ 			?Qparticiple	rdfs:label	?participle . }
+			OPTIONAL { ?s	bar:token	?token . }
+			OPTIONAL { ?s	bar:token-affix	?tokenaffix . }
+			OPTIONAL { ?s	bar:token-gloss	?tokengloss . }
+		}
+	}
+}
+ORDER BY  ?conjClass ?derivedStem ?nonFiniteForm ?participle ?token ?tokenaffix ?tokengloss   

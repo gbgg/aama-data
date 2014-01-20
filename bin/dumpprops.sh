@@ -3,7 +3,7 @@
 # IMPORTANT:  use quotes if dir includes a wildcard
 # e.g.  propdump.sh "data/*"
 
-. bin/constants.sh
+. tools/constants.sh
 
 for d in `ls -d $1`
 do
@@ -11,13 +11,13 @@ do
     for f in `find $d -name "*xml"`
     do
 	echo "dumping properties of " `dirname ${f#data/}` in tmp/`basename ${f%-pdgms\.xml}`.props
-	 set -x;
+	# set -x;
 	java  -jar ${JARDIR}/${SAXON} \
 	    -xi \
 	    -s:$f \
 	    -o:tmp/`basename ${f%-pdgms\.xml}`.props \
-	    -xsl:bin/dumpprops.xsl \
+	    -xsl:tools/dumpprops.xsl \
 	    lang=${d#data/};
-	 set +x;
+	# set +x;
     done
 done

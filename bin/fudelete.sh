@@ -1,4 +1,8 @@
-#!/usr/local/bin/bash
+#!/bin/bash
+
+# Does not work for any final graph; get message:
+# Error 500: Quad: object cannot be null. Same message in Fuseki interface.
+
 usage() {
     printf "Usage:  fudelete [options] ARG\n"
     printf "Delete language-specific graphs.\n"
@@ -6,7 +10,7 @@ usage() {
     printf "\tOptions:\n"
     printf "\t\t-h, --help	Display this message\n\n"
 }
-. tools/constants.sh
+. bin/constants.sh
 
 #global:
 newpath=""
@@ -26,7 +30,7 @@ do
     l=${f%.rdf}
     lang=${f#data/}
     uncapitalize_path $lang
-    graph="http://oi.uchicago.edu/aama/${newpath,}"
+    graph="http://oi.uchicago.edu/aama/2013/graph/${newpath,}"
     echo deleting $graph;
-    s-delete -v http://localhost:3030/aama/data $graph 2>&1 >>logs/fudelete.log
+   ${FUSEKIDIR}/s-delete -v http://localhost:3030/aama/data $graph 2>&1 >>logs/fudelete.log
 done
