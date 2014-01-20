@@ -1,0 +1,1926 @@
+:lang :rendille
+:schemata [:case {:Long, :Object, :ObjectIndirect, :Short}
+	  :clauseType {:Main, :Subordinate}
+	  :cliticType {:Demonstrative, :Indefinite, :Interrogative, :Relative}
+	  :cohesion {:Common, :Exclusive, :Inclusive}
+	  :conjClaspdgmLexs {:Suffix}
+	  :conjClass {:Prefix, :Stative, :Suffix}
+	  :conjSubType {:Irregular}
+	  :deixis {:Common, :Far, :Medial, :Near}
+	  :derivedStem {:Base, :Causative, :Pass1, :Pass2, :S, :T}
+	  :focus {:Foc, :Non-focus}
+	  :gender {:Common, :Fem, :Masc}
+	  :number {:Common, :Plural, :Singular}
+	  :person {:Common, :Person1, :Person2, :Person3}
+	  :polarity {:Affirmative, :Negative}
+	  :pos {:Pronoun, :Verb}
+	  :proClass {:Clitic, :Independent, :Possessive}
+	  :tam {:Concessive, :Imperative, :Imperfect, :Optative, :Perfect}
+	  ]
+:morphemes {
+  :PROCLITIC {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROPOSS {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :fur {:conjClass :Suffix, :derivedStem :Pass1, :gloss "get untied", :lemma "fur-P1", :pos :Verb}
+  :haaggan {:conjClass :Stative, :gloss "be good", :lemma "haaggan-", :pos :Verb}
+  :he {:conjClass :Prefix, :conjSubType :Irregular, :gloss "be", :lemma "he-", :pos :Verb}
+  :kar {:conjClass :Suffix, :derivedStem :Causative, :gloss "cook (tr)", :lemma "karča", :pos :Verb}
+  :mi {:conjClass :Prefix, :gloss "come", :lemma "mi-", :pos :Verb}
+}
+:lxterms #{
+    {:label "rendille-VBaseNegOpt-fur"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "úun nah fúrin"],
+	    [:Fem, :Singular, :Person3, "úun (us) fúrin"],
+	    [:Common, :Plural, :Person3, "úun ičo fúrin"],
+	    [:Masc, :Singular, :Person3, "úun iče fúrin"],
+	    [:Common, :Singular, :Person1, "úun an fúrin"]]
+    }
+    {:label "rendille-VPass2AffIndicPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "furnameen"],
+	    [:Fem, :Singular, :Person3, "furnante / furmante"],
+	    [:Common, :Plural, :Person2, "furnanteen / furmanteen"],
+	    [:Common, :Singular, :Person1, "furname"],
+	    [:Common, :Plural, :Person1, "furnanne / furmanne "],
+	    [:Masc, :Singular, :Person3, "furname"],
+	    [:Common, :Singular, :Person2, "furnante / furmante"]]
+    }
+    {:label "rendille-VBaseAffIndicPerf-fur"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "furteen"],
+	    [:Common, :Plural, :Person3, "fureen"],
+	    [:Common, :Plural, :Person1, "furre (fur+ne)"],
+	    [:Fem, :Singular, :Person3, "furte"],
+	    [:Masc, :Singular, :Person3, "fure"],
+	    [:Common, :Singular, :Person2, "furte"],
+	    [:Common, :Singular, :Person1, "fure"]]
+    }
+    {:label "rendille-VCausAffIndicImperf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "karča"],
+	    [:Common, :Plural, :Person2, "karissaan"],
+	    [:Fem, :Singular, :Person3, "karissa"],
+	    [:Common, :Singular, :Person2, "karissa"],
+	    [:Common, :Plural, :Person3, "karčaan"],
+	    [:Masc, :Singular, :Person3, "karča"],
+	    [:Common, :Plural, :Person1, "karinna"]]
+    }
+    {:label "rendille-VNegOpt-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "úun ičo haagganéynan"],
+	    [:Masc, :Singular, :Person3, "úun iče haagganéynan"],
+	    [:Common, :Singular, :Person1, "úun an haagganéynan"],
+	    [:Fem, :Singular, :Person3, "úun (us) haagganéynan"],
+	    [:Common, :Plural, :Person1, "úun nah haagganéynan"]]
+    }
+    {:label "rendille-VMidAffSubjImperf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "karsattaan"],
+	    [:Common, :Plural, :Person1, "karsanni"],
+	    [:Common, :Singular, :Person2, "karsatti"],
+	    [:Fem, :Singular, :Person3, "karsatti"],
+	    [:Masc, :Singular, :Person3, "karsati"],
+	    [:Common, :Singular, :Person1, "karsadi"],
+	    [:Common, :Plural, :Person3, "karsataan"]]
+    }
+    {:label "rendille-VPass2NegIndicPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "má furnamin"],
+	    [:Common, :Plural, :Person1, "má furnamin"],
+	    [:Common, :Singular, :Person1, "má furnamin"],
+	    [:Common, :Singular, :Person2, "má furnamin"],
+	    [:Common, :Plural, :Person3, "má furnamin"],
+	    [:Fem, :Singular, :Person3, "má furnamin"],
+	    [:Common, :Plural, :Person2, "má furnamin"]]
+    }
+    {:label "rendille-VNegIndicPerf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Main,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "má haagganéynan"],
+	    [:Masc, :Singular, :Person3, "má haagganéynan"],
+	    [:Fem, :Singular, :Person3, "má haagganéynan"],
+	    [:Common, :Plural, :Person1, "má haagganéynan"],
+	    [:Common, :Singular, :Person2, "má haagganéynan"],
+	    [:Common, :Singular, :Person1, "má haagganéynan"],
+	    [:Common, :Plural, :Person2, "má haagganéynan"]]
+    }
+    {:label "rendille-VPass1AffSubjPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "furanteen"],
+	    [:Fem, :Singular, :Person3, "furante"],
+	    [:Common, :Plural, :Person1, "furanne "],
+	    [:Common, :Singular, :Person1, "furme"],
+	    [:Common, :Plural, :Person3, "furmeen"],
+	    [:Masc, :Singular, :Person3, "furme"],
+	    [:Common, :Singular, :Person2, "furante"]]
+    }
+    {:label "rendille-VNegIndicPerf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "má imaatan"],
+	    [:Common, :Plural, :Person3, "má imaatan"],
+	    [:Common, :Plural, :Person2, "má imaatan"],
+	    [:Masc, :Singular, :Person3, "má imaatan"],
+	    [:Common, :Singular, :Person2, "má imaatan"],
+	    [:Fem, :Singular, :Person3, "má imaatan"],
+	    [:Common, :Singular, :Person1, "má imaatan"]]
+    }
+    {:label "rendille-VPass1NegConcess-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "má fúrminéey"],
+	    [:Common, :Plural, :Person1, "má fúrminéey"],
+	    [:Common, :Plural, :Person2, "má fúrminéey"],
+	    [:Common, :Plural, :Person3, "má fúrminéey"],
+	    [:Common, :Singular, :Person2, "má fúrminéey"],
+	    [:Common, :Singular, :Person1, "má fúrminéey"],
+	    [:Fem, :Singular, :Person3, "má fúrminéey"]]
+    }
+    {:label "rendille-VPass2NegImprtv-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :gender :Common,
+	    :lexeme :fur,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "afúrnamin"],
+	    [:Plural, "afurnamína"]]
+    }
+    {:label "rendille-VAffConcess-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "yímiyéey"],
+	    [:Common, :Plural, :Person2, "tímaateenéey"],
+	    [:Common, :Singular, :Person2, "tímiyéey"],
+	    [:Common, :Plural, :Person3, "yímaateenéey"],
+	    [:Common, :Singular, :Person1, "ímiyéey"],
+	    [:Common, :Plural, :Person1, "nímiyéey"],
+	    [:Fem, :Singular, :Person3, "tímiyéey"]]
+    }
+    {:label "rendille-VAffIndicImperfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "yahiin / yihiin"],
+	    [:Common, :Plural, :Person1, "nahe / nehe"],
+	    [:Common, :Singular, :Person2, "tahe / tehe"],
+	    [:Common, :Plural, :Person2, "tahiin / tihiin"],
+	    [:Fem, :Singular, :Person3, "tahe / tehe"],
+	    [:Common, :Singular, :Person1, "ahe / ehe"],
+	    [:Masc, :Singular, :Person3, "yahe / yehe"]]
+    }
+    {:label "rendille-VMidNegConcess-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "má kársanéey"],
+	    [:Common, :Plural, :Person3, "má kársanéey"],
+	    [:Common, :Singular, :Person1, "má kársanéey"],
+	    [:Masc, :Singular, :Person3, "má kársanéey"],
+	    [:Common, :Singular, :Person2, "má kársanéey"],
+	    [:Common, :Plural, :Person2, "má kársanéey"],
+	    [:Fem, :Singular, :Person3, "má kársanéey"]]
+    }
+    {:label "rendille-VPass1AffImprtv-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :gender :Common,
+	    :lexeme :fur,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "fúrma"],
+	    [:Singular, "furam"]]
+    }
+    {:label "rendille-VPass1NegSubjImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "má furmin"],
+	    [:Common, :Singular, :Person1, "ífurmin"],
+	    [:Common, :Singular, :Person2, "má furmin"],
+	    [:Common, :Plural, :Person3, "má furmin"],
+	    [:Common, :Plural, :Person1, "má furmin"],
+	    [:Masc, :Singular, :Person3, "má furmin"],
+	    [:Common, :Plural, :Person2, "má furmin"]]
+    }
+    {:label "rendille-VPass2AffSubjPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "furname"],
+	    [:Common, :Plural, :Person1, "furnanne / furmanne "],
+	    [:Common, :Plural, :Person2, "furnanteen / furmanteen"],
+	    [:Common, :Singular, :Person1, "furname"],
+	    [:Common, :Plural, :Person3, "furnameen"],
+	    [:Fem, :Singular, :Person3, "furnante / furmante"],
+	    [:Common, :Singular, :Person2, "furnante / furmante"]]
+    }
+    {:label "rendille-VPass2AffConcess-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "fúrnantéey / fúrmantéey"],
+	    [:Common, :Singular, :Person1, "fúrnaméey"],
+	    [:Common, :Plural, :Person3, "fúrnameenéey"],
+	    [:Common, :Plural, :Person2, "fúrnanteenéey / fúrmanteenéey"],
+	    [:Common, :Plural, :Person1, "fúrnannéey / fúrmannéey"],
+	    [:Masc, :Singular, :Person3, "fúrnaméey"],
+	    [:Fem, :Singular, :Person3, "fúrnantéey / fúrmantéey"]]
+    }
+    {:label "rendille-VAffConcessIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "eheneéttéey / eheéttéey"],
+	    [:Common, :Plural, :Person2, "eheneéttéey / eheéttéey"],
+	    [:Common, :Singular, :Person2, "eheneéttéey / eheéttéey"],
+	    [:Common, :Plural, :Person3, "eheneéttéey / eheéttéey"],
+	    [:Fem, :Singular, :Person3, "eheneéttéey / eheéttéey"],
+	    [:Masc, :Singular, :Person3, "eheneéttéey / eheéttéey"],
+	    [:Common, :Plural, :Person1, "eheneéttéey / eheéttéey"]]
+    }
+    {:label "rendille-VBaseNegIndicPerf-fur"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "má furin"],
+	    [:Common, :Singular, :Person2, "má furin"],
+	    [:Common, :Singular, :Person1, "má furin"],
+	    [:Common, :Plural, :Person1, "má furin"],
+	    [:Common, :Plural, :Person2, "má furin"],
+	    [:Fem, :Singular, :Person3, "má furin"],
+	    [:Masc, :Singular, :Person3, "má furin"]]
+    }
+    {:label "rendille-VCausNegOpt-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "úun nah karín"],
+	    [:Masc, :Singular, :Person3, "úun iče karín"],
+	    [:Fem, :Singular, :Person3, "úun (us) karín"],
+	    [:Common, :Singular, :Person1, "úun an karín"],
+	    [:Common, :Plural, :Person3, "úun ičo karín"]]
+    }
+    {:label "rendille-VBaseAffSubjImperf-fur"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "furo"],
+	    [:Common, :Plural, :Person1, "furro (fur+no)"],
+	    [:Fem, :Singular, :Person3, "furto"],
+	    [:Common, :Singular, :Person2, "furto"],
+	    [:Masc, :Singular, :Person3, "furo"],
+	    [:Common, :Plural, :Person2, "furtaan"],
+	    [:Common, :Plural, :Person3, "furaan"]]
+    }
+    {:label "rendille-VMidAffSubj-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "karsate"],
+	    [:Fem, :Singular, :Person3, "karsatte"],
+	    [:Common, :Singular, :Person2, "karsatte"],
+	    [:Common, :Plural, :Person1, "karsanne"],
+	    [:Common, :Plural, :Person2, "karsatteen"],
+	    [:Common, :Singular, :Person1, "karsade"],
+	    [:Common, :Plural, :Person3, "karsateen"]]
+    }
+    {:label "rendille-VMidAffImprtv-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :T,
+	    :gender :Common,
+	    :lexeme :kar,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "karsáda"],
+	    [:Singular, "karso"]]
+    }
+    {:label "rendille-VAffOpt-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "á tímaate"],
+	    [:Common, :Plural, :Person3, "á yímaateen"],
+	    [:Common, :Singular, :Person1, "á ímaate"],
+	    [:Common, :Plural, :Person1, "á nímaate"],
+	    [:Masc, :Singular, :Person3, "á yímaat"]]
+    }
+    {:label "rendille-VCausAffConcess-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "karínnéey"],
+	    [:Common, :Plural, :Person3, "karčeénéey"],
+	    [:Masc, :Singular, :Person3, "kárčéey"],
+	    [:Common, :Plural, :Person2, "karisseénéey"],
+	    [:Fem, :Singular, :Person3, "karísséey"],
+	    [:Common, :Singular, :Person1, "kárčéey"],
+	    [:Common, :Singular, :Person2, "karísséey"]]
+    }
+    {:label "rendille-VCausAffSubjPerf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "karinne"],
+	    [:Fem, :Singular, :Person3, "karisse"],
+	    [:Common, :Plural, :Person3, "karčeen"],
+	    [:Masc, :Singular, :Person3, "karče"],
+	    [:Common, :Singular, :Person2, "karisse"],
+	    [:Common, :Singular, :Person1, "karče"],
+	    [:Common, :Plural, :Person2, "karisseen"]]
+    }
+    {:label "rendille-VBaseNegConcess-fur"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "má fúrinéey"],
+	    [:Common, :Singular, :Person2, "má fúrinéey"],
+	    [:Common, :Plural, :Person2, "má fúrinéey"],
+	    [:Common, :Plural, :Person3, "má fúrinéey"],
+	    [:Fem, :Singular, :Person3, "má fúrinéey"],
+	    [:Masc, :Singular, :Person3, "má fúrinéey"],
+	    [:Common, :Plural, :Person1, "má fúrinéey"]]
+    }
+    {:label "rendille-VCausNegConcess-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "má karínéey"],
+	    [:Common, :Plural, :Person3, "má karínéey"],
+	    [:Common, :Plural, :Person1, "má karínéey"],
+	    [:Fem, :Singular, :Person3, "má karínéey"],
+	    [:Common, :Singular, :Person2, "má karínéey"],
+	    [:Masc, :Singular, :Person3, "má karínéey"],
+	    [:Common, :Singular, :Person1, "má karínéey"]]
+    }
+    {:label "rendille-VNegIndicPerfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "má ehéynan"],
+	    [:Masc, :Singular, :Person3, "má ehéynan"],
+	    [:Common, :Singular, :Person1, "má ehéynan"],
+	    [:Common, :Singular, :Person2, "má ehéynan"],
+	    [:Common, :Plural, :Person3, "má ehéynan"],
+	    [:Fem, :Singular, :Person3, "má ehéynan"],
+	    [:Common, :Plural, :Person2, "má ehéynan"]]
+    }
+    {:label "rendille-VPass2NegOpt-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "úun iče fúrnamin"],
+	    [:Common, :Plural, :Person1, "úun nah fúrnamin"],
+	    [:Fem, :Singular, :Person3, "úun (us) fúrnamin"],
+	    [:Common, :Plural, :Person3, "úun ičo fúrnamin"],
+	    [:Common, :Singular, :Person1, "úun an fúrnamin"]]
+    }
+    {:label "rendille-VCausNegIndicPerf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "má karín"],
+	    [:Common, :Plural, :Person3, "má karín"],
+	    [:Fem, :Singular, :Person3, "má karín"],
+	    [:Common, :Plural, :Person2, "má karín"],
+	    [:Common, :Plural, :Person1, "má karín"],
+	    [:Masc, :Singular, :Person3, "má karín"],
+	    [:Common, :Singular, :Person1, "má karín"]]
+    }
+    {:label "rendille-VPass2AffIndicImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "furnanta / furmanta"],
+	    [:Masc, :Singular, :Person3, "furnama"],
+	    [:Common, :Plural, :Person1, "furnanna / furmanna "],
+	    [:Fem, :Singular, :Person3, "furnanta / furmanta"],
+	    [:Common, :Plural, :Person2, "furnantaan / furmantaan"],
+	    [:Common, :Singular, :Person1, "furnama"],
+	    [:Common, :Plural, :Person3, "furnamaan"]]
+    }
+    {:label "rendille-VNegIndicImperf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Main,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "má haaggán"],
+	    [:Common, :Plural, :Person1, "má haaggán"],
+	    [:Common, :Singular, :Person2, "má haaggán"],
+	    [:Common, :Plural, :Person3, "má haaggán"],
+	    [:Common, :Plural, :Person2, "má haaggán"],
+	    [:Common, :Singular, :Person1, "má haaggán"],
+	    [:Fem, :Singular, :Person3, "má haaggán"]]
+    }
+    {:label "rendille-VNegSubjImperfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "ehéynan"],
+	    [:Fem, :Singular, :Person3, "ehéynan"],
+	    [:Common, :Plural, :Person1, "ehéynan"],
+	    [:Common, :Plural, :Person3, "ehéynan"],
+	    [:Common, :Plural, :Person2, "ehéynan"],
+	    [:Common, :Singular, :Person1, "ehéynan"],
+	    [:Masc, :Singular, :Person3, "ehéynan"]]
+    }
+    {:label "rendille-VBaseAffOpt-fur"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "á furro (fur+no)"],
+	    [:Fem, :Singular, :Person3, "á furto"],
+	    [:Masc, :Singular, :Person3, "á furo"],
+	    [:Common, :Plural, :Person3, "á furaan"],
+	    [:Common, :Singular, :Person1, "á furo"]]
+    }
+    {:label "rendille-VAffSubjPerfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "eheneet / eheet / ahanaay"],
+	    [:Common, :Plural, :Person2, "eheneet / eheet / ahanaay"],
+	    [:Common, :Plural, :Person3, "eheneet / eheet / ahanaay"],
+	    [:Common, :Singular, :Person1, "eheneet / eheet / ahanaay"],
+	    [:Fem, :Singular, :Person3, "eheneet / eheet / ahanaay"],
+	    [:Common, :Singular, :Person2, "eheneet / eheet / ahanaay"],
+	    [:Common, :Plural, :Person1, "eheneet / eheet / ahanaay"]]
+    }
+    {:label "rendille-VPass1AffOpt-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "á furmo"],
+	    [:Fem, :Singular, :Person3, "á furanto"],
+	    [:Common, :Plural, :Person1, "á furanno "],
+	    [:Common, :Plural, :Person3, "á furmaan"],
+	    [:Common, :Singular, :Person1, "á furmo"]]
+    }
+    {:label "rendille-VBaseAffIndicImperf-fur"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "furta"],
+	    [:Common, :Singular, :Person2, "furta"],
+	    [:Common, :Singular, :Person1, "fura"],
+	    [:Common, :Plural, :Person1, "furra (fur+na)"],
+	    [:Common, :Plural, :Person3, "furaan"],
+	    [:Masc, :Singular, :Person3, "fura"],
+	    [:Common, :Plural, :Person2, "furtaan"]]
+    }
+    {:label "rendille-VNegSubjPerf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "imaatan"],
+	    [:Masc, :Singular, :Person3, "imaatan"],
+	    [:Common, :Plural, :Person1, "imaatan"],
+	    [:Common, :Singular, :Person2, "imaatan"],
+	    [:Common, :Plural, :Person3, "imaatan"],
+	    [:Common, :Singular, :Person1, "imaatan"],
+	    [:Common, :Plural, :Person2, "imaatan"]]
+    }
+    {:label "rendille-VPass1AffIndicImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "furanna "],
+	    [:Common, :Singular, :Person2, "furanta"],
+	    [:Common, :Plural, :Person2, "furantaan"],
+	    [:Fem, :Singular, :Person3, "furanta"],
+	    [:Common, :Plural, :Person3, "furmaan"],
+	    [:Common, :Singular, :Person1, "furma"],
+	    [:Masc, :Singular, :Person3, "furma"]]
+    }
+    {:label "rendille-VBaseNegSubjPerf-fur"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "má furin"],
+	    [:Common, :Plural, :Person3, "má furin"],
+	    [:Fem, :Singular, :Person3, "má furin"],
+	    [:Common, :Plural, :Person2, "má furin"],
+	    [:Common, :Plural, :Person1, "má furin"],
+	    [:Masc, :Singular, :Person3, "má furin"],
+	    [:Common, :Singular, :Person2, "má furin"]]
+    }
+    {:label "rendille-VPass2AffImprtv-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :gender :Common,
+	    :lexeme :fur,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "fúrnama"],
+	    [:Singular, "furnam"]]
+    }
+    {:label "rendille-VPass2AffSubjImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "furnamo"],
+	    [:Common, :Plural, :Person1, "furnanno / furmanno "],
+	    [:Common, :Plural, :Person2, "furnantaan / furmantaan"],
+	    [:Common, :Plural, :Person3, "furnamaan"],
+	    [:Common, :Singular, :Person2, "furnanto / furmanto"],
+	    [:Fem, :Singular, :Person3, "furnanto / furmanto"],
+	    [:Masc, :Singular, :Person3, "furnamo"]]
+    }
+    {:label "rendille-VAffOpt-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "á haagganeetti"],
+	    [:Common, :Plural, :Person3, "á haagganeetti"],
+	    [:Fem, :Singular, :Person3, "á haagganeetti"],
+	    [:Common, :Singular, :Person1, "á haagganeetti"],
+	    [:Masc, :Singular, :Person3, "á haagganeetti"]]
+    }
+    {:label "rendille-VMidAffIndicImperf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "karsataan"],
+	    [:Common, :Plural, :Person2, "karsattaan"],
+	    [:Common, :Singular, :Person2, "karsatta"],
+	    [:Fem, :Singular, :Person3, "karsatta"],
+	    [:Common, :Plural, :Person1, "karsanna "],
+	    [:Masc, :Singular, :Person3, "karsata"],
+	    [:Common, :Singular, :Person1, "karsada"]]
+    }
+    {:label "rendille-VNegImprtvIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :gender :Common,
+	    :lexeme :he,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "ehéynan"],
+	    [:Plural, "ehéynan"]]
+    }
+    {:label "rendille-VAffImprtv-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:conjClass :Stative,
+	    :gender :Common,
+	    :lexeme :haaggan,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "haaggánahanaáwa / -ahaáwa"],
+	    [:Singular, "haaggánahanáaw / -aháaw"]]
+    }
+    {:label "rendille-VAffIndicPerfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "eheneet / eheet / ahanaay"],
+	    [:Common, :Singular, :Person2, "eheneet / eheet / ahanaay"],
+	    [:Common, :Plural, :Person1, "eheneet / eheet / ahanaay"],
+	    [:Common, :Plural, :Person2, "eheneet / eheet / ahanaay"],
+	    [:Common, :Plural, :Person3, "eheneet / eheet / ahanaay"],
+	    [:Fem, :Singular, :Person3, "eheneet / eheet / ahanaay"],
+	    [:Masc, :Singular, :Person3, "eheneet / eheet / ahanaay"]]
+    }
+    {:label "rendille-VNegIndicImperfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "mee"],
+	    [:Common, :Plural, :Person3, "mee"],
+	    [:Common, :Singular, :Person1, "mee"],
+	    [:Masc, :Singular, :Person3, "mee"],
+	    [:Fem, :Singular, :Person3, "mee"],
+	    [:Common, :Plural, :Person1, "mee"],
+	    [:Common, :Singular, :Person2, "mee"]]
+    }
+    {:label "rendille-VNegConcess-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "má haagganéynanéey"],
+	    [:Common, :Singular, :Person2, "má haagganéynanéey"],
+	    [:Common, :Singular, :Person1, "má haagganéynanéey"],
+	    [:Common, :Plural, :Person1, "má haagganéynanéey"],
+	    [:Fem, :Singular, :Person3, "má haagganéynanéey"],
+	    [:Common, :Plural, :Person2, "má haagganéynanéey"],
+	    [:Common, :Plural, :Person3, "má haagganéynanéey"]]
+    }
+    {:label "rendille-VNegSubjImperf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "íhaagganéynan"],
+	    [:Common, :Plural, :Person2, "íhaagganéynan"],
+	    [:Masc, :Singular, :Person3, "íhaagganéynan"],
+	    [:Common, :Plural, :Person3, "íhaagganéynan"],
+	    [:Fem, :Singular, :Person3, "íhaagganéynan"],
+	    [:Common, :Plural, :Person1, "íhaagganéynan"],
+	    [:Common, :Singular, :Person1, "íhaagganéynan"]]
+    }
+    {:label "rendille-VCausNegSubjImperf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "íkarín"],
+	    [:Common, :Plural, :Person3, "íkarín"],
+	    [:Common, :Plural, :Person1, "íkarín"],
+	    [:Fem, :Singular, :Person3, "íkarín"],
+	    [:Common, :Singular, :Person2, "íkarín"],
+	    [:Common, :Singular, :Person1, "íkarín"],
+	    [:Common, :Plural, :Person2, "íkarín"]]
+    }
+    {:label "rendille-VBaseAffConcess-fur"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "fúrréey"],
+	    [:Fem, :Singular, :Person3, "fúrtéey"],
+	    [:Common, :Singular, :Person2, "fúrtéey"],
+	    [:Masc, :Singular, :Person3, "fúréey"],
+	    [:Common, :Singular, :Person1, "fúréey"],
+	    [:Common, :Plural, :Person3, "fúreenéey"],
+	    [:Common, :Plural, :Person2, "fúrteenéey"]]
+    }
+    {:label "rendille-VNegImprtv-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:conjClass :Prefix,
+	    :gender :Common,
+	    :lexeme :mi,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "iimaátan"],
+	    [:Plural, "iimaatána"]]
+    }
+    {:label "rendille-VPass1NegIndicPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "má furmin"],
+	    [:Fem, :Singular, :Person3, "má furmin"],
+	    [:Masc, :Singular, :Person3, "má furmin"],
+	    [:Common, :Plural, :Person2, "má furmin"],
+	    [:Common, :Plural, :Person1, "má furmin"],
+	    [:Common, :Singular, :Person1, "má furmin"],
+	    [:Common, :Plural, :Person3, "má furmin"]]
+    }
+    {:label "rendille-VNegOpt-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "úun nah imaatan"],
+	    [:Common, :Plural, :Person3, "úun ičo imaatan"],
+	    [:Masc, :Singular, :Person3, "úun iče imaatan"],
+	    [:Common, :Singular, :Person1, "úun an imaatan"],
+	    [:Fem, :Singular, :Person3, "úun (us) imaatan"]]
+    }
+    {:label "rendille-VCausNegIndicImperf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "má karisso"],
+	    [:Common, :Plural, :Person2, "má karissaan"],
+	    [:Common, :Singular, :Person2, "má karisso"],
+	    [:Common, :Plural, :Person1, "má karinno"],
+	    [:Masc, :Singular, :Person3, "má karčo"],
+	    [:Common, :Singular, :Person1, "má karčo"],
+	    [:Common, :Plural, :Person3, "má karčaan"]]
+    }
+    {:label "rendille-VPass1NegImprtv-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :gender :Common,
+	    :lexeme :fur,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "afúrmin"],
+	    [:Plural, "afuramína"]]
+    }
+    {:label "rendille-VAffIndicPerf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Main,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "haagganeet"],
+	    [:Common, :Singular, :Person1, "haagganeet"],
+	    [:Common, :Plural, :Person1, "haagganeet"],
+	    [:Common, :Singular, :Person2, "haagganeet"],
+	    [:Common, :Plural, :Person3, "haagganeet"],
+	    [:Fem, :Singular, :Person3, "haagganeet"],
+	    [:Common, :Plural, :Person2, "haagganeet"]]
+    }
+    {:label "rendille-VCausNegSubjPerf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "íkarín"],
+	    [:Common, :Singular, :Person1, "íkarín"],
+	    [:Fem, :Singular, :Person3, "íkarín"],
+	    [:Masc, :Singular, :Person3, "íkarín"],
+	    [:Common, :Plural, :Person3, "íkarín"],
+	    [:Common, :Singular, :Person2, "íkarín"],
+	    [:Common, :Plural, :Person1, "íkarín"]]
+    }
+    {:label "rendille-VAffIndicPerf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "timiy"],
+	    [:Common, :Plural, :Person3, "yimaateen"],
+	    [:Common, :Singular, :Person2, "timiy"],
+	    [:Masc, :Singular, :Person3, "yimiy"],
+	    [:Common, :Singular, :Person1, "imiy"],
+	    [:Common, :Plural, :Person2, "timaateen"],
+	    [:Common, :Plural, :Person1, "nimiy"]]
+    }
+    {:label "rendille-VAffSubjImperf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "amiit"],
+	    [:Common, :Plural, :Person1, "namiit"],
+	    [:Common, :Plural, :Person2, "tamiitiin"],
+	    [:Masc, :Singular, :Person3, "yamiit"],
+	    [:Fem, :Singular, :Person3, "tamiit"],
+	    [:Common, :Plural, :Person3, "yamiitiin"],
+	    [:Common, :Singular, :Person2, "tamiit"]]
+    }
+    {:label "rendille-VMidAffIndicPerf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "má karsan"],
+	    [:Masc, :Singular, :Person3, "má karsan"],
+	    [:Common, :Plural, :Person1, "má karsan"],
+	    [:Common, :Plural, :Person2, "má karsan"],
+	    [:Fem, :Singular, :Person3, "má karsan"],
+	    [:Common, :Singular, :Person2, "má karsan"],
+	    [:Common, :Singular, :Person1, "má karsan"]]
+    }
+    {:label "rendille-VPass2NegConcess-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "má fúrnaminéey"],
+	    [:Common, :Plural, :Person2, "má fúrnaminéey"],
+	    [:Fem, :Singular, :Person3, "má fúrnaminéey"],
+	    [:Common, :Plural, :Person1, "má fúrnaminéey"],
+	    [:Common, :Singular, :Person2, "má fúrnaminéey"],
+	    [:Masc, :Singular, :Person3, "má fúrnaminéey"],
+	    [:Common, :Plural, :Person3, "má fúrnaminéey"]]
+    }
+    {:label "rendille-VNegConcessIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "má ehéynanéey"],
+	    [:Common, :Plural, :Person2, "má ehéynanéey"],
+	    [:Common, :Singular, :Person2, "má ehéynanéey"],
+	    [:Masc, :Singular, :Person3, "má ehéynanéey"],
+	    [:Common, :Plural, :Person1, "má ehéynanéey"],
+	    [:Common, :Plural, :Person3, "má ehéynanéey"],
+	    [:Fem, :Singular, :Person3, "má ehéynanéey"]]
+    }
+    {:label "rendille-VPass1AffIndicPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "furmeen"],
+	    [:Common, :Singular, :Person2, "furante"],
+	    [:Common, :Plural, :Person1, "furanne "],
+	    [:Common, :Plural, :Person2, "furanteen"],
+	    [:Common, :Singular, :Person1, "furme"],
+	    [:Masc, :Singular, :Person3, "furme"],
+	    [:Fem, :Singular, :Person3, "furante"]]
+    }
+    {:label "rendille-VPass2NegIndicImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "má furnamaan"],
+	    [:Common, :Plural, :Person1, "má furnanno / má furmanno "],
+	    [:Common, :Singular, :Person2, "má furnanto /má furmanto"],
+	    [:Masc, :Singular, :Person3, "má furnamo"],
+	    [:Common, :Singular, :Person1, "má furnamo"],
+	    [:Common, :Plural, :Person2, "má furnantaan / má furmantaan"],
+	    [:Fem, :Singular, :Person3, "má furnanto / má furmanto"]]
+    }
+    {:label "rendille-VCausNegImprtv-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :S,
+	    :gender :Common,
+	    :lexeme :kar,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "akarín"],
+	    [:Plural, "akarína"]]
+    }
+    {:label "rendille-VCausAffOpt-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "á karinno"],
+	    [:Fem, :Singular, :Person3, "á karčo"],
+	    [:Common, :Plural, :Person1, "á karisso"],
+	    [:Common, :Singular, :Person1, "á karčo"],
+	    [:Masc, :Singular, :Person3, "á karisso"]]
+    }
+    {:label "rendille-VAffIndicImperf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Main,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "haaggányahiin / -yihiin"],
+	    [:Fem, :Singular, :Person3, "haaggántahe / -tehe"],
+	    [:Common, :Singular, :Person2, "haaggántahe / -tehe"],
+	    [:Common, :Plural, :Person1, "haaggánnahe / -nehe"],
+	    [:Masc, :Singular, :Person3, "haaggányahe / -yehe"],
+	    [:Common, :Singular, :Person1, "haaggánahe / -ehe"],
+	    [:Common, :Plural, :Person2, "haaggántahiin / -tihiin"]]
+    }
+    {:label "rendille-VAffSubjImperf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "haaggánahe / -ehe"],
+	    [:Masc, :Singular, :Person3, "haaggányahe / -yehe"],
+	    [:Fem, :Singular, :Person3, "haaggántahe / -tehe"],
+	    [:Common, :Singular, :Person2, "haaggántahe / -tehe"],
+	    [:Common, :Plural, :Person2, "haaggántahiin / -tihiin"],
+	    [:Common, :Plural, :Person1, "haaggánnahe / -nehe"],
+	    [:Common, :Plural, :Person3, "haaggányahiin / -yihiin"]]
+    }
+    {:label "rendille-VMidAffOpt-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "á karsataan"],
+	    [:Fem, :Singular, :Person3, "á karsatti"],
+	    [:Masc, :Singular, :Person3, "á karsati"],
+	    [:Common, :Singular, :Person1, "á karsadi"],
+	    [:Common, :Plural, :Person1, "á karsanni"]]
+    }
+    {:label "rendille-VPass1NegSubjPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "má furmin"],
+	    [:Masc, :Singular, :Person3, "má furmin"],
+	    [:Common, :Singular, :Person2, "má furmin"],
+	    [:Common, :Singular, :Person1, "má furmin"],
+	    [:Fem, :Singular, :Person3, "má furmin"],
+	    [:Common, :Plural, :Person1, "má furmin"],
+	    [:Common, :Plural, :Person3, "má furmin"]]
+    }
+    {:label "rendille-VMidNegSubjPerf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "íkarsan"],
+	    [:Common, :Plural, :Person3, "íkarsan"],
+	    [:Common, :Singular, :Person2, "íkarsan"],
+	    [:Common, :Singular, :Person1, "íkarsan"],
+	    [:Masc, :Singular, :Person3, "íkarsan"],
+	    [:Fem, :Singular, :Person3, "íkarsan"],
+	    [:Common, :Plural, :Person2, "íkarsan"]]
+    }
+    {:label "rendille-VBaseAffImprtv-fur"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :Base,
+	    :gender :Common,
+	    :lexeme :fur,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "fúra"],
+	    [:Singular, "fur"]]
+    }
+    {:label "rendille-VMidNegIndicImperf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "má karsattaan"],
+	    [:Common, :Singular, :Person2, "má karsatti"],
+	    [:Common, :Plural, :Person1, "má karsanni"],
+	    [:Masc, :Singular, :Person3, "má karsati"],
+	    [:Common, :Singular, :Person1, "má karsadi"],
+	    [:Fem, :Singular, :Person3, "má karsatti"],
+	    [:Common, :Plural, :Person3, "má karsataan"]]
+    }
+    {:label "rendille-VAffConcess-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "haagganneéttéey"],
+	    [:Common, :Singular, :Person2, "haagganneéttéey"],
+	    [:Common, :Plural, :Person3, "haagganneéttéey"],
+	    [:Masc, :Singular, :Person3, "haagganneéttéey"],
+	    [:Fem, :Singular, :Person3, "haagganneéttéey"],
+	    [:Common, :Plural, :Person1, "haagganneéttéey"],
+	    [:Common, :Singular, :Person1, "haagganneéttéey"]]
+    }
+    {:label "rendille-VCausAffIndicPerf-kar"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "karčeen"],
+	    [:Masc, :Singular, :Person3, "karče"],
+	    [:Fem, :Singular, :Person3, "karisse"],
+	    [:Common, :Plural, :Person2, "karisseen"],
+	    [:Common, :Singular, :Person1, "karče"],
+	    [:Common, :Plural, :Person1, "karinne"],
+	    [:Common, :Singular, :Person2, "karisse"]]
+    }
+    {:label "rendille-VAffOptIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "á eheneetti / á eheetti"],
+	    [:Common, :Plural, :Person1, "á eheneetti / á eheetti"],
+	    [:Masc, :Singular, :Person3, "á eheneetti / á eheetti"],
+	    [:Common, :Plural, :Person3, "á eheneetti / á eheetti"],
+	    [:Fem, :Singular, :Person3, "á eheneetti / á eheetti"]]
+    }
+    {:label "rendille-VNegConcess-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "má imaatanéey"],
+	    [:Fem, :Singular, :Person3, "má imaatanéey"],
+	    [:Common, :Plural, :Person1, "má imaatanéey"],
+	    [:Common, :Plural, :Person3, "má imaatanéey"],
+	    [:Masc, :Singular, :Person3, "má imaatanéey"],
+	    [:Common, :Plural, :Person2, "má imaatanéey"],
+	    [:Common, :Singular, :Person2, "má imaatanéey"]]
+    }
+    {:label "rendille-VAffSubjPerf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "haagganeet"],
+	    [:Fem, :Singular, :Person3, "haagganeet"],
+	    [:Common, :Singular, :Person1, "haagganeet"],
+	    [:Common, :Plural, :Person3, "haagganeet"],
+	    [:Common, :Plural, :Person2, "haagganeet"],
+	    [:Common, :Plural, :Person1, "haagganeet"],
+	    [:Common, :Singular, :Person2, "haagganeet"]]
+    }
+    {:label "rendille-VAffSubjImperfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "tahe / tehe"],
+	    [:Common, :Plural, :Person1, "nahe / nehe"],
+	    [:Masc, :Singular, :Person3, "yahe / yehe"],
+	    [:Common, :Plural, :Person3, "yahiin / yihiin"],
+	    [:Common, :Singular, :Person1, "ahe / ehe"],
+	    [:Fem, :Singular, :Person3, "tahe / tehe"],
+	    [:Common, :Plural, :Person2, "tahiin / tihiin"]]
+    }
+    {:label "rendille-VAffImprtv-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:conjClass :Prefix,
+	    :gender :Common,
+	    :lexeme :mi,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "amíit"],
+	    [:Plural, "amiíta"]]
+    }
+    {:label "rendille-VBaseNegSubjImperf-fur"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "má furin"],
+	    [:Masc, :Singular, :Person3, "má furin"],
+	    [:Common, :Singular, :Person2, "má furin"],
+	    [:Common, :Plural, :Person2, "má furin"],
+	    [:Common, :Plural, :Person1, "má furin"],
+	    [:Common, :Singular, :Person1, "ífurin"],
+	    [:Fem, :Singular, :Person3, "má furin"]]
+    }
+    {:label "rendille-VAffIndicImperf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "tamiit"],
+	    [:Masc, :Singular, :Person3, "yamiit"],
+	    [:Common, :Singular, :Person2, "tamiit"],
+	    [:Common, :Singular, :Person1, "amiit"],
+	    [:Common, :Plural, :Person1, "namiit"],
+	    [:Common, :Plural, :Person2, "tamiitiin"],
+	    [:Common, :Plural, :Person3, "yamiitiin"]]
+    }
+    {:label "rendille-VBaseNegImprtv-fur"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :Base,
+	    :gender :Common,
+	    :lexeme :fur,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "afúrin"],
+	    [:Plural, "afurína"]]
+    }
+    {:label "rendille-VCausAffSubjImperf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :S,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "karčo"],
+	    [:Common, :Plural, :Person3, "karčaan"],
+	    [:Common, :Singular, :Person2, "karisso"],
+	    [:Common, :Singular, :Person1, "karčo"],
+	    [:Fem, :Singular, :Person3, "karisso"],
+	    [:Common, :Plural, :Person1, "karinno"],
+	    [:Common, :Plural, :Person2, "karissaan"]]
+    }
+    {:label "rendille-VMidAffConcess-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "karsáttéey"],
+	    [:Common, :Plural, :Person3, "karsáteenéey"],
+	    [:Common, :Singular, :Person2, "karsáttéey"],
+	    [:Common, :Singular, :Person1, "karsádéey"],
+	    [:Common, :Plural, :Person2, "karsátteenéey"],
+	    [:Common, :Plural, :Person1, "karsánnéey"],
+	    [:Masc, :Singular, :Person3, "karsátéey"]]
+    }
+    {:label "rendille-VPass1NegOpt-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "úun an fúrmin"],
+	    [:Common, :Plural, :Person1, "úun nah fúrmin"],
+	    [:Masc, :Singular, :Person3, "úun iče fúrmin"],
+	    [:Common, :Plural, :Person3, "úun ičo fúrmin"],
+	    [:Fem, :Singular, :Person3, "úun (us) fúrmin"]]
+    }
+    {:label "rendille-VAffSubjPerf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "yimiy"],
+	    [:Common, :Plural, :Person3, "yimaateen"],
+	    [:Common, :Plural, :Person1, "nimiy"],
+	    [:Common, :Singular, :Person2, "timiy"],
+	    [:Common, :Plural, :Person2, "timaateen"],
+	    [:Fem, :Singular, :Person3, "timiy"],
+	    [:Common, :Singular, :Person1, "imiy"]]
+    }
+    {:label "rendille-VPass2AffOpt-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "á furnamo"],
+	    [:Common, :Singular, :Person1, "á furnamo"],
+	    [:Common, :Plural, :Person3, "á furnamaan"],
+	    [:Common, :Common, :Common, "Common"],
+	    [:Common, :Common, :Common, "Common"]]
+    }
+    {:label "rendille-VNegSubjPerfIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ehéynan"],
+	    [:Common, :Plural, :Person2, "ehéynan"],
+	    [:Masc, :Singular, :Person3, "ehéynan"],
+	    [:Common, :Plural, :Person1, "ehéynan"],
+	    [:Common, :Plural, :Person3, "ehéynan"],
+	    [:Common, :Singular, :Person2, "ehéynan"],
+	    [:Fem, :Singular, :Person3, "ehéynan"]]
+    }
+    {:label "rendille-VMidNegOpt-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "úun nah kársan"],
+	    [:Common, :Plural, :Person3, "úun ičo kársan"],
+	    [:Masc, :Singular, :Person3, "úun iče kársan"],
+	    [:Common, :Singular, :Person1, "úun an kársan"],
+	    [:Fem, :Singular, :Person3, "úun (us) kársan"]]
+    }
+    {:label "rendille-VMidNegSubjImperf-kar"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :T,
+	    :lexeme :kar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "íkarsan"],
+	    [:Common, :Singular, :Person2, "íkarsan"],
+	    [:Common, :Plural, :Person1, "íkarsan"],
+	    [:Fem, :Singular, :Person3, "íkarsan"],
+	    [:Masc, :Singular, :Person3, "íkarsan"],
+	    [:Common, :Plural, :Person2, "íkarsan"],
+	    [:Common, :Plural, :Person3, "íkarsan"]]
+    }
+    {:label "rendille-VNegImprtv-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:conjClass :Stative,
+	    :gender :Common,
+	    :lexeme :haaggan,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "haaggán ehéynan"],
+	    [:Singular, "haaggán ehéynan"]]
+    }
+    {:label "rendille-VPass2NegSubjImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "má furnamin"],
+	    [:Common, :Plural, :Person1, "má furnamin"],
+	    [:Fem, :Singular, :Person3, "má furnamin"],
+	    [:Masc, :Singular, :Person3, "má furnamin"],
+	    [:Common, :Singular, :Person1, "ífurnamin"],
+	    [:Common, :Plural, :Person2, "má furnamin"],
+	    [:Common, :Singular, :Person2, "má furnamin"]]
+    }
+    {:label "rendille-VBaseNegIndicImperf-fur"
+    :note ""
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "má furtaan"],
+	    [:Masc, :Singular, :Person3, "má furo"],
+	    [:Common, :Plural, :Person3, "má furaan"],
+	    [:Common, :Singular, :Person1, "má furo"],
+	    [:Common, :Plural, :Person1, "má furro (fur+no)"],
+	    [:Common, :Singular, :Person2, "má furto"],
+	    [:Fem, :Singular, :Person3, "má furto"]]
+    }
+    {:label "rendille-VCausAffImprtv-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :S,
+	    :gender :Common,
+	    :lexeme :kar,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "kari"],
+	    [:Plural, "kárča"]]
+    }
+    {:label "rendille-VPass1AffSubjImperf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "furmo"],
+	    [:Common, :Plural, :Person1, "furanno "],
+	    [:Masc, :Singular, :Person3, "furmo"],
+	    [:Common, :Plural, :Person2, "furantaan"],
+	    [:Fem, :Singular, :Person3, "furanto"],
+	    [:Common, :Plural, :Person3, "furmaan"],
+	    [:Common, :Singular, :Person2, "furanto"]]
+    }
+    {:label "rendille-VMidNegImprtv-kar"
+    :note ""
+    :common {:conjClass :Suffix,
+	    :derivedStem :T,
+	    :gender :Common,
+	    :lexeme :kar,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Plural, "akarsána"],
+	    [:Singular, "akársan"]]
+    }
+    {:label "rendille-VNegSubjImperf-mi"
+    :note "Pillinger-Galboran1999 p. 42;there are 13 basic prefing verbs in Rendille"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Prefix,
+	    :lexeme :mi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "imaatan"],
+	    [:Common, :Plural, :Person1, "imaatan"],
+	    [:Common, :Singular, :Person2, "imaatan"],
+	    [:Masc, :Singular, :Person3, "imaatan"],
+	    [:Fem, :Singular, :Person3, "imaatan"],
+	    [:Common, :Plural, :Person3, "imaatan"],
+	    [:Common, :Singular, :Person1, "imaatan"]]
+    }
+    {:label "rendille-VPass1AffConcess-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:conjClass :Suffix,
+	    :derivedStem :Pass1,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Concessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "fúrannéey"],
+	    [:Fem, :Singular, :Person3, "fúrantéey"],
+	    [:Common, :Singular, :Person2, "fúrantéey"],
+	    [:Common, :Plural, :Person2, "fúranteenéey"],
+	    [:Masc, :Singular, :Person3, "fúraméey"],
+	    [:Common, :Singular, :Person1, "fúraméey"],
+	    [:Common, :Plural, :Person3, "fúrmeenéey"]]
+    }
+    {:label "rendille-VPass2NegSubjPerf-fur"
+    :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
+    :common {:clauseType :Subordinate,
+	    :conjClaspdgmLexs :Suffix,
+	    :derivedStem :Pass2,
+	    :lexeme :fur,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "má furnamin"],
+	    [:Masc, :Singular, :Person3, "má furnamin"],
+	    [:Common, :Plural, :Person2, "má furnamin"],
+	    [:Common, :Plural, :Person3, "má furnamin"],
+	    [:Common, :Singular, :Person2, "má furnamin"],
+	    [:Fem, :Singular, :Person3, "má furnamin"],
+	    [:Common, :Singular, :Person1, "má furnamin"]]
+    }
+    {:label "rendille-VAffImprtvIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :gender :Common,
+	    :lexeme :he,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "ahanáaw / aháaw"],
+	    [:Plural, "ahanaáwa / ahaáwa"]]
+    }
+    {:label "rendille-VNegSubjPerf-haaggan"
+    :note "Pillinger-Galboran1999 p. 45"
+    :common {:clauseType :Subordinate,
+	    :conjClass :Stative,
+	    :lexeme :haaggan,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "íhaagganéynan"],
+	    [:Common, :Plural, :Person1, "íhaagganéynan"],
+	    [:Common, :Plural, :Person3, "íhaagganéynan"],
+	    [:Common, :Singular, :Person1, "íhaagganéynan"],
+	    [:Common, :Singular, :Person2, "íhaagganéynan"],
+	    [:Fem, :Singular, :Person3, "íhaagganéynan"],
+	    [:Common, :Plural, :Person2, "íhaagganéynan"]]
+    }
+    {:label "rendille-VBaseAffSubjPerf-fur"
+    :note ""
+    :common {:clauseType :Subordinate,
+	    :conjClass :Suffix,
+	    :derivedStem :Base,
+	    :lexeme :fur,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person2, "furte"],
+	    [:Common, :Singular, :Person1, "fure"],
+	    [:Common, :Plural, :Person3, "fureen"],
+	    [:Common, :Plural, :Person1, "furre (fur+ne)"],
+	    [:Fem, :Singular, :Person3, "furte"],
+	    [:Masc, :Singular, :Person3, "fure"],
+	    [:Common, :Plural, :Person2, "furteen"]]
+    }
+    {:label "rendille-VNegOptIrreg-he"
+    :note "Pillinger-Galboran1999 p. 44"
+    :common {:conjClass :Prefix,
+	    :conjSubType :Irregular,
+	    :lexeme :he,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "á ehéynan"],
+	    [:Fem, :Singular, :Person3, "á ehéynan"],
+	    [:Common, :Plural, :Person1, "á ehéynan"],
+	    [:Common, :Plural, :Person3, "á ehéynan"],
+	    [:Masc, :Singular, :Person3, "á ehéynan"]]
+    }}
+:muterms #{
+    {:label "rendille-PClitic"
+    :note "Pillinger-Galboran1999 p. 40;masc clitic normally has k - goes_to h / __ V (i.e.,is homophonous w. plural)"
+    :common {:morpheme :PROCLITIC,
+	    :pos :Pronoun,
+	    :proClass :Clitic}
+    :terms [[:cliticType, :deixis, :gender, :number, :token]  ;; schema
+	    [:Relative, :Common, :Common, :Plural, "hí"],
+	    [:Interrogative, :Common, :Fem, :Singular, "toh"],
+	    [:Demonstrative, :Near, :Common, :Plural, "ha(n)"],
+	    [:Demonstrative, :Medial, :Fem, :Singular, "táas"],
+	    [:Relative, :Common, :Masc, :Singular, "kí ~ -í"],
+	    [:Demonstrative, :Far, :Masc, :Singular, "kúus ~ -úus"],
+	    [:Indefinite, :Common, :Masc, :Singular, "koó ~ -oó"],
+	    [:Indefinite, :Common, :Common, :Plural, "hoó"],
+	    [:Demonstrative, :Near, :Masc, :Singular, "ka(n) ~ -a"],
+	    [:Interrogative, :Common, :Common, :Plural, "hoh"],
+	    [:Demonstrative, :Medial, :Common, :Plural, "háas"],
+	    [:Demonstrative, :Far, :Fem, :Singular, "túus"],
+	    [:Indefinite, :Common, :Fem, :Singular, "toó"],
+	    [:Interrogative, :Common, :Masc, :Singular, "koh ~ -oh"],
+	    [:Relative, :Common, :Fem, :Singular, "tí"],
+	    [:Demonstrative, :Far, :Common, :Plural, "húus"],
+	    [:Demonstrative, :Medial, :Masc, :Singular, "káas ~ -áas"],
+	    [:Demonstrative, :Near, :Fem, :Singular, "ta(n)"]]
+    }
+    {:label "rendille-PInd"
+    :note "Pillinger-Galboran1999 p. 40"
+    :common {:morpheme :PROIND,
+	    :pos :Pronoun,
+	    :proClass :Independent}
+    :terms [[:case, :cohesion, :gender, :number, :person, :token]  ;; schema
+	    [:ObjectIndirect, :Common, :Fem, :Singular, :Person3, "Common"],
+	    [:Long, :Exclusive, :Common, :Plural, :Person1, "náh"],
+	    [:ObjectIndirect, :Inclusive, :Common, :Plural, :Person1, "Common"],
+	    [:ObjectIndirect, :Common, :Masc, :Singular, :Person3, "Common"],
+	    [:Short, :Exclusive, :Common, :Plural, :Person1, "Common"],
+	    [:Object, :Inclusive, :Common, :Plural, :Person1, "inno"],
+	    [:Short, :Common, :Common, :Plural, :Person3, "Common"],
+	    [:ObjectIndirect, :Common, :Common, :Singular, :Person1, "Common"],
+	    [:Short, :Common, :Masc, :Singular, :Person3, "us"],
+	    [:Object, :Common, :Common, :Singular, :Person2, "ki-"],
+	    [:Long, :Common, :Masc, :Singular, :Person3, "usú"],
+	    [:ObjectIndirect, :Exclusive, :Common, :Plural, :Person1, "Common"],
+	    [:Short, :Common, :Common, :Plural, :Person2, "Common"],
+	    [:Object, :Common, :Common, :Singular, :Person1, "i-"],
+	    [:Long, :Common, :Common, :Singular, :Person2, "atí"],
+	    [:Long, :Common, :Common, :Singular, :Person1, "aní"],
+	    [:ObjectIndirect, :Common, :Common, :Plural, :Person2, "Common"],
+	    [:Object, :Common, :Common, :Plural, :Person2, "atin"],
+	    [:Object, :Exclusive, :Common, :Plural, :Person1, "nah"],
+	    [:Short, :Common, :Common, :Singular, :Person2, "at"],
+	    [:Long, :Common, :Common, :Plural, :Person3, "ičó"],
+	    [:Short, :Inclusive, :Common, :Plural, :Person1, "Common"],
+	    [:Object, :Common, :Masc, :Singular, :Person3, "Common"],
+	    [:Short, :Common, :Common, :Singular, :Person1, "an"],
+	    [:Object, :Common, :Fem, :Singular, :Person3, "Common"],
+	    [:Long, :Common, :Common, :Plural, :Person2, "atín"],
+	    [:ObjectIndirect, :Common, :Common, :Singular, :Person2, "kí-"],
+	    [:Long, :Inclusive, :Common, :Plural, :Person1, "innó"],
+	    [:Short, :Common, :Fem, :Singular, :Person3, "Common"],
+	    [:Object, :Common, :Common, :Plural, :Person3, "Common"],
+	    [:Long, :Common, :Fem, :Singular, :Person3, "ičé"],
+	    [:ObjectIndirect, :Common, :Common, :Plural, :Person3, "Common"]]
+    }
+    {:label "rendille-PPoss"
+    :note "Pillinger-Galboran1999 p. 41"
+    :common {:morpheme :PROPOSS,
+	    :pos :Pronoun,
+	    :proClass :Possessive}
+    :terms [[:cohesion, :focus, :gender, :number, :person, :token]  ;; schema
+	    [:Common, :Foc, :Common, :Plural, :Person2, "kiinna"],
+	    [:Exclusive, :Non-focus, :Common, :Plural, :Person1, "kényo"],
+	    [:Common, :Non-focus, :Fem, :Singular, :Person3, "kíče"],
+	    [:Common, :Foc, :Common, :Singular, :Person1, "kaaya"],
+	    [:Common, :Foc, :Masc, :Singular, :Person3, "kiissa"],
+	    [:Common, :Non-focus, :Common, :Plural, :Person2, "kíin"],
+	    [:Common, :Foc, :Fem, :Singular, :Person3, "kičeeda"],
+	    [:Common, :Non-focus, :Common, :Singular, :Person2, "káah"],
+	    [:Common, :Non-focus, :Common, :Plural, :Person3, "kíčo"],
+	    [:Common, :Foc, :Common, :Singular, :Person2, "kaahha"],
+	    [:Common, :Non-focus, :Common, :Singular, :Person1, "kéy"],
+	    [:Inclusive, :Non-focus, :Common, :Plural, :Person1, "kéen"],
+	    [:Common, :Non-focus, :Masc, :Singular, :Person3, "kíis"],
+	    [:Common, :Foc, :Common, :Plural, :Person3, "kičooda"],
+	    [:Exclusive, :Foc, :Common, :Plural, :Person1, "kaaanya"],
+	    [:Inclusive, :Foc, :Common, :Plural, :Person1, "keenna"]]
+    }}

@@ -13,7 +13,7 @@ echo "xml2edn" >> logs/xml2edn.log;
     for f in $fs
 	do
 		lang=${f%\.xml}
-		echo "generating ${f%-pdgms\.xml}-pdgms.html  from  $f "
+		echo "generating ${f%-pdgms\.xml}-pdgms.edn  from  $f "
 		# set -x;
 		java  -jar ${JARDIR}/${SAXON} \
 			-xi \
