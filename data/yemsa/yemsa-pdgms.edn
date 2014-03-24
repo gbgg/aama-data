@@ -1,0 +1,3936 @@
+:lang :yemsa
+:schemata [:case {:Ablative, :Absolutive, :Comitative, :Dative, :Directive, :Exit, :Genitive, :Inessive, :Locative, :Object, :Subject}
+	  :conj2 {:O}
+	  :conj3 {:U}
+	  :conjClass {:Conj1, :Conj2, :Conj2a, :Conj3, :Conj3a, :Conj3b}
+	  :derived {:Causative, :Habitual, :Iterative, :Passive}
+	  :form {:V-fa, :_NULL, :vStem-proEncl}
+	  :gender {:Common, :Fem, :Honorific, :Masc}
+	  :mood {:Command, :Conditional, :Desiderative, :Gerund, :Indicative, :Non-finite, :Potential}
+	  :multiLex {:CONJPATTERN, :TenseFormation}
+	  :number {:Common, :Plural, :Singular}
+	  :person {:Common, :Person1, :Person2, :Person3}
+	  :polarity {:Affirmative, :Negative}
+	  :pos {:Pro, :Verb}
+	  :proClass {:Independent, :PossAdj, :PossSuff, :Possessive}
+	  :tam {:Cond1, :Des1, :Des2, :Desiderative, :FutIngr, :FutPerf, :FutProgr, :FutPunct, :FutPunctSub, :Future, :GerPres, :GerPret, :Gerund, :Imperative, :Imperfect, :Infinitive, :Irrealis, :Jussive, :Perfect, :Potential, :PresHab, :PresIngr, :PresProgr, :PresPunct, :Present, :PretDubit, :PretEgr, :PretHab, :PretIngr, :PretProgr, :Preterite, :Subordinate, :VNoun, :cond2}
+	  :templ {:Monosyllabic}
+	  :verbMorphClass {:ConjPattern, :DervStem, :Monosyllablic, :ProSuff, :TenseFormation}
+	  ]
+:morphemes {
+  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROPOSS {:gloss "[x]", :lemma "[y]", }
+  :PROPOSSADJ {:gloss "[x]", :lemma "[y]", }
+  :PROPOSSSUFF {:gloss "[x]", :lemma "[y]", }
+  :PROVSUFF {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :CONJPATTERN {:gloss "[x]", :lemma "[y]", }
+  :TenseFormation {:gloss "[x]", :lemma "[y]", }
+  :am {:lemma "am-", :gloss "go", :conjClass :Conj1, :pos :Verb}
+  :bey {:lemma "bey-", :gloss "fail to do", :conjClass :Conj1, :pos :Verb}
+  :bi {:lemma "bi-", :gloss "see (non-honorific forms)", :conjClass :Conj1, :pos :Verb, :templ :Monosyllabic}
+  :di {:lemma "di-", :gloss "sit", :conjClass :Conj3, :pos :Verb, :templ :Monosyllabic}
+  :et {:lemma "et-", :gloss "cook", :conjClass :Conj3, :pos :Verb}
+  :fa {:lemma "fa-", :gloss "be", :conjClass :Conj2, :pos :Verb}
+  :i {:lemma "i-", :gloss "say", :conjClass :Conj3, :pos :Verb, :templ :Monosyllabic}
+  :kem {:lemma "kem-", :gloss "see (honorific forms)", :conjClass :Conj2, :pos :Verb}
+  :key {:lemma "key-", :gloss "sit", :conjClass :Conj3, :pos :Verb}
+  :ma {:lemma "ma-", :gloss "eat (non-honorific forms)", :conjClass :Conj3, :pos :Verb, :templ :Monosyllabic}
+  :of {:lemma "of-", :gloss "come (honorific forms)", :conjClass :Conj2, :pos :Verb}
+  :shol {:lemma "shol-", :gloss "want", :conjClass :Conj2, :pos :Verb}
+  :tar {:lemma "tar- ~ ta-", :gloss "eat (honorific forms", :conjClass :Conj1, :pos :Verb}
+  :ya {:lemma "ya-", :gloss "come (non-honorific forms)", :conjClass :Conj2, :pos :Verb, :templ :Monosyllabic}
+  :yoo {:gloss "[x]", :lemma "[y]", }
+  :zag {:lemma "zag-", :gloss "make", :conjClass :Conj3, :pos :Verb}
+}
+:lxterms #{
+    {:label "yemsa-VConj3bAffPresIngrMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresIngr,
+	    :token-aux :jammarenár (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["uù-k"]]
+    }
+    {:label "yemsa-VConj1AffDesiderative-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Desiderative,
+	    :token-aux :shol-[perf~imperf~futPunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k / am-a-ná-k"],
+	    [:Common, :Singular, :Person2, "amà-k / am-a-tà-k"],
+	    [:Honorific, :Singular, :Person2, "amà-k / am-o-ní-k"],
+	    [:Masc, :Singular, :Person3, "amà-k / am-a-ná-k"],
+	    [:Fem, :Singular, :Person3, "amà-k / am-a-nà-k"],
+	    [:Honorific, :Singular, :Person3, "amà-k / am-(s)o-né-k"],
+	    [:Common, :Plural, :Person1, "amà-k / am-a-nì-k"],
+	    [:Common, :Plural, :Person2, "amà-k / am-a-tí-k"],
+	    [:Honorific, :Plural, :Person2, "amà-k / am-soní-k"],
+	    [:Common, :Plural, :Person3, "amà-k / am-soné-k"],
+	    [:Honorific, :Plural, :Person3, "amà-k / am-soné-k"]]
+    }
+    {:label "yemsa-VConj1NegPretDubit-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj2aAffImprtvMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "fóò"],
+	    [:Honorific, :Singular, "foo-ní"],
+	    [:Common, :Plural, "foo-tì"],
+	    [:Honorific, :Plural, "foo-so-ní"]]
+    }
+    {:label "yemsa-VConj1NegPotential-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Potential}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k / am-a-ná-k", "ʕim-a-naá-ttà ~ ánè ʕim-ú-t"],
+	    [:Common, :Singular, :Person2, "amà-k / am-a-tà-k", "ʕim-a-taà-ttà ~ ánè ʕim-è"],
+	    [:Honorific, :Singular, :Person2, "amà-k / am-o-ní-k", "ʕim-a-nií-ttà ~ ánè ʕim-a-ní"],
+	    [:Masc, :Singular, :Person3, "amà-k / am-a-ná-k", "ʕim-a-ní-ttè ~ ánè ʕim-é"],
+	    [:Fem, :Singular, :Person3, "amà-k / am-a-nà-k", "ʕim-nì-ttà ~ ánè ʕim-à"],
+	    [:Honorific, :Singular, :Person3, "amà-k / am-(s)o-né-k", "ʕim-neé-ttà ~ ánè ʕimoo-tó-"],
+	    [:Common, :Plural, :Person1, "amà-k / am-a-nì-k", "ʕim-ay-ttà ~ ánè ʕim-a-nì"],
+	    [:Common, :Plural, :Person2, "amà-k / am-a-tí-k", "ʕim-a-tií-ttà ~ ánè ʕim-awe-tí"],
+	    [:Honorific, :Plural, :Person2, "amà-k / am-soní-k", "ʕim-a-nií-ttà ~ ánè ʕim-a-ní"],
+	    [:Common, :Plural, :Person3, "amà-k / am-soné-k", "ʕim-o-neé-ttà ~ ánè ʕim-awe-té"],
+	    [:Honorific, :Plural, :Person3, "amà-k / am-soné-k", "ʕim-o-neé-ttà ~ ánè ʕim-oo-tó"]]
+    }
+    {:label "yemsa-VConj2AffImperf"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-e-fán"],
+	    [:Common, :Singular, :Person2, "shol-e-fát"],
+	    [:Honorific, :Singular, :Person2, "shol-e-fení"],
+	    [:Masc, :Singular, :Person3, "shol-e-fé"],
+	    [:Fem, :Singular, :Person3, "shol-e-fà"],
+	    [:Honorific, :Singular, :Person3, "shol-e-fé"],
+	    [:Common, :Plural, :Person1, "shol-e-fenì"],
+	    [:Common, :Plural, :Person2, "shol-e-feti"],
+	    [:Honorific, :Plural, :Person2, "shol-e-fení"],
+	    [:Common, :Plural, :Person3, "shol-e-sefé"],
+	    [:Honorific, :Plural, :Person3, "shol-e-sefé"]]
+    }
+    {:label "yemsa-VConj3aAffGerPresMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "dii-faád"],
+	    [:Common, :Common, :Person2, "dii-faád"],
+	    [:Fem, :Singular, :Person3, "dii-faád"],
+	    [:Common, :Common, :Person3, "dii-feéd"]]
+    }
+    {:label "yemsa-VConj1NegGerund-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Gerund,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-nóy"],
+	    [:Common, :Singular, :Person2, "am-a-nóy"],
+	    [:Honorific, :Singular, :Person2, "am-a-nóy"],
+	    [:Masc, :Singular, :Person3, "am-a-nóy"],
+	    [:Fem, :Singular, :Person3, "am-a-nóy"],
+	    [:Honorific, :Singular, :Person3, "am-a-nóy"],
+	    [:Common, :Plural, :Person1, "am-a-nóy"],
+	    [:Common, :Plural, :Person2, "am-a-nóy"],
+	    [:Honorific, :Plural, :Person2, "am-a-nóy"],
+	    [:Common, :Plural, :Person3, "am-a-nóy"],
+	    [:Honorific, :Plural, :Person3, "am-a-nóy"]]
+    }
+    {:label "yemsa-VConj1AffImperf-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "am-fán", "(also forms with euphonic -ì- before -f"],
+	    [:Common, :Singular, :Person2, "am-fát", "_NULL"],
+	    [:Honorific, :Singular, :Person2, "am-fení", "_NULL"],
+	    [:Masc, :Singular, :Person3, "am-fé", "_NULL"],
+	    [:Fem, :Singular, :Person3, "am-fà", "_NULL"],
+	    [:Honorific, :Singular, :Person3, "am-fé", "_NULL"],
+	    [:Common, :Plural, :Person1, "am-fenì", "_NULL"],
+	    [:Common, :Plural, :Person2, "am-feti", "_NULL"],
+	    [:Honorific, :Plural, :Person2, "am-fení", "_NULL"],
+	    [:Common, :Plural, :Person3, "am-sefé", "_NULL"],
+	    [:Honorific, :Plural, :Person3, "am-sefé", "_NULL"]]
+    }
+    {:label "yemsa-VConj2AffGerPresMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "yaa-faád"],
+	    [:Common, :Common, :Person2, "yaa-faád"],
+	    [:Fem, :Singular, :Person3, "yaa-faád"],
+	    [:Common, :Common, :Person3, "yee-feéd"]]
+    }
+    {:label "yemsa-VConj1AffPretDubitMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :(etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["bi-í-n-toŋwà"]]
+    }
+    {:label "yemsa-VConj3NegGerund"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Gerund,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-u-nóy"],
+	    [:Common, :Singular, :Person2, "zag-u-nóy"],
+	    [:Honorific, :Singular, :Person2, "zag-u-nóy"],
+	    [:Masc, :Singular, :Person3, "zag-u-nóy"],
+	    [:Fem, :Singular, :Person3, "zag-u-nóy"],
+	    [:Honorific, :Singular, :Person3, "zag-u-nóy"],
+	    [:Common, :Plural, :Person1, "zag-u-nóy"],
+	    [:Common, :Plural, :Person2, "zag-u-nóy"],
+	    [:Honorific, :Plural, :Person2, "zag-u-nóy"],
+	    [:Common, :Plural, :Person3, "zag-u-nóy"],
+	    [:Honorific, :Plural, :Person3, "zag-u-nóy"]]
+    }
+    {:label "yemsa-VConj2NegInfinitive"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :shol,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["shol-ò-bey-à"]]
+    }
+    {:label "yemsa-VConj3AffImperfMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "maa-fán", "_NULL"],
+	    [:Masc, :Person3, "mee-fé", "(etc.)"]]
+    }
+    {:label "yemsa-VConj3AffPerf"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-í-n"],
+	    [:Common, :Singular, :Person2, "zag-í-t"],
+	    [:Honorific, :Singular, :Person2, "zag-i-ní"],
+	    [:Masc, :Singular, :Person3, "zag-í"],
+	    [:Fem, :Singular, :Person3, "zag-ì"],
+	    [:Honorific, :Singular, :Person3, "zag-i-té"],
+	    [:Common, :Plural, :Person1, "zag-i-nì"],
+	    [:Common, :Plural, :Person2, "zag-i-tí"],
+	    [:Honorific, :Plural, :Person2, "zag-i-ní"],
+	    [:Common, :Plural, :Person3, "zag-i-té"],
+	    [:Honorific, :Plural, :Person3, "zag-i-té"]]
+    }
+    {:label "yemsa-VConj3aAffImprtvMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "dú"],
+	    [:Honorific, :Singular, "duu-ní ~ kow-ní(?)"],
+	    [:Common, :Plural, "duu-tì"],
+	    [:Honorific, :Plural, "duu-ní ~ kow-ní(?)"]]
+    }
+    {:label "yemsa-VConj3NegPretDubit"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj3AffGerPres"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "zag-i-faád"],
+	    [:Common, :Common, :Person2, "zag-i-faád"],
+	    [:Fem, :Singular, :Person3, "zag-i-faád"],
+	    [:Common, :Common, :Person3, "zag-i-feéd"]]
+    }
+    {:label "yemsa-VConj3NegInfinitive"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :zag,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["zag-ù-bey-à"]]
+    }
+    {:label "yemsa-VConj3AffJussMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "muu-ná"],
+	    [:Masc, :Singular, :Person3, "muw-ó"],
+	    [:Fem, :Singular, :Person3, "m-uùn"],
+	    [:Honorific, :Singular, :Person3, "muu-tó"],
+	    [:Common, :Plural, :Person1, "muu-nì"]]
+    }
+    {:label "yemsa-VConj2NegDesiderative"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Desiderative}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person2, "sholò-k / shol-o-ná-k", "shol-e-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "sholò-k / shol-o-tà-k", "shol-e-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "sholò-k / shol-o-ní-k", "shol-eé-ttè"],
+	    [:Fem, :Singular, :Person3, "sholò-k / shol-o-ná-k", "shol-eé-ttà"],
+	    [:Honorific, :Singular, :Person3, "sholò-k / shol-o-nà-k", "shol-e-teé-ttà"],
+	    [:Common, :Plural, :Person1, "sholò-k / shol-o-né-k", "shol-e-niì-ttà"],
+	    [:Common, :Plural, :Person2, "sholò-k / shol-o-nì-k", "shol-e-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "sholò-k / shol-o-tí-k", "shol-e-nií-ttà"],
+	    [:Common, :Plural, :Person3, "sholò-k / shol-soní-k", "shol-e-teé-ttà"],
+	    [:Honorific, :Plural, :Person3, "sholò-k / shol-(s)oné-k", "shol-e-teé-ttà"]]
+    }
+    {:label "yemsa-VConj2AffPretDubitMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :ya,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :(etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["yaán-toŋwà"]]
+    }
+    {:label "yemsa-VConj1NegPresProgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-difán-attà"],
+	    [:Common, :Singular, :Person2, "am-difát-attà"],
+	    [:Honorific, :Singular, :Person2, "am-difenií-ttà"],
+	    [:Masc, :Singular, :Person3, "am-difeé-ttè"],
+	    [:Fem, :Singular, :Person3, "am-difaà-ttà"],
+	    [:Honorific, :Singular, :Person3, "am-difeé-ttà"],
+	    [:Common, :Plural, :Person1, "am-difen1ì-ttà"],
+	    [:Common, :Plural, :Person2, "am-difetií-ttà"],
+	    [:Honorific, :Plural, :Person2, "am-difenií-ttà"],
+	    [:Common, :Plural, :Person3, "am-difeé-ttà"],
+	    [:Honorific, :Plural, :Person3, "am-difeé-ttà"]]
+    }
+    {:label "yemsa-VConj2AffFutPunctMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :yoo,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "yoo-ná", "_NULL"],
+	    [:Common, :Singular, :Person2, "yoo-tà", "_NULL"],
+	    [:Masc, :Singular, :Person3, "yoo-ná", "(etc.)"],
+	    [:Fem, :Singular, :Person3, "yoo-nà", "_NULL"],
+	    [:Common, :Plural, :Person1, "yoo-nì", "_NULL"],
+	    [:Common, :Plural, :Person2, "yoo-tí", "_NULL"],
+	    [:Common, :Plural, :Person3, "yoo-té (??)", "_NULL"]]
+    }
+    {:label "yemsa-VConj2aNegSubordinateMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Subordinate,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "ánè ffooyè (-wà)", "_NULL"],
+	    [:Common, :Singular, :Person2, "ánè ffooyè (-wà)", "_NULL"],
+	    [:Honorific, :Singular, :Person2, "ánè foowení (-wà)", "_NULL"],
+	    [:Masc, :Singular, :Person3, "ánè ffooyè(-wà) ~ footu-wà", "[first form"],
+	    [:Fem, :Singular, :Person3, "ánè foowà (-wà)", "_NULL"],
+	    [:Honorific, :Singular, :Person3, "ánè footó-wà", "_NULL"],
+	    [:Common, :Plural, :Person1, "ánè foowetí(-wà)", "_NULL"],
+	    [:Common, :Plural, :Person2, "ánè foowetí(-wà)", "_NULL"],
+	    [:Honorific, :Plural, :Person2, "ánè fesotó", "_NULL"],
+	    [:Common, :Plural, :Person3, "ánè fesotó", "_NULL"],
+	    [:Honorific, :Plural, :Person3, "ánè foosowení (-wà)", "_NULL"]]
+    }
+    {:label "yemsa-VConj1AffJussMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "biy-a-ná"],
+	    [:Masc, :Singular, :Person3, "biy-ó"],
+	    [:Fem, :Singular, :Person3, "biy-òn"],
+	    [:Honorific, :Singular, :Person3, "kem-o-tó"],
+	    [:Common, :Plural, :Person1, "biy-a-nì"],
+	    [:Common, :Plural, :Person3, "bi-so-tó"],
+	    [:Honorific, :Plural, :Person3, "kem-o-sotó"]]
+    }
+    {:label "yemsa-VConj3aAffPretEgrMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :gender :Common,
+	    :lexeme :di,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretEgr,
+	    :token-aux :koys-í-n (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["diirá"]]
+    }
+    {:label "yemsa-VConj1AffPerf-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-í-n"],
+	    [:Common, :Singular, :Person2, "am-í-t"],
+	    [:Honorific, :Singular, :Person2, "am-ní"],
+	    [:Masc, :Singular, :Person3, "am-í"],
+	    [:Fem, :Singular, :Person3, "am-ì"],
+	    [:Honorific, :Singular, :Person3, "am-e-té ~ of-e-té"],
+	    [:Common, :Plural, :Person1, "am-nì"],
+	    [:Common, :Plural, :Person2, "am-tí"],
+	    [:Honorific, :Plural, :Person2, "am-(se)ní"],
+	    [:Common, :Plural, :Person3, "am-(s)eté"],
+	    [:Honorific, :Plural, :Person3, "am-(s)e-té ~ of-e-(se)té"]]
+    }
+    {:label "yemsa-VConj2NegFutIngr"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "sholò-k", "áfà jammaroná-zà"],
+	    [:Common, :Singular, :Person2, "sholò-k", "áfà jammarotà-zà"],
+	    [:Honorific, :Singular, :Person2, "sholò-k", "áfà jammaroní-zà"],
+	    [:Masc, :Singular, :Person3, "sholò-k", "áfà jammaroná-zà"],
+	    [:Fem, :Singular, :Person3, "sholò-k", "áfà jammaronà-zà"],
+	    [:Honorific, :Singular, :Person3, "sholò-k", "áfà jammaroné-zà"],
+	    [:Common, :Plural, :Person1, "sholò-k", "áfà jammaronì-zà"],
+	    [:Common, :Plural, :Person2, "sholò-k", "áfà jammarotí-zà"],
+	    [:Honorific, :Plural, :Person2, "sholò-k", "áfà jammaroní-zà"],
+	    [:Common, :Plural, :Person3, "sholò-k", "áfà jammarsoné-zà"],
+	    [:Honorific, :Plural, :Person3, "sholò-k", "áfà jammarsoné-zà"]]
+    }
+    {:label "yemsa-VConj1NegPerf-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj1AffPresIngrMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresIngr,
+	    :token-aux :jammarenár (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["biyà-k"]]
+    }
+    {:label "yemsa-VConj3bAffImperfMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "ii-fán", "_NULL"],
+	    [:Masc, :Person3, "ii-fé", "(etc.)"]]
+    }
+    {:label "yemsa-VConj2AffPresProgr"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-è-difán"],
+	    [:Common, :Singular, :Person2, "shol-è-difát"],
+	    [:Honorific, :Singular, :Person2, "shol-è-difení"],
+	    [:Masc, :Singular, :Person3, "shol-è-difé"],
+	    [:Fem, :Singular, :Person3, "shol-è-difà"],
+	    [:Honorific, :Singular, :Person3, "shol-è-difé"],
+	    [:Common, :Plural, :Person1, "shol-è-difenì"],
+	    [:Common, :Plural, :Person2, "shol-è-difetí"],
+	    [:Honorific, :Plural, :Person2, "shol-è-difení"],
+	    [:Common, :Plural, :Person3, "shol-è-difé"],
+	    [:Honorific, :Plural, :Person3, "shol-è-difé"]]
+    }
+    {:label "yemsa-VConj1NegPresHab-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresHab,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj1NegFutProgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "áfà am-fooná-zà"],
+	    [:Common, :Singular, :Person2, "áfà am-footà-zà"],
+	    [:Honorific, :Singular, :Person2, "áfà am-fooní-zà"],
+	    [:Masc, :Singular, :Person3, "áfà am-fooná-zà"],
+	    [:Fem, :Singular, :Person3, "áfà am-foonà-zà"],
+	    [:Honorific, :Singular, :Person3, "áfà am-fooné-zà"],
+	    [:Common, :Plural, :Person1, "áfà am-foonì-zà"],
+	    [:Common, :Plural, :Person2, "áfà am-footi-zà"],
+	    [:Honorific, :Plural, :Person2, "áfà am-fooné-zà"],
+	    [:Common, :Plural, :Person3, "áfà am-fooné-zà"],
+	    [:Honorific, :Plural, :Person3, "áfà am-fooné-zà"]]
+    }
+    {:label "yemsa-VConj3bAffVNounMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["uù"]]
+    }
+    {:label "yemsa-VConj3AffJuss"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-u-ná"],
+	    [:Masc, :Singular, :Person3, "zag-u-wó"],
+	    [:Fem, :Singular, :Person3, "zag-ùn"],
+	    [:Honorific, :Singular, :Person3, "zag-u-tó"],
+	    [:Common, :Plural, :Person1, "zag-u-nì"],
+	    [:Common, :Plural, :Person3, "zag-u-(so)tó"],
+	    [:Honorific, :Plural, :Person3, "zag-u-(so)tó"]]
+    }
+    {:label "yemsa-VConj3AffPretIngrMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretIngr,
+	    :token-aux :jammarén (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["muù-k"]]
+    }
+    {:label "yemsa-VConj3AffPresProgr"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-ì-difán"],
+	    [:Common, :Singular, :Person2, "zag-ì-difát"],
+	    [:Honorific, :Singular, :Person2, "zag-ì-difení"],
+	    [:Masc, :Singular, :Person3, "zag-ì-difé"],
+	    [:Fem, :Singular, :Person3, "zag-ì-difà"],
+	    [:Honorific, :Singular, :Person3, "zag-ì-difé"],
+	    [:Common, :Plural, :Person1, "zag-ì-difenì"],
+	    [:Common, :Plural, :Person2, "zag-ì-difetí"],
+	    [:Honorific, :Plural, :Person2, "zag-ì-difení"],
+	    [:Common, :Plural, :Person3, "zag-ì-difé"],
+	    [:Honorific, :Plural, :Person3, "zag-ì-difé"]]
+    }
+    {:label "yemsa-VConj3bAffPretProgrMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "iì-faaná", "_NULL"],
+	    [:Masc, :Person3, "iì-feén", "(etc.)"]]
+    }
+    {:label "yemsa-VConj2AffFutPunct"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-o-ná"],
+	    [:Common, :Singular, :Person2, "shol-o-tà"],
+	    [:Honorific, :Singular, :Person2, "shol-o-ní"],
+	    [:Masc, :Singular, :Person3, "shol-o-ná"],
+	    [:Fem, :Singular, :Person3, "shol-o-nà"],
+	    [:Honorific, :Singular, :Person3, "shol-o-né"],
+	    [:Common, :Plural, :Person1, "shol-o-nì"],
+	    [:Common, :Plural, :Person2, "shol-o-tí"],
+	    [:Honorific, :Plural, :Person2, "shol-oní"],
+	    [:Common, :Plural, :Person3, "shol-soné"],
+	    [:Honorific, :Plural, :Person3, "shol-soné"]]
+    }
+    {:label "yemsa-VConj3aAffVNounMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :gender :Common,
+	    :lexeme :di,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["d-uù"]]
+    }
+    {:label "yemsa-VConj3NegFutProgr"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "áfà zagi-fooná-zà"],
+	    [:Common, :Singular, :Person2, "áfà zagi-footà-zà"],
+	    [:Honorific, :Singular, :Person2, "áfà zagi-fooní-zà"],
+	    [:Masc, :Singular, :Person3, "áfà zagi-fooná-zà"],
+	    [:Fem, :Singular, :Person3, "áfà zagi-foonà-zà"],
+	    [:Honorific, :Singular, :Person3, "áfà zagi-fooné-zà"],
+	    [:Common, :Plural, :Person1, "áfà zagi-foonì-zà"],
+	    [:Common, :Plural, :Person2, "áfà zagi-footi-zà"],
+	    [:Honorific, :Plural, :Person2, "áfà zagi-fooné-zà"],
+	    [:Common, :Plural, :Person3, "áfà zagi-fooné-zà"],
+	    [:Honorific, :Plural, :Person3, "áfà zagi-fooné-zà"]]
+    }
+    {:label "yemsa-VConj1NegDesiderative-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Desiderative}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k / am-a-ná-k", "shol-e-naá-ttà"],
+	    [:Common, :Singular, :Person2, "amà-k / am-a-tà-k", "shol-e-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "amà-k / am-o-ní-k", "shol-e-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "amà-k / am-a-ná-k", "shol-eé-ttè"],
+	    [:Fem, :Singular, :Person3, "amà-k / am-a-nà-k", "shol-eé-ttà"],
+	    [:Honorific, :Singular, :Person3, "amà-k / am-(s)o-né-k", "shol-e-teé-ttà"],
+	    [:Common, :Plural, :Person1, "amà-k / am-a-nì-k", "shol-e-niì-ttà"],
+	    [:Common, :Plural, :Person2, "amà-k / am-a-tí-k", "shol-e-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "amà-k / am-soní-k", "shol-e-nií-ttà"],
+	    [:Common, :Plural, :Person3, "amà-k / am-soné-k", "shol-e-teé-ttà"],
+	    [:Honorific, :Plural, :Person3, "amà-k / am-soné-k", "shol-e-teé-ttà"]]
+    }
+    {:label "yemsa-VConj1AffGerPret-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "am-m-á"],
+	    [:Common, :Common, :Person2, "am-m-á"],
+	    [:Fem, :Singular, :Person3, "am-m-á"],
+	    [:Common, :Common, :Person3, "am-m-é"]]
+    }
+    {:label "yemsa-VConj1NegPretHab-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretHab}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "ánè amà-", "shak-fán"],
+	    [:Common, :Singular, :Person2, "ánè amà-", "shak-fát"],
+	    [:Honorific, :Singular, :Person2, "ánè amà-", "shak-fení"],
+	    [:Masc, :Singular, :Person3, "ánè amà-", "shak-fé"],
+	    [:Fem, :Singular, :Person3, "ánè amà-", "shak-fàneg"],
+	    [:Common, :Plural, :Person1, "ánè amà-", "shak-fenì"],
+	    [:Common, :Plural, :Person2, "ánè amà-", "shak-feti"],
+	    [:Honorific, :Plural, :Person2, "ánè amà-", "shak-fení"],
+	    [:Common, :Plural, :Person3, "ánè amà-", "shak-fé"],
+	    [:Honorific, :Plural, :Person3, "ánè amà-", "shak-fé"]]
+    }
+    {:label "yemsa-VConj3bAffPerfMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "i-í-n"],
+	    [:Common, :Singular, :Person2, "i-í-t"],
+	    [:Masc, :Singular, :Person3, "i-í"],
+	    [:Fem, :Singular, :Person3, "i-ì"],
+	    [:Common, :Plural, :Person1, "ii-nì"],
+	    [:Common, :Plural, :Person2, "ii-tí"],
+	    [:Common, :Plural, :Person3, "ii-té"]]
+    }
+    {:label "yemsa-VConj3bAffInfinitiveMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["uù-k"]]
+    }
+    {:label "yemsa-VConj3AffImprtvMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "mú ~ múù"],
+	    [:Plural, "muu-tì"]]
+    }
+    {:label "yemsa-VConj3aAffGerPretMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "dii-r-á"],
+	    [:Common, :Common, :Person2, "dii-r-á"],
+	    [:Fem, :Singular, :Person3, "dii-r-á"],
+	    [:Common, :Common, :Person3, "dii-r-é"]]
+    }
+    {:label "yemsa-VConj1NegFutPunct-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "áfà am-a-ná-zà"],
+	    [:Common, :Singular, :Person2, "áfà am-a-tà-zà"],
+	    [:Honorific, :Singular, :Person2, "áfà am-o-ní-zà"],
+	    [:Masc, :Singular, :Person3, "áfà am-a-ná-zà"],
+	    [:Fem, :Singular, :Person3, "áfà am-a-nà-zà"],
+	    [:Honorific, :Singular, :Person3, "áfà am-o-né-zà"],
+	    [:Common, :Plural, :Person1, "áfà am-a-nì-zà"],
+	    [:Common, :Plural, :Person2, "áfà am-a-tí-zà ~ am-o-tí-zà"],
+	    [:Honorific, :Plural, :Person2, "áfà am-oní-zà"],
+	    [:Common, :Plural, :Person3, "áfà am-oné-zà"],
+	    [:Honorific, :Plural, :Person3, "áfà am-oné-zà"]]
+    }
+    {:label "yemsa-VConj3NegPretProgr"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretProgr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "(ánè) zagù-", "shak-faaná"],
+	    [:Common, :Singular, :Person2, "(ánè) zagù-", "shak-feèn"],
+	    [:Honorific, :Singular, :Person2, "(ánè) zagù-", "shak-feení"],
+	    [:Masc, :Singular, :Person3, "(ánè) zagù-", "shak-feén"],
+	    [:Fem, :Singular, :Person3, "(ánè) zagù-", "shak-feèn"],
+	    [:Honorific, :Singular, :Person3, "(ánè) zagù-", "shak-feén"],
+	    [:Common, :Plural, :Person1, "(ánè) zagù-", "shak-feenì"],
+	    [:Common, :Plural, :Person2, "(ánè) zagù-", "shak-feení"],
+	    [:Honorific, :Plural, :Person2, "(ánè) zagù-", "shak-feení"],
+	    [:Common, :Plural, :Person3, "(ánè) zagù-", "shak-feén"],
+	    [:Honorific, :Plural, :Person3, "(ánè) zagù-", "shak-feén"]]
+    }
+    {:label "yemsa-VConj1AffVNoun-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :am,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["am-à"]]
+    }
+    {:label "yemsa-VConj1AffPretDubit-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-í-n-toŋwà"],
+	    [:Common, :Singular, :Person2, "am-í-t-toŋwà"],
+	    [:Honorific, :Singular, :Person2, "am-ní-toŋwà"],
+	    [:Masc, :Singular, :Person3, "am-í-toŋwà"],
+	    [:Fem, :Singular, :Person3, "am-ì-toŋwà"],
+	    [:Honorific, :Singular, :Person3, "am-e-té-toŋwà"],
+	    [:Common, :Plural, :Person1, "am-nì-toŋwà"],
+	    [:Common, :Plural, :Person2, "am-tí-toŋwà"],
+	    [:Honorific, :Plural, :Person2, "am-(se)ní-toŋwà"],
+	    [:Common, :Plural, :Person3, "am-(s)eté-toŋwà"],
+	    [:Honorific, :Plural, :Person3, "am-(s)e-té-toŋwà"]]
+    }
+    {:label "yemsa-VConj2aAffVNounMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :gender :Common,
+	    :lexeme :fa,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["???"]]
+    }
+    {:label "yemsa-VConj3AffPretProgr"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-ì-faaná"],
+	    [:Common, :Singular, :Person2, "zag-ì-feèn"],
+	    [:Honorific, :Singular, :Person2, "zag-ì-feení"],
+	    [:Masc, :Singular, :Person3, "zag-ì-feén"],
+	    [:Fem, :Singular, :Person3, "zag-ì-feèn"],
+	    [:Honorific, :Singular, :Person3, "zag-ì-feén"],
+	    [:Common, :Plural, :Person1, "zag-ì-feenì"],
+	    [:Common, :Plural, :Person2, "zag-ì-feení"],
+	    [:Honorific, :Plural, :Person2, "zag-ì-feení"],
+	    [:Common, :Plural, :Person3, "zag-ì-feén"],
+	    [:Honorific, :Plural, :Person3, "zag-ì -feén"]]
+    }
+    {:label "yemsa-VConj3NegPresPunct"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-i-naá-ttà"],
+	    [:Common, :Singular, :Person2, "zag-i-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "zag-i-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "zag-ií-ttè"],
+	    [:Fem, :Singular, :Person3, "zag-iì-ttà"],
+	    [:Honorific, :Singular, :Person3, "zag-i-teé-ttà"],
+	    [:Common, :Plural, :Person1, "zag-i-niì-ttà"],
+	    [:Common, :Plural, :Person2, "zag-i-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "zag-i-nií-ttà"],
+	    [:Common, :Plural, :Person3, "zag-i-teé-ttà ~ zag-seteé-ttà"],
+	    [:Honorific, :Plural, :Person3, "zag-i-teé-ttà ~ zag-seteé-ttà"]]
+    }
+    {:label "yemsa-VConj3AffPresPunctMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "maa-n-ár"],
+	    [:Common, :Singular, :Person2, "maa-t-àr"],
+	    [:Honorific, :Singular, :Person2, "maa-ní-r"],
+	    [:Masc, :Singular, :Person3, "meé-r"],
+	    [:Fem, :Singular, :Person3, "maà-r"],
+	    [:Honorific, :Singular, :Person3, "ta-e-té-r"],
+	    [:Common, :Plural, :Person1, "maa-nì-r"],
+	    [:Common, :Plural, :Person2, "maa-tí-r"],
+	    [:Honorific, :Plural, :Person2, "maa-ní-r"],
+	    [:Common, :Plural, :Person3, "mee-(se)té-r"],
+	    [:Honorific, :Plural, :Person3, "ta-e-té-r"]]
+    }
+    {:label "yemsa-VConj1AffJuss-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-ná"],
+	    [:Masc, :Singular, :Person3, "am-ó"],
+	    [:Fem, :Singular, :Person3, "am-òn"],
+	    [:Honorific, :Singular, :Person3, "am-(o-)tó"],
+	    [:Common, :Plural, :Person1, "am-a-nì"],
+	    [:Common, :Plural, :Person3, "am-(so)tó ~ am-o-tó"],
+	    [:Honorific, :Plural, :Person3, "am-(so)tó ~ am-o-tó"]]
+    }
+    {:label "yemsa-VConj1NegPresPunct-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-naá-ttà"],
+	    [:Common, :Singular, :Person2, "am-a-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "am-a-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "am-a-ní-ttè"],
+	    [:Fem, :Singular, :Person3, "am-nì-ttà"],
+	    [:Honorific, :Singular, :Person3, "am-neé-ttà"],
+	    [:Common, :Plural, :Person1, "am-ay-ttà"],
+	    [:Common, :Plural, :Person2, "am-a-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "am-a-nií-ttà"],
+	    [:Common, :Plural, :Person3, "am-o-neé-ttà"],
+	    [:Honorific, :Plural, :Person3, "am-o-neé-ttà"]]
+    }
+    {:label "yemsa-VConj1AffGerPretMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "bii-r-á"],
+	    [:Common, :Common, :Person2, "bii-r-á"],
+	    [:Fem, :Singular, :Person3, "bii-r-á"],
+	    [:Common, :Common, :Person3, "bii-r-é"]]
+    }
+    {:label "yemsa-VConj3NegFutPunctSub"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPunctSub,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-u-taá-ttà"],
+	    [:Common, :Singular, :Person2, "zag-u-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "zag-u-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "zag-u-nií-ttè"],
+	    [:Fem, :Singular, :Person3, "zag-u-niì-ttà"],
+	    [:Honorific, :Singular, :Person3, "zag-u-neé-ttà"],
+	    [:Common, :Plural, :Person1, "zag-u-tií-ttà"],
+	    [:Common, :Plural, :Person2, "zag-u-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "zag-u-nií-ttà"],
+	    [:Common, :Plural, :Person3, "zag-so-neé-ttà"],
+	    [:Honorific, :Plural, :Person3, "zag-so-neé-ttà"]]
+    }
+    {:label "yemsa-VConj3aAffPretProgrMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "diì-faaná", "_NULL"],
+	    [:Masc, :Person3, "diì-feén", "(etc.)"]]
+    }
+    {:label "yemsa-VConj2AffImprtv"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "shol-ó"],
+	    [:Honorific, :Singular, "shol-o-ní"],
+	    [:Common, :Plural, "shol-o-tì"],
+	    [:Honorific, :Plural, "shol-o-ní"]]
+    }
+    {:label "yemsa-VConj2aAffFutPunctMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "foo-ná"],
+	    [:Common, :Singular, :Person2, "foo-tà"],
+	    [:Honorific, :Singular, :Person2, "foo-ní"],
+	    [:Masc, :Singular, :Person3, "foo-ná"],
+	    [:Fem, :Singular, :Person3, "foo-nà"],
+	    [:Honorific, :Singular, :Person3, "foo-né"],
+	    [:Common, :Plural, :Person1, "foo-nì"],
+	    [:Common, :Plural, :Person2, "foo-tí ~foo-tí"],
+	    [:Honorific, :Plural, :Person2, "foo-soní"],
+	    [:Common, :Plural, :Person3, "foo-né"],
+	    [:Honorific, :Plural, :Person3, "foo-né"]]
+    }
+    {:label "yemsa-VConj2AffPerfMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "yaá-n"],
+	    [:Common, :Singular, :Person2, "yaá-t"],
+	    [:Honorific, :Singular, :Person2, "yaa-ní ~ of-e-ní"],
+	    [:Masc, :Singular, :Person3, "yeé"],
+	    [:Fem, :Singular, :Person3, "yaà"],
+	    [:Honorific, :Singular, :Person3, "yee-té ~ of-e-té"],
+	    [:Common, :Plural, :Person1, "yaa-nì"],
+	    [:Common, :Plural, :Person2, "yaa-tí"],
+	    [:Honorific, :Plural, :Person2, "yaa-ní ~ of-e-ní"],
+	    [:Common, :Plural, :Person3, "yee-seté"],
+	    [:Honorific, :Plural, :Person3, "yee-té ~ of-e-té"]]
+    }
+    {:label "yemsa-VConj1AffCond1-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Cond1,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-fanaá-né"],
+	    [:Common, :Singular, :Person2, "am-fataà-né"],
+	    [:Honorific, :Singular, :Person2, "am-fanií-né"],
+	    [:Masc, :Singular, :Person3, "am-fanaá-né"],
+	    [:Fem, :Singular, :Person3, "am-fanaà-né"],
+	    [:Honorific, :Singular, :Person3, "am-fateé-né"],
+	    [:Common, :Plural, :Person1, "am-faniì-né"],
+	    [:Common, :Plural, :Person2, "am-fatií-né"],
+	    [:Honorific, :Plural, :Person2, "am-fanií-né"],
+	    [:Common, :Plural, :Person3, "am-fateé-né"],
+	    [:Honorific, :Plural, :Person3, "am-fateé-né"]]
+    }
+    {:label "yemsa-VConj2AffJuss"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-u-ná"],
+	    [:Masc, :Singular, :Person3, "shol-ow-ó"],
+	    [:Fem, :Singular, :Person3, "shol-òn ~ shol-ùn"],
+	    [:Honorific, :Singular, :Person3, "shol-o-tó"],
+	    [:Common, :Plural, :Person1, "shol-o-nì"],
+	    [:Common, :Plural, :Person3, "shol-o-(so)tó"],
+	    [:Honorific, :Plural, :Person3, "shol-o-(so)tó"]]
+    }
+    {:label "yemsa-VConj2NegPerf"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj3AffImperf"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-i-fán"],
+	    [:Common, :Singular, :Person2, "zag-i-fát"],
+	    [:Honorific, :Singular, :Person2, "zag-i-fení"],
+	    [:Masc, :Singular, :Person3, "zag-i-fé"],
+	    [:Fem, :Singular, :Person3, "zag-i-fà"],
+	    [:Honorific, :Singular, :Person3, "zag-i-fé"],
+	    [:Common, :Plural, :Person1, "zag-i-fenì"],
+	    [:Common, :Plural, :Person2, "zag-i-feti"],
+	    [:Honorific, :Plural, :Person2, "zag-i-fení"],
+	    [:Common, :Plural, :Person3, "zag-i-sefé"],
+	    [:Honorific, :Plural, :Person3, "zag-i-sefé"]]
+    }
+    {:label "yemsa-VConj3AffPresPunct"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zagin-ár"],
+	    [:Common, :Singular, :Person2, "zagit-àr"],
+	    [:Honorific, :Singular, :Person2, "zagi-ní-r"],
+	    [:Masc, :Singular, :Person3, "zagí-r"],
+	    [:Fem, :Singular, :Person3, "zagì-r"],
+	    [:Honorific, :Singular, :Person3, "zagité-r"],
+	    [:Common, :Plural, :Person1, "zaginì-r"],
+	    [:Common, :Plural, :Person2, "zagití-r"],
+	    [:Honorific, :Plural, :Person2, "zaginí-r"],
+	    [:Common, :Plural, :Person3, "zagi(se)té-r"],
+	    [:Honorific, :Plural, :Person3, "zagi(se)té-r"]]
+    }
+    {:label "yemsa-VConj1AffPotential-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Potential,
+	    :token-aux :ʕim-[perf~imperf~futPunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k/am-a-ná-k"],
+	    [:Common, :Singular, :Person2, "amà-k/am-a-tà-k"],
+	    [:Honorific, :Singular, :Person2, "amà-k/am-o-ní-k"],
+	    [:Masc, :Singular, :Person3, "amà-k/am-a-ná-k"],
+	    [:Fem, :Singular, :Person3, "amà-k/am-a-nà-k"],
+	    [:Honorific, :Singular, :Person3, "amà-k/am-(s)o-né-k"],
+	    [:Common, :Plural, :Person1, "amà-k/am-a-nì-k"],
+	    [:Common, :Plural, :Person2, "amà-k/am-a-tí-k"],
+	    [:Honorific, :Plural, :Person2, "amà-k/am-soní-k"],
+	    [:Common, :Plural, :Person3, "amà-k/am-soné-k"],
+	    [:Honorific, :Plural, :Person3, "amà-k/am-soné-k"]]
+    }
+    {:label "yemsa-VConj1AffFutProgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-fooná"],
+	    [:Common, :Singular, :Person2, "am-footà"],
+	    [:Honorific, :Singular, :Person2, "am-fooní"],
+	    [:Masc, :Singular, :Person3, "am-fooná"],
+	    [:Fem, :Singular, :Person3, "am-foonà"],
+	    [:Honorific, :Singular, :Person3, "am-fooné"],
+	    [:Common, :Plural, :Person1, "am-foonì"],
+	    [:Common, :Plural, :Person2, "am-footi"],
+	    [:Honorific, :Plural, :Person2, "am-fooné"],
+	    [:Common, :Plural, :Person3, "am-fooné"],
+	    [:Honorific, :Plural, :Person3, "am-fooné"]]
+    }
+    {:label "yemsa-VConj1AffPretEgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretEgr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "am-à(-sò-n)", "koys-í-n"],
+	    [:Common, :Singular, :Person2, "am-à(-sò-n)", "koys-í-t"],
+	    [:Honorific, :Singular, :Person2, "am-à(-sò-n)", "koys-i-ní"],
+	    [:Masc, :Singular, :Person3, "am-à(-sò-n)", "koys-í"],
+	    [:Fem, :Singular, :Person3, "am-à(-sò-n)", "koys-ì"],
+	    [:Honorific, :Singular, :Person3, "am-à(-sò-n)", "koys-i-té"],
+	    [:Common, :Plural, :Person1, "am-à(-sò-n)", "koys-i-nì"],
+	    [:Common, :Plural, :Person2, "am-à(-sò-n)", "koys-i-tí"],
+	    [:Honorific, :Plural, :Person2, "am-à(-sò-n)", "koys-i-(se)ní"],
+	    [:Common, :Plural, :Person3, "am-à(-sò-n)", "koys-i-té ~ koys-(e-)seté"],
+	    [:Honorific, :Plural, :Person3, "am-à(-sò-n)", "koys-i-té ~ koys-(e-)seté"]]
+    }
+    {:label "yemsa-VConj2AffInfinitiveMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :ya,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["yoò-k"]]
+    }
+    {:label "yemsa-VConj3aAffPretDubitMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :gender :Common,
+	    :lexeme :di,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :(etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["di-í-n-toŋwà"]]
+    }
+    {:label "yemsa-VConj3AffDesiderative"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Desiderative,
+	    :token-aux :shol-[perf~imperf~futPunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zagù-k / zag-u-ná-k"],
+	    [:Common, :Singular, :Person2, "zagù-k / zag-u-tà-k"],
+	    [:Honorific, :Singular, :Person2, "zagù-k / zag-u-ní-k"],
+	    [:Masc, :Singular, :Person3, "zagù-k / zag-u-ná-k"],
+	    [:Fem, :Singular, :Person3, "zagù-k / zag-u-nà-k"],
+	    [:Honorific, :Singular, :Person3, "zagù-k / zag-u-né-k"],
+	    [:Common, :Plural, :Person1, "zagù-k / zag-u-nì-k"],
+	    [:Common, :Plural, :Person2, "zagù-k / zag-u-tí-k"],
+	    [:Honorific, :Plural, :Person2, "zagù-k / zag-soní-k"],
+	    [:Common, :Plural, :Person3, "zagù-k / zag-(s)oné-k"],
+	    [:Honorific, :Plural, :Person3, "zagù-k / zag-(s)oné-k"]]
+    }
+    {:label "yemsa-VConj2AffPretProgr"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-è-faaná"],
+	    [:Common, :Singular, :Person2, "shol-è-feèn"],
+	    [:Honorific, :Singular, :Person2, "shol-è-feení"],
+	    [:Masc, :Singular, :Person3, "shol-è-feén"],
+	    [:Fem, :Singular, :Person3, "shol-è-feèn"],
+	    [:Honorific, :Singular, :Person3, "shol-è-feén"],
+	    [:Common, :Plural, :Person1, "shol-è-feenì"],
+	    [:Common, :Plural, :Person2, "shol-è-feení"],
+	    [:Honorific, :Plural, :Person2, "shol-è-feení"],
+	    [:Common, :Plural, :Person3, "shol-è-feén"],
+	    [:Honorific, :Plural, :Person3, "shol-è-feén"]]
+    }
+    {:label "yemsa-VConj3bAffGerPresMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "ii-faá"],
+	    [:Common, :Common, :Person2, "ii-faá"],
+	    [:Fem, :Singular, :Person3, "ii-faá"],
+	    [:Common, :Common, :Person3, "ii-feé"]]
+    }
+    {:label "yemsa-VConj1AffGerPres-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "am-faád"],
+	    [:Common, :Common, :Person2, "am-faád"],
+	    [:Fem, :Singular, :Person3, "am-faád"],
+	    [:Common, :Common, :Person3, "am-feéd"]]
+    }
+    {:label "yemsa-VConj3aAffPerfMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "di-í-n"],
+	    [:Common, :Singular, :Person2, "di-í-t"],
+	    [:Honorific, :Singular, :Person2, "dii-ní ~ key-ní"],
+	    [:Masc, :Singular, :Person3, "di-í"],
+	    [:Fem, :Singular, :Person3, "di-ì"],
+	    [:Honorific, :Singular, :Person3, "dii-té ~ key-té"],
+	    [:Common, :Plural, :Person1, "dii-nì"],
+	    [:Common, :Plural, :Person2, "dii-tí"],
+	    [:Honorific, :Plural, :Person2, "dii-ní ~ key-ní"],
+	    [:Common, :Plural, :Person3, "dii-té"],
+	    [:Honorific, :Plural, :Person3, "dii-té ~ key-té"]]
+    }
+    {:label "yemsa-VConj2aAffDesiderativeMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :gender :Common,
+	    :lexeme :fa,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Desiderative,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:person, :token, :token-aux]  ;; schema
+	    [:Person1, "foò-k / fooná-k", "shol-[perf~imperf~futPunct"],
+	    [:Person2, "foò-k / footà-k", "shol-[perf~imperf~futPunct](etc.)"]]
+    }
+    {:label "yemsa-VConj1AffPretProgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "am-faaná", "(also forms with euphonic -ì- before -f"],
+	    [:Common, :Singular, :Person2, "am-feèn", "_NULL"],
+	    [:Honorific, :Singular, :Person2, "am-feení", "_NULL"],
+	    [:Masc, :Singular, :Person3, "am-feén", "_NULL"],
+	    [:Fem, :Singular, :Person3, "am-feèn", "_NULL"],
+	    [:Honorific, :Singular, :Person3, "am-feén", "_NULL"],
+	    [:Common, :Plural, :Person1, "am-feenì", "_NULL"],
+	    [:Common, :Plural, :Person2, "am-feení", "_NULL"],
+	    [:Honorific, :Plural, :Person2, "am-feení", "_NULL"],
+	    [:Common, :Plural, :Person3, "am-feén", "_NULL"],
+	    [:Honorific, :Plural, :Person3, "am-feén", "_NULL"]]
+    }
+    {:label "yemsa-VConj2AffPretEgrMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :ya,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretEgr,
+	    :token-aux :koys-í-n (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["yaará"]]
+    }
+    {:label "yemsa-VConj3AffGerPret"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "zag-i-rá"],
+	    [:Common, :Common, :Person2, "zag-i-rá"],
+	    [:Fem, :Singular, :Person3, "zag-i-rá"],
+	    [:Common, :Common, :Person3, "zag-i-ré"]]
+    }
+    {:label "yemsa-VConj2aNegJussMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "fooná-tà"],
+	    [:Common, :Singular, :Person2, "footà-tà"],
+	    [:Honorific, :Singular, :Person2, "am-o-ní-tà"],
+	    [:Masc, :Singular, :Person3, "fooná-tà"],
+	    [:Fem, :Singular, :Person3, "foonà-tà"],
+	    [:Common, :Plural, :Person2, "footí-tà(etc.)"]]
+    }
+    {:label "yemsa-VConj3aAffFutPunctMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "duu-ná", "futPunct"],
+	    [:Common, :Singular, :Person2, "duu-tà", "futPunct"],
+	    [:Masc, :Singular, :Person3, "duu-ná", "futPunct"],
+	    [:Fem, :Singular, :Person3, "duu-nà", "futPunct"],
+	    [:Common, :Plural, :Person1, "duu-nì", "futPunct"],
+	    [:Common, :Plural, :Person2, "duu-tí", "futPunct"],
+	    [:Common, :Plural, :Person3, "duu-téfutPunct", "_NULL"]]
+    }
+    {:label "yemsa-VConj3AffVNounMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["m-uù"]]
+    }
+    {:label "yemsa-VConj1AffInfinitive-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :am,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["amà-k"]]
+    }
+    {:label "yemsa-VConj3AffPretEgrMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretEgr,
+	    :token-aux :koms-í-n (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["maará"]]
+    }
+    {:label "yemsa-VConj2AffGerPret"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "shol-e-rá"],
+	    [:Common, :Common, :Person2, "shol-e-rá"],
+	    [:Fem, :Singular, :Person3, "shol-e-rá"],
+	    [:Common, :Common, :Person3, "shol-e-ré"]]
+    }
+    {:label "yemsa-VConj1AffVNounMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["biy-à"]]
+    }
+    {:label "yemsa-VConj1NegFutIngr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k", "áfà jammaroná-zà"],
+	    [:Common, :Singular, :Person2, "amà-k", "áfà jammarotà-zà"],
+	    [:Honorific, :Singular, :Person2, "amà-k", "áfà jammaroní-zà"],
+	    [:Masc, :Singular, :Person3, "amà-k", "áfà jammaroná-zà"],
+	    [:Fem, :Singular, :Person3, "amà-k", "áfà jammaronà-zà"],
+	    [:Honorific, :Singular, :Person3, "amà-k", "áfà jammaroné-zà"],
+	    [:Common, :Plural, :Person1, "amà-k", "áfà jammaronì-zà"],
+	    [:Common, :Plural, :Person2, "amà-k", "áfà jammarotí-zà"],
+	    [:Honorific, :Plural, :Person2, "amà-k", "áfà jammaroní-zà"],
+	    [:Common, :Plural, :Person3, "amà-k", "áfà jammarsoné-zà"],
+	    [:Honorific, :Plural, :Person3, "amà-k", "áfà jammarsoné-zà"]]
+    }
+    {:label "yemsa-VConj3AffPresIngrMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresIngr,
+	    :token-aux :jammarenár (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["muù-k"]]
+    }
+    {:label "yemsa-VConj1AffFutPunct-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-ná"],
+	    [:Common, :Singular, :Person2, "am-a-tà"],
+	    [:Honorific, :Singular, :Person2, "am-o-ní"],
+	    [:Masc, :Singular, :Person3, "am-a-ná"],
+	    [:Fem, :Singular, :Person3, "am-a-nà"],
+	    [:Honorific, :Singular, :Person3, "am-o-né"],
+	    [:Common, :Plural, :Person1, "am-a-nì"],
+	    [:Common, :Plural, :Person2, "am-a-tí ~am-o-tí"],
+	    [:Honorific, :Plural, :Person2, "am-soní"],
+	    [:Common, :Plural, :Person3, "am-(s)oné"],
+	    [:Honorific, :Plural, :Person3, "am-(s)oné"]]
+    }
+    {:label "yemsa-VConj3AffVNoun"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :zag,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["zag-ù"]]
+    }
+    {:label "yemsa-VConj3AffCond1"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Cond1,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-i-fanaá-né"],
+	    [:Common, :Singular, :Person2, "zag-i-fataà-né"],
+	    [:Honorific, :Singular, :Person2, "zag-i-fanií-né"],
+	    [:Masc, :Singular, :Person3, "zag-i-fanaá-né"],
+	    [:Fem, :Singular, :Person3, "zag-i-fanaà-né"],
+	    [:Honorific, :Singular, :Person3, "zag-i-fateé-né"],
+	    [:Common, :Plural, :Person1, "zag-i-faniì-né"],
+	    [:Common, :Plural, :Person2, "zag-i-fatií-né"],
+	    [:Honorific, :Plural, :Person2, "zag-i-fanií-né"],
+	    [:Common, :Plural, :Person3, "zag-i-fateé-né"],
+	    [:Honorific, :Plural, :Person3, "zag-i-fateé-né"]]
+    }
+    {:label "yemsa-VConj2AffVNoun"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :shol,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["shol-ò"]]
+    }
+    {:label "yemsa-VConj1NegPretIngr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL", "ánè jammarót"],
+	    [:Common, :Singular, :Person2, "_NULL", "ánè jammarowè"],
+	    [:Honorific, :Singular, :Person2, "_NULL", "ánè jammarowení"],
+	    [:Masc, :Singular, :Person3, "_NULL", "ánè jammarowé"],
+	    [:Fem, :Singular, :Person3, "_NULL", "ánè jammarowà"],
+	    [:Honorific, :Singular, :Person3, "_NULL", "ánè jammarooté"],
+	    [:Common, :Plural, :Person1, "_NULL", "ánè jammarowenì"],
+	    [:Common, :Plural, :Person2, "_NULL", "ánè jammarowetí"],
+	    [:Honorific, :Plural, :Person2, "_NULL", "ánè jammarowení"],
+	    [:Common, :Plural, :Person3, "_NULL", "ánè jammarosoté"],
+	    [:Honorific, :Plural, :Person3, "_NULL", "ánè jammarosoté"]]
+    }
+    {:label "yemsa-VConj1AffInfinitiveMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["biy-à-k"]]
+    }
+    {:label "yemsa-VConj1AffPerfMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bi-í-n"],
+	    [:Common, :Singular, :Person2, "bi-í-t"],
+	    [:Honorific, :Singular, :Person2, "keme-ní"],
+	    [:Masc, :Singular, :Person3, "bi-í"],
+	    [:Fem, :Singular, :Person3, "bi-ì"],
+	    [:Honorific, :Singular, :Person3, "keme-e-té"],
+	    [:Common, :Plural, :Person1, "bii-nì"],
+	    [:Common, :Plural, :Person2, "bii-tí"],
+	    [:Honorific, :Plural, :Person2, "keme -(se)ní"],
+	    [:Common, :Plural, :Person3, "bii-té"],
+	    [:Honorific, :Plural, :Person3, "keme -(s)e-té"]]
+    }
+    {:label "yemsa-VConj1NegPretProgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretProgr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "(ánè) amà-", "shak-faaná"],
+	    [:Common, :Singular, :Person2, "(ánè) amà-", "shak-feèn"],
+	    [:Honorific, :Singular, :Person2, "(ánè) amà-", "shak-feení"],
+	    [:Masc, :Singular, :Person3, "(ánè) amà-", "shak-feén"],
+	    [:Fem, :Singular, :Person3, "(ánè) amà-", "shak-feèn"],
+	    [:Honorific, :Singular, :Person3, "(ánè) amà-", "shak-feén"],
+	    [:Common, :Plural, :Person1, "(ánè) amà-", "shak-feenì"],
+	    [:Common, :Plural, :Person2, "(ánè) amà-", "shak-feení"],
+	    [:Honorific, :Plural, :Person2, "(ánè) amà-", "shak-feení"],
+	    [:Common, :Plural, :Person3, "(ánè) amà-", "shak-feén"],
+	    [:Honorific, :Plural, :Person3, "(ánè) amà-", "shak-feén"]]
+    }
+    {:label "yemsa-VConj3NegPerf"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj3AffFutPunctMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "muu-ná"],
+	    [:Common, :Singular, :Person2, "muu-tà"],
+	    [:Masc, :Singular, :Person3, "muu-ná"],
+	    [:Fem, :Singular, :Person3, "muu-nà"],
+	    [:Common, :Plural, :Person1, "muu-nì"],
+	    [:Common, :Plural, :Person2, "muu-tí"],
+	    [:Common, :Plural, :Person3, "muu-té"]]
+    }
+    {:label "yemsa-VConj2AffInfinitive"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :shol,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["shol-ò-k"]]
+    }
+    {:label "yemsa-VConj1AffPresIngr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k", "jammarenár"],
+	    [:Common, :Singular, :Person2, "amà-k", "jammaretàr"],
+	    [:Honorific, :Singular, :Person2, "amà-k", "jammarenír"],
+	    [:Masc, :Singular, :Person3, "amà-k", "jammarér"],
+	    [:Fem, :Singular, :Person3, "amà-k", "jammarèr"],
+	    [:Honorific, :Singular, :Person3, "amà-k", "jammaretér"],
+	    [:Common, :Plural, :Person1, "amà-k", "jammarenír"],
+	    [:Common, :Plural, :Person2, "amà-k", "jammaretír"],
+	    [:Honorific, :Plural, :Person2, "amà-k", "jammarenír"],
+	    [:Common, :Plural, :Person3, "amà-k", "jammare(se)tér"],
+	    [:Honorific, :Plural, :Person3, "amà-k", "jammare(se)tér"]]
+    }
+    {:label "yemsa-VConj1NegIrreal-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Irrealis}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "am-à", "shak-faná sin-fanaà-né"],
+	    [:Common, :Singular, :Person2, "am-à", "shak-fatà sin-fanaà-né"],
+	    [:Honorific, :Singular, :Person2, "am-à", "shak-faní sin-fanaà-né"],
+	    [:Masc, :Singular, :Person3, "am-à", "shak-faná sin-fanaà-né"],
+	    [:Fem, :Singular, :Person3, "am-à", "shak-fanà sin-fanaà-né"],
+	    [:Honorific, :Singular, :Person3, "am-à", "shak-faté sin-fanaà-né"],
+	    [:Common, :Plural, :Person1, "am-à", "shak-fanì sin-fanaà-né"],
+	    [:Common, :Plural, :Person2, "am-à", "shak-fatí sin-fanaà-né"],
+	    [:Honorific, :Plural, :Person2, "am-à", "shak-faní sin-fanaà-né"],
+	    [:Common, :Plural, :Person3, "am-à", "shak-faté sin-fanaà-né"],
+	    [:Honorific, :Plural, :Person3, "am-à", "shak-faté sin-fanaà-né"]]
+    }
+    {:label "yemsa-VConj3bAffJussMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "uu-ná"],
+	    [:Masc, :Singular, :Person3, "uw-ó"],
+	    [:Fem, :Singular, :Person3, "uw-òn"],
+	    [:Common, :Plural, :Person1, "uu-nì"]]
+    }
+    {:label "yemsa-VConj2aAffJussMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "foo-ná"],
+	    [:Masc, :Singular, :Person3, "f-oó"],
+	    [:Fem, :Singular, :Person3, "f-òn"],
+	    [:Honorific, :Singular, :Person3, "foo-né"],
+	    [:Common, :Plural, :Person1, "foo-nì"],
+	    [:Common, :Plural, :Person3, "foo-so-né"],
+	    [:Honorific, :Plural, :Person3, "foo-so-né"]]
+    }
+    {:label "yemsa-VConj3AffPotential"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Potential,
+	    :token-aux :ʕim-[perf~imperf~futPunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zagù-k / zag-u-ná-k"],
+	    [:Common, :Singular, :Person2, "zagù-k / zag-u-tà-k"],
+	    [:Honorific, :Singular, :Person2, "zagù-k / zag-u-ní-k"],
+	    [:Masc, :Singular, :Person3, "zagù-k / zag-u-ná-k"],
+	    [:Fem, :Singular, :Person3, "zagù-k / zag-u-nà-k"],
+	    [:Honorific, :Singular, :Person3, "zagù-k / zag-u-né-k"],
+	    [:Common, :Plural, :Person1, "zagù-k / zag-u-nì-k"],
+	    [:Common, :Plural, :Person2, "zagù-k / zag-u-tí-k"],
+	    [:Honorific, :Plural, :Person2, "zagù-k / zag-soní-k"],
+	    [:Common, :Plural, :Person3, "zagù-k / zag-(s)oné-k"],
+	    [:Honorific, :Plural, :Person3, "zagù-k / zag-(s)oné-k"]]
+    }
+    {:label "yemsa-VConj2AffGerPretMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "yaa-r-á"],
+	    [:Common, :Common, :Person2, "yaa-r-á"],
+	    [:Fem, :Singular, :Person3, "yaa-r-á"],
+	    [:Common, :Common, :Person3, "yee-r-é"]]
+    }
+    {:label "yemsa-VConj1NegPresIngr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k", "jammar-e-naá-ttà"],
+	    [:Common, :Singular, :Person2, "amà-k", "jammar-e-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "amà-k", "jammar-e-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "amà-k", "jammar-eé-ttè"],
+	    [:Fem, :Singular, :Person3, "amà-k", "jammar-eé-ttà"],
+	    [:Honorific, :Singular, :Person3, "amà-k", "jammar-e-teé-ttà"],
+	    [:Common, :Plural, :Person1, "amà-k", "jammar-e-niì-ttà"],
+	    [:Common, :Plural, :Person2, "amà-k", "jammar-e-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "amà-k", "jammar-e-nií-ttà"],
+	    [:Common, :Plural, :Person3, "amà-k", "jammar-e-teé-ttà"],
+	    [:Honorific, :Plural, :Person3, "amà-k", "jammar-e-teé-ttà"]]
+    }
+    {:label "yemsa-VConj2AffVNounMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :ya,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :VNoun,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["y-oò"]]
+    }
+    {:label "yemsa-VConj3aAffImperfMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "dii-fán", "_NULL"],
+	    [:Masc, :Person3, "dii-fé", "(etc.)"]]
+    }
+    {:label "yemsa-VConj2AffPresIngrMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :ya,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresIngr,
+	    :token-aux :jammarenár (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["yoò-k"]]
+    }
+    {:label "yemsa-VConj1AffPretIngr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k", "jammarén"],
+	    [:Common, :Singular, :Person2, "amà-k", "jammarét"],
+	    [:Honorific, :Singular, :Person2, "amà-k", "jammarení"],
+	    [:Masc, :Singular, :Person3, "amà-k", "jammaré"],
+	    [:Fem, :Singular, :Person3, "amà-k", "jammarè"],
+	    [:Honorific, :Singular, :Person3, "amà-k", "jammareté"],
+	    [:Common, :Plural, :Person1, "amà-k", "jammarenì"],
+	    [:Common, :Plural, :Person2, "amà-k", "jammaretí"],
+	    [:Honorific, :Plural, :Person2, "amà-k", "jammarení"],
+	    [:Common, :Plural, :Person3, "amà-k", "jammareté"],
+	    [:Honorific, :Plural, :Person3, "amà-k", "jammareté"]]
+    }
+    {:label "yemsa-VConj2AffCond1"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Cond1,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-e-fanaá-né"],
+	    [:Common, :Singular, :Person2, "shol-e-fataà-né"],
+	    [:Honorific, :Singular, :Person2, "shol-e-fanií-né"],
+	    [:Masc, :Singular, :Person3, "shol-e-fanaá-né"],
+	    [:Fem, :Singular, :Person3, "shol-e-fanaà-né"],
+	    [:Honorific, :Singular, :Person3, "shol-e-fateé-né"],
+	    [:Common, :Plural, :Person1, "shol-e-faniì-né"],
+	    [:Common, :Plural, :Person2, "shol-e-fatií-né"],
+	    [:Honorific, :Plural, :Person2, "shol-e-fanií-né"],
+	    [:Common, :Plural, :Person3, "shol-e-fateé-né"],
+	    [:Honorific, :Plural, :Person3, "shol-e-fateé-né"]]
+    }
+    {:label "yemsa-VConj3AffGerPresMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "maa-faád"],
+	    [:Common, :Common, :Person2, "maa-faád"],
+	    [:Fem, :Singular, :Person3, "maa-faád"],
+	    [:Common, :Common, :Person3, "mee-feéd"]]
+    }
+    {:label "yemsa-VConj1NegJuss-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-ná-tà"],
+	    [:Common, :Singular, :Person2, "am-a-tà-tà"],
+	    [:Honorific, :Singular, :Person2, "am-o-ní-tà"],
+	    [:Masc, :Singular, :Person3, "am-a-ná-tà"],
+	    [:Fem, :Singular, :Person3, "am-a-nà-tà"],
+	    [:Honorific, :Singular, :Person3, "am-o-né-tà"],
+	    [:Common, :Plural, :Person1, "am-a-nì-tà"],
+	    [:Common, :Plural, :Person2, "am-a-tí-tà"],
+	    [:Honorific, :Plural, :Person2, "am-soní-tà"],
+	    [:Common, :Plural, :Person3, "am-oné-tà"],
+	    [:Honorific, :Plural, :Person3, "am-oné-tà"]]
+    }
+    {:label "yemsa-VConj1AffFutIngr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutIngr}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "amà-k", "jammaroná"],
+	    [:Common, :Singular, :Person2, "amà-k", "jammarotà"],
+	    [:Honorific, :Singular, :Person2, "amà-k", "jammaroní"],
+	    [:Masc, :Singular, :Person3, "amà-k", "jammaroná"],
+	    [:Fem, :Singular, :Person3, "amà-k", "jammaronà"],
+	    [:Honorific, :Singular, :Person3, "amà-k", "jammaroné"],
+	    [:Common, :Plural, :Person1, "amà-k", "jammaronì"],
+	    [:Common, :Plural, :Person2, "amà-k", "jammarotí"],
+	    [:Honorific, :Plural, :Person2, "amà-k", "jammaroní"],
+	    [:Common, :Plural, :Person3, "amà-k", "jammarsoné"],
+	    [:Honorific, :Plural, :Person3, "amà-k", "jammarsoné"]]
+    }
+    {:label "yemsa-VConj2aNegImperfMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "aafoó-t"],
+	    [:Common, :Singular, :Person2, "aafè"],
+	    [:Honorific, :Singular, :Person2, "aafe-ní"],
+	    [:Masc, :Singular, :Person3, "aafé"],
+	    [:Fem, :Singular, :Person3, "aafè"],
+	    [:Honorific, :Singular, :Person3, "aafa-tó"],
+	    [:Common, :Plural, :Person1, "aafe-nì"],
+	    [:Common, :Plural, :Person2, "aafe-tí"],
+	    [:Honorific, :Plural, :Person2, "aaf-soní"],
+	    [:Common, :Plural, :Person3, "aaf-sotó"],
+	    [:Honorific, :Plural, :Person3, "aaf-sotó"]]
+    }
+    {:label "yemsa-VConj2AffJussMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "yoo-ná"],
+	    [:Masc, :Singular, :Person3, "y-oó"],
+	    [:Fem, :Singular, :Person3, "y-oòn"],
+	    [:Honorific, :Singular, :Person3, "of-o-tó"],
+	    [:Common, :Plural, :Person1, "yoo-nì"]]
+    }
+    {:label "yemsa-VConj3AffPretProgrMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "maa-faaná", "_NULL"],
+	    [:Masc, :Person3, "mee-feén", "(etc.)"]]
+    }
+    {:label "yemsa-VConj1AffFutPerf-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPerf,
+	    :token-aux :kabì}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-ná"],
+	    [:Common, :Singular, :Person2, "am-a-tà"],
+	    [:Honorific, :Singular, :Person2, "am-o-ní"],
+	    [:Masc, :Singular, :Person3, "am-a-ná"],
+	    [:Fem, :Singular, :Person3, "am-a-nà"],
+	    [:Honorific, :Singular, :Person3, "am-o-né"],
+	    [:Common, :Plural, :Person1, "am-a-nì"],
+	    [:Common, :Plural, :Person2, "am-a-tí ~am-o-tí"],
+	    [:Honorific, :Plural, :Person2, "am-soní"],
+	    [:Common, :Plural, :Person3, "am-(s)oné"],
+	    [:Honorific, :Plural, :Person3, "am-(s)oné"]]
+    }
+    {:label "yemsa-VConj3AffGerPretMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "maa-r-á"],
+	    [:Common, :Common, :Person2, "maa-r-á"],
+	    [:Fem, :Singular, :Person3, "maa-r-á"],
+	    [:Common, :Common, :Person3, "mee-r-é"]]
+    }
+    {:label "yemsa-VConj3NegPresHab"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresHab,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "_NULL"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Honorific, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "_NULL"],
+	    [:Fem, :Singular, :Person3, "_NULL"],
+	    [:Honorific, :Singular, :Person3, "_NULL"],
+	    [:Common, :Plural, :Person1, "_NULL"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Honorific, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "_NULL"],
+	    [:Honorific, :Plural, :Person3, "_NULL"]]
+    }
+    {:label "yemsa-VConj1AffPretIngrMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretIngr,
+	    :token-aux :jammarén (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["biyà-k"]]
+    }
+    {:label "yemsa-VConj2AffImperfMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "yaa-fán", "_NULL"],
+	    [:Masc, :Person3, "yee-fé", "(etc.)"]]
+    }
+    {:label "yemsa-VConj1AffPretProgrMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :token-aux :(etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["biì-faaná"]]
+    }
+    {:label "yemsa-VConj2aAffInfinitiveMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :gender :Common,
+	    :lexeme :fa,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["foò-k"]]
+    }
+    {:label "yemsa-VConj2aAffPresPunctMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :person :Person3,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Masc, :Singular, "feé-r"],
+	    [:Fem, :Singular, "faà-r"],
+	    [:Masc, :Plural, "fee-rín"],
+	    [:Fem, :Plural, "faà-r"]]
+    }
+    {:label "yemsa-VConj2AffFutProgr"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-è-fooná"],
+	    [:Common, :Singular, :Person2, "shol-è-footà"],
+	    [:Honorific, :Singular, :Person2, "shol-è-fooní"],
+	    [:Masc, :Singular, :Person3, "shol-è-fooná"],
+	    [:Fem, :Singular, :Person3, "shol-è-foonà"],
+	    [:Honorific, :Singular, :Person3, "shol-è-fooné"],
+	    [:Common, :Plural, :Person1, "shol-è-foonì"],
+	    [:Common, :Plural, :Person2, "shol-è-footi"],
+	    [:Honorific, :Plural, :Person2, "shol-è-fooné"],
+	    [:Common, :Plural, :Person3, "shol-è-fooné"],
+	    [:Honorific, :Plural, :Person3, "shol-è-fooné"]]
+    }
+    {:label "yemsa-VConj2NegJuss"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-o-ná-tà"],
+	    [:Common, :Singular, :Person2, "shol-o-tà-tà"],
+	    [:Honorific, :Singular, :Person2, "shol-o-ní-tà"],
+	    [:Masc, :Singular, :Person3, "shol-o-ná-tà"],
+	    [:Fem, :Singular, :Person3, "shol-o-nà-tà"],
+	    [:Honorific, :Singular, :Person3, "shol-o-né-tà"],
+	    [:Common, :Plural, :Person1, "shol-o-nì-tà"],
+	    [:Common, :Plural, :Person2, "shol-o-tí-tà"],
+	    [:Honorific, :Plural, :Person2, "shol-oní-tà"],
+	    [:Common, :Plural, :Person3, "shol-soné-tà"],
+	    [:Honorific, :Plural, :Person3, "shol-soné-tà"]]
+    }
+    {:label "yemsa-VConj1NegCond1-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Cond1}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "am-à", "shak-fanaá-né"],
+	    [:Common, :Singular, :Person2, "am-à", "shak-fataà-né"],
+	    [:Honorific, :Singular, :Person2, "am-à", "shak-fanií-né"],
+	    [:Masc, :Singular, :Person3, "am-à", "shak-fanaá-né"],
+	    [:Fem, :Singular, :Person3, "am-à", "shak-fanaà-né"],
+	    [:Honorific, :Singular, :Person3, "am-à", "shak-fateé-né"],
+	    [:Common, :Plural, :Person1, "am-à", "shak-faniì-né"],
+	    [:Common, :Plural, :Person2, "am-à", "shak-fatií-né"],
+	    [:Honorific, :Plural, :Person2, "am-à", "shak-fanií-né"],
+	    [:Common, :Plural, :Person3, "am-à", "shak-fateé-né"],
+	    [:Honorific, :Plural, :Person3, "am-à", "shak-fateé-né"]]
+    }
+    {:label "yemsa-VConj2NegPresPunct"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-e-naá-ttà"],
+	    [:Common, :Singular, :Person2, "shol-e-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "shol-e-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "shol-eé-ttè"],
+	    [:Fem, :Singular, :Person3, "shol-eé-ttà"],
+	    [:Honorific, :Singular, :Person3, "shol-e-teé-ttà"],
+	    [:Common, :Plural, :Person1, "shol-e-niì-ttà"],
+	    [:Common, :Plural, :Person2, "shol-e-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "shol-e-nií-ttà"],
+	    [:Common, :Plural, :Person3, "shol-e-teé-ttà"],
+	    [:Honorific, :Plural, :Person3, "shol-e-teé-ttà"]]
+    }
+    {:label "yemsa-VConj3aAffJussMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "duu-ná"],
+	    [:Masc, :Singular, :Person3, "duw-ó"],
+	    [:Fem, :Singular, :Person3, "duw-òn"],
+	    [:Common, :Plural, :Person1, "duu-nì"]]
+    }
+    {:label "yemsa-VConj3AffInfinitive"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :zag,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["zag-ù-k"]]
+    }
+    {:label "yemsa-VConj1AffCond2-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :cond2,
+	    :token-aux :sin-fanaà-né}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-ná-k"],
+	    [:Common, :Singular, :Person2, "am-a-tà-k"],
+	    [:Honorific, :Singular, :Person2, "am-o-ní-k"],
+	    [:Masc, :Singular, :Person3, "am-a-ná-k"],
+	    [:Fem, :Singular, :Person3, "am-a-nà-k"],
+	    [:Honorific, :Singular, :Person3, "am-(s)o-né-k"],
+	    [:Common, :Plural, :Person1, "am-a-nì-k"],
+	    [:Common, :Plural, :Person2, "am-a-tí-k"],
+	    [:Honorific, :Plural, :Person2, "am-soní-k"],
+	    [:Common, :Plural, :Person3, "am-soné-k"],
+	    [:Honorific, :Plural, :Person3, "am-soné-k"]]
+    }
+    {:label "yemsa-VConj2aNegFutPunctMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "áfà foo-ná-zà"],
+	    [:Common, :Singular, :Person2, "áfà foo-tà-zà"],
+	    [:Honorific, :Singular, :Person2, "áfà foo-ní-zà"],
+	    [:Masc, :Singular, :Person3, "áfà foo-ná-zà"],
+	    [:Fem, :Singular, :Person3, "áfà foo-nà-zà"],
+	    [:Honorific, :Singular, :Person3, "áfà foo-né-zà"],
+	    [:Common, :Plural, :Person1, "áfà foo-nì-zà"],
+	    [:Common, :Plural, :Person2, "áfà foo-tí-zà"],
+	    [:Honorific, :Plural, :Person2, "áfà foo-soní-zà"],
+	    [:Common, :Plural, :Person3, "áfà foo-(so)né-zà"],
+	    [:Honorific, :Plural, :Person3, "áfà foo-(so)né-zà"]]
+    }
+    {:label "yemsa-VConj3aAffPretIngrMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :gender :Common,
+	    :lexeme :di,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretIngr,
+	    :token-aux :jammarén (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["duù-k"]]
+    }
+    {:label "yemsa-VConj3AffPerfMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :lexeme :ma,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "maá-n"],
+	    [:Common, :Singular, :Person2, "maá-t"],
+	    [:Honorific, :Singular, :Person2, "maa-ní ~ ta-ní"],
+	    [:Masc, :Singular, :Person3, "meé"],
+	    [:Fem, :Singular, :Person3, "maà"],
+	    [:Honorific, :Singular, :Person3, "ta-té"],
+	    [:Common, :Plural, :Person1, "maa-nì"],
+	    [:Common, :Plural, :Person2, "maa-tí"],
+	    [:Honorific, :Plural, :Person2, "maa-ní ~ ta-ní"],
+	    [:Common, :Plural, :Person3, "mee-(se)té"],
+	    [:Honorific, :Plural, :Person3, "ta-té"]]
+    }
+    {:label "yemsa-VConj3NegJuss"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-u-ná-tà"],
+	    [:Common, :Singular, :Person2, "zag-u-tà-tà"],
+	    [:Honorific, :Singular, :Person2, "zag-u-ní-tà"],
+	    [:Masc, :Singular, :Person3, "zag-u-ná-tà"],
+	    [:Fem, :Singular, :Person3, "zag-u-nà-tà"],
+	    [:Honorific, :Singular, :Person3, "zag-u-né-tà"],
+	    [:Common, :Plural, :Person1, "zag-u-nì-tà"],
+	    [:Common, :Plural, :Person2, "zag-u-tí-tà"],
+	    [:Honorific, :Plural, :Person2, "zag-u-ní-tà"],
+	    [:Common, :Plural, :Person3, "zag-soné-tà"],
+	    [:Honorific, :Plural, :Person3, "zag-soné-tà"]]
+    }
+    {:label "yemsa-VConj2aAffPotentialMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :gender :Common,
+	    :lexeme :fa,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Potential,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:person, :token, :token-aux]  ;; schema
+	    [:Person1, "foò-k / fooná-k", "ʕim-[perf~imperf~futPunct"],
+	    [:Person2, "foò-k / footà-k", "ʕim- [perf~imperf~futPunct](etc/)"]]
+    }
+    {:label "yemsa-VConj1NegInfinitive-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :am,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL}
+    :terms [[:token]  ;; schema
+	    ["am-à-bey-à"]]
+    }
+    {:label "yemsa-VConj2NegFutPunct"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "áfà shol-o-ná-zà"],
+	    [:Common, :Singular, :Person2, "áfà shol-o-tà-zà"],
+	    [:Honorific, :Singular, :Person2, "áfà shol-o-ní-zà"],
+	    [:Masc, :Singular, :Person3, "áfà shol-o-ná-zà"],
+	    [:Fem, :Singular, :Person3, "áfà shol-o-nà-zà"],
+	    [:Honorific, :Singular, :Person3, "áfà shol-o-né-zà"],
+	    [:Common, :Plural, :Person1, "áfà shol-o-nì-zà"],
+	    [:Common, :Plural, :Person2, "áfà shol-o-tí-zà"],
+	    [:Honorific, :Plural, :Person2, "áfà shol-oní-zà"],
+	    [:Common, :Plural, :Person3, "áfà shol-oné-zà"],
+	    [:Honorific, :Plural, :Person3, "áfà shol-oné-zà"]]
+    }
+    {:label "yemsa-VConj2AffImprtvMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "yóò"],
+	    [:Honorific, :Singular, "yoo-ní ~ of-o-ní"],
+	    [:Common, :Plural, "yoo-tì"],
+	    [:Honorific, :Plural, "yoo-ní ~ of-o-ní"]]
+    }
+    {:label "yemsa-VConj3AffFutProgr"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-ì-fooná"],
+	    [:Common, :Singular, :Person2, "zag-ì-footà"],
+	    [:Honorific, :Singular, :Person2, "zag-ì-fooní"],
+	    [:Masc, :Singular, :Person3, "zag-ì-fooná"],
+	    [:Fem, :Singular, :Person3, "zag-ì-foonà"],
+	    [:Honorific, :Singular, :Person3, "zag-ì-fooné"],
+	    [:Common, :Plural, :Person1, "zag-ì-foonì"],
+	    [:Common, :Plural, :Person2, "zag-ì-footi"],
+	    [:Honorific, :Plural, :Person2, "zag-ì-fooné"],
+	    [:Common, :Plural, :Person3, "zag-ì-fooné"],
+	    [:Honorific, :Plural, :Person3, "zag-ì-fooné"]]
+    }
+    {:label "yemsa-VConj3NegPotential"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Potential}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "zagù-k / zag-u-ná-k", "ʕim-u-naá-ttà ~ ánè ʕim-ú-t"],
+	    [:Common, :Singular, :Person2, "zagù-k / zag-u-tà-k", "ʕim-u-taà-ttà ~ ánè ʕim-è"],
+	    [:Honorific, :Singular, :Person2, "zagù-k / zag-u-ní-k", "ʕim-u-nií-ttà ~ ánè ʕim-u-ní"],
+	    [:Masc, :Singular, :Person3, "zagù-k / zag-u-ná-k", "ʕim-u-ní-ttè ~ ánè ʕim-é"],
+	    [:Fem, :Singular, :Person3, "zagù-k / zag-u-nà-k", "ʕim-nì-ttà ~ ánè ʕim-à"],
+	    [:Honorific, :Singular, :Person3, "zagù-k / zag-u-né-k", "ʕim-neé-ttà ~ ánè ʕimoo-tó-"],
+	    [:Common, :Plural, :Person1, "zagù-k / zag-u-nì-k", "ʕim-ay-ttà ~ ánè ʕim-u-nì"],
+	    [:Common, :Plural, :Person2, "zagù-k / zag-u-tí-k", "ʕim-u-tií-ttà ~ ánè ʕim-awe-tí"],
+	    [:Honorific, :Plural, :Person2, "zagù-k / zag-uní-k", "ʕim-u-nií-ttà ~ ánè ʕim-u-ní"],
+	    [:Common, :Plural, :Person3, "zagù-k / zag-soné-k", "ʕim-o-neé-ttà ~ ánè ʕim-awe-té"],
+	    [:Honorific, :Plural, :Person3, "zagù-k / zag-soné-k", "ʕim-o-neé-ttà ~ ánè ʕim-oo-tó"]]
+    }
+    {:label "yemsa-VConj2AffDesiderative"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Desiderative,
+	    :token-aux :shol-[perf~imperf~futPunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "sholò-k / shol-o-ná-k"],
+	    [:Common, :Singular, :Person2, "sholò-k / shol-o-tà-k"],
+	    [:Honorific, :Singular, :Person2, "sholò-k / shol-o-ní-k"],
+	    [:Masc, :Singular, :Person3, "sholò-k / shol-o-ná-k"],
+	    [:Fem, :Singular, :Person3, "sholò-k / shol-o-nà-k"],
+	    [:Honorific, :Singular, :Person3, "sholò-k / shol-o-né-k"],
+	    [:Common, :Plural, :Person1, "sholò-k / shol-o-nì-k"],
+	    [:Common, :Plural, :Person2, "sholò-k / shol-o-tí-k"],
+	    [:Honorific, :Plural, :Person2, "sholò-k / shol-soní-k"],
+	    [:Common, :Plural, :Person3, "sholò-k / shol-(s)oné-k"],
+	    [:Honorific, :Plural, :Person3, "sholò-k / shol-(s)oné-k"]]
+    }
+    {:label "yemsa-VConj3bAffPretDubitMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :(etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["i-í-n-toŋwà"]]
+    }
+    {:label "yemsa-VConj1AffImprtvMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "bí ~ bíì"],
+	    [:Honorific, :Singular, "kem-o-ní"],
+	    [:Common, :Plural, "bi-tì"],
+	    [:Honorific, :Plural, "kem-o-ní"]]
+    }
+    {:label "yemsa-VConj1AffPretEgrMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :gender :Common,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretEgr,
+	    :token-aux :koys-í-n (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["biirá"]]
+    }
+    {:label "yemsa-VConj2AffGerPres"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "shol-e-faád"],
+	    [:Common, :Common, :Person2, "shol-e-faád"],
+	    [:Fem, :Singular, :Person3, "shol-e-faád"],
+	    [:Common, :Common, :Person3, "shol-e-feéd"]]
+    }
+    {:label "yemsa-VConj1NegCond2-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :cond2}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "am-à", "shakun-ár sin-fanaà-né"],
+	    [:Common, :Singular, :Person2, "am-à", "shakut-àr sin-fanaà-né"],
+	    [:Honorific, :Singular, :Person2, "am-à", "shakuní-r sin-fanaà-né"],
+	    [:Masc, :Singular, :Person3, "am-à", "shakuná-r sin-fanaà-né"],
+	    [:Fem, :Singular, :Person3, "am-à", "sholunè-r sin-fanaà-néneg"],
+	    [:Common, :Plural, :Person1, "am-à", "shakuní-r sin-fanaà-né"],
+	    [:Common, :Plural, :Person2, "am-à", "shakutí-r sin-fanaà-né"],
+	    [:Honorific, :Plural, :Person2, "am-à", "shakuní-r sin-fanaà-né"],
+	    [:Common, :Plural, :Person3, "am-à", "shaku(se)té-r sin-fanaà-né"],
+	    [:Honorific, :Plural, :Person3, "am-à", "shaku(se)té-r sin-fanaà-né"]]
+    }
+    {:label "yemsa-VConj3aAffPresIngrMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :gender :Common,
+	    :lexeme :di,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresIngr,
+	    :token-aux :jammarenár (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["duù-k"]]
+    }
+    {:label "yemsa-VConj1AffFutPunctMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "biy-a-ná", "_NULL"],
+	    [:Common, :Person2, "biy-a-tà", "_NULL"],
+	    [:Masc, :Person3, "biy-a-ná", "(etc.)"]]
+    }
+    {:label "yemsa-VConj2AffPotential"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Potential,
+	    :token-aux :ʕim-[perf~imperf~futPunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "sholò-k / shol-o-ná-k"],
+	    [:Common, :Singular, :Person2, "sholò-k / shol-o-tà-k"],
+	    [:Honorific, :Singular, :Person2, "sholò-k / shol-o-ní-k"],
+	    [:Masc, :Singular, :Person3, "sholò-k / shol-o-ná-k"],
+	    [:Fem, :Singular, :Person3, "sholò-k / shol-o-nà-k"],
+	    [:Honorific, :Singular, :Person3, "sholò-k / shol-o-né-k"],
+	    [:Common, :Plural, :Person1, "sholò-k / shol-o-nì-k"],
+	    [:Common, :Plural, :Person2, "sholò-k / shol-o-tí-k"],
+	    [:Honorific, :Plural, :Person2, "sholò-k / shol-soní-k"],
+	    [:Common, :Plural, :Person3, "sholò-k / shol-(s)oné-k"],
+	    [:Honorific, :Plural, :Person3, "sholò-k / shol-(s)oné-k"]]
+    }
+    {:label "yemsa-VConj3AffPretDubitMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretDubit,
+	    :token-aux :(etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["maán-toŋwà"]]
+    }
+    {:label "yemsa-VConj1AffGerPresMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPres,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "bii-faád"],
+	    [:Common, :Common, :Person2, "bii-faád"],
+	    [:Fem, :Singular, :Person3, "bii-faád"],
+	    [:Common, :Common, :Person3, "bii-feéd"]]
+    }
+    {:label "yemsa-VConj2AffPresPunctMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "yaa-n-ár"],
+	    [:Common, :Singular, :Person2, "yaa-t-àr"],
+	    [:Honorific, :Singular, :Person2, "yaa-ní-r ~ of-e-ní-r"],
+	    [:Masc, :Singular, :Person3, "yeé-r"],
+	    [:Fem, :Singular, :Person3, "yaà-r"],
+	    [:Honorific, :Singular, :Person3, "yee-té-r ~ of-e-té-r"],
+	    [:Common, :Plural, :Person1, "yaa-nì-r"],
+	    [:Common, :Plural, :Person2, "yaa-tí-r"],
+	    [:Honorific, :Plural, :Person2, "yaa-ní-r ~ of-e-ní-r"],
+	    [:Common, :Plural, :Person3, "yee-seté-r"],
+	    [:Honorific, :Plural, :Person3, "yee-té-r ~ of-e-té-r"]]
+    }
+    {:label "yemsa-VConj1AffPresProgr-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresProgr,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-difán"],
+	    [:Common, :Singular, :Person2, "am-difát"],
+	    [:Honorific, :Singular, :Person2, "am-difení"],
+	    [:Masc, :Singular, :Person3, "am-difé"],
+	    [:Fem, :Singular, :Person3, "am-difà"],
+	    [:Honorific, :Singular, :Person3, "am-difé"],
+	    [:Common, :Plural, :Person1, "am-difenì"],
+	    [:Common, :Plural, :Person2, "am-difetí"],
+	    [:Honorific, :Plural, :Person2, "am-difení"],
+	    [:Common, :Plural, :Person3, "am-difé"],
+	    [:Honorific, :Plural, :Person3, "am-difé"]]
+    }
+    {:label "yemsa-VConj3bAffPresPunctMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ii-n-ár"],
+	    [:Common, :Singular, :Person2, "ii-t-àr"],
+	    [:Masc, :Singular, :Person3, "ií-r"],
+	    [:Fem, :Singular, :Person3, "iì-r"],
+	    [:Common, :Plural, :Person1, "ii-nì-r"],
+	    [:Common, :Plural, :Person2, "ii-tí-r"],
+	    [:Common, :Plural, :Person3, "ii-seté-r"]]
+    }
+    {:label "yemsa-VConj3bAffImprtvMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "ú"],
+	    [:Plural, "uu-tì"]]
+    }
+    {:label "yemsa-VConj3bAffPretIngrMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretIngr,
+	    :token-aux :jammarén (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["uù-k"]]
+    }
+    {:label "yemsa-VConj2AffPresPunct"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "sholen-ár"],
+	    [:Common, :Singular, :Person2, "sholet-àr"],
+	    [:Honorific, :Singular, :Person2, "shole-ní-r"],
+	    [:Masc, :Singular, :Person3, "sholé-r"],
+	    [:Fem, :Singular, :Person3, "sholè-r"],
+	    [:Honorific, :Singular, :Person3, "sholeté-r"],
+	    [:Common, :Plural, :Person1, "sholenì-r"],
+	    [:Common, :Plural, :Person2, "sholetí-r"],
+	    [:Honorific, :Plural, :Person2, "sholení-r"],
+	    [:Common, :Plural, :Person3, "shole(se)té-r"],
+	    [:Honorific, :Plural, :Person3, "shole(se)té-r"]]
+    }
+    {:label "yemsa-VConj3bAffFutPunctMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "uu-ná", "futPunct"],
+	    [:Common, :Singular, :Person2, "uu-tà", "futPunct"],
+	    [:Masc, :Singular, :Person3, "uu-ná", "futPunct"],
+	    [:Fem, :Singular, :Person3, "uu-nà", "futPunct"],
+	    [:Common, :Plural, :Person1, "uu-nì", "futPunct"],
+	    [:Common, :Plural, :Person2, "uu-tí", "futPunct"],
+	    [:Common, :Plural, :Person3, "uu-téfutPunct", "_NULL"]]
+    }
+    {:label "yemsa-VConj1AffIrreal-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Irrealis,
+	    :token-aux :sin-fanaà-né}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-faná"],
+	    [:Common, :Singular, :Person2, "am-fatà"],
+	    [:Honorific, :Singular, :Person2, "am-faní"],
+	    [:Masc, :Singular, :Person3, "am-faná"],
+	    [:Fem, :Singular, :Person3, "am-fanà"],
+	    [:Honorific, :Singular, :Person3, "am-faté"],
+	    [:Common, :Plural, :Person1, "am-fanì"],
+	    [:Common, :Plural, :Person2, "am-fatí"],
+	    [:Honorific, :Plural, :Person2, "am-faní"],
+	    [:Common, :Plural, :Person3, "am-faté"],
+	    [:Honorific, :Plural, :Person3, "am-faté"]]
+    }
+    {:label "yemsa-VConj1NegFutPerf-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPerf,
+	    :token-aux :kabì-tà}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(áfà) am-a-ná"],
+	    [:Common, :Singular, :Person2, "(áfà) am-a-tà"],
+	    [:Honorific, :Singular, :Person2, "(áfà) am-o-ní"],
+	    [:Masc, :Singular, :Person3, "(áfà) am-a-ná"],
+	    [:Fem, :Singular, :Person3, "(áfà) am-a-nà"],
+	    [:Honorific, :Singular, :Person3, "(áfà) am-o-né"],
+	    [:Common, :Plural, :Person1, "(áfà) am-a-nì"],
+	    [:Common, :Plural, :Person2, "(áfà) am-a-tí ~(áfà) am-o-tí"],
+	    [:Honorific, :Plural, :Person2, "(áfà) am-soní"],
+	    [:Common, :Plural, :Person3, "(áfà) am-(s)oné"],
+	    [:Honorific, :Plural, :Person3, "(áfà) am-(s)oné"]]
+    }
+    {:label "yemsa-VConj2AffPerf"
+    :note "Lamberti1993 p. 177-259. aff juss,imprtv:Lamberti uses mak- say conjClass:conj2.
+            aff potential,desiderative,neg desiderative,infinitive:Lamberti uses wost-
+            workconjClass:conj2."
+    :common {:conjClass :Conj2,
+	    :lexeme :shol,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perfect,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "shol-é-n"],
+	    [:Common, :Singular, :Person2, "shol-é-t"],
+	    [:Honorific, :Singular, :Person2, "shol-e-ní"],
+	    [:Masc, :Singular, :Person3, "shol-é"],
+	    [:Fem, :Singular, :Person3, "shol-è"],
+	    [:Honorific, :Singular, :Person3, "shol-e-té"],
+	    [:Common, :Plural, :Person1, "shol-e-nì"],
+	    [:Common, :Plural, :Person2, "shol-e-tí"],
+	    [:Honorific, :Plural, :Person2, "shol-e-ní"],
+	    [:Common, :Plural, :Person3, "shol-e-té"],
+	    [:Honorific, :Plural, :Person3, "shol-e-té"]]
+    }
+    {:label "yemsa-VConj2aNegPresPunctMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :gender :Common,
+	    :lexeme :fa,
+	    :number :Singular,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:person, :token, :token-aux]  ;; schema
+	    [:Person1, "fa-naá-ttà", "_NULL"],
+	    [:Person2, "fa-taà-ttà", "(etc.)"]]
+    }
+    {:label "yemsa-VConj3AffFutPunct"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zag-u-ná"],
+	    [:Common, :Singular, :Person2, "zag-u-tà"],
+	    [:Honorific, :Singular, :Person2, "zag-u-ní"],
+	    [:Masc, :Singular, :Person3, "zag-u-ná"],
+	    [:Fem, :Singular, :Person3, "zag-u-nà"],
+	    [:Honorific, :Singular, :Person3, "zag-u-né"],
+	    [:Common, :Plural, :Person1, "zag-u-nì"],
+	    [:Common, :Plural, :Person2, "zag-u-tí"],
+	    [:Honorific, :Plural, :Person2, "zag-u-ní"],
+	    [:Common, :Plural, :Person3, "zag-soné"],
+	    [:Honorific, :Plural, :Person3, "zag-soné"]]
+    }
+    {:label "yemsa-VConj3AffInfinitiveMonosyll-ma"
+    :note "Lamberti1993 pp. 212-214. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3,
+	    :gender :Common,
+	    :lexeme :ma,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["muù-k"]]
+    }
+    {:label "yemsa-VConj2AffPretProgrMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :lexeme :ya,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretProgr,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "yaa-faaná", "_NULL"],
+	    [:Masc, :Person3, "yee-feén", "(etc.)"]]
+    }
+    {:label "yemsa-VConj3bAffGerPretMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :lexeme :i,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :GerPret,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Person1, "ii-r-á"],
+	    [:Common, :Common, :Person2, "ii-r-á"],
+	    [:Fem, :Singular, :Person3, "ii-r-á"],
+	    [:Common, :Common, :Person3, "ii-r-é"]]
+    }
+    {:label "yemsa-VConj3aAffInfinitiveMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :gender :Common,
+	    :lexeme :di,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Infinitive,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["duù-k"]]
+    }
+    {:label "yemsa-VConj2aAffImperfMonosyll-fa"
+    :note "Lamberti1993 p. 249-254."
+    :common {:conjClass :Conj2a,
+	    :lexeme :fa,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "faá-n"],
+	    [:Common, :Singular, :Person2, "faá-t"],
+	    [:Honorific, :Singular, :Person2, "faa-ní"],
+	    [:Masc, :Singular, :Person3, "fé"],
+	    [:Fem, :Singular, :Person3, "fà"],
+	    [:Honorific, :Singular, :Person3, "fee-té"],
+	    [:Common, :Plural, :Person1, "faa-nì"],
+	    [:Common, :Plural, :Person2, "faa-ti"],
+	    [:Honorific, :Plural, :Person2, "faa-sení"],
+	    [:Common, :Plural, :Person3, "fe-seté"],
+	    [:Honorific, :Plural, :Person3, "fe-seté"]]
+    }
+    {:label "yemsa-VConj3AffImprtv"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "zag-ú"],
+	    [:Honorific, :Singular, "zag-u-ní"],
+	    [:Common, :Plural, "zag-u-tì"],
+	    [:Honorific, :Plural, "zag-u-ní"]]
+    }
+    {:label "yemsa-VConj1AffPresPunct-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am(a)n-ár"],
+	    [:Common, :Singular, :Person2, "amat-àr"],
+	    [:Honorific, :Singular, :Person2, "amní-r"],
+	    [:Masc, :Singular, :Person3, "amá-r"],
+	    [:Fem, :Singular, :Person3, "amà-r"],
+	    [:Honorific, :Singular, :Person3, "amté-r"],
+	    [:Common, :Plural, :Person1, "amnì-r"],
+	    [:Common, :Plural, :Person2, "amtí-r"],
+	    [:Honorific, :Plural, :Person2, "amní-r"],
+	    [:Common, :Plural, :Person3, "am(se)té-r"],
+	    [:Honorific, :Plural, :Person3, "am(se)té-r"]]
+    }
+    {:label "yemsa-VConj3NegPretHab"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PretHab}
+    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Singular, :Person1, "ánè zagù-", "shak-fán"],
+	    [:Common, :Singular, :Person2, "ánè zagù-", "shak-fát"],
+	    [:Honorific, :Singular, :Person2, "ánè zagù-", "shak-fení"],
+	    [:Masc, :Singular, :Person3, "ánè zagù-", "shak-fé"],
+	    [:Fem, :Singular, :Person3, "ánè zagù-", "shak-fàneg"],
+	    [:Common, :Plural, :Person1, "ánè zagù-", "shak-fenì"],
+	    [:Common, :Plural, :Person2, "ánè zagù-", "shak-feti"],
+	    [:Honorific, :Plural, :Person2, "ánè zagù-", "shak-fení"],
+	    [:Common, :Plural, :Person3, "ánè zagù-", "shak-fé"],
+	    [:Honorific, :Plural, :Person3, "ánè zagù-", "shak-fé"]]
+    }
+    {:label "yemsa-VConj3bAffPretEgrMonosyll-i"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3b,
+	    :gender :Common,
+	    :lexeme :i,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretEgr,
+	    :token-aux :koys-í-n (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["iirá"]]
+    }
+    {:label "yemsa-VConj2AffPretIngrMonosyll-ya"
+    :note "Lamberti1993 pp. 210-212. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj2,
+	    :gender :Common,
+	    :lexeme :ya,
+	    :number :Singular,
+	    :person :Person1,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PretIngr,
+	    :token-aux :jammarén (etc.),
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:token]  ;; schema
+	    ["yoò-k"]]
+    }
+    {:label "yemsa-VConj1NegFutPunctSub-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPunctSub,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "am-a-taá-ttà"],
+	    [:Common, :Singular, :Person2, "am-a-taà-ttà"],
+	    [:Honorific, :Singular, :Person2, "am-a-nií-ttà"],
+	    [:Masc, :Singular, :Person3, "am-a-nií-ttè"],
+	    [:Fem, :Singular, :Person3, "am-niì-ttà"],
+	    [:Honorific, :Singular, :Person3, "am-neé-ttà"],
+	    [:Common, :Plural, :Person1, "am-ay-ttà"],
+	    [:Common, :Plural, :Person2, "am-a-tií-ttà"],
+	    [:Honorific, :Plural, :Person2, "am-a-nií-ttà"],
+	    [:Common, :Plural, :Person3, "am-so-neé-ttà"],
+	    [:Honorific, :Plural, :Person3, "am-so-neé-ttà"]]
+    }
+    {:label "yemsa-VConj1AffImprtv-am"
+    :note "Lamberti1993 p. 177-259. aff futProgr:Lamberti uses wost- workconjClass:conj2.
+            neg perf:Lamberti uses kun- lay conjClass:conj1. neg
+            pretHab,pretProgr,pretDub,presHab,futPunctSub,futProg,gerund,potential:Lamberti uses
+            zag- doconjClass:conj3. neg cond1,cond2,irreal:Lamberti uses argas- help
+            conjClass:conj3."
+    :common {:conjClass :Conj1,
+	    :lexeme :am,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Common, :Singular, "ám"],
+	    [:Honorific, :Singular, "am-o-ní"],
+	    [:Common, :Plural, "am-(o)tì"],
+	    [:Honorific, :Plural, "am-o-ní"]]
+    }
+    {:label "yemsa-VConj1AffPresPunctMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bii-n-ár"],
+	    [:Common, :Singular, :Person2, "bii-t-àr"],
+	    [:Honorific, :Singular, :Person2, "bii-ní-r ~ kem-e-ní-r"],
+	    [:Masc, :Singular, :Person3, "biy-ár"],
+	    [:Fem, :Singular, :Person3, "biy-àr"],
+	    [:Honorific, :Singular, :Person3, "kem-e-té-r"],
+	    [:Common, :Plural, :Person1, "bii-nì-r"],
+	    [:Common, :Plural, :Person2, "bii-tí-r"],
+	    [:Honorific, :Plural, :Person2, "bii-ní-r ~ kem-e-ní-r"],
+	    [:Common, :Plural, :Person3, "biye-té-r"],
+	    [:Honorific, :Plural, :Person3, "kem-e-té-r"]]
+    }
+    {:label "yemsa-VConj1AffImperfMonosyll-bi"
+    :note "Lamberti1993 pp. 208-210. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj1,
+	    :lexeme :bi,
+	    :number :Singular,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :person, :token, :token-aux]  ;; schema
+	    [:Common, :Person1, "bii-fán", "_NULL"],
+	    [:Masc, :Person3, "bii-fé", "(etc.)"]]
+    }
+    {:label "yemsa-VConj3NegFutPunct"
+    :note "Lamberti1993 p. 177-259."
+    :common {:conjClass :Conj3,
+	    :lexeme :zag,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :FutPunct,
+	    :token-aux :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "áfà zag-u-ná-zà"],
+	    [:Common, :Singular, :Person2, "áfà zag-u-tà-zà"],
+	    [:Honorific, :Singular, :Person2, "áfà zag-u-ní-zà"],
+	    [:Masc, :Singular, :Person3, "áfà zag-u-ná-zà"],
+	    [:Fem, :Singular, :Person3, "áfà zag-u-nà-zà"],
+	    [:Honorific, :Singular, :Person3, "áfà zag-u-né-zà"],
+	    [:Common, :Plural, :Person1, "áfà zag-u-nì-zà"],
+	    [:Common, :Plural, :Person2, "áfà zag-u-tí-zà"],
+	    [:Honorific, :Plural, :Person2, "áfà zag-uní-zà"],
+	    [:Common, :Plural, :Person3, "áfà zag-soné-zà"],
+	    [:Honorific, :Plural, :Person3, "áfà zag-soné-zà"]]
+    }
+    {:label "yemsa-VConj3aAffPresPunctMonosyll-di"
+    :note "Lamberti1993 pp. 215-217. (etc.) means that only the first one or two forms of
+            the paradigm is given in Lamberti. Only aff forms are given for the monosyllabic
+            verbs."
+    :common {:conjClass :Conj3a,
+	    :lexeme :di,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresPunct,
+	    :token-aux :_NULL,
+	    :verbMorphClass :Monosyllablic}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "dii-n-ár"],
+	    [:Common, :Singular, :Person2, "dii-t-àr"],
+	    [:Honorific, :Singular, :Person2, "dii-ní-r ~ key-ní-r"],
+	    [:Masc, :Singular, :Person3, "dií-r"],
+	    [:Fem, :Singular, :Person3, "diì-r"],
+	    [:Honorific, :Singular, :Person3, "dii-té-r ~ key-té-r"],
+	    [:Common, :Plural, :Person1, "dii-nì-r"],
+	    [:Common, :Plural, :Person2, "dii-tí-r"],
+	    [:Honorific, :Plural, :Person2, "dii-ní-r ~ key-ní-r"],
+	    [:Common, :Plural, :Person3, "dii-seté-r"],
+	    [:Honorific, :Plural, :Person3, "dii-té-r ~ key-té-r"]]
+    }}
+:muterms #{
+    {:label "yemsa-VDervStem"
+    :note "Lamberti1993 p.165-173."
+    :common {:morpheme :DERVSTEM,
+	    :pos :Verb,
+	    :verbMorphClass :DervStem}
+    :terms [[:derived, :token]  ;; schema
+	    [:Iterative, "reduplication"],
+	    [:Causative, "-s-"],
+	    [:Passive, "-t ~ -st-"],
+	    [:Habitual, "reduplication"]]
+    }
+    {:label "yemsa-PPossAdj"
+    :note "Lamberti1993 p. 95"
+    :common {:morpheme :PROPOSSADJ,
+	    :pos :Pro,
+	    :proClass :PossAdj}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "tà"],
+	    [:Common, :Singular, :Person2, "né"],
+	    [:Honorific, :Singular, :Person2, "ní"],
+	    [:Masc, :Singular, :Person3, "básà"],
+	    [:Fem, :Singular, :Person3, "barì"],
+	    [:Common, :Plural, :Person1, "innò"],
+	    [:Common, :Plural, :Person2, "nittò"],
+	    [:Honorific, :Plural, :Person2, "niinò"],
+	    [:Common, :Plural, :Person3, "bassò"]]
+    }
+    {:label "yemsa-PPoss"
+    :note "Lamberti1993 p. 100f"
+    :common {:morpheme :PROPOSS,
+	    :pos :Pro,
+	    :proClass :Possessive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "taá-r"],
+	    [:Common, :Singular, :Person2, "neé-r"],
+	    [:Honorific, :Singular, :Person2, "nií-r"],
+	    [:Masc, :Singular, :Person3, "básaà-r"],
+	    [:Fem, :Singular, :Person3, "bariì-r"],
+	    [:Common, :Plural, :Person1, "innoò-r"],
+	    [:Common, :Plural, :Person2, "nittoò-r"],
+	    [:Honorific, :Plural, :Person2, "niinoò-r"],
+	    [:Common, :Plural, :Person3, "bassoó-r"]]
+    }
+    {:label "yemsa-PPossSuff"
+    :note "Lamberti1993 p. 96f"
+    :common {:morpheme :PROPOSSSUFF,
+	    :pos :Pro,
+	    :proClass :PossSuff}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "-ná ~ -tà-"],
+	    [:Common, :Singular, :Person2, "-né-"],
+	    [:Honorific, :Singular, :Person2, "-ní-"],
+	    [:Masc, :Singular, :Person3, "-bá-"],
+	    [:Fem, :Singular, :Person3, "-bà-"],
+	    [:Common, :Plural, :Person1, "-nì-"],
+	    [:Common, :Plural, :Person2, "-nitì-"],
+	    [:Honorific, :Plural, :Person2, "-ní-"],
+	    [:Common, :Plural, :Person3, "-bessí-"]]
+    }
+    {:label "yemsa-PIndep"
+    :note "Lamberti1993 pp. 104-115"
+    :common {:morpheme :PROIND,
+	    :pos :Pro,
+	    :proClass :Independent}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Absolutive, :Common, :Singular, :Person1, "tá"],
+	    [:Subject, :Common, :Singular, :Person1, "tá"],
+	    [:Genitive, :Common, :Singular, :Person1, "tà"],
+	    [:Object, :Common, :Singular, :Person1, "taá-n"],
+	    [:Dative, :Common, :Singular, :Person1, "taá-k"],
+	    [:Directive, :Common, :Singular, :Person1, "taá-kì"],
+	    [:Inessive, :Common, :Singular, :Person1, "taá-ssì"],
+	    [:Ablative, :Common, :Singular, :Person1, "taá-kìn"],
+	    [:Comitative, :Common, :Singular, :Person1, "taá-nèn"],
+	    [:Absolutive, :Common, :Singular, :Person2, "né"],
+	    [:Subject, :Common, :Singular, :Person2, "né"],
+	    [:Genitive, :Common, :Singular, :Person2, "né"],
+	    [:Object, :Common, :Singular, :Person2, "neé-n"],
+	    [:Dative, :Common, :Singular, :Person2, "neé-k"],
+	    [:Directive, :Common, :Singular, :Person2, "neé-kì"],
+	    [:Inessive, :Common, :Singular, :Person2, "neé-ssì"],
+	    [:Ablative, :Common, :Singular, :Person2, "neé-kìn"],
+	    [:Comitative, :Common, :Singular, :Person2, "neé-nèn"],
+	    [:Absolutive, :Masc, :Singular, :Person3, "bár"],
+	    [:Subject, :Masc, :Singular, :Person3, "bár"],
+	    [:Genitive, :Masc, :Singular, :Person3, "bá-sà"],
+	    [:Object, :Masc, :Singular, :Person3, "bár-ìn"],
+	    [:Dative, :Masc, :Singular, :Person3, "bár-ìk"],
+	    [:Directive, :Masc, :Singular, :Person3, "bár-kì"],
+	    [:Locative, :Masc, :Singular, :Person3, "bár-tà"],
+	    [:Inessive, :Masc, :Singular, :Person3, "ba-saá-ssì"],
+	    [:Ablative, :Masc, :Singular, :Person3, "bár-kìn"],
+	    [:Exit, :Masc, :Singular, :Person3, "bá-ssìn"],
+	    [:Comitative, :Masc, :Singular, :Person3, "bán-neèn"],
+	    [:Absolutive, :Fem, :Singular, :Person3, "bàr"],
+	    [:Subject, :Fem, :Singular, :Person3, "bàr"],
+	    [:Genitive, :Fem, :Singular, :Person3, "bar-ì"],
+	    [:Object, :Fem, :Singular, :Person3, "bár-òn"],
+	    [:Dative, :Fem, :Singular, :Person3, "bàr-ìk"],
+	    [:Directive, :Fem, :Singular, :Person3, "bàr-kì"],
+	    [:Inessive, :Fem, :Singular, :Person3, "bar-íssì"],
+	    [:Ablative, :Fem, :Singular, :Person3, "bàr-kìn"],
+	    [:Comitative, :Fem, :Singular, :Person3, "bàn-neèn"],
+	    [:Absolutive, :Common, :Plural, :Person1, "innò"],
+	    [:Subject, :Common, :Plural, :Person1, "innò"],
+	    [:Genitive, :Common, :Plural, :Person1, "innò"],
+	    [:Object, :Common, :Plural, :Person1, "innoò-tìn"],
+	    [:Dative, :Common, :Plural, :Person1, "innoò-k"],
+	    [:Directive, :Common, :Plural, :Person1, "innò-kì"],
+	    [:Inessive, :Common, :Plural, :Person1, "innoó-ssì"],
+	    [:Ablative, :Common, :Plural, :Person1, "innò-kìn"],
+	    [:Comitative, :Common, :Plural, :Person1, "innoò-neèn"],
+	    [:Absolutive, :Common, :Plural, :Person2, "nittò"],
+	    [:Subject, :Common, :Plural, :Person2, "nittò"],
+	    [:Genitive, :Common, :Plural, :Person2, "nittò"],
+	    [:Object, :Common, :Plural, :Person2, "nittoò-tìn"],
+	    [:Dative, :Common, :Plural, :Person2, "nittoò-k"],
+	    [:Directive, :Common, :Plural, :Person2, "nittò-kì"],
+	    [:Inessive, :Common, :Plural, :Person2, "nittoó-ssì"],
+	    [:Ablative, :Common, :Plural, :Person2, "nittò-kìn"],
+	    [:Comitative, :Common, :Plural, :Person2, "nittoò-neèn"],
+	    [:Absolutive, :Common, :Plural, :Person3, "bassó"],
+	    [:Subject, :Common, :Plural, :Person3, "bassó"],
+	    [:Genitive, :Common, :Plural, :Person3, "bassó"],
+	    [:Object, :Common, :Plural, :Person3, "bassoó-tìn"],
+	    [:Dative, :Common, :Plural, :Person3, "bassoó-k"],
+	    [:Directive, :Common, :Plural, :Person3, "bassó-kì"],
+	    [:Inessive, :Common, :Plural, :Person3, "bassoó-ssì"],
+	    [:Ablative, :Common, :Plural, :Person3, "bassó-kìn"],
+	    [:Comitative, :Common, :Plural, :Person3, "bassoó-neèn"],
+	    [:Absolutive, :Honorific, :Singular, :Person2, "ní"],
+	    [:Subject, :Honorific, :Singular, :Person2, "ní"],
+	    [:Genitive, :Honorific, :Singular, :Person2, "ní"],
+	    [:Object, :Honorific, :Singular, :Person2, "nií-n"],
+	    [:Absolutive, :Honorific, :Singular, :Person3, "bás"],
+	    [:Subject, :Honorific, :Singular, :Person3, "bás"],
+	    [:Object, :Honorific, :Singular, :Person3, "bás-ìn"],
+	    [:Absolutive, :Honorific, :Plural, :Person2, "niinò"],
+	    [:Subject, :Honorific, :Plural, :Person2, "niinò"],
+	    [:Genitive, :Honorific, :Plural, :Person2, "niinò"],
+	    [:Object, :Honorific, :Plural, :Person2, "niinoò-tìn"],
+	    [:Dative, :Honorific, :Plural, :Person2, "niinoò-k"],
+	    [:Directive, :Honorific, :Plural, :Person2, "niinò-kì"],
+	    [:Inessive, :Honorific, :Plural, :Person2, "niinoó-ssì"],
+	    [:Ablative, :Honorific, :Plural, :Person2, "niinò-kìn"],
+	    [:Comitative, :Honorific, :Plural, :Person2, "niinoò-neèn"]]
+    }
+    {:label "yemsa-VProSuff"
+    :note "Lamberti1993 pp. 115f"
+    :common {:morpheme :PROVSUFF,
+	    :pos :Verb,
+	    :verbMorphClass :ProSuff}
+    :terms [[:gender, :number, :person, :tam, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Preterite, "-n"],
+	    [:Common, :Singular, :Person2, :Preterite, "-t"],
+	    [:Masc, :Singular, :Person3, :Preterite, "⊤"],
+	    [:Fem, :Singular, :Person3, :Preterite, "⊤"],
+	    [:Common, :Plural, :Person1, :Preterite, "-ni"],
+	    [:Common, :Plural, :Person2, :Preterite, "-ti"],
+	    [:Common, :Plural, :Person3, :Preterite, "-sete"],
+	    [:Honorific, :Singular, :Person2, :Preterite, "-ni"],
+	    [:Honorific, :Singular, :Person3, :Preterite, "-te"],
+	    [:Honorific, :Plural, :Person2, :Preterite, "-(se)ni"],
+	    [:Honorific, :Plural, :Person3, :Preterite, "-sete"],
+	    [:Common, :Singular, :Person1, :Future, "-na"],
+	    [:Common, :Singular, :Person2, :Future, "-ta"],
+	    [:Masc, :Singular, :Person3, :Future, "-na"],
+	    [:Fem, :Singular, :Person3, :Future, "-na"],
+	    [:Common, :Plural, :Person1, :Future, "-ni"],
+	    [:Common, :Plural, :Person2, :Future, "-ti"],
+	    [:Common, :Plural, :Person3, :Future, "-sone"],
+	    [:Honorific, :Singular, :Person2, :Future, "-ni"],
+	    [:Honorific, :Singular, :Person3, :Future, "-ne"],
+	    [:Honorific, :Plural, :Person2, :Future, "-(so)ni"],
+	    [:Honorific, :Plural, :Person3, :Future, "-sone"]]
+    }}

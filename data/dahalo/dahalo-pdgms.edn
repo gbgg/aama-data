@@ -1,0 +1,433 @@
+:lang :dahalo
+:schemata [:aspect {:Imperfective, :Perfective, :U}
+	  :gender {:Common, :Fem, :Masc}
+	  :number {:Common, :Plural, :Singular}
+	  :person {:Common, :Person1, :Person2, :Person3}
+	  :polarity {:Affirmative, :Negative}
+	  :pos {:Pro, :Verb}
+	  :proClass {:Bound, :Independent, :Possessive, :Reduced}
+	  :selector {:Affirmative, :Allative, :Comitative, :Far, :Habitual, :Here, :Instrumental, :Irrealis, :Locative, :Near, :Negative, :Past, :Pcm, :Perfect, :Pro, :There, :Ventive}
+	  :selectorPosition {:Pos1, :Pos2, :Pos3, :Pos4, :Pos5, :Pos6, :Pos7}
+	  :tam {:Imperative, :Jussive, :NonPastGen, :NonPastSubj, :PastGen, :PastHab, :PastSubj}
+	  :type {:Fem, :M-or-pl}
+	  :verbMorphClass {:Selector}
+	  ]
+:morphemes {
+  :PROBOUND {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROPOSS {:gloss "[x]", :lemma "[y]", }
+  :PROREDUCED {:gloss "[x]", :lemma "[y]", }
+  :SELECTOR {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :lub {:lemma "lub-", :gloss "hit", }
+}
+:lxterms #{
+    {:label "dahalo-VAffNonPastGen-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :NonPastGen}
+    :terms [[:gender, :number, :person, :token, :token-template]  ;; schema
+	    [:Common, :Singular, :Person1, "lúbo", "XVCo"],
+	    [:Common, :Singular, :Person2, "lúbuto", "XVxCVxto"],
+	    [:Masc, :Singular, :Person3, "lúbbi", "XVCCi"],
+	    [:Fem, :Singular, :Person3, "lúbuto", "XVxCVxto"],
+	    [:Common, :Plural, :Person1, "lúbuno", "XVxCVxno"],
+	    [:Common, :Plural, :Person2, "lúbuten", "XVxCVxten"],
+	    [:Common, :Plural, :Person3, "lúbben / lúbammi", "XVCCen / XVCammi"]]
+    }
+    {:label "dahalo-VNegNonPastGen-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :NonPastGen,
+	    :token-template :_NULL}
+    :terms [[:token]  ;; schema
+	    ["[= NEG+IRR nonPastGen"]]
+    }
+    {:label "dahalo-VAffPastSubjPerfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Perfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastSubj,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lubi"],
+	    [:Common, :Singular, :Person2, "lubúti"],
+	    [:Masc, :Singular, :Person3, "lubbi"],
+	    [:Fem, :Singular, :Person3, "lubúti"],
+	    [:Common, :Plural, :Person1, "lubúni"],
+	    [:Common, :Plural, :Person2, "lubútine"],
+	    [:Common, :Plural, :Person3, "lúbine"]]
+    }
+    {:label "dahalo-VNegImprtv-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-template :_NULL}
+    :terms [[:token]  ;; schema
+	    ["[= juss neg 2"]]
+    }
+    {:label "dahalo-VAffJussImperfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Imperfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lúbe"],
+	    [:Common, :Singular, :Person2, "lúbute"],
+	    [:Masc, :Singular, :Person3, "lúbbe"],
+	    [:Fem, :Singular, :Person3, "lúbute"],
+	    [:Common, :Plural, :Person1, "lúbune"],
+	    [:Common, :Plural, :Person2, "lúbuteene"],
+	    [:Common, :Plural, :Person3, "lúbamme"]]
+    }
+    {:label "dahalo-VAffPastHabImperfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Imperfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastHab,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lúba"],
+	    [:Common, :Singular, :Person2, "lúbuta"],
+	    [:Masc, :Singular, :Person3, "lúbba"],
+	    [:Fem, :Singular, :Person3, "lúbuta"],
+	    [:Common, :Plural, :Person1, "lúbuna"],
+	    [:Common, :Plural, :Person2, "lúbuteena"],
+	    [:Common, :Plural, :Person3, "lúbamma"]]
+    }
+    {:label "dahalo-VAffJussPerfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Perfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lube"],
+	    [:Common, :Singular, :Person2, "lubúte"],
+	    [:Masc, :Singular, :Person3, "lubbe"],
+	    [:Fem, :Singular, :Person3, "lubúte"],
+	    [:Common, :Plural, :Person1, "lubúne"],
+	    [:Common, :Plural, :Person2, "lubútine"],
+	    [:Common, :Plural, :Person3, "lúbine"]]
+    }
+    {:label "dahalo-VAffPastHabPerfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Perfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastHab,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "luba"],
+	    [:Common, :Singular, :Person2, "lubúta"],
+	    [:Masc, :Singular, :Person3, "lubba"],
+	    [:Fem, :Singular, :Person3, "lubúta"],
+	    [:Common, :Plural, :Person1, "lubúna"],
+	    [:Common, :Plural, :Person2, "lubútina"],
+	    [:Common, :Plural, :Person3, "lúbina"]]
+    }
+    {:label "dahalo-VAffPastGenPerfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Perfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastGen,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lúbu"],
+	    [:Common, :Singular, :Person2, "lúbuti"],
+	    [:Masc, :Singular, :Person3, "lúbi"],
+	    [:Fem, :Singular, :Person3, "lúbuti"],
+	    [:Common, :Plural, :Person1, "lúbuni"],
+	    [:Common, :Plural, :Person2, "lubúti(n)"],
+	    [:Common, :Plural, :Person3, "lubi(n)"]]
+    }
+    {:label "dahalo-VAffImprtvImperfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Imperfective,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-template :_NULL}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "lúbi"],
+	    [:Plural, "lube"]]
+    }
+    {:label "dahalo-VNegPastGen-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :lexeme :lub,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PastGen,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "b’á+i+va lube"],
+	    [:Masc, :Singular, :Person2, "b’á+ku+va lube"],
+	    [:Fem, :Singular, :Person2, "b’á+ki+va lube"],
+	    [:Masc, :Singular, :Person3, "b’á+va lube"],
+	    [:Fem, :Singular, :Person3, "b’á+va lube"],
+	    [:Common, :Plural, :Person1, "b’á+ni+va lube"],
+	    [:Masc, :Plural, :Person2, "b’a+kúnna+va lube"],
+	    [:Fem, :Plural, :Person2, "b’a+kínna+va lube"],
+	    [:Common, :Plural, :Person3, "b’á+va lube"]]
+    }
+    {:label "dahalo-VNegPastHab-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PastHab,
+	    :token-template :_NULL}
+    :terms [[:token]  ;; schema
+	    ["[= NEG pastHab"]]
+    }
+    {:label "dahalo-VNegJussImperfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Imperfective,
+	    :lexeme :lub,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "luba"],
+	    [:Common, :Singular, :Person2, "lubúta"],
+	    [:Masc, :Singular, :Person3, "lubba"],
+	    [:Fem, :Singular, :Person3, "lubúta"],
+	    [:Common, :Plural, :Person1, "lubúna"],
+	    [:Common, :Plural, :Person2, "lubúteena"],
+	    [:Common, :Plural, :Person3, "lúbamma"]]
+    }
+    {:label "dahalo-VNegNonPastSubj-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :NonPastSubj,
+	    :token-template :_NULL}
+    :terms [[:token]  ;; schema
+	    ["[= NEG+IRR nonPastSubj"]]
+    }
+    {:label "dahalo-VAffImprtvPerfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Perfective,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-template :_NULL}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "lúbu"],
+	    [:Plural, "lubo"]]
+    }
+    {:label "dahalo-VAffNonPastSubj-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :NonPastSubj}
+    :terms [[:gender, :number, :person, :token, :token-template]  ;; schema
+	    [:Common, :Singular, :Person1, "lúba", "XVxCa"],
+	    [:Common, :Singular, :Person2, "lúbuta", "XVxCVxta"],
+	    [:Masc, :Singular, :Person3, "luba", "XVCa"],
+	    [:Fem, :Singular, :Person3, "lúbuta", "XVxCVxta"],
+	    [:Common, :Plural, :Person1, "lúbuna", "XVxCVxna"],
+	    [:Common, :Plural, :Person2, "lúbuteena", "XVxCVxteena"],
+	    [:Common, :Plural, :Person3, "lúbamma", "XVCamma"]]
+    }
+    {:label "dahalo-VAffPastSubjImperfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Imperfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastSubj,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lúbe"],
+	    [:Common, :Singular, :Person2, "lúbute"],
+	    [:Masc, :Singular, :Person3, "lúbbe"],
+	    [:Fem, :Singular, :Person3, "lúbute"],
+	    [:Common, :Plural, :Person1, "lúbune"],
+	    [:Common, :Plural, :Person2, "lúbuteene"],
+	    [:Common, :Plural, :Person3, "lúbamme"]]
+    }
+    {:label "dahalo-VAffPastGenImperfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Imperfective,
+	    :lexeme :lub,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastGen,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lubo"],
+	    [:Common, :Singular, :Person2, "lubúto"],
+	    [:Masc, :Singular, :Person3, "lubbi"],
+	    [:Fem, :Singular, :Person3, "lubúto"],
+	    [:Common, :Plural, :Person1, "lubúno"],
+	    [:Common, :Plural, :Person2, "lubúten"],
+	    [:Common, :Plural, :Person3, "lubben / lúbammi"]]
+    }
+    {:label "dahalo-VNegJussPerfective-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :Perfective,
+	    :lexeme :lub,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive,
+	    :token-template :_NULL}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "lúba"],
+	    [:Common, :Singular, :Person2, "lúbuta"],
+	    [:Masc, :Singular, :Person3, "lúbba"],
+	    [:Fem, :Singular, :Person3, "lúbuta"],
+	    [:Common, :Plural, :Person1, "lúbuna"],
+	    [:Common, :Plural, :Person2, "lubútina"],
+	    [:Common, :Plural, :Person3, "lubína"]]
+    }
+    {:label "dahalo-VNegPastSubj-lub"
+    :note "Tosco1991,pp. 53-61. Negative tenses are marked in the selector complex. A special negative construction exists for pastGen:b’á+PRO+va LEX[infinitive](p. 61). In the template formulae,Vx indicates an epenthesized vowel identical with the stem vowel. ConjClass seems to be for the most part lexically determined,but certain verbs,such as lub-,can occur with both series of suffixes. (p. 49)"
+    :common {:aspect :U,
+	    :gender :Common,
+	    :lexeme :lub,
+	    :number :Common,
+	    :person :Common,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PastSubj,
+	    :token-template :_NULL}
+    :terms [[:token]  ;; schema
+	    ["[= NEG pastSubj"]]
+    }}
+:muterms #{
+    {:label "dahalo-PBound"
+    :note "Tosco1991,p. 37"
+    :common {:morpheme :PROBOUND,
+	    :pos :Pro,
+	    :proClass :Bound}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "-ʔi"],
+	    [:Masc, :Singular, :Person2, "-ku"],
+	    [:Fem, :Singular, :Person2, "-ki"],
+	    [:Masc, :Singular, :Person3, "-du"],
+	    [:Fem, :Singular, :Person3, "-di"],
+	    [:Common, :Plural, :Person1, "-ni"],
+	    [:Masc, :Plural, :Person2, "-kunná"],
+	    [:Fem, :Plural, :Person2, "-kinná"],
+	    [:Common, :Plural, :Person3, "-ʔiɲá"]]
+    }
+    {:label "dahalo-PReduced"
+    :note "Tosco1991,p. 37"
+    :common {:morpheme :PROREDUCED,
+	    :pos :Pro,
+	    :proClass :Reduced}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔan-"],
+	    [:Masc, :Singular, :Person3, "ʔuC-"],
+	    [:Fem, :Singular, :Person3, "ʔiC-"],
+	    [:Common, :Plural, :Person1, "ɲan-"]]
+    }
+    {:label "dahalo-PPoss"
+    :note "Tosco1991,p. 39"
+    :common {:morpheme :PROPOSS,
+	    :pos :Pro,
+	    :proClass :Possessive}
+    :terms [[:gender, :number, :person, :token, :type]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔitts+i", :M-or-pl],
+	    [:Masc, :Singular, :Person2, "-kuʔ+u", :M-or-pl],
+	    [:Fem, :Singular, :Person2, "-kiʔ+i", :M-or-pl],
+	    [:Masc, :Singular, :Person3, "-suʔ+u", :M-or-pl],
+	    [:Fem, :Singular, :Person3, "-siʔ+i", :M-or-pl],
+	    [:Common, :Plural, :Person1, "-ɲiʔ+i", :M-or-pl],
+	    [:Common, :Plural, :Person2, "-kunuʔ+u", :M-or-pl],
+	    [:Common, :Plural, :Person3, "-mámuʔusuʔ+u", :M-or-pl],
+	    [:Common, :Singular, :Person1, "ʔitts+a", :Fem],
+	    [:Masc, :Singular, :Person2, "-kuʔ+a", :Fem],
+	    [:Fem, :Singular, :Person2, "-kiʔ+a", :Fem],
+	    [:Masc, :Singular, :Person3, "-suʔ+a", :Fem],
+	    [:Fem, :Singular, :Person3, "-siʔ+a", :Fem],
+	    [:Common, :Plural, :Person1, "-ɲiʔ+a", :Fem],
+	    [:Common, :Plural, :Person2, "-kunuʔ+a", :Fem],
+	    [:Common, :Plural, :Person3, "-mámuʔusuʔ+a", :Fem]]
+    }
+    {:label "dahalo-PInd"
+    :note "Tosco1991,p. 37"
+    :common {:morpheme :PROIND,
+	    :pos :Pro,
+	    :proClass :Independent}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔáɲi"],
+	    [:Common, :Singular, :Person2, "ʔááta"],
+	    [:Masc, :Singular, :Person3, "ʔúdu"],
+	    [:Fem, :Singular, :Person3, "ʔídi"],
+	    [:Common, :Plural, :Person1, "ɲáɲni"],
+	    [:Common, :Plural, :Person2, "ʔatta"],
+	    [:Common, :Plural, :Person3, "ʔummámu"]]
+    }
+    {:label "dahalo-VSelector"
+    :note "Tosco1991,pp. 68-75. Tosco distinguishes the selectors in the strict sense from the ventive and allative (motion from) particles,which however are frequently associated with verbs. “D selectors do not signal person/number of the subject (as is the case in other languages),but only have an aspect/tense- (and possibly focus-) marking function”(p.68). They can occur in adpositional (post-NP) position,or as a particle complex (PC) in the following serialization (p. 79,where PC marker,PCM,is ʔa-):I (PCM,AFF,NEG (+IRR)) + II (OBJ) + III (PAST,PERF) + IV (HAB,VEN) + V (ALL,COM,INST) + VI (LOC) + VII (THIS,THAT,HERE,THERE)."
+    :common {:morpheme :SELECTOR,
+	    :pos :Verb,
+	    :verbMorphClass :Selector}
+    :terms [[:selector, :selectorPosition, :token, :token-note]  ;; schema
+	    [:Pcm, :Pos1, "ʔa-", "particle-complex marker"],
+	    [:Affirmative, :Pos1, "te", "affirmative action"],
+	    [:Negative, :Pos1, "b´á-", "negative"],
+	    [:Irrealis, :Pos1, "-ká", "unrealised action"],
+	    [:Pro, :Pos2, "⊤", "cf. pdgm proBound"],
+	    [:Past, :Pos3, "-va ~ -k/gwa", "remoter past"],
+	    [:Perfect, :Pos3, "-ná", "perfect"],
+	    [:Habitual, :Pos4, "-jí", "habitual action"],
+	    [:Ventive, :Pos4, "⊤", "ventive (directional particle)"],
+	    [:Allative, :Pos5, "-jí", "allative"],
+	    [:Instrumental, :Pos5, "⊤", "instrumental"],
+	    [:Comitative, :Pos5, "ʔinto ~ -nto", "comitative"],
+	    [:Locative, :Pos6, "-da", "locative adposition"],
+	    [:Near, :Pos7, "-kwa", "near deictic"],
+	    [:Far, :Pos7, "-k[ó]~ -t[ó]", "far deictic"],
+	    [:Here, :Pos7, "-kwatta", "adposition frm adverb"],
+	    [:There, :Pos7, "-kotta ~ -kutta", "adposition frm adverb"]]
+    }}

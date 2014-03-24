@@ -1,0 +1,1982 @@
+:lang :tsamakko
+:schemata [:case {:Comitative, :Dative, :Directive, :Locative, :Obj-ka, :Object, :Subject}
+	  :category {:Diff, :InterrGen, :InterrWh}
+	  :conj {:ConjA, :ConjB}
+	  :conjClass {:Common, :ConjA, :ConjB}
+	  :defMarker {:SsaClass, :SseClass, :aClass}
+	  :deixis {:Distal, :Distal2, :Proximal, :Proximal2}
+	  :derivedClass {:Normal, :Verbaliser, :o-assim}
+	  :derivedStem {:Causative1, :Causative2, :Generic, :Inceptive, :Middel, :Passive}
+	  :gender {:Common, :Fem, :Masc}
+	  :genderObj {:Common, :Fem, :Masc}
+	  :numObj {:Plural, :Singular}
+	  :number {:Common, :Plural, :Singular}
+	  :person {:Person1, :Person2, :Person3}
+	  :polarity {:Affirmative, :Common, :Negative, :Subordinate}
+	  :pos {:Pro, :Verb}
+	  :proClass {:DefMarker, :Demonstrative, :Independent, :InterrDiff, :Locative, :PossInd, :PossSuff, :ProParticle}
+	  :stemShape {:CVC, :CVC-VC, :CVCVC, :CVVC}
+	  :suffixSet {:SuffSet1, :SuffSet2, :SuffSet3, :SuffSet4, :SuffSet5}
+	  :tam {:Aorist, :Consecutive, :Future, :Imperative, :Imperfect, :Jussive, :NonPast, :Past}
+	  :verbMorphClass {:ConjA-ConjBComparison, :DervStemFormation, :ProSuff, :SubjMarkers, :TenseSuffSets}
+	  ]
+:morphemes {
+  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
+  :PRODEFMARKER {:gloss "[x]", :lemma "[y]", }
+  :PRODEM {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROINTERR {:gloss "[x]", :lemma "[y]", }
+  :PROLOC {:gloss "[x]", :lemma "[y]", }
+  :PROPARTICLE {:gloss "[x]", :lemma "[y]", }
+  :PROPOSSIND {:gloss "[x]", :lemma "[y]", }
+  :PROPOSSSUFF {:gloss "[x]", :lemma "[y]", }
+  :PROSUFF {:gloss "[x]", :lemma "[y]", }
+  :SUBJMARKERS {:gloss "[x]", :lemma "[y]", }
+  :TENSESUFFSETS {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :abun {:lemma "ʔabun-", :gloss "rock", :conj :ConjB, :pos :Verb}
+  :bod {:lemma "bood-", :gloss "dig", :conj :ConjB, :pos :Verb}
+  :kais {:lemma "kaʔ-is-", :gloss "make sb. stand up", :conj :ConjA, :pos :Verb}
+  :ooy {:lemma "ʔooy-", :gloss "cry", :conj :ConjA, }
+  :qaba {:lemma "q’abaʔ -", :gloss "hear", :conj :ConjA, :pos :Verb}
+  :ug {:lemma "ʕug", :gloss "drink", :conj :ConjA, :pos :Verb}
+  :zi {:lemma "žíʔ", :gloss "eat", :conj :ConjB, :pos :Verb}
+  :zoq-am {:lemma "žoq’-am-", :gloss "be beaten", :conj :ConjB, :pos :Verb}
+}
+:lxterms #{
+    {:label "tsamakko-VConjBCVCVCAffConsecutive-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-ó"],
+	    [:Common, :Singular, :Person2, "ʔábún-óy"],
+	    [:Masc, :Singular, :Person3, "ʔábún-ó"],
+	    [:Fem, :Singular, :Person3, "ʔábún-óy"],
+	    [:Common, :Plural, :Person1, "ʔábún-ónki"],
+	    [:Common, :Plural, :Person2, "ʔábún-ónku"],
+	    [:Common, :Plural, :Person3, "ʔábún-ónki"]]
+    }
+    {:label "tsamakko-VConjBCVCAffImperf-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-a"],
+	    [:Common, :Singular, :Person2, "žíʔ-ay"],
+	    [:Masc, :Singular, :Person3, "žíʔ-a"],
+	    [:Fem, :Singular, :Person3, "žíʔ-ay"],
+	    [:Common, :Plural, :Person1, "žíʔ-anki"],
+	    [:Common, :Plural, :Person2, "žíʔ-anku"],
+	    [:Common, :Plural, :Person3, "žíʔ-anki"]]
+    }
+    {:label "tsamakko-VConjBCVCAffAorist-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-i"],
+	    [:Common, :Singular, :Person2, "žíʔ-ti"],
+	    [:Masc, :Singular, :Person3, "žíʔ-i"],
+	    [:Fem, :Singular, :Person3, "žíʔ-ti"],
+	    [:Common, :Plural, :Person1, "žíʔ-ni"],
+	    [:Common, :Plural, :Person2, "žíʔ-te"],
+	    [:Common, :Plural, :Person3, "žíʔ-e"]]
+    }
+    {:label "tsamakko-VConjACVCVCNegJuss-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) q’ábáʔ-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) q’ábáʔ-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) q’ábáʔ-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) q’ábáʔ-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu) q’ábáʔ-únki"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) q’ábáʔ-únku"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) q’ábáʔ-únki"]]
+    }
+    {:label "tsamakko-VConjBCVVCAffFuture-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-na"],
+	    [:Common, :Singular, :Person2, "bóód-nay"],
+	    [:Masc, :Singular, :Person3, "bóód-na"],
+	    [:Fem, :Singular, :Person3, "bóód-nay"],
+	    [:Common, :Plural, :Person1, "bóód-nánki"],
+	    [:Common, :Plural, :Person2, "bóód-nánku"],
+	    [:Common, :Plural, :Person3, "bóód-nánki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCNegNonPast-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-í"],
+	    [:Common, :Singular, :Person2, "káʔ-ís-tí"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-í"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-tí"],
+	    [:Common, :Plural, :Person1, "káʔ-ís-ní"],
+	    [:Common, :Plural, :Person2, "káʔ-ís-té"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-é"]]
+    }
+    {:label "tsamakko-VConjACVVCNegJuss-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) óóy-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) óóy-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) óóy-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) óóy-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu) óóy-únkí"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) óóy-únkú"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) óóy-únkí"]]
+    }
+    {:label "tsamakko-VConjBCVVCAffImperf-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-a"],
+	    [:Common, :Singular, :Person2, "bóód-ay"],
+	    [:Masc, :Singular, :Person3, "bóód-a"],
+	    [:Fem, :Singular, :Person3, "bóód-ay"],
+	    [:Common, :Plural, :Person1, "bóód-anki"],
+	    [:Common, :Plural, :Person2, "bóód-anku"],
+	    [:Common, :Plural, :Person3, "bóód-anki"]]
+    }
+    {:label "tsamakko-VConjACVCVCAffJuss-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’abaʔ-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "q’abaʔ-á"],
+	    [:Fem, :Singular, :Person3, "q’abaʔ-ítá"],
+	    [:Common, :Plural, :Person1, "q’abaʔ-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "q’abaʔ-é"]]
+    }
+    {:label "tsamakko-VConjACVC-VCNegJuss-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) káʔ-ís-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) káʔ-ís-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) káʔ-ís-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) káʔ-ís-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu) káʔ-ís-únki"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) káʔ-ís-únku"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) káʔ-ís-únki"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCAffImprtv-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :gender :Common,
+	    :lexeme :zoq-am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "žóq’-ám-á"],
+	    [:Plural, :Person3, "žóq’-ám-ínɗá"]]
+    }
+    {:label "tsamakko-VConjBCVVCAffConsecutive-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-ó"],
+	    [:Common, :Singular, :Person2, "bóód-óy"],
+	    [:Masc, :Singular, :Person3, "bóód-ó"],
+	    [:Fem, :Singular, :Person3, "bóód-óy"],
+	    [:Common, :Plural, :Person1, "bóód-ónki"],
+	    [:Common, :Plural, :Person2, "bóód-ónku"],
+	    [:Common, :Plural, :Person3, "bóód-ónki"]]
+    }
+    {:label "tsamakko-VConjBCVVCAffAorist-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-i"],
+	    [:Common, :Singular, :Person2, "bóód-ti"],
+	    [:Masc, :Singular, :Person3, "bóód-i"],
+	    [:Fem, :Singular, :Person3, "bóód-ti"],
+	    [:Common, :Plural, :Person1, "bóód-ni"],
+	    [:Common, :Plural, :Person2, "bóód-te"],
+	    [:Common, :Plural, :Person3, "bóód-e"]]
+    }
+    {:label "tsamakko-VConjAConsecutiveConjA-conjBComparison"
+    :note "Sava2005 Tables 34,35,and 36. Here and in other paradigms,Sava’s “aorist” is noted as “aorist”. The A and B conjugations differ in the aorist,consecutive,and imprtv forms."
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :pos :Verb,
+	    :tam :Consecutive,
+	    :verbMorphClass :ConjA-ConjBComparison}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-á"],
+	    [:Common, :Singular, :Person2, "ʕúg-áy"],
+	    [:Masc, :Singular, :Person3, "ʕúg-ú"],
+	    [:Fem, :Singular, :Person3, "ʕúg-í"],
+	    [:Common, :Plural, :Person1, "ʕúg-ánki"],
+	    [:Common, :Plural, :Person2, "ʕúg-ánku"],
+	    [:Common, :Plural, :Person3, "ʕúg-ínki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCNegPast-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔʔ-ís-á"],
+	    [:Common, :Singular, :Person2, "káʔʔ-ís-á"],
+	    [:Masc, :Singular, :Person3, "káʔʔ-ís-á"],
+	    [:Fem, :Singular, :Person3, "káʔʔ-ís-á"],
+	    [:Common, :Plural, :Person1, "káʔʔ-ís-ánkí"],
+	    [:Common, :Plural, :Person2, "káʔʔ-ís-ánkú"],
+	    [:Common, :Plural, :Person3, "káʔʔ-ís-ánkú"]]
+    }
+    {:label "tsamakko-VConjACVCAffImprtv-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :gender :Common,
+	    :lexeme :ug,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "ʕúg-"],
+	    [:Plural, :Person3, "ʕug-á"]]
+    }
+    {:label "tsamakko-VConjBCVVCNegPast-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóódd-á"],
+	    [:Common, :Singular, :Person2, "bóódd-á"],
+	    [:Masc, :Singular, :Person3, "bóódd-á"],
+	    [:Fem, :Singular, :Person3, "bóódd-á"],
+	    [:Common, :Plural, :Person1, "bóódd-ánkí"],
+	    [:Common, :Plural, :Person2, "bóódd-ánkú"],
+	    [:Common, :Plural, :Person3, "bóódd-ánkú"]]
+    }
+    {:label "tsamakko-VConjACVC-VCAffJuss-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-á"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-ítá"],
+	    [:Common, :Plural, :Person1, "káʔ-ís-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-é"]]
+    }
+    {:label "tsamakko-VConjACVCVCNegNonPast-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábáʔ-í"],
+	    [:Common, :Singular, :Person2, "q’ábáʔ-tí"],
+	    [:Masc, :Singular, :Person3, "q’ábáʔ-í"],
+	    [:Fem, :Singular, :Person3, "q’ábáʔ-tí"],
+	    [:Common, :Plural, :Person1, "q’ábáʔ-ní"],
+	    [:Common, :Plural, :Person2, "q’ábáʔ-té"],
+	    [:Common, :Plural, :Person3, "q’ábáʔ-é"]]
+    }
+    {:label "tsamakko-VConjACVCAffAorist-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-í"],
+	    [:Common, :Singular, :Person2, "ʕúg-dí"],
+	    [:Masc, :Singular, :Person3, "ʕúg-í"],
+	    [:Fem, :Singular, :Person3, "ʕúg-dí"],
+	    [:Common, :Plural, :Person1, "ʕúg-ní"],
+	    [:Common, :Plural, :Person2, "ʕúg-de"],
+	    [:Common, :Plural, :Person3, "ʕúg-e"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCNegPast-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq’-ám-á"],
+	    [:Common, :Singular, :Person2, "žóq’-ám-á"],
+	    [:Masc, :Singular, :Person3, "žóq’-ám-á"],
+	    [:Fem, :Singular, :Person3, "žóq’-ám-á"],
+	    [:Common, :Plural, :Person1, "žóq’-ám-ánkí"],
+	    [:Common, :Plural, :Person2, "žóq’-ám-ánkú"],
+	    [:Common, :Plural, :Person3, "žóq’-ám-ánkú"]]
+    }
+    {:label "tsamakko-VConjBConsecutiveConjA-conjBComparison"
+    :note "Sava2005 Tables 34,35,and 36. Here and in other paradigms,Sava’s “aorist” is noted as “aorist”. The A and B conjugations differ in the aorist,consecutive,and imprtv forms."
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :pos :Verb,
+	    :tam :Consecutive,
+	    :verbMorphClass :ConjA-ConjBComparison}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zíʔ-ó"],
+	    [:Common, :Singular, :Person2, "zíʔ-óy"],
+	    [:Masc, :Singular, :Person3, "zíʔ-ó"],
+	    [:Fem, :Singular, :Person3, "zíʔ-óy"],
+	    [:Common, :Plural, :Person1, "zíʔ-ónki"],
+	    [:Common, :Plural, :Person2, "zíʔ-ónku"],
+	    [:Common, :Plural, :Person3, "zíʔ-ónki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCAffFuture-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-na"],
+	    [:Common, :Singular, :Person2, "káʔ-ís-nay"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-na"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-nay"],
+	    [:Common, :Plural, :Person1, "káʔ-ís-nánki"],
+	    [:Common, :Plural, :Person2, "káʔ-ís-nánku"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-nánki"]]
+    }
+    {:label "tsamakko-VConjBCVCAffJuss-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "žíʔ-á"],
+	    [:Fem, :Singular, :Person3, "žíʔ-ítá"],
+	    [:Common, :Plural, :Person1, "žíʔ-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "žíʔ-é"]]
+    }
+    {:label "tsamakko-VConjACVVCAffConsecutive-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-á"],
+	    [:Common, :Singular, :Person2, "ʔóóy-áy"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-ú"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-í"],
+	    [:Common, :Plural, :Person1, "ʔóóy-ánki"],
+	    [:Common, :Plural, :Person2, "ʔóóy-ánku"],
+	    [:Common, :Plural, :Person3, "ʔóóy-nki"]]
+    }
+    {:label "tsamakko-VConjACVCSubFuture-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-ní"],
+	    [:Common, :Singular, :Person2, "ʕúg-íntí"],
+	    [:Masc, :Singular, :Person3, "ʕúg-ní"],
+	    [:Fem, :Singular, :Person3, "ʕúg-íntí"],
+	    [:Common, :Plural, :Person1, "ʕúg-nínní"],
+	    [:Common, :Plural, :Person2, "ʕúg-ínté"],
+	    [:Common, :Plural, :Person3, "ʕúg-né"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCSubFuture-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq-ám-ní"],
+	    [:Common, :Singular, :Person2, "žóq-ám-íntí"],
+	    [:Masc, :Singular, :Person3, "žóq-ám-ní"],
+	    [:Fem, :Singular, :Person3, "žóq-ám-íntí"],
+	    [:Common, :Plural, :Person1, "žóq-ám-nínní"],
+	    [:Common, :Plural, :Person2, "žóq-ám-ínté"],
+	    [:Common, :Plural, :Person3, "žóq-ám-né"]]
+    }
+    {:label "tsamakko-VConjACVVCNegPast-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóyy-á"],
+	    [:Common, :Singular, :Person2, "ʔóóyy-á"],
+	    [:Masc, :Singular, :Person3, "ʔóóyy-á"],
+	    [:Fem, :Singular, :Person3, "ʔóóyy-á"],
+	    [:Common, :Plural, :Person1, "ʔóóyy-ánkí"],
+	    [:Common, :Plural, :Person2, "ʔóóyy-ánkú"],
+	    [:Common, :Plural, :Person3, "ʔóóyy-ánkú"]]
+    }
+    {:label "tsamakko-VConjBCVVCAffImprtv-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :gender :Common,
+	    :lexeme :bod,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "bóód-á"],
+	    [:Plural, :Person3, "bóód-ínɗa"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCAffAorist-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq-ám-i"],
+	    [:Common, :Singular, :Person2, "žóq-ám-ti"],
+	    [:Masc, :Singular, :Person3, "žóq-ám-i"],
+	    [:Fem, :Singular, :Person3, "žóq-ám-ti"],
+	    [:Common, :Plural, :Person1, "žóq-ám-ni"],
+	    [:Common, :Plural, :Person2, "žóq-ám-te"],
+	    [:Common, :Plural, :Person3, "žóq-ám-e"]]
+    }
+    {:label "tsamakko-VConjACVCAffConsecutive-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-á"],
+	    [:Common, :Singular, :Person2, "ʕúg-áy"],
+	    [:Masc, :Singular, :Person3, "ʕúg-ú"],
+	    [:Fem, :Singular, :Person3, "ʕúg-í"],
+	    [:Common, :Plural, :Person1, "ʕúg-ánki"],
+	    [:Common, :Plural, :Person2, "ʕúg-ánku"],
+	    [:Common, :Plural, :Person3, "ʕúg-ínki"]]
+    }
+    {:label "tsamakko-VConjBCVCAffFuture-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-na"],
+	    [:Common, :Singular, :Person2, "žíʔ-nay"],
+	    [:Masc, :Singular, :Person3, "žíʔ-na"],
+	    [:Fem, :Singular, :Person3, "žíʔ-nay"],
+	    [:Common, :Plural, :Person1, "žíʔ-nánki"],
+	    [:Common, :Plural, :Person2, "žíʔ-nánku"],
+	    [:Common, :Plural, :Person3, "žíʔ-nánki"]]
+    }
+    {:label "tsamakko-VConjBCVCNegPast-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔʔ-á"],
+	    [:Common, :Singular, :Person2, "žíʔʔ-á"],
+	    [:Masc, :Singular, :Person3, "žíʔʔ-á"],
+	    [:Fem, :Singular, :Person3, "žíʔʔ-á"],
+	    [:Common, :Plural, :Person1, "žíʔʔ-ánkí"],
+	    [:Common, :Plural, :Person2, "žíʔʔ-ánkú"],
+	    [:Common, :Plural, :Person3, "žíʔʔ-ánkú"]]
+    }
+    {:label "tsamakko-VConjACVCVCNegFuture-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’abaʔ-ní"],
+	    [:Common, :Singular, :Person2, "q’abaʔ-íntí"],
+	    [:Masc, :Singular, :Person3, "q’abaʔ-ní"],
+	    [:Fem, :Singular, :Person3, "q’abaʔ-íntí"],
+	    [:Common, :Plural, :Person1, "q’abaʔ-ínní"],
+	    [:Common, :Plural, :Person2, "q’abaʔ-íntí"],
+	    [:Common, :Plural, :Person3, "q’abaʔ-ní"]]
+    }
+    {:label "tsamakko-VConjACVCNegJuss-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) ʕúg-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) ʕúg-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) ʕúg-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) ʕúg-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu) ʕúg-únkí"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) ʕúg-únkú"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) ʕúg-únkí"]]
+    }
+    {:label "tsamakko-VConjACVCAffJuss-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕug-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "ʕug-á"],
+	    [:Fem, :Singular, :Person3, "ʕug-ítá"],
+	    [:Common, :Plural, :Person1, "ʕug-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "ʕug-é"]]
+    }
+    {:label "tsamakko-VConjBCVVCNegFuture-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-ní"],
+	    [:Common, :Singular, :Person2, "bóód-íntí"],
+	    [:Masc, :Singular, :Person3, "bóód-ní"],
+	    [:Fem, :Singular, :Person3, "bóód-íntí"],
+	    [:Common, :Plural, :Person1, "bóód-ínní"],
+	    [:Common, :Plural, :Person2, "bóód-ínté"],
+	    [:Common, :Plural, :Person3, "bóód-né"]]
+    }
+    {:label "tsamakko-VConjBCVCVCAffFuture-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-na"],
+	    [:Common, :Singular, :Person2, "ʔábún-nay"],
+	    [:Masc, :Singular, :Person3, "ʔábún-na"],
+	    [:Fem, :Singular, :Person3, "ʔábún-nay"],
+	    [:Common, :Plural, :Person1, "ʔábún-nánki"],
+	    [:Common, :Plural, :Person2, "ʔábún-nánku"],
+	    [:Common, :Plural, :Person3, "ʔábún-nánki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCAffConsecutive-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-á"],
+	    [:Common, :Singular, :Person2, "káʔ-ís-áy"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-ú"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-í"],
+	    [:Common, :Plural, :Person1, "káʔ-ís -ánki"],
+	    [:Common, :Plural, :Person2, "káʔ-ís-ánku"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-ínki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCAffAorist-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-í"],
+	    [:Common, :Singular, :Person2, "káʔ-ís-tí"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-í"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-tí"],
+	    [:Common, :Plural, :Person1, "káʔ-ís-ní"],
+	    [:Common, :Plural, :Person2, "káʔ-te"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-e"]]
+    }
+    {:label "tsamakko-VConjACVVCNegFuture-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-ní"],
+	    [:Common, :Singular, :Person2, "ʔóóy-íntí"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-ní"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-íntí"],
+	    [:Common, :Plural, :Person1, "ʔóóy-ínní"],
+	    [:Common, :Plural, :Person2, "ʔóóy-ínté"],
+	    [:Common, :Plural, :Person3, "ʔóóy-né"]]
+    }
+    {:label "tsamakko-VConjACVCVCAffImprtv-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :gender :Common,
+	    :lexeme :qaba,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "q’ábáʔ"],
+	    [:Plural, :Person3, "q’ábáʔ-á"]]
+    }
+    {:label "tsamakko-VConjBImprtvConjA-conjBComparison"
+    :note "Sava2005 Tables 34,35,and 36. Here and in other paradigms,Sava’s “aorist” is noted as “aorist”. The A and B conjugations differ in the aorist,consecutive,and imprtv forms."
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :gender :Common,
+	    :person :Person2,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :verbMorphClass :ConjA-ConjBComparison}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "ziʔ-á"],
+	    [:Plural, "ziʔ-inɗá"]]
+    }
+    {:label "tsamakko-VConjBCVCVCNegJuss-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) ʔábún-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) ʔábún-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) ʔábún-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) ʔábún-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu) ʔábún-únki"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) ʔábún-únku"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) ʔábún-únki"]]
+    }
+    {:label "tsamakko-VConjBCVCAffImprtv-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :gender :Common,
+	    :lexeme :zi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "žíʔ-á"],
+	    [:Plural, :Person3, "žíʔ-ínɗá"]]
+    }
+    {:label "tsamakko-VConjACVCVCSubFuture-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábaʔ-ní"],
+	    [:Common, :Singular, :Person2, "q’ábaʔ-íntí"],
+	    [:Masc, :Singular, :Person3, "q’ábaʔ-ní"],
+	    [:Fem, :Singular, :Person3, "q’ábaʔ-íntí"],
+	    [:Common, :Plural, :Person1, "q’ábaʔ-nínní"],
+	    [:Common, :Plural, :Person2, "q’ábaʔ-ínté"],
+	    [:Common, :Plural, :Person3, "q’ábaʔ-né"]]
+    }
+    {:label "tsamakko-VConjACVCNegNonPast-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-í"],
+	    [:Common, :Singular, :Person2, "ʕúg-dí"],
+	    [:Masc, :Singular, :Person3, "ʕúg-í"],
+	    [:Fem, :Singular, :Person3, "ʕúg-dí"],
+	    [:Common, :Plural, :Person1, "ʕúg-ní"],
+	    [:Common, :Plural, :Person2, "ʕúg-dé"],
+	    [:Common, :Plural, :Person3, "ʕúg-é"]]
+    }
+    {:label "tsamakko-VConjAAoristConjA-conjBComparison"
+    :note "Sava2005 Tables 34,35,and 36. Here and in other paradigms,Sava’s “aorist” is noted as “aorist”. The A and B conjugations differ in the aorist,consecutive,and imprtv forms."
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :pos :Verb,
+	    :tam :Aorist,
+	    :verbMorphClass :ConjA-ConjBComparison}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-í"],
+	    [:Common, :Singular, :Person2, "ʕúg-dí*"],
+	    [:Masc, :Singular, :Person3, "ʕúg-í"],
+	    [:Fem, :Singular, :Person3, "ʕúg-dí"],
+	    [:Common, :Plural, :Person1, "ʕúg-ní"],
+	    [:Common, :Plural, :Person2, "ʕúg-de"],
+	    [:Common, :Plural, :Person3, "ʕúg-e"]]
+    }
+    {:label "tsamakko-VConjACVCAffImperf-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-a"],
+	    [:Common, :Singular, :Person2, "ʕúg-ay"],
+	    [:Masc, :Singular, :Person3, "ʕúg-a"],
+	    [:Fem, :Singular, :Person3, "ʕúg-ay"],
+	    [:Common, :Plural, :Person1, "ʕúg-ánki"],
+	    [:Common, :Plural, :Person2, "ʕúg-ánku"],
+	    [:Common, :Plural, :Person3, "ʕúg-ánki"]]
+    }
+    {:label "tsamakko-VConjBCVCAffConsecutive-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-ó"],
+	    [:Common, :Singular, :Person2, "žíʔ-óy"],
+	    [:Masc, :Singular, :Person3, "žíʔ-ó"],
+	    [:Fem, :Singular, :Person3, "žíʔ-óy"],
+	    [:Common, :Plural, :Person1, "žíʔ-ónki"],
+	    [:Common, :Plural, :Person2, "žíʔ-ónku"],
+	    [:Common, :Plural, :Person3, "žíʔ-ónki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCAffImprtv-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :gender :Common,
+	    :lexeme :kais,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "káʔ-ís"],
+	    [:Plural, :Person3, "káʔ-ís-á"]]
+    }
+    {:label "tsamakko-VConjACVCVCAffImperf-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábaʔ-a"],
+	    [:Common, :Singular, :Person2, "q’ábaʔ-ay"],
+	    [:Masc, :Singular, :Person3, "q’ábaʔ-a"],
+	    [:Fem, :Singular, :Person3, "q’ábaʔ-ay"],
+	    [:Common, :Plural, :Person1, "q’ábaʔ-ánki"],
+	    [:Common, :Plural, :Person2, "q’ábaʔ-ánku"],
+	    [:Common, :Plural, :Person3, "q’ábaʔ-ánki"]]
+    }
+    {:label "tsamakko-VConjBCVCNegFuture-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-ní"],
+	    [:Common, :Singular, :Person2, "žíʔ-íntí"],
+	    [:Masc, :Singular, :Person3, "žíʔ-ní"],
+	    [:Fem, :Singular, :Person3, "žíʔ-íntí"],
+	    [:Common, :Plural, :Person1, "žíʔ-ínní"],
+	    [:Common, :Plural, :Person2, "žíʔ-ínté"],
+	    [:Common, :Plural, :Person3, "žíʔ-né"]]
+    }
+    {:label "tsamakko-VConjBCVCNegNonPast-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-í"],
+	    [:Common, :Singular, :Person2, "žíʔ-tí"],
+	    [:Masc, :Singular, :Person3, "žíʔ-í"],
+	    [:Fem, :Singular, :Person3, "žíʔ-tí"],
+	    [:Common, :Plural, :Person1, "žíʔ-ní"],
+	    [:Common, :Plural, :Person2, "žíʔ-té"],
+	    [:Common, :Plural, :Person3, "žíʔ-é"]]
+    }
+    {:label "tsamakko-VConjBCVCVCAffAorist-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-i"],
+	    [:Common, :Singular, :Person2, "ʔábún-ti"],
+	    [:Masc, :Singular, :Person3, "ʔábún-ti"],
+	    [:Fem, :Singular, :Person3, "ʔábún-i"],
+	    [:Common, :Plural, :Person1, "ʔábún-ni"],
+	    [:Common, :Plural, :Person2, "ʔábún-te"],
+	    [:Common, :Plural, :Person3, "ʔábún-e"]]
+    }
+    {:label "tsamakko-VConjACVCVCNegPast-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábáʔʔ-á"],
+	    [:Common, :Singular, :Person2, "q’ábáʔʔ-á"],
+	    [:Masc, :Singular, :Person3, "q’ábáʔʔ-á"],
+	    [:Fem, :Singular, :Person3, "q’ábáʔʔ-á"],
+	    [:Common, :Plural, :Person1, "q’ábáʔʔ-ánkí"],
+	    [:Common, :Plural, :Person2, "q’ábáʔʔ-ánkú"],
+	    [:Common, :Plural, :Person3, "q’ábáʔʔ-ánkú"]]
+    }
+    {:label "tsamakko-VConjAImprtvConjA-conjBComparison"
+    :note "Sava2005 Tables 34,35,and 36. Here and in other paradigms,Sava’s “aorist” is noted as “aorist”. The A and B conjugations differ in the aorist,consecutive,and imprtv forms."
+    :common {:conjClass :ConjA,
+	    :gender :Common,
+	    :lexeme :ug,
+	    :person :Person2,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :verbMorphClass :ConjA-ConjBComparison}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "ʕúg"],
+	    [:Plural, "ʕug-á"]]
+    }
+    {:label "tsamakko-VConjACVVCNegNonPast-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-í"],
+	    [:Common, :Singular, :Person2, "ʔóóy-tí"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-í"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-tí"],
+	    [:Common, :Plural, :Person1, "ʔóóy-ní"],
+	    [:Common, :Plural, :Person2, "ʔóóy-té"],
+	    [:Common, :Plural, :Person3, "ʔóóy-é"]]
+    }
+    {:label "tsamakko-VConjACVCNegFuture-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕug-ní"],
+	    [:Common, :Singular, :Person2, "ʕug-íntí"],
+	    [:Masc, :Singular, :Person3, "ʕug-ní"],
+	    [:Fem, :Singular, :Person3, "ʕug-íntí"],
+	    [:Common, :Plural, :Person1, "ʕug-ínní"],
+	    [:Common, :Plural, :Person2, "ʕug-ínté"],
+	    [:Common, :Plural, :Person3, "ʕug-né"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCNegNonPast-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq’-ám-í"],
+	    [:Common, :Singular, :Person2, "žóq’-ám-tí"],
+	    [:Masc, :Singular, :Person3, "žóq’-ám-í"],
+	    [:Fem, :Singular, :Person3, "žóq’-ám-tí"],
+	    [:Common, :Plural, :Person1, "žóq’-ám-ní"],
+	    [:Common, :Plural, :Person2, "žóq’-ám-té"],
+	    [:Common, :Plural, :Person3, "žóq’-ám-é"]]
+    }
+    {:label "tsamakko-VConjBCVCVCNegFuture-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-ní"],
+	    [:Common, :Singular, :Person2, "ʔábún-íntí"],
+	    [:Masc, :Singular, :Person3, "ʔábún-ní"],
+	    [:Fem, :Singular, :Person3, "ʔábún-íntí"],
+	    [:Common, :Plural, :Person1, "ʔábún-ínní"],
+	    [:Common, :Plural, :Person2, "ʔábún-íntí"],
+	    [:Common, :Plural, :Person3, "ʔábún-ní"]]
+    }
+    {:label "tsamakko-VConjACVVCAffFuture-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-na"],
+	    [:Common, :Singular, :Person2, "ʔóóy-nay"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-na"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-nay"],
+	    [:Common, :Plural, :Person1, "ʔóóy-nánki"],
+	    [:Common, :Plural, :Person2, "ʔóóy-nánku"],
+	    [:Common, :Plural, :Person3, "ʔóóy-nánki"]]
+    }
+    {:label "tsamakko-VConjBCVCVCNegNonPast-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-í"],
+	    [:Common, :Singular, :Person2, "ʔábún-tí"],
+	    [:Masc, :Singular, :Person3, "ʔábún-í"],
+	    [:Fem, :Singular, :Person3, "ʔábún-tí"],
+	    [:Common, :Plural, :Person1, "ʔábún-ní"],
+	    [:Common, :Plural, :Person2, "ʔábún-té"],
+	    [:Common, :Plural, :Person3, "ʔábún-é"]]
+    }
+    {:label "tsamakko-VConjACVVCAffAorist-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-í"],
+	    [:Common, :Singular, :Person2, "ʔóóy-tí"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-í"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-tí"],
+	    [:Common, :Plural, :Person1, "ʔóóy-ní"],
+	    [:Common, :Plural, :Person2, "ʔóóy-te"],
+	    [:Common, :Plural, :Person3, "ʔóóy-e"]]
+    }
+    {:label "tsamakko-VConjACVVCAffImperf-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-a"],
+	    [:Common, :Singular, :Person2, "ʔóóy-ay"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-a"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-ay"],
+	    [:Common, :Plural, :Person1, "ʔóóy-ánki"],
+	    [:Common, :Plural, :Person2, "ʔóóy-ánku"],
+	    [:Common, :Plural, :Person3, "ʔóóy-ánki"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCNegJuss-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq’-ám-ú"],
+	    [:Common, :Singular, :Person2, "žóq’-ám-ú"],
+	    [:Masc, :Singular, :Person3, "žóq’-ám-ú"],
+	    [:Fem, :Singular, :Person3, "žóq’-ám-ú"],
+	    [:Common, :Plural, :Person1, "žóq’-ám-únki"],
+	    [:Common, :Plural, :Person2, "žóq’-ám-únku"],
+	    [:Common, :Plural, :Person3, "žóq’-ám-únki"]]
+    }
+    {:label "tsamakko-VConjACVCAffFuture-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúg-na"],
+	    [:Common, :Singular, :Person2, "ʕúg-nay"],
+	    [:Masc, :Singular, :Person3, "ʕúg-na"],
+	    [:Fem, :Singular, :Person3, "ʕúg-nay"],
+	    [:Common, :Plural, :Person1, "ʕúg-nánki"],
+	    [:Common, :Plural, :Person2, "ʕúg-nánku"],
+	    [:Common, :Plural, :Person3, "ʕúg-nánki"]]
+    }
+    {:label "tsamakko-VConjACVVCSubFuture-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-ní"],
+	    [:Common, :Singular, :Person2, "ʔóóy-íntí"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-ní"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-íntí"],
+	    [:Common, :Plural, :Person1, "ʔóóy-nínní"],
+	    [:Common, :Plural, :Person2, "ʔóóy-ínté"],
+	    [:Common, :Plural, :Person3, "ʔóóy-né"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCAffFuture-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq-ám-na"],
+	    [:Common, :Singular, :Person2, "žóq-ám-nay"],
+	    [:Masc, :Singular, :Person3, "žóq-ám-na"],
+	    [:Fem, :Singular, :Person3, "žóq-ám -nay"],
+	    [:Common, :Plural, :Person1, "žóq-ám-nánki"],
+	    [:Common, :Plural, :Person2, "žóq-ám-nánku"],
+	    [:Common, :Plural, :Person3, "žóq-ám-nánki"]]
+    }
+    {:label "tsamakko-VConjBCVCVCAffImperf-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-a"],
+	    [:Common, :Singular, :Person2, "ʔábún-ay"],
+	    [:Masc, :Singular, :Person3, "ʔábún-a"],
+	    [:Fem, :Singular, :Person3, "ʔábún-ay"],
+	    [:Common, :Plural, :Person1, "ʔábún-ánki"],
+	    [:Common, :Plural, :Person2, "ʔábún-ánku"],
+	    [:Common, :Plural, :Person3, "ʔábún-ánki"]]
+    }
+    {:label "tsamakko-VConjACVCNegPast-ug"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ug,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʕúgg-á"],
+	    [:Common, :Singular, :Person2, "ʕúgg-á"],
+	    [:Masc, :Singular, :Person3, "ʕúgg-á"],
+	    [:Fem, :Singular, :Person3, "ʕúgg-á"],
+	    [:Common, :Plural, :Person1, "ʕúgg-ánkí"],
+	    [:Common, :Plural, :Person2, "ʕúgg-ánkú"],
+	    [:Common, :Plural, :Person3, "ʕúgg-ánkú"]]
+    }
+    {:label "tsamakko-VConjBCVCSubFuture-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žíʔ-ní"],
+	    [:Common, :Singular, :Person2, "žíʔ-íntí"],
+	    [:Masc, :Singular, :Person3, "žíʔ-ní"],
+	    [:Fem, :Singular, :Person3, "žíʔ-íntí"],
+	    [:Common, :Plural, :Person1, "žíʔ-nínní"],
+	    [:Common, :Plural, :Person2, "žíʔ-ínté"],
+	    [:Common, :Plural, :Person3, "žíʔ-né"]]
+    }
+    {:label "tsamakko-VConjACVCVCAffConsecutive-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábáʔ-á"],
+	    [:Common, :Singular, :Person2, "q’ábáʔ-áy"],
+	    [:Masc, :Singular, :Person3, "q’ábáʔ-ú"],
+	    [:Fem, :Singular, :Person3, "q’ábáʔ-í"],
+	    [:Common, :Plural, :Person1, "q’ábáʔ-ánki"],
+	    [:Common, :Plural, :Person2, "q’ábáʔ-ánku"],
+	    [:Common, :Plural, :Person3, "q’ábáʔ-ónki"]]
+    }
+    {:label "tsamakko-VConjACVC-VCNegFuture-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-is-ní"],
+	    [:Common, :Singular, :Person2, "káʔ-is-íntí"],
+	    [:Masc, :Singular, :Person3, "káʔ-is-ní"],
+	    [:Fem, :Singular, :Person3, "káʔ-is-íntí"],
+	    [:Common, :Plural, :Person1, "káʔ-is-ínní"],
+	    [:Common, :Plural, :Person2, "káʔ-is-íntí"],
+	    [:Common, :Plural, :Person3, "káʔ-is-ní"]]
+    }
+    {:label "tsamakko-VConjBCVCVCAffJuss-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "ʔábún-á"],
+	    [:Fem, :Singular, :Person3, "ʔábún-ítá"],
+	    [:Common, :Plural, :Person1, "ʔábún-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "ʔábún-é"]]
+    }
+    {:label "tsamakko-VConjACVC-VCSubFuture-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-ní"],
+	    [:Common, :Singular, :Person2, "káʔ-ís-íntí"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-ní"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-íntí"],
+	    [:Common, :Plural, :Person1, "káʔ-ís-nínní"],
+	    [:Common, :Plural, :Person2, "káʔ-ís-ínté"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-né"]]
+    }
+    {:label "tsamakko-VConjBCVCVCAffImprtv-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :gender :Common,
+	    :lexeme :abun,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "ʔábún-á"],
+	    [:Plural, :Person3, "ʔábún-inɗá"]]
+    }
+    {:label "tsamakko-VConjBCVCVCSubFuture-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábún-ní"],
+	    [:Common, :Singular, :Person2, "ʔábún-íntí"],
+	    [:Masc, :Singular, :Person3, "ʔábún-ní"],
+	    [:Fem, :Singular, :Person3, "ʔábún-íntí"],
+	    [:Common, :Plural, :Person1, "ʔábún-nínní"],
+	    [:Common, :Plural, :Person2, "ʔábún-ínté"],
+	    [:Common, :Plural, :Person3, "ʔábún-né"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCAffConsecutive-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Consecutive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq’-ám-ó"],
+	    [:Common, :Singular, :Person2, "žóq’-ám-óy"],
+	    [:Masc, :Singular, :Person3, "žóq’-ám-ó"],
+	    [:Fem, :Singular, :Person3, "žóq’-ám-óy"],
+	    [:Common, :Plural, :Person1, "žóq’-ám-ónki"],
+	    [:Common, :Plural, :Person2, "žóq’-ám-ónku"],
+	    [:Common, :Plural, :Person3, "žóq’-ám-ónki"]]
+    }
+    {:label "tsamakko-VConjBCVCNegJuss-zi"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) žíʔ-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) žíʔ-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) žíʔ-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) žíʔ-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu)žíʔ-únkí"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) žíʔ-únkú"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) žíʔ-únkí"]]
+    }
+    {:label "tsamakko-VConjBCVVCSubFuture-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Subordinate,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-ní"],
+	    [:Common, :Singular, :Person2, "bóód-íntí"],
+	    [:Masc, :Singular, :Person3, "bóód-ní"],
+	    [:Fem, :Singular, :Person3, "bóód-íntí"],
+	    [:Common, :Plural, :Person1, "bóód-nínní"],
+	    [:Common, :Plural, :Person2, "bóód-ínté"],
+	    [:Common, :Plural, :Person3, "bóód-né"]]
+    }
+    {:label "tsamakko-VConjACVC-VCAffImperf-kais"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :kais,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "káʔ-ís-a"],
+	    [:Common, :Singular, :Person2, "káʔ-ís-ay"],
+	    [:Masc, :Singular, :Person3, "káʔ-ís-a"],
+	    [:Fem, :Singular, :Person3, "káʔ-ís-ay"],
+	    [:Common, :Plural, :Person1, "káʔ-ís-ánki"],
+	    [:Common, :Plural, :Person2, "káʔ-ís-ánku"],
+	    [:Common, :Plural, :Person3, "káʔ-ís-ánki"]]
+    }
+    {:label "tsamakko-VConjBCVVCNegJuss-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ʔínnu) bóód-ú"],
+	    [:Common, :Singular, :Person2, "(ʔínnu) bóód-ú"],
+	    [:Masc, :Singular, :Person3, "(ʔínnu) bóód-ú"],
+	    [:Fem, :Singular, :Person3, "(ʔínnu) bóód-ú"],
+	    [:Common, :Plural, :Person1, "(ʔínnu) bóód-únkí"],
+	    [:Common, :Plural, :Person2, "(ʔínnu) bóód-únkú"],
+	    [:Common, :Plural, :Person3, "(ʔínnu) bóód-únkí"]]
+    }
+    {:label "tsamakko-VConjBCVVCAffJuss-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "bóód-á"],
+	    [:Fem, :Singular, :Person3, "bóód-ítá"],
+	    [:Common, :Plural, :Person1, "bóód-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "bóód-é"]]
+    }
+    {:label "tsamakko-VConjBCVCVCNegPast-abun"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :abun,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Past}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔábúnn-á"],
+	    [:Common, :Singular, :Person2, "ʔábúnn-á"],
+	    [:Masc, :Singular, :Person3, "ʔábúnn-á"],
+	    [:Fem, :Singular, :Person3, "ʔábúnn-á"],
+	    [:Common, :Plural, :Person1, "ʔábúnn-ánkí"],
+	    [:Common, :Plural, :Person2, "ʔábúnn-ánkú"],
+	    [:Common, :Plural, :Person3, "ʔábúnn-ánkú"]]
+    }
+    {:label "tsamakko-VConjACVCVCAffFuture-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábaʔ-na"],
+	    [:Common, :Singular, :Person2, "q’ábaʔ-nay"],
+	    [:Masc, :Singular, :Person3, "q’ábaʔ-na"],
+	    [:Fem, :Singular, :Person3, "q’ábaʔ-nay"],
+	    [:Common, :Plural, :Person1, "q’ábaʔ-nánki"],
+	    [:Common, :Plural, :Person2, "q’ábaʔ-nánku"],
+	    [:Common, :Plural, :Person3, "q’ábaʔ-nánki"]]
+    }
+    {:label "tsamakko-VConjBCVVCNegNonPast-bod"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :bod,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :NonPast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "bóód-í"],
+	    [:Common, :Singular, :Person2, "bóód-tí"],
+	    [:Masc, :Singular, :Person3, "bóód-í"],
+	    [:Fem, :Singular, :Person3, "bóód-tí"],
+	    [:Common, :Plural, :Person1, "bóód-ní"],
+	    [:Common, :Plural, :Person2, "bóód -té"],
+	    [:Common, :Plural, :Person3, "bóód-é"]]
+    }
+    {:label "tsamakko-VConjACVVCAffImprtv-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :gender :Common,
+	    :lexeme :ooy,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Imperative}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person2, "ʔóóy"],
+	    [:Plural, :Person3, "ʔóóy-á"]]
+    }
+    {:label "tsamakko-VConjACVVCAffJuss-ooy"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :ooy,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVVC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ʔóóy-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "ʔóóy-á"],
+	    [:Fem, :Singular, :Person3, "ʔóóy-ítá"],
+	    [:Common, :Plural, :Person1, "ʔóóy-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "ʔóóy-é"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCNegFuture-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žoq’-am-ní"],
+	    [:Common, :Singular, :Person2, "žoq’-am-íntí"],
+	    [:Masc, :Singular, :Person3, "žoq’-am-ní"],
+	    [:Fem, :Singular, :Person3, "žoq’-am-íntí"],
+	    [:Common, :Plural, :Person1, "žoq’-am-ínní"],
+	    [:Common, :Plural, :Person2, "žoq’-am-íntí"],
+	    [:Common, :Plural, :Person3, "žoq’-am-ní"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCAffImperf-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žóq-ám-a"],
+	    [:Common, :Singular, :Person2, "žóq-ám-ay"],
+	    [:Masc, :Singular, :Person3, "žóq-ám-a"],
+	    [:Fem, :Singular, :Person3, "žóq-ám-ay"],
+	    [:Common, :Plural, :Person1, "žóq-ám-ánki"],
+	    [:Common, :Plural, :Person2, "žóq-ám-ánku"],
+	    [:Common, :Plural, :Person3, "žóq-ám-ánki"]]
+    }
+    {:label "tsamakko-VConjACVCVCAffAorist-qaba"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjA,
+	    :lexeme :qaba,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVCVC,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "q’ábaʔ-í"],
+	    [:Common, :Singular, :Person2, "q’ábaʔ-tí"],
+	    [:Masc, :Singular, :Person3, "q’ábaʔ-í"],
+	    [:Fem, :Singular, :Person3, "q’ábaʔ-tí"],
+	    [:Common, :Plural, :Person1, "q’ábaʔ-ní"],
+	    [:Common, :Plural, :Person2, "q’ábaʔ-te"],
+	    [:Common, :Plural, :Person3, "q’ábaʔ-e"]]
+    }
+    {:label "tsamakko-VConjBAoristConjA-conjBComparison"
+    :note "Sava2005 Tables 34,35,and 36. Here and in other paradigms,Sava’s “aorist” is noted as “aorist”. The A and B conjugations differ in the aorist,consecutive,and imprtv forms."
+    :common {:conjClass :ConjB,
+	    :lexeme :zi,
+	    :pos :Verb,
+	    :tam :Aorist,
+	    :verbMorphClass :ConjA-ConjBComparison}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "zíʔ-i"],
+	    [:Common, :Singular, :Person2, "zíʔ-ti"],
+	    [:Masc, :Singular, :Person3, "zíʔ-i"],
+	    [:Fem, :Singular, :Person3, "ziʔ-ti"],
+	    [:Common, :Plural, :Person1, "zíʔ-ni"],
+	    [:Common, :Plural, :Person2, "zíʔ-te"],
+	    [:Common, :Plural, :Person3, "zíʔ-e"]]
+    }
+    {:label "tsamakko-VConjBCVC-VCAffJuss-zoq-am"
+    :note "Sava2005 pp. 166-170"
+    :common {:conjClass :ConjB,
+	    :lexeme :zoq-am,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemShape :CVC-VC,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "žoq’-am-á"],
+	    [:Common, :Singular, :Person2, "_NULL"],
+	    [:Masc, :Singular, :Person3, "žoq’-am-á"],
+	    [:Fem, :Singular, :Person3, "žoq’-am-ítá"],
+	    [:Common, :Plural, :Person1, "žoq’-am-ná"],
+	    [:Common, :Plural, :Person2, "_NULL"],
+	    [:Common, :Plural, :Person3, "žoq’-am-é"]]
+    }}
+:muterms #{
+    {:label "tsamakko-PInd"
+    :note "Pdgm = Sava2005 tables 19 and 25. Note also Table 22:Haplology in 1Pl dative pronoun:1Pl regular form is ʔine;cliticisation of =nnu gives *ʔine=nnu;reduction gives ʔi=nnu. Table 23 Syllabification of 1Sg,2SgM,and 2SgF dative pronouns:1sg *ʔee=nnu goes_to *ʔeen.nu goes_to ʔin.nu;2sg m *koo=nnu goes_to *koon.nu goes_to kun.nu;2sg f *kee=nnu goes_to *keen.nu goes_to kin.nu. Table 24:Syllabification of 1sg,2SgM,and 2SgF directive pronouns:1sg ʔee=ma goes_to ʔee.ma;2sg m koo=ma goes_to koo.ma;2sg f kee=ma goes_to kee.ma."
+    :common {:morpheme :PROIND,
+	    :pos :Pro,
+	    :proClass :Independent}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Subject, :Common, :Singular, :Person1, "ʔano"],
+	    [:Subject, :Masc, :Singular, :Person2, "ʔato"],
+	    [:Subject, :Fem, :Singular, :Person2, "ʔato"],
+	    [:Subject, :Masc, :Singular, :Person3, "ʔufo"],
+	    [:Subject, :Fem, :Singular, :Person3, "ʔise"],
+	    [:Subject, :Common, :Plural, :Person1, "ʔine"],
+	    [:Subject, :Common, :Plural, :Person2, "ʔatunɗe"],
+	    [:Subject, :Common, :Plural, :Person3, "ʔufunɗe"],
+	    [:Object, :Common, :Singular, :Person1, "ʔee"],
+	    [:Object, :Masc, :Singular, :Person2, "koo"],
+	    [:Object, :Fem, :Singular, :Person2, "kee"],
+	    [:Object, :Masc, :Singular, :Person3, "ʔufo"],
+	    [:Object, :Fem, :Singular, :Person3, "ʔise"],
+	    [:Object, :Common, :Plural, :Person1, "ʔine"],
+	    [:Object, :Common, :Plural, :Person2, "kune"],
+	    [:Object, :Common, :Plural, :Person3, "ʔufunɗe"],
+	    [:Obj-ka, :Common, :Singular, :Person1, "ʔee=ka"],
+	    [:Obj-ka, :Masc, :Singular, :Person2, "koo=ka"],
+	    [:Obj-ka, :Fem, :Singular, :Person2, "kee=ka"],
+	    [:Obj-ka, :Masc, :Singular, :Person3, "ʔufo=ka"],
+	    [:Obj-ka, :Fem, :Singular, :Person3, "ʔise=ka"],
+	    [:Obj-ka, :Common, :Plural, :Person1, "ʔine=ka"],
+	    [:Obj-ka, :Common, :Plural, :Person2, "kune=ka"],
+	    [:Obj-ka, :Common, :Plural, :Person3, "ʔufunɗe=ka"],
+	    [:Dative, :Common, :Singular, :Person1, "ʔi=nnu"],
+	    [:Dative, :Masc, :Singular, :Person2, "ku=nnu"],
+	    [:Dative, :Fem, :Singular, :Person2, "ki=nnu"],
+	    [:Dative, :Masc, :Singular, :Person3, "ʔufo=nu"],
+	    [:Dative, :Fem, :Singular, :Person3, "ʔise=nu"],
+	    [:Dative, :Common, :Plural, :Person1, "ʔi=nnu"],
+	    [:Dative, :Common, :Plural, :Person2, "kune=nu"],
+	    [:Dative, :Common, :Plural, :Person3, "ʔufunɗe=nu"],
+	    [:Comitative, :Common, :Singular, :Person1, "ʔee=ya"],
+	    [:Comitative, :Masc, :Singular, :Person2, "koo=ya"],
+	    [:Comitative, :Fem, :Singular, :Person2, "kee=ya"],
+	    [:Comitative, :Masc, :Singular, :Person3, "ʔufo=ya"],
+	    [:Comitative, :Fem, :Singular, :Person3, "ʔise=ya"],
+	    [:Comitative, :Common, :Plural, :Person1, "ʔine=ya"],
+	    [:Comitative, :Common, :Plural, :Person2, "kune=ya"],
+	    [:Comitative, :Common, :Plural, :Person3, "ʔufunɗe=ya"],
+	    [:Directive, :Common, :Singular, :Person1, "ʔee=ma"],
+	    [:Directive, :Masc, :Singular, :Person2, "koo=ma"],
+	    [:Directive, :Fem, :Singular, :Person2, "kee=ma"],
+	    [:Directive, :Masc, :Singular, :Person3, "ʔuufp=ma"],
+	    [:Directive, :Fem, :Singular, :Person3, "ʔiise=ma"],
+	    [:Directive, :Common, :Plural, :Person1, "ʔiine=ma"],
+	    [:Directive, :Common, :Plural, :Person2, "kuune=ma"],
+	    [:Directive, :Common, :Plural, :Person3, "ʔuufunɗe=ma"],
+	    [:Locative, :Common, :Singular, :Person1, "ʔee=ta"],
+	    [:Locative, :Masc, :Singular, :Person2, "koo=ta"],
+	    [:Locative, :Fem, :Singular, :Person2, "kee=ta"],
+	    [:Locative, :Masc, :Singular, :Person3, "ʔufo=ta"],
+	    [:Locative, :Fem, :Singular, :Person3, "ʔise=ta"],
+	    [:Locative, :Common, :Plural, :Person1, "ʔine=ta"],
+	    [:Locative, :Common, :Plural, :Person2, "kune=ta"],
+	    [:Locative, :Common, :Plural, :Person3, "ʔufunɗe=ta"]]
+    }
+    {:label "tsamakko-VProSuff"
+    :note "Sava2005 Table 37"
+    :common {:morpheme :PROSUFF,
+	    :pos :Verb,
+	    :verbMorphClass :ProSuff}
+    :terms [[:gender, :number, :person, :suffixSet, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :SuffSet1, "-V"],
+	    [:Common, :Singular, :Person2, :SuffSet1, "-tV"],
+	    [:Masc, :Singular, :Person3, :SuffSet1, "-V"],
+	    [:Fem, :Singular, :Person3, :SuffSet1, "-tV"],
+	    [:Common, :Plural, :Person1, :SuffSet1, "-nV"],
+	    [:Common, :Plural, :Person2, :SuffSet1, "-te"],
+	    [:Common, :Plural, :Person3, :SuffSet1, "-e"],
+	    [:Common, :Singular, :Person1, :SuffSet2, "-V"],
+	    [:Common, :Singular, :Person2, :SuffSet2, "-Vy"],
+	    [:Masc, :Singular, :Person3, :SuffSet2, "-V"],
+	    [:Fem, :Singular, :Person3, :SuffSet2, "-Vy"],
+	    [:Common, :Plural, :Person1, :SuffSet2, "-Vnki"],
+	    [:Common, :Plural, :Person2, :SuffSet2, "-Vnku"],
+	    [:Common, :Plural, :Person3, :SuffSet2, "-Vnki"],
+	    [:Common, :Singular, :Person1, :SuffSet3, "-V"],
+	    [:Common, :Singular, :Person2, :SuffSet3, "-V"],
+	    [:Masc, :Singular, :Person3, :SuffSet3, "-V"],
+	    [:Fem, :Singular, :Person3, :SuffSet3, "-V"],
+	    [:Common, :Plural, :Person1, :SuffSet3, "-Vnki"],
+	    [:Common, :Plural, :Person2, :SuffSet3, "-Vnku"],
+	    [:Common, :Plural, :Person3, :SuffSet3, "-Vnki"],
+	    [:Common, :Singular, :Person1, :SuffSet4, "⊤"],
+	    [:Common, :Singular, :Person2, :SuffSet4, "-áy"],
+	    [:Masc, :Singular, :Person3, :SuffSet4, "⊤"],
+	    [:Fem, :Singular, :Person3, :SuffSet4, "⊤"],
+	    [:Common, :Plural, :Person1, :SuffSet4, "-ánki"],
+	    [:Common, :Plural, :Person2, :SuffSet4, "-ánku"],
+	    [:Common, :Plural, :Person3, :SuffSet4, "-ínki"],
+	    [:Common, :Singular, :Person1, :SuffSet5, "⊤"],
+	    [:Common, :Singular, :Person2, :SuffSet5, "-áy"],
+	    [:Masc, :Singular, :Person3, :SuffSet5, "⊤"],
+	    [:Fem, :Singular, :Person3, :SuffSet5, "-áy"],
+	    [:Common, :Plural, :Person1, :SuffSet5, "-úmma"],
+	    [:Common, :Plural, :Person2, :SuffSet5, "-úmma"],
+	    [:Common, :Plural, :Person3, :SuffSet5, "-úmma"]]
+    }
+    {:label "tsamakko-PDem"
+    :note "Sava2005 Table 27"
+    :common {:morpheme :PRODEM,
+	    :pos :Pro,
+	    :proClass :Demonstrative}
+    :terms [[:deixis, :gender, :number, :token]  ;; schema
+	    [:Proximal, :Masc, :Singular, "kutta"],
+	    [:Proximal, :Fem, :Singular, "titta"],
+	    [:Proximal, :Common, :Plural, "kitta"],
+	    [:Proximal2, :Masc, :Singular, "kusi"],
+	    [:Proximal2, :Fem, :Singular, "tisi"],
+	    [:Proximal2, :Common, :Plural, "kisi"],
+	    [:Distal, :Masc, :Singular, "kotta"],
+	    [:Distal, :Fem, :Singular, "tetta"],
+	    [:Distal, :Common, :Plural, "ketta"],
+	    [:Distal2, :Common, :Common, "kussa"]]
+    }
+    {:label "tsamakko-PInterrDiff"
+    :note "Sava2005 Tables 29,30,31. interrGen = ‘whose?’;interrWh = ‘which?’;diff = ‘other’"
+    :common {:morpheme :PROINTERR,
+	    :pos :Pro,
+	    :proClass :InterrDiff}
+    :terms [[:category, :gender, :number, :token]  ;; schema
+	    [:InterrGen, :Masc, :Singular, "kahha"],
+	    [:InterrGen, :Fem, :Singular, "tahha"],
+	    [:InterrGen, :Common, :Plural, "kahha"],
+	    [:InterrWh, :Masc, :Singular, "kunɗa"],
+	    [:InterrGen, :Fem, :Singular, "tinɗa"],
+	    [:InterrGen, :Common, :Plural, "kinɗa"],
+	    [:Diff, :Masc, :Singular, "kuɓa"],
+	    [:InterrGen, :Fem, :Singular, "tiɓa"],
+	    [:InterrGen, :Common, :Plural, "kiɓa"]]
+    }
+    {:label "tsamakko-PLoc"
+    :note "Sava2005 Table 32"
+    :common {:morpheme :PROLOC,
+	    :person :Person3,
+	    :pos :Pro,
+	    :proClass :Locative}
+    :terms [[:case, :gender, :number, :token]  ;; schema
+	    [:Directive, :Masc, :Singular, "naa=ma"],
+	    [:Directive, :Fem, :Singular, "naa=ma"],
+	    [:Directive, :Common, :Plural, "naa=ma"],
+	    [:Comitative, :Masc, :Singular, "na=ya(y)"],
+	    [:Comitative, :Fem, :Singular, "na=ya(y)"],
+	    [:Comitative, :Common, :Plural, "na=ya(y)"],
+	    [:Locative, :Masc, :Singular, "na=ta"],
+	    [:Locative, :Fem, :Singular, "na=ta"],
+	    [:Locative, :Common, :Plural, "na=ta"],
+	    [:Dative, :Masc, :Singular, "nu=nnu"],
+	    [:Dative, :Fem, :Singular, "ni=nnu"],
+	    [:Dative, :Common, :Plural, "nu=nnu"]]
+    }
+    {:label "tsamakko-PPossInd"
+    :note "Sava2005 Table"
+    :common {:morpheme :PROPOSSIND,
+	    :pos :Pro,
+	    :proClass :PossInd}
+    :terms [[:genderObj, :gender, :numObj, :number, :person, :token]  ;; schema
+	    [:Masc, :Common, :Singular, :Singular, :Person1, "kaayu"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2, "kaako"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2, "kaaki"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person3, "kuusu"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person3, "kiisi"],
+	    [:Masc, :Common, :Singular, :Plural, :Person1, "kaani"],
+	    [:Masc, :Common, :Singular, :Plural, :Person2, "kaakunɗe"],
+	    [:Masc, :Common, :Singular, :Plural, :Person3, "kuusunɗe"],
+	    [:Fem, :Common, :Singular, :Singular, :Person1, "taayu"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person2, "taako"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person2, "taaki"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person3, "tuusu"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person3, "tiisi"],
+	    [:Fem, :Common, :Singular, :Plural, :Person1, "taani"],
+	    [:Fem, :Common, :Singular, :Plural, :Person2, "taakunɗe"],
+	    [:Fem, :Common, :Singular, :Plural, :Person3, "tuusunɗe"],
+	    [:Common, :Common, :Plural, :Singular, :Person1, "kaayu"],
+	    [:Common, :Masc, :Plural, :Singular, :Person2, "kaako"],
+	    [:Common, :Fem, :Plural, :Singular, :Person2, "kaaki"],
+	    [:Common, :Masc, :Plural, :Singular, :Person3, "kuusu"],
+	    [:Common, :Fem, :Plural, :Singular, :Person3, "kiisi"],
+	    [:Common, :Common, :Plural, :Plural, :Person1, "kaani"],
+	    [:Common, :Common, :Plural, :Plural, :Person2, "kaakunɗe"],
+	    [:Common, :Common, :Plural, :Plural, :Person3, "kuusunɗe"]]
+    }
+    {:label "tsamakko-PPossSuff"
+    :note "Sava2005 Table 21"
+    :common {:morpheme :PROPOSSSUFF,
+	    :pos :Pro,
+	    :proClass :PossSuff}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "-aayu"],
+	    [:Masc, :Singular, :Person2, "-aako"],
+	    [:Fem, :Singular, :Person2, "-aaki"],
+	    [:Masc, :Singular, :Person3, "-uusu"],
+	    [:Fem, :Singular, :Person3, "-iisi"],
+	    [:Common, :Plural, :Person1, "-aani"],
+	    [:Common, :Plural, :Person2, "-aakunɗe"],
+	    [:Common, :Plural, :Person3, "-uusunɗe"]]
+    }
+    {:label "tsamakko-VSubjMarkers"
+    :note "Sava2005 Table 43"
+    :common {:morpheme :SUBJMARKERS,
+	    :pos :Verb,
+	    :verbMorphClass :SubjMarkers}
+    :terms [[:conjClass, :polarity, :suffixSet, :tam, :token]  ;; schema
+	    [:ConjA, :Common, :SuffSet1, :Aorist, "-(t/n)i"],
+	    [:ConjA, :Common, :SuffSet1, :Aorist, "-(t)e"],
+	    [:ConjB, :Common, :SuffSet1, :Aorist, "-(t/n)í"],
+	    [:ConjB, :Common, :SuffSet1, :Aorist, "-(t)e"],
+	    [:Common, :Negative, :SuffSet1, :Past, "-(t/n)í"],
+	    [:Common, :Negative, :SuffSet1, :Past, "-(t)é"],
+	    [:Common, :Subordinate, :SuffSet1, :Future, "-(i)n(t/n)-i"],
+	    [:Common, :Subordinate, :SuffSet1, :Future, "-(i)n(t)-e"],
+	    [:Common, :Negative, :SuffSet1, :Future, "-(i)n(t/n)-í"],
+	    [:Common, :Negative, :SuffSet1, :Future, "-(i)n(t)-é"],
+	    [:Common, :Common, :SuffSet1, :Jussive, "-(t/n)-á"],
+	    [:Common, :Common, :SuffSet1, :Jussive, "⊤"],
+	    [:Common, :Common, :SuffSet2, :Imperfect, "-a(y~-nki~nku)"],
+	    [:Common, :Common, :SuffSet2, :Future, "-na(y~-nki~nku)"],
+	    [:ConjB, :Common, :SuffSet2, :Consecutive, "-ó(y~nki~nku)"],
+	    [:Common, :Negative, :SuffSet3, :Past, "-á(nkí~nkú)"],
+	    [:Common, :Negative, :SuffSet3, :Jussive, "-ú(nkí~nkú)"],
+	    [:ConjA, :Common, :SuffSet4, :Consecutive, "-á~-ú~-í(y~nkì~nkù)"],
+	    [:Common, :Common, :SuffSet5, :Imperfect, "-a(y)"],
+	    [:Common, :Common, :SuffSet5, :Imperfect, "-umma"]]
+    }
+    {:label "tsamakko-PProParticle"
+    :note "Sava2005 Table 20"
+    :common {:morpheme :PROPARTICLE,
+	    :pos :Pro,
+	    :proClass :ProParticle}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Masc, :Singular, "ko / ku"],
+	    [:Fem, :Singular, "ke / ki"],
+	    [:Common, :Plural, "te / ti"]]
+    }
+    {:label "tsamakko-VTenseSuffSets"
+    :note "Sava2005 Tables 38-42. Sava2005,6.4.5,table 42. suffSet 5 = adjectival verbs denoting permanent states (color,size,permanent quality). Complete list,pp. 149f. See Sava,pp. 158-161 on category ‘sub’ (‘subordinate’ – here included as value of ‘pol’),occurring only with the future. ‘past’ and ‘nonPast’ occur only in the negative,and are formally related to the ‘imperf’ and ‘aorist’,respectively,of the affirmative."
+    :common {:morpheme :TENSESUFFSETS,
+	    :pos :Verb,
+	    :verbMorphClass :TenseSuffSets}
+    :terms [[:conjClass, :gender, :number, :person, :polarity, :suffixSet, :tam, :token]  ;; schema
+	    [:ConjB, :Common, :Singular, :Person1, :Affirmative, :SuffSet1, :Aorist, "-i"],
+	    [:ConjB, :Common, :Singular, :Person2, :Affirmative, :SuffSet1, :Aorist, "-ti"],
+	    [:ConjB, :Masc, :Singular, :Person3, :Affirmative, :SuffSet1, :Aorist, "-i"],
+	    [:ConjB, :Fem, :Singular, :Person3, :Affirmative, :SuffSet1, :Aorist, "-ti"],
+	    [:ConjB, :Common, :Plural, :Person1, :Affirmative, :SuffSet1, :Aorist, "-ni"],
+	    [:ConjB, :Common, :Plural, :Person2, :Affirmative, :SuffSet1, :Aorist, "-te"],
+	    [:ConjB, :Common, :Plural, :Person3, :Affirmative, :SuffSet1, :Aorist, "-e"],
+	    [:ConjA, :Common, :Singular, :Person1, :Affirmative, :SuffSet1, :Aorist, "⊤"],
+	    [:ConjA, :Common, :Singular, :Person2, :Affirmative, :SuffSet1, :Aorist, "-tí"],
+	    [:ConjA, :Masc, :Singular, :Person3, :Affirmative, :SuffSet1, :Aorist, "⊤"],
+	    [:ConjA, :Fem, :Singular, :Person3, :Affirmative, :SuffSet1, :Aorist, "-tí"],
+	    [:ConjA, :Common, :Plural, :Person1, :Affirmative, :SuffSet1, :Aorist, "-ní"],
+	    [:ConjA, :Common, :Plural, :Person2, :Affirmative, :SuffSet1, :Aorist, "-te"],
+	    [:ConjA, :Common, :Plural, :Person3, :Affirmative, :SuffSet1, :Aorist, "-e"],
+	    [:Common, :Common, :Singular, :Person1, :Subordinate, :SuffSet1, :Future, "-ni"],
+	    [:Common, :Common, :Singular, :Person2, :Subordinate, :SuffSet1, :Future, "-inti"],
+	    [:Common, :Masc, :Singular, :Person3, :Subordinate, :SuffSet1, :Future, "-ni"],
+	    [:Common, :Fem, :Singular, :Person3, :Subordinate, :SuffSet1, :Future, "-inti"],
+	    [:Common, :Common, :Plural, :Person1, :Subordinate, :SuffSet1, :Future, "-inni"],
+	    [:Common, :Common, :Plural, :Person2, :Subordinate, :SuffSet1, :Future, "-inte"],
+	    [:Common, :Common, :Plural, :Person3, :Subordinate, :SuffSet1, :Future, "-ne"],
+	    [:Common, :Common, :Singular, :Person1, :Negative, :SuffSet1, :NonPast, "⊤"],
+	    [:Common, :Common, :Singular, :Person2, :Negative, :SuffSet1, :NonPast, "-tí"],
+	    [:Common, :Masc, :Singular, :Person3, :Negative, :SuffSet1, :NonPast, "⊤"],
+	    [:Common, :Fem, :Singular, :Person3, :Negative, :SuffSet1, :NonPast, "-tí"],
+	    [:Common, :Common, :Plural, :Person1, :Negative, :SuffSet1, :NonPast, "-ní"],
+	    [:Common, :Common, :Plural, :Person2, :Negative, :SuffSet1, :NonPast, "-té"],
+	    [:Common, :Common, :Plural, :Person3, :Negative, :SuffSet1, :NonPast, "⊤"],
+	    [:Common, :Common, :Singular, :Person1, :Negative, :SuffSet1, :Future, "-ní"],
+	    [:Common, :Common, :Singular, :Person2, :Negative, :SuffSet1, :Future, "-intí"],
+	    [:Common, :Masc, :Singular, :Person3, :Negative, :SuffSet1, :Future, "-ní"],
+	    [:Common, :Fem, :Singular, :Person3, :Negative, :SuffSet1, :Future, "-intí"],
+	    [:Common, :Common, :Plural, :Person1, :Negative, :SuffSet1, :Future, "-inní"],
+	    [:Common, :Common, :Plural, :Person2, :Negative, :SuffSet1, :Future, "-inté"],
+	    [:Common, :Common, :Plural, :Person3, :Negative, :SuffSet1, :Future, "-né"],
+	    [:Common, :Common, :Singular, :Person1, :Affirmative, :SuffSet1, :Jussive, "⊤"],
+	    [:Common, :Common, :Singular, :Person2, :Affirmative, :SuffSet1, :Jussive, "_NULL"],
+	    [:Common, :Masc, :Singular, :Person3, :Affirmative, :SuffSet1, :Jussive, "⊤"],
+	    [:Common, :Fem, :Singular, :Person3, :Affirmative, :SuffSet1, :Jussive, "-tá"],
+	    [:Common, :Common, :Plural, :Person1, :Affirmative, :SuffSet1, :Jussive, "-ná"],
+	    [:Common, :Common, :Plural, :Person2, :Affirmative, :SuffSet1, :Jussive, "_NULL"],
+	    [:Common, :Common, :Plural, :Person3, :Affirmative, :SuffSet1, :Jussive, "⊤"],
+	    [:Common, :Common, :Singular, :Person1, :Affirmative, :SuffSet2, :Imperfect, "-a"],
+	    [:Common, :Common, :Singular, :Person2, :Affirmative, :SuffSet2, :Imperfect, "-ay"],
+	    [:Common, :Masc, :Singular, :Person3, :Affirmative, :SuffSet2, :Imperfect, "-a"],
+	    [:Common, :Fem, :Singular, :Person3, :Affirmative, :SuffSet2, :Imperfect, "-ay"],
+	    [:Common, :Common, :Plural, :Person1, :Affirmative, :SuffSet2, :Imperfect, "-anki"],
+	    [:Common, :Common, :Plural, :Person2, :Affirmative, :SuffSet2, :Imperfect, "-anku"],
+	    [:Common, :Common, :Plural, :Person3, :Affirmative, :SuffSet2, :Imperfect, "-anki"],
+	    [:Common, :Common, :Singular, :Person1, :Affirmative, :SuffSet2, :Future, "-na"],
+	    [:Common, :Common, :Singular, :Person2, :Affirmative, :SuffSet2, :Future, "-nay"],
+	    [:Common, :Masc, :Singular, :Person3, :Affirmative, :SuffSet2, :Future, "-na"],
+	    [:Common, :Fem, :Singular, :Person3, :Affirmative, :SuffSet2, :Future, "-nay"],
+	    [:Common, :Common, :Plural, :Person1, :Affirmative, :SuffSet2, :Future, "-nanki"],
+	    [:Common, :Common, :Plural, :Person2, :Affirmative, :SuffSet2, :Future, "-nanku"],
+	    [:Common, :Common, :Plural, :Person3, :Affirmative, :SuffSet2, :Future, "-nanki"],
+	    [:ConjB, :Common, :Singular, :Person1, :Affirmative, :SuffSet2, :Consecutive, "⊤"],
+	    [:ConjB, :Common, :Singular, :Person2, :Affirmative, :SuffSet2, :Consecutive, "-óy"],
+	    [:ConjB, :Masc, :Singular, :Person3, :Affirmative, :SuffSet2, :Consecutive, "⊤"],
+	    [:ConjB, :Fem, :Singular, :Person3, :Affirmative, :SuffSet2, :Consecutive, "-óy"],
+	    [:ConjB, :Common, :Plural, :Person1, :Affirmative, :SuffSet2, :Consecutive, "-ónki"],
+	    [:ConjB, :Common, :Plural, :Person2, :Affirmative, :SuffSet2, :Consecutive, "-ónku"],
+	    [:ConjB, :Common, :Plural, :Person3, :Affirmative, :SuffSet2, :Consecutive, "-ónki"],
+	    [:Common, :Common, :Singular, :Person1, :Negative, :SuffSet3, :Past, "⊤"],
+	    [:Common, :Common, :Singular, :Person2, :Negative, :SuffSet3, :Past, "⊤"],
+	    [:Common, :Masc, :Singular, :Person3, :Negative, :SuffSet3, :Past, "⊤"],
+	    [:Common, :Fem, :Singular, :Person3, :Negative, :SuffSet3, :Past, "⊤"],
+	    [:Common, :Common, :Plural, :Person1, :Negative, :SuffSet3, :Past, "-ánkí"],
+	    [:Common, :Common, :Plural, :Person2, :Negative, :SuffSet3, :Past, "-ánkú"],
+	    [:Common, :Common, :Plural, :Person3, :Negative, :SuffSet3, :Past, "-ánkí"],
+	    [:Common, :Common, :Singular, :Person1, :Negative, :SuffSet3, :Jussive, "⊤"],
+	    [:Common, :Common, :Singular, :Person2, :Negative, :SuffSet3, :Jussive, "⊤"],
+	    [:Common, :Masc, :Singular, :Person3, :Negative, :SuffSet3, :Jussive, "⊤"],
+	    [:Common, :Fem, :Singular, :Person3, :Negative, :SuffSet3, :Jussive, "⊤"],
+	    [:Common, :Common, :Plural, :Person1, :Negative, :SuffSet3, :Jussive, "-únkí"],
+	    [:Common, :Common, :Plural, :Person2, :Negative, :SuffSet3, :Jussive, "-únkú"],
+	    [:Common, :Common, :Plural, :Person3, :Negative, :SuffSet3, :Jussive, "-únkí"],
+	    [:ConjA, :Common, :Singular, :Person1, :Affirmative, :SuffSet4, :Consecutive, "⊤"],
+	    [:ConjA, :Common, :Singular, :Person2, :Affirmative, :SuffSet4, :Consecutive, "-áy"],
+	    [:ConjA, :Masc, :Singular, :Person3, :Affirmative, :SuffSet4, :Consecutive, "⊤"],
+	    [:ConjA, :Fem, :Singular, :Person3, :Affirmative, :SuffSet4, :Consecutive, "⊤"],
+	    [:ConjA, :Common, :Plural, :Person1, :Affirmative, :SuffSet4, :Consecutive, "-ánki"],
+	    [:ConjA, :Common, :Plural, :Person2, :Affirmative, :SuffSet4, :Consecutive, "-ánku"],
+	    [:ConjA, :Common, :Plural, :Person3, :Affirmative, :SuffSet4, :Consecutive, "-ínki"],
+	    [:Common, :Common, :Singular, :Person1, :Affirmative, :SuffSet5, :Imperfect, "⊤"],
+	    [:Common, :Common, :Singular, :Person2, :Affirmative, :SuffSet5, :Imperfect, "-áy"],
+	    [:Common, :Masc, :Singular, :Person3, :Affirmative, :SuffSet5, :Imperfect, "⊤"],
+	    [:Common, :Fem, :Singular, :Person3, :Affirmative, :SuffSet5, :Imperfect, "-áy"],
+	    [:Common, :Common, :Plural, :Person1, :Affirmative, :SuffSet5, :Imperfect, "-úmma"],
+	    [:Common, :Common, :Plural, :Person2, :Affirmative, :SuffSet5, :Imperfect, "-úmma"],
+	    [:Common, :Common, :Plural, :Person3, :Affirmative, :SuffSet5, :Imperfect, "-úmma"]]
+    }
+    {:label "tsamakko-PDefMarker"
+    :note "Sava2005 Table 26"
+    :common {:morpheme :PRODEFMARKER,
+	    :pos :Pro,
+	    :proClass :DefMarker}
+    :terms [[:defMarker, :gender, :number, :token]  ;; schema
+	    [:aClass, :Masc, :Singular, "koʔa"],
+	    [:aClass, :Fem, :Singular, "teʔa"],
+	    [:aClass, :Common, :Plural, "keʔa"],
+	    [:SsaClass, :Masc, :Singular, "kosa ~ kossa"],
+	    [:SsaClass, :Fem, :Singular, "teas ~ tessa"],
+	    [:SsaClass, :Common, :Plural, "kesa ~ kessa"],
+	    [:SseClass, :Masc, :Singular, "kosse"],
+	    [:SseClass, :Fem, :Singular, "tesse"],
+	    [:SseClass, :Common, :Plural, "kesse"]]
+    }
+    {:label "tsamakko-VDervStemFormation"
+    :note "Sava2005 Table 44. Table 45 gives the following rules for verbaliser-suffix + derv-suff:-aw +-as/-is goes_to -os;-aw +-aɗ goes_to -oɗ;-aw +-am goes_to -om."
+    :common {:morpheme :DERVSTEM,
+	    :pos :Verb,
+	    :verbMorphClass :DervStemFormation}
+    :terms [[:derivedClass, :derivedStem, :token]  ;; schema
+	    [:Normal, :Causative1, "-as"],
+	    [:o-assim, :Causative1, "-os"],
+	    [:Verbaliser, :Causative1, "-as / -os"],
+	    [:Normal, :Causative2, "-is"],
+	    [:o-assim, :Causative2, "⊤"],
+	    [:Verbaliser, :Causative2, "⊤"],
+	    [:Normal, :Generic, "⊤"],
+	    [:o-assim, :Generic, "⊤"],
+	    [:Verbaliser, :Generic, "-om"],
+	    [:Normal, :Inceptive, "-aw"],
+	    [:o-assim, :Inceptive, "⊤"],
+	    [:Verbaliser, :Inceptive, "-aw"],
+	    [:Normal, :Middel, "-aɗ"],
+	    [:o-assim, :Middel, "-oɗ"],
+	    [:Verbaliser, :Middel, "-aɗ / -oɗ"],
+	    [:Normal, :Passive, "-am"],
+	    [:o-assim, :Passive, "-om"],
+	    [:Verbaliser, :Passive, "⊤"]]
+    }}

@@ -1,0 +1,830 @@
+:lang :coptic-sahidic
+:schemata [:clauseConjugation {:Conditional, :Main, :Relative, :Result, :Subordinate, :Temporal, :TemporalSubordinate, :Terminative, :U, :Variable}
+	  :clauseType {:Relative}
+	  :formClass {:AbsoluteInfinitive}
+	  :gender {:Common, :Fem, :Masc}
+	  :genderHead {:Common, :Fem, :Masc}
+	  :imperativeForm {:Construct, :Pronominal}
+	  :infinitiveForm {:Absolute, :Construct, :Pronominal}
+	  :morphClass {:DemonstrativeNear, :DemonstrativeRemote, :Infinitive, :InfinitiveCompCaus, :Intensive1, :Intensive2, :Intensive3, :Possessive}
+	  :number {:Common, :Plural, :Singular}
+	  :numberHead {:Plural, :Singular}
+	  :objectGender {:Common, :Fem, :Masc}
+	  :objectNumber {:Common, :Plural, :Singular}
+	  :objectPerson {:Common, :Person1, :Person2, :Person3}
+	  :objectType {:Nominal, :SuffixPron}
+	  :person {:NomSubj, :Person1, :Person2, :Person3}
+	  :polarity {:Affirmative, :Negative, :U}
+	  :pos {:Pronoun, :Verb}
+	  :proClass {:Independent}
+	  :stemClass {:CV1, :CV2, :CV3, :CV4, :CVC1, :CVC2, :CVC3Irreg, :CVCC, :CVCReg, :CVReg, :U}
+	  :tam {:Aorist, :Circumstantial, :Conditional, :Conjunctive, :Future, :Future3, :Imperative, :Imperfect, :InflectedInfiitive, :Injunct, :NotYet, :Perf1, :Perf2, :Pres1, :Pres2, :SimplePast, :Terminative, :U}
+	  :transitivity {:Intransitive, :Trans}
+	  ]
+:morphemes {
+  :PRODEMNEAR {:gloss "[x]", :lemma "[y]", }
+  :PRODEMREMOTE {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROINTENSIVE1 {:gloss "[x]", :lemma "[y]", }
+  :PROINTENSIVE2 {:gloss "[x]", :lemma "[y]", }
+  :PROINTENSIVE3 {:gloss "[x]", :lemma "[y]", }
+  :PROPOSS {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :bok {:lemma "ⲃⲱⲕ", :gloss "go", :pos :Verb, :transitivity :Intransitive}
+  :eire {:lemma "ⲉⲓⲣⲉ", :gloss "do", :pos :Verb, :transitivity :Trans}
+  :hop {:lemma "ϩⲱⲡ", :gloss "hide", :pos :Verb, :transitivity :Trans}
+  :ji {:lemma "ϫⲓ", :gloss "take", :pos :Verb, :transitivity :Trans}
+  :jo {:lemma "ϫⲱ", :gloss "say", :pos :Verb, :transitivity :Trans}
+  :ko {:lemma "ⲕⲱ", :gloss "put", :pos :Verb, :transitivity :Trans}
+  :me {:lemma "ⲙⲉ", :gloss "love", :pos :Verb, :transitivity :Trans}
+  :mise {:lemma "ⲙⲓⲥⲉ", :gloss "bear (a child)", :pos :Verb, :transitivity :Trans}
+  :mouh {:lemma "ⲙⲟⲩϩ", :gloss "fill", :pos :Verb, :transitivity :Trans}
+  :rime {:lemma "ⲣⲓⲙⲉ", :gloss "weep", :pos :Verb, :transitivity :Intransitive}
+  :sotp {:lemma "ⲥⲱⲧⲡ̄", :gloss "choose", :pos :Verb, :transitivity :Trans}
+  :tamo {:lemma "ⲧⲁⲙⲟ", :gloss "inform", :pos :Verb, :transitivity :Trans}
+  :ti {:lemma "ϯ", :gloss "give", :pos :Verb, :transitivity :Trans}
+}
+:lxterms #{
+    {:label "coptic_S-VAffTemporalSubordinate-bok"
+    :note "The Temporal Conjugation expresses a subordinate temporal clause."
+    :common {:clauseConjugation :TemporalSubordinate,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePast}
+    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲛ̄ⲧⲉⲣⲓⲃⲱⲕ", "ⲛ̄ⲧⲉⲣⲉⲓ-"],
+	    [:Masc, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲉⲕⲃⲱⲕ", "ⲛ̄ⲧⲉⲣⲕ̄-"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲉⲃⲱⲕ", "Common"],
+	    [:Masc, :Singular, :Person3, "ⲛ̄ⲧⲉⲣⲉϥⲃⲱⲕ", "ⲛ̄ⲧⲉⲣϥ̄-"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲧⲉⲣⲉⲥⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person1, "ⲛ̄ⲧⲉⲣⲛ̄ⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲉⲣⲉⲧⲛ̄ⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲧⲉⲣⲟⲩⲃⲱⲕ", "Common"],
+	    [:Common, :Common, :NomSubj, "ⲛ̄ⲧⲉⲣⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ", "Common"]]
+    }
+    {:label "coptic_S-VAffPerf2-bok"
+    :note "The Second Perfect places emphasis on an adverbial element or circumstantial clause."
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perf2}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲛ̄ⲧⲁⲓⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person2, "ⲛ̄ⲧⲁⲕⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲁⲣⲉⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person3, "ⲛ̄ⲧⲁϥⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲧⲁⲥⲃⲱⲕ"],
+	    [:Common, :Plural, :Person1, "ⲛ̄ⲧⲁⲛⲃⲱⲕ"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲁⲧⲉⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲧⲁⲩⲃⲱⲕ"],
+	    [:Common, :Common, :NomSubj, "ⲛ̄ⲧⲁ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ"]]
+    }
+    {:label "coptic_S-VInfinCompoundCausative-tamo"
+    :note "Verbs of this type derive from an earlier phase of the Egyptian language in which the causative could be formed by means of a periphrastic construction with the word dỉ,cause. Most of these verbs begin with ⲧ and end in ⲟ in the absolute state. However,if the original base verb began with ϣ,the resulting compound will begin with ϫ. In a few cases the initial ⲧ is lost (e.g. ⲕⲧⲟ,turn). Others retain a fossilized suffix ending -ⲟⲩ or -ⲥ (e.g. ϫⲟⲟⲩ,send)."
+    :common {:clauseConjugation :U,
+	    :lexeme :tamo,
+	    :morphClass :InfinitiveCompCaus,
+	    :polarity :U,
+	    :pos :Verb,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲧⲁⲙⲟ ⲙ̄ ⲡⲣⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲧⲁⲙⲉ-ⲡⲉⲛⲕⲁ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲧⲁⲙⲟⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲧⲁⲙⲟⲕ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲧⲁⲙⲟⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲧⲁⲙⲟϥ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲧⲁⲙⲟⲥ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲧⲁⲙⲟⲛ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲧⲁⲙⲟ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲧⲁⲙⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VInfinCV2-ti"
+    :note "ϯ departs from the pattern followed by other verbs of its class,represented by ϫⲓ in the previous paradigm."
+    :common {:clauseConjugation :U,
+	    :lexeme :ti,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CV2,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ϯ ⲙ̄ ⲡϫⲱⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ϯ-ⲡϫⲱⲱⲙⲉ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲧⲁⲁⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲧⲁⲁⲕ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲧⲁⲁⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲧⲁⲁϥ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲧⲁⲁⲥ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲧⲁⲁⲛ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ϯ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲧⲁⲁⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VAffPres2-rime"
+    :note "The Second Present is morphologically identical to the Circumstantial. The Second Present emphasizes adverbial elements."
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Pres2}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲉⲓⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ⲉⲕⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ⲉⲣⲉⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲉϥⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲉⲥⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲉⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ⲉⲧⲉⲧⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ⲉⲩⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲉⲣⲉ-ⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VInfinCVReg-ji"
+    :note ""
+    :common {:clauseConjugation :U,
+	    :lexeme :ji,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CVReg,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ϫⲓ ⲙ̄ ⲡϫⲱⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ϫⲓ-ⲡϫⲱⲱⲙⲉ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ϫⲓⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ϫⲓⲧⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ϫⲓⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ϫⲓⲧϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ϫⲓⲧⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ϫⲓⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ϫⲓ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ϫⲓⲧⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VNegPerf1-bok"
+    :note ""
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perf1}
+    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲙ̄ⲡⲓⲃⲱⲕ", "Common"],
+	    [:Masc, :Singular, :Person2, "ⲙ̄ⲡⲉⲕⲃⲱⲕ", "ⲙ̄ⲡⲕ̄-"],
+	    [:Fem, :Singular, :Person2, "ⲙ̄ⲡⲉⲃⲱⲕ", "Common"],
+	    [:Masc, :Singular, :Person3, "ⲙ̄ⲡⲉϥⲃⲱⲕ", "ⲙ̄ⲡϥ̄-"],
+	    [:Fem, :Singular, :Person3, "ⲙ̄ⲡⲉⲥⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person1, "ⲙ̄ⲡⲉⲛⲃⲱⲕ", "ⲙ̄ⲡⲛ̄-"],
+	    [:Common, :Plural, :Person2, "ⲙ̄ⲡⲉⲧⲛ̄ⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person3, "ⲙ̄ⲡⲟⲩⲃⲱⲕ", "Common"],
+	    [:Common, :Common, :NomSubj, "ⲙ̄ⲡⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ", "Common"]]
+    }
+    {:label "coptic_S-VAffFut3-rime"
+    :note ""
+    :common {:clauseConjugation :Variable,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Future3}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲉⲓⲉⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ⲉⲕⲉⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ⲉⲣⲉⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲉϥⲉⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲉⲥⲉⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲉⲛⲉⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ⲉⲧⲉⲧⲛⲉⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ⲉⲩⲉⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲉⲣⲉ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VNotYet-bok"
+    :note "The Not-Yettense corresponds to what is called the Perfect Negative in earlier phases of the Egyptian language. It is used to describe expected action that has not yet occurred."
+    :common {:clauseConjugation :Variable,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :NotYet}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲙ̄ⲡⲁϯⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person2, "ⲙ̄ⲡⲁⲧⲕ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲙ̄ⲡⲁⲧⲉⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person3, "ⲙ̄ⲡⲁⲧϥ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person3, "ⲙ̄ⲡⲁⲧⲥ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person1, "ⲙ̄ⲡⲁⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person2, "ⲙ̄ⲡⲁⲧⲉⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person3, "ⲙ̄ⲡⲁⲧⲟⲩⲃⲱⲕ"],
+	    [:Common, :Common, :NomSubj, "ⲙ̄ⲡⲁⲧⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ"]]
+    }
+    {:label "coptic_S-VAffPres1-rime"
+    :note ""
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :U,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemClass :U,
+	    :tam :Pres1}
+    :terms [[:gender, :number, :person, :token, :token-note, :token-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ϯⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Masc, :Singular, :Person2, "ⲕⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Fem, :Singular, :Person2, "ⲧⲉⲣⲓⲙⲉ", "ⲧⲣ̄-", "ⲧⲉⲣ-"],
+	    [:Masc, :Singular, :Person3, "ϥⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Fem, :Singular, :Person3, "ⲥⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Common, :Plural, :Person1, "ⲧ̄ⲛ̄ⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Common, :Plural, :Person2, "ⲧⲉⲧⲛ̄ⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Common, :Plural, :Person3, "ⲥⲉⲣⲓⲙⲉ", "⊤", "Common"],
+	    [:Common, :Common, :NomSubj, "ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ", "indefSubj:ⲟⲩⲛ̄-ⲟⲩⲣⲱⲙⲉ ⲣⲓⲙⲉ", "Common"]]
+    }
+    {:label "coptic_S-VAffTerminative-bok"
+    :note "The Terminative is also known as the Until Tense,and is generally translated until he goes,etc. Negation is formed with the insertion of -ⲧⲙ̄- before the infinitive."
+    :common {:clauseConjugation :Terminative,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Terminative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ϣⲁⲛϯⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person2, "ϣⲁⲛⲧⲕ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person2, "ϣⲁⲛⲧⲉⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person3, "ϣⲁⲛⲧϥ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person3, "ϣⲁⲛⲧⲥ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person1, "ϣⲁⲛⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person2, "ϣⲁⲛⲧⲉⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person3, "ϣⲁⲛⲧⲟⲩⲃⲱⲕ"],
+	    [:Common, :Common, :NomSubj, "ϣⲁⲛⲧⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ"]]
+    }
+    {:label "coptic_S-VInfinCVC3Reg-mise"
+    :note "Infinitives with a stressed ⲓ in the first vowel position and an unstressed final ⲉ form a distinct class,although several verbs of this type exhibit irregularities."
+    :common {:clauseConjugation :U,
+	    :lexeme :mise,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CVCReg,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲙⲓⲥⲉ ⲙ̄ ⲡϣⲏⲣⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲙⲉⲥⲧ̄-ⲡϣⲏⲣⲉ", "Also ⲙⲉⲥ-"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲙⲁⲥⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲙⲁⲥⲧⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲙⲁⲥⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲙⲁⲥⲧϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲙⲁⲥⲧⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲙⲁⲥⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲙⲉⲥⲧ̄-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲙⲁⲥⲧⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VNegTemporal-bok"
+    :note "The Temporal Conjugation expresses a subordinate temporal clause."
+    :common {:clauseConjugation :Temporal,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :SimplePast}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲛ̄ⲧⲉⲣⲓⲧⲙ̄ⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲉⲕⲧⲙ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲉⲧⲙ̄ⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person3, "ⲛ̄ⲧⲉⲣⲉϥⲧⲙ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲧⲉⲣⲉⲥⲧⲙ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person1, "ⲛ̄ⲧⲉⲣⲛ̄ⲧⲙ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲉⲣⲉⲧⲛ̄ⲧⲙ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲧⲉⲣⲟⲩⲧⲙ̄ⲃⲱⲕ"],
+	    [:Common, :Common, :NomSubj, "ⲛ̄ⲧⲉⲣⲉⲧⲙ̄-ⲡⲣⲱⲙⲉ ⲃⲱⲕ"]]
+    }
+    {:label "coptic_S-VInfinCVC3Irreg-eire"
+    :note "Infinitives with a stressed ⲓ in the first vowel position and an unstressed final ⲉ form a distinct class,although several verbs of this type exhibit irregularities. Other common irregular verbs in this class are ⲉⲓⲛⲉ/ⲛ̄-/ⲛ̄ⲧ=,ϣⲓⲛⲉ/ϣⲛ̄-/ϣⲛ̄ⲧ= and ϭⲓⲛⲉ/ϭⲛ̄-/ϭⲛ̄ⲧ=."
+    :common {:clauseConjugation :U,
+	    :lexeme :eire,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CVC3Irreg,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲉⲓⲣⲉ ⲙ̄ ⲡϩⲁⲡ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲣ̄-ⲡϩⲁⲡ", "Also ⲉⲣ-"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲁⲁⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲁⲁⲕ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲁⲁⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲁⲁϥ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲁⲁⲥ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲁⲁⲛ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲣ̄-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲁⲁⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VAffConditional-rime"
+    :note "Negation of the conditional is with -ⲧⲙ̄- prefixed to the infinitive. ϣⲁⲛ is sometimes omitted from the prefix in the negative."
+    :common {:clauseConjugation :Conditional,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲉⲓϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ⲉⲕϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ⲉⲣⲉϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲉϥϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲉⲥϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲉⲛϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ⲉⲧⲉⲧⲛ̄ϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ⲉⲩϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲉⲣϣⲁⲛ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VAffInjunct-rime"
+    :note "Also called the Optative. Negative is expressed with the negative imperative prefix ⲙ̄ⲡⲣ̄- attached to the Inflected Infinitive."
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Injunct}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲙⲁⲣⲓⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "⊤"],
+	    [:Fem, :Singular, :Person2, "⊤"],
+	    [:Masc, :Singular, :Person3, "ⲙⲁⲣⲉϥⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲙⲁⲣⲉⲥⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲙⲁⲣⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "⊤"],
+	    [:Common, :Plural, :Person3, "ⲙⲁⲣⲟⲩⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲙⲁⲣⲉ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VNegAorist-rime"
+    :note "Alternately called the Habitual or praesens consuetudinis. Converters can be used to create a variety of clause conjugations."
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲙⲉⲓⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ⲙⲉⲕⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ⲙⲉⲣⲉⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲙⲉϥⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲙⲉⲥⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲙⲉⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ⲙⲉⲧⲉⲧⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ⲙⲉⲩⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲙⲉⲣⲉ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VInfinCV3-ko"
+    :note "Infinitives of the type consonant + ⲱ typically follow one of two patterns:they may take the form Cⲉ- or Cⲁ- in the construct,and Cⲟⲟ= or Cⲁⲁ= in the pronominal."
+    :common {:clauseConjugation :U,
+	    :lexeme :ko,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CV3,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲕⲱ ⲙ̄ ⲡϫⲱⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲕⲁ- ⲡϫⲱⲱⲙⲉ ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲕⲁⲁⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲕⲁⲁⲕ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲕⲁⲁⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲕⲁⲁϥ", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲕⲁⲁⲥ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲕⲁⲁⲛ", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲕⲉ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲕⲁⲁⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VNegPres1-rime"
+    :note ""
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Pres1}
+    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲛ̄ϯⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Masc, :Singular, :Person2, "ⲛⲅ̄ⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Masc, :Singular, :Person3, "ⲛϥ̄ⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲥⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Common, :Plural, :Person1, "ⲛ̄ⲧ̄ⲛ̄ⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲉⲧⲛ̄ⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲥⲉⲣⲓⲙⲉ ⲁⲛ", "⊤"],
+	    [:Common, :Common, :NomSubj, "(ⲙ̄) ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ ⲁⲛ", "indefSubj:ⲙⲛ̄-(ⲟⲩ)ⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VAffRelPres1-bok"
+    :note "The relative of the First Present is formed by combining the relative pronoun ⲉⲧ with the First Present prefix."
+    :common {:clauseConjugation :Relative,
+	    :clauseType :Relative,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Pres1}
+    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲉϯⲃⲱⲕ", "Common"],
+	    [:Masc, :Singular, :Person2, "ⲉⲧⲕ̄ⲃⲱⲕ", "Common"],
+	    [:Fem, :Singular, :Person2, "ⲉⲧⲉⲃⲱⲕ", "ⲉⲧⲉⲣ-"],
+	    [:Masc, :Singular, :Person3, "ⲉⲧϥ̄ⲃⲱⲕ", "Common"],
+	    [:Fem, :Singular, :Person3, "ⲉⲧⲥ̄ⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person1, "ⲉⲧⲛ̄ⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person2, "ⲉⲧⲉⲧⲛ̄ⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person3, "ⲉⲧⲟⲩⲃⲱⲕ", "Common"],
+	    [:Common, :Common, :NomSubj, "ⲉⲧⲉⲣⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ", "Common"]]
+    }
+    {:label "coptic_S-VInfinCV1-ji"
+    :note "Coptic infinitives are irregular and difficult to classify according to morphology. ϫⲓ is typical of monosyllabic infinitives of the type consonant + ⲓ. The verbs ϥⲓ (carry) and ϣⲓ (measure) follow the same pattern."
+    :common {:clauseConjugation :U,
+	    :lexeme :ji,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CV1,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ϫⲓ ⲙ̄ ⲡϫⲱⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ϫⲓ-ⲡϫⲱⲱⲙⲉ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ϫⲓⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ϫⲓⲧⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ϫⲓⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ϫⲓⲧϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ϫⲓⲧⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ϫⲓⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ϫⲓ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ϫⲓⲧⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VInfinCVCC-sotp"
+    :note "Verbs of the type (C)ⲱCC are the largest class of verbs in Coptic. With final consonant ⲃ,ⲗ,ⲙ,ⲛ or ⲣ,an -ⲉ- is inserted before the suffixes -ⲧ,-ⲕ,-ϥ and -ⲥ in the pronominal form. With final consonant ϩ,an -ⲁ- is sometimes inserted between the penultimate and ultimate consonants in the absolute form,and the normal -ⲟ- of the pronominal form may be replaced with -ⲁ-. As in the other verbal classes,the presence of ⲙ or ⲛ in the initial consonantal position causes ⲱ to shift to -ⲟⲩ-."
+    :common {:clauseConjugation :U,
+	    :lexeme :sotp,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CVCC,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲥⲱⲧⲡ̄ ⲙ̄ ⲡⲉⲛⲕⲁ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲥⲉⲧⲡ̄-ⲡⲉⲛⲕⲁ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲥⲟⲧⲡ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲥⲟⲧⲡⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲥⲟⲧⲡⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲥⲟⲧⲡϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲥⲟⲧⲡⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲥⲟⲧⲡⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲥⲉⲧⲡ̄-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲥⲟⲧⲡⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VAffRelPerf1-bok"
+    :note "The relative of the First Perfect is formed by combining the First Perfect prefix with the relative pronoun (ⲉⲛⲧ-). This form can only be used with a defined antecedent. Negation is formed with the relative pronoun ⲉⲧⲉ before the negative First Perfect."
+    :common {:clauseConjugation :Relative,
+	    :clauseType :Relative,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Perf1}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲉⲛⲧⲁⲓⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person2, "ⲉⲛⲧⲁⲕⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲉⲛⲧⲁⲣⲉⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person3, "ⲉⲛⲧⲁϥⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person3, "ⲉⲛⲧⲁⲥⲃⲱⲕ"],
+	    [:Common, :Plural, :Person1, "ⲉⲛⲧⲁⲛⲃⲱⲕ"],
+	    [:Common, :Plural, :Person2, "ⲉⲛⲧⲁⲧⲉⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person3, "ⲉⲛⲧⲁⲩⲃⲱⲕ"],
+	    [:Common, :Common, :NomSubj, "ⲉⲛⲧⲁ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ"]]
+    }
+    {:label "coptic_S-VInfinCV4-me"
+    :note "ⲙⲉ is historically derived from a biconsonantal root mr. The weak consonant r returns in the construct and pronominal forms."
+    :common {:clauseConjugation :U,
+	    :lexeme :me,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CV4,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲙⲉ ⲙ̄ ⲡⲣⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲙⲉⲣⲉ- ⲡⲣⲱⲙⲉ ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲙⲉⲣⲓⲧ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲙⲉⲣⲓⲧⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲙⲉⲣⲓⲧⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲙⲉⲣⲓⲧϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲙⲉⲣⲓⲧⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲙⲉⲣⲓⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲙⲉⲣⲉ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲙⲉⲣⲓⲧⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VAffImperative-jo"
+    :note "Most imperatives are identical to the infinitive,but a few verbs have a special imperative form with a prefixed ⲁ-. The imperative of ϯ (cause) is usually ⲙⲁ/ⲙⲁ-/ⲙⲁⲧ=,but the simple infinitive ϯ may also be used. The causative compound imperatives are frequently formed by prefixing ⲙⲁ- to the infinitive form. The irregular verb ⲉⲓ (come) has distinct masculine,feminine and plural imperative forms:ⲁⲙⲟⲩ (m. s.),ⲁⲙⲏ (f. s.),ⲁⲙⲉⲓⲧⲛ̄ (c. pl.)."
+    :common {:lexeme :jo,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative,
+	    :token-note :⊤}
+    :terms [[:imperativeForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token]  ;; schema
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲁϫⲓ-ⲡϣⲁϫⲉ"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲁϫⲓⲧ"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲁϫⲓⲕ"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲁϫⲓⲧⲉ"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲁϫⲓϥ"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲁϫⲓⲥ"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲁϫⲓⲛ"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲁϫⲓ-ⲧⲏⲩⲧⲛ̄"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲁϫⲏⲩ"]]
+    }
+    {:label "coptic_S-VAffAorist-rime"
+    :note "Alternately called the Habitual or praesens consuetudinis. Converters can be used to create a variety of clause conjugations."
+    :common {:clauseConjugation :Main,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Aorist}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ϣⲁⲓⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ϣⲁⲕⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ϣⲁⲣ(ⲉ)ⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ϣⲁϥⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ϣⲁⲥⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ϣⲁⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ϣⲁⲧⲉⲧⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ϣⲁⲩⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ϣⲁⲣⲉ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VAffConj-bok"
+    :note "The Conjunctive continues the force of any preceding verb,with the exception of the First Present."
+    :common {:clauseConjugation :Variable,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Conjunctive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "(ⲛ̄)ⲧⲁⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person2, "ⲛ̄ⲅ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲉⲃⲱⲕ"],
+	    [:Masc, :Singular, :Person3, "ⲛ̄ϥ̄ⲃⲱⲕ"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲥ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person1, "ⲛ̄ⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲉⲧⲛ̄ⲃⲱⲕ"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲥⲉⲃⲱⲕ"],
+	    [:Common, :Common, :NomSubj, "ⲛ̄ⲧⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ"]]
+    }
+    {:label "coptic_S-VAffInflectedInfin-bok"
+    :note "The Inflected (or Causative) Infinitive has no inherent tense,and takes its tense from the main verb of the sentence. It is used either as a complementary infinitive with verbs of wishing or commanding,or in purpose or temporal clauses. Negation is formed with ⲧⲙ̄,prefixed either to the prefix or directly to the infinitive."
+    :common {:clauseConjugation :Variable,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :bok,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :stemClass :U,
+	    :tam :InflectedInfiitive}
+    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲧⲣⲁⲃⲱⲕ", "Common"],
+	    [:Masc, :Singular, :Person2, "ⲧⲣⲉⲕⲃⲱⲕ", "Common"],
+	    [:Fem, :Singular, :Person2, "ⲧⲣⲉⲃⲱⲕ", "Common"],
+	    [:Masc, :Singular, :Person3, "ⲧⲣⲉϥⲃⲱⲕ", "Common"],
+	    [:Fem, :Singular, :Person3, "ⲧⲣⲉⲥⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person1, "ⲧⲣⲉⲛⲃⲱⲕ", "Common"],
+	    [:Common, :Plural, :Person2, "ⲧⲣⲉⲧⲉⲧⲛ̄ⲃⲱⲕ", "ⲧⲣⲉⲧⲛ̄-"],
+	    [:Common, :Plural, :Person3, "ⲧⲣⲉⲩⲃⲱⲕ", "Common"],
+	    [:Common, :Common, :NomSubj, "ⲧⲣⲉ-ⲡⲣⲱⲙⲉ ⲃⲱⲕ", "Common"]]
+    }
+    {:label "coptic_S-VAffImperf-rime"
+    :note "The Imperfect is actually a subset of the present forms,but the sense is past progressive. Negation is with ⲁⲛ (e.g. ⲛⲉⲓⲣⲓⲙⲉ ⲁⲛ)."
+    :common {:clauseConjugation :Variable,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲛⲉⲓⲣⲓⲙⲉ", "⊤"],
+	    [:Masc, :Singular, :Person2, "ⲛⲉⲕⲣⲓⲙⲉ", "⊤"],
+	    [:Fem, :Singular, :Person2, "ⲛⲉⲣⲉⲣⲓⲙⲉ", "⊤"],
+	    [:Masc, :Singular, :Person3, "ⲛⲉϥⲣⲓⲙⲉ", "⊤"],
+	    [:Fem, :Singular, :Person3, "ⲛⲉⲥⲣⲓⲙⲉ", "⊤"],
+	    [:Common, :Plural, :Person1, "ⲛⲉⲛⲣⲓⲙⲉ", "⊤"],
+	    [:Common, :Plural, :Person2, "ⲛⲉⲧⲉⲧⲛ̄ⲣⲓⲙⲉ", "⊤"],
+	    [:Common, :Plural, :Person3, "ⲛⲉⲩⲣⲓⲙⲉ", "⊤"],
+	    [:Common, :Common, :NomSubj, "ⲛⲉⲣⲉ-ⲣⲱⲙⲉ ⲣⲓⲙⲉ", "indefSubj:ⲛⲉⲣⲉ-ⲟⲩⲛ̄-ⲟⲩⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VInfinCVC2-mouh"
+    :note "Infinitives with stem final ϩ or ϣ replace the typical ⲟ of the pronominal form with ⲁ."
+    :common {:clauseConjugation :U,
+	    :lexeme :mouh,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CVC2,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ⲙⲟⲩϩ ⲙ̄ ⲧϭⲓϫ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ⲙⲉϩ-ⲧϭⲓϫ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ⲙⲁϩ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ⲙⲁϩⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ⲙⲁϩⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ⲙⲁϩϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ⲙⲁϩⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ⲙⲁϩⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ⲙⲉϩ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ⲙⲁϩⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-VAffCircumstantial-rime"
+    :note "The tense of the Circumstantial is identical to the tense of the verb of the main clause. The Circumstantial is not negated directly. Instead,the Circumstantial converter ⲉ- is prefixed to the negative First Present."
+    :common {:clauseConjugation :Subordinate,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Circumstantial}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲉⲓⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ⲉⲕⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ⲉⲣⲉⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲉϥⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲉⲥⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲉⲛⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ⲉⲧⲉⲧⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ⲉⲩⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲉⲣⲉ-ⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VAffResult-rime"
+    :note "Also called the Future Conjunctive of Result. Lambdin omits 1st person singular,but this form is attested."
+    :common {:clauseConjugation :Result,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲧⲁⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person2, "ⲧⲁⲣⲉⲕⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person2, "ⲧⲁⲣⲉⲥⲣⲓⲙⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲧⲁⲣⲉϥⲣⲓⲙⲉ"],
+	    [:Fem, :Singular, :Person3, "ⲧⲁⲣⲉⲥⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person1, "ⲧⲁⲣⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person2, "ⲧⲁⲣⲉⲧⲛ̄ⲣⲓⲙⲉ"],
+	    [:Common, :Plural, :Person3, "ⲧⲁⲣⲟⲩⲣⲓⲙⲉ"],
+	    [:Common, :Common, :NomSubj, "ⲧⲁⲣⲉ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ"]]
+    }
+    {:label "coptic_S-VNegFut3-rime"
+    :note ""
+    :common {:clauseConjugation :Variable,
+	    :formClass :AbsoluteInfinitive,
+	    :lexeme :rime,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Future3}
+    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲛ̄ⲛⲁⲣⲓⲙⲉ", "ⲛ̄ⲛⲉⲓ-"],
+	    [:Masc, :Singular, :Person2, "ⲛ̄ⲛⲉⲕⲣⲓⲙⲉ", "ⲉⲛⲛⲉⲕ-"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲛⲉⲣⲓⲙⲉ", "ⲉⲛⲛⲉ-"],
+	    [:Masc, :Singular, :Person3, "ⲛ̄ⲛⲉϥⲣⲓⲙⲉ", "ⲉⲛⲛⲉϥ-"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲛⲉⲥⲣⲓⲙⲉ", "ⲉⲛⲛⲉⲥ-"],
+	    [:Common, :Plural, :Person1, "ⲛ̄ⲛⲉⲛⲣⲓⲙⲉ", "ⲉⲛⲛⲉⲛ-"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲛⲉⲧⲛ̄ⲣⲓⲙⲉ", "ⲉⲛⲛⲉⲧⲛ̄-"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲛⲉⲩⲣⲓⲙⲉ", "ⲉⲛⲛⲉⲩ-"],
+	    [:Common, :Common, :NomSubj, "ⲛ̄ⲛⲉ-ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ", "Common"]]
+    }
+    {:label "coptic_S-VInfinCVC1-hop"
+    :note "Infinitives of the type (consonant +) ⲱ + consonant follow the regular pattern of (C)ⲱC in the absolute,(C)ⲉC- in construct and (C)ⲟC= in pronominal. In infinitives of this type beginning with ⲙ or ⲛ,the vowel ⲱ in the absolute form is modified to ⲟⲩ. Verbs of the type (C)ⲱCⲉ follow the same pattern in construct and pronominal."
+    :common {:clauseConjugation :U,
+	    :lexeme :hop,
+	    :morphClass :Infinitive,
+	    :polarity :U,
+	    :pos :Verb,
+	    :stemClass :CVC1,
+	    :tam :U}
+    :terms [[:infinitiveForm, :objectGender, :objectNumber, :objectPerson, :objectType, :token, :token-note]  ;; schema
+	    [:Absolute, :Common, :Common, :Common, :Nominal, "ϩⲱⲡ ⲙ̄ ⲡⲣⲱⲙⲉ", "May also occur with suffix pronoun object and object marker"],
+	    [:Construct, :Common, :Common, :Common, :Nominal, "ϩⲉⲡ- ⲡⲣⲱⲙⲉ ", "⊤"],
+	    [:Pronominal, :Common, :Singular, :Person1, :SuffixPron, "ϩⲟⲡ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person2, :SuffixPron, "ϩⲟⲡⲕ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person2, :SuffixPron, "ϩⲟⲡⲉ", "⊤"],
+	    [:Pronominal, :Masc, :Singular, :Person3, :SuffixPron, "ϩⲟⲡϥ̄", "⊤"],
+	    [:Pronominal, :Fem, :Singular, :Person3, :SuffixPron, "ϩⲟⲡⲥ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person1, :SuffixPron, "ϩⲟⲡⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person2, :SuffixPron, "ϩⲉⲡ-ⲧⲏⲩⲧⲛ̄", "⊤"],
+	    [:Pronominal, :Common, :Plural, :Person3, :SuffixPron, "ϩⲟⲡⲟⲩ", "⊤"]]
+    }}
+:muterms #{
+    {:label "coptic_S-PInd"
+    :note ""
+    :common {:morpheme :PROIND,
+	    :pos :Pronoun,
+	    :proClass :Independent}
+    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲁⲛⲟⲕ", "construct form:ⲁⲛⲅ̄-"],
+	    [:Masc, :Singular, :Person2, "ⲛ̄ⲧⲟⲕ", "construct form:ⲛ̄ⲧⲕ̄-"],
+	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲟ", "construct form:ⲛ̄ⲧⲉ-"],
+	    [:Masc, :Singular, :Person3, "ⲛ̄ⲧⲟϥ", "construct form:ⲛ̄ⲧϥ̄- (rare)"],
+	    [:Fem, :Singular, :Person3, "ⲛ̄ⲧⲟⲥ", "⊤"],
+	    [:Common, :Plural, :Person1, "ⲁⲛⲟⲛ", "construct form:ⲁⲛ-"],
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲱⲧⲛ̄", "construct form:ⲛ̄ⲧⲉⲧⲛ̄-"],
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲧⲟⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-PIntensive1"
+    :note "This intensive pronoun may be alternately spelled ⲙⲁⲩⲁⲧ= or ⲟⲩⲁⲁ(ⲧ)=."
+    :common {:morpheme :PROINTENSIVE1,
+	    :morphClass :Intensive1,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲙⲁⲩⲁⲁⲧ"],
+	    [:Masc, :Singular, :Person2, "ⲙⲁⲩⲁⲁⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲙⲁⲩⲁⲁⲧⲉ"],
+	    [:Masc, :Singular, :Person3, "ⲙⲁⲩⲁⲁϥ"],
+	    [:Fem, :Singular, :Person3, "ⲙⲁⲩⲁⲁⲥ"],
+	    [:Common, :Plural, :Person1, "ⲙⲁⲩⲁⲁⲛ"],
+	    [:Common, :Plural, :Person2, "ⲙⲁⲩⲁⲁⲧ-ⲧⲉⲩⲧⲛ̄"],
+	    [:Common, :Plural, :Person3, "ⲙⲁⲩⲁⲁⲧⲟⲩ"]]
+    }
+    {:label "coptic_S-PIntensive3"
+    :note "The intensive pronoun ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟ= is used in apposition to reflexive and possessive pronominal elements."
+    :common {:morpheme :PROINTENSIVE3,
+	    :morphClass :Intensive3,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲓ"],
+	    [:Masc, :Singular, :Person2, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲕ"],
+	    [:Fem, :Singular, :Person2, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟ"],
+	    [:Masc, :Singular, :Person3, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟϥ"],
+	    [:Fem, :Singular, :Person3, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲥ"],
+	    [:Common, :Plural, :Person1, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲛ"],
+	    [:Common, :Plural, :Person2, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲱⲧⲛ̄"],
+	    [:Common, :Plural, :Person3, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲟⲩ"]]
+    }
+    {:label "coptic_S-PDemonstrativeRemote"
+    :note "The remote demonstrative pronouns have rare prefixial counterparts in Sahidic Coptic (ⲡⲓ-,ϯ-,ⲛⲓ-). These are also alternate spellings for the near demonstrative prefixes."
+    :common {:morpheme :PRODEMREMOTE,
+	    :morphClass :DemonstrativeRemote,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Masc, :Singular, "ⲡⲏ"],
+	    [:Fem, :Singular, "ⲧⲏ"],
+	    [:Common, :Plural, "ⲛⲏ"]]
+    }
+    {:label "coptic_S-PPossessive"
+    :note ""
+    :common {:morpheme :PROPOSS,
+	    :morphClass :Possessive,
+	    :pos :Pronoun}
+    :terms [[:gender, :genderHead, :number, :numberHead, :person, :token]  ;; schema
+	    [:Common, :Masc, :Singular, :Singular, :Person1, "ⲡⲱⲓ"],
+	    [:Common, :Fem, :Singular, :Singular, :Person1, "ⲧⲱⲓ"],
+	    [:Common, :Common, :Singular, :Plural, :Person1, "ⲛⲟⲩⲓ"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2, "ⲡⲱⲕ"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2, "ⲧⲱⲕ"],
+	    [:Masc, :Common, :Singular, :Plural, :Person2, "ⲛⲟⲩⲕ"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person2, "ⲡⲱ"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person2, "ⲧⲱ"],
+	    [:Fem, :Common, :Singular, :Plural, :Person2, "ⲛⲟⲩ"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person3, "ⲡⲱϥ"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person3, "ⲧⲱϥ"],
+	    [:Masc, :Common, :Singular, :Plural, :Person3, "ⲛⲟⲩϥ"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person3, "ⲡⲱⲥ"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person3, "ⲧⲱⲥ"],
+	    [:Fem, :Common, :Singular, :Plural, :Person3, "ⲛⲟⲩⲥ"],
+	    [:Common, :Masc, :Plural, :Singular, :Person1, "ⲡⲱⲛ"],
+	    [:Common, :Fem, :Plural, :Singular, :Person1, "ⲧⲱⲛ"],
+	    [:Common, :Common, :Plural, :Plural, :Person1, "ⲛⲟⲩⲛ"],
+	    [:Common, :Masc, :Plural, :Singular, :Person2, "ⲡⲱⲧⲛ̄"],
+	    [:Common, :Fem, :Plural, :Singular, :Person2, "ⲧⲱⲧⲛ̄"],
+	    [:Common, :Common, :Plural, :Plural, :Person2, "ⲛⲟⲩⲧⲛ̄"],
+	    [:Common, :Masc, :Plural, :Singular, :Person3, "ⲡⲱⲟⲩ"],
+	    [:Common, :Fem, :Plural, :Singular, :Person3, "ⲧⲱⲟⲩ"],
+	    [:Common, :Common, :Plural, :Plural, :Person3, "ⲛⲟⲩⲟⲩ"]]
+    }
+    {:label "coptic_S-PIntensive2"
+    :note "The intensive or emphatic pronoun ϩⲱⲱ= or ϩⲱ= is used in apposition to pronominal elements. May also be used adverbially in the 3rd m. sg. (ϩⲱⲱϥ) with the meaning however,on the other hand."
+    :common {:morpheme :PROINTENSIVE2,
+	    :morphClass :Intensive2,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
+	    [:Common, :Singular, :Person1, "ϩⲱⲱⲧ", "alternate spelling:ϩⲱ"],
+	    [:Masc, :Singular, :Person2, "ϩⲱⲱⲕ", "⊤"],
+	    [:Fem, :Singular, :Person2, "ϩⲱⲱⲧⲉ", "⊤"],
+	    [:Masc, :Singular, :Person3, "ϩⲱⲱϥ", "⊤"],
+	    [:Fem, :Singular, :Person3, "ϩⲱⲱⲥ", "⊤"],
+	    [:Common, :Plural, :Person1, "ϩⲱⲱⲛ", "⊤"],
+	    [:Common, :Plural, :Person2, "ϩⲱⲧ-ⲧⲉⲩⲧⲛ̄", "⊤"],
+	    [:Common, :Plural, :Person3, "ϩⲱⲱⲧⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-PDemonstrativeNear"
+    :note "The near demonstrative pronouns are related to the demonstrative prefixes,ⲡⲉⲓ-,ⲧⲉⲓ-,ⲛⲉⲓ-."
+    :common {:morpheme :PRODEMNEAR,
+	    :morphClass :DemonstrativeNear,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Masc, :Singular, "ⲡⲁⲓ"],
+	    [:Fem, :Singular, "ⲧⲁⲓ"],
+	    [:Common, :Plural, "ⲛⲁⲓ"]]
+    }}

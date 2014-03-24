@@ -1,0 +1,753 @@
+:lang :burji
+:schemata [:case {:Absolutive, :Nominative}
+	  :caseHead {:Absolutive, :Nominative}
+	  :clauseMarker {:NoParticle, :Particle}
+	  :conjClass {:Irreg, :Regular}
+	  :deixis {:Far, :Near}
+	  :derivedStem {:Benefactive, :Causative1, :Causative2, :Combo, :Denominal, :Passive, :Reduplicated}
+	  :focus {:Defective, :Free, :Full, :Subject}
+	  :formType {:Compound, :Suffix}
+	  :gender {:Common, :Fem, :Masc}
+	  :genderHead {:Fem, :Masc}
+	  :interrogClass {:InterrogProHow, :InterrogProHowMany, :InterrogProWhat, :InterrogProWhen, :InterrogProWhere, :InterrogProWho}
+	  :multiLex {:IMPERFREG-IRREG, :VADJ, :VINFINITIVEAFF}
+	  :number {:Plural, :Singular}
+	  :pdgmType {:Exemplary}
+	  :person {:Person1, :Person2, :Person3}
+	  :polarity {:Affirmative, :Negative}
+	  :pos {:Pro, :Verb}
+	  :present {:Person1, :Person2, :Person3}
+	  :proClass {:Demonstrative, :Independent, :Interrogative, :Personal, :Possessive}
+	  :proType {:Common, :Id, :WPro, :WoPro}
+	  :suppletion {:NonSuppletive, :Suppletive}
+	  :tam {:FutureIntensive, :Imperative, :Imperfect, :ImperfectProgressive, :Infinitive, :Jussive, :PastProgressive, :Perfect, :PerfectProgressive, :Pluperfect, :PresentPerfect, :PresentProgressive, :SimplePerfect}
+	  :type {:Abs, :Absolutive, :Nom, :Nominative, :Obj, :Object}
+	  :verbClass {:Focus, :Interrogative}
+	  :verbMorphClass {:DervStem, :SubjMarkers}
+	  ]
+:morphemes {
+  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
+  :PRODEM {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROINTERROG {:gloss "[x]", :lemma "[y]", }
+  :PROPERSONAL {:gloss "[x]", :lemma "[y]", }
+  :PROPOSS {:gloss "[x]", :lemma "[y]", }
+  :SUBJMARKERS {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :IMPERFREG-IRREG {:gloss "[x]", :lemma "[y]", }
+  :VADJ {:gloss "[x]", :lemma "[y]", }
+  :VINFINITIVEAFF {:gloss "[x]", :lemma "[y]", }
+  :ba’ {:lemma "ba’-", :gloss "go out", }
+  :beeh {:lemma "beeh-", :gloss "know", }
+  :duw {:lemma "ɗuw-", :gloss "drink", }
+  :hayy {:lemma "hayy-", :gloss "want", :conjClass :Irreg, :pos :Verb}
+  :intey {:lemma "intey-", :gloss "come", }
+  :it {:lemma "it-", :gloss "eat", }
+  :mar {:lemma "mar-", :gloss "go", }
+  :nak {:lemma "nak-", :gloss "strike", }
+}
+:lxterms #{
+    {:label "burji-VAffJuss-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:gender :Common,
+	    :lexeme :it,
+	    :person :Person3,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "it-oo(ni)"],
+	    [:Plural, "is̆s̆-oo(ni)"]]
+    }
+    {:label "burji-VAffSimplePerfect-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "itanni"],
+	    [:Common, :Singular, :Person2, "itandu"],
+	    [:Masc, :Singular, :Person3, "itanni"],
+	    [:Fem, :Singular, :Person3, "itanni"],
+	    [:Common, :Plural, :Person1, "itanninu"],
+	    [:Common, :Plural, :Person2, "itanc̆ingu"],
+	    [:Common, :Plural, :Person3, "itanningu"]]
+    }
+    {:label "burji-VAffImprtvIrreg-intey"
+    :note "WedekindC1985 p. 124. The verb comehas both a suppletive and a nonsuppletive form"
+    :common {:lexeme :intey,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :suppletion, :token]  ;; schema
+	    [:Singular, :Suppletive, "‘aamu!"],
+	    [:Singular, :NonSuppletive, "‘inteyi!"],
+	    [:Plural, :Suppletive, "‘aamonee!"],
+	    [:Plural, :NonSuppletive, "‘inteyee!"]]
+    }
+    {:label "burji-VAffImperfect-intey"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :intey,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "inteya"],
+	    [:Common, :Singular, :Person2, "inteyda"],
+	    [:Masc, :Singular, :Person3, "inteya"],
+	    [:Fem, :Singular, :Person3, "inteyda"],
+	    [:Common, :Plural, :Person1, "inteyna"],
+	    [:Common, :Plural, :Person2, "inteys̆ingu"],
+	    [:Common, :Plural, :Person3, "inteyingu"]]
+    }
+    {:label "burji-VAffSimplePerfect-ba’"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :ba’,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "baanni"],
+	    [:Common, :Singular, :Person2, "baandu"],
+	    [:Masc, :Singular, :Person3, "baanni"],
+	    [:Fem, :Singular, :Person3, "baanni"],
+	    [:Common, :Plural, :Person1, "baanninu"],
+	    [:Common, :Plural, :Person2, "baanc̆ingu"],
+	    [:Common, :Plural, :Person3, "baanningu"]]
+    }
+    {:label "burji-VAffImprtv-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:gender :Common,
+	    :lexeme :it,
+	    :person :Person2,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "it(i)"],
+	    [:Plural, "it-ee"]]
+    }
+    {:label "burji-VAffSimplePerfFocusType-mar"
+    :note "WedekindC1985 p. 119"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect,
+	    :verbClass :Focus}
+    :terms [[:focus, :gender, :number, :person, :proType, :token]  ;; schema
+	    [:Free, :Common, :Singular, :Person1, :Common, "‘ani ‘inaa maranni/oo"],
+	    [:Free, :Common, :Singular, :Person2, :Common, "‘as̆I ‘inaa marandu/oo"],
+	    [:Free, :Masc, :Singular, :Person3, :Common, "‘isi ‘inaa maranni/oo"],
+	    [:Free, :Common, :Singular, :Person3, :Id, "‘I’issi ‘inaa maranni/oo"],
+	    [:Free, :Fem, :Singular, :Person3, :Common, "‘is̆I ‘inaa maranni/oo"],
+	    [:Free, :Common, :Plural, :Person1, :Common, "naanu ‘inaa maranninu/oo"],
+	    [:Free, :Common, :Plural, :Person2, :Common, "marancingu/oo"],
+	    [:Free, :Masc, :Plural, :Person3, :Common, "‘isinu ‘inaa marammi/oo"],
+	    [:Free, :Fem, :Plural, :Person3, :Common, "- ‘inaa maranningu/oo"],
+	    [:Subject, :Common, :Singular, :Person1, :Common, "‘ee(k’aa) marannoo"],
+	    [:Subject, :Common, :Singular, :Person2, :Common, "s̆ee(k’aa) marandoo/-antoo"],
+	    [:Subject, :Masc, :Singular, :Person3, :Common, "‘isa(k’aa) marannoo"],
+	    [:Subject, :Fem, :Singular, :Person3, :Common, "‘is̆ee(k’aa) marannoo"],
+	    [:Subject, :Common, :Plural, :Person1, :Common, "ninsa(k’aa) maranninoo"],
+	    [:Subject, :Common, :Plural, :Person2, :Common, "s̆insa(k’aa) marancingoo"],
+	    [:Subject, :Masc, :Plural, :Person3, :Common, "‘isinoo(k’aa) marannoo"],
+	    [:Subject, :Fem, :Plural, :Person3, :Common, "maranningoo"]]
+    }
+    {:label "burji-VNegPresProg-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "itadd’i yed’-éy"],
+	    [:Common, :Singular, :Person2, "itadd’i yett-éy"],
+	    [:Masc, :Singular, :Person3, "itadd’i yed’-éy"],
+	    [:Fem, :Singular, :Person3, "itadd’i yett-éy"],
+	    [:Common, :Plural, :Person1, "itadd’i yenn-éy"],
+	    [:Common, :Plural, :Person2, "itadd’i yec̆c̆ing-éy"],
+	    [:Common, :Plural, :Person3, "itadd’i yed’ing-éy"]]
+    }
+    {:label "burji-VAffImperfect-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ita"],
+	    [:Common, :Singular, :Person2, "is̆s̆a"],
+	    [:Masc, :Singular, :Person3, "ita"],
+	    [:Fem, :Singular, :Person3, "is̆s̆a"],
+	    [:Common, :Plural, :Person1, "itina"],
+	    [:Common, :Plural, :Person2, "is̆s̆ingu"],
+	    [:Common, :Plural, :Person3, "itingu"]]
+    }
+    {:label "burji-VAffFutIntensiveCompound-mar"
+    :note "WedekindC1985 p. 122"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :FutureIntensive,
+	    :formType :Compound}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "‘ee mara mara"],
+	    [:Common, :Singular, :Person2, :Common, "s̆ee mara marda"],
+	    [:Masc, :Singular, :Person3, :Common, "‘isaa mara mara"],
+	    [:Fem, :Singular, :Person3, :Common, "‘is̆ee mara marda"],
+	    [:Common, :Plural, :Person1, :Common, "ninsa mara marra"],
+	    [:Common, :Plural, :Person2, :Common, "s̆insa mara mars̆ingoo"],
+	    [:Common, :Plural, :Person3, :WPro, "‘isinoo mara mara"],
+	    [:Common, :Plural, :Person3, :WoPro, "mara marringu"]]
+    }
+    {:label "burji-VAffInterrogative-mar"
+    :note "WedekindC1985 p. 125-126"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :verbClass :Interrogative}
+    :terms [[:token, :token-gloss]  ;; schema
+	    ["‘ani mara-daa?", "“Do I go?”"],
+	    ["‘ee-daa mara?", "“Is if me to go?”"],
+	    ["‘ani maranni", "“Did I go?”"]]
+    }
+    {:label "burji-VAffImperfect-duw"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :duw,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "d’uwa"],
+	    [:Common, :Singular, :Person2, "d’uda"],
+	    [:Masc, :Singular, :Person3, "d’uwa"],
+	    [:Fem, :Singular, :Person3, "d’uda"],
+	    [:Common, :Plural, :Person1, "d’una"],
+	    [:Common, :Plural, :Person2, "d’unjingu"],
+	    [:Common, :Plural, :Person3, "d’uwingu"]]
+    }
+    {:label "burji-VAffPassPresPerf-nak"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:derivedStem :Passive,
+	    :lexeme :nak,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentPerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "nak’am-eed’u"],
+	    [:Common, :Singular, :Person2, "nak’am-c̆-eettu"],
+	    [:Masc, :Singular, :Person3, "nak’am-eed’a"],
+	    [:Fem, :Singular, :Person3, "nak’am-c̆-eetta"],
+	    [:Common, :Plural, :Person1, "nak’am-n-eennu"],
+	    [:Common, :Plural, :Person2, "nak’am-c̆-eec̆c̆ingu"],
+	    [:Common, :Plural, :Person3, "nak’am-eed’ingu"]]
+    }
+    {:label "burji-VAffPerfProgCompound-mar"
+    :note "WedekindC1985 p. 122."
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PerfectProgressive,
+	    :formType :Compound}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "‘ani maraaɗannoo"],
+	    [:Common, :Singular, :Person2, :Common, "‘as̆I martaaɗandoo"],
+	    [:Masc, :Singular, :Person3, :Common, "‘isi maraaɗannoo"],
+	    [:Common, :Singular, :Person3, :Id, "‘issi maraaɗannoo"],
+	    [:Fem, :Singular, :Person3, :Common, "‘is̆I martaaɗannoo"],
+	    [:Common, :Plural, :Person1, :Common, "naanu marraaanninoo"],
+	    [:Common, :Plural, :Person2, :Common, "‘as̆inu mars̆ingooɗancingoo"],
+	    [:Common, :Plural, :Person3, :WPro, "‘isinu maraaɗannoo"],
+	    [:Common, :Plural, :Person3, :WoPro, "maringooɗanningoo"]]
+    }
+    {:label "burji-VAffPresProgCompound-mar"
+    :note "WedekindC1985 p. 123"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentProgressive,
+	    :formType :Compound}
+    :terms [[:gender, :number, :present, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "(‘ani) maraaddinaa yeɗu"],
+	    [:Common, :Singular, :Person2, :Common, "(‘as̆i) maraadddinaa yettu"],
+	    [:Masc, :Singular, :Person3, :Common, "(‘isi) maraaddinaa yeɗa"],
+	    [:Fem, :Singular, :Person3, :Common, "(‘is̆i) maraadinaa yetta"],
+	    [:Common, :Plural, :Person1, :Common, "(naanu) maraaddinaa yennu"],
+	    [:Common, :Plural, :Person2, :Common, "(‘as̆inu) maraaddinaa yeccingu"],
+	    [:Common, :Plural, :Person3, :WPro, "(’isinu) maraaddinaa yeɗa"],
+	    [:Common, :Plural, :Person3, :WoPro, "maraaddinaa yeɗingu"]]
+    }
+    {:label "burji-VAffSimplePerfect-duw"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :duw,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "d’awanni"],
+	    [:Common, :Singular, :Person2, "d’uwandu"],
+	    [:Masc, :Singular, :Person3, "d’uwanni"],
+	    [:Fem, :Singular, :Person3, "d’uwanni"],
+	    [:Common, :Plural, :Person1, "d’uwanninu"],
+	    [:Common, :Plural, :Person2, "d’uwanc̆ingu"],
+	    [:Common, :Plural, :Person3, "d’uwanningu"]]
+    }
+    {:label "burji-VNegPastProg-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PastProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "itaad’i yed’oonn-éy"],
+	    [:Common, :Singular, :Person2, "itaad’i yettoond-éyneg"],
+	    [:Fem, :Singular, :Person3, "itaad’i yettaan-éy"],
+	    [:Common, :Plural, :Person1, "itaad’i yennoonnin-éy"],
+	    [:Common, :Plural, :Person2, "itaad’i yec̆c̆ingoonc̆ing-éy"],
+	    [:Common, :Plural, :Person3, "itaad’i yed’ingoonning-éy"]]
+    }
+    {:label "burji-VAffImperfect-mar"
+    :note "WedekindC1985 p. 115. Cf. Sass-Straube1977 p. 255."
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "mara"],
+	    [:Common, :Singular, :Person2, :Common, "marda"],
+	    [:Masc, :Singular, :Person3, :Common, "mara"],
+	    [:Fem, :Singular, :Person3, :Common, "marda"],
+	    [:Common, :Plural, :Person1, :Common, "marra"],
+	    [:Common, :Plural, :Person2, :Common, "marsingoo"],
+	    [:Common, :Plural, :Person3, :WPro, "mara"],
+	    [:Common, :Plural, :Person3, :WoPro, "marringoo"]]
+    }
+    {:label "burji-VNegImprtv-mar"
+    :note "WedekindC1985 p. 116 (cf. also 124)"
+    :common {:lexeme :mar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "maraas̆i"],
+	    [:Plural, "marakke"]]
+    }
+    {:label "burji-VNegSimplePerf-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "itann-éy"],
+	    [:Common, :Singular, :Person2, "itand-éy"],
+	    [:Masc, :Singular, :Person3, "itann-éy"],
+	    [:Fem, :Singular, :Person3, "itann-éy"],
+	    [:Common, :Plural, :Person1, "itannin-éy"],
+	    [:Common, :Plural, :Person2, "itanc̆ing-éy"],
+	    [:Common, :Plural, :Person3, "itanning-éy"]]
+    }
+    {:label "burji-VAffSimplePerf-mar"
+    :note "WedekindC1985 p. 114. Defective forms:for me/us to have gone"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:focus, :gender, :number, :person, :proType, :token]  ;; schema
+	    [:Defective, :Common, :Singular, :Person1, :Common, "maranni"],
+	    [:Defective, :Common, :Singular, :Person2, :Common, "marandu"],
+	    [:Defective, :Masc, :Singular, :Person3, :Common, "maranni"],
+	    [:Defective, :Fem, :Singular, :Person3, :Common, "maranni"],
+	    [:Defective, :Common, :Plural, :Person1, :Common, "maranninu"],
+	    [:Defective, :Common, :Plural, :Person2, :Common, "marancingu/maransinku"],
+	    [:Defective, :Common, :Plural, :Person3, :Common, "maranni"],
+	    [:Full, :Common, :Singular, :Person1, :Common, "maranno"],
+	    [:Full, :Common, :Singular, :Person2, :Common, "marandoo/marantoo"],
+	    [:Full, :Masc, :Singular, :Person3, :Common, "maranno"],
+	    [:Full, :Fem, :Singular, :Person3, :Common, "maranno"],
+	    [:Full, :Common, :Plural, :Person1, :Common, "maranninoo"],
+	    [:Full, :Common, :Plural, :Person2, :Common, "marancingoo/maransinkoo"],
+	    [:Full, :Common, :Plural, :Person3, :WPro, "marannoo"],
+	    [:Full, :Common, :Plural, :Person3, :WoPro, "maranningoo"]]
+    }
+    {:label "burji-VAffImperfProgCompound-mar"
+    :note "WedekindC1985 p. 122."
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :ImperfectProgressive,
+	    :formType :Compound}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "‘ani maranaa mara"],
+	    [:Common, :Singular, :Person2, :Common, "‘as̆I maranaa marda"],
+	    [:Masc, :Singular, :Person3, :Common, "‘isi maranaa mara"],
+	    [:Fem, :Singular, :Person3, :Common, "‘is̆I maranaa marda"],
+	    [:Common, :Plural, :Person1, :Common, "naanu maranaa marra"],
+	    [:Common, :Plural, :Person2, :Common, "‘as̆inu maranaa mars̆ingoo"],
+	    [:Common, :Plural, :Person3, :WPro, "‘isinu maranaa mara"],
+	    [:Common, :Plural, :Person3, :WoPro, "maranaa marringoo"]]
+    }
+    {:label "burji-VNegJuss-mar"
+    :note "WedekindC1985 p. 125"
+    :common {:lexeme :mar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Jussive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "‘ee marakki"],
+	    [:Masc, :Singular, :Person3, "‘isi marakki"],
+	    [:Fem, :Singular, :Person3, "‘is̆ee marakki"],
+	    [:Common, :Plural, :Person3, "‘isinoo marakki"]]
+    }
+    {:label "burji-VAffSimplePerfect-intey"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :intey,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "intanni"],
+	    [:Common, :Singular, :Person2, "intandu"],
+	    [:Masc, :Singular, :Person3, "intanni"],
+	    [:Fem, :Singular, :Person3, "intanni"],
+	    [:Common, :Plural, :Person1, "intanninu"],
+	    [:Common, :Plural, :Person2, "intanc̆ingu"],
+	    [:Common, :Plural, :Person3, "intanningu"]]
+    }
+    {:label "burji-VAffPresPerfCompound-mar"
+    :note "WedekindC1985 p. 121. Cf. also p. 115 and Sasse-Straube1977,p. 256"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentPerfect,
+	    :formType :Compound}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "(‘ani) marinaa yeɗu"],
+	    [:Common, :Singular, :Person2, :Common, "(‘as̆i) mardinaa yettu"],
+	    [:Masc, :Singular, :Person3, :Common, "(‘isi) marinaa yeɗa"],
+	    [:Common, :Singular, :Person3, :Id, "(‘issi) marinaa yeɗa"],
+	    [:Fem, :Singular, :Person3, :Common, "(‘is̆i) mardina yetta"],
+	    [:Common, :Plural, :Person1, :Common, "(naanu) marrinaa yennu"],
+	    [:Common, :Plural, :Person2, :Common, "(‘as̆inu) mars̆inginaa yeccingu"],
+	    [:Common, :Plural, :Person3, :WPro, "(‘isinu) marinaa yeɗa"],
+	    [:Common, :Plural, :Person3, :WoPro, "- maringinaa yeɗingu"]]
+    }
+    {:label "burji-VAffImperfect-ba’"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :ba’,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ba’ a"],
+	    [:Common, :Singular, :Person2, "baada"],
+	    [:Masc, :Singular, :Person3, "ba’ a"],
+	    [:Fem, :Singular, :Person3, "baada"],
+	    [:Common, :Plural, :Person1, "baana"],
+	    [:Common, :Plural, :Person2, "baas̆ingu"],
+	    [:Common, :Plural, :Person3, "baingu"]]
+    }
+    {:label "burji-VAffPresPerf-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentPerfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ani it-ina yed’u"],
+	    [:Common, :Singular, :Person2, "as̆I is̆s̆-ina yetttu"],
+	    [:Masc, :Singular, :Person3, "isi it-ina yed’a"],
+	    [:Fem, :Singular, :Person3, "is̆I is̆s̆-ina yetta"],
+	    [:Common, :Plural, :Person1, "naanu itin-ina yennu"],
+	    [:Common, :Plural, :Person2, "as̆inu is̆s̆ing-ina yec̆c̆ingu"],
+	    [:Common, :Plural, :Person3, "isinu iting-ina yed’ingu"]]
+    }
+    {:label "burji-VNegPerfect-mar"
+    :note "WedekindC1985 p. 125. [Not clear whether this is simply a negation of simplePerf,or of anything perfect/past.]"
+    :common {:lexeme :mar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Perfect}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "(‘ani) maranney’i"],
+	    [:Common, :Singular, :Person2, :Common, "(‘as̆i) marandey’i"],
+	    [:Masc, :Singular, :Person3, :Common, "(‘isi) maranney’i"],
+	    [:Fem, :Singular, :Person3, :Common, "(‘is̆i) marandey’i"],
+	    [:Common, :Plural, :Person1, :Common, "(naanu) maranniney’i"],
+	    [:Common, :Plural, :Person2, :Common, "(‘as̆inu) marancingey’i"],
+	    [:Common, :Plural, :Person3, :WPro, "(‘isinu) maranney’i"],
+	    [:Common, :Plural, :Person3, :WoPro, "maranningey’i"]]
+    }
+    {:label "burji-VNegImperfect-mar"
+    :note "WedekindC1985 p. 116,125."
+    :common {:lexeme :mar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "marey’i"],
+	    [:Common, :Singular, :Person2, :Common, "mardeyi"],
+	    [:Masc, :Singular, :Person3, :Common, "marey’i"],
+	    [:Fem, :Singular, :Person3, :Common, "mardey’i"],
+	    [:Common, :Plural, :Person1, :Common, "marrey’i"],
+	    [:Common, :Plural, :Person2, :Common, "marcingey’i"],
+	    [:Common, :Plural, :Person3, :WPro, "marrey’i"],
+	    [:Common, :Plural, :Person3, :WoPro, "marringey’i"]]
+    }
+    {:label "burji-VAffPluPerfCompound-mar"
+    :note "WedekindC1985 p. 121. Cf. also p. 115 and Sasse-Straube1977,p. 256"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Pluperfect,
+	    :formType :Compound}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "(‘ani) marinaa yeɗaɗanni/oo"],
+	    [:Common, :Singular, :Person2, :Common, "(‘asi) mardinaa yettooɗandu/oo"],
+	    [:Masc, :Singular, :Person3, :Common, "(‘isi) marinaa yeɗaɗdanni/oo"],
+	    [:Common, :Singular, :Person3, :Id, "(‘issi) marinaa yeɗaɗanni/oo"],
+	    [:Fem, :Singular, :Person3, :Common, "(‘isi) mardinaa yettaɗanni/oo"],
+	    [:Common, :Plural, :Person1, :Common, "(naanu) marrinaa yennooɗanninu/oo"],
+	    [:Common, :Plural, :Person2, :Common, "(‘asinu) maringinaa yeɗingooɗancingu/oo"],
+	    [:Common, :Plural, :Person3, :WPro, "(‘isinu) maringinaa yeɗingooɗanningu/oo"],
+	    [:Common, :Plural, :Person3, :WoPro, "- marinaa yeɗaɗanni/oo"]]
+    }
+    {:label "burji-VAffSimplePerfIrreg-beeh"
+    :note "WedekindC1985 p. 119. Different vowel suffixes esp. in 1st and 2nd sg. hayy- wish and yeɗ- be,exist belong to this class. yeɗ- also has past form but present meaning (common for verbs of existence in Ethiopian languages)."
+    :common {:lexeme :beeh,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :SimplePerfect}
+    :terms [[:gender, :number, :person, :proType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, "‘ee beehoo"],
+	    [:Common, :Singular, :Person2, :Common, "s̆ee beettoo"],
+	    [:Masc, :Singular, :Person3, :Common, "‘isa beeha"],
+	    [:Fem, :Singular, :Person3, :Common, "‘is̆ee beetta"],
+	    [:Common, :Plural, :Person1, :Common, "ninsa beehinnoo"],
+	    [:Common, :Plural, :Person2, :Common, "s̆insa beeccingoo"],
+	    [:Common, :Plural, :Person3, :WPro, "‘isinoo beeha"],
+	    [:Common, :Plural, :Person3, :WoPro, "- beenningoo"]]
+    }
+    {:label "burji-VAffJuss-mar"
+    :note "WedekindC1985 p. 123. (cf. also p. 115). (33) Full forms would be,for instance:haani maru-waa let me go!,haani maru-waa-see let me go!"
+    :common {:lexeme :mar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Jussive}
+    :terms [[:clauseMarker, :gender, :number, :person, :proType, :token]  ;; schema
+	    [:NoParticle, :Common, :Singular, :Person1, :Common, "(‘ani) maru"],
+	    [:NoParticle, :Masc, :Singular, :Person3, :Common, "(‘isi) maru"],
+	    [:NoParticle, :Fem, :Singular, :Person3, :Common, "(‘is̆i) mardu"],
+	    [:NoParticle, :Common, :Plural, :Person1, :Common, "(naanu) marru"],
+	    [:NoParticle, :Common, :Plural, :Person3, :Common, "(‘isinu) maringu"],
+	    [:Particle, :Common, :Singular, :Person1, :Common, "(‘ani) maru(waa)"],
+	    [:Particle, :Masc, :Singular, :Person3, :Common, "(‘isi) marooni"],
+	    [:Particle, :Fem, :Singular, :Person3, :Common, "(‘is̆i) marooni"],
+	    [:Particle, :Common, :Plural, :Person1, :Common, "(naanu) marrooni/maroonee"],
+	    [:Particle, :Common, :Plural, :Person3, :WPro, "(‘isinu) maringooni"],
+	    [:Particle, :Common, :Plural, :Person3, :WoPro, "(‘isinu) mardooni"]]
+    }
+    {:label "burji-VNegImperfect-it"
+    :note "Sasse-Straube1977 pp. 255-258."
+    :common {:lexeme :it,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "it-éy"],
+	    [:Common, :Singular, :Person2, "is̆s̆-éy"],
+	    [:Masc, :Singular, :Person3, "it-éy"],
+	    [:Fem, :Singular, :Person3, "is̆s̆-éy"],
+	    [:Common, :Plural, :Person1, "itin-éy"],
+	    [:Common, :Plural, :Person2, "is̆s̆ing-éy"],
+	    [:Common, :Plural, :Person3, "iting-éy"]]
+    }
+    {:label "burji-VAffImperfectReg-irreg"
+    :note "WedekindC1985 p. 120,paradigms #23 [mar-]and #24 [hayy-]. Author states:The first of the following imperfect paradigms is used when no further context is given. So every form in this paradigm is fully acceptable as a complete,well-formed utterance.[Not certain how to interpret this.]"
+    :common {:multiLex :IMPERFREG-IRREG,
+	    :pdgmType :Exemplary,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Imperfect}
+    :terms [[:conjClass, :gender, :lexeme, :number, :person, :proType, :token]  ;; schema
+	    [:Regular, :Common, :mar, :Singular, :Person1, :Common, "‘ee mara"],
+	    [:Regular, :Common, :mar, :Singular, :Person2, :Common, "s̆ee marda"],
+	    [:Regular, :Masc, :mar, :Singular, :Person3, :Common, "‘isa mara"],
+	    [:Regular, :Fem, :mar, :Singular, :Person3, :Common, "‘is̆ee marda"],
+	    [:Regular, :Common, :mar, :Plural, :Person1, :Common, "ninsa marra"],
+	    [:Regular, :Common, :mar, :Plural, :Person2, :Common, "s̆insa mars̆ingoo"],
+	    [:Regular, :Common, :mar, :Plural, :Person3, :WPro, "‘isinoo mara"],
+	    [:Regular, :Common, :mar, :Plural, :Person3, :WoPro, "- marringoo"],
+	    [:Irreg, :Common, :hayy, :Singular, :Person1, :Common, "hayy/oo"],
+	    [:Irreg, :Common, :hayy, :Singular, :Person2, :Common, "hayyidu/oo"],
+	    [:Irreg, :Masc, :hayy, :Singular, :Person3, :Common, "hayya"],
+	    [:Irreg, :Fem, :hayy, :Singular, :Person3, :Common, "hayyida"],
+	    [:Irreg, :Common, :hayy, :Plural, :Person1, :Common, "hayyinu/oo"],
+	    [:Irreg, :Common, :hayy, :Plural, :Person2, :Common, "hayyis̆ingu/oo"],
+	    [:Irreg, :Common, :hayy, :Plural, :Person3, :WPro, "hayyingu/oo"],
+	    [:Irreg, :Common, :hayy, :Plural, :Person3, :WoPro, "hayya"]]
+    }}
+:muterms #{
+    {:label "burji-PDemonstrative"
+    :note "Sasse-Straube1977 pp. 254-255. HudsonG1976 pp. 255-256. Note Sasse-Straube:Von den Demonstrativa sind nur die Formen der ,,hier’’ –Deixis (,dieser’ etc.) belegt– far deixis form is from Hudson."
+    :common {:morpheme :PRODEM,
+	    :pos :Pro,
+	    :proClass :Demonstrative}
+    :terms [[:case, :deixis, :gender, :number, :token]  ;; schema
+	    [:Absolutive, :Near, :Masc, :Singular, "ka"],
+	    [:Absolutive, :Near, :Fem, :Singular, "ta"],
+	    [:Absolutive, :Near, :Common, :Plural, "ci"],
+	    [:Nominative, :Near, :Masc, :Singular, "ku"],
+	    [:Nominative, :Near, :Fem, :Singular, "tu"],
+	    [:Nominative, :Near, :Common, :Plural, "ci"],
+	    [:Absolutive, :Far, :Masc, :Singular, "kaac"],
+	    [:Absolutive, :Far, :Fem, :Singular, "kaac"],
+	    [:Absolutive, :Far, :Common, :Plural, "kaac"],
+	    [:Nominative, :Far, :Masc, :Singular, "kaac"],
+	    [:Nominative, :Far, :Fem, :Singular, "kaac"],
+	    [:Nominative, :Far, :Common, :Plural, "kaac"]]
+    }
+    {:label "burji-VDervStem"
+    :note "WedekindC1985 pp. 133-139 Note discussions of consonant assimilations for causative –s- pp. 133-136,for benefactive pp. 136-137."
+    :common {:morpheme :DERVSTEM,
+	    :pos :Verb,
+	    :formType :Suffix,
+	    :verbMorphClass :DervStem}
+    :terms [[:derivedStem, :token]  ;; schema
+	    [:Causative1, "-(is)s-"],
+	    [:Causative2, "-(is)siis(s)-"],
+	    [:Benefactive, "-aɗ-"],
+	    [:Passive, "-am-"],
+	    [:Combo, "-s-aɗ-"],
+	    [:Denominal, "-aw-"],
+	    [:Reduplicated, "_NULL"]]
+    }
+    {:label "burji-PPersonal"
+    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
+    :common {:morpheme :PROPERSONAL,
+	    :pos :Pro,
+	    :proClass :Personal}
+    :terms [[:gender, :number, :person, :token, :type]  ;; schema
+	    [:Common, :Singular, :Person1, "ani", :Nom],
+	    [:Common, :Singular, :Person2, "as̆i", :Nom],
+	    [:Masc, :Singular, :Person3, "isi", :Nom],
+	    [:Fem, :Singular, :Person3, "is̆I (GH išee)", :Nom],
+	    [:Common, :Plural, :Person1, "naanu", :Nom],
+	    [:Common, :Plural, :Person2, "as̆inu", :Nom],
+	    [:Common, :Plural, :Person3, "isinu", :Nom],
+	    [:Common, :Singular, :Person1, "ee", :Abs],
+	    [:Common, :Singular, :Person2, "s̆ee ", :Abs],
+	    [:Masc, :Singular, :Person3, "isi (GH iši)", :Abs],
+	    [:Fem, :Singular, :Person3, "is̆ee (GH isee)", :Abs],
+	    [:Common, :Plural, :Person1, "ninsi", :Abs],
+	    [:Common, :Plural, :Person2, "s̆insi", :Abs],
+	    [:Common, :Plural, :Person3, "isinoo", :Abs],
+	    [:Common, :Singular, :Person1, "ee-na", :Obj],
+	    [:Common, :Singular, :Person2, "s̆ee-na", :Obj],
+	    [:Masc, :Singular, :Person3, "isi-na", :Obj],
+	    [:Fem, :Singular, :Person3, "is̆ee-na", :Obj],
+	    [:Common, :Plural, :Person1, "ninsi-na", :Obj],
+	    [:Common, :Plural, :Person2, "s̆insi-na", :Obj],
+	    [:Common, :Plural, :Person3, "isinoo-na", :Obj]]
+    }
+    {:label "burji-VSubjMarkers"
+    :note "WedekindC1985 p. 117. In the suffix,The –I -u forms are Perfect forms where relevance of the action to the Present is maintained. The –oo forms are Past forms used almost exclusively in narrative discourse."
+    :common {:morpheme :SUBJMARKERS,
+	    :pos :Verb,
+	    :verbMorphClass :SubjMarkers}
+    :terms [[:gender, :number, :person, :proType, :tam, :token-pro, :token-suff, :token, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Common, :Perfect, "‘ani", "-anni/-annoo", "‘ani =>  -anni/-annoo", "‘ani =>  -anni/-annoo"],
+	    [:Common, :Singular, :Person2, :Common, :Perfect, "‘as̆i", "-antu/-antoo", "‘as̆i =>  -antu/-antoo"],
+	    [:Masc, :Singular, :Person3, :Common, :Perfect, "‘isi", "-anni/-annoo", "‘isi =>  -anni/-annoo"],
+	    [:Fem, :Singular, :Person3, :Common, :Perfect, "‘as̆i", "-anni/-annoo", "‘as̆i =>  -anni/-annoo"],
+	    [:Common, :Plural, :Person1, :Common, :Perfect, "naanu", "-anninu/-anninoo", "naanu =>  -anninu/-anninoo"],
+	    [:Common, :Plural, :Person2, :Common, :Perfect, "‘as̆inu", "-ancingu/-ancingoo", "‘as̆inu =>  -ancingu/-ancingoo"],
+	    [:Masc, :Plural, :Person3, :Common, :Perfect, "‘isinu", "-anni/-annoo", "‘isinu =>  -anni/-annoo"],
+	    [:Fem, :Plural, :Person3, :Common, :Perfect, "Common", "-anningu/-anningoo", "Common =>  -anningu/-anningoo"],
+	    [:Common, :Singular, :Person1, :Common, :Imperfect, "Common", "-a", "Common =>  -a"],
+	    [:Common, :Singular, :Person2, :Common, :Imperfect, "Common", "-ta", "Common =>  -ta"],
+	    [:Masc, :Singular, :Person3, :Common, :Imperfect, "Common", "-a", "Common =>  -a"],
+	    [:Common, :Singular, :Person3, :Id, :Imperfect, "Common", "-a", "Common =>  -a"],
+	    [:Fem, :Singular, :Person3, :Common, :Imperfect, "Common", "-ta", "Common =>  -ta"],
+	    [:Common, :Plural, :Person1, :Common, :Imperfect, "Common", "-na", "Common =>  -na"],
+	    [:Common, :Plural, :Person2, :Common, :Imperfect, "Common", "-cingu/-cingoo", "Common =>  -cingu/-cingoo"],
+	    [:Masc, :Plural, :Person3, :Common, :Imperfect, "Common", "-a", "Common =>  -a"],
+	    [:Fem, :Plural, :Person3, :Common, :Imperfect, "Common", "-ingu/-ingoo", "Common =>  -ingu/-ingoo"]]
+    }
+    {:label "burji-PInterr"
+    :note "HudsonG1976 p. 259."
+    :common {:morpheme :PROINTERROG,
+	    :pos :Pro,
+	    :proClass :Interrogative}
+    :terms [[:interrogClass, :token]  ;; schema
+	    [:InterrogProWho, "ay(y)e"],
+	    [:InterrogProWhat, "miya"],
+	    [:InterrogProWhen, "haynu"],
+	    [:InterrogProWhere, "haballa"],
+	    [:InterrogProHow, "maamma"],
+	    [:InterrogProHowMany, "mia"]]
+    }
+    {:label "burji-PPoss"
+    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
+    :common {:morpheme :PROPOSS,
+	    :pos :Pro,
+	    :proClass :Possessive}
+    :terms [[:caseHead, :genderHead, :gender, :number, :person, :token]  ;; schema
+	    [:Absolutive, :Masc, :Common, :Singular, :Person1, "iiya"],
+	    [:Absolutive, :Masc, :Common, :Singular, :Person2, "s̆iiya"],
+	    [:Absolutive, :Masc, :Masc, :Singular, :Person3, "isaka"],
+	    [:Absolutive, :Masc, :Fem, :Singular, :Person3, "is̆eeka"],
+	    [:Absolutive, :Masc, :Common, :Plural, :Person1, "ninka"],
+	    [:Absolutive, :Masc, :Common, :Plural, :Person2, "s̆inka"],
+	    [:Absolutive, :Masc, :Common, :Plural, :Person3, "isinaka"],
+	    [:Nominative, :Masc, :Common, :Singular, :Person1, "iiyu"],
+	    [:Nominative, :Masc, :Common, :Singular, :Person2, "s̆iiyu"],
+	    [:Nominative, :Masc, :Masc, :Singular, :Person3, "isaku"],
+	    [:Nominative, :Masc, :Fem, :Singular, :Person3, "is̆eeku"],
+	    [:Nominative, :Masc, :Common, :Plural, :Person1, "ninku"],
+	    [:Nominative, :Masc, :Common, :Plural, :Person2, "s̆inku"],
+	    [:Nominative, :Masc, :Common, :Plural, :Person3, "isinaku"],
+	    [:Absolutive, :Fem, :Common, :Singular, :Person1, "ita"],
+	    [:Absolutive, :Fem, :Common, :Singular, :Person2, "s̆ita"],
+	    [:Absolutive, :Fem, :Masc, :Singular, :Person3, "isata"],
+	    [:Absolutive, :Fem, :Fem, :Singular, :Person3, "is̆eeta"],
+	    [:Absolutive, :Fem, :Common, :Plural, :Person1, "ninta"],
+	    [:Absolutive, :Fem, :Common, :Plural, :Person2, "s̆inta"],
+	    [:Absolutive, :Fem, :Common, :Plural, :Person3, "isinata"],
+	    [:Nominative, :Fem, :Common, :Singular, :Person1, "ic̆(i)"],
+	    [:Nominative, :Fem, :Common, :Singular, :Person2, "s̆ic̆(i)"],
+	    [:Nominative, :Fem, :Masc, :Singular, :Person3, "isic̆(i)"],
+	    [:Nominative, :Fem, :Fem, :Singular, :Person3, "is̆ic̆(i)"],
+	    [:Nominative, :Fem, :Common, :Plural, :Person1, "ninc̆(i)"],
+	    [:Nominative, :Fem, :Common, :Plural, :Person2, "s̆inc̆(i)"],
+	    [:Nominative, :Fem, :Common, :Plural, :Person3, "isinac̆(i)"]]
+    }
+    {:label "burji-PInd"
+    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
+    :common {:pos :Pro,
+	    :morpheme :PROIND,
+	    :proClass :Independent}
+    :terms [[:gender, :number, :person, :token, :type]  ;; schema
+	    [:Common, :Singular, :Person1, "ani", :Nominative],
+	    [:Common, :Singular, :Person2, "as̆i", :Nominative],
+	    [:Masc, :Singular, :Person3, "isi", :Nominative],
+	    [:Fem, :Singular, :Person3, "is̆I (GH išee)", :Nominative],
+	    [:Common, :Plural, :Person1, "naanu", :Nominative],
+	    [:Common, :Plural, :Person2, "as̆inu", :Nominative],
+	    [:Common, :Plural, :Person3, "isinu", :Nominative],
+	    [:Common, :Singular, :Person1, "ee", :Absolutive],
+	    [:Common, :Singular, :Person2, "s̆eeabs", :Absolutive],
+	    [:Fem, :Singular, :Person3, "is̆ee (GH isee)", :Absolutive],
+	    [:Common, :Plural, :Person1, "ninsi", :Absolutive],
+	    [:Common, :Plural, :Person2, "s̆insi", :Absolutive],
+	    [:Common, :Plural, :Person3, "isinoo", :Absolutive],
+	    [:Common, :Singular, :Person1, "ee-na", :Object],
+	    [:Common, :Singular, :Person2, "s̆ee-na", :Object],
+	    [:Masc, :Singular, :Person3, "isi-na", :Object],
+	    [:Fem, :Singular, :Person3, "is̆ee-na", :Object],
+	    [:Common, :Plural, :Person1, "ninsi-na", :Object],
+	    [:Common, :Plural, :Person2, "s̆insi-na", :Object],
+	    [:Common, :Plural, :Person3, "isinoo-na", :Object]]
+    }}

@@ -1,0 +1,278 @@
+:lang :maale
+:schemata [:case {:Ablative, :Absolutive, :Common, :Dative, :Instrumental, :Nominative, :Possessive}
+	  :clauseType {:Causal, :Common, :Conditional, :Converb1, :Converb2, :Converb3, :Declarative, :Imperative, :InterrDubitative, :InterrNonPolar, :InterrPolar, :Optative, :Preventive, :Purposive1, :Purposive2, :Simultaneous, :Temporal1, :Temporal2}
+	  :derivedStem {:Causative, :Causative2, :Denominal, :Inchoative, :Intensive, :Passive, :PassiveCausative, :Reflexive}
+	  :gender {:Common, :Fem, :Masc}
+	  :modal {:Common, :Mirative, :NewInfo, :NonVerbal, :Perfective, :Veridical}
+	  :multiLex {:VROOTSTRUCTURE}
+	  :number {:Common, :Plural, :Singular}
+	  :person {:Common, :Person1, :Person2, :Person3, :Person3Ref}
+	  :polarity {:Affirmative, :Negative}
+	  :pos {:Pro, :Verb}
+	  :possType {:Poss1, :Poss2, :PossNom1, :PossNom2}
+	  :proClass {:BasicPro, :CaseMarking, :Possessive, :Pro2ary, :ProInd, :Restrictive}
+	  :rootStructure {:Group1, :Group2}
+	  :tam {:Common, :Imperfective, :ImperfectiveFuture, :ImperfectivePresent, :InterrPerm, :Perfective}
+	  :temporal {:Clauses}
+	  :verbMorphClass {:BE, :DervStem, :InflectionTemplate, :RootStructure}
+	  ]
+:morphemes {
+  :COPULABE {:gloss "[x]", :lemma "[y]", }
+  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
+  :PRO@ARY {:gloss "[x]", :lemma "[y]", }
+  :PROBASIC {:gloss "[x]", :lemma "[y]", }
+  :PROCASEMARKING {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
+  :PROPOSS {:gloss "[x]", :lemma "[y]", }
+  :PRORESTRICTIVE {:gloss "[x]", :lemma "[y]", }
+  :VINFLECTIONTEMPLATE {:gloss "[x]", :lemma "[y]", }
+}
+:lexemes {
+  :_NULL {:lemma "múʔ", :gloss "eat", }
+  :ba {:lemma "bá-", :gloss "not exist", }
+}
+:lxterms #{}
+:muterms #{
+    {:label "maale-P2ary"
+    :note "Amha2001 #4.2."
+    :common {:morpheme :PRO@ARY,
+	    :pos :Pro,
+	    :proClass :Pro2ary}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Nominative, :Masc, :Singular, :Person3, "ʔi-z-í"],
+	    [:Nominative, :Fem, :Singular, :Person3, "ʔi-z-á"],
+	    [:Nominative, :Common, :Plural, :Person2, "ʔ-ntsí"],
+	    [:Nominative, :Common, :Plural, :Person3, "í-yát-á"],
+	    [:Absolutive, :Masc, :Singular, :Person3, "ʔi-z-á"],
+	    [:Absolutive, :Fem, :Singular, :Person3, "ʔi-z-ó"],
+	    [:Absolutive, :Common, :Plural, :Person2, "ʔ-ntsi"],
+	    [:Absolutive, :Common, :Plural, :Person3, "í-yát-ó"],
+	    [:Possessive, :Masc, :Singular, :Person3, "ʔi-z-á"],
+	    [:Possessive, :Fem, :Singular, :Person3, "ʔi-z-ó"],
+	    [:Possessive, :Common, :Plural, :Person2, "ʔ-ntsi"],
+	    [:Possessive, :Common, :Plural, :Person3, "í-yát-ó"]]
+    }
+    {:label "maale-PPoss"
+    :note "Amha2001 Table 4.2. PossType:poss1 – basic;poss2 – when possessed noun is
+            modified;possNom1 – possessive noun involving known possession;possNom2 – possessive
+            noun involving unknown possession"
+    :common {:case :Possessive,
+	    :morpheme :PROPOSS,
+	    :pos :Pro,
+	    :proClass :Possessive}
+    :terms [[:gender, :number, :person, :possType, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Poss1, "ta"],
+	    [:Common, :Singular, :Person2, :Poss1, "ne"],
+	    [:Masc, :Singular, :Person3, :Poss1, "ʔízá"],
+	    [:Fem, :Singular, :Person3, :Poss1, "ʔízó"],
+	    [:Common, :Plural, :Person1, :Poss1, "nu"],
+	    [:Common, :Plural, :Person2, :Poss1, "ʔíntsi"],
+	    [:Common, :Plural, :Person3, :Poss1, "ʔiyátó"],
+	    [:Common, :Singular, :Person1, :Poss2, "taa-kó"],
+	    [:Common, :Singular, :Person2, :Poss2, "nee-kó"],
+	    [:Masc, :Singular, :Person3, :Poss2, "ʔíza-ko"],
+	    [:Fem, :Singular, :Person3, :Poss2, "ʔízo-ko"],
+	    [:Common, :Plural, :Person1, :Poss2, "nuu-ko"],
+	    [:Common, :Plural, :Person2, :Poss2, "ʔíntsi-ko"],
+	    [:Common, :Plural, :Person3, :Poss2, "ʔiyátó-ko"],
+	    [:Common, :Singular, :Person1, :PossNom1, "taa-ró"],
+	    [:Common, :Singular, :Person2, :PossNom1, "nee-ró"],
+	    [:Masc, :Singular, :Person3, :PossNom1, "ʔíza-ro"],
+	    [:Fem, :Singular, :Person3, :PossNom1, "ʔízó-ro"],
+	    [:Common, :Plural, :Person1, :PossNom1, "nuu-ró"],
+	    [:Common, :Plural, :Person2, :PossNom1, "ʔíntsi-ro"],
+	    [:Common, :Plural, :Person3, :PossNom1, "ʔiyátó-ro"],
+	    [:Common, :Singular, :Person1, :PossNom2, "taa-ssi"],
+	    [:Common, :Singular, :Person2, :PossNom2, "nee-ssi"],
+	    [:Masc, :Singular, :Person3, :PossNom2, "ʔízá-ssi"],
+	    [:Fem, :Singular, :Person3, :PossNom2, "ʔízó-ssi"],
+	    [:Common, :Plural, :Person1, :PossNom2, "nuu-ssi"],
+	    [:Common, :Plural, :Person2, :PossNom2, "ʔíntsi-ssi"],
+	    [:Common, :Plural, :Person3, :PossNom2, "ʔiyátó-ssi"]]
+    }
+    {:label "maale-PRestrictive"
+    :note "Amha2001 #4.5. I alone,you alone,."
+    :common {:morpheme :PRORESTRICTIVE,
+	    :pos :Pro,
+	    :proClass :Restrictive}
+    :terms [[:number, :person, :token]  ;; schema
+	    [:Singular, :Person1, "taasi"],
+	    [:Singular, :Person2, "neesi"],
+	    [:Common, :Person3, "peesi"],
+	    [:Plural, :Person1, "nuusi"],
+	    [:Plural, :Person2, "ʔíntsísi"]]
+    }
+    {:label "maale-VInflectionTemplate"
+    :note "Amha2001 Ch. 7 (summary p. 158);Ch. 8 (summary p. 202). Maale verb morphology
+            does not include subject agreement,with partial exception of imperative-optative.
+            Inflectional template is:[VRoot (+ dervSuff)](+ AspectMarker) + moodClauseMarker.
+            Attested combinations of aspect and clause suffixes given in paradigm."
+    :common {:morpheme :VINFLECTIONTEMPLATE,
+	    :pos :Verb,
+	    :token-vStem :múʔ-,
+	    :verbMorphClass :InflectionTemplate}
+    :terms [[:tam, :clauseType, :modal, :number, :person, :polarity, :token-aspSuff, :token-clauseSuff, :token, :token, :token-glossNote]  ;; schema
+	    [:Perfective, :Declarative, :Common, :Common, :Common, :Affirmative, "Common", "-ne", "Common . . .  -ne", "Common . . .  -ne", ""],
+	    [:ImperfectivePresent, :Declarative, :Common, :Common, :Common, :Affirmative, "Common", "-ne", "Common . . .  -ne", ""],
+	    [:ImperfectiveFuture, :Declarative, :Common, :Common, :Common, :Affirmative, "-andá-", "-ne", "-andá- . . .  -ne", ""],
+	    [:Perfective, :Declarative, :Common, :Common, :Common, :Negative, "-ibá-", "-se", "-ibá- . . .  -se", ""],
+	    [:Imperfective, :Declarative, :Common, :Common, :Common, :Negative, "-uwá-", "-se", "-uwá- . . .  -se", ""],
+	    [:Perfective, :Declarative, :Mirative, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "contrary to expectation"],
+	    [:ImperfectivePresent, :Declarative, :Mirative, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "contrary to expectation"],
+	    [:Common, :Declarative, :Veridical, :Common, :Common, :Affirmative, "Common", "-i", "Common . . .  -i", "Emphatic"],
+	    [:Perfective, :InterrNonPolar, :Common, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "asking for content info"],
+	    [:ImperfectivePresent, :InterrNonPolar, :Common, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "asking for content info"],
+	    [:ImperfectiveFuture, :InterrNonPolar, :Common, :Common, :Common, :Affirmative, "-andá-", "-y", "-andá- . . .  -y", "asking for content info"],
+	    [:Perfective, :InterrPolar, :Common, :Common, :Common, :Affirmative, "-íya-", "RisingIntonation", "-íya- . . .  RisingIntonation", "yes-no"],
+	    [:ImperfectivePresent, :InterrPolar, :Common, :Common, :Common, :Affirmative, "Common", "RisingIntonation", "Common . . .  RisingIntonation", "yes-no"],
+	    [:ImperfectiveFuture, :InterrPolar, :Common, :Common, :Common, :Affirmative, "-andá-", "RisingIntonation", "-andá- . . .  RisingIntonation", "yes-no"],
+	    [:InterrPerm, :Common, :Common, :Common, :Common, :Affirmative, "-ondó", "Common", "-ondó . . .  Common", "ask permission"],
+	    [:ImperfectiveFuture, :InterrDubitative, :Common, :Common, :Common, :Affirmative, "-andá-", "-sinway", "-andá- . . .  -sinway", "Dubitative"],
+	    [:InterrPerm, :InterrDubitative, :Common, :Common, :Common, :Affirmative, "-ondó", "-sinway", "-ondó . . .  -sinway", "DubitativePermission"],
+	    [:Common, :Declarative, :NewInfo, :Common, :Common, :Affirmative, "Common", "-ískáy", "Common . . .  -ískáy", ""],
+	    [:Common, :Declarative, :NonVerbal, :Common, :Common, :Affirmative, "Common", "-ke", "Common . . .  -ke", ""],
+	    [:Common, :Declarative, :Perfective, :Common, :Common, :Affirmative, "Common", "-íya", "Common . . .  -íya", ""],
+	    [:Common, :Imperative, :Common, :Singular, :Person2, :Affirmative, "Common", "Common", "Common . . .  Common", ""],
+	    [:Common, :Imperative, :Common, :Plural, :Person2, :Affirmative, "Common", "-uwáte", "Common . . .  -uwáte", ""],
+	    [:Common, :Imperative, :Common, :Singular, :Person2, :Negative, "Common", "-íppo", "Common . . .  -íppo", ""],
+	    [:Common, :Imperative, :Common, :Plural, :Person2, :Negative, "Common", "-íppote", "Common . . .  -íppote", ""],
+	    [:Common, :Optative, :Common, :Common, :Person1, :Affirmative, "Common", "-óm", "Common . . .  -óm", ""],
+	    [:Common, :Optative, :Common, :Common, :Person3, :Affirmative, "Common", "-óngó ~ -ónko", "Common . . .  -óngó ~ -ónko", ""],
+	    [:Perfective, :Conditional, :Common, :Common, :Common, :Affirmative, "Common", "-to", "Common . . .  -to", ""],
+	    [:ImperfectivePresent, :Conditional, :Common, :Common, :Common, :Affirmative, "Common", "-to", "Common . . .  -to", ""],
+	    [:Perfective, :Causal, :Common, :Common, :Common, :Affirmative, "Common", "-tsi-ró", "Common . . .  -tsi-ró", ""],
+	    [:ImperfectivePresent, :Causal, :Common, :Common, :Common, :Affirmative, "Common", "-tsi-ró", "Common . . .  -tsi-ró", ""],
+	    [:ImperfectivePresent, :Simultaneous, :Common, :Common, :Common, :Affirmative, "Common", "-nte", "Common . . .  -nte", "different subject"],
+	    [:Perfective, :Preventive, :Common, :Common, :Common, :Affirmative, "Common", "-nte", "Common . . .  -nte", "Counterfactual"],
+	    [:ImperfectiveFuture, :Preventive, :Common, :Common, :Common, :Affirmative, "-andá-", "-nte", "-andá- . . .  -nte", "Counterfactual"],
+	    [:ImperfectiveFuture, :Preventive, :Common, :Common, :Common, :Affirmative, "-andá-", "-nte-ke", "-andá- . . .  -nte-ke", "Counterfactual_main_clause"],
+	    [:Common, :Temporal1, :Common, :Common, :Common, :Affirmative, "Common", "-áza", "Common . . .  -áza", "InterrogProWhen"],
+	    [:Common, :Temporal2, :Common, :Common, :Common, :Affirmative, "Common", "-áána", "Common . . .  -áána", "as soon as"],
+	    [:Common, :Purposive1, :Common, :Common, :Common, :Affirmative, "Common", "-aní", "Common . . .  -aní", "same subject (infinitive)"],
+	    [:Common, :Purposive2, :Common, :Common, :Common, :Affirmative, "Common", "-óm", "Common . . .  -óm", "different subject"],
+	    [:Common, :Purposive1, :Common, :Common, :Common, :Affirmative, "Common", "-ani-ke", "Common . . .  -ani-ke", "DefiniteFuture"],
+	    [:Common, :Converb1, :Common, :Common, :Common, :Affirmative, "Common", "Common", "Common . . .  Common", "SequentialSimultaneous_Same_Subject"],
+	    [:Common, :Converb2, :Common, :Common, :Common, :Affirmative, "Common", "-ém", "Common . . .  -ém", "different subject"],
+	    [:Common, :Converb3, :Common, :Common, :Common, :Affirmative, "Common", "Common", "Common . . .  Common", "Sequential_Same_Subject"]]
+    }
+    {:label "maale-PBasicPro"
+    :note "Amha2001 #4.1"
+    :common {:morpheme :PROBASIC,
+	    :pos :Pro,
+	    :proClass :BasicPro}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Common, :Masc, :Singular, :Person3Ref, "pe"],
+	    [:Possessive, :Common, :Singular, :Person1, "ta"],
+	    [:Possessive, :Common, :Singular, :Person2, "ne"],
+	    [:Possessive, :Masc, :Singular, :Person3, "⊤"],
+	    [:Possessive, :Common, :Plural, :Person1, "nu"],
+	    [:Common, :Common, :Singular, :Person1, "tá"],
+	    [:Common, :Common, :Singular, :Person2, "né"],
+	    [:Common, :Masc, :Singular, :Person3, "⊤"],
+	    [:Common, :Common, :Plural, :Person1, "nú"]]
+    }
+    {:label "maale-VBE"
+    :note "Amha2001 #5.3.1.3 The various verbs BE/EXIST only occur with aspect suffixes
+            noted in paradigm."
+    :common {:morpheme :COPULABE,
+	    :pos :Verb,
+	    :temporal :Clauses,
+	    :verbMorphClass :BE}
+    :terms [[:tam, :polarity, :token-aspSuff, :token-beStem, :token-occurrences, :token, :token]  ;; schema
+	    [:ImperfectivePresent, :Affirmative, "Common", "t-", "PresentConditionals", "t- . . .  Common : PresentConditionals", "t- . . .  Common : PresentConditionals"],
+	    [:ImperfectivePresent, :Negative, "-uwá-", "t-", "NegativeIdentity", "t- . . .  -uwá- : NegativeIdentity"],
+	    [:ImperfectivePresent, :Affirmative, "Common", "d-", "Interrogative", "d- . . .  Common : Interrogative"],
+	    [:ImperfectiveFuture, :Affirmative, "-andá-", "N-", "Dubitative", "N- . . .  -andá- : Dubitative"],
+	    [:ImperfectivePresent, :Affirmative, "Common", "Common", "with imperfPres even when situation refers to past event"],
+	    [:Common, :Negative, "Common", "ba-", "without aspect:bá-se does not exist", "ba- . . .  Common : without aspect:bá-se does not exist"]]
+    }
+    {:label "maale-PCaseMarking"
+    :note "Amha2001 #4.6"
+    :common {:morpheme :PROCASEMARKING,
+	    :pos :Pro,
+	    :proClass :CaseMarking}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Nominative, :Common, :Singular, :Person1, "táání"],
+	    [:Nominative, :Common, :Singular, :Person2, "nééní"],
+	    [:Nominative, :Masc, :Singular, :Person3, "ʔízí / ʔííní"],
+	    [:Nominative, :Fem, :Singular, :Person3, "⊤"],
+	    [:Nominative, :Common, :Plural, :Person1, "núúní"],
+	    [:Nominative, :Common, :Plural, :Person2, "ʔíntsí"],
+	    [:Nominative, :Common, :Plural, :Person3, "ʔiyáta"],
+	    [:Absolutive, :Common, :Singular, :Person1, "táná"],
+	    [:Absolutive, :Common, :Singular, :Person2, "néná"],
+	    [:Absolutive, :Masc, :Singular, :Person3, "ʔízá"],
+	    [:Absolutive, :Fem, :Singular, :Person3, "ʔízó"],
+	    [:Absolutive, :Common, :Plural, :Person1, "núná"],
+	    [:Absolutive, :Common, :Plural, :Person2, "ʔíntsi"],
+	    [:Absolutive, :Common, :Plural, :Person3, "ʔiyátó"],
+	    [:Dative, :Common, :Singular, :Person1, "táám"],
+	    [:Dative, :Common, :Singular, :Person2, "néém"],
+	    [:Dative, :Masc, :Singular, :Person3, "ʔízám"],
+	    [:Dative, :Fem, :Singular, :Person3, "ʔízóm"],
+	    [:Dative, :Common, :Plural, :Person1, "núúm"],
+	    [:Dative, :Common, :Plural, :Person2, "ʔíntsim"],
+	    [:Dative, :Common, :Plural, :Person3, "ʔiyátóm"],
+	    [:Ablative, :Common, :Singular, :Person1, "tááppe"],
+	    [:Ablative, :Common, :Singular, :Person2, "nééppe"],
+	    [:Ablative, :Masc, :Singular, :Person3, "ʔízáppe"],
+	    [:Ablative, :Fem, :Singular, :Person3, "ʔízóppe"],
+	    [:Ablative, :Common, :Plural, :Person1, "núúppe"],
+	    [:Ablative, :Common, :Plural, :Person2, "ʔíntsippe"],
+	    [:Ablative, :Common, :Plural, :Person3, "ʔiyátóppe"],
+	    [:Instrumental, :Common, :Singular, :Person1, "táána"],
+	    [:Instrumental, :Common, :Singular, :Person2, "nééna"],
+	    [:Instrumental, :Masc, :Singular, :Person3, "ʔízána"],
+	    [:Instrumental, :Fem, :Singular, :Person3, "ʔízóna"],
+	    [:Instrumental, :Common, :Plural, :Person1, "núúna"],
+	    [:Instrumental, :Common, :Plural, :Person2, "ʔíntsina"],
+	    [:Instrumental, :Common, :Plural, :Person3, "ʔiyátóna"]]
+    }
+    {:label "maale-VDervStem"
+    :note "Amha2001 #5.2. Author gives many phonological and semantic details about affix
+            and verb-stem alternations and lexico-semantic effects."
+    :common {:morpheme :DERVSTEM,
+	    :pos :Verb,
+	    :verbMorphClass :DervStem}
+    :terms [[:derivedStem, :token]  ;; schema
+	    [:Causative, "-is- ~ -iš- ~ -z- ~ -s- ~ cc- goes_to cc- ~ šk- goes_to šš- / šk-is-"],
+	    [:Causative2, "-is-is-"],
+	    [:Reflexive, "-t-"],
+	    [:Passive, "-ínt-"],
+	    [:PassiveCausative, "-ínt-is-"],
+	    [:Intensive, "#CV"],
+	    [:Inchoative, "-Ø- ~ -at- ~ -aɗ-"],
+	    [:Denominal, "-k- ~ -k-"]]
+    }
+    {:label "maale-PProInd"
+    :note "Amha2001 Table 4.1. 3Ref,called logophoric third person – 3LOGby Amha2001,is
+            unmarked for case,num,and gen. This pronoun occurs only when there is a co-referential
+            third person subject in the same sentence. It cannot e used co-referentially across
+            sentences(p. 87)."
+    :common {:morpheme :PROIND,
+	    :pos :Pro,
+	    :proClass :ProInd}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Common, :Common, :Common, :Person3Ref, "pe-"],
+	    [:Possessive, :Common, :Singular, :Person1, "ta"],
+	    [:Possessive, :Common, :Singular, :Person2, "ne"],
+	    [:Possessive, :Masc, :Singular, :Person3, "ʔízá"],
+	    [:Possessive, :Fem, :Singular, :Person3, "ʔízó"],
+	    [:Possessive, :Common, :Plural, :Person1, "nu"],
+	    [:Possessive, :Common, :Plural, :Person2, "ʔíntsi"],
+	    [:Possessive, :Common, :Plural, :Person3, "ʔiyátó"],
+	    [:Nominative, :Common, :Singular, :Person1, "táání / tá"],
+	    [:Nominative, :Common, :Singular, :Person2, "nééní / né"],
+	    [:Nominative, :Masc, :Singular, :Person3, "ʔízí / ʔííní / ʔí"],
+	    [:Nominative, :Fem, :Singular, :Person3, "ʔízá"],
+	    [:Nominative, :Common, :Plural, :Person1, "núúní / nú"],
+	    [:Nominative, :Common, :Plural, :Person2, "ʔíntsí"],
+	    [:Nominative, :Common, :Plural, :Person3, "ʔiyátá"],
+	    [:Absolutive, :Common, :Singular, :Person1, "táná"],
+	    [:Absolutive, :Common, :Singular, :Person2, "néná"],
+	    [:Absolutive, :Masc, :Singular, :Person3, "ʔízá"],
+	    [:Absolutive, :Fem, :Singular, :Person3, "ʔízó"],
+	    [:Absolutive, :Common, :Plural, :Person1, "núná"],
+	    [:Absolutive, :Common, :Plural, :Person2, "ʔíntsi"],
+	    [:Absolutive, :Common, :Plural, :Person3, "ʔiyátó"]]
+    }}

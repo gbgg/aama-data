@@ -5,11 +5,11 @@
 
 echo "xml2edn" >> logs/xml2edn.log;
 
-for d in `ls -d data`
-do
-    echo "$d ********************************************"
-	fs=`find $d -name *xml`
-	#fs=`find $1 -name *xml`
+#for d in `ls -d data`
+#do
+ #   echo "$d ********************************************"
+#	fs=`find $d -name *xml`
+	fs=`find $1 -name *xml`
 	for f in $fs
 	do
 		lang=${f%\.xml}
@@ -24,4 +24,3 @@ do
 		# set +x;
 	done
 #done
-
