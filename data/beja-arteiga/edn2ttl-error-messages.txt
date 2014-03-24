@@ -1,0 +1,28 @@
+java -jar ../.jar/aama-edn2ttl.jar data/beja-arteiga/beja-arteiga-pdgms.edn > data/beja-arteiga/beja-arteiga-pdgms.ttl
+
+../bin/lein.bat run beja-arteiga-pdgms-trial.edn > beja-arteiga-pdgms-trial.ttl
+
+
+Exception in thread "main" java.lang.RuntimeException: Invalid token: :
+        at clojure.lang.Util.runtimeException(Util.java:219)
+        at clojure.lang.EdnReader.interpretToken(EdnReader.java:292)
+        at clojure.lang.EdnReader.read(EdnReader.java:174)
+        at clojure.lang.EdnReader.readDelimitedList(EdnReader.java:704)
+        at clojure.lang.EdnReader$VectorReader.invoke(EdnReader.java:630)
+        at clojure.lang.EdnReader.readDelimitedList(EdnReader.java:695)
+        at clojure.lang.EdnReader$VectorReader.invoke(EdnReader.java:630)
+        at clojure.lang.EdnReader.readDelimitedList(EdnReader.java:695)
+        at clojure.lang.EdnReader$MapReader.invoke(EdnReader.java:638)
+        at clojure.lang.EdnReader.readDelimitedList(EdnReader.java:695)
+        at clojure.lang.EdnReader$SetReader.invoke(EdnReader.java:649)
+        at clojure.lang.EdnReader$DispatchReader.invoke(EdnReader.java:512)
+        at clojure.lang.EdnReader.readDelimitedList(EdnReader.java:695)
+        at clojure.lang.EdnReader$MapReader.invoke(EdnReader.java:638)
+        at clojure.lang.EdnReader.read(EdnReader.java:148)
+        at clojure.lang.EdnReader.read(EdnReader.java:114)
+        at clojure.lang.EdnReader.readString(EdnReader.java:66)
+        at clojure.edn$read_string.invoke(edn.clj:46)
+        at clojure.edn$read_string.invoke(edn.clj:45)
+        at edn2ttl2.core$_main.doInvoke(core.clj:16)
+        at clojure.lang.RestFn.applyTo(RestFn.java:137)
+        at edn2ttl2.core.main(Unknown Source)

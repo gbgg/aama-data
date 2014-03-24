@@ -14,7 +14,7 @@
   <xsl:strip-space elements="*"/>
 
   <xsl:param name="lang" required="yes"/>
-<!--  <xsl:param name="abbr" required="yes"/>-->
+  <xsl:param name="abbr" required="yes"/>
 <!--  <xsl:param name="langVar" required="no"/>-->
 
   <xsl:variable name="aamaURI">
@@ -50,12 +50,20 @@
 <!-- } -->
 <!-- </xsl:text> -->
 
+    <xsl:text>{
+</xsl:text>
     <xsl:text>:lang :</xsl:text>
     <xsl:value-of select="$lang"/>
     <xsl:text>
 </xsl:text>
+    <xsl:text>:sgpref "</xsl:text>
+    <xsl:value-of select="$abbr"/>
+    <xsl:text>"
+</xsl:text>
 
-    <xsl:text>:schemata [</xsl:text>
+    <xsl:text>:schemata {</xsl:text>
+    <xsl:text>
+</xsl:text>
     <xsl:for-each-group select="//prop"
 			group-by="@type">
       <xsl:sort select="@type"/>
@@ -73,7 +81,7 @@
 	<xsl:otherwise>
 	  <xsl:text>:</xsl:text>
 	  <xsl:value-of select="@type"/>
-	  <xsl:text> {</xsl:text>
+	  <xsl:text> [</xsl:text>
 	  <xsl:for-each-group select="current-group()"
 			      group-by="@val">
 	    <xsl:sort select="@val"/>
@@ -83,15 +91,17 @@
 	      <xsl:text>, </xsl:text>
 	    </xsl:if>
 	  </xsl:for-each-group>
-	  <xsl:text>}
+	  <xsl:text>]
 	  </xsl:text>
 	</xsl:otherwise>
       </xsl:choose>
     </xsl:for-each-group>
-    <xsl:text>]
+    <xsl:text>}
 </xsl:text>
 
     <xsl:apply-templates/>
+    <xsl:text>}
+</xsl:text>
 
   </xsl:template>
 
