@@ -1,21 +1,19 @@
 #!/bin/bash
-# usage:  ~/aama-data/bin/copy2langrepo.sh
+# usage:  ~/aama-data/bin/edn2ttl.sh "dir"
 
 # 03/21/14: 
 
 . bin/constants.sh
 
-for d in `ls -d data`
-do
-echo "$d ********************************************"
-fs=`find $d -name *xml`
-#fs=`find $1 -name *xml`
-	for f in $fs
+ 
+#for d in `ls data`
+#do
+ #    echo "$d ********************************************"
+	#fs=`find data/$d -name *edn`
+	fs=`find $1 -name *edn`
+    for f in $fs
 	do
-		lang=`basename ${f%-pdgms\.xml}`
-		echo copying files for $lang to aama/$lang
-		cp data/$lang/$lang-pdgms\.xml ../aama/$lang/
-		cp data/$lang/$lang-pdgms\.edn ../aama/$lang/
+		echo "generating ${f%\.edn}.ttl  from  $f "
+		java -jar ../.jar/aama-edn2ttl.jar $f > ${f%\.edn}.ttl
 	done
-done
-
+#done
