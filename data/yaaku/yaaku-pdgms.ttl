@@ -1,3 +1,3740 @@
 
 #TTL FROM INPUT FILE:
-# data/yaaku/yaaku-pdgms.edn
+# data/yaaku//yaaku-pdgms.edn
+
+#SCHEMATA:
+
+aama:Yaaku a aamas:Language .
+aama:Yaaku rdfs:label "Yaaku" .
+
+#SCHEMATA: gender
+yak:gender aamas:lang aama:Yaaku .
+yak:Gender aamas:lang aama:Yaaku .
+yak:gender rdfs:domain aamas:Term .
+yak:Gender rdfs:label "gender exponents" .
+yak:gender rdfs:label "gender" .
+yak:gender rdfs:range yak:Gender .
+yak:Gender rdfs:subClassOf yak:MuExponent .
+yak:gender rdfs:subPropertyOf yak:muProperty .
+yak:Common aamas:lang aama:Yaaku .
+yak:Common rdf:type Yaaku:Gender .
+yak:Common rdfs:label "Common".
+yak:Fem aamas:lang aama:Yaaku .
+yak:Fem rdf:type Yaaku:Gender .
+yak:Fem rdfs:label "Fem".
+yak:Masc aamas:lang aama:Yaaku .
+yak:Masc rdf:type Yaaku:Gender .
+yak:Masc rdfs:label "Masc".
+
+#SCHEMATA: polarity
+yak:polarity aamas:lang aama:Yaaku .
+yak:Polarity aamas:lang aama:Yaaku .
+yak:polarity rdfs:domain aamas:Term .
+yak:Polarity rdfs:label "polarity exponents" .
+yak:polarity rdfs:label "polarity" .
+yak:polarity rdfs:range yak:Polarity .
+yak:Polarity rdfs:subClassOf yak:MuExponent .
+yak:polarity rdfs:subPropertyOf yak:muProperty .
+yak:Affirmative aamas:lang aama:Yaaku .
+yak:Affirmative rdf:type Yaaku:Polarity .
+yak:Affirmative rdfs:label "Affirmative".
+yak:Negative aamas:lang aama:Yaaku .
+yak:Negative rdf:type Yaaku:Polarity .
+yak:Negative rdfs:label "Negative".
+
+#SCHEMATA: case
+yak:case aamas:lang aama:Yaaku .
+yak:Case aamas:lang aama:Yaaku .
+yak:case rdfs:domain aamas:Term .
+yak:Case rdfs:label "case exponents" .
+yak:case rdfs:label "case" .
+yak:case rdfs:range yak:Case .
+yak:Case rdfs:subClassOf yak:MuExponent .
+yak:case rdfs:subPropertyOf yak:muProperty .
+yak:Indirect aamas:lang aama:Yaaku .
+yak:Indirect rdf:type Yaaku:Case .
+yak:Indirect rdfs:label "Indirect".
+yak:ObjectGeneral aamas:lang aama:Yaaku .
+yak:ObjectGeneral rdf:type Yaaku:Case .
+yak:ObjectGeneral rdfs:label "ObjectGeneral".
+yak:ObjectWInitial aamas:lang aama:Yaaku .
+yak:ObjectWInitial rdf:type Yaaku:Case .
+yak:ObjectWInitial rdfs:label "ObjectWInitial".
+yak:Subject aamas:lang aama:Yaaku .
+yak:Subject rdf:type Yaaku:Case .
+yak:Subject rdfs:label "Subject".
+
+#SCHEMATA: conjClass
+yak:conjClass aamas:lang aama:Yaaku .
+yak:Conjclass aamas:lang aama:Yaaku .
+yak:conjClass rdfs:domain aamas:Term .
+yak:Conjclass rdfs:label "conjClass exponents" .
+yak:conjClass rdfs:label "conjClass" .
+yak:conjClass rdfs:range yak:Conjclass .
+yak:Conjclass rdfs:subClassOf yak:MuExponent .
+yak:conjClass rdfs:subPropertyOf yak:muProperty .
+yak:AdjInterr aamas:lang aama:Yaaku .
+yak:AdjInterr rdf:type Yaaku:Conjclass .
+yak:AdjInterr rdfs:label "AdjInterr".
+yak:Adjective aamas:lang aama:Yaaku .
+yak:Adjective rdf:type Yaaku:Conjclass .
+yak:Adjective rdfs:label "Adjective".
+yak:Common aamas:lang aama:Yaaku .
+yak:Common rdf:type Yaaku:Conjclass .
+yak:Common rdfs:label "Common".
+yak:DemFar aamas:lang aama:Yaaku .
+yak:DemFar rdf:type Yaaku:Conjclass .
+yak:DemFar rdfs:label "DemFar".
+yak:DemNear aamas:lang aama:Yaaku .
+yak:DemNear rdf:type Yaaku:Conjclass .
+yak:DemNear rdfs:label "DemNear".
+yak:DemRef aamas:lang aama:Yaaku .
+yak:DemRef rdf:type Yaaku:Conjclass .
+yak:DemRef rdfs:label "DemRef".
+yak:FormSet1 aamas:lang aama:Yaaku .
+yak:FormSet1 rdf:type Yaaku:Conjclass .
+yak:FormSet1 rdfs:label "FormSet1".
+yak:FormSet2 aamas:lang aama:Yaaku .
+yak:FormSet2 rdf:type Yaaku:Conjclass .
+yak:FormSet2 rdfs:label "FormSet2".
+yak:FormSet3 aamas:lang aama:Yaaku .
+yak:FormSet3 rdf:type Yaaku:Conjclass .
+yak:FormSet3 rdfs:label "FormSet3".
+yak:FormSet4 aamas:lang aama:Yaaku .
+yak:FormSet4 rdf:type Yaaku:Conjclass .
+yak:FormSet4 rdfs:label "FormSet4".
+yak:FormSet5 aamas:lang aama:Yaaku .
+yak:FormSet5 rdf:type Yaaku:Conjclass .
+yak:FormSet5 rdfs:label "FormSet5".
+yak:Invariable aamas:lang aama:Yaaku .
+yak:Invariable rdf:type Yaaku:Conjclass .
+yak:Invariable rdfs:label "Invariable".
+yak:PossNom aamas:lang aama:Yaaku .
+yak:PossNom rdf:type Yaaku:Conjclass .
+yak:PossNom rdfs:label "PossNom".
+yak:PossPro aamas:lang aama:Yaaku .
+yak:PossPro rdf:type Yaaku:Conjclass .
+yak:PossPro rdfs:label "PossPro".
+yak:Relative aamas:lang aama:Yaaku .
+yak:Relative rdf:type Yaaku:Conjclass .
+yak:Relative rdfs:label "Relative".
+yak:Verb aamas:lang aama:Yaaku .
+yak:Verb rdf:type Yaaku:Conjclass .
+yak:Verb rdfs:label "Verb".
+
+#SCHEMATA: aspect
+yak:aspect aamas:lang aama:Yaaku .
+yak:Aspect aamas:lang aama:Yaaku .
+yak:aspect rdfs:domain aamas:Term .
+yak:Aspect rdfs:label "aspect exponents" .
+yak:aspect rdfs:label "aspect" .
+yak:aspect rdfs:range yak:Aspect .
+yak:Aspect rdfs:subClassOf yak:MuExponent .
+yak:aspect rdfs:subPropertyOf yak:muProperty .
+yak:Definite aamas:lang aama:Yaaku .
+yak:Definite rdf:type Yaaku:Aspect .
+yak:Definite rdfs:label "Definite".
+yak:Indefinite aamas:lang aama:Yaaku .
+yak:Indefinite rdf:type Yaaku:Aspect .
+yak:Indefinite rdfs:label "Indefinite".
+yak:U aamas:lang aama:Yaaku .
+yak:U rdf:type Yaaku:Aspect .
+yak:U rdfs:label "U".
+
+#SCHEMATA: pos
+yak:pos aamas:lang aama:Yaaku .
+yak:Pos aamas:lang aama:Yaaku .
+yak:pos rdfs:domain aamas:Term .
+yak:Pos rdfs:label "pos exponents" .
+yak:pos rdfs:label "pos" .
+yak:pos rdfs:range yak:Pos .
+yak:Pos rdfs:subClassOf yak:MuExponent .
+yak:pos rdfs:subPropertyOf yak:muProperty .
+yak:Noun aamas:lang aama:Yaaku .
+yak:Noun rdf:type Yaaku:Pos .
+yak:Noun rdfs:label "Noun".
+yak:Pro aamas:lang aama:Yaaku .
+yak:Pro rdf:type Yaaku:Pos .
+yak:Pro rdfs:label "Pro".
+yak:Verb aamas:lang aama:Yaaku .
+yak:Verb rdf:type Yaaku:Pos .
+yak:Verb rdfs:label "Verb".
+
+#SCHEMATA: person
+yak:person aamas:lang aama:Yaaku .
+yak:Person aamas:lang aama:Yaaku .
+yak:person rdfs:domain aamas:Term .
+yak:Person rdfs:label "person exponents" .
+yak:person rdfs:label "person" .
+yak:person rdfs:range yak:Person .
+yak:Person rdfs:subClassOf yak:MuExponent .
+yak:person rdfs:subPropertyOf yak:muProperty .
+yak:Common aamas:lang aama:Yaaku .
+yak:Common rdf:type Yaaku:Person .
+yak:Common rdfs:label "Common".
+yak:Person1 aamas:lang aama:Yaaku .
+yak:Person1 rdf:type Yaaku:Person .
+yak:Person1 rdfs:label "Person1".
+yak:Person2 aamas:lang aama:Yaaku .
+yak:Person2 rdf:type Yaaku:Person .
+yak:Person2 rdfs:label "Person2".
+yak:Person3 aamas:lang aama:Yaaku .
+yak:Person3 rdf:type Yaaku:Person .
+yak:Person3 rdfs:label "Person3".
+
+#SCHEMATA: copForm
+yak:copForm aamas:lang aama:Yaaku .
+yak:Copform aamas:lang aama:Yaaku .
+yak:copForm rdfs:domain aamas:Term .
+yak:Copform rdfs:label "copForm exponents" .
+yak:copForm rdfs:label "copForm" .
+yak:copForm rdfs:range yak:Copform .
+yak:Copform rdfs:subClassOf yak:MuExponent .
+yak:copForm rdfs:subPropertyOf yak:muProperty .
+yak:CopA aamas:lang aama:Yaaku .
+yak:CopA rdf:type Yaaku:Copform .
+yak:CopA rdfs:label "CopA".
+yak:CopB aamas:lang aama:Yaaku .
+yak:CopB rdf:type Yaaku:Copform .
+yak:CopB rdfs:label "CopB".
+
+#SCHEMATA: derivedStem
+yak:derivedStem aamas:lang aama:Yaaku .
+yak:Derivedstem aamas:lang aama:Yaaku .
+yak:derivedStem rdfs:domain aamas:Term .
+yak:Derivedstem rdfs:label "derivedStem exponents" .
+yak:derivedStem rdfs:label "derivedStem" .
+yak:derivedStem rdfs:range yak:Derivedstem .
+yak:Derivedstem rdfs:subClassOf yak:MuExponent .
+yak:derivedStem rdfs:subPropertyOf yak:muProperty .
+yak:Base aamas:lang aama:Yaaku .
+yak:Base rdf:type Yaaku:Derivedstem .
+yak:Base rdfs:label "Base".
+yak:Benefactive aamas:lang aama:Yaaku .
+yak:Benefactive rdf:type Yaaku:Derivedstem .
+yak:Benefactive rdfs:label "Benefactive".
+yak:Causative aamas:lang aama:Yaaku .
+yak:Causative rdf:type Yaaku:Derivedstem .
+yak:Causative rdfs:label "Causative".
+yak:HabitualPartialReduplication aamas:lang aama:Yaaku .
+yak:HabitualPartialReduplication rdf:type Yaaku:Derivedstem .
+yak:HabitualPartialReduplication rdfs:label "HabitualPartialReduplication".
+yak:HabitualTotalReduplication aamas:lang aama:Yaaku .
+yak:HabitualTotalReduplication rdf:type Yaaku:Derivedstem .
+yak:HabitualTotalReduplication rdfs:label "HabitualTotalReduplication".
+yak:Intransitive aamas:lang aama:Yaaku .
+yak:Intransitive rdf:type Yaaku:Derivedstem .
+yak:Intransitive rdfs:label "Intransitive".
+yak:Ventive aamas:lang aama:Yaaku .
+yak:Ventive rdf:type Yaaku:Derivedstem .
+yak:Ventive rdfs:label "Ventive".
+
+#SCHEMATA: proClass
+yak:proClass aamas:lang aama:Yaaku .
+yak:Proclass aamas:lang aama:Yaaku .
+yak:proClass rdfs:domain aamas:Term .
+yak:Proclass rdfs:label "proClass exponents" .
+yak:proClass rdfs:label "proClass" .
+yak:proClass rdfs:range yak:Proclass .
+yak:Proclass rdfs:subClassOf yak:MuExponent .
+yak:proClass rdfs:subPropertyOf yak:muProperty .
+yak:AgreementMarker aamas:lang aama:Yaaku .
+yak:AgreementMarker rdf:type Yaaku:Proclass .
+yak:AgreementMarker rdfs:label "AgreementMarker".
+yak:Demonstrative aamas:lang aama:Yaaku .
+yak:Demonstrative rdf:type Yaaku:Proclass .
+yak:Demonstrative rdfs:label "Demonstrative".
+yak:Independent aamas:lang aama:Yaaku .
+yak:Independent rdf:type Yaaku:Proclass .
+yak:Independent rdfs:label "Independent".
+yak:PossExx aamas:lang aama:Yaaku .
+yak:PossExx rdf:type Yaaku:Proclass .
+yak:PossExx rdfs:label "PossExx".
+yak:Possessive aamas:lang aama:Yaaku .
+yak:Possessive rdf:type Yaaku:Proclass .
+yak:Possessive rdfs:label "Possessive".
+
+#SCHEMATA: tam
+yak:tam aamas:lang aama:Yaaku .
+yak:Tam aamas:lang aama:Yaaku .
+yak:tam rdfs:domain aamas:Term .
+yak:Tam rdfs:label "tam exponents" .
+yak:tam rdfs:label "tam" .
+yak:tam rdfs:range yak:Tam .
+yak:Tam rdfs:subClassOf yak:MuExponent .
+yak:tam rdfs:subPropertyOf yak:muProperty .
+yak:Future aamas:lang aama:Yaaku .
+yak:Future rdf:type Yaaku:Tam .
+yak:Future rdfs:label "Future".
+yak:Imperative aamas:lang aama:Yaaku .
+yak:Imperative rdf:type Yaaku:Tam .
+yak:Imperative rdfs:label "Imperative".
+yak:Past aamas:lang aama:Yaaku .
+yak:Past rdf:type Yaaku:Tam .
+yak:Past rdfs:label "Past".
+yak:PastProgressive aamas:lang aama:Yaaku .
+yak:PastProgressive rdf:type Yaaku:Tam .
+yak:PastProgressive rdfs:label "PastProgressive".
+yak:Perfect aamas:lang aama:Yaaku .
+yak:Perfect rdf:type Yaaku:Tam .
+yak:Perfect rdfs:label "Perfect".
+yak:Present aamas:lang aama:Yaaku .
+yak:Present rdf:type Yaaku:Tam .
+yak:Present rdfs:label "Present".
+
+#SCHEMATA: number
+yak:number aamas:lang aama:Yaaku .
+yak:Number aamas:lang aama:Yaaku .
+yak:number rdfs:domain aamas:Term .
+yak:Number rdfs:label "number exponents" .
+yak:number rdfs:label "number" .
+yak:number rdfs:range yak:Number .
+yak:Number rdfs:subClassOf yak:MuExponent .
+yak:number rdfs:subPropertyOf yak:muProperty .
+yak:Indefinite aamas:lang aama:Yaaku .
+yak:Indefinite rdf:type Yaaku:Number .
+yak:Indefinite rdfs:label "Indefinite".
+yak:Plural aamas:lang aama:Yaaku .
+yak:Plural rdf:type Yaaku:Number .
+yak:Plural rdfs:label "Plural".
+yak:Singular aamas:lang aama:Yaaku .
+yak:Singular rdf:type Yaaku:Number .
+yak:Singular rdfs:label "Singular".
+
+#SCHEMATA: verbMorphClass
+yak:verbMorphClass aamas:lang aama:Yaaku .
+yak:Verbmorphclass aamas:lang aama:Yaaku .
+yak:verbMorphClass rdfs:domain aamas:Term .
+yak:Verbmorphclass rdfs:label "verbMorphClass exponents" .
+yak:verbMorphClass rdfs:label "verbMorphClass" .
+yak:verbMorphClass rdfs:range yak:Verbmorphclass .
+yak:Verbmorphclass rdfs:subClassOf yak:MuExponent .
+yak:verbMorphClass rdfs:subPropertyOf yak:muProperty .
+yak:Compound aamas:lang aama:Yaaku .
+yak:Compound rdf:type Yaaku:Verbmorphclass .
+yak:Compound rdfs:label "Compound".
+yak:CopLoc aamas:lang aama:Yaaku .
+yak:CopLoc rdf:type Yaaku:Verbmorphclass .
+yak:CopLoc rdfs:label "CopLoc".
+yak:Copula aamas:lang aama:Yaaku .
+yak:Copula rdf:type Yaaku:Verbmorphclass .
+yak:Copula rdfs:label "Copula".
+yak:DervStem aamas:lang aama:Yaaku .
+yak:DervStem rdf:type Yaaku:Verbmorphclass .
+yak:DervStem rdfs:label "DervStem".
+yak:ProAgreement aamas:lang aama:Yaaku .
+yak:ProAgreement rdf:type Yaaku:Verbmorphclass .
+yak:ProAgreement rdfs:label "ProAgreement".
+yak:SubjPref aamas:lang aama:Yaaku .
+yak:SubjPref rdf:type Yaaku:Verbmorphclass .
+yak:SubjPref rdfs:label "SubjPref".
+yak:SubjSuff aamas:lang aama:Yaaku .
+yak:SubjSuff rdf:type Yaaku:Verbmorphclass .
+yak:SubjSuff rdfs:label "SubjSuff".
+yak:TenseAspectMoodPref aamas:lang aama:Yaaku .
+yak:TenseAspectMoodPref rdf:type Yaaku:Verbmorphclass .
+yak:TenseAspectMoodPref rdfs:label "TenseAspectMoodPref".
+yak:have aamas:lang aama:Yaaku .
+yak:have rdf:type Yaaku:Verbmorphclass .
+yak:have rdfs:label "have".
+
+#SCHEMATA: multiLex
+yak:multiLex aamas:lang aama:Yaaku .
+yak:Multilex aamas:lang aama:Yaaku .
+yak:multiLex rdfs:domain aamas:Term .
+yak:Multilex rdfs:label "multiLex exponents" .
+yak:multiLex rdfs:label "multiLex" .
+yak:multiLex rdfs:range yak:Multilex .
+yak:Multilex rdfs:subClassOf yak:MuExponent .
+yak:multiLex rdfs:subPropertyOf yak:muProperty .
+yak:DERVSTEM aamas:lang aama:Yaaku .
+yak:DERVSTEM rdf:type Yaaku:Multilex .
+yak:DERVSTEM rdfs:label "DERVSTEM".
+yak:IMPERATIVE aamas:lang aama:Yaaku .
+yak:IMPERATIVE rdf:type Yaaku:Multilex .
+yak:IMPERATIVE rdfs:label "IMPERATIVE".
+yak:PROPOSSEXX aamas:lang aama:Yaaku .
+yak:PROPOSSEXX rdf:type Yaaku:Multilex .
+yak:PROPOSSEXX rdfs:label "PROPOSSEXX".
+
+#SCHEMATA: headNoun
+yak:headNoun aamas:lang aama:Yaaku .
+yak:Headnoun aamas:lang aama:Yaaku .
+yak:headNoun rdfs:domain aamas:Term .
+yak:Headnoun rdfs:label "headNoun exponents" .
+yak:headNoun rdfs:label "headNoun" .
+yak:headNoun rdfs:range yak:Headnoun .
+yak:Headnoun rdfs:subClassOf yak:MuExponent .
+yak:headNoun rdfs:subPropertyOf yak:muProperty .
+yak:Deleted aamas:lang aama:Yaaku .
+yak:Deleted rdf:type Yaaku:Headnoun .
+yak:Deleted rdfs:label "Deleted".
+yak:Present aamas:lang aama:Yaaku .
+yak:Present rdf:type Yaaku:Headnoun .
+yak:Present rdfs:label "Present".
+
+#MORPHEMES:
+
+aama:Yaaku-PROPOSS a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "PROPOSS" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-HAVEAFFINDEFPRES a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "HAVEAFFINDEFPRES" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-PROIND a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "PROIND" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-PRODEM a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "PRODEM" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-COPULALOCPRES a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "COPULALOCPRES" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-HAVEAFFDEFPERF a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "HAVEAFFDEFPERF" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-SUBJMARKERSUFF a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "SUBJMARKERSUFF" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-HAVEAFFDEFPRES a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "HAVEAFFDEFPRES" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-SUBJMARKERPREF a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "SUBJMARKERPREF" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-HAVEAFFINDEFFUT a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "HAVEAFFINDEFFUT" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-COPULALOCPAST a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "COPULALOCPAST" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-NOUNAGREEMENTMARKER a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "NOUNAGREEMENTMARKER" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-TAMPREF a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "TAMPREF" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-COPULALOCPERF a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "COPULALOCPERF" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-HAVENEGINDEFPRES a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "HAVENEGINDEFPRES" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-PROAGREEMENT a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "PROAGREEMENT" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-HAVEAFFDEFPAST a aamas:Muterm ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "HAVEAFFDEFPAST" ;
+	rdfs:comment "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+
+#LEXEMES:
+
+aama:Yaaku-xan a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "xan" ;
+	aamas:gloss "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-keloi a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "keloi" ;
+	yak:lemma yak:kέlói ;
+	aamas:gloss "not have (invar)" ;
+	yak:conjClass yak:Invariable ;
+	yak:pos yak:Verb ;
+	.
+aama:Yaaku-eq a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "eq" ;
+	yak:lemma yak:eq ;
+	aamas:gloss "drink" ;
+	yak:conjClass yak:FormSet3 ;
+	yak:pos yak:Verb ;
+	.
+aama:Yaaku-gwee a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "gwee" ;
+	yak:lemma yak:gwɛ’ɛ ;
+	aamas:gloss "be somewhere" ;
+	.
+aama:Yaaku-lε’ε a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "lε’ε" ;
+	aamas:gloss "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-ke a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "ke" ;
+	yak:lemma yak:ke ;
+	aamas:gloss "be" ;
+	.
+aama:Yaaku-PROPOSSEXX a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "PROPOSSEXX" ;
+	aamas:gloss "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-IMPERATIVE a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "IMPERATIVE" ;
+	aamas:gloss "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-wax a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "wax" ;
+	yak:lemma yak:wax ;
+	aamas:gloss "see" ;
+	yak:conjClass yak:FormSet5 ;
+	yak:pos yak:Verb ;
+	.
+aama:Yaaku-kus a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "kus" ;
+	yak:lemma yak:lapare kus ;
+	aamas:gloss "tell lies" ;
+	.
+aama:Yaaku-DERVSTEM a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "DERVSTEM" ;
+	aamas:gloss "[x]" ;
+	yak:lemma yak:[y] ;
+	.
+aama:Yaaku-ek a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "ek" ;
+	yak:lemma yak:εk ;
+	aamas:gloss "eat (obj. oblig)" ;
+	.
+aama:Yaaku-deet a aamas:Lexeme ;
+	aamas:lang aama:Yaaku ;
+	rdfs:label "deet" ;
+	yak:lemma yak:deet ;
+	aamas:gloss "eat" ;
+	yak:conjClass yak:FormSet4 ;
+	yak:pos yak:Verb ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePast-eq
+
+aama:ID7e911c46-a855-4a46-8c64-96341aaa62be a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aáná-‘’éce’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDf901d333-2a0d-4140-a8f3-43aa8e4cdffa a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-‘’éce’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID49e98d5b-7b14-4af5-8491-88e3d70c995c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-‘’éce’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDdb372217-1b09-4384-9727-93469f0d9a4b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-‘’éqót" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID5207f53f-7400-4c49-a488-2f67212e77ab a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aáná—‘’éqón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID4d320b96-1046-402b-8cae-76851e738421 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-‘’éqotin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDe2d87c74-6828-41ee-848d-f63370ee2d46 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-’’éqon" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePerfComp-kus
+
+aama:ID4f3a928d-d56c-4549-a3a4-69abac9209f2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-n’á-a-k’úso’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID4e296430-8e8c-4b13-b126-f2163862da2c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-ná-á-k’úhto’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID21001e5c-47c0-4bcf-a96a-fd34523c0884 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-ná-á-k’úso’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDf77d31f8-77cc-43b9-aa6f-50891a9dd610 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-n’á-a-k’úhno’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID71470d04-304e-4844-a606-d2e7afbb3d3e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-ná-á-kúht-íno’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID5683875b-1a64-47da-9a5f-ab0c1275f9e1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-ná-á-k’úhno’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePerf-wax
+
+aama:IDbde0a91a-08e0-4fa5-ba94-34e8f0d9ef07 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "n’ala-waxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID67117c21-1681-41d5-981f-2597ee2c5a3c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "n’ala-waxan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:IDb2c12a75-4331-4283-bdbf-2c99e4f0903b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "n’ala-waxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDd9b23ee5-31c2-46aa-b099-271554439e01 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "n’ala-w’áxnen" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID0adaff03-f2f6-4cd5-9a29-ad7943c292bc a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "n’ala-w’áxnen" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID144b2ba9-500b-4b90-9909-5398c9abd64c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "n’ala-w’áxnen" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePastComp-kus
+
+aama:ID6b0859fd-b8d3-4acd-9650-166af124da99 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:gender yak:Common ;
+	yak:polarity yak:Negative ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:aspect yak:Definite ;
+	yak:pos yak:Verb ;
+	yak:person yak:Person1 ;
+	yak:tam yak:Past ;
+	yak:number yak:Singular ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ŋááná-kúsíno" ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePast-wax
+
+aama:ID1a9551b1-17ef-4d6a-80d3-78e1729785ef a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "ŋááná-wáxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:IDaeafb3ee-d9ba-4729-9463-27fbcc4d6355 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "ŋáa-wáxan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID1ae17cca-b9fb-4215-91de-a66e7258a6d1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "ŋáa-wáxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDa1f3ece8-ad19-43dc-bac6-0c5340e0845b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "ŋááná-wáxnen" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDf82ffd8f-20a6-44e1-95f8-b74142740529 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "ŋáa-wáxnen" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:IDae098f36-a898-4eaa-9361-cb508592f155 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "ŋáa-wáxnen" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VAffIndefinitePres-eq
+
+aama:ID0eea92d0-28e8-4ab4-b5e6-dd4fde35cf4a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "n-‘éqa" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID2f813f5b-4ebb-4f6e-860f-740bcac7f491 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "á-‘éqot" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDe1c11217-bd97-45bb-8196-5fff086eb74a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "‘éqoi" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDdf9e356e-1c75-46f0-9181-e1881e1aeed6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "_NULL" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:IDcb80f300-3ba0-4aff-90f9-7787308ecf8b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "n-‘éqón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDab9061fa-cf2c-4942-9752-f846876177eb a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-‘éqótán" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID302cbc6d-3508-4aef-a649-69edd88efdf3 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "‘ecan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePastProgComp-kus
+
+aama:IDc362cd14-ccc5-4215-aefc-afe80289ce45 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-mi-ná-á-kúso’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDb1b56a5b-06b6-440d-a10a-f36a97669c94 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-má-á-k’úhto’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID2b697cc8-c9b8-46d8-8d21-d3a0482e319f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-má-á-k’úso’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID18bfa3ec-367e-4ea0-8304-363a75b1d0c4 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-má-á-k’úhto’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID5635fc6f-6cfc-43bc-b969-71f586fae548 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-mi-ná-á-k’úhno’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID0a2f2a6c-ac9a-415d-b25b-19c1545e3535 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-má-á-kúht’íno’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID926e0a15-22cc-42ea-a70f-28aecc32f651 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-má-á-k’úhno’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VIndefiniteFut-deet
+
+aama:ID20fe6950-a14b-4940-b9bd-87d0493c45e1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "na-deéti’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID16fb4c11-e057-439e-9593-d152950ab3f2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "a-d’eétit" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDe3cbae1a-90cf-4d54-bb10-54c2091f947a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ké-d’éetei" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID46f57a34-fb2c-4ad2-99c5-b94b59044e0a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ké-déeti(t)" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID837c40e0-44a6-49b9-8321-0a5b392ae8fe a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "kén-d’éetin" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDfd8bcb4b-6daf-428e-8a44-ef845ea1e0ea a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ká-déitan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID18baaf55-5dff-4b55-becb-38ce8b72689b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ké-d’éecan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VImprtv
+
+aama:ID92ae9fc7-c366-404d-844e-64032bcdefe3 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:deet ;
+	yak:token "deet" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:IDc330e14f-732a-4a1b-800f-ac57703f818e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:eq ;
+	yak:token "éq" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID88ee9602-07a7-44b9-9900-635c0b6b246f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:lε’ε ;
+	yak:token "lέ’έ" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:IDb30f3765-9090-41e2-8889-aefa1637c825 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:xan ;
+	yak:token "xán-í" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID322b85dd-808b-4206-bb76-cb192801ec18 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:ek ;
+	yak:token "εc-i" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID0ab2664f-0475-4f72-becf-35d0808aa1c5 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:deet ;
+	yak:token "deet-o" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID46191be2-21d5-4017-844e-23348cbb98b9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:eq ;
+	yak:token "éq-o" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID099e0c41-80bb-4641-8ce5-0dacf394088b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:lε’ε ;
+	yak:token "lέέ’ε" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID5d2ee16f-087c-4f51-8f05-6d2653c6d869 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:xan ;
+	yak:token "xán-í-n" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID9a818951-2d33-48b4-aa8e-e53d0f811312 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:ek ;
+	yak:token "εc-i-n" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID0dea2cb1-2d5b-4601-ac67-f17243460c8c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:deet ;
+	yak:token "n-deet-o" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDc3fb42a8-b9ea-4941-b38d-58323fb247ba a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:eq ;
+	yak:token "n-éq-o" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID476bd754-4f7e-4e01-a17b-a9957618daac a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:multiLex yak:IMPERATIVE ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Imperative ;
+	yak:lexeme yak:ek ;
+	yak:token "n-εc-i-n" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VNegIndefinitePresComp-kus
+
+aama:ID40961724-1ebd-4b91-b12f-c9ab82442900 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:gender yak:Common ;
+	yak:polarity yak:Negative ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:aspect yak:Indefinite ;
+	yak:pos yak:Verb ;
+	yak:person yak:Person1 ;
+	yak:tam yak:Present ;
+	yak:number yak:Singular ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ŋé-ŋ-kuséé" ;
+	.
+
+#TERMCLUSTER: yaaku-VIndefinitePres-deet
+
+aama:ID87b371fa-4d1f-4cbf-841b-40b8c2e106cd a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "n-d’eeta" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID57013cbe-4284-461b-bdd4-3ebd62cb68e1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eeti" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID49e3323c-ae51-47c8-b205-4aee0f6c88a7 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "d’éetei" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDf02fdf6c-b0f9-4683-bde2-4bc09baac0dd a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "d’éeti(t)" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:IDdaa31f1e-559b-4f44-96cf-cea3b6d50f8c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "n-d’eetin" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID610633e8-8457-4c08-88db-ed47ff183b0e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eitan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDfc0d9632-ec94-4648-a77f-b8c3e6945a96 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "d’eécan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffIndefinteFut-wax
+
+aama:ID4993a614-a8be-4428-a57e-01dd7189ea58 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "kén-w’áxa" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID702fe350-d930-4375-8c29-9a2195a2cc39 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ká-w’áxat" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDf76ca1f1-2517-42e2-b880-2f822f1a8e59 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ké-w’áxai" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDc53e3470-1744-4d30-b9e4-261be54eff35 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ké-w’áxa(t)" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID69730320-79d0-49a9-8fc6-1df922c5cd9a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "kéŋ-w’áxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID156858dc-3f56-476d-b4ed-cbefab06d14d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ká-w’áxtan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID11a8cb79-adfe-47d8-a746-3d7f5208cbfe a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Future ;
+	yak:token "ké-wáxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePerf-wax
+
+aama:ID5d82159e-e95d-4e98-b00e-001593b774ec a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "náa-wáxe’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDca865a5a-e32c-469a-b897-050d8c06af68 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "na-wáxá(t)" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID5be85cc4-3a8f-4fbb-b3b0-d0cdc4fb17a5 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-wáxe’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID5005d6b3-19d0-4d15-bae7-6b3f075945dd a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-wáxat" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID933db417-fd8f-4ca0-86a4-10edca01d099 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "náa-wáxán" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID7462d2dc-aa22-4d0c-9dcb-ec7013e8df12 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-wáxtin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID8359ab8a-4e2b-4aae-8e78-3c5f592ffae2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-wáxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VCopAAffIndefinitePastCopulaVerb-ke
+
+aama:ID072fe611-4c5f-4a1c-b79e-6a2b7a3235db a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "koon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:IDd8df9fe0-0af4-4ba0-a90c-4420cd978182 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kaau" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID74959b69-2b3c-4439-955e-332d4ea54f40 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kεε" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDc8e5c315-334a-47a2-b7fc-41457252190a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "koón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID71fc0c91-cd58-4ae1-a8d8-cd54c772ba0a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kaúú" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:IDf943927b-711d-4046-b345-2cede1463f5b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kεε" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VDefinitePastProg-deet
+
+aama:ID5c82974a-ca9a-40ed-99fe-bee59ba9879d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "min’aa-d’eéti’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID43c4da93-7f8b-4c83-bef7-55a4ff53b247 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "maá-deétí" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID2895c8de-0df5-420f-983c-12b58e2e03ff a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "maá-deetí" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID10decb9e-8ce6-4072-aa15-08fdfd02ac3e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "_NULL" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:IDf6b52214-c0fb-4976-9349-89607664047d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "min’áa-deétin" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID928effb8-c111-456b-9310-18069511f2c8 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-d’eetin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDc329b7cd-3581-48fe-ad28-4a3315b66b18 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-d’eetin" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VCopAAffDefinitePresCopulaVerb-ke
+
+aama:ID540f79eb-58bc-4d6f-80c9-f4ee4b68eb3a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "konu" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID987ac022-e9a0-4834-9145-9fb0dc8c99e1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kau" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:IDde99190d-e48b-49b5-8970-6dd2af79b1e6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kou" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:ID50f62808-ad5f-493a-809d-76f6d9e0d3d7 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "konu" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID2d70846e-9de4-491b-8d8c-018ea88b23c3 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kau" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:IDee4ea633-c1e0-4153-9e24-f24b576d6ab7 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kou" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePres-eq
+
+aama:ID8a85746b-3d93-4f25-b866-07fdcdf9545d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "na-‘’ece’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDe30ca3f8-97f4-4a03-8567-2004f7089920 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-‘’ece’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDe7e0232a-fc05-44db-90f6-276aaa6faff9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-‘’ece’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID70499a08-1cea-47cb-9104-21775de426ed a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-‘éqót" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:IDa32d5e71-d21f-4ba3-81c8-455a178e9f28 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "na-‘éqon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID435dbd1d-ff01-436f-986d-bce3e31de89e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-‘éqótin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID2347d251-729c-4894-a31d-5796e069ebc2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-‘éqon" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VDefinitePres-deet
+
+aama:IDca44f6be-90b6-470d-97e4-d02eb98022f7 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "na-d’eéti’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID1cfe3ec9-08ec-4fd4-9b13-44aa700ac7b6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eétit" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID45bb9aa2-e908-46b4-8abf-7af1affa8d2e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eétí’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID47c3da60-49b8-48f5-9662-2f717d1ce77a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eéti(t)" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:IDa29fe994-7bdb-4702-ada7-7b8d09996735 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "na-d’eétin" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDab27364c-ed45-4a28-955c-8ee6cb3fdc99 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eetin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDc5155026-11b0-4038-bed9-f660fc80a83b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-d’eetin" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VCopAAffDefinitePerfCopulaVerb-ke
+
+aama:ID58bdc7ba-7612-454d-8a98-97097fb7d7a7 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:number yak:Singular ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kononu" ;
+	yak:person yak:Person1 ;
+	.
+aama:ID72fdce1a-6d78-4c08-a2f1-fd5062e37965 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:number yak:Singular ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kanau" ;
+	yak:person yak:Person2 ;
+	.
+aama:ID17d16704-7296-4dde-9238-4960d06a94c9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:number yak:Singular ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "konou" ;
+	yak:person yak:Person3 ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePres-wax
+
+aama:ID167fe1fb-bf7c-48e9-897b-5a8856acddbd a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "na-w’axe’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDae454a42-6d86-4040-aa46-ff12b0e549a8 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-wáxát" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID03a61e8c-09bc-452e-b5c3-837298bf1f4e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-w’áxe’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDd2a4848e-baf9-4a26-8646-b984e409b97c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-wáxát" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID4983213f-552a-47f7-8285-3a37b548e224 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "na-wáxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDbab73505-5a79-45f1-b2e5-c12aeac8cc5f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-waxtin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID6c4bee85-893c-4a18-b173-e9ae629e46c2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-waxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffIndefinitePresComp-kus
+
+aama:ID25b67f3f-7c03-43e6-998f-18ba7973d4ab a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ké-ŋ-kúsáá" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID893b2e4f-2f11-4cb7-abdc-671dd5a0fd62 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-kúhtáá" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID548811c6-3fbf-485e-a129-2c19d4993b95 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ké-kúsáá" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID9330431e-1710-430a-b14a-24e4405622cc a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ké-kúhtáá" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID3b1f4aef-814c-4596-9d1c-fafef9fc1ba1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ké-ŋ-kúhnáá" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID964f0c26-1936-425b-bafe-ccbfd5899507 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-kúhtáno’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDb4be0bc1-c536-4a55-adc9-79eef310ad7d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ké-kúsáno’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VCopBAffIndefinitePresCopulaVerb-ke
+
+aama:IDf377207e-5dc6-49be-9c18-4c68fe0cfa20 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:IDe4e487c8-b083-42dc-94ad-a7849c7bf8d2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ke" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID1be6d91f-0d13-44d2-9fa9-ce4bc0560ea9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ke" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDa5510e98-365e-48b7-a75e-a6df111ee7a5 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "koŋku" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID5be6d7b6-0a98-4b91-9e89-87430af991c0 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kaku" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID5eb6fa53-c595-4ea3-a62e-d4077cc94e6c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "keke" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VNegPres-wax
+
+aama:ID828f2c6a-d92b-4b7e-b0ef-bbb91abaad53 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:U ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋénen-wáxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID27ab33da-156d-43c1-a808-3db40fa1baa3 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:U ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋána-wáxan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID729299fd-4b36-43b2-92fc-a2f42f988c70 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:U ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋéne-wáxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:ID02cbfefa-2c1d-4310-a747-ea888920df30 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:U ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋénen-wáxnen" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDe243825d-4521-46b9-9168-ca803ebeb797 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:U ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋána-wáxnen" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID939a1dec-a4da-4a6e-b25f-435105a2e229 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:U ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋéne-wáxnen" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePresComp-kus
+
+aama:IDf7b198b4-51ec-4eb1-824e-3e8c6f3270d8 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-na-k’úso’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDd4ff1b8e-b575-4ccb-8e2f-1829e7115c32 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-k’úhto’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID25a0c5e0-57a1-4afa-8f1f-6bc519559984 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-k’úso’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID4c32b314-676f-4e08-a945-3ed8c087454f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-k’úhto’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID58c1afc4-86c7-456c-bedf-59164ad3d8e6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ki-na-k’uhno’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDbcf92439-ed85-4565-ab66-883e89eaf3b8 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-k’uht’íno’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID0d2c0e38-3e55-429d-8c61-d39987b70469 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-á-k’úhno’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePres-wax
+
+aama:ID4189c314-6d98-4cf6-bad5-bc61b92559fa a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋénen-wáxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:IDfe6260a4-e048-4820-8431-8f6d0154e4c1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋána-wáxan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID822bf4c3-47ba-43d7-b8c0-48f473fbff1c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋéne-wáxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDbbf9885d-4a26-49bd-949e-cb18ef0c2266 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋénen-wáxnen" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDc972f42a-f05a-46fc-82ba-2e11168de3b4 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋána-wáxnen" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID2e27e693-b453-4bf3-b5c9-ac1695abc131 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋéne-wáxnen" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VCopANegIndefinitePresCopulaVerb-ke
+
+aama:IDa689eb64-a39d-411f-844c-90209aeaaad1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:IDb07892f2-8173-4357-a76f-d35193e68c5e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋáú" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID45e11e32-f770-404e-9d5d-26c24d817c5f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋó" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:ID0dff936e-5cee-4a19-a653-eb15fa49e3b8 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDc1d2d579-453e-4f41-b60c-39a9ac1f1eb0 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋáú" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:IDc624b019-8249-4f9d-92f9-bee466abcdc0 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋó" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VCopAAffIndefinitePerfCopulaVerb-ke
+
+aama:ID6c7d1c6c-b58f-40e2-a643-ad72013bcebe a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "konon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID21660721-4099-46b5-b71c-a550245c765e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kanau" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID7758935c-c985-4c78-ad7d-bdf6c01c5709 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kεnε" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDefc09289-377f-4af6-bd68-b58400067c7f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "konón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDbe441d8d-e9f3-4638-96e3-56816468f5a1 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kanäu" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:IDe344b03e-7d9a-4339-90d8-fa163f21ec38 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kεnε" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePerfComp-kus
+
+aama:IDc0ff501e-d87f-4e84-ab8a-301fb3f6453d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:gender yak:Common ;
+	yak:polarity yak:Negative ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:aspect yak:Definite ;
+	yak:pos yak:Verb ;
+	yak:person yak:Person1 ;
+	yak:tam yak:Perfect ;
+	yak:number yak:Singular ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare n’álá-kúsíno" ;
+	.
+
+#TERMCLUSTER: yaaku-VNegIndefinitePres-eq
+
+aama:ID07d76cce-2a3c-4caa-b067-8b28e64ce5fa a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋén-ece" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID0f3770b8-7b4b-456c-9355-1a971efc6189 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋá-eqote" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDbe4bee19-4a3c-4b8c-a7f5-95cf594c963f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋé-ece" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDd1c943ba-97e5-4507-93dd-4cc1105aec03 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋé-eqote" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID1e52c650-357c-4fec-b0b2-9f7c2976e6ee a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋén-eqoni" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID3dc18d64-fa76-4d4f-a021-3fd581ba06cb a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋá-eqoten" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID25e0b259-715b-4ff1-b0a7-664e5ddd619b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet3 ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋé-ecen" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VDefinitePast-deet
+
+aama:ID0cacc7b4-5a68-44ae-803e-9a869209fc0e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aáná-d’eétí’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID6098f4a8-05d7-401c-b454-9c7d77e29e50 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-d’eétít" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID59d30726-3786-426d-8d45-3f8c1fa0ce85 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-d’eétí’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDbb2f672d-ec5b-4943-aa33-9b240ca4a4e7 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-d’eétí(t)" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID92ca6de2-34e1-48c7-851d-68e73329d211 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aáná-d’eétín" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID50975ebc-5769-4063-909a-c0fa4e409dee a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-d’éetin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID01bb2e03-5876-4733-a0ee-1502323d9c3d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-d’éetin" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VCopAAffDefinitePastCopulaVerb-ke
+
+aama:IDe4f8d705-79f2-41f0-95cf-7ea0b3926a17 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:number yak:Singular ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "koonu" ;
+	yak:person yak:Person1 ;
+	.
+aama:ID18e2c6fb-07d8-428a-8c02-5f3e07263f07 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:number yak:Singular ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "koou" ;
+	yak:person yak:Person2 ;
+	.
+aama:ID56e240e7-2a1e-4f77-a622-88bd582518e2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:number yak:Singular ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kεε" ;
+	yak:person yak:Person3 ;
+	.
+
+#TERMCLUSTER: yaaku-VAffIndefintePres-wax
+
+aama:IDe171b0f2-852c-447b-8fb9-5edc2a52e78b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋ-wáxá" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDafed2b80-6b9b-40c9-a2f1-0cba24e717fd a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-wáxát" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDef1a4f91-0772-4dd8-9ace-827a723297b6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "waxai’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID186463ad-b11c-40e8-b924-4868bd56f134 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "waxat" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID4bc29255-34f2-47dc-9185-8fc5d050c67b a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋ-waxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID904515cf-46bf-4044-aac0-5b6bb710ffac a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "a-waxtan" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID4c898063-a50e-4afb-a08f-35cc57e1401c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "waxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePres-eq
+
+aama:ID1ff953b5-1c01-4208-a9d8-989b8f975066 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋénen-éqon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID228e5138-ebba-44ce-9a85-0435f10892f6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋána-éqon" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:IDf2ab662b-4199-4989-8fe4-5b0ea6572100 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋéne-éqon" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDb13d7466-6252-49f0-bf49-cd205c15b3fb a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋénen-éqónen" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID41fa2903-1f7d-4fdc-bced-8e1ba41ebca4 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋána-éqónen" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID831c7118-7c65-409d-86fa-67b961f11cbf a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet3 ;
+	yak:gender yak:Common ;
+	aamas:lexeme aama:Yaaku-eq ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:token "ŋéne-éqónen" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePastProg-wax
+
+aama:ID4cd3bc88-bfc6-4e7d-9de3-20374051c2a9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "mínáa-w’axe’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDc08b3e60-db8b-45d8-a75c-4333bac9ccdb a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-w’axat" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID0b17193d-f65f-4530-9324-faeb643d9689 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-w’áxe’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:ID69bf86dc-5822-40a2-ab8b-e49299410d5f a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-w’áxat" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID41bc5282-7bd3-44ad-937c-2d66da320bc2 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "mináa-w’áxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDfd66af3b-cbbe-4a45-9533-7857c48d58e9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-w’axtin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID1db1bcd5-fa68-4a1e-8b6b-586c65bda3ef a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:PastProgressive ;
+	yak:token "máá-w’axan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePast-wax
+
+aama:IDd74986ef-d355-4459-8a2a-79317d3ff83a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aáná-wáxe’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID89b2cc41-6f9b-48fa-8afd-0b3bfffbf080 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-wáxát" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID4c04a806-9048-4eea-aaa3-27a9e899ce36 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-wáxe’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDc1bc66ee-36e0-403c-8eff-2bb765ddb9e0 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-wáxát" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID9e5529e2-f086-4313-b5c9-831508dfd648 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aáná-wáxan" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDed1a40c6-d221-4e19-9fe6-c53b4b8ae6f9 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-wáxtin" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDc2b501f5-8582-4f06-83ea-55270c2fdc15 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet5 ;
+	aamas:lexeme aama:Yaaku-wax ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:token "aa-wáxan" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VAffDefinitePastComp-kus
+
+aama:IDccec7f00-9640-41cd-b656-79c049d91c09 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-aá-ná-k’úso’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID44846004-caab-48c8-b1dc-ee13936c98af a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-áá-kúhto’" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDc0c6560b-7876-47f8-b40a-866507e0af58 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-áá-kúso’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDdbeddb3a-11a5-4dcb-b97d-e2de28cffdae a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-áá-kúhto’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID3f2d8a15-6af1-46f2-8b31-2871500a784c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-áá-ná-k’úhno" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDe7abab16-5838-4108-bff1-61e7a71e8c34 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-áá-kúht’íno" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID1d012a1d-2e13-4010-b7d1-f1822e99c213 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Past ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare k-áá-kúhno’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VCopBNegIndefinitePresCopulaVerb-ke
+
+aama:ID8223f99f-f6d6-49cf-b646-8f2acfec418e a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋón" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID99800a2d-9d34-4b91-9d60-59ef3c577125 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋáú" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID415f8b34-3e9e-4670-9553-c92840ad1c21 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋó" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:ID5af1f50e-ffcd-4ff9-ac4d-b2db563dfbb4 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋóŋku" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:ID7d275494-5b79-4b1e-9856-8bb92086ecf3 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋáku" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID9532107e-f7f8-463d-940b-931ef51dbbb5 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopB ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Negative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ŋóku" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.
+
+#TERMCLUSTER: yaaku-VDefinitePerf-deet
+
+aama:ID69bd6e7a-87de-4a52-a815-ab9f80e68a5d a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "náa-deéti’" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:IDa7b0fc21-5557-4f65-a8c1-a2ebd1b6bd76 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-d’eéti" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Common ;
+	.
+aama:ID1a07fb99-24ff-451a-a750-cbc9e8a1fb64 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-d’eéti’" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Masc ;
+	.
+aama:IDe4403ad7-d28e-48b3-a3a0-d2ebc6003408 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-d’eétín" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	yak:gender yak:Fem ;
+	.
+aama:ID85b916f8-499d-41b0-ab42-f3793c61387c a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-d’eétín" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:IDf4d8932e-b0a3-440f-8cd8-18e500ba5820 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-d’eétín" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+aama:ID02610ad7-6b94-4201-9177-bc313bbc35f8 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Definite ;
+	yak:conjClass yak:FormSet4 ;
+	aamas:lexeme aama:Yaaku-deet ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Perfect ;
+	yak:token "ná-d’eetin" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	yak:gender yak:Common ;
+	.
+
+#TERMCLUSTER: yaaku-VNegDefinitePresComp-kus
+
+aama:ID85af6e03-ae6a-4442-9e9b-b831a6e83209 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:gender yak:Common ;
+	yak:polarity yak:Negative ;
+	aamas:lexeme aama:Yaaku-kus ;
+	yak:aspect yak:Definite ;
+	yak:pos yak:Verb ;
+	yak:person yak:Person1 ;
+	yak:tam yak:Present ;
+	yak:number yak:Singular ;
+	yak:verbMorphClass yak:Compound ;
+	yak:token "sapare ŋé-ne-ŋ-kúsíno" ;
+	.
+
+#TERMCLUSTER: yaaku-VCopAAffIndefinitePresCopulaVerb-ke
+
+aama:ID52769ee7-ce46-49cd-ae3e-7e4c7f82a26a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Singular ;
+	.
+aama:ID8aa0fcc3-6d64-4acc-9d45-3d6c3582bc14 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kau" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Singular ;
+	.
+aama:ID582a3192-f2f6-4335-89fb-7188fec6984a a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ke" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Singular ;
+	.
+aama:IDf43b394f-ef9e-4032-98ee-b865ea2a12c6 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kon" ;
+	yak:person yak:Person1 ;
+	yak:number yak:Plural ;
+	.
+aama:IDec2499a3-68cb-4083-a857-d7f3b0cf0d71 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "kau" ;
+	yak:person yak:Person2 ;
+	yak:number yak:Plural ;
+	.
+aama:ID16b10785-4986-4c16-bf42-9f38a4c3b9d3 a aamas:Term ;
+	aamas:lang aama:Yaaku ;
+	yak:aspect yak:Indefinite ;
+	yak:copForm yak:CopA ;
+	aamas:lexeme aama:Yaaku-ke ;
+	yak:polarity yak:Affirmative ;
+	yak:pos yak:Verb ;
+	yak:tam yak:Present ;
+	yak:verbMorphClass yak:Copula ;
+	yak:token "ke" ;
+	yak:person yak:Person3 ;
+	yak:number yak:Plural ;
+	.

@@ -89,7 +89,7 @@
 :lexemes {
   :ADJNOMNEGPRED {:gloss "[x]", :lemma "[y]", }
   :IMPERATIVEAPPLIC {:gloss "[x]", :lemma "[y]", }
-  :_NULL {:lemma "gu'-", :gloss "sleep", }
+  :gu {:lemma "gu'-", :gloss "sleep", }
   :agaad {:lemma "ɬagaaduusay", :gloss "hunter", }
   :dah {:lemma "dah-", :gloss "arrive", }
   :doosl {:lemma "dooɬ-", :gloss "Cultivate", }
@@ -100,10 +100,10 @@
   :hom {:lemma "hom-", :gloss "cook", }
   :ibiid {:lemma "ibiid-", :gloss "sit", }
   :kaah {:lemma "kaah-", :gloss "say", }
-  :ki` {:lemma "kiʕ-", :gloss "giveback", }
+  :ki {:lemma "kiʕ-", :gloss "giveback", }
   :koom {:lemma "koom-", :gloss "have", }
   :qaat {:lemma "qaat-", :gloss "lie", }
-  :qaat(alt) {:gloss "[x]", :lemma "[y]", }
+  :qaat-alt {:gloss "[x]", :lemma "[y]", }
   :qadid {:lemma "qadid-", :gloss "Stand", }
   :waar {:lemma "waar-", :gloss "beinaplace", }
   :xaw {:gloss "[x]", :lemma "[y]", }
@@ -299,7 +299,7 @@
     }
     {:label "burunge-VImperfUnmrkStem-qaat(alt)"
     :note "Kiessling1994 #7.1.1.2.5"
-    :common {:lexeme :qaat(alt),
+    :common {:lexeme :qaat-alt,
 	    :pos :Verb,
 	    :stemClass :UnmrkStem,
 	    :tam :Imperfect}
@@ -750,7 +750,7 @@
     }
     {:label "burunge-VImprtvWithObj-ki`"
     :note "Kiessling1994"
-    :common {:lexeme :ki`,
+    :common {:lexeme :ki,
 	    :person :Person2,
 	    :pos :Verb,
 	    :tam :Imperative,
@@ -803,7 +803,7 @@
     }
     {:label "burunge-VImperfUnmrkStem-gu"
     :note "Kiessling1994 # 7.1.1.2.7 [Assimilation of vowel of –id- after //]"
-    :common {:lexeme :_NULL,
+    :common {:lexeme :gu,
 	    :pos :Verb,
 	    :stemClass :UnmrkStem,
 	    :tam :Imperfect}
@@ -1194,7 +1194,7 @@
     }
     {:label "burunge-VPerfUnmrkStem-gu"
     :note "Kiessling1994 # 7.1.1.2.7 [Assimilation of vowel of –id- after //]"
-    :common {:lexeme :_NULL,
+    :common {:lexeme :gu,
 	    :pos :Verb,
 	    :stemClass :UnmrkStem,
 	    :tam :Perfect}
@@ -1618,7 +1618,6 @@
     {:label "burunge-VSubj_relative_obj_pres"
     :note "Kiessling1994 # 7.2.7.4"
     :common {:morpheme :SELECTORSUBJRELOBJPRES,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_relative_obj_pres}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -1755,7 +1754,6 @@
     {:label "burunge-VOptative_subj"
     :note "Kiessling1994 # 7.2.7.1 Das Optativeparadigma ohne Objektindikatoren."
     :common {:morpheme :SELECTOROPTSUBJ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Optative_subj}
     :terms [[:subjectTypeSelector, :tenseSel, :token]  ;; schema
@@ -1773,7 +1771,6 @@
     {:label "burunge-VConsecutive_subj_tense"
     :note "Kiessling1994 # 7.2.3. Das Paradigma ohne Objektindikatoren."
     :common {:morpheme :SELECTORCONSECSUBJTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :consecutive_subj_tense}
     :terms [[:subjectTypeSelector, :tenseSel, :token]  ;; schema
@@ -1838,7 +1835,6 @@
     {:label "burunge-VOptative_subj_obj"
     :note "Kiessling1994 # 7.2.7.1"
     :common {:morpheme :SELECTOROPTSUBJOBJ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Optative_subj_obj}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -1862,7 +1858,6 @@
     {:label "burunge-VSubj_obj_habitual"
     :note "Kiessling1994 # 7.2.5.4"
     :common {:morpheme :SELECTORSUBJOBJHAB,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_habitual}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2008,7 +2003,6 @@
             contain morphemes from the following categories:clauseType - subjType - object -
             contrast - case - tenseAspect - sequential - actionOrientation"
     :common {:morpheme :SELECTORSTRUCTURE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :SelectorStructure}
     :terms [[:gender, :number, :person, :selectorCategory, :selectorFormant, :token]  ;; schema
@@ -2048,7 +2042,6 @@
     {:label "burunge-VSubj_objFocus_obj_Tense"
     :note "Kiessling1994 7.2.14. Die Fokusmorpheme {na}und {ni}"
     :common {:morpheme :SELECTORSUBJOBJFOCUS,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_objFocus_obj_Tense}
     :terms [[:genderObj, :numObj, :person, :tenseSel, :token]  ;; schema
@@ -2104,7 +2097,6 @@
     {:label "burunge-VBenefSubj_obj"
     :note "Kiessling1994 # 7.2.12. Der Benefaktiv-Kasus {saa}"
     :common {:morpheme :SELECTORBENEFSUBJOBJ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :BenefSubj_obj}
     :terms [[:genderObj, :numObj, :person, :token]  ;; schema
@@ -2120,7 +2112,6 @@
     {:label "burunge-VSubj_relative_tense"
     :note "Kiessling1994 # 7.2.7.4. Das Relativmorphem {ga}"
     :common {:morpheme :SELECTORSUBJRELTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_relative_tense}
     :terms [[:subjectTypeSelector, :tenseSel, :token]  ;; schema
@@ -2142,7 +2133,6 @@
     {:label "burunge-VSubjFocus_tense"
     :note "Kiessling1994 # 7.2.14. Die Fokusmorpheme {na}und {ni}"
     :common {:morpheme :SELECTORSUBJFOCUSTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :SubjFocus_tense}
     :terms [[:tenseSel, :token]  ;; schema
@@ -2193,7 +2183,6 @@
     {:label "burunge-VSubj_tense"
     :note "Kiessling1994 #7.2.5 (p. 147) [analysis!]"
     :common {:morpheme :SELECTORSUBJTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_tense}
     :terms [[:subjectTypeSelector, :tenseSel, :token]  ;; schema
@@ -2215,7 +2204,6 @@
     {:label "burunge-VSubj_obj_future2"
     :note "Kiessling1994 # 7.2.5.7"
     :common {:morpheme :SELECTORSUBJOBJFUT,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_future2}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2239,7 +2227,6 @@
     {:label "burunge-VSubj_obj_completive"
     :note "Kiessling1994 # 7.2.5.3"
     :common {:morpheme :SELECTORSOBJOBJCOMPLETIVE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_completive}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2263,7 +2250,6 @@
     {:label "burunge-VSubj_obj_prospective"
     :note "Kiessling1994 # 7.2.5.5"
     :common {:morpheme :SELECTORSUBJOBJPROSPECTIVE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_prospective}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2312,7 +2298,6 @@
     {:label "burunge-VSubjFocus_obj"
     :note "Kiessling1994 7.2.14. Die Fokusmorpheme {na}und {ni}"
     :common {:morpheme :SELECTORSUBJFOCUSOBJ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :SubjFocus_obj}
     :terms [[:genderObj, :numObj, :person, :token]  ;; schema
@@ -2397,7 +2382,6 @@
     {:label "burunge-VPartSubj_obj_tense"
     :note "Kiessling1994 # 7.2.13. Der Komitativ-Kasus {ri}"
     :common {:morpheme :SELECTORPARTSUBJOBJTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :PartSubj_obj_tense}
     :terms [[:genderObj, :numObj, :person, :tenseSel, :token]  ;; schema
@@ -2461,7 +2445,6 @@
     {:label "burunge-VIndetSubj_obj"
     :note "Kiessling1994 # 7.2.11. Der SubjTypeSelindefinit {da}"
     :common {:morpheme :SELECTORINDETSUBJOBJ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :IndetSubj_obj}
     :terms [[:genderObj, :numObj, :person, :token]  ;; schema
@@ -2477,7 +2460,6 @@
     {:label "burunge-VSubj_obj_pret_sequential"
     :note "Kiessling1994 # 7.2.8. Das Sequentialmorphem {gi}"
     :common {:morpheme :SELECTORSUBOBJPRETSEQ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_pret_sequential}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2501,7 +2483,6 @@
     {:label "burunge-VSubj_tense_concessive"
     :note "Kiessling1994 # 7.2.7.5. Der Konzessiv"
     :common {:morpheme :SELECTORSUBJTENSECONCESS,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_tense_concessive}
     :terms [[:subjectTypeSelector, :tenseSel, :token]  ;; schema
@@ -2524,7 +2505,6 @@
     :note "Kiessling1994 # 7.1.3 pp. 133-135. Sel vowel sequence resolutions.
             [REFORMULATE!]"
     :common {:morpheme :SELECTORSUBJOBJTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_tense}
     :terms [[:token, :token-selCat1, :token-selCat2, :token-selCat3, :token-selForm1, :token-selForm2, :token-selForm3]  ;; schema
@@ -2632,7 +2612,6 @@
     {:label "burunge-VSubj_obj_pret"
     :note "Kiessling1994 # 7.2.3.2"
     :common {:morpheme :SELECTORSUBJOBJPRET,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_pret}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2656,7 +2635,6 @@
     {:label "burunge-VSubj_obj_future1"
     :note "Kiessling1994 # 7.2.5.6"
     :common {:morpheme :SELECTORSUBJOBJFUT1,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_future1}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2680,7 +2658,6 @@
     {:label "burunge-VSubj_obj"
     :note "Kiessling1994 #7.1.3 (pp. 136f)"
     :common {:morpheme :SELECTORSUBJOBJGEN,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj}
     :terms [[:genderObj, :numObj, :person, :selectorFormant, :token]  ;; schema
@@ -2728,7 +2705,6 @@
     {:label "burunge-VSubj_obj_pres_concessive"
     :note "Kiessling1994 # 7.2.7.5"
     :common {:morpheme :SELECTORSUBJOBJPRESCONCESS,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :Subj_obj_pres_concessive}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2752,7 +2728,6 @@
     {:label "burunge-VClauseType_subj"
     :note "Kiessling1994 # 7.2.7"
     :common {:morpheme :SELECTORCLAUSETYPESUBJ,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :ClauseType_Subj}
     :terms [[:clauseTypeSel, :subjectTypeSelector, :token]  ;; schema
@@ -2803,7 +2778,6 @@
     {:label "burunge-VIndetSubj_tense"
     :note "Kiessling1994 # 7.2.11. Der SubjTypeSelindefinit {da}"
     :common {:morpheme :SELECTORINDETSUBJTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :IndetSubj_tense}
     :terms [[:tenseSel, :token]  ;; schema
@@ -2842,7 +2816,6 @@
     {:label "burunge-VConsecutive_subj_obj_pres"
     :note "Kiessling1994 # 7.2.7.3. Das Consecutivemorphem {ma}"
     :common {:morpheme :SELECTORCONSECSUBJOBJPRES,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :consecutive_subj_obj_pres}
     :terms [[:genderObj, :numObj, :person, :subjectTypeSelector, :token]  ;; schema
@@ -2866,7 +2839,6 @@
     {:label "burunge-VIndefSubj_tense"
     :note "Kiessling1994 7.2.12. Der Benefaktiv-Kasus {saa}"
     :common {:morpheme :SELECTORINDEFSUBJTENSE,
-	    :pos :Verb,
 	    :pos :Selector,
 	    :verbMorphClass :IndefSubj_tense}
     :terms [[:tenseSel, :token]  ;; schema
@@ -2880,7 +2852,6 @@
     {:label "burunge-VImprtvObjSuff"
     :note "Kiessling1994 #7.2.16"
     :common {:morpheme :IMPRTVOBJSUFF,
-	    :person :Person3,
 	    :person :Person2,
 	    :pos :Verb,
 	    :tam :Imperative,
