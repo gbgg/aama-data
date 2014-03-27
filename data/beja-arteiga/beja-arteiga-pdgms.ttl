@@ -1,3 +1,8 @@
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix bar: 	 <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/> .
 
 #TTL FROM INPUT FILE:
 # data/beja-arteiga//beja-arteiga-pdgms.edn
@@ -17,13 +22,13 @@ bar:gender rdfs:range bar:Gender .
 bar:Gender rdfs:subClassOf bar:MuExponent .
 bar:gender rdfs:subPropertyOf bar:muProperty .
 bar:Common aamas:lang aama:Beja-arteiga .
-bar:Common rdf:type Beja-arteiga:Gender .
+bar:Common rdf:type bar:Gender .
 bar:Common rdfs:label "Common".
 bar:Fem aamas:lang aama:Beja-arteiga .
-bar:Fem rdf:type Beja-arteiga:Gender .
+bar:Fem rdf:type bar:Gender .
 bar:Fem rdfs:label "Fem".
 bar:Masc aamas:lang aama:Beja-arteiga .
-bar:Masc rdf:type Beja-arteiga:Gender .
+bar:Masc rdf:type bar:Gender .
 bar:Masc rdfs:label "Masc".
 
 #SCHEMATA: nonFiniteForm
@@ -36,7 +41,7 @@ bar:nonFiniteForm rdfs:range bar:Nonfiniteform .
 bar:Nonfiniteform rdfs:subClassOf bar:MuExponent .
 bar:nonFiniteForm rdfs:subPropertyOf bar:muProperty .
 bar:Participle aamas:lang aama:Beja-arteiga .
-bar:Participle rdf:type Beja-arteiga:Nonfiniteform .
+bar:Participle rdf:type bar:Nonfiniteform .
 bar:Participle rdfs:label "Participle".
 
 #SCHEMATA: participle
@@ -49,22 +54,22 @@ bar:participle rdfs:range bar:Participle .
 bar:Participle rdfs:subClassOf bar:MuExponent .
 bar:participle rdfs:subPropertyOf bar:muProperty .
 bar:Common aamas:lang aama:Beja-arteiga .
-bar:Common rdf:type Beja-arteiga:Participle .
+bar:Common rdf:type bar:Participle .
 bar:Common rdfs:label "Common".
 bar:Conjunctive aamas:lang aama:Beja-arteiga .
-bar:Conjunctive rdf:type Beja-arteiga:Participle .
+bar:Conjunctive rdf:type bar:Participle .
 bar:Conjunctive rdfs:label "Conjunctive".
 bar:Future aamas:lang aama:Beja-arteiga .
-bar:Future rdf:type Beja-arteiga:Participle .
+bar:Future rdf:type bar:Participle .
 bar:Future rdfs:label "Future".
 bar:Negative aamas:lang aama:Beja-arteiga .
-bar:Negative rdf:type Beja-arteiga:Participle .
+bar:Negative rdf:type bar:Participle .
 bar:Negative rdfs:label "Negative".
 bar:Past aamas:lang aama:Beja-arteiga .
-bar:Past rdf:type Beja-arteiga:Participle .
+bar:Past rdf:type bar:Participle .
 bar:Past rdfs:label "Past".
 bar:Present aamas:lang aama:Beja-arteiga .
-bar:Present rdf:type Beja-arteiga:Participle .
+bar:Present rdf:type bar:Participle .
 bar:Present rdfs:label "Present".
 
 #SCHEMATA: postpositionClass
@@ -77,10 +82,10 @@ bar:postpositionClass rdfs:range bar:Postpositionclass .
 bar:Postpositionclass rdfs:subClassOf bar:MuExponent .
 bar:postpositionClass rdfs:subPropertyOf bar:muProperty .
 bar:A aamas:lang aama:Beja-arteiga .
-bar:A rdf:type Beja-arteiga:Postpositionclass .
+bar:A rdf:type bar:Postpositionclass .
 bar:A rdfs:label "A".
 bar:B aamas:lang aama:Beja-arteiga .
-bar:B rdf:type Beja-arteiga:Postpositionclass .
+bar:B rdf:type bar:Postpositionclass .
 bar:B rdfs:label "B".
 
 #SCHEMATA: rootClass
@@ -93,16 +98,16 @@ bar:rootClass rdfs:range bar:Rootclass .
 bar:Rootclass rdfs:subClassOf bar:MuExponent .
 bar:rootClass rdfs:subPropertyOf bar:muProperty .
 bar:CCC aamas:lang aama:Beja-arteiga .
-bar:CCC rdf:type Beja-arteiga:Rootclass .
+bar:CCC rdf:type bar:Rootclass .
 bar:CCC rdfs:label "CCC".
 bar:CCY aamas:lang aama:Beja-arteiga .
-bar:CCY rdf:type Beja-arteiga:Rootclass .
+bar:CCY rdf:type bar:Rootclass .
 bar:CCY rdfs:label "CCY".
 bar:CVC aamas:lang aama:Beja-arteiga .
-bar:CVC rdf:type Beja-arteiga:Rootclass .
+bar:CVC rdf:type bar:Rootclass .
 bar:CVC rdfs:label "CVC".
 bar:Invar aamas:lang aama:Beja-arteiga .
-bar:Invar rdf:type Beja-arteiga:Rootclass .
+bar:Invar rdf:type bar:Rootclass .
 bar:Invar rdfs:label "Invar".
 
 #SCHEMATA: pdgmType
@@ -115,10 +120,10 @@ bar:pdgmType rdfs:range bar:Pdgmtype .
 bar:Pdgmtype rdfs:subClassOf bar:MuExponent .
 bar:pdgmType rdfs:subPropertyOf bar:muProperty .
 bar:PluralFormation aamas:lang aama:Beja-arteiga .
-bar:PluralFormation rdf:type Beja-arteiga:Pdgmtype .
+bar:PluralFormation rdf:type bar:Pdgmtype .
 bar:PluralFormation rdfs:label "PluralFormation".
 bar:Structure aamas:lang aama:Beja-arteiga .
-bar:Structure rdf:type Beja-arteiga:Pdgmtype .
+bar:Structure rdf:type bar:Pdgmtype .
 bar:Structure rdfs:label "Structure".
 
 #SCHEMATA: polarity
@@ -131,10 +136,10 @@ bar:polarity rdfs:range bar:Polarity .
 bar:Polarity rdfs:subClassOf bar:MuExponent .
 bar:polarity rdfs:subPropertyOf bar:muProperty .
 bar:Affirmative aamas:lang aama:Beja-arteiga .
-bar:Affirmative rdf:type Beja-arteiga:Polarity .
+bar:Affirmative rdf:type bar:Polarity .
 bar:Affirmative rdfs:label "Affirmative".
 bar:Negative aamas:lang aama:Beja-arteiga .
-bar:Negative rdf:type Beja-arteiga:Polarity .
+bar:Negative rdf:type bar:Polarity .
 bar:Negative rdfs:label "Negative".
 
 #SCHEMATA: case
@@ -147,25 +152,25 @@ bar:case rdfs:range bar:Case .
 bar:Case rdfs:subClassOf bar:MuExponent .
 bar:case rdfs:subPropertyOf bar:muProperty .
 bar:Ablative aamas:lang aama:Beja-arteiga .
-bar:Ablative rdf:type Beja-arteiga:Case .
+bar:Ablative rdf:type bar:Case .
 bar:Ablative rdfs:label "Ablative".
 bar:Equative aamas:lang aama:Beja-arteiga .
-bar:Equative rdf:type Beja-arteiga:Case .
+bar:Equative rdf:type bar:Case .
 bar:Equative rdfs:label "Equative".
 bar:Locative aamas:lang aama:Beja-arteiga .
-bar:Locative rdf:type Beja-arteiga:Case .
+bar:Locative rdf:type bar:Case .
 bar:Locative rdfs:label "Locative".
 bar:Nom_obj aamas:lang aama:Beja-arteiga .
-bar:Nom_obj rdf:type Beja-arteiga:Case .
+bar:Nom_obj rdf:type bar:Case .
 bar:Nom_obj rdfs:label "Nom_obj".
 bar:Nominative aamas:lang aama:Beja-arteiga .
-bar:Nominative rdf:type Beja-arteiga:Case .
+bar:Nominative rdf:type bar:Case .
 bar:Nominative rdfs:label "Nominative".
 bar:Object aamas:lang aama:Beja-arteiga .
-bar:Object rdf:type Beja-arteiga:Case .
+bar:Object rdf:type bar:Case .
 bar:Object rdfs:label "Object".
 bar:Possessive aamas:lang aama:Beja-arteiga .
-bar:Possessive rdf:type Beja-arteiga:Case .
+bar:Possessive rdf:type bar:Case .
 bar:Possessive rdfs:label "Possessive".
 
 #SCHEMATA: conjClass
@@ -178,10 +183,10 @@ bar:conjClass rdfs:range bar:Conjclass .
 bar:Conjclass rdfs:subClassOf bar:MuExponent .
 bar:conjClass rdfs:subPropertyOf bar:muProperty .
 bar:Prefix aamas:lang aama:Beja-arteiga .
-bar:Prefix rdf:type Beja-arteiga:Conjclass .
+bar:Prefix rdf:type bar:Conjclass .
 bar:Prefix rdfs:label "Prefix".
 bar:Suffix aamas:lang aama:Beja-arteiga .
-bar:Suffix rdf:type Beja-arteiga:Conjclass .
+bar:Suffix rdf:type bar:Conjclass .
 bar:Suffix rdfs:label "Suffix".
 
 #SCHEMATA: langVar
@@ -194,13 +199,13 @@ bar:langVar rdfs:range bar:Langvar .
 bar:Langvar rdfs:subClassOf bar:MuExponent .
 bar:langVar rdfs:subPropertyOf bar:muProperty .
 bar:Arteiga aamas:lang aama:Beja-arteiga .
-bar:Arteiga rdf:type Beja-arteiga:Langvar .
+bar:Arteiga rdf:type bar:Langvar .
 bar:Arteiga rdfs:label "Arteiga".
 bar:Hadendowa aamas:lang aama:Beja-arteiga .
-bar:Hadendowa rdf:type Beja-arteiga:Langvar .
+bar:Hadendowa rdf:type bar:Langvar .
 bar:Hadendowa rdfs:label "Hadendowa".
 bar:bishari aamas:lang aama:Beja-arteiga .
-bar:bishari rdf:type Beja-arteiga:Langvar .
+bar:bishari rdf:type bar:Langvar .
 bar:bishari rdfs:label "bishari".
 
 #SCHEMATA: pluralClass
@@ -213,13 +218,13 @@ bar:pluralClass rdfs:range bar:Pluralclass .
 bar:Pluralclass rdfs:subClassOf bar:MuExponent .
 bar:pluralClass rdfs:subPropertyOf bar:muProperty .
 bar:A aamas:lang aama:Beja-arteiga .
-bar:A rdf:type Beja-arteiga:Pluralclass .
+bar:A rdf:type bar:Pluralclass .
 bar:A rdfs:label "A".
 bar:B aamas:lang aama:Beja-arteiga .
-bar:B rdf:type Beja-arteiga:Pluralclass .
+bar:B rdf:type bar:Pluralclass .
 bar:B rdfs:label "B".
 bar:C aamas:lang aama:Beja-arteiga .
-bar:C rdf:type Beja-arteiga:Pluralclass .
+bar:C rdf:type bar:Pluralclass .
 bar:C rdfs:label "C".
 
 #SCHEMATA: pos
@@ -232,13 +237,13 @@ bar:pos rdfs:range bar:Pos .
 bar:Pos rdfs:subClassOf bar:MuExponent .
 bar:pos rdfs:subPropertyOf bar:muProperty .
 bar:Noun aamas:lang aama:Beja-arteiga .
-bar:Noun rdf:type Beja-arteiga:Pos .
+bar:Noun rdf:type bar:Pos .
 bar:Noun rdfs:label "Noun".
 bar:Pronoun aamas:lang aama:Beja-arteiga .
-bar:Pronoun rdf:type Beja-arteiga:Pos .
+bar:Pronoun rdf:type bar:Pos .
 bar:Pronoun rdfs:label "Pronoun".
 bar:Verb aamas:lang aama:Beja-arteiga .
-bar:Verb rdf:type Beja-arteiga:Pos .
+bar:Verb rdf:type bar:Pos .
 bar:Verb rdfs:label "Verb".
 
 #SCHEMATA: person
@@ -251,13 +256,13 @@ bar:person rdfs:range bar:Person .
 bar:Person rdfs:subClassOf bar:MuExponent .
 bar:person rdfs:subPropertyOf bar:muProperty .
 bar:Person1 aamas:lang aama:Beja-arteiga .
-bar:Person1 rdf:type Beja-arteiga:Person .
+bar:Person1 rdf:type bar:Person .
 bar:Person1 rdfs:label "Person1".
 bar:Person2 aamas:lang aama:Beja-arteiga .
-bar:Person2 rdf:type Beja-arteiga:Person .
+bar:Person2 rdf:type bar:Person .
 bar:Person2 rdfs:label "Person2".
 bar:Person3 aamas:lang aama:Beja-arteiga .
-bar:Person3 rdf:type Beja-arteiga:Person .
+bar:Person3 rdf:type bar:Person .
 bar:Person3 rdfs:label "Person3".
 
 #SCHEMATA: conjType
@@ -270,7 +275,7 @@ bar:conjType rdfs:range bar:Conjtype .
 bar:Conjtype rdfs:subClassOf bar:MuExponent .
 bar:conjType rdfs:subPropertyOf bar:muProperty .
 bar:Irregular aamas:lang aama:Beja-arteiga .
-bar:Irregular rdf:type Beja-arteiga:Conjtype .
+bar:Irregular rdf:type bar:Conjtype .
 bar:Irregular rdfs:label "Irregular".
 
 #SCHEMATA: tamStemClass
@@ -283,25 +288,25 @@ bar:tamStemClass rdfs:range bar:Tamstemclass .
 bar:Tamstemclass rdfs:subClassOf bar:MuExponent .
 bar:tamStemClass rdfs:subPropertyOf bar:muProperty .
 bar:AoristClass aamas:lang aama:Beja-arteiga .
-bar:AoristClass rdf:type Beja-arteiga:Tamstemclass .
+bar:AoristClass rdf:type bar:Tamstemclass .
 bar:AoristClass rdfs:label "AoristClass".
 bar:ModClass aamas:lang aama:Beja-arteiga .
-bar:ModClass rdf:type Beja-arteiga:Tamstemclass .
+bar:ModClass rdf:type bar:Tamstemclass .
 bar:ModClass rdfs:label "ModClass".
 bar:NegClass aamas:lang aama:Beja-arteiga .
-bar:NegClass rdf:type Beja-arteiga:Tamstemclass .
+bar:NegClass rdf:type bar:Tamstemclass .
 bar:NegClass rdfs:label "NegClass".
 bar:PartClass aamas:lang aama:Beja-arteiga .
-bar:PartClass rdf:type Beja-arteiga:Tamstemclass .
+bar:PartClass rdf:type bar:Tamstemclass .
 bar:PartClass rdfs:label "PartClass".
 bar:PastClass aamas:lang aama:Beja-arteiga .
-bar:PastClass rdf:type Beja-arteiga:Tamstemclass .
+bar:PastClass rdf:type bar:Tamstemclass .
 bar:PastClass rdfs:label "PastClass".
 bar:PresClass aamas:lang aama:Beja-arteiga .
-bar:PresClass rdf:type Beja-arteiga:Tamstemclass .
+bar:PresClass rdf:type bar:Tamstemclass .
 bar:PresClass rdfs:label "PresClass".
 bar:PresSgClass aamas:lang aama:Beja-arteiga .
-bar:PresSgClass rdf:type Beja-arteiga:Tamstemclass .
+bar:PresSgClass rdf:type bar:Tamstemclass .
 bar:PresSgClass rdfs:label "PresSgClass".
 
 #SCHEMATA: derivedStem
@@ -314,25 +319,25 @@ bar:derivedStem rdfs:range bar:Derivedstem .
 bar:Derivedstem rdfs:subClassOf bar:MuExponent .
 bar:derivedStem rdfs:subPropertyOf bar:muProperty .
 bar:B aamas:lang aama:Beja-arteiga .
-bar:B rdf:type Beja-arteiga:Derivedstem .
+bar:B rdf:type bar:Derivedstem .
 bar:B rdfs:label "B".
 bar:M aamas:lang aama:Beja-arteiga .
-bar:M rdf:type Beja-arteiga:Derivedstem .
+bar:M rdf:type bar:Derivedstem .
 bar:M rdfs:label "M".
 bar:R aamas:lang aama:Beja-arteiga .
-bar:R rdf:type Beja-arteiga:Derivedstem .
+bar:R rdf:type bar:Derivedstem .
 bar:R rdfs:label "R".
 bar:S aamas:lang aama:Beja-arteiga .
-bar:S rdf:type Beja-arteiga:Derivedstem .
+bar:S rdf:type bar:Derivedstem .
 bar:S rdfs:label "S".
 bar:S2 aamas:lang aama:Beja-arteiga .
-bar:S2 rdf:type Beja-arteiga:Derivedstem .
+bar:S2 rdf:type bar:Derivedstem .
 bar:S2 rdfs:label "S2".
 bar:SM aamas:lang aama:Beja-arteiga .
-bar:SM rdf:type Beja-arteiga:Derivedstem .
+bar:SM rdf:type bar:Derivedstem .
 bar:SM rdfs:label "SM".
 bar:T aamas:lang aama:Beja-arteiga .
-bar:T rdf:type Beja-arteiga:Derivedstem .
+bar:T rdf:type bar:Derivedstem .
 bar:T rdfs:label "T".
 
 #SCHEMATA: formType
@@ -345,19 +350,19 @@ bar:formType rdfs:range bar:Formtype .
 bar:Formtype rdfs:subClassOf bar:MuExponent .
 bar:formType rdfs:subPropertyOf bar:muProperty .
 bar:Affix aamas:lang aama:Beja-arteiga .
-bar:Affix rdf:type Beja-arteiga:Formtype .
+bar:Affix rdf:type bar:Formtype .
 bar:Affix rdfs:label "Affix".
 bar:Auxiliary aamas:lang aama:Beja-arteiga .
-bar:Auxiliary rdf:type Beja-arteiga:Formtype .
+bar:Auxiliary rdf:type bar:Formtype .
 bar:Auxiliary rdfs:label "Auxiliary".
 bar:Compound aamas:lang aama:Beja-arteiga .
-bar:Compound rdf:type Beja-arteiga:Formtype .
+bar:Compound rdf:type bar:Formtype .
 bar:Compound rdfs:label "Compound".
 bar:Copula aamas:lang aama:Beja-arteiga .
-bar:Copula rdf:type Beja-arteiga:Formtype .
+bar:Copula rdf:type bar:Formtype .
 bar:Copula rdfs:label "Copula".
 bar:Stem aamas:lang aama:Beja-arteiga .
-bar:Stem rdf:type Beja-arteiga:Formtype .
+bar:Stem rdf:type bar:Formtype .
 bar:Stem rdfs:label "Stem".
 
 #SCHEMATA: proClass
@@ -370,19 +375,19 @@ bar:proClass rdfs:range bar:Proclass .
 bar:Proclass rdfs:subClassOf bar:MuExponent .
 bar:proClass rdfs:subPropertyOf bar:muProperty .
 bar:DefMarker aamas:lang aama:Beja-arteiga .
-bar:DefMarker rdf:type Beja-arteiga:Proclass .
+bar:DefMarker rdf:type bar:Proclass .
 bar:DefMarker rdfs:label "DefMarker".
 bar:Demonstrative aamas:lang aama:Beja-arteiga .
-bar:Demonstrative rdf:type Beja-arteiga:Proclass .
+bar:Demonstrative rdf:type bar:Proclass .
 bar:Demonstrative rdfs:label "Demonstrative".
 bar:Independent aamas:lang aama:Beja-arteiga .
-bar:Independent rdf:type Beja-arteiga:Proclass .
+bar:Independent rdf:type bar:Proclass .
 bar:Independent rdfs:label "Independent".
 bar:PossObj aamas:lang aama:Beja-arteiga .
-bar:PossObj rdf:type Beja-arteiga:Proclass .
+bar:PossObj rdf:type bar:Proclass .
 bar:PossObj rdfs:label "PossObj".
 bar:ProComp aamas:lang aama:Beja-arteiga .
-bar:ProComp rdf:type Beja-arteiga:Proclass .
+bar:ProComp rdf:type bar:Proclass .
 bar:ProComp rdfs:label "ProComp".
 
 #SCHEMATA: derivedStemAug
@@ -395,10 +400,10 @@ bar:derivedStemAug rdfs:range bar:Derivedstemaug .
 bar:Derivedstemaug rdfs:subClassOf bar:MuExponent .
 bar:derivedStemAug rdfs:subPropertyOf bar:muProperty .
 bar:Intensive aamas:lang aama:Beja-arteiga .
-bar:Intensive rdf:type Beja-arteiga:Derivedstemaug .
+bar:Intensive rdf:type bar:Derivedstemaug .
 bar:Intensive rdfs:label "Intensive".
 bar:Simple aamas:lang aama:Beja-arteiga .
-bar:Simple rdf:type Beja-arteiga:Derivedstemaug .
+bar:Simple rdf:type bar:Derivedstemaug .
 bar:Simple rdfs:label "Simple".
 
 #SCHEMATA: tam
@@ -411,28 +416,28 @@ bar:tam rdfs:range bar:Tam .
 bar:Tam rdfs:subClassOf bar:MuExponent .
 bar:tam rdfs:subPropertyOf bar:muProperty .
 bar:Aorist aamas:lang aama:Beja-arteiga .
-bar:Aorist rdf:type Beja-arteiga:Tam .
+bar:Aorist rdf:type bar:Tam .
 bar:Aorist rdfs:label "Aorist".
 bar:Common aamas:lang aama:Beja-arteiga .
-bar:Common rdf:type Beja-arteiga:Tam .
+bar:Common rdf:type bar:Tam .
 bar:Common rdfs:label "Common".
 bar:Future aamas:lang aama:Beja-arteiga .
-bar:Future rdf:type Beja-arteiga:Tam .
+bar:Future rdf:type bar:Tam .
 bar:Future rdfs:label "Future".
 bar:Imperative aamas:lang aama:Beja-arteiga .
-bar:Imperative rdf:type Beja-arteiga:Tam .
+bar:Imperative rdf:type bar:Tam .
 bar:Imperative rdfs:label "Imperative".
 bar:Jussive aamas:lang aama:Beja-arteiga .
-bar:Jussive rdf:type Beja-arteiga:Tam .
+bar:Jussive rdf:type bar:Tam .
 bar:Jussive rdfs:label "Jussive".
 bar:Optative aamas:lang aama:Beja-arteiga .
-bar:Optative rdf:type Beja-arteiga:Tam .
+bar:Optative rdf:type bar:Tam .
 bar:Optative rdfs:label "Optative".
 bar:Past aamas:lang aama:Beja-arteiga .
-bar:Past rdf:type Beja-arteiga:Tam .
+bar:Past rdf:type bar:Tam .
 bar:Past rdfs:label "Past".
 bar:Present aamas:lang aama:Beja-arteiga .
-bar:Present rdf:type Beja-arteiga:Tam .
+bar:Present rdf:type bar:Tam .
 bar:Present rdfs:label "Present".
 
 #SCHEMATA: number
@@ -445,13 +450,13 @@ bar:number rdfs:range bar:Number .
 bar:Number rdfs:subClassOf bar:MuExponent .
 bar:number rdfs:subPropertyOf bar:muProperty .
 bar:Common aamas:lang aama:Beja-arteiga .
-bar:Common rdf:type Beja-arteiga:Number .
+bar:Common rdf:type bar:Number .
 bar:Common rdfs:label "Common".
 bar:Plural aamas:lang aama:Beja-arteiga .
-bar:Plural rdf:type Beja-arteiga:Number .
+bar:Plural rdf:type bar:Number .
 bar:Plural rdfs:label "Plural".
 bar:Singular aamas:lang aama:Beja-arteiga .
-bar:Singular rdf:type Beja-arteiga:Number .
+bar:Singular rdf:type bar:Number .
 bar:Singular rdfs:label "Singular".
 
 #SCHEMATA: multiLex
@@ -464,16 +469,16 @@ bar:multiLex rdfs:range bar:Multilex .
 bar:Multilex rdfs:subClassOf bar:MuExponent .
 bar:multiLex rdfs:subPropertyOf bar:muProperty .
 bar:DERVSTEMFORM aamas:lang aama:Beja-arteiga .
-bar:DERVSTEMFORM rdf:type Beja-arteiga:Multilex .
+bar:DERVSTEMFORM rdf:type bar:Multilex .
 bar:DERVSTEMFORM rdfs:label "DERVSTEMFORM".
 bar:IMPTVROOTCLASSES aamas:lang aama:Beja-arteiga .
-bar:IMPTVROOTCLASSES rdf:type Beja-arteiga:Multilex .
+bar:IMPTVROOTCLASSES rdf:type bar:Multilex .
 bar:IMPTVROOTCLASSES rdfs:label "IMPTVROOTCLASSES".
 bar:TENSESTEM aamas:lang aama:Beja-arteiga .
-bar:TENSESTEM rdf:type Beja-arteiga:Multilex .
+bar:TENSESTEM rdf:type bar:Multilex .
 bar:TENSESTEM rdfs:label "TENSESTEM".
 bar:VERBALPARTICIPLES aamas:lang aama:Beja-arteiga .
-bar:VERBALPARTICIPLES rdf:type Beja-arteiga:Multilex .
+bar:VERBALPARTICIPLES rdf:type bar:Multilex .
 bar:VERBALPARTICIPLES rdfs:label "VERBALPARTICIPLES".
 
 #SCHEMATA: deixis
@@ -486,10 +491,10 @@ bar:deixis rdfs:range bar:Deixis .
 bar:Deixis rdfs:subClassOf bar:MuExponent .
 bar:deixis rdfs:subPropertyOf bar:muProperty .
 bar:Far aamas:lang aama:Beja-arteiga .
-bar:Far rdf:type Beja-arteiga:Deixis .
+bar:Far rdf:type bar:Deixis .
 bar:Far rdfs:label "Far".
 bar:Near aamas:lang aama:Beja-arteiga .
-bar:Near rdf:type Beja-arteiga:Deixis .
+bar:Near rdf:type bar:Deixis .
 bar:Near rdfs:label "Near".
 
 #SCHEMATA: defClass
@@ -502,13 +507,13 @@ bar:defClass rdfs:range bar:Defclass .
 bar:Defclass rdfs:subClassOf bar:MuExponent .
 bar:defClass rdfs:subPropertyOf bar:muProperty .
 bar:DefClass1 aamas:lang aama:Beja-arteiga .
-bar:DefClass1 rdf:type Beja-arteiga:Defclass .
+bar:DefClass1 rdf:type bar:Defclass .
 bar:DefClass1 rdfs:label "DefClass1".
 bar:DefClass2 aamas:lang aama:Beja-arteiga .
-bar:DefClass2 rdf:type Beja-arteiga:Defclass .
+bar:DefClass2 rdf:type bar:Defclass .
 bar:DefClass2 rdfs:label "DefClass2".
 bar:DefClass3 aamas:lang aama:Beja-arteiga .
-bar:DefClass3 rdf:type Beja-arteiga:Defclass .
+bar:DefClass3 rdf:type bar:Defclass .
 bar:DefClass3 rdfs:label "DefClass3".
 
 #MORPHEMES:
@@ -7438,6 +7443,7 @@ aama:ID9d150849-4258-4d13-9e3f-fdcb39eb9131 a aamas:Term ;
 	bar:lexeme bar:dbl ;
 	bar:conjClass bar:Prefix ;
 	.
+
 aama:ID01102fe4-abcf-45c1-b8a5-1561830ea22f a aamas:Term ;
 	aamas:lang aama:Beja-arteiga ;
 	bar:derivedStem bar:B ;
