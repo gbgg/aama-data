@@ -83,11 +83,13 @@
 			(def mval (name value))
 			(def y ( map println [
 					(cond (= mprop "gloss")
-						(format "\trdfs:comment \"%s\" ;" mval)
-                                              (= mprop "lemma")
-                                                (format "\trdfs:comment \"%s\" ;" mval)
-                                              :else
-						(format "\t%s:%s %s:%s ;" sgpref mprop sgpref mval)
+								(format "\trdfs:comment \"%s\" ;" mval)
+                              (= mprop "lemma")
+								(format "\trdfs:comment \"%s\" ;" mval)
+                              (re-find #"^\"" mval)
+                                 (format "\t%s:%s \"%s\" ;" sgpref mprop mval)
+                              :else
+								 (format "\t%s:%s %s:%s ;" sgpref mprop sgpref mval)
 					)
 				])
 			)
@@ -110,13 +112,13 @@
 			(def lval (name value))
 			(def y ( map println [
 					(cond (= lprop "gloss")
-						(format "\taamas:%s \"%s\" ;" lprop lval)
-                                              (= lprop "lemma")
-                                                (format "\taamas:%s \"%s\" ;" lprop lval)
-                                              (re-find #"^\"" lval)
-                                                (format "\t%s:%s \"%s\" ;" sgpref lprop lval)
-                                              :else
-						(format "\t%s:%s %s:%s ;" sgpref lprop sgpref lval)
+									(format "\taamas:%s \"%s\" ;" lprop lval)
+                               (= lprop "lemma")
+                                    (format "\taamas:%s \"%s\" ;" lprop lval)
+                               (re-find #"^note" lprop)
+                                     (format "\t%s:%s \"%s\" ;" sgpref lprop lval)
+                               :else
+									(format "\t%s:%s %s:%s ;" sgpref lprop sgpref lval)
 					)
 				])
 			)
@@ -160,9 +162,13 @@
 				(def tprop (name (key tpropval)))
 				(def tval (name (val tpropval)))
 				(def y (map println [
-						(if (= tprop "token")
-							(format "\t%s:%s \"%s\" ;" sgpref tprop tval )
-							(format "\t%s:%s %s:%s ;" sgpref tprop sgpref tval )	
+                        (cond (re-find #"^\"" tval)
+                                     (format "\t%s:%s \"%s\" ;" sgpref lprop lval)
+								;;  following redundant if previous clause works
+								 (re-find #"^token" tprop)
+									 (format "\t%s:%s \"%s\" ;" sgpref tprop tval )
+								 :else
+									(format "\t%s:%s %s:%s ;" sgpref tprop sgpref tval )	
 						)
 					])
 				)
