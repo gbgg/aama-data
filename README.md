@@ -3,17 +3,17 @@
 Afro-Asiatic Morphological Archive
 --------------------------------------------------------
 08/10/13
-Afro-Asiatic Morphological Archive: branch lang-data-rev
+Afro-Asiatic Morphological Archive:
 
-You are currently looking at branch lang-data-rev, which will be the temporary repository for revised language data while questions of format are being formalized.
+You are currently looking at aama-data, which will be the temporary repository for revised language data while questions of format are being formalized. The  current best data for each language is kept in the github/aama organization, where each language has its own repository. The reference file-format is edn (LANG-pdgms.edn).
 
-In the absence of a UI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), shell and perl scripts for querying the archive will be found in aama/bin -- see bin/README.md. 	
+In the absence of a UI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), command-line scripts for querying the archive will be found in aama/bin -- see bin/README.md. 	
 
 In the current revised data-set, note:
 	1. For each language single lc, 3-character ns prefix is used for the URI of language-specific morphosyntactic properties and values. List of proposed prefixes will be found in bin/lname-pref.txt.
 	2. URIs of archive-wide morphosyntactic properties (e.g., "lang", "gloss", "lemma" . . .) are assigned the ns prefix "aamas:".
 	3. Other URIs, in particular entity IDs, have ns prefix "aama:"
-		4. Inference procedures and notations are being developed and incorporated to associate language-specific properties and values, e.g. "orm:Present", with general morphosyntactic properties and values, e.g. "aamas:Present".
+	4. Inference procedures and notations are being developed and incorporated to associate language-specific properties and values, e.g. "orm:Present", with general morphosyntactic properties and values, e.g. "aamas:Present".
 	5. Among the important entity-types are:
 			a. Terms
 			b. Lexemes (or "l-terms"): e.g. "ktb 'write'".

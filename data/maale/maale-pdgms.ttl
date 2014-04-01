@@ -1,6 +1,11 @@
 
 #TTL FROM INPUT FILE:
-# data/maale//maale-pdgms.edn
+# data/maale/maale-pdgms.edn
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix mal:   <http://id.oi.uchicago.edu/aama/2013/maale/> .
 
 #SCHEMATA:
 
@@ -17,13 +22,13 @@ mal:gender rdfs:range mal:Gender .
 mal:Gender rdfs:subClassOf mal:MuExponent .
 mal:gender rdfs:subPropertyOf mal:muProperty .
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Gender .
+mal:Common rdf:type mal:Gender .
 mal:Common rdfs:label "Common".
 mal:Fem aamas:lang aama:Maale .
-mal:Fem rdf:type Maale:Gender .
+mal:Fem rdf:type mal:Gender .
 mal:Fem rdfs:label "Fem".
 mal:Masc aamas:lang aama:Maale .
-mal:Masc rdf:type Maale:Gender .
+mal:Masc rdf:type mal:Gender .
 mal:Masc rdfs:label "Masc".
 
 #SCHEMATA: modal
@@ -36,22 +41,22 @@ mal:modal rdfs:range mal:Modal .
 mal:Modal rdfs:subClassOf mal:MuExponent .
 mal:modal rdfs:subPropertyOf mal:muProperty .
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Modal .
+mal:Common rdf:type mal:Modal .
 mal:Common rdfs:label "Common".
 mal:Mirative aamas:lang aama:Maale .
-mal:Mirative rdf:type Maale:Modal .
+mal:Mirative rdf:type mal:Modal .
 mal:Mirative rdfs:label "Mirative".
 mal:NewInfo aamas:lang aama:Maale .
-mal:NewInfo rdf:type Maale:Modal .
+mal:NewInfo rdf:type mal:Modal .
 mal:NewInfo rdfs:label "NewInfo".
 mal:NonVerbal aamas:lang aama:Maale .
-mal:NonVerbal rdf:type Maale:Modal .
+mal:NonVerbal rdf:type mal:Modal .
 mal:NonVerbal rdfs:label "NonVerbal".
 mal:Perfective aamas:lang aama:Maale .
-mal:Perfective rdf:type Maale:Modal .
+mal:Perfective rdf:type mal:Modal .
 mal:Perfective rdfs:label "Perfective".
 mal:Veridical aamas:lang aama:Maale .
-mal:Veridical rdf:type Maale:Modal .
+mal:Veridical rdf:type mal:Modal .
 mal:Veridical rdfs:label "Veridical".
 
 #SCHEMATA: possType
@@ -64,16 +69,16 @@ mal:possType rdfs:range mal:Posstype .
 mal:Posstype rdfs:subClassOf mal:MuExponent .
 mal:possType rdfs:subPropertyOf mal:muProperty .
 mal:Poss1 aamas:lang aama:Maale .
-mal:Poss1 rdf:type Maale:Posstype .
+mal:Poss1 rdf:type mal:Posstype .
 mal:Poss1 rdfs:label "Poss1".
 mal:Poss2 aamas:lang aama:Maale .
-mal:Poss2 rdf:type Maale:Posstype .
+mal:Poss2 rdf:type mal:Posstype .
 mal:Poss2 rdfs:label "Poss2".
 mal:PossNom1 aamas:lang aama:Maale .
-mal:PossNom1 rdf:type Maale:Posstype .
+mal:PossNom1 rdf:type mal:Posstype .
 mal:PossNom1 rdfs:label "PossNom1".
 mal:PossNom2 aamas:lang aama:Maale .
-mal:PossNom2 rdf:type Maale:Posstype .
+mal:PossNom2 rdf:type mal:Posstype .
 mal:PossNom2 rdfs:label "PossNom2".
 
 #SCHEMATA: rootStructure
@@ -86,10 +91,10 @@ mal:rootStructure rdfs:range mal:Rootstructure .
 mal:Rootstructure rdfs:subClassOf mal:MuExponent .
 mal:rootStructure rdfs:subPropertyOf mal:muProperty .
 mal:Group1 aamas:lang aama:Maale .
-mal:Group1 rdf:type Maale:Rootstructure .
+mal:Group1 rdf:type mal:Rootstructure .
 mal:Group1 rdfs:label "Group1".
 mal:Group2 aamas:lang aama:Maale .
-mal:Group2 rdf:type Maale:Rootstructure .
+mal:Group2 rdf:type mal:Rootstructure .
 mal:Group2 rdfs:label "Group2".
 
 #SCHEMATA: polarity
@@ -102,10 +107,10 @@ mal:polarity rdfs:range mal:Polarity .
 mal:Polarity rdfs:subClassOf mal:MuExponent .
 mal:polarity rdfs:subPropertyOf mal:muProperty .
 mal:Affirmative aamas:lang aama:Maale .
-mal:Affirmative rdf:type Maale:Polarity .
+mal:Affirmative rdf:type mal:Polarity .
 mal:Affirmative rdfs:label "Affirmative".
 mal:Negative aamas:lang aama:Maale .
-mal:Negative rdf:type Maale:Polarity .
+mal:Negative rdf:type mal:Polarity .
 mal:Negative rdfs:label "Negative".
 
 #SCHEMATA: case
@@ -118,25 +123,25 @@ mal:case rdfs:range mal:Case .
 mal:Case rdfs:subClassOf mal:MuExponent .
 mal:case rdfs:subPropertyOf mal:muProperty .
 mal:Ablative aamas:lang aama:Maale .
-mal:Ablative rdf:type Maale:Case .
+mal:Ablative rdf:type mal:Case .
 mal:Ablative rdfs:label "Ablative".
 mal:Absolutive aamas:lang aama:Maale .
-mal:Absolutive rdf:type Maale:Case .
+mal:Absolutive rdf:type mal:Case .
 mal:Absolutive rdfs:label "Absolutive".
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Case .
+mal:Common rdf:type mal:Case .
 mal:Common rdfs:label "Common".
 mal:Dative aamas:lang aama:Maale .
-mal:Dative rdf:type Maale:Case .
+mal:Dative rdf:type mal:Case .
 mal:Dative rdfs:label "Dative".
 mal:Instrumental aamas:lang aama:Maale .
-mal:Instrumental rdf:type Maale:Case .
+mal:Instrumental rdf:type mal:Case .
 mal:Instrumental rdfs:label "Instrumental".
 mal:Nominative aamas:lang aama:Maale .
-mal:Nominative rdf:type Maale:Case .
+mal:Nominative rdf:type mal:Case .
 mal:Nominative rdfs:label "Nominative".
 mal:Possessive aamas:lang aama:Maale .
-mal:Possessive rdf:type Maale:Case .
+mal:Possessive rdf:type mal:Case .
 mal:Possessive rdfs:label "Possessive".
 
 #SCHEMATA: pos
@@ -149,10 +154,10 @@ mal:pos rdfs:range mal:Pos .
 mal:Pos rdfs:subClassOf mal:MuExponent .
 mal:pos rdfs:subPropertyOf mal:muProperty .
 mal:Pro aamas:lang aama:Maale .
-mal:Pro rdf:type Maale:Pos .
+mal:Pro rdf:type mal:Pos .
 mal:Pro rdfs:label "Pro".
 mal:Verb aamas:lang aama:Maale .
-mal:Verb rdf:type Maale:Pos .
+mal:Verb rdf:type mal:Pos .
 mal:Verb rdfs:label "Verb".
 
 #SCHEMATA: person
@@ -165,19 +170,19 @@ mal:person rdfs:range mal:Person .
 mal:Person rdfs:subClassOf mal:MuExponent .
 mal:person rdfs:subPropertyOf mal:muProperty .
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Person .
+mal:Common rdf:type mal:Person .
 mal:Common rdfs:label "Common".
 mal:Person1 aamas:lang aama:Maale .
-mal:Person1 rdf:type Maale:Person .
+mal:Person1 rdf:type mal:Person .
 mal:Person1 rdfs:label "Person1".
 mal:Person2 aamas:lang aama:Maale .
-mal:Person2 rdf:type Maale:Person .
+mal:Person2 rdf:type mal:Person .
 mal:Person2 rdfs:label "Person2".
 mal:Person3 aamas:lang aama:Maale .
-mal:Person3 rdf:type Maale:Person .
+mal:Person3 rdf:type mal:Person .
 mal:Person3 rdfs:label "Person3".
 mal:Person3Ref aamas:lang aama:Maale .
-mal:Person3Ref rdf:type Maale:Person .
+mal:Person3Ref rdf:type mal:Person .
 mal:Person3Ref rdfs:label "Person3Ref".
 
 #SCHEMATA: derivedStem
@@ -190,28 +195,28 @@ mal:derivedStem rdfs:range mal:Derivedstem .
 mal:Derivedstem rdfs:subClassOf mal:MuExponent .
 mal:derivedStem rdfs:subPropertyOf mal:muProperty .
 mal:Causative aamas:lang aama:Maale .
-mal:Causative rdf:type Maale:Derivedstem .
+mal:Causative rdf:type mal:Derivedstem .
 mal:Causative rdfs:label "Causative".
 mal:Causative2 aamas:lang aama:Maale .
-mal:Causative2 rdf:type Maale:Derivedstem .
+mal:Causative2 rdf:type mal:Derivedstem .
 mal:Causative2 rdfs:label "Causative2".
 mal:Denominal aamas:lang aama:Maale .
-mal:Denominal rdf:type Maale:Derivedstem .
+mal:Denominal rdf:type mal:Derivedstem .
 mal:Denominal rdfs:label "Denominal".
 mal:Inchoative aamas:lang aama:Maale .
-mal:Inchoative rdf:type Maale:Derivedstem .
+mal:Inchoative rdf:type mal:Derivedstem .
 mal:Inchoative rdfs:label "Inchoative".
 mal:Intensive aamas:lang aama:Maale .
-mal:Intensive rdf:type Maale:Derivedstem .
+mal:Intensive rdf:type mal:Derivedstem .
 mal:Intensive rdfs:label "Intensive".
 mal:Passive aamas:lang aama:Maale .
-mal:Passive rdf:type Maale:Derivedstem .
+mal:Passive rdf:type mal:Derivedstem .
 mal:Passive rdfs:label "Passive".
 mal:PassiveCausative aamas:lang aama:Maale .
-mal:PassiveCausative rdf:type Maale:Derivedstem .
+mal:PassiveCausative rdf:type mal:Derivedstem .
 mal:PassiveCausative rdfs:label "PassiveCausative".
 mal:Reflexive aamas:lang aama:Maale .
-mal:Reflexive rdf:type Maale:Derivedstem .
+mal:Reflexive rdf:type mal:Derivedstem .
 mal:Reflexive rdfs:label "Reflexive".
 
 #SCHEMATA: proClass
@@ -224,22 +229,22 @@ mal:proClass rdfs:range mal:Proclass .
 mal:Proclass rdfs:subClassOf mal:MuExponent .
 mal:proClass rdfs:subPropertyOf mal:muProperty .
 mal:BasicPro aamas:lang aama:Maale .
-mal:BasicPro rdf:type Maale:Proclass .
+mal:BasicPro rdf:type mal:Proclass .
 mal:BasicPro rdfs:label "BasicPro".
 mal:CaseMarking aamas:lang aama:Maale .
-mal:CaseMarking rdf:type Maale:Proclass .
+mal:CaseMarking rdf:type mal:Proclass .
 mal:CaseMarking rdfs:label "CaseMarking".
 mal:Possessive aamas:lang aama:Maale .
-mal:Possessive rdf:type Maale:Proclass .
+mal:Possessive rdf:type mal:Proclass .
 mal:Possessive rdfs:label "Possessive".
 mal:Pro2ary aamas:lang aama:Maale .
-mal:Pro2ary rdf:type Maale:Proclass .
+mal:Pro2ary rdf:type mal:Proclass .
 mal:Pro2ary rdfs:label "Pro2ary".
 mal:ProInd aamas:lang aama:Maale .
-mal:ProInd rdf:type Maale:Proclass .
+mal:ProInd rdf:type mal:Proclass .
 mal:ProInd rdfs:label "ProInd".
 mal:Restrictive aamas:lang aama:Maale .
-mal:Restrictive rdf:type Maale:Proclass .
+mal:Restrictive rdf:type mal:Proclass .
 mal:Restrictive rdfs:label "Restrictive".
 
 #SCHEMATA: tam
@@ -252,22 +257,22 @@ mal:tam rdfs:range mal:Tam .
 mal:Tam rdfs:subClassOf mal:MuExponent .
 mal:tam rdfs:subPropertyOf mal:muProperty .
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Tam .
+mal:Common rdf:type mal:Tam .
 mal:Common rdfs:label "Common".
 mal:Imperfective aamas:lang aama:Maale .
-mal:Imperfective rdf:type Maale:Tam .
+mal:Imperfective rdf:type mal:Tam .
 mal:Imperfective rdfs:label "Imperfective".
 mal:ImperfectiveFuture aamas:lang aama:Maale .
-mal:ImperfectiveFuture rdf:type Maale:Tam .
+mal:ImperfectiveFuture rdf:type mal:Tam .
 mal:ImperfectiveFuture rdfs:label "ImperfectiveFuture".
 mal:ImperfectivePresent aamas:lang aama:Maale .
-mal:ImperfectivePresent rdf:type Maale:Tam .
+mal:ImperfectivePresent rdf:type mal:Tam .
 mal:ImperfectivePresent rdfs:label "ImperfectivePresent".
 mal:InterrPerm aamas:lang aama:Maale .
-mal:InterrPerm rdf:type Maale:Tam .
+mal:InterrPerm rdf:type mal:Tam .
 mal:InterrPerm rdfs:label "InterrPerm".
 mal:Perfective aamas:lang aama:Maale .
-mal:Perfective rdf:type Maale:Tam .
+mal:Perfective rdf:type mal:Tam .
 mal:Perfective rdfs:label "Perfective".
 
 #SCHEMATA: clauseType
@@ -280,58 +285,58 @@ mal:clauseType rdfs:range mal:Clausetype .
 mal:Clausetype rdfs:subClassOf mal:MuExponent .
 mal:clauseType rdfs:subPropertyOf mal:muProperty .
 mal:Causal aamas:lang aama:Maale .
-mal:Causal rdf:type Maale:Clausetype .
+mal:Causal rdf:type mal:Clausetype .
 mal:Causal rdfs:label "Causal".
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Clausetype .
+mal:Common rdf:type mal:Clausetype .
 mal:Common rdfs:label "Common".
 mal:Conditional aamas:lang aama:Maale .
-mal:Conditional rdf:type Maale:Clausetype .
+mal:Conditional rdf:type mal:Clausetype .
 mal:Conditional rdfs:label "Conditional".
 mal:Converb1 aamas:lang aama:Maale .
-mal:Converb1 rdf:type Maale:Clausetype .
+mal:Converb1 rdf:type mal:Clausetype .
 mal:Converb1 rdfs:label "Converb1".
 mal:Converb2 aamas:lang aama:Maale .
-mal:Converb2 rdf:type Maale:Clausetype .
+mal:Converb2 rdf:type mal:Clausetype .
 mal:Converb2 rdfs:label "Converb2".
 mal:Converb3 aamas:lang aama:Maale .
-mal:Converb3 rdf:type Maale:Clausetype .
+mal:Converb3 rdf:type mal:Clausetype .
 mal:Converb3 rdfs:label "Converb3".
 mal:Declarative aamas:lang aama:Maale .
-mal:Declarative rdf:type Maale:Clausetype .
+mal:Declarative rdf:type mal:Clausetype .
 mal:Declarative rdfs:label "Declarative".
 mal:Imperative aamas:lang aama:Maale .
-mal:Imperative rdf:type Maale:Clausetype .
+mal:Imperative rdf:type mal:Clausetype .
 mal:Imperative rdfs:label "Imperative".
 mal:InterrDubitative aamas:lang aama:Maale .
-mal:InterrDubitative rdf:type Maale:Clausetype .
+mal:InterrDubitative rdf:type mal:Clausetype .
 mal:InterrDubitative rdfs:label "InterrDubitative".
 mal:InterrNonPolar aamas:lang aama:Maale .
-mal:InterrNonPolar rdf:type Maale:Clausetype .
+mal:InterrNonPolar rdf:type mal:Clausetype .
 mal:InterrNonPolar rdfs:label "InterrNonPolar".
 mal:InterrPolar aamas:lang aama:Maale .
-mal:InterrPolar rdf:type Maale:Clausetype .
+mal:InterrPolar rdf:type mal:Clausetype .
 mal:InterrPolar rdfs:label "InterrPolar".
 mal:Optative aamas:lang aama:Maale .
-mal:Optative rdf:type Maale:Clausetype .
+mal:Optative rdf:type mal:Clausetype .
 mal:Optative rdfs:label "Optative".
 mal:Preventive aamas:lang aama:Maale .
-mal:Preventive rdf:type Maale:Clausetype .
+mal:Preventive rdf:type mal:Clausetype .
 mal:Preventive rdfs:label "Preventive".
 mal:Purposive1 aamas:lang aama:Maale .
-mal:Purposive1 rdf:type Maale:Clausetype .
+mal:Purposive1 rdf:type mal:Clausetype .
 mal:Purposive1 rdfs:label "Purposive1".
 mal:Purposive2 aamas:lang aama:Maale .
-mal:Purposive2 rdf:type Maale:Clausetype .
+mal:Purposive2 rdf:type mal:Clausetype .
 mal:Purposive2 rdfs:label "Purposive2".
 mal:Simultaneous aamas:lang aama:Maale .
-mal:Simultaneous rdf:type Maale:Clausetype .
+mal:Simultaneous rdf:type mal:Clausetype .
 mal:Simultaneous rdfs:label "Simultaneous".
 mal:Temporal1 aamas:lang aama:Maale .
-mal:Temporal1 rdf:type Maale:Clausetype .
+mal:Temporal1 rdf:type mal:Clausetype .
 mal:Temporal1 rdfs:label "Temporal1".
 mal:Temporal2 aamas:lang aama:Maale .
-mal:Temporal2 rdf:type Maale:Clausetype .
+mal:Temporal2 rdf:type mal:Clausetype .
 mal:Temporal2 rdfs:label "Temporal2".
 
 #SCHEMATA: number
@@ -344,13 +349,13 @@ mal:number rdfs:range mal:Number .
 mal:Number rdfs:subClassOf mal:MuExponent .
 mal:number rdfs:subPropertyOf mal:muProperty .
 mal:Common aamas:lang aama:Maale .
-mal:Common rdf:type Maale:Number .
+mal:Common rdf:type mal:Number .
 mal:Common rdfs:label "Common".
 mal:Plural aamas:lang aama:Maale .
-mal:Plural rdf:type Maale:Number .
+mal:Plural rdf:type mal:Number .
 mal:Plural rdfs:label "Plural".
 mal:Singular aamas:lang aama:Maale .
-mal:Singular rdf:type Maale:Number .
+mal:Singular rdf:type mal:Number .
 mal:Singular rdfs:label "Singular".
 
 #SCHEMATA: temporal
@@ -363,7 +368,7 @@ mal:temporal rdfs:range mal:Temporal .
 mal:Temporal rdfs:subClassOf mal:MuExponent .
 mal:temporal rdfs:subPropertyOf mal:muProperty .
 mal:Clauses aamas:lang aama:Maale .
-mal:Clauses rdf:type Maale:Temporal .
+mal:Clauses rdf:type mal:Temporal .
 mal:Clauses rdfs:label "Clauses".
 
 #SCHEMATA: verbMorphClass
@@ -376,16 +381,16 @@ mal:verbMorphClass rdfs:range mal:Verbmorphclass .
 mal:Verbmorphclass rdfs:subClassOf mal:MuExponent .
 mal:verbMorphClass rdfs:subPropertyOf mal:muProperty .
 mal:BE aamas:lang aama:Maale .
-mal:BE rdf:type Maale:Verbmorphclass .
+mal:BE rdf:type mal:Verbmorphclass .
 mal:BE rdfs:label "BE".
 mal:DervStem aamas:lang aama:Maale .
-mal:DervStem rdf:type Maale:Verbmorphclass .
+mal:DervStem rdf:type mal:Verbmorphclass .
 mal:DervStem rdfs:label "DervStem".
 mal:InflectionTemplate aamas:lang aama:Maale .
-mal:InflectionTemplate rdf:type Maale:Verbmorphclass .
+mal:InflectionTemplate rdf:type mal:Verbmorphclass .
 mal:InflectionTemplate rdfs:label "InflectionTemplate".
 mal:RootStructure aamas:lang aama:Maale .
-mal:RootStructure rdf:type Maale:Verbmorphclass .
+mal:RootStructure rdf:type mal:Verbmorphclass .
 mal:RootStructure rdfs:label "RootStructure".
 
 #SCHEMATA: multiLex
@@ -398,7 +403,7 @@ mal:multiLex rdfs:range mal:Multilex .
 mal:Multilex rdfs:subClassOf mal:MuExponent .
 mal:multiLex rdfs:subPropertyOf mal:muProperty .
 mal:VROOTSTRUCTURE aamas:lang aama:Maale .
-mal:VROOTSTRUCTURE rdf:type Maale:Multilex .
+mal:VROOTSTRUCTURE rdf:type mal:Multilex .
 mal:VROOTSTRUCTURE rdfs:label "VROOTSTRUCTURE".
 
 #MORPHEMES:
@@ -407,55 +412,55 @@ aama:Maale-PROPOSS a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "PROPOSS" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-PROCASEMARKING a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "PROCASEMARKING" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-PROIND a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "PROIND" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-PRO2ARY a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "PRO2ARY" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-VINFLECTIONTEMPLATE a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "VINFLECTIONTEMPLATE" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-COPULABE a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "COPULABE" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-PROBASIC a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "PROBASIC" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-DERVSTEM a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "DERVSTEM" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Maale-PRORESTRICTIVE a aamas:Muterm ;
 	aamas:lang aama:Maale ;
 	rdfs:label "PRORESTRICTIVE" ;
 	rdfs:comment "[x]" ;
-	mal:lemma mal:[y] ;
+	rdfs:comment "[y]" ;
 	.
 
 #LEXEMES:
@@ -463,12 +468,12 @@ aama:Maale-PRORESTRICTIVE a aamas:Muterm ;
 aama:Maale-_NULL a aamas:Lexeme ;
 	aamas:lang aama:Maale ;
 	rdfs:label "_NULL" ;
-	mal:lemma mal:múʔ ;
+	aamas:lemma "múʔ" ;
 	aamas:gloss "eat" ;
 	.
 aama:Maale-ba a aamas:Lexeme ;
 	aamas:lang aama:Maale ;
 	rdfs:label "ba" ;
-	mal:lemma mal:bá- ;
+	aamas:lemma "bá-" ;
 	aamas:gloss "not exist" ;
 	.

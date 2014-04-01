@@ -1,6 +1,11 @@
 
 #TTL FROM INPUT FILE:
 # data/kambaata/kambaata-pdgms.edn
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix kam:   <http://id.oi.uchicago.edu/aama/2013/kambaata/> .
 
 #SCHEMATA:
 
@@ -17,16 +22,16 @@ kam:gender rdfs:range kam:Gender .
 kam:Gender rdfs:subClassOf kam:MuExponent .
 kam:gender rdfs:subPropertyOf kam:muProperty .
 kam:Common aamas:lang aama:Kambaata .
-kam:Common rdf:type Kambaata:Gender .
+kam:Common rdf:type kam:Gender .
 kam:Common rdfs:label "Common".
 kam:Fem aamas:lang aama:Kambaata .
-kam:Fem rdf:type Kambaata:Gender .
+kam:Fem rdf:type kam:Gender .
 kam:Fem rdfs:label "Fem".
 kam:Masc aamas:lang aama:Kambaata .
-kam:Masc rdf:type Kambaata:Gender .
+kam:Masc rdf:type kam:Gender .
 kam:Masc rdfs:label "Masc".
 kam:Polite aamas:lang aama:Kambaata .
-kam:Polite rdf:type Kambaata:Gender .
+kam:Polite rdf:type kam:Gender .
 kam:Polite rdfs:label "Polite".
 
 #SCHEMATA: interrogClass
@@ -39,22 +44,22 @@ kam:interrogClass rdfs:range kam:Interrogclass .
 kam:Interrogclass rdfs:subClassOf kam:MuExponent .
 kam:interrogClass rdfs:subPropertyOf kam:muProperty .
 kam:InterrogProHow aamas:lang aama:Kambaata .
-kam:InterrogProHow rdf:type Kambaata:Interrogclass .
+kam:InterrogProHow rdf:type kam:Interrogclass .
 kam:InterrogProHow rdfs:label "InterrogProHow".
 kam:InterrogProHowMany aamas:lang aama:Kambaata .
-kam:InterrogProHowMany rdf:type Kambaata:Interrogclass .
+kam:InterrogProHowMany rdf:type kam:Interrogclass .
 kam:InterrogProHowMany rdfs:label "InterrogProHowMany".
 kam:InterrogProWhat aamas:lang aama:Kambaata .
-kam:InterrogProWhat rdf:type Kambaata:Interrogclass .
+kam:InterrogProWhat rdf:type kam:Interrogclass .
 kam:InterrogProWhat rdfs:label "InterrogProWhat".
 kam:InterrogProWhen aamas:lang aama:Kambaata .
-kam:InterrogProWhen rdf:type Kambaata:Interrogclass .
+kam:InterrogProWhen rdf:type kam:Interrogclass .
 kam:InterrogProWhen rdfs:label "InterrogProWhen".
 kam:InterrogProWhere aamas:lang aama:Kambaata .
-kam:InterrogProWhere rdf:type Kambaata:Interrogclass .
+kam:InterrogProWhere rdf:type kam:Interrogclass .
 kam:InterrogProWhere rdfs:label "InterrogProWhere".
 kam:InterrogProWho aamas:lang aama:Kambaata .
-kam:InterrogProWho rdf:type Kambaata:Interrogclass .
+kam:InterrogProWho rdf:type kam:Interrogclass .
 kam:InterrogProWho rdfs:label "InterrogProWho".
 
 #SCHEMATA: class
@@ -67,22 +72,22 @@ kam:class rdfs:range kam:Class .
 kam:Class rdfs:subClassOf kam:MuExponent .
 kam:class rdfs:subPropertyOf kam:muProperty .
 kam:Benefactive aamas:lang aama:Kambaata .
-kam:Benefactive rdf:type Kambaata:Class .
+kam:Benefactive rdf:type kam:Class .
 kam:Benefactive rdfs:label "Benefactive".
 kam:Causative1 aamas:lang aama:Kambaata .
-kam:Causative1 rdf:type Kambaata:Class .
+kam:Causative1 rdf:type kam:Class .
 kam:Causative1 rdfs:label "Causative1".
 kam:Causative2 aamas:lang aama:Kambaata .
-kam:Causative2 rdf:type Kambaata:Class .
+kam:Causative2 rdf:type kam:Class .
 kam:Causative2 rdfs:label "Causative2".
 kam:Combination aamas:lang aama:Kambaata .
-kam:Combination rdf:type Kambaata:Class .
+kam:Combination rdf:type kam:Class .
 kam:Combination rdfs:label "Combination".
 kam:Passive aamas:lang aama:Kambaata .
-kam:Passive rdf:type Kambaata:Class .
+kam:Passive rdf:type kam:Class .
 kam:Passive rdfs:label "Passive".
 kam:Reduplicated aamas:lang aama:Kambaata .
-kam:Reduplicated rdf:type Kambaata:Class .
+kam:Reduplicated rdf:type kam:Class .
 kam:Reduplicated rdfs:label "Reduplicated".
 
 #SCHEMATA: polarity
@@ -95,16 +100,16 @@ kam:polarity rdfs:range kam:Polarity .
 kam:Polarity rdfs:subClassOf kam:MuExponent .
 kam:polarity rdfs:subPropertyOf kam:muProperty .
 kam:Aff aamas:lang aama:Kambaata .
-kam:Aff rdf:type Kambaata:Polarity .
+kam:Aff rdf:type kam:Polarity .
 kam:Aff rdfs:label "Aff".
 kam:Affirmative aamas:lang aama:Kambaata .
-kam:Affirmative rdf:type Kambaata:Polarity .
+kam:Affirmative rdf:type kam:Polarity .
 kam:Affirmative rdfs:label "Affirmative".
 kam:Neg aamas:lang aama:Kambaata .
-kam:Neg rdf:type Kambaata:Polarity .
+kam:Neg rdf:type kam:Polarity .
 kam:Neg rdfs:label "Neg".
 kam:Negative aamas:lang aama:Kambaata .
-kam:Negative rdf:type Kambaata:Polarity .
+kam:Negative rdf:type kam:Polarity .
 kam:Negative rdfs:label "Negative".
 
 #SCHEMATA: case
@@ -117,13 +122,13 @@ kam:case rdfs:range kam:Case .
 kam:Case rdfs:subClassOf kam:MuExponent .
 kam:case rdfs:subPropertyOf kam:muProperty .
 kam:Accusative aamas:lang aama:Kambaata .
-kam:Accusative rdf:type Kambaata:Case .
+kam:Accusative rdf:type kam:Case .
 kam:Accusative rdfs:label "Accusative".
 kam:Nominative aamas:lang aama:Kambaata .
-kam:Nominative rdf:type Kambaata:Case .
+kam:Nominative rdf:type kam:Case .
 kam:Nominative rdfs:label "Nominative".
 kam:Possessive aamas:lang aama:Kambaata .
-kam:Possessive rdf:type Kambaata:Case .
+kam:Possessive rdf:type kam:Case .
 kam:Possessive rdfs:label "Possessive".
 
 #SCHEMATA: pos
@@ -136,10 +141,10 @@ kam:pos rdfs:range kam:Pos .
 kam:Pos rdfs:subClassOf kam:MuExponent .
 kam:pos rdfs:subPropertyOf kam:muProperty .
 kam:Pro aamas:lang aama:Kambaata .
-kam:Pro rdf:type Kambaata:Pos .
+kam:Pro rdf:type kam:Pos .
 kam:Pro rdfs:label "Pro".
 kam:Verb aamas:lang aama:Kambaata .
-kam:Verb rdf:type Kambaata:Pos .
+kam:Verb rdf:type kam:Pos .
 kam:Verb rdfs:label "Verb".
 
 #SCHEMATA: person
@@ -152,13 +157,13 @@ kam:person rdfs:range kam:Person .
 kam:Person rdfs:subClassOf kam:MuExponent .
 kam:person rdfs:subPropertyOf kam:muProperty .
 kam:Person1 aamas:lang aama:Kambaata .
-kam:Person1 rdf:type Kambaata:Person .
+kam:Person1 rdf:type kam:Person .
 kam:Person1 rdfs:label "Person1".
 kam:Person2 aamas:lang aama:Kambaata .
-kam:Person2 rdf:type Kambaata:Person .
+kam:Person2 rdf:type kam:Person .
 kam:Person2 rdfs:label "Person2".
 kam:Person3 aamas:lang aama:Kambaata .
-kam:Person3 rdf:type Kambaata:Person .
+kam:Person3 rdf:type kam:Person .
 kam:Person3 rdfs:label "Person3".
 
 #SCHEMATA: proClass
@@ -171,16 +176,16 @@ kam:proClass rdfs:range kam:Proclass .
 kam:Proclass rdfs:subClassOf kam:MuExponent .
 kam:proClass rdfs:subPropertyOf kam:muProperty .
 kam:Demonstrative aamas:lang aama:Kambaata .
-kam:Demonstrative rdf:type Kambaata:Proclass .
+kam:Demonstrative rdf:type kam:Proclass .
 kam:Demonstrative rdfs:label "Demonstrative".
 kam:Independent aamas:lang aama:Kambaata .
-kam:Independent rdf:type Kambaata:Proclass .
+kam:Independent rdf:type kam:Proclass .
 kam:Independent rdfs:label "Independent".
 kam:Interrogative aamas:lang aama:Kambaata .
-kam:Interrogative rdf:type Kambaata:Proclass .
+kam:Interrogative rdf:type kam:Proclass .
 kam:Interrogative rdfs:label "Interrogative".
 kam:Suffix aamas:lang aama:Kambaata .
-kam:Suffix rdf:type Kambaata:Proclass .
+kam:Suffix rdf:type kam:Proclass .
 kam:Suffix rdfs:label "Suffix".
 
 #SCHEMATA: tam
@@ -193,37 +198,37 @@ kam:tam rdfs:range kam:Tam .
 kam:Tam rdfs:subClassOf kam:MuExponent .
 kam:tam rdfs:subPropertyOf kam:muProperty .
 kam:Imperfect aamas:lang aama:Kambaata .
-kam:Imperfect rdf:type Kambaata:Tam .
+kam:Imperfect rdf:type kam:Tam .
 kam:Imperfect rdfs:label "Imperfect".
 kam:Imprtv aamas:lang aama:Kambaata .
-kam:Imprtv rdf:type Kambaata:Tam .
+kam:Imprtv rdf:type kam:Tam .
 kam:Imprtv rdfs:label "Imprtv".
 kam:Jussive aamas:lang aama:Kambaata .
-kam:Jussive rdf:type Kambaata:Tam .
+kam:Jussive rdf:type kam:Tam .
 kam:Jussive rdfs:label "Jussive".
 kam:PastProg aamas:lang aama:Kambaata .
-kam:PastProg rdf:type Kambaata:Tam .
+kam:PastProg rdf:type kam:Tam .
 kam:PastProg rdfs:label "PastProg".
 kam:PastProgressive aamas:lang aama:Kambaata .
-kam:PastProgressive rdf:type Kambaata:Tam .
+kam:PastProgressive rdf:type kam:Tam .
 kam:PastProgressive rdfs:label "PastProgressive".
 kam:PresPerf aamas:lang aama:Kambaata .
-kam:PresPerf rdf:type Kambaata:Tam .
+kam:PresPerf rdf:type kam:Tam .
 kam:PresPerf rdfs:label "PresPerf".
 kam:PresProg aamas:lang aama:Kambaata .
-kam:PresProg rdf:type Kambaata:Tam .
+kam:PresProg rdf:type kam:Tam .
 kam:PresProg rdfs:label "PresProg".
 kam:PresentPerfect aamas:lang aama:Kambaata .
-kam:PresentPerfect rdf:type Kambaata:Tam .
+kam:PresentPerfect rdf:type kam:Tam .
 kam:PresentPerfect rdfs:label "PresentPerfect".
 kam:PresentProgressive aamas:lang aama:Kambaata .
-kam:PresentProgressive rdf:type Kambaata:Tam .
+kam:PresentProgressive rdf:type kam:Tam .
 kam:PresentProgressive rdfs:label "PresentProgressive".
 kam:SimplePerf aamas:lang aama:Kambaata .
-kam:SimplePerf rdf:type Kambaata:Tam .
+kam:SimplePerf rdf:type kam:Tam .
 kam:SimplePerf rdfs:label "SimplePerf".
 kam:SimplePerfect aamas:lang aama:Kambaata .
-kam:SimplePerfect rdf:type Kambaata:Tam .
+kam:SimplePerfect rdf:type kam:Tam .
 kam:SimplePerfect rdfs:label "SimplePerfect".
 
 #SCHEMATA: number
@@ -236,10 +241,10 @@ kam:number rdfs:range kam:Number .
 kam:Number rdfs:subClassOf kam:MuExponent .
 kam:number rdfs:subPropertyOf kam:muProperty .
 kam:Plural aamas:lang aama:Kambaata .
-kam:Plural rdf:type Kambaata:Number .
+kam:Plural rdf:type kam:Number .
 kam:Plural rdfs:label "Plural".
 kam:Singular aamas:lang aama:Kambaata .
-kam:Singular rdf:type Kambaata:Number .
+kam:Singular rdf:type kam:Number .
 kam:Singular rdfs:label "Singular".
 
 #SCHEMATA: verbMorphClass
@@ -252,10 +257,10 @@ kam:verbMorphClass rdfs:range kam:Verbmorphclass .
 kam:Verbmorphclass rdfs:subClassOf kam:MuExponent .
 kam:verbMorphClass rdfs:subPropertyOf kam:muProperty .
 kam:DervStem aamas:lang aama:Kambaata .
-kam:DervStem rdf:type Kambaata:Verbmorphclass .
+kam:DervStem rdf:type kam:Verbmorphclass .
 kam:DervStem rdfs:label "DervStem".
 kam:SubjMarkerTemplates aamas:lang aama:Kambaata .
-kam:SubjMarkerTemplates rdf:type Kambaata:Verbmorphclass .
+kam:SubjMarkerTemplates rdf:type kam:Verbmorphclass .
 kam:SubjMarkerTemplates rdfs:label "SubjMarkerTemplates".
 
 #SCHEMATA: deixis
@@ -268,10 +273,10 @@ kam:deixis rdfs:range kam:Deixis .
 kam:Deixis rdfs:subClassOf kam:MuExponent .
 kam:deixis rdfs:subPropertyOf kam:muProperty .
 kam:Far aamas:lang aama:Kambaata .
-kam:Far rdf:type Kambaata:Deixis .
+kam:Far rdf:type kam:Deixis .
 kam:Far rdfs:label "Far".
 kam:Near aamas:lang aama:Kambaata .
-kam:Near rdf:type Kambaata:Deixis .
+kam:Near rdf:type kam:Deixis .
 kam:Near rdfs:label "Near".
 
 #MORPHEMES:
@@ -280,31 +285,31 @@ aama:Kambaata-DERVSTEM a aamas:Muterm ;
 	aamas:lang aama:Kambaata ;
 	rdfs:label "DERVSTEM" ;
 	rdfs:comment "[x]" ;
-	kam:lemma kam:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Kambaata-PRODEM a aamas:Muterm ;
 	aamas:lang aama:Kambaata ;
 	rdfs:label "PRODEM" ;
 	rdfs:comment "[x]" ;
-	kam:lemma kam:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Kambaata-PROIND a aamas:Muterm ;
 	aamas:lang aama:Kambaata ;
 	rdfs:label "PROIND" ;
 	rdfs:comment "[x]" ;
-	kam:lemma kam:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Kambaata-PROINTERROG a aamas:Muterm ;
 	aamas:lang aama:Kambaata ;
 	rdfs:label "PROINTERROG" ;
 	rdfs:comment "[x]" ;
-	kam:lemma kam:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Kambaata-SUBJMARKERTEMPLATES a aamas:Muterm ;
 	aamas:lang aama:Kambaata ;
 	rdfs:label "SUBJMARKERTEMPLATES" ;
 	rdfs:comment "[x]" ;
-	kam:lemma kam:[y] ;
+	rdfs:comment "[y]" ;
 	.
 
 #LEXEMES:
@@ -312,13 +317,13 @@ aama:Kambaata-SUBJMARKERTEMPLATES a aamas:Muterm ;
 aama:Kambaata-mar a aamas:Lexeme ;
 	aamas:lang aama:Kambaata ;
 	rdfs:label "mar" ;
-	kam:lemma kam:mar ;
+	aamas:lemma "mar" ;
 	aamas:gloss "go" ;
 	.
 
 #TERMCLUSTER: kambaata-VAffPresProg-mar
 
-aama:ID3fc4ed80-686a-49f7-8f5b-c4929d293724 a aamas:Term ;
+aama:ID2ba94b66-05a1-4eac-8c1c-7e75deada281 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -329,7 +334,7 @@ aama:ID3fc4ed80-686a-49f7-8f5b-c4929d293724 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID6e701642-97d8-4204-8961-8a6b2765ca08 a aamas:Term ;
+aama:IDac06d53e-f7b4-41db-b848-abcac9942314 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -340,7 +345,7 @@ aama:ID6e701642-97d8-4204-8961-8a6b2765ca08 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDa5a39c82-7ce9-4bd5-aea3-502be9ef42e8 a aamas:Term ;
+aama:ID08f23fdc-ca4b-49ef-8130-8578a23cd2bf a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -351,7 +356,7 @@ aama:IDa5a39c82-7ce9-4bd5-aea3-502be9ef42e8 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDab52e0b8-a6ef-4867-bd74-5590345ebbda a aamas:Term ;
+aama:ID46f4abcf-5912-491c-9313-f39bfdb12fe4 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -362,7 +367,7 @@ aama:IDab52e0b8-a6ef-4867-bd74-5590345ebbda a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:ID0b829ddf-64a0-465f-a6d3-2840acc0561c a aamas:Term ;
+aama:IDb5cbf1f6-2d49-4117-b58a-f3e0f55400be a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -373,7 +378,7 @@ aama:ID0b829ddf-64a0-465f-a6d3-2840acc0561c a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Polite ;
 	.
-aama:ID517aee44-b47a-433f-b822-8b4b6b0f7bed a aamas:Term ;
+aama:ID3678ba04-a44f-4652-b960-2e0dce0f987a a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -384,7 +389,7 @@ aama:ID517aee44-b47a-433f-b822-8b4b6b0f7bed a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID7350420f-8b54-4b39-914a-c48b373ddc3c a aamas:Term ;
+aama:ID4bd81e5e-8c6b-474e-8402-5b8a7582607d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -395,7 +400,7 @@ aama:ID7350420f-8b54-4b39-914a-c48b373ddc3c a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID3bf4d55b-1e8f-42aa-8144-73f696c33d3a a aamas:Term ;
+aama:IDe56180d6-a6c2-4fc5-ae0f-f2bd5b865021 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -409,7 +414,7 @@ aama:ID3bf4d55b-1e8f-42aa-8144-73f696c33d3a a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffJussiveMar-
 
-aama:ID3005009b-15b2-46c8-97a5-144f7a65fe7e a aamas:Term ;
+aama:ID08a44384-a77b-4869-89c9-3fdfb40d4d35 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -420,7 +425,7 @@ aama:ID3005009b-15b2-46c8-97a5-144f7a65fe7e a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDc46f8404-786a-4f88-8755-9ce17a80917d a aamas:Term ;
+aama:ID1d68104d-68b9-4531-8899-c8949358f8b2 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -431,7 +436,7 @@ aama:IDc46f8404-786a-4f88-8755-9ce17a80917d a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:ID4204ec04-2594-4d23-a465-38443f7d84ac a aamas:Term ;
+aama:ID1a04b67a-ca18-40d4-9cad-c94137c8ee7d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -442,7 +447,7 @@ aama:ID4204ec04-2594-4d23-a465-38443f7d84ac a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:IDaaaca5ec-d5db-4a1d-89b0-5b49f7613587 a aamas:Term ;
+aama:IDffae64f2-31f6-42ee-885d-39c60a00dcd7 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -453,7 +458,7 @@ aama:IDaaaca5ec-d5db-4a1d-89b0-5b49f7613587 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID367574a8-3c5f-4832-b088-83086a0f0bfe a aamas:Term ;
+aama:ID3efe1572-9eb1-4480-917e-5aa65c1ab687 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -467,7 +472,7 @@ aama:ID367574a8-3c5f-4832-b088-83086a0f0bfe a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffSimplePerfMar-
 
-aama:ID054aa8cc-0e6c-47b5-8d03-f7cbe484ce08 a aamas:Term ;
+aama:IDb3ad229c-5ea4-43ef-a264-80dd17d0cd4d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -478,7 +483,7 @@ aama:ID054aa8cc-0e6c-47b5-8d03-f7cbe484ce08 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID47ec74fd-d845-4dd5-881b-931e48cc2ef4 a aamas:Term ;
+aama:ID30c16359-6dc5-406f-9fae-f29e2a616608 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -489,7 +494,7 @@ aama:ID47ec74fd-d845-4dd5-881b-931e48cc2ef4 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID0780f1fd-4957-494c-aa80-91df9555b9de a aamas:Term ;
+aama:ID7d487cd7-1fd1-4723-8199-c13e9ab72b6f a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -500,7 +505,7 @@ aama:ID0780f1fd-4957-494c-aa80-91df9555b9de a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDc090f49d-5213-41a3-9e1c-04c9abeb2e90 a aamas:Term ;
+aama:IDf0b1ab0c-be6e-4ba7-af4e-15ffa53c1539 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -511,7 +516,7 @@ aama:IDc090f49d-5213-41a3-9e1c-04c9abeb2e90 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:ID05823c9b-c00d-46fc-9069-a467cd3841f1 a aamas:Term ;
+aama:ID8ae9c307-f2c1-40ad-8e7b-5813eb42a20b a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -522,7 +527,7 @@ aama:ID05823c9b-c00d-46fc-9069-a467cd3841f1 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID12c5b6fa-32f7-493d-80cd-3f7d44539eda a aamas:Term ;
+aama:IDa30a1b85-fce2-4554-92a8-1b10a2c9b887 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -533,7 +538,7 @@ aama:ID12c5b6fa-32f7-493d-80cd-3f7d44539eda a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID9698bf8a-73db-4904-bcd4-4ce20ee98ffc a aamas:Term ;
+aama:ID80ca391a-fee2-4205-a8ed-a0f7793d0a36 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -547,7 +552,7 @@ aama:ID9698bf8a-73db-4904-bcd4-4ce20ee98ffc a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffImprtvMar-
 
-aama:IDd875047b-45d8-49da-b790-fd313fd28f19 a aamas:Term ;
+aama:IDa6c8ba00-d21b-40a6-8190-0911d3e7a7d3 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -558,7 +563,7 @@ aama:IDd875047b-45d8-49da-b790-fd313fd28f19 a aamas:Term ;
 	kam:token "mari" ;
 	kam:number kam:Singular ;
 	.
-aama:ID5b80ba32-674d-4051-acaf-788e580ac64e a aamas:Term ;
+aama:ID8b2c7d26-94be-49b9-a68e-dcbfb030907c a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -572,7 +577,7 @@ aama:ID5b80ba32-674d-4051-acaf-788e580ac64e a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffPastProgMar-
 
-aama:ID986866cd-27d3-414b-96ee-5d1dd34cc2c1 a aamas:Term ;
+aama:ID6546e9d7-e56f-4406-84a4-1c518a9c024d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -583,7 +588,7 @@ aama:ID986866cd-27d3-414b-96ee-5d1dd34cc2c1 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID4c3a6ed4-4854-4c1c-a588-dc2f48ea6fa4 a aamas:Term ;
+aama:ID34efd26e-c716-4014-9bef-067ade907ad9 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -594,7 +599,7 @@ aama:ID4c3a6ed4-4854-4c1c-a588-dc2f48ea6fa4 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDf966e80c-d50b-4d2b-bcca-7e25eb30caae a aamas:Term ;
+aama:ID09b0f75e-1c8e-45d5-ba73-8602027a4d65 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -605,7 +610,7 @@ aama:IDf966e80c-d50b-4d2b-bcca-7e25eb30caae a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:ID9015a4d6-9bfc-4718-86b0-c77a3fd531d2 a aamas:Term ;
+aama:ID2ec7e7ea-3440-4aaa-9dba-a4ddb91fbd30 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -616,7 +621,7 @@ aama:ID9015a4d6-9bfc-4718-86b0-c77a3fd531d2 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:ID724f9e8f-f5a7-4ca1-b37d-662102c561d7 a aamas:Term ;
+aama:ID0f8829fc-00fd-450b-8aa4-7143f1a5e4cd a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -627,7 +632,7 @@ aama:ID724f9e8f-f5a7-4ca1-b37d-662102c561d7 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID73abbea7-afc8-4e71-a96e-3e4ba76231b5 a aamas:Term ;
+aama:ID79bd65ca-68ec-4a6b-b712-34528c12979a a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -638,7 +643,7 @@ aama:ID73abbea7-afc8-4e71-a96e-3e4ba76231b5 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDe217c74e-5af5-4a20-9b8e-3f27f60334f1 a aamas:Term ;
+aama:ID1284d74c-306f-4c59-babd-9cd9e71d904b a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -652,7 +657,7 @@ aama:IDe217c74e-5af5-4a20-9b8e-3f27f60334f1 a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffPresPerfMar-
 
-aama:ID58e8b23b-0b60-4202-a435-057fcf3f64db a aamas:Term ;
+aama:ID6f23d5c2-242b-4cf7-9597-cf7edffa8c7b a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -663,7 +668,7 @@ aama:ID58e8b23b-0b60-4202-a435-057fcf3f64db a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID33fe1195-e1ae-4918-bb3d-bcd3b30f85ae a aamas:Term ;
+aama:ID6d7a0769-2535-44bc-971a-e58ce9b7bbd6 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -674,7 +679,7 @@ aama:ID33fe1195-e1ae-4918-bb3d-bcd3b30f85ae a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDd43763c8-9e85-4baa-b2cb-575dd76279ea a aamas:Term ;
+aama:IDdf7d1a60-03b1-4143-8704-1e77a2ec22e8 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -685,7 +690,7 @@ aama:IDd43763c8-9e85-4baa-b2cb-575dd76279ea a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDbaf75f19-84ac-423b-92ee-bad04445629c a aamas:Term ;
+aama:ID6fef4cb3-2e91-47a0-912e-116aa6c397e9 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -696,7 +701,7 @@ aama:IDbaf75f19-84ac-423b-92ee-bad04445629c a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:IDb87ca99b-39dc-4bd6-abab-bbf5b96c4ee0 a aamas:Term ;
+aama:ID1eda9d28-6a28-45da-90fb-3598f24b39a1 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -707,7 +712,7 @@ aama:IDb87ca99b-39dc-4bd6-abab-bbf5b96c4ee0 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Polite ;
 	.
-aama:IDaa2aab30-6cd7-4c1a-8e23-b4cd6ad403e5 a aamas:Term ;
+aama:ID8f965385-93f3-435c-b2ca-faf9f230705d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -718,7 +723,7 @@ aama:IDaa2aab30-6cd7-4c1a-8e23-b4cd6ad403e5 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID510077aa-5623-4c46-8280-f8098a72404f a aamas:Term ;
+aama:ID8d937aac-c9fd-4626-b10a-82e7e4978f00 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -729,7 +734,7 @@ aama:ID510077aa-5623-4c46-8280-f8098a72404f a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDd20ba348-ffd4-4f9f-a215-5f67d50c11cb a aamas:Term ;
+aama:ID52d011e0-8482-49bf-9601-f5691e5fe584 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -743,7 +748,7 @@ aama:IDd20ba348-ffd4-4f9f-a215-5f67d50c11cb a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffImperfect-mar
 
-aama:IDedfba842-3093-4c6c-ac36-89296298d6e8 a aamas:Term ;
+aama:IDe084022f-6645-4db5-b1b3-745df96a2cae a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -753,7 +758,7 @@ aama:IDedfba842-3093-4c6c-ac36-89296298d6e8 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID59683d88-5b0d-41d2-a7f2-4b7a1cbc833c a aamas:Term ;
+aama:ID65c25a64-0617-4176-9fb4-baec715c6ff9 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -763,7 +768,7 @@ aama:ID59683d88-5b0d-41d2-a7f2-4b7a1cbc833c a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID594541b7-56fe-432e-aa25-3bf7094793eb a aamas:Term ;
+aama:ID21ee65cd-6499-4fed-bceb-68b51e593596 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -773,7 +778,7 @@ aama:ID594541b7-56fe-432e-aa25-3bf7094793eb a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:ID47960034-b94b-4843-89cb-0aa456b07407 a aamas:Term ;
+aama:IDfd300c0a-7b26-4e8f-aea1-35334df11cf7 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -783,7 +788,7 @@ aama:ID47960034-b94b-4843-89cb-0aa456b07407 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:IDc13d9cbd-84f1-4ce2-8294-1fdea6917500 a aamas:Term ;
+aama:IDa58ad111-0560-4969-b416-b4f99cd25a47 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -793,7 +798,7 @@ aama:IDc13d9cbd-84f1-4ce2-8294-1fdea6917500 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Polite ;
 	.
-aama:ID4499b1f4-dc9a-4a17-8761-3cdc912f02c1 a aamas:Term ;
+aama:ID70e8bc2e-8cb0-4039-8bb9-a35856e3c35b a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -803,7 +808,7 @@ aama:ID4499b1f4-dc9a-4a17-8761-3cdc912f02c1 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDc895d0de-7549-414c-a5d7-0023c5fad649 a aamas:Term ;
+aama:ID6b2daa12-10a9-4b57-9732-6b67e03a71c8 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -813,7 +818,7 @@ aama:IDc895d0de-7549-414c-a5d7-0023c5fad649 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID6863e6cd-ffbf-4029-9253-1b533858fa31 a aamas:Term ;
+aama:ID84afa848-de3a-41c7-bcf7-5d38d68ab569 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -826,7 +831,7 @@ aama:ID6863e6cd-ffbf-4029-9253-1b533858fa31 a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffSimplePerf-mar
 
-aama:ID05278f11-96ce-4424-a486-636958b20f8e a aamas:Term ;
+aama:ID4cf09e38-fddc-43b5-9f11-65cc5a009035 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -837,7 +842,7 @@ aama:ID05278f11-96ce-4424-a486-636958b20f8e a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID9350860f-f0e6-4c1e-8776-06a33b9ade78 a aamas:Term ;
+aama:ID5eec935b-b3b1-43bb-9d65-be727971a534 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -848,7 +853,7 @@ aama:ID9350860f-f0e6-4c1e-8776-06a33b9ade78 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID81eb8537-3fac-4774-b035-edf4bcd21256 a aamas:Term ;
+aama:IDd1a81868-a58c-4d85-9984-6817514c5eb6 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -859,7 +864,7 @@ aama:ID81eb8537-3fac-4774-b035-edf4bcd21256 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDb9f09668-b2dd-4ce9-9eef-2883c8864aa6 a aamas:Term ;
+aama:IDfe05855b-6312-4f64-a08a-042ab758f4dd a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -870,7 +875,7 @@ aama:IDb9f09668-b2dd-4ce9-9eef-2883c8864aa6 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:IDa368867d-d436-4c62-aa65-5c3860547174 a aamas:Term ;
+aama:ID662e3a16-f4d9-4e3e-bbe0-d26ed17738f4 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -881,7 +886,7 @@ aama:IDa368867d-d436-4c62-aa65-5c3860547174 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID3144b678-8f93-415e-ac34-6b1a51c58fd4 a aamas:Term ;
+aama:ID7f90c460-478f-496a-838d-4149709cecb2 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -892,7 +897,7 @@ aama:ID3144b678-8f93-415e-ac34-6b1a51c58fd4 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID65ffeb7e-5df5-45c9-927f-270b67a293ad a aamas:Term ;
+aama:ID87bc7faf-c14a-487f-bf26-b31eb307e1a2 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -906,7 +911,7 @@ aama:ID65ffeb7e-5df5-45c9-927f-270b67a293ad a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffImperfectMar-
 
-aama:IDb5751f8c-1441-4791-9745-c5d7c6f6c58c a aamas:Term ;
+aama:IDbd1c7443-03ef-456e-b06c-0ab929811ffc a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -917,7 +922,7 @@ aama:IDb5751f8c-1441-4791-9745-c5d7c6f6c58c a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID6952c188-adf5-4f2a-87ad-5f4299f72fa9 a aamas:Term ;
+aama:ID30386152-6840-495d-8476-a4f9c4678a46 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -928,7 +933,7 @@ aama:ID6952c188-adf5-4f2a-87ad-5f4299f72fa9 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID127c5888-d8ea-4fd1-9dc9-84c000746b5b a aamas:Term ;
+aama:IDd77d661b-fa2c-4e9a-a90c-68663e3c6a43 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -939,7 +944,7 @@ aama:ID127c5888-d8ea-4fd1-9dc9-84c000746b5b a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDd810708c-b814-4fdc-a3ef-d983d27280f6 a aamas:Term ;
+aama:ID9d5b6125-fcdb-45ae-81c4-2c3eae1dce45 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -950,7 +955,7 @@ aama:IDd810708c-b814-4fdc-a3ef-d983d27280f6 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:ID542f3eac-bc16-4028-a1e7-0acee0b62bf8 a aamas:Term ;
+aama:IDfb8bd302-3c87-41d0-ad30-9e55688ba8c5 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -961,7 +966,7 @@ aama:ID542f3eac-bc16-4028-a1e7-0acee0b62bf8 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Polite ;
 	.
-aama:IDd1716a34-e884-49d2-9178-3710233a97a4 a aamas:Term ;
+aama:ID6e6a66f6-a233-4340-8f07-bf7b43c82b5e a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -972,7 +977,7 @@ aama:IDd1716a34-e884-49d2-9178-3710233a97a4 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID666fc61f-926c-4de8-b61d-179457bd6549 a aamas:Term ;
+aama:IDf4b96033-b427-459a-b6d9-547a8a4f045d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -983,7 +988,7 @@ aama:ID666fc61f-926c-4de8-b61d-179457bd6549 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDa302f195-a20b-498e-87b1-f8bc652a7ef5 a aamas:Term ;
+aama:IDf31da832-0189-4671-8ed3-7f3633d99c1f a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -997,7 +1002,7 @@ aama:IDa302f195-a20b-498e-87b1-f8bc652a7ef5 a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffPresPerf-mar
 
-aama:ID1bb6ef0e-e278-4d27-baf0-bdb5752e789f a aamas:Term ;
+aama:IDce7e955e-8897-4524-b6da-6b5b3c631cc6 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1008,7 +1013,7 @@ aama:ID1bb6ef0e-e278-4d27-baf0-bdb5752e789f a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:ID8e79aff0-4bf1-42b7-b645-67b5fc5ba315 a aamas:Term ;
+aama:ID6f62e0c1-ae72-4aa3-8d3d-5001cd9909ec a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1019,7 +1024,7 @@ aama:ID8e79aff0-4bf1-42b7-b645-67b5fc5ba315 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDa32eb2e2-fa76-4397-b883-d583b666e1fe a aamas:Term ;
+aama:ID8359046f-335c-42e7-87c1-2175f1397982 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1030,7 +1035,7 @@ aama:IDa32eb2e2-fa76-4397-b883-d583b666e1fe a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:ID5e014280-ecf5-4d99-bff0-27e90cc9b40c a aamas:Term ;
+aama:IDd161f73d-4d8e-4f4b-adc2-d810ff55d740 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1041,7 +1046,7 @@ aama:ID5e014280-ecf5-4d99-bff0-27e90cc9b40c a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:ID9754068b-d510-4dde-8479-0c17cc54b9cc a aamas:Term ;
+aama:IDdf3f73a1-d8fa-4bc3-8037-be911cc6f7c3 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1052,7 +1057,7 @@ aama:ID9754068b-d510-4dde-8479-0c17cc54b9cc a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Polite ;
 	.
-aama:ID2c98aaba-fc5e-4647-8308-51333bf05107 a aamas:Term ;
+aama:ID995c68b7-b4df-4d4b-a921-53acb4d6cfaf a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1063,7 +1068,7 @@ aama:ID2c98aaba-fc5e-4647-8308-51333bf05107 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID2a02d26a-a43a-42ad-b4b1-ba090b4617dd a aamas:Term ;
+aama:ID17408d25-179c-40cf-975d-e187c313f546 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1074,7 +1079,7 @@ aama:ID2a02d26a-a43a-42ad-b4b1-ba090b4617dd a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDeaea813a-c29d-4333-b329-933a83598366 a aamas:Term ;
+aama:ID93116056-d4eb-4fb5-a25d-afd383439c57 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1088,7 +1093,7 @@ aama:IDeaea813a-c29d-4333-b329-933a83598366 a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VNegImprtv-mar
 
-aama:ID08f29b0c-25c6-49f3-bd32-c827b7f87778 a aamas:Term ;
+aama:ID8ab9189a-3359-47d9-8138-9b8097575480 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -1098,7 +1103,7 @@ aama:ID08f29b0c-25c6-49f3-bd32-c827b7f87778 a aamas:Term ;
 	kam:token "martota" ;
 	kam:number kam:Singular ;
 	.
-aama:IDff56d2ca-1b93-4699-932d-cbadca81e7da a aamas:Term ;
+aama:ID3e888aa9-1a8c-4318-8455-e4d3dfe1a0cd a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -1111,7 +1116,7 @@ aama:IDff56d2ca-1b93-4699-932d-cbadca81e7da a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffPastProg-mar
 
-aama:IDcea53bc1-8c05-41ed-8fec-6868208fd766 a aamas:Term ;
+aama:IDde2dfff8-a567-4a67-9eb3-e36b06d0df01 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1122,7 +1127,7 @@ aama:IDcea53bc1-8c05-41ed-8fec-6868208fd766 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDe4933c87-4f38-4c4b-936c-182008bec174 a aamas:Term ;
+aama:IDd1495cca-82c2-4ffa-be86-0a5c855b0680 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1133,7 +1138,7 @@ aama:IDe4933c87-4f38-4c4b-936c-182008bec174 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDca9f86cb-f94c-4233-9991-b8826ace281a a aamas:Term ;
+aama:ID41b849e4-1011-4516-84c3-0333fc0935bf a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1144,7 +1149,7 @@ aama:IDca9f86cb-f94c-4233-9991-b8826ace281a a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDbdb2b913-59a7-4283-af44-53077da4457f a aamas:Term ;
+aama:IDaad1e3a4-7608-4a6e-8854-0d8f9f87123e a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1155,7 +1160,7 @@ aama:IDbdb2b913-59a7-4283-af44-53077da4457f a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:ID2d270775-e62f-46d7-b6c5-a80a3bea0027 a aamas:Term ;
+aama:ID0c6696b9-6be1-431b-b2a0-9323d3987d8c a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1166,7 +1171,7 @@ aama:ID2d270775-e62f-46d7-b6c5-a80a3bea0027 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID6d3537eb-bfba-49b3-837e-e0cedff9ce79 a aamas:Term ;
+aama:IDcbbb3391-a8cc-40a0-bfdf-ced7742db428 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1177,7 +1182,7 @@ aama:ID6d3537eb-bfba-49b3-837e-e0cedff9ce79 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDf542b093-a526-4778-b164-d5b8760db4bd a aamas:Term ;
+aama:IDcc11341b-db57-4ba5-afe9-66af6b435874 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1191,7 +1196,7 @@ aama:IDf542b093-a526-4778-b164-d5b8760db4bd a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffJussive-mar
 
-aama:IDdadf0535-c12b-438c-aec4-aa22edcd802b a aamas:Term ;
+aama:IDad5e7a3a-bbaf-4e73-92e7-03ce5ffc5eb1 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1201,7 +1206,7 @@ aama:IDdadf0535-c12b-438c-aec4-aa22edcd802b a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDfee75404-aa64-4cd0-af6d-b206e5d819ce a aamas:Term ;
+aama:IDf2e4eff4-25fd-4ac7-9b4e-a28d349e127c a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1211,7 +1216,7 @@ aama:IDfee75404-aa64-4cd0-af6d-b206e5d819ce a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:IDfc9da374-76a2-4794-94de-eac0151336ba a aamas:Term ;
+aama:ID14e1a272-c7d3-476f-beaf-b545af85f9a8 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1221,7 +1226,7 @@ aama:IDfc9da374-76a2-4794-94de-eac0151336ba a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:IDdcfdf51c-5e86-4183-a012-03e88f670f24 a aamas:Term ;
+aama:ID42a998f5-5d6b-4a8d-b23c-c0c335f29ec1 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1231,7 +1236,7 @@ aama:IDdcfdf51c-5e86-4183-a012-03e88f670f24 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID06c67abe-cf59-4494-8e61-6e3b2407a50f a aamas:Term ;
+aama:ID488cdcac-410c-47d6-ab15-c4169f60421f a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Affirmative ;
@@ -1244,7 +1249,7 @@ aama:ID06c67abe-cf59-4494-8e61-6e3b2407a50f a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffImprtv-mar
 
-aama:IDc8e957dd-4111-49bb-9cc7-12b196c3cd29 a aamas:Term ;
+aama:ID6c07f68b-eeb7-445e-ae04-51a0fb43701f a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -1254,7 +1259,7 @@ aama:IDc8e957dd-4111-49bb-9cc7-12b196c3cd29 a aamas:Term ;
 	kam:token "mari" ;
 	kam:number kam:Singular ;
 	.
-aama:ID2535be00-be3a-410c-a8be-60d48341db6d a aamas:Term ;
+aama:IDd679f606-4c37-4cbe-996f-8e70c63150c5 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -1267,7 +1272,7 @@ aama:ID2535be00-be3a-410c-a8be-60d48341db6d a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VNegImprtvMar-
 
-aama:IDc8beb9a1-5792-4914-aa01-475ac4911a8c a aamas:Term ;
+aama:IDc9bb6d05-bf83-4766-abf9-2cf781ad0e22 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -1278,7 +1283,7 @@ aama:IDc8beb9a1-5792-4914-aa01-475ac4911a8c a aamas:Term ;
 	kam:token "martota" ;
 	kam:number kam:Singular ;
 	.
-aama:ID913af877-dd69-4324-8781-b43204339c7c a aamas:Term ;
+aama:ID60183c80-cf5a-4f9d-9a97-8bb2401048ad a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	kam:gender kam:Common ;
 	aamas:lexeme aama:Kambaata-mar ;
@@ -1292,7 +1297,7 @@ aama:ID913af877-dd69-4324-8781-b43204339c7c a aamas:Term ;
 
 #TERMCLUSTER: kambaata-VAffPresProgMar-
 
-aama:IDbd9b32ff-8cef-43d0-a10b-590c6c7c8ef1 a aamas:Term ;
+aama:ID29f50bd9-5927-486c-a020-e43a57e20b30 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1303,7 +1308,7 @@ aama:IDbd9b32ff-8cef-43d0-a10b-590c6c7c8ef1 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDa986a03b-ee1b-421f-9b23-59db62b187f2 a aamas:Term ;
+aama:ID3a269859-a230-476d-bd30-c3e95ed1f18e a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1314,7 +1319,7 @@ aama:IDa986a03b-ee1b-421f-9b23-59db62b187f2 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Common ;
 	.
-aama:IDcc101738-64cc-4968-839d-72fab2178239 a aamas:Term ;
+aama:ID1e2eab5a-d524-467b-bc1b-eea6591f7654 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1325,7 +1330,7 @@ aama:IDcc101738-64cc-4968-839d-72fab2178239 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Masc ;
 	.
-aama:ID36697c89-76a8-48ad-9649-7ed660203c32 a aamas:Term ;
+aama:ID513c9026-59a7-4fbb-89cf-c2ca1fc1724d a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1336,7 +1341,7 @@ aama:ID36697c89-76a8-48ad-9649-7ed660203c32 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Fem ;
 	.
-aama:IDe686f0e4-ca0f-42c0-96c7-93e48091a9c0 a aamas:Term ;
+aama:IDbe8a211d-a4a8-4f50-b45c-59df972ba679 a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1347,7 +1352,7 @@ aama:IDe686f0e4-ca0f-42c0-96c7-93e48091a9c0 a aamas:Term ;
 	kam:number kam:Singular ;
 	kam:gender kam:Polite ;
 	.
-aama:IDa162bf8c-daa5-4561-a559-5f9613c26799 a aamas:Term ;
+aama:IDd606d802-b9b0-45fb-a7d3-44d34dd846fa a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1358,7 +1363,7 @@ aama:IDa162bf8c-daa5-4561-a559-5f9613c26799 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:IDc1a78e0b-61fc-494c-905c-8ef185c24764 a aamas:Term ;
+aama:ID6b55f16d-22e8-4692-8ef6-840fda6355ec a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;
@@ -1369,7 +1374,7 @@ aama:IDc1a78e0b-61fc-494c-905c-8ef185c24764 a aamas:Term ;
 	kam:number kam:Plural ;
 	kam:gender kam:Common ;
 	.
-aama:ID7ff8ed19-cef7-4bee-ac8f-4768d9ac41e6 a aamas:Term ;
+aama:ID081c0aa5-61ac-41c6-8bf3-b60f3c0046ef a aamas:Term ;
 	aamas:lang aama:Kambaata ;
 	aamas:lexeme aama:Kambaata-mar ;
 	kam:polarity kam:Aff ;

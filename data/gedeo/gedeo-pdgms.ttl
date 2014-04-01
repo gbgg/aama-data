@@ -1,6 +1,11 @@
 
 #TTL FROM INPUT FILE:
 # data/gedeo/gedeo-pdgms.edn
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix ged:   <http://id.oi.uchicago.edu/aama/2013/gedeo/> .
 
 #SCHEMATA:
 
@@ -17,13 +22,13 @@ ged:gender rdfs:range ged:Gender .
 ged:Gender rdfs:subClassOf ged:MuExponent .
 ged:gender rdfs:subPropertyOf ged:muProperty .
 ged:Common aamas:lang aama:Gedeo .
-ged:Common rdf:type Gedeo:Gender .
+ged:Common rdf:type ged:Gender .
 ged:Common rdfs:label "Common".
 ged:Fem aamas:lang aama:Gedeo .
-ged:Fem rdf:type Gedeo:Gender .
+ged:Fem rdf:type ged:Gender .
 ged:Fem rdfs:label "Fem".
 ged:Masc aamas:lang aama:Gedeo .
-ged:Masc rdf:type Gedeo:Gender .
+ged:Masc rdf:type ged:Gender .
 ged:Masc rdfs:label "Masc".
 
 #SCHEMATA: genderHead
@@ -36,10 +41,10 @@ ged:genderHead rdfs:range ged:Genderhead .
 ged:Genderhead rdfs:subClassOf ged:MuExponent .
 ged:genderHead rdfs:subPropertyOf ged:muProperty .
 ged:Fem aamas:lang aama:Gedeo .
-ged:Fem rdf:type Gedeo:Genderhead .
+ged:Fem rdf:type ged:Genderhead .
 ged:Fem rdfs:label "Fem".
 ged:Masc aamas:lang aama:Gedeo .
-ged:Masc rdf:type Gedeo:Genderhead .
+ged:Masc rdf:type ged:Genderhead .
 ged:Masc rdfs:label "Masc".
 
 #SCHEMATA: interrogClass
@@ -52,22 +57,22 @@ ged:interrogClass rdfs:range ged:Interrogclass .
 ged:Interrogclass rdfs:subClassOf ged:MuExponent .
 ged:interrogClass rdfs:subPropertyOf ged:muProperty .
 ged:InterrogProHow aamas:lang aama:Gedeo .
-ged:InterrogProHow rdf:type Gedeo:Interrogclass .
+ged:InterrogProHow rdf:type ged:Interrogclass .
 ged:InterrogProHow rdfs:label "InterrogProHow".
 ged:InterrogProHowMany aamas:lang aama:Gedeo .
-ged:InterrogProHowMany rdf:type Gedeo:Interrogclass .
+ged:InterrogProHowMany rdf:type ged:Interrogclass .
 ged:InterrogProHowMany rdfs:label "InterrogProHowMany".
 ged:InterrogProWhat aamas:lang aama:Gedeo .
-ged:InterrogProWhat rdf:type Gedeo:Interrogclass .
+ged:InterrogProWhat rdf:type ged:Interrogclass .
 ged:InterrogProWhat rdfs:label "InterrogProWhat".
 ged:InterrogProWhen aamas:lang aama:Gedeo .
-ged:InterrogProWhen rdf:type Gedeo:Interrogclass .
+ged:InterrogProWhen rdf:type ged:Interrogclass .
 ged:InterrogProWhen rdfs:label "InterrogProWhen".
 ged:InterrogProWhere aamas:lang aama:Gedeo .
-ged:InterrogProWhere rdf:type Gedeo:Interrogclass .
+ged:InterrogProWhere rdf:type ged:Interrogclass .
 ged:InterrogProWhere rdfs:label "InterrogProWhere".
 ged:InterrogProWho aamas:lang aama:Gedeo .
-ged:InterrogProWho rdf:type Gedeo:Interrogclass .
+ged:InterrogProWho rdf:type ged:Interrogclass .
 ged:InterrogProWho rdfs:label "InterrogProWho".
 
 #SCHEMATA: polarity
@@ -80,13 +85,13 @@ ged:polarity rdfs:range ged:Polarity .
 ged:Polarity rdfs:subClassOf ged:MuExponent .
 ged:polarity rdfs:subPropertyOf ged:muProperty .
 ged:Affirmative aamas:lang aama:Gedeo .
-ged:Affirmative rdf:type Gedeo:Polarity .
+ged:Affirmative rdf:type ged:Polarity .
 ged:Affirmative rdfs:label "Affirmative".
 ged:Interrogative aamas:lang aama:Gedeo .
-ged:Interrogative rdf:type Gedeo:Polarity .
+ged:Interrogative rdf:type ged:Polarity .
 ged:Interrogative rdfs:label "Interrogative".
 ged:Negative aamas:lang aama:Gedeo .
-ged:Negative rdf:type Gedeo:Polarity .
+ged:Negative rdf:type ged:Polarity .
 ged:Negative rdfs:label "Negative".
 
 #SCHEMATA: case
@@ -99,10 +104,10 @@ ged:case rdfs:range ged:Case .
 ged:Case rdfs:subClassOf ged:MuExponent .
 ged:case rdfs:subPropertyOf ged:muProperty .
 ged:Absolutive aamas:lang aama:Gedeo .
-ged:Absolutive rdf:type Gedeo:Case .
+ged:Absolutive rdf:type ged:Case .
 ged:Absolutive rdfs:label "Absolutive".
 ged:Nominative aamas:lang aama:Gedeo .
-ged:Nominative rdf:type Gedeo:Case .
+ged:Nominative rdf:type ged:Case .
 ged:Nominative rdfs:label "Nominative".
 
 #SCHEMATA: caseHead
@@ -115,7 +120,7 @@ ged:caseHead rdfs:range ged:Casehead .
 ged:Casehead rdfs:subClassOf ged:MuExponent .
 ged:caseHead rdfs:subPropertyOf ged:muProperty .
 ged:Absolutive aamas:lang aama:Gedeo .
-ged:Absolutive rdf:type Gedeo:Casehead .
+ged:Absolutive rdf:type ged:Casehead .
 ged:Absolutive rdfs:label "Absolutive".
 
 #SCHEMATA: pos
@@ -128,10 +133,10 @@ ged:pos rdfs:range ged:Pos .
 ged:Pos rdfs:subClassOf ged:MuExponent .
 ged:pos rdfs:subPropertyOf ged:muProperty .
 ged:Pro aamas:lang aama:Gedeo .
-ged:Pro rdf:type Gedeo:Pos .
+ged:Pro rdf:type ged:Pos .
 ged:Pro rdfs:label "Pro".
 ged:Verb aamas:lang aama:Gedeo .
-ged:Verb rdf:type Gedeo:Pos .
+ged:Verb rdf:type ged:Pos .
 ged:Verb rdfs:label "Verb".
 
 #SCHEMATA: person
@@ -144,13 +149,13 @@ ged:person rdfs:range ged:Person .
 ged:Person rdfs:subClassOf ged:MuExponent .
 ged:person rdfs:subPropertyOf ged:muProperty .
 ged:Person1 aamas:lang aama:Gedeo .
-ged:Person1 rdf:type Gedeo:Person .
+ged:Person1 rdf:type ged:Person .
 ged:Person1 rdfs:label "Person1".
 ged:Person2 aamas:lang aama:Gedeo .
-ged:Person2 rdf:type Gedeo:Person .
+ged:Person2 rdf:type ged:Person .
 ged:Person2 rdfs:label "Person2".
 ged:Person3 aamas:lang aama:Gedeo .
-ged:Person3 rdf:type Gedeo:Person .
+ged:Person3 rdf:type ged:Person .
 ged:Person3 rdfs:label "Person3".
 
 #SCHEMATA: proClass
@@ -163,16 +168,16 @@ ged:proClass rdfs:range ged:Proclass .
 ged:Proclass rdfs:subClassOf ged:MuExponent .
 ged:proClass rdfs:subPropertyOf ged:muProperty .
 ged:Demonstrative aamas:lang aama:Gedeo .
-ged:Demonstrative rdf:type Gedeo:Proclass .
+ged:Demonstrative rdf:type ged:Proclass .
 ged:Demonstrative rdfs:label "Demonstrative".
 ged:Interrogative aamas:lang aama:Gedeo .
-ged:Interrogative rdf:type Gedeo:Proclass .
+ged:Interrogative rdf:type ged:Proclass .
 ged:Interrogative rdfs:label "Interrogative".
 ged:Person aamas:lang aama:Gedeo .
-ged:Person rdf:type Gedeo:Proclass .
+ged:Person rdf:type ged:Proclass .
 ged:Person rdfs:label "Person".
 ged:Possessive aamas:lang aama:Gedeo .
-ged:Possessive rdf:type Gedeo:Proclass .
+ged:Possessive rdf:type ged:Proclass .
 ged:Possessive rdfs:label "Possessive".
 
 #SCHEMATA: tam
@@ -185,49 +190,49 @@ ged:tam rdfs:range ged:Tam .
 ged:Tam rdfs:subClassOf ged:MuExponent .
 ged:tam rdfs:subPropertyOf ged:muProperty .
 ged:DependentConditional aamas:lang aama:Gedeo .
-ged:DependentConditional rdf:type Gedeo:Tam .
+ged:DependentConditional rdf:type ged:Tam .
 ged:DependentConditional rdfs:label "DependentConditional".
 ged:DependentPurposive aamas:lang aama:Gedeo .
-ged:DependentPurposive rdf:type Gedeo:Tam .
+ged:DependentPurposive rdf:type ged:Tam .
 ged:DependentPurposive rdfs:label "DependentPurposive".
 ged:HypothNonActual aamas:lang aama:Gedeo .
-ged:HypothNonActual rdf:type Gedeo:Tam .
+ged:HypothNonActual rdf:type ged:Tam .
 ged:HypothNonActual rdfs:label "HypothNonActual".
 ged:HypothNonPres aamas:lang aama:Gedeo .
-ged:HypothNonPres rdf:type Gedeo:Tam .
+ged:HypothNonPres rdf:type ged:Tam .
 ged:HypothNonPres rdfs:label "HypothNonPres".
 ged:Imperative aamas:lang aama:Gedeo .
-ged:Imperative rdf:type Gedeo:Tam .
+ged:Imperative rdf:type ged:Tam .
 ged:Imperative rdfs:label "Imperative".
 ged:ImperfectActual aamas:lang aama:Gedeo .
-ged:ImperfectActual rdf:type Gedeo:Tam .
+ged:ImperfectActual rdf:type ged:Tam .
 ged:ImperfectActual rdfs:label "ImperfectActual".
 ged:ImperfectFuture aamas:lang aama:Gedeo .
-ged:ImperfectFuture rdf:type Gedeo:Tam .
+ged:ImperfectFuture rdf:type ged:Tam .
 ged:ImperfectFuture rdfs:label "ImperfectFuture".
 ged:ImperfectNonActual aamas:lang aama:Gedeo .
-ged:ImperfectNonActual rdf:type Gedeo:Tam .
+ged:ImperfectNonActual rdf:type ged:Tam .
 ged:ImperfectNonActual rdfs:label "ImperfectNonActual".
 ged:ImperfectNonPresent aamas:lang aama:Gedeo .
-ged:ImperfectNonPresent rdf:type Gedeo:Tam .
+ged:ImperfectNonPresent rdf:type ged:Tam .
 ged:ImperfectNonPresent rdfs:label "ImperfectNonPresent".
 ged:ImperfectNonPresent2 aamas:lang aama:Gedeo .
-ged:ImperfectNonPresent2 rdf:type Gedeo:Tam .
+ged:ImperfectNonPresent2 rdf:type ged:Tam .
 ged:ImperfectNonPresent2 rdfs:label "ImperfectNonPresent2".
 ged:Perfect aamas:lang aama:Gedeo .
-ged:Perfect rdf:type Gedeo:Tam .
+ged:Perfect rdf:type ged:Tam .
 ged:Perfect rdfs:label "Perfect".
 ged:PerfectActual aamas:lang aama:Gedeo .
-ged:PerfectActual rdf:type Gedeo:Tam .
+ged:PerfectActual rdf:type ged:Tam .
 ged:PerfectActual rdfs:label "PerfectActual".
 ged:PerfectNonActual aamas:lang aama:Gedeo .
-ged:PerfectNonActual rdf:type Gedeo:Tam .
+ged:PerfectNonActual rdf:type ged:Tam .
 ged:PerfectNonActual rdfs:label "PerfectNonActual".
 ged:PerfectNonPresent aamas:lang aama:Gedeo .
-ged:PerfectNonPresent rdf:type Gedeo:Tam .
+ged:PerfectNonPresent rdf:type ged:Tam .
 ged:PerfectNonPresent rdfs:label "PerfectNonPresent".
 ged:PerfectNonPresent2 aamas:lang aama:Gedeo .
-ged:PerfectNonPresent2 rdf:type Gedeo:Tam .
+ged:PerfectNonPresent2 rdf:type ged:Tam .
 ged:PerfectNonPresent2 rdfs:label "PerfectNonPresent2".
 
 #SCHEMATA: number
@@ -240,10 +245,10 @@ ged:number rdfs:range ged:Number .
 ged:Number rdfs:subClassOf ged:MuExponent .
 ged:number rdfs:subPropertyOf ged:muProperty .
 ged:Plural aamas:lang aama:Gedeo .
-ged:Plural rdf:type Gedeo:Number .
+ged:Plural rdf:type ged:Number .
 ged:Plural rdfs:label "Plural".
 ged:Singular aamas:lang aama:Gedeo .
-ged:Singular rdf:type Gedeo:Number .
+ged:Singular rdf:type ged:Number .
 ged:Singular rdfs:label "Singular".
 
 #SCHEMATA: deixis
@@ -256,10 +261,10 @@ ged:deixis rdfs:range ged:Deixis .
 ged:Deixis rdfs:subClassOf ged:MuExponent .
 ged:deixis rdfs:subPropertyOf ged:muProperty .
 ged:Far aamas:lang aama:Gedeo .
-ged:Far rdf:type Gedeo:Deixis .
+ged:Far rdf:type ged:Deixis .
 ged:Far rdfs:label "Far".
 ged:Near aamas:lang aama:Gedeo .
-ged:Near rdf:type Gedeo:Deixis .
+ged:Near rdf:type ged:Deixis .
 ged:Near rdfs:label "Near".
 
 #MORPHEMES:
@@ -268,25 +273,25 @@ aama:Gedeo-PRODEM a aamas:Muterm ;
 	aamas:lang aama:Gedeo ;
 	rdfs:label "PRODEM" ;
 	rdfs:comment "[x]" ;
-	ged:lemma ged:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Gedeo-PROIND a aamas:Muterm ;
 	aamas:lang aama:Gedeo ;
 	rdfs:label "PROIND" ;
 	rdfs:comment "[x]" ;
-	ged:lemma ged:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Gedeo-PROINTERROG a aamas:Muterm ;
 	aamas:lang aama:Gedeo ;
 	rdfs:label "PROINTERROG" ;
 	rdfs:comment "[x]" ;
-	ged:lemma ged:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Gedeo-PROPOSS a aamas:Muterm ;
 	aamas:lang aama:Gedeo ;
 	rdfs:label "PROPOSS" ;
 	rdfs:comment "[x]" ;
-	ged:lemma ged:[y] ;
+	rdfs:comment "[y]" ;
 	.
 
 #LEXEMES:
@@ -294,13 +299,13 @@ aama:Gedeo-PROPOSS a aamas:Muterm ;
 aama:Gedeo-mar a aamas:Lexeme ;
 	aamas:lang aama:Gedeo ;
 	rdfs:label "mar" ;
-	ged:lemma ged:mar- ;
+	aamas:lemma "mar-" ;
 	aamas:gloss "go" ;
 	.
 
 #TERMCLUSTER: gedeo-VAffPerfNonPres-mar
 
-aama:ID3f8a8e4c-039d-4bee-9080-3448eb2d3345 a aamas:Term ;
+aama:IDdb87c9d6-6616-4f58-8955-29c8f2f984c1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -311,7 +316,7 @@ aama:ID3f8a8e4c-039d-4bee-9080-3448eb2d3345 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID1266127b-321c-462e-94f5-a02e430b76b5 a aamas:Term ;
+aama:IDe075f556-a776-4580-a4c4-c917f0976e8c a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -322,7 +327,7 @@ aama:ID1266127b-321c-462e-94f5-a02e430b76b5 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID661a59a0-8c5a-4617-a3ee-f1c395e2cc44 a aamas:Term ;
+aama:ID0136169e-263b-4144-9bf2-4fe951ce139f a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -333,7 +338,7 @@ aama:ID661a59a0-8c5a-4617-a3ee-f1c395e2cc44 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID1663b35e-a7ae-4886-aa10-ca22a7b3d863 a aamas:Term ;
+aama:ID5f4ba6ea-7341-47ab-9aa2-95dc0cfddfb5 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -344,7 +349,7 @@ aama:ID1663b35e-a7ae-4886-aa10-ca22a7b3d863 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID5dae1d2e-ed0d-47fb-936a-1150f8fa6363 a aamas:Term ;
+aama:IDdf8cc623-defd-4754-8826-e87f0d019bed a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -355,7 +360,7 @@ aama:ID5dae1d2e-ed0d-47fb-936a-1150f8fa6363 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID3f0178ef-d3a8-4752-9155-1ab796bf9a4a a aamas:Term ;
+aama:IDd0bceb54-42d5-4fc9-af41-89c914c2f7f6 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -366,7 +371,7 @@ aama:ID3f0178ef-d3a8-4752-9155-1ab796bf9a4a a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDe1828f2f-28bf-4b64-af68-19d2d71ae9e5 a aamas:Term ;
+aama:IDf6439d9e-25c8-40c8-a9fe-542234a55f0c a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -380,7 +385,7 @@ aama:IDe1828f2f-28bf-4b64-af68-19d2d71ae9e5 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffImperfActual-mar
 
-aama:ID51899920-5cc8-42ab-8238-155659c445ae a aamas:Term ;
+aama:ID6b833655-ea3d-4e0c-87b2-fb0d75ecf2b5 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -391,7 +396,7 @@ aama:ID51899920-5cc8-42ab-8238-155659c445ae a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID8e4e34af-cbc4-4b81-a0d2-0612cd282820 a aamas:Term ;
+aama:ID48189436-57f0-4f37-b2bf-456cbbc1e247 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -402,7 +407,7 @@ aama:ID8e4e34af-cbc4-4b81-a0d2-0612cd282820 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID5d391b0a-ce71-4757-b871-ce4d3b22d743 a aamas:Term ;
+aama:IDa7b20de9-1ed9-4bd1-8194-7acce7382b8d a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -413,7 +418,7 @@ aama:ID5d391b0a-ce71-4757-b871-ce4d3b22d743 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID7fd9644e-f385-4597-95af-036c140f6cf5 a aamas:Term ;
+aama:IDd346b827-176e-411f-9b01-88a364a9a375 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -424,7 +429,7 @@ aama:ID7fd9644e-f385-4597-95af-036c140f6cf5 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID93e596da-eef7-437a-816a-9a7254ae7a56 a aamas:Term ;
+aama:IDf55fc3c4-fe10-42c7-99f9-0d45f77b0d8d a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -435,7 +440,7 @@ aama:ID93e596da-eef7-437a-816a-9a7254ae7a56 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID5a86d1b9-788f-4a88-a202-197c878ee41b a aamas:Term ;
+aama:IDb97062b5-aa8c-4a7b-9602-3ff8387a3852 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -446,7 +451,7 @@ aama:ID5a86d1b9-788f-4a88-a202-197c878ee41b a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDb9406ac7-a109-42dd-9864-a253e2e656c6 a aamas:Term ;
+aama:IDaaa439ef-eab2-4466-be0a-416ee81fe17f a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -460,7 +465,7 @@ aama:IDb9406ac7-a109-42dd-9864-a253e2e656c6 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffDepPurp-mar
 
-aama:IDa005bcb6-29ba-4419-8719-b6d20267fce5 a aamas:Term ;
+aama:ID9d44a6af-42be-469e-8bd4-a4e1548ca210 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -471,7 +476,7 @@ aama:IDa005bcb6-29ba-4419-8719-b6d20267fce5 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDecf0b10c-f6f4-4f95-acc2-ab0dcb4c8915 a aamas:Term ;
+aama:ID3dc1338b-dd0f-4a11-a102-9c2d00017270 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -482,7 +487,7 @@ aama:IDecf0b10c-f6f4-4f95-acc2-ab0dcb4c8915 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID9d5afd92-e277-43bb-b627-473265f89143 a aamas:Term ;
+aama:ID58d88009-9d0b-4980-a705-db7753eedd38 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -493,7 +498,7 @@ aama:ID9d5afd92-e277-43bb-b627-473265f89143 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:IDe63b38d2-8750-4f33-a732-2822348892fb a aamas:Term ;
+aama:ID7156c6c3-cb8a-4db7-86f8-02478da91255 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -504,7 +509,7 @@ aama:IDe63b38d2-8750-4f33-a732-2822348892fb a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:IDbe8e793b-f965-4601-bd71-d67c129f8f74 a aamas:Term ;
+aama:IDb5503c8e-b8bb-46b0-b18e-2b3c3caf8486 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -515,7 +520,7 @@ aama:IDbe8e793b-f965-4601-bd71-d67c129f8f74 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID7fb6bb96-a2d1-422e-8af9-a0bcf8e08f6e a aamas:Term ;
+aama:IDe5d6508d-713d-4539-8474-66df30fa44d5 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -526,7 +531,7 @@ aama:ID7fb6bb96-a2d1-422e-8af9-a0bcf8e08f6e a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID3b5bc750-51f6-4f8c-a28f-f3630e51331c a aamas:Term ;
+aama:ID37554aec-eea6-4848-be29-5edc229cafea a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -540,7 +545,7 @@ aama:ID3b5bc750-51f6-4f8c-a28f-f3630e51331c a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffPerfActual-mar
 
-aama:IDa803399b-123c-4275-bdcd-101e847bb1ef a aamas:Term ;
+aama:ID08e72f64-0037-40c9-8960-f857d27ca16b a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -551,7 +556,7 @@ aama:IDa803399b-123c-4275-bdcd-101e847bb1ef a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID2ce5b53b-c5be-475a-b8d0-14e2507e1ca4 a aamas:Term ;
+aama:IDd54897f0-4fd1-4fc3-8a70-f8a429d6b11a a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -562,7 +567,7 @@ aama:ID2ce5b53b-c5be-475a-b8d0-14e2507e1ca4 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID702203ff-7e4b-4e92-a7a5-9790a15af284 a aamas:Term ;
+aama:ID7383838c-eb10-421d-bc5c-056435236786 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -573,7 +578,7 @@ aama:ID702203ff-7e4b-4e92-a7a5-9790a15af284 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID700d0460-bcdc-4bf9-9ea7-325b910a8a33 a aamas:Term ;
+aama:IDfa56e5a0-397c-4951-9fee-84adb06d90ff a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -584,7 +589,7 @@ aama:ID700d0460-bcdc-4bf9-9ea7-325b910a8a33 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID5d651178-9a8f-4ca4-9a9a-eaa2e84176b8 a aamas:Term ;
+aama:IDca13f77a-1714-4c70-9639-14ce08d9e436 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -595,7 +600,7 @@ aama:ID5d651178-9a8f-4ca4-9a9a-eaa2e84176b8 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID87e8da6f-429f-4df9-85b2-7b50b6ef853e a aamas:Term ;
+aama:IDf1f51f0f-e4c8-48c9-8798-4f50bc8b8f73 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -606,7 +611,7 @@ aama:ID87e8da6f-429f-4df9-85b2-7b50b6ef853e a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID579cfe16-689e-4897-9912-48b8506b9763 a aamas:Term ;
+aama:IDc26b22bc-e6dc-4fc3-91e2-775334728871 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -620,7 +625,7 @@ aama:ID579cfe16-689e-4897-9912-48b8506b9763 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VNegImprtv-mar
 
-aama:IDd9bdfa28-8530-4557-8176-fc60cc162aba a aamas:Term ;
+aama:ID596ebf4f-0d8f-4c79-b643-0c124334a3c3 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	ged:gender ged:Common ;
 	aamas:lexeme aama:Gedeo-mar ;
@@ -631,7 +636,7 @@ aama:IDd9bdfa28-8530-4557-8176-fc60cc162aba a aamas:Term ;
 	ged:token "mar-tótteeokkee" ;
 	ged:number ged:Singular ;
 	.
-aama:IDa57f43d2-23a6-43d4-aec0-e5708881d635 a aamas:Term ;
+aama:IDa41eeda9-3e54-4bef-b7fb-1aff78d78015 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	ged:gender ged:Common ;
 	aamas:lexeme aama:Gedeo-mar ;
@@ -645,7 +650,7 @@ aama:IDa57f43d2-23a6-43d4-aec0-e5708881d635 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffHypothNonPres-mar
 
-aama:ID28d3cba3-798f-48e1-95f6-83a3f99f953e a aamas:Term ;
+aama:IDea8d3d66-37f0-44a3-b4ac-ad48ea9a75fb a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -656,7 +661,7 @@ aama:ID28d3cba3-798f-48e1-95f6-83a3f99f953e a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDf97a1b54-6f35-4ae2-a7e1-d1b807ba513a a aamas:Term ;
+aama:ID7c7b4309-a3e9-459b-a4e4-63eb53d418ab a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -667,7 +672,7 @@ aama:IDf97a1b54-6f35-4ae2-a7e1-d1b807ba513a a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID1aed003b-9f48-4315-9232-5581b4d52ed1 a aamas:Term ;
+aama:IDb53eaf94-2447-455f-aa01-f9bc23a8e2ff a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -678,7 +683,7 @@ aama:ID1aed003b-9f48-4315-9232-5581b4d52ed1 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID8e55a48d-cc08-40ee-af67-0ab3513e32a3 a aamas:Term ;
+aama:ID0c3043ef-b339-40c7-8f09-01001f73c2ce a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -689,7 +694,7 @@ aama:ID8e55a48d-cc08-40ee-af67-0ab3513e32a3 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID2f6c3415-9c21-4c2b-b9e9-4e33cb8b7255 a aamas:Term ;
+aama:ID5c98a80e-a341-4692-9137-1ad70d6769c5 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -700,7 +705,7 @@ aama:ID2f6c3415-9c21-4c2b-b9e9-4e33cb8b7255 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID69248ae1-97d9-4582-a3da-d584b54abb3c a aamas:Term ;
+aama:ID3d0fe6a1-5a6e-4e6e-a346-154cf89b0bb1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -711,7 +716,7 @@ aama:ID69248ae1-97d9-4582-a3da-d584b54abb3c a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDf4b978b2-eb55-4366-9f15-7b26365508fb a aamas:Term ;
+aama:IDf3295fae-3fe0-42be-9dc4-7773817b0dd9 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -725,7 +730,7 @@ aama:IDf4b978b2-eb55-4366-9f15-7b26365508fb a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffPerfNonActual-mar
 
-aama:ID8bc3f8f3-6c5f-4405-b173-381919ee132c a aamas:Term ;
+aama:IDe192e5b8-7953-4c4b-a4fb-5da692a5c1bf a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -736,7 +741,7 @@ aama:ID8bc3f8f3-6c5f-4405-b173-381919ee132c a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID447874b8-b135-4219-be8a-eead4507688b a aamas:Term ;
+aama:ID2aa23ce5-08af-4d4c-8652-23e639d8ea6c a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -747,7 +752,7 @@ aama:ID447874b8-b135-4219-be8a-eead4507688b a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID1971af17-10a4-428d-b9b8-7f188ac3d9c0 a aamas:Term ;
+aama:IDc844daf6-5ad6-4b44-9fdd-da5b2ff388c0 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -758,7 +763,7 @@ aama:ID1971af17-10a4-428d-b9b8-7f188ac3d9c0 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID2ff07151-5b9a-4577-be1c-704a5faad2eb a aamas:Term ;
+aama:ID942c1349-48a9-4271-a58e-8f0944f3b272 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -769,7 +774,7 @@ aama:ID2ff07151-5b9a-4577-be1c-704a5faad2eb a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:IDcfe96afb-a19b-4a83-9cac-edc19e818b02 a aamas:Term ;
+aama:IDc6fde953-4f28-4895-a29a-43585aee5eaf a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -780,7 +785,7 @@ aama:IDcfe96afb-a19b-4a83-9cac-edc19e818b02 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID84a595b4-d108-4153-ab8c-8ba48ff7fdc2 a aamas:Term ;
+aama:ID3f190ddd-c651-4ed2-9d85-2313aedf247e a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -791,7 +796,7 @@ aama:ID84a595b4-d108-4153-ab8c-8ba48ff7fdc2 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID1e76304f-07df-4e4e-bd3f-2b5f5aac7fbb a aamas:Term ;
+aama:ID84a4daa2-44bf-42cf-aa48-e64d30431b5b a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -805,7 +810,7 @@ aama:ID1e76304f-07df-4e4e-bd3f-2b5f5aac7fbb a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffImperfNonPres2-mar
 
-aama:ID133dce7e-abaf-4d7f-af84-3b4738bfaff9 a aamas:Term ;
+aama:ID758ed31e-4e52-42f2-86f3-0d3461f73216 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -816,7 +821,7 @@ aama:ID133dce7e-abaf-4d7f-af84-3b4738bfaff9 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID9cb64c31-32a0-41b6-866c-d6cf0ad084a5 a aamas:Term ;
+aama:IDfb481be5-9a2c-4997-9ffd-811bd7e13750 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -827,7 +832,7 @@ aama:ID9cb64c31-32a0-41b6-866c-d6cf0ad084a5 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID1708b536-7d37-4db8-8c68-a077ea0a23c3 a aamas:Term ;
+aama:IDb52d0f45-c2b9-4d3c-91f7-39b0b1693571 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -838,7 +843,7 @@ aama:ID1708b536-7d37-4db8-8c68-a077ea0a23c3 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID1ec6edae-01cb-4a1d-97d9-1049e935ff35 a aamas:Term ;
+aama:ID8c89e499-0656-4104-a198-d708954340e7 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -849,7 +854,7 @@ aama:ID1ec6edae-01cb-4a1d-97d9-1049e935ff35 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:IDd9e2c0fe-bf4f-48c4-b995-f57288ff3075 a aamas:Term ;
+aama:ID1d415123-8100-4924-977c-e14d6845a6b9 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -860,7 +865,7 @@ aama:IDd9e2c0fe-bf4f-48c4-b995-f57288ff3075 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDe5b38ec1-8491-4908-b141-61a7973bb9d3 a aamas:Term ;
+aama:ID1cac336c-8035-472d-9902-4f9bd9a643f6 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -871,7 +876,7 @@ aama:IDe5b38ec1-8491-4908-b141-61a7973bb9d3 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID811e6897-528a-4cb3-95e3-ebc71b5152d7 a aamas:Term ;
+aama:ID7381a10c-9653-42cd-9f06-83d2d1e66859 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -885,7 +890,7 @@ aama:ID811e6897-528a-4cb3-95e3-ebc71b5152d7 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffPerfNonPres2-mar
 
-aama:IDc55936dc-3215-4733-aeb4-607226829b10 a aamas:Term ;
+aama:IDff15def7-3202-4f11-a977-1aad1478d831 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -896,7 +901,7 @@ aama:IDc55936dc-3215-4733-aeb4-607226829b10 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDdeb267ae-7f52-4425-ad91-7a5686aee739 a aamas:Term ;
+aama:ID5b5f767a-5204-476a-8380-646810d83266 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -907,7 +912,7 @@ aama:IDdeb267ae-7f52-4425-ad91-7a5686aee739 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID6fc4487e-0947-4d14-bb48-70d3dbef9a18 a aamas:Term ;
+aama:IDaf662dea-3a7d-40fe-b8df-24c71806baf1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -918,7 +923,7 @@ aama:ID6fc4487e-0947-4d14-bb48-70d3dbef9a18 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID061e59a8-0721-4785-bde6-3dd82a843fa4 a aamas:Term ;
+aama:IDf37a90ca-cb49-436c-9bfc-ed80f5dce0c0 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -929,7 +934,7 @@ aama:ID061e59a8-0721-4785-bde6-3dd82a843fa4 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:IDbdbf8ce6-0733-4e72-a521-fc62a31dc13e a aamas:Term ;
+aama:ID55d47c38-0ba8-4ee9-a9ad-79c06af25f58 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -940,7 +945,7 @@ aama:IDbdbf8ce6-0733-4e72-a521-fc62a31dc13e a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID7d6bbcb1-e719-4dac-a2c9-ce6bd7482ee6 a aamas:Term ;
+aama:IDaf06a7dc-9646-48c8-aac0-8e51668c15eb a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -951,7 +956,7 @@ aama:ID7d6bbcb1-e719-4dac-a2c9-ce6bd7482ee6 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID80bf9f12-076f-4da4-823f-24566cb54bed a aamas:Term ;
+aama:IDdd1f6bef-18fd-46bc-ab18-0611a7aa74e1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -965,7 +970,7 @@ aama:ID80bf9f12-076f-4da4-823f-24566cb54bed a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffImperfFut-mar
 
-aama:ID414bc11a-7e9c-4dd6-a3e1-58c56a7f5c34 a aamas:Term ;
+aama:ID1c8bc231-9b57-4722-9522-2ad33c3a6336 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -976,7 +981,7 @@ aama:ID414bc11a-7e9c-4dd6-a3e1-58c56a7f5c34 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID3f100841-4efc-4f9a-a511-2b1b851e35b4 a aamas:Term ;
+aama:ID17f47237-a2f3-4755-94c7-3dab3660f8e1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -987,7 +992,7 @@ aama:ID3f100841-4efc-4f9a-a511-2b1b851e35b4 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID3c301e8a-6654-41f1-accf-7cbfef4398dd a aamas:Term ;
+aama:IDcd8bd13b-1984-41a3-891f-f06b48017b8e a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -998,7 +1003,7 @@ aama:ID3c301e8a-6654-41f1-accf-7cbfef4398dd a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID9a783afc-97f5-47d7-b864-642ab485e74f a aamas:Term ;
+aama:ID384bb057-ddcb-40ab-a095-0f37b9925fc4 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1009,7 +1014,7 @@ aama:ID9a783afc-97f5-47d7-b864-642ab485e74f a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID38fc8e2b-8716-4b3d-b418-be51973cd68d a aamas:Term ;
+aama:IDed9a7be9-7bb2-4328-82f2-961f0ff4e89d a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1020,7 +1025,7 @@ aama:ID38fc8e2b-8716-4b3d-b418-be51973cd68d a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDe31b4a17-908d-4031-ad12-5ed8d0f9aa76 a aamas:Term ;
+aama:IDbef7feb9-fc3d-4047-a229-442f9285daf0 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1031,7 +1036,7 @@ aama:IDe31b4a17-908d-4031-ad12-5ed8d0f9aa76 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID863bdf42-6da8-4ef0-a928-b0afa1411cfe a aamas:Term ;
+aama:ID0a068743-e0f9-4a01-906e-845367339eee a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1045,7 +1050,7 @@ aama:ID863bdf42-6da8-4ef0-a928-b0afa1411cfe a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VNegPerfNonPres-mar
 
-aama:ID831f1061-f652-4064-ac78-4ce779438987 a aamas:Term ;
+aama:ID0a463f64-d452-441f-9910-905727cbede1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1056,7 +1061,7 @@ aama:ID831f1061-f652-4064-ac78-4ce779438987 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID55fbf441-9b1c-4a78-8f97-e74e59af6fa1 a aamas:Term ;
+aama:ID7eb30c7a-dc06-4e8f-8a37-ba8ba0ce157a a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1067,7 +1072,7 @@ aama:ID55fbf441-9b1c-4a78-8f97-e74e59af6fa1 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID3ef7edc1-1236-47fe-821e-6a418a4b34ac a aamas:Term ;
+aama:IDb24f151e-dd19-423f-8580-0b0b4539251b a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1078,7 +1083,7 @@ aama:ID3ef7edc1-1236-47fe-821e-6a418a4b34ac a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:IDc3d9ec08-65d9-4d85-9fec-6912c135e097 a aamas:Term ;
+aama:IDa0e1206f-59c0-4a66-9781-715a0cab2566 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1089,7 +1094,7 @@ aama:IDc3d9ec08-65d9-4d85-9fec-6912c135e097 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID803b29d6-47a1-442e-a263-ea6be7bc4daa a aamas:Term ;
+aama:IDa0240771-4e1b-4c1f-bade-aa20b90268b0 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1100,7 +1105,7 @@ aama:ID803b29d6-47a1-442e-a263-ea6be7bc4daa a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID28f473a9-9433-41cb-bca6-d13028790958 a aamas:Term ;
+aama:ID7aa00274-cdf5-4cb4-a6b1-ff05d7445680 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1111,7 +1116,7 @@ aama:ID28f473a9-9433-41cb-bca6-d13028790958 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDad75b705-20c2-4d14-a6b3-ad412cc5872b a aamas:Term ;
+aama:ID17ece769-6782-42e0-b2c5-7a5dcc47066e a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1125,7 +1130,7 @@ aama:IDad75b705-20c2-4d14-a6b3-ad412cc5872b a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VNegPerfActual-mar
 
-aama:IDee17bf0e-6061-4303-83cc-5cfaa8594b8a a aamas:Term ;
+aama:ID595f6e4e-658b-4ef6-bd72-107d678a8060 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1136,7 +1141,7 @@ aama:IDee17bf0e-6061-4303-83cc-5cfaa8594b8a a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID05308f4d-efe7-4491-912e-b2d181a6f8bf a aamas:Term ;
+aama:ID86329c6e-ddcb-48d7-bb03-b5af9836c669 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1147,7 +1152,7 @@ aama:ID05308f4d-efe7-4491-912e-b2d181a6f8bf a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID1fc54418-9372-42bf-9017-4c6eed52c453 a aamas:Term ;
+aama:ID2fde1031-76c9-4542-8a4d-7adad254a1ce a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1158,7 +1163,7 @@ aama:ID1fc54418-9372-42bf-9017-4c6eed52c453 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:IDdb606387-a120-45ab-a42e-3733e5ab1827 a aamas:Term ;
+aama:IDd4103fcb-ce5f-497c-86b5-bab7c3af7067 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1169,7 +1174,7 @@ aama:IDdb606387-a120-45ab-a42e-3733e5ab1827 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID4d90f3dc-f39b-4fb5-9c43-deaff78d17de a aamas:Term ;
+aama:ID5427084b-cc81-41aa-9dde-54d9b1154400 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1180,7 +1185,7 @@ aama:ID4d90f3dc-f39b-4fb5-9c43-deaff78d17de a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID2629f5fa-534c-4132-98db-e7f84c6b45d1 a aamas:Term ;
+aama:IDfc9f5263-188d-4b66-b618-a7d4d62988f1 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1191,7 +1196,7 @@ aama:ID2629f5fa-534c-4132-98db-e7f84c6b45d1 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID63e00048-576f-462a-b53e-f5927c0c3201 a aamas:Term ;
+aama:IDda5fe279-9611-4628-8376-ec396bf82901 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Negative ;
@@ -1205,7 +1210,7 @@ aama:ID63e00048-576f-462a-b53e-f5927c0c3201 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffHypothNonActual-mar
 
-aama:ID8e798ae5-d45e-4182-9374-ac099a577e0c a aamas:Term ;
+aama:ID03545784-b9b6-42b1-894c-306ee24a0be3 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1216,7 +1221,7 @@ aama:ID8e798ae5-d45e-4182-9374-ac099a577e0c a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDf0d08a04-7c85-41fe-9f5b-1e895966e87d a aamas:Term ;
+aama:IDdee5f3e2-81f4-4161-b1cf-7c8368ec0473 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1227,7 +1232,7 @@ aama:IDf0d08a04-7c85-41fe-9f5b-1e895966e87d a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDfdbd8f29-83aa-41d0-9e90-9f1e1fe36192 a aamas:Term ;
+aama:ID3fc529b3-11da-4a66-85d4-b854ddbc758a a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1238,7 +1243,7 @@ aama:IDfdbd8f29-83aa-41d0-9e90-9f1e1fe36192 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:IDdb7f705a-18e4-47ac-85c1-fb955d740190 a aamas:Term ;
+aama:ID39d253e4-46d2-4957-a3f4-402aebac8a9d a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1249,7 +1254,7 @@ aama:IDdb7f705a-18e4-47ac-85c1-fb955d740190 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID56b4aeec-7a5d-46c7-857d-baeef9bdde2d a aamas:Term ;
+aama:ID4e7737bb-5a72-43ab-aec5-17a560007c9d a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1260,7 +1265,7 @@ aama:ID56b4aeec-7a5d-46c7-857d-baeef9bdde2d a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDa6184c66-e6b0-4206-a312-6ef3ab1f8296 a aamas:Term ;
+aama:ID03fd4a66-38a1-4cf0-b680-42eb1911a40e a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1271,7 +1276,7 @@ aama:IDa6184c66-e6b0-4206-a312-6ef3ab1f8296 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID4c863c5a-4c1e-4b95-98e9-5b7f7866866f a aamas:Term ;
+aama:ID257599df-39b4-4072-b1da-d23be95ee945 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1285,7 +1290,7 @@ aama:ID4c863c5a-4c1e-4b95-98e9-5b7f7866866f a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffDepCond-mar
 
-aama:IDac9ed801-ce03-4494-a225-af0fc849f35e a aamas:Term ;
+aama:IDbeb1a564-faa0-46be-9ec9-4ab8c151b849 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1296,7 +1301,7 @@ aama:IDac9ed801-ce03-4494-a225-af0fc849f35e a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDdaefd1dc-f5f1-4096-8b1b-cecb22f550c4 a aamas:Term ;
+aama:ID7ee702bd-5479-4196-b2b2-a55b0b63cb21 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1307,7 +1312,7 @@ aama:IDdaefd1dc-f5f1-4096-8b1b-cecb22f550c4 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID2744bc69-0d70-4c59-8146-4d7ef938a459 a aamas:Term ;
+aama:ID80d434d1-9ae3-424d-a2a1-e49b3f13c524 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1318,7 +1323,7 @@ aama:ID2744bc69-0d70-4c59-8146-4d7ef938a459 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID4c20d0c7-683c-42f7-b3be-c77a86d48b0e a aamas:Term ;
+aama:IDc76efd03-0b2a-4cf9-99be-977b36f89657 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1329,7 +1334,7 @@ aama:ID4c20d0c7-683c-42f7-b3be-c77a86d48b0e a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:IDf008359d-6f4d-44a3-8b2d-92b543ff00b7 a aamas:Term ;
+aama:ID17b6d6ee-8a18-4be5-b02a-9daf673f7638 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1340,7 +1345,7 @@ aama:IDf008359d-6f4d-44a3-8b2d-92b543ff00b7 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID140d7353-508d-4d04-9cf2-8e3296f71c4c a aamas:Term ;
+aama:IDcdab9288-942a-476a-81ac-c7187464684e a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1351,7 +1356,7 @@ aama:ID140d7353-508d-4d04-9cf2-8e3296f71c4c a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:ID141980ba-0b59-4629-8080-a19328a5ed0a a aamas:Term ;
+aama:ID46a6067c-d846-4002-bee9-c45b61bfcac3 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1365,7 +1370,7 @@ aama:ID141980ba-0b59-4629-8080-a19328a5ed0a a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffImperfNonPres-mar
 
-aama:ID9017a2f5-033b-4fd8-a526-5a872cea1f42 a aamas:Term ;
+aama:ID5c0222e9-e5b0-40e5-b685-a56746cf5bfd a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1376,7 +1381,7 @@ aama:ID9017a2f5-033b-4fd8-a526-5a872cea1f42 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID00263146-0014-4cb3-b891-78857d27094e a aamas:Term ;
+aama:ID5e166798-820a-4425-9202-d268e60f8e1c a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1387,7 +1392,7 @@ aama:ID00263146-0014-4cb3-b891-78857d27094e a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID83c4a97c-10e1-4c24-a04c-8f451cea02b9 a aamas:Term ;
+aama:ID822a4c8b-498c-423e-b044-75b2b0b40cc5 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1398,7 +1403,7 @@ aama:ID83c4a97c-10e1-4c24-a04c-8f451cea02b9 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID932b0b9f-d431-4ec9-86c4-6cfd7f553d28 a aamas:Term ;
+aama:ID793aaedb-e8e4-4bb8-91e5-3b301641a148 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1409,7 +1414,7 @@ aama:ID932b0b9f-d431-4ec9-86c4-6cfd7f553d28 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:ID4ca8c238-bfbb-41ab-9796-85d79692819b a aamas:Term ;
+aama:ID6c8ab955-36b7-4e59-99dc-667fb60929c3 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1420,7 +1425,7 @@ aama:ID4ca8c238-bfbb-41ab-9796-85d79692819b a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDfdf7275d-b4b4-4b2e-aabf-fddd2f81f88d a aamas:Term ;
+aama:IDe1c8147d-48e1-45d9-b264-dc17bdee502f a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1431,7 +1436,7 @@ aama:IDfdf7275d-b4b4-4b2e-aabf-fddd2f81f88d a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDf7728e48-c89c-4f3f-b274-44ea6a4f3aee a aamas:Term ;
+aama:ID14097436-fce3-43ea-8c0e-86da823b5708 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1445,7 +1450,7 @@ aama:IDf7728e48-c89c-4f3f-b274-44ea6a4f3aee a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VAffImperfNonActual-mar
 
-aama:ID54761b16-ba7a-42f2-acd5-706addabb699 a aamas:Term ;
+aama:IDa7b89d6f-defb-45ec-9d58-3c38ba5df535 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1456,7 +1461,7 @@ aama:ID54761b16-ba7a-42f2-acd5-706addabb699 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:IDdb30c8c7-b536-47cd-ae59-3a539d2050be a aamas:Term ;
+aama:ID437ec45e-ce51-46cd-b5f7-5b1419a23aae a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1467,7 +1472,7 @@ aama:IDdb30c8c7-b536-47cd-ae59-3a539d2050be a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Common ;
 	.
-aama:ID29186e88-d018-4c6e-aa1d-c3931270dccd a aamas:Term ;
+aama:IDa3b5d1c2-c592-4378-b9e8-04d4a9f7071d a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1478,7 +1483,7 @@ aama:ID29186e88-d018-4c6e-aa1d-c3931270dccd a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Masc ;
 	.
-aama:ID4e6bd908-6978-4f2e-bca6-b3addd529520 a aamas:Term ;
+aama:ID8f38d642-3a95-4195-a2ee-a6bf84f93282 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1489,7 +1494,7 @@ aama:ID4e6bd908-6978-4f2e-bca6-b3addd529520 a aamas:Term ;
 	ged:number ged:Singular ;
 	ged:gender ged:Fem ;
 	.
-aama:IDadfcd673-f5f3-4e3b-9a57-4fe17bd91ab2 a aamas:Term ;
+aama:ID61147c99-fdde-4861-a616-eebb9c520239 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1500,7 +1505,7 @@ aama:IDadfcd673-f5f3-4e3b-9a57-4fe17bd91ab2 a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDe2af3579-957b-4115-b73a-d7bfa4bf714c a aamas:Term ;
+aama:ID480732c2-971b-4d05-bd6e-d0a4ee9794ac a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1511,7 +1516,7 @@ aama:IDe2af3579-957b-4115-b73a-d7bfa4bf714c a aamas:Term ;
 	ged:number ged:Plural ;
 	ged:gender ged:Common ;
 	.
-aama:IDe8196026-2ff9-4886-9e0b-166af23dc183 a aamas:Term ;
+aama:IDf4ac6df6-90d3-4011-84bf-04c5a332eaa2 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	aamas:lexeme aama:Gedeo-mar ;
 	ged:polarity ged:Affirmative ;
@@ -1525,7 +1530,7 @@ aama:IDe8196026-2ff9-4886-9e0b-166af23dc183 a aamas:Term ;
 
 #TERMCLUSTER: gedeo-VInterrPerf-mar
 
-aama:IDcb7e4a53-c803-48e8-8edd-27819bb51e01 a aamas:Term ;
+aama:ID08cdc1f5-e086-4a34-b363-327cf3574f40 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	ged:gender ged:Common ;
 	aamas:lexeme aama:Gedeo-mar ;
@@ -1536,7 +1541,7 @@ aama:IDcb7e4a53-c803-48e8-8edd-27819bb51e01 a aamas:Term ;
 	ged:person ged:Person1 ;
 	ged:number ged:Singular ;
 	.
-aama:ID27c12177-6946-4a81-bdf8-735108510cf8 a aamas:Term ;
+aama:ID567115db-4676-4967-9c94-9b4e53dedc3c a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	ged:gender ged:Common ;
 	aamas:lexeme aama:Gedeo-mar ;
@@ -1547,7 +1552,7 @@ aama:ID27c12177-6946-4a81-bdf8-735108510cf8 a aamas:Term ;
 	ged:person ged:Person2 ;
 	ged:number ged:Singular ;
 	.
-aama:IDbed4d1f6-c375-4ed0-bcdf-99e50f054d14 a aamas:Term ;
+aama:IDb7d6a193-2fa1-4b4f-9d69-be0dba29faf5 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	ged:gender ged:Common ;
 	aamas:lexeme aama:Gedeo-mar ;
@@ -1558,7 +1563,7 @@ aama:IDbed4d1f6-c375-4ed0-bcdf-99e50f054d14 a aamas:Term ;
 	ged:person ged:Person1 ;
 	ged:number ged:Plural ;
 	.
-aama:IDedcc7e67-be1f-4157-b04e-01cdbfed2059 a aamas:Term ;
+aama:IDe53fea5a-0858-4df5-9b3b-37772682aa91 a aamas:Term ;
 	aamas:lang aama:Gedeo ;
 	ged:gender ged:Common ;
 	aamas:lexeme aama:Gedeo-mar ;

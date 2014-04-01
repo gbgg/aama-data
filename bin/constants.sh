@@ -1,11 +1,9 @@
-JARDIR=../../../usr/local/jar
+JARDIR=~/.jar
 SAXON=saxon9pe.jar
-FUSEKIDIR=/cygdrive/c/Fuseki-0.2.4
+FUSEKIDIR=/Applications/jena-fuseki-1.0.1/
 
-EYEBALL="/usr/local/eyeball-2.3/lib/*"
-#EYEBALL="eyeball-2.3/lib/*"
-#EYEBALL="/cygdrive/c/eyeball-2.3/lib/*"
-RDF2RDF="../../../usr/local/jar/rdf2rdf-1.0.1-2.3.1.jar"
+EYEBALL="~/.jar/eyeball-2.3/lib/*"
+RDF2RDF="~/.jar/rdf2rdf-1.0.1-2.3.1.jar"
 
 
 capitalize_path ()

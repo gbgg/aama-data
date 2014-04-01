@@ -1,6 +1,11 @@
 
 #TTL FROM INPUT FILE:
 # data/syriac/syriac-pdgms.edn
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix syr:   <http://id.oi.uchicago.edu/aama/2013/syriac/> .
 
 #SCHEMATA:
 
@@ -17,13 +22,13 @@ syr:case rdfs:range syr:Case .
 syr:Case rdfs:subClassOf syr:MuExponent .
 syr:case rdfs:subPropertyOf syr:muProperty .
 syr:Accusative aamas:lang aama:Syriac .
-syr:Accusative rdf:type Syriac:Case .
+syr:Accusative rdf:type syr:Case .
 syr:Accusative rdfs:label "Accusative".
 syr:Genitive aamas:lang aama:Syriac .
-syr:Genitive rdf:type Syriac:Case .
+syr:Genitive rdf:type syr:Case .
 syr:Genitive rdfs:label "Genitive".
 syr:Object aamas:lang aama:Syriac .
-syr:Object rdf:type Syriac:Case .
+syr:Object rdf:type syr:Case .
 syr:Object rdfs:label "Object".
 
 #SCHEMATA: deixis
@@ -36,10 +41,10 @@ syr:deixis rdfs:range syr:Deixis .
 syr:Deixis rdfs:subClassOf syr:MuExponent .
 syr:deixis rdfs:subPropertyOf syr:muProperty .
 syr:Far aamas:lang aama:Syriac .
-syr:Far rdf:type Syriac:Deixis .
+syr:Far rdf:type syr:Deixis .
 syr:Far rdfs:label "Far".
 syr:Near aamas:lang aama:Syriac .
-syr:Near rdf:type Syriac:Deixis .
+syr:Near rdf:type syr:Deixis .
 syr:Near rdfs:label "Near".
 
 #SCHEMATA: gender
@@ -52,13 +57,13 @@ syr:gender rdfs:range syr:Gender .
 syr:Gender rdfs:subClassOf syr:MuExponent .
 syr:gender rdfs:subPropertyOf syr:muProperty .
 syr:Common aamas:lang aama:Syriac .
-syr:Common rdf:type Syriac:Gender .
+syr:Common rdf:type syr:Gender .
 syr:Common rdfs:label "Common".
 syr:Fem aamas:lang aama:Syriac .
-syr:Fem rdf:type Syriac:Gender .
+syr:Fem rdf:type syr:Gender .
 syr:Fem rdfs:label "Fem".
 syr:Masc aamas:lang aama:Syriac .
-syr:Masc rdf:type Syriac:Gender .
+syr:Masc rdf:type syr:Gender .
 syr:Masc rdfs:label "Masc".
 
 #SCHEMATA: numHead
@@ -71,10 +76,10 @@ syr:numHead rdfs:range syr:Numhead .
 syr:Numhead rdfs:subClassOf syr:MuExponent .
 syr:numHead rdfs:subPropertyOf syr:muProperty .
 syr:Plural aamas:lang aama:Syriac .
-syr:Plural rdf:type Syriac:Numhead .
+syr:Plural rdf:type syr:Numhead .
 syr:Plural rdfs:label "Plural".
 syr:Singular aamas:lang aama:Syriac .
-syr:Singular rdf:type Syriac:Numhead .
+syr:Singular rdf:type syr:Numhead .
 syr:Singular rdfs:label "Singular".
 
 #SCHEMATA: number
@@ -87,10 +92,10 @@ syr:number rdfs:range syr:Number .
 syr:Number rdfs:subClassOf syr:MuExponent .
 syr:number rdfs:subPropertyOf syr:muProperty .
 syr:Plural aamas:lang aama:Syriac .
-syr:Plural rdf:type Syriac:Number .
+syr:Plural rdf:type syr:Number .
 syr:Plural rdfs:label "Plural".
 syr:Singular aamas:lang aama:Syriac .
-syr:Singular rdf:type Syriac:Number .
+syr:Singular rdf:type syr:Number .
 syr:Singular rdfs:label "Singular".
 
 #SCHEMATA: person
@@ -103,13 +108,13 @@ syr:person rdfs:range syr:Person .
 syr:Person rdfs:subClassOf syr:MuExponent .
 syr:person rdfs:subPropertyOf syr:muProperty .
 syr:Person1 aamas:lang aama:Syriac .
-syr:Person1 rdf:type Syriac:Person .
+syr:Person1 rdf:type syr:Person .
 syr:Person1 rdfs:label "Person1".
 syr:Person2 aamas:lang aama:Syriac .
-syr:Person2 rdf:type Syriac:Person .
+syr:Person2 rdf:type syr:Person .
 syr:Person2 rdfs:label "Person2".
 syr:Person3 aamas:lang aama:Syriac .
-syr:Person3 rdf:type Syriac:Person .
+syr:Person3 rdf:type syr:Person .
 syr:Person3 rdfs:label "Person3".
 
 #SCHEMATA: pos
@@ -122,7 +127,7 @@ syr:pos rdfs:range syr:Pos .
 syr:Pos rdfs:subClassOf syr:MuExponent .
 syr:pos rdfs:subPropertyOf syr:muProperty .
 syr:Pro aamas:lang aama:Syriac .
-syr:Pro rdf:type Syriac:Pos .
+syr:Pro rdf:type syr:Pos .
 syr:Pro rdfs:label "Pro".
 
 #SCHEMATA: proClass
@@ -135,19 +140,19 @@ syr:proClass rdfs:range syr:Proclass .
 syr:Proclass rdfs:subClassOf syr:MuExponent .
 syr:proClass rdfs:subPropertyOf syr:muProperty .
 syr:Demostrative aamas:lang aama:Syriac .
-syr:Demostrative rdf:type Syriac:Proclass .
+syr:Demostrative rdf:type syr:Proclass .
 syr:Demostrative rdfs:label "Demostrative".
 syr:Independent aamas:lang aama:Syriac .
-syr:Independent rdf:type Syriac:Proclass .
+syr:Independent rdf:type syr:Proclass .
 syr:Independent rdfs:label "Independent".
 syr:ObjCliticImprtv aamas:lang aama:Syriac .
-syr:ObjCliticImprtv rdf:type Syriac:Proclass .
+syr:ObjCliticImprtv rdf:type syr:Proclass .
 syr:ObjCliticImprtv rdfs:label "ObjCliticImprtv".
 syr:ObjCliticPerf aamas:lang aama:Syriac .
-syr:ObjCliticPerf rdf:type Syriac:Proclass .
+syr:ObjCliticPerf rdf:type syr:Proclass .
 syr:ObjCliticPerf rdfs:label "ObjCliticPerf".
 syr:PossClitic aamas:lang aama:Syriac .
-syr:PossClitic rdf:type Syriac:Proclass .
+syr:PossClitic rdf:type syr:Proclass .
 syr:PossClitic rdfs:label "PossClitic".
 
 #MORPHEMES:
@@ -156,31 +161,31 @@ aama:Syriac-PRODEM a aamas:Muterm ;
 	aamas:lang aama:Syriac ;
 	rdfs:label "PRODEM" ;
 	rdfs:comment "[x]" ;
-	syr:lemma syr:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Syriac-PROIND a aamas:Muterm ;
 	aamas:lang aama:Syriac ;
 	rdfs:label "PROIND" ;
 	rdfs:comment "[x]" ;
-	syr:lemma syr:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Syriac-PROOBJCLITICIMPRTV a aamas:Muterm ;
 	aamas:lang aama:Syriac ;
 	rdfs:label "PROOBJCLITICIMPRTV" ;
 	rdfs:comment "[x]" ;
-	syr:lemma syr:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Syriac-PROOBJCLITICPERF a aamas:Muterm ;
 	aamas:lang aama:Syriac ;
 	rdfs:label "PROOBJCLITICPERF" ;
 	rdfs:comment "[x]" ;
-	syr:lemma syr:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Syriac-PROPOSSCLITIC a aamas:Muterm ;
 	aamas:lang aama:Syriac ;
 	rdfs:label "PROPOSSCLITIC" ;
 	rdfs:comment "[x]" ;
-	syr:lemma syr:[y] ;
+	rdfs:comment "[y]" ;
 	.
 
 #LEXEMES:

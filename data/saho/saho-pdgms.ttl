@@ -1,6 +1,11 @@
 
 #TTL FROM INPUT FILE:
-# data/saho//saho-pdgms.edn
+# data/saho/saho-pdgms.edn
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix sah:   <http://id.oi.uchicago.edu/aama/2013/saho/> .
 
 #SCHEMATA:
 
@@ -17,13 +22,13 @@ sah:gender rdfs:range sah:Gender .
 sah:Gender rdfs:subClassOf sah:MuExponent .
 sah:gender rdfs:subPropertyOf sah:muProperty .
 sah:Common aamas:lang aama:Saho .
-sah:Common rdf:type Saho:Gender .
+sah:Common rdf:type sah:Gender .
 sah:Common rdfs:label "Common".
 sah:Fem aamas:lang aama:Saho .
-sah:Fem rdf:type Saho:Gender .
+sah:Fem rdf:type sah:Gender .
 sah:Fem rdfs:label "Fem".
 sah:Masc aamas:lang aama:Saho .
-sah:Masc rdf:type Saho:Gender .
+sah:Masc rdf:type sah:Gender .
 sah:Masc rdfs:label "Masc".
 
 #SCHEMATA: nonFiniteForm
@@ -36,7 +41,7 @@ sah:nonFiniteForm rdfs:range sah:Nonfiniteform .
 sah:Nonfiniteform rdfs:subClassOf sah:MuExponent .
 sah:nonFiniteForm rdfs:subPropertyOf sah:muProperty .
 sah:Participle aamas:lang aama:Saho .
-sah:Participle rdf:type Saho:Nonfiniteform .
+sah:Participle rdf:type sah:Nonfiniteform .
 sah:Participle rdfs:label "Participle".
 
 #SCHEMATA: polarity
@@ -49,10 +54,10 @@ sah:polarity rdfs:range sah:Polarity .
 sah:Polarity rdfs:subClassOf sah:MuExponent .
 sah:polarity rdfs:subPropertyOf sah:muProperty .
 sah:Affirmative aamas:lang aama:Saho .
-sah:Affirmative rdf:type Saho:Polarity .
+sah:Affirmative rdf:type sah:Polarity .
 sah:Affirmative rdfs:label "Affirmative".
 sah:Negative aamas:lang aama:Saho .
-sah:Negative rdf:type Saho:Polarity .
+sah:Negative rdf:type sah:Polarity .
 sah:Negative rdfs:label "Negative".
 
 #SCHEMATA: case
@@ -65,19 +70,19 @@ sah:case rdfs:range sah:Case .
 sah:Case rdfs:subClassOf sah:MuExponent .
 sah:case rdfs:subPropertyOf sah:muProperty .
 sah:Emphatic aamas:lang aama:Saho .
-sah:Emphatic rdf:type Saho:Case .
+sah:Emphatic rdf:type sah:Case .
 sah:Emphatic rdfs:label "Emphatic".
 sah:Independent aamas:lang aama:Saho .
-sah:Independent rdf:type Saho:Case .
+sah:Independent rdf:type sah:Case .
 sah:Independent rdfs:label "Independent".
 sah:Object aamas:lang aama:Saho .
-sah:Object rdf:type Saho:Case .
+sah:Object rdf:type sah:Case .
 sah:Object rdfs:label "Object".
 sah:ObjectIndirect aamas:lang aama:Saho .
-sah:ObjectIndirect rdf:type Saho:Case .
+sah:ObjectIndirect rdf:type sah:Case .
 sah:ObjectIndirect rdfs:label "ObjectIndirect".
 sah:Possessive aamas:lang aama:Saho .
-sah:Possessive rdf:type Saho:Case .
+sah:Possessive rdf:type sah:Case .
 sah:Possessive rdfs:label "Possessive".
 
 #SCHEMATA: tenseName
@@ -90,37 +95,37 @@ sah:tenseName rdfs:range sah:Tensename .
 sah:Tensename rdfs:subClassOf sah:MuExponent .
 sah:tenseName rdfs:subPropertyOf sah:muProperty .
 sah:Conjunctive aamas:lang aama:Saho .
-sah:Conjunctive rdf:type Saho:Tensename .
+sah:Conjunctive rdf:type sah:Tensename .
 sah:Conjunctive rdfs:label "Conjunctive".
 sah:Future1 aamas:lang aama:Saho .
-sah:Future1 rdf:type Saho:Tensename .
+sah:Future1 rdf:type sah:Tensename .
 sah:Future1 rdfs:label "Future1".
 sah:Future2 aamas:lang aama:Saho .
-sah:Future2 rdf:type Saho:Tensename .
+sah:Future2 rdf:type sah:Tensename .
 sah:Future2 rdfs:label "Future2".
 sah:Future3 aamas:lang aama:Saho .
-sah:Future3 rdf:type Saho:Tensename .
+sah:Future3 rdf:type sah:Tensename .
 sah:Future3 rdfs:label "Future3".
 sah:ImperfectNegative aamas:lang aama:Saho .
-sah:ImperfectNegative rdf:type Saho:Tensename .
+sah:ImperfectNegative rdf:type sah:Tensename .
 sah:ImperfectNegative rdfs:label "ImperfectNegative".
 sah:ImperfectSubordinate aamas:lang aama:Saho .
-sah:ImperfectSubordinate rdf:type Saho:Tensename .
+sah:ImperfectSubordinate rdf:type sah:Tensename .
 sah:ImperfectSubordinate rdfs:label "ImperfectSubordinate".
 sah:JussiveNegative aamas:lang aama:Saho .
-sah:JussiveNegative rdf:type Saho:Tensename .
+sah:JussiveNegative rdf:type sah:Tensename .
 sah:JussiveNegative rdfs:label "JussiveNegative".
 sah:PerfectNegative aamas:lang aama:Saho .
-sah:PerfectNegative rdf:type Saho:Tensename .
+sah:PerfectNegative rdf:type sah:Tensename .
 sah:PerfectNegative rdfs:label "PerfectNegative".
 sah:PerfectSubordinate aamas:lang aama:Saho .
-sah:PerfectSubordinate rdf:type Saho:Tensename .
+sah:PerfectSubordinate rdf:type sah:Tensename .
 sah:PerfectSubordinate rdfs:label "PerfectSubordinate".
 sah:Perfective aamas:lang aama:Saho .
-sah:Perfective rdf:type Saho:Tensename .
+sah:Perfective rdf:type sah:Tensename .
 sah:Perfective rdfs:label "Perfective".
 sah:Pluperfect aamas:lang aama:Saho .
-sah:Pluperfect rdf:type Saho:Tensename .
+sah:Pluperfect rdf:type sah:Tensename .
 sah:Pluperfect rdfs:label "Pluperfect".
 
 #SCHEMATA: conjClass
@@ -133,19 +138,19 @@ sah:conjClass rdfs:range sah:Conjclass .
 sah:Conjclass rdfs:subClassOf sah:MuExponent .
 sah:conjClass rdfs:subPropertyOf sah:muProperty .
 sah:Irregular aamas:lang aama:Saho .
-sah:Irregular rdf:type Saho:Conjclass .
+sah:Irregular rdf:type sah:Conjclass .
 sah:Irregular rdfs:label "Irregular".
 sah:Pref-irreg aamas:lang aama:Saho .
-sah:Pref-irreg rdf:type Saho:Conjclass .
+sah:Pref-irreg rdf:type sah:Conjclass .
 sah:Pref-irreg rdfs:label "Pref-irreg".
 sah:Prefix aamas:lang aama:Saho .
-sah:Prefix rdf:type Saho:Conjclass .
+sah:Prefix rdf:type sah:Conjclass .
 sah:Prefix rdfs:label "Prefix".
 sah:Suffix aamas:lang aama:Saho .
-sah:Suffix rdf:type Saho:Conjclass .
+sah:Suffix rdf:type sah:Conjclass .
 sah:Suffix rdfs:label "Suffix".
 sah:SuffixIrregular aamas:lang aama:Saho .
-sah:SuffixIrregular rdf:type Saho:Conjclass .
+sah:SuffixIrregular rdf:type sah:Conjclass .
 sah:SuffixIrregular rdfs:label "SuffixIrregular".
 
 #SCHEMATA: pos
@@ -158,10 +163,10 @@ sah:pos rdfs:range sah:Pos .
 sah:Pos rdfs:subClassOf sah:MuExponent .
 sah:pos rdfs:subPropertyOf sah:muProperty .
 sah:Pronoun aamas:lang aama:Saho .
-sah:Pronoun rdf:type Saho:Pos .
+sah:Pronoun rdf:type sah:Pos .
 sah:Pronoun rdfs:label "Pronoun".
 sah:Verb aamas:lang aama:Saho .
-sah:Verb rdf:type Saho:Pos .
+sah:Verb rdf:type sah:Pos .
 sah:Verb rdfs:label "Verb".
 
 #SCHEMATA: person
@@ -174,16 +179,16 @@ sah:person rdfs:range sah:Person .
 sah:Person rdfs:subClassOf sah:MuExponent .
 sah:person rdfs:subPropertyOf sah:muProperty .
 sah:Common aamas:lang aama:Saho .
-sah:Common rdf:type Saho:Person .
+sah:Common rdf:type sah:Person .
 sah:Common rdfs:label "Common".
 sah:Person1 aamas:lang aama:Saho .
-sah:Person1 rdf:type Saho:Person .
+sah:Person1 rdf:type sah:Person .
 sah:Person1 rdfs:label "Person1".
 sah:Person2 aamas:lang aama:Saho .
-sah:Person2 rdf:type Saho:Person .
+sah:Person2 rdf:type sah:Person .
 sah:Person2 rdfs:label "Person2".
 sah:Person3 aamas:lang aama:Saho .
-sah:Person3 rdf:type Saho:Person .
+sah:Person3 rdf:type sah:Person .
 sah:Person3 rdfs:label "Person3".
 
 #SCHEMATA: derivedStem
@@ -196,31 +201,31 @@ sah:derivedStem rdfs:range sah:Derivedstem .
 sah:Derivedstem rdfs:subClassOf sah:MuExponent .
 sah:derivedStem rdfs:subPropertyOf sah:muProperty .
 sah:B aamas:lang aama:Saho .
-sah:B rdf:type Saho:Derivedstem .
+sah:B rdf:type sah:Derivedstem .
 sah:B rdfs:label "B".
 sah:B-Intens aamas:lang aama:Saho .
-sah:B-Intens rdf:type Saho:Derivedstem .
+sah:B-Intens rdf:type sah:Derivedstem .
 sah:B-Intens rdfs:label "B-Intens".
 sah:M aamas:lang aama:Saho .
-sah:M rdf:type Saho:Derivedstem .
+sah:M rdf:type sah:Derivedstem .
 sah:M rdfs:label "M".
 sah:S1 aamas:lang aama:Saho .
-sah:S1 rdf:type Saho:Derivedstem .
+sah:S1 rdf:type sah:Derivedstem .
 sah:S1 rdfs:label "S1".
 sah:S1-Intens aamas:lang aama:Saho .
-sah:S1-Intens rdf:type Saho:Derivedstem .
+sah:S1-Intens rdf:type sah:Derivedstem .
 sah:S1-Intens rdfs:label "S1-Intens".
 sah:S1T aamas:lang aama:Saho .
-sah:S1T rdf:type Saho:Derivedstem .
+sah:S1T rdf:type sah:Derivedstem .
 sah:S1T rdfs:label "S1T".
 sah:S2 aamas:lang aama:Saho .
-sah:S2 rdf:type Saho:Derivedstem .
+sah:S2 rdf:type sah:Derivedstem .
 sah:S2 rdfs:label "S2".
 sah:T aamas:lang aama:Saho .
-sah:T rdf:type Saho:Derivedstem .
+sah:T rdf:type sah:Derivedstem .
 sah:T rdfs:label "T".
 sah:T-Intens aamas:lang aama:Saho .
-sah:T-Intens rdf:type Saho:Derivedstem .
+sah:T-Intens rdf:type sah:Derivedstem .
 sah:T-Intens rdfs:label "T-Intens".
 
 #SCHEMATA: proClass
@@ -233,7 +238,7 @@ sah:proClass rdfs:range sah:Proclass .
 sah:Proclass rdfs:subClassOf sah:MuExponent .
 sah:proClass rdfs:subPropertyOf sah:muProperty .
 sah:Independent aamas:lang aama:Saho .
-sah:Independent rdf:type Saho:Proclass .
+sah:Independent rdf:type sah:Proclass .
 sah:Independent rdfs:label "Independent".
 
 #SCHEMATA: tam
@@ -246,61 +251,61 @@ sah:tam rdfs:range sah:Tam .
 sah:Tam rdfs:subClassOf sah:MuExponent .
 sah:tam rdfs:subPropertyOf sah:muProperty .
 sah:Copula aamas:lang aama:Saho .
-sah:Copula rdf:type Saho:Tam .
+sah:Copula rdf:type sah:Tam .
 sah:Copula rdfs:label "Copula".
 sah:Imperative aamas:lang aama:Saho .
-sah:Imperative rdf:type Saho:Tam .
+sah:Imperative rdf:type sah:Tam .
 sah:Imperative rdfs:label "Imperative".
 sah:Imperfect aamas:lang aama:Saho .
-sah:Imperfect rdf:type Saho:Tam .
+sah:Imperfect rdf:type sah:Tam .
 sah:Imperfect rdfs:label "Imperfect".
 sah:ImperfectInni aamas:lang aama:Saho .
-sah:ImperfectInni rdf:type Saho:Tam .
+sah:ImperfectInni rdf:type sah:Tam .
 sah:ImperfectInni rdfs:label "ImperfectInni".
 sah:ImperfectLi aamas:lang aama:Saho .
-sah:ImperfectLi rdf:type Saho:Tam .
+sah:ImperfectLi rdf:type sah:Tam .
 sah:ImperfectLi rdfs:label "ImperfectLi".
 sah:ImperfectM aamas:lang aama:Saho .
-sah:ImperfectM rdf:type Saho:Tam .
+sah:ImperfectM rdf:type sah:Tam .
 sah:ImperfectM rdfs:label "ImperfectM".
 sah:ImperfectMa aamas:lang aama:Saho .
-sah:ImperfectMa rdf:type Saho:Tam .
+sah:ImperfectMa rdf:type sah:Tam .
 sah:ImperfectMa rdfs:label "ImperfectMa".
 sah:Jussive aamas:lang aama:Saho .
-sah:Jussive rdf:type Saho:Tam .
+sah:Jussive rdf:type sah:Tam .
 sah:Jussive rdfs:label "Jussive".
 sah:JussiveKi aamas:lang aama:Saho .
-sah:JussiveKi rdf:type Saho:Tam .
+sah:JussiveKi rdf:type sah:Tam .
 sah:JussiveKi rdfs:label "JussiveKi".
 sah:JussiveLi aamas:lang aama:Saho .
-sah:JussiveLi rdf:type Saho:Tam .
+sah:JussiveLi rdf:type sah:Tam .
 sah:JussiveLi rdfs:label "JussiveLi".
 sah:JussiveMa aamas:lang aama:Saho .
-sah:JussiveMa rdf:type Saho:Tam .
+sah:JussiveMa rdf:type sah:Tam .
 sah:JussiveMa rdfs:label "JussiveMa".
 sah:MaStemInniCopula aamas:lang aama:Saho .
-sah:MaStemInniCopula rdf:type Saho:Tam .
+sah:MaStemInniCopula rdf:type sah:Tam .
 sah:MaStemInniCopula rdfs:label "MaStemInniCopula".
 sah:Past aamas:lang aama:Saho .
-sah:Past rdf:type Saho:Tam .
+sah:Past rdf:type sah:Tam .
 sah:Past rdfs:label "Past".
 sah:Perfect aamas:lang aama:Saho .
-sah:Perfect rdf:type Saho:Tam .
+sah:Perfect rdf:type sah:Tam .
 sah:Perfect rdfs:label "Perfect".
 sah:PerfectH aamas:lang aama:Saho .
-sah:PerfectH rdf:type Saho:Tam .
+sah:PerfectH rdf:type sah:Tam .
 sah:PerfectH rdfs:label "PerfectH".
 sah:PerfectInniImperfect aamas:lang aama:Saho .
-sah:PerfectInniImperfect rdf:type Saho:Tam .
+sah:PerfectInniImperfect rdf:type sah:Tam .
 sah:PerfectInniImperfect rdfs:label "PerfectInniImperfect".
 sah:PerfectInniPerfect aamas:lang aama:Saho .
-sah:PerfectInniPerfect rdf:type Saho:Tam .
+sah:PerfectInniPerfect rdf:type sah:Tam .
 sah:PerfectInniPerfect rdfs:label "PerfectInniPerfect".
 sah:PerfectM aamas:lang aama:Saho .
-sah:PerfectM rdf:type Saho:Tam .
+sah:PerfectM rdf:type sah:Tam .
 sah:PerfectM rdfs:label "PerfectM".
 sah:_NULL aamas:lang aama:Saho .
-sah:_NULL rdf:type Saho:Tam .
+sah:_NULL rdf:type sah:Tam .
 sah:_NULL rdfs:label "_NULL".
 
 #SCHEMATA: number
@@ -313,13 +318,13 @@ sah:number rdfs:range sah:Number .
 sah:Number rdfs:subClassOf sah:MuExponent .
 sah:number rdfs:subPropertyOf sah:muProperty .
 sah:Common aamas:lang aama:Saho .
-sah:Common rdf:type Saho:Number .
+sah:Common rdf:type sah:Number .
 sah:Common rdfs:label "Common".
 sah:Plural aamas:lang aama:Saho .
-sah:Plural rdf:type Saho:Number .
+sah:Plural rdf:type sah:Number .
 sah:Plural rdfs:label "Plural".
 sah:Singular aamas:lang aama:Saho .
-sah:Singular rdf:type Saho:Number .
+sah:Singular rdf:type sah:Number .
 sah:Singular rdfs:label "Singular".
 
 #SCHEMATA: verbMorphClass
@@ -332,7 +337,7 @@ sah:verbMorphClass rdfs:range sah:Verbmorphclass .
 sah:Verbmorphclass rdfs:subClassOf sah:MuExponent .
 sah:verbMorphClass rdfs:subPropertyOf sah:muProperty .
 sah:TenseFormation aamas:lang aama:Saho .
-sah:TenseFormation rdf:type Saho:Verbmorphclass .
+sah:TenseFormation rdf:type sah:Verbmorphclass .
 sah:TenseFormation rdfs:label "TenseFormation".
 
 #SCHEMATA: multiLex
@@ -345,7 +350,7 @@ sah:multiLex rdfs:range sah:Multilex .
 sah:Multilex rdfs:subClassOf sah:MuExponent .
 sah:multiLex rdfs:subPropertyOf sah:muProperty .
 sah:TENSEFORMATION aamas:lang aama:Saho .
-sah:TENSEFORMATION rdf:type Saho:Multilex .
+sah:TENSEFORMATION rdf:type sah:Multilex .
 sah:TENSEFORMATION rdfs:label "TENSEFORMATION".
 
 #MORPHEMES:
@@ -354,7 +359,7 @@ aama:Saho-PRO a aamas:Muterm ;
 	aamas:lang aama:Saho ;
 	rdfs:label "PRO" ;
 	rdfs:comment "[x]" ;
-	sah:lemma sah:[y] ;
+	rdfs:comment "[y]" ;
 	.
 
 #LEXEMES:
@@ -363,14 +368,14 @@ aama:Saho-ubl a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ubl" ;
 	aamas:gloss "see" ;
-	sah:lemma sah:ubl- ;
+	aamas:lemma "ubl-" ;
 	.
 aama:Saho-infili a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "infili" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be separated (M)" ;
-	sah:lemma sah:infili- (M) ;
+	aamas:lemma "infili- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-edhet a aamas:Lexeme ;
@@ -378,15 +383,7 @@ aama:Saho-edhet a aamas:Lexeme ;
 	rdfs:label "edhet" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "chew" ;
-	sah:lemma sah:eḥet- ;
-	sah:pos sah:Verb ;
-	.
-aama:Saho-di& a aamas:Lexeme ;
-	aamas:lang aama:Saho ;
-	rdfs:label "di&" ;
-	sah:conjClass sah:Suffix ;
-	aamas:gloss "be able" ;
-	sah:lemma sah:ɗiʕ- ;
+	aamas:lemma "eḥet-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-isniq a aamas:Lexeme ;
@@ -394,7 +391,7 @@ aama:Saho-isniq a aamas:Lexeme ;
 	rdfs:label "isniq" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "strangle" ;
-	sah:lemma sah:isniq- ;
+	aamas:lemma "isniq-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-emeet a aamas:Lexeme ;
@@ -402,7 +399,7 @@ aama:Saho-emeet a aamas:Lexeme ;
 	rdfs:label "emeet" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "come" ;
-	sah:lemma sah:emeet- ;
+	aamas:lemma "emeet-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-idhen a aamas:Lexeme ;
@@ -410,7 +407,7 @@ aama:Saho-idhen a aamas:Lexeme ;
 	rdfs:label "idhen" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "grind" ;
-	sah:lemma sah:iɗḥen- ;
+	aamas:lemma "iɗḥen-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-biil a aamas:Lexeme ;
@@ -418,7 +415,7 @@ aama:Saho-biil a aamas:Lexeme ;
 	rdfs:label "biil" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "bleed" ;
-	sah:lemma sah:biil- ;
+	aamas:lemma "biil-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ak a aamas:Lexeme ;
@@ -426,7 +423,15 @@ aama:Saho-ak a aamas:Lexeme ;
 	rdfs:label "ak" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "say" ;
-	sah:lemma sah:ak- ;
+	aamas:lemma "ak-" ;
+	sah:pos sah:Verb ;
+	.
+aama:Saho-ul a aamas:Lexeme ;
+	aamas:lang aama:Saho ;
+	rdfs:label "ul" ;
+	sah:conjClass sah:Suffix ;
+	aamas:gloss "draw water" ;
+	aamas:lemma "ʕul-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-edh a aamas:Lexeme ;
@@ -434,7 +439,7 @@ aama:Saho-edh a aamas:Lexeme ;
 	rdfs:label "edh" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "say" ;
-	sah:lemma sah:eɗḥ- ;
+	aamas:lemma "eɗḥ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-igdil a aamas:Lexeme ;
@@ -442,7 +447,7 @@ aama:Saho-igdil a aamas:Lexeme ;
 	rdfs:label "igdil" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "break" ;
-	sah:lemma sah:igdil- ;
+	aamas:lemma "igdil-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-engeeg a aamas:Lexeme ;
@@ -450,7 +455,7 @@ aama:Saho-engeeg a aamas:Lexeme ;
 	rdfs:label "engeeg" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be mistaken (M)" ;
-	sah:lemma sah:engeeg- (M) ;
+	aamas:lemma "engeeg- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ookom a aamas:Lexeme ;
@@ -458,7 +463,7 @@ aama:Saho-ookom a aamas:Lexeme ;
 	rdfs:label "ookom" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "win over" ;
-	sah:lemma sah:ookom- ;
+	aamas:lemma "ookom-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-fi a aamas:Lexeme ;
@@ -466,7 +471,7 @@ aama:Saho-fi a aamas:Lexeme ;
 	rdfs:label "fi" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "sweep" ;
-	sah:lemma sah:fi- ;
+	aamas:lemma "fi-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-oofo a aamas:Lexeme ;
@@ -474,49 +479,49 @@ aama:Saho-oofo a aamas:Lexeme ;
 	rdfs:label "oofo" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "breathe" ;
-	sah:lemma sah:oofo- ;
+	aamas:lemma "oofo-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-yaysadad a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "yaysadad" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-eemeg a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "eemeg" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "fill" ;
-	sah:lemma sah:eemeg- ;
+	aamas:lemma "eemeg-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-aymaa a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "aymaa" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-uhfus a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "uhfus" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "scoop up" ;
-	sah:lemma sah:uḥfus- ;
+	aamas:lemma "uḥfus-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-bolol a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "bolol" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-abaar a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "abaar" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "curse" ;
-	sah:lemma sah:abaar- ;
+	aamas:lemma "abaar-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-enge a aamas:Lexeme ;
@@ -524,7 +529,7 @@ aama:Saho-enge a aamas:Lexeme ;
 	rdfs:label "enge" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "fight" ;
-	sah:lemma sah:engeʕ- ;
+	aamas:lemma "engeʕ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-fak a aamas:Lexeme ;
@@ -532,21 +537,21 @@ aama:Saho-fak a aamas:Lexeme ;
 	rdfs:label "fak" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "open" ;
-	sah:lemma sah:fak- ;
+	aamas:lemma "fak-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-anga a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "anga" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-gur a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "gur" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "want" ;
-	sah:lemma sah:gur- ;
+	aamas:lemma "gur-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-emmeng a aamas:Lexeme ;
@@ -554,7 +559,7 @@ aama:Saho-emmeng a aamas:Lexeme ;
 	rdfs:label "emmeng" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be many (M)" ;
-	sah:lemma sah:emmeng- (M) ;
+	aamas:lemma "emmeng- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ibbid a aamas:Lexeme ;
@@ -562,7 +567,7 @@ aama:Saho-ibbid a aamas:Lexeme ;
 	rdfs:label "ibbid" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "hold" ;
-	sah:lemma sah:ibbiɗ- ;
+	aamas:lemma "ibbiɗ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-udud a aamas:Lexeme ;
@@ -570,7 +575,7 @@ aama:Saho-udud a aamas:Lexeme ;
 	rdfs:label "udud" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "shorten" ;
-	sah:lemma sah:uɗuɗ- ;
+	aamas:lemma "uɗuɗ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-rab a aamas:Lexeme ;
@@ -578,35 +583,35 @@ aama:Saho-rab a aamas:Lexeme ;
 	rdfs:label "rab" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "die" ;
-	sah:lemma sah:rab- ;
+	aamas:lemma "rab-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-hab- a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "hab-" ;
 	aamas:gloss "leave" ;
-	sah:lemma sah:ḥab- ;
+	aamas:lemma "ḥab-" ;
 	.
 aama:Saho-ki a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ki" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "be" ;
-	sah:lemma sah:ki- ;
+	aamas:lemma "ki-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-meenge a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "meenge" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-uru a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "uru" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "tie" ;
-	sah:lemma sah:uru- (!) ;
+	aamas:lemma "uru- (!)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eefe a aamas:Lexeme ;
@@ -614,7 +619,7 @@ aama:Saho-eefe a aamas:Lexeme ;
 	rdfs:label "eefe" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "give water to" ;
-	sah:lemma sah:eefeʕ- ;
+	aamas:lemma "eefeʕ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-abaas a aamas:Lexeme ;
@@ -622,21 +627,21 @@ aama:Saho-abaas a aamas:Lexeme ;
 	rdfs:label "abaas" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "finish" ;
-	sah:lemma sah:abaas- ;
+	aamas:lemma "abaas-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ehet a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ehet" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-do a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "do" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "suck on" ;
-	sah:lemma sah:ɗo- ;
+	aamas:lemma "ɗo-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-oho a aamas:Lexeme ;
@@ -644,7 +649,7 @@ aama:Saho-oho a aamas:Lexeme ;
 	rdfs:label "oho" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "give" ;
-	sah:lemma sah:oḥo- (?) ;
+	aamas:lemma "oḥo- (?)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-alaa a aamas:Lexeme ;
@@ -652,7 +657,7 @@ aama:Saho-alaa a aamas:Lexeme ;
 	rdfs:label "alaa" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "cook" ;
-	sah:lemma sah:alaa- ;
+	aamas:lemma "alaa-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eemen a aamas:Lexeme ;
@@ -660,7 +665,7 @@ aama:Saho-eemen a aamas:Lexeme ;
 	rdfs:label "eemen" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "believe" ;
-	sah:lemma sah:eemen- ;
+	aamas:lemma "eemen-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-fah a aamas:Lexeme ;
@@ -668,7 +673,7 @@ aama:Saho-fah a aamas:Lexeme ;
 	rdfs:label "fah" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "boil" ;
-	sah:lemma sah:faḥ- ;
+	aamas:lemma "faḥ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-urkut a aamas:Lexeme ;
@@ -676,7 +681,7 @@ aama:Saho-urkut a aamas:Lexeme ;
 	rdfs:label "urkut" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "become thin" ;
-	sah:lemma sah:urkut- ;
+	aamas:lemma "urkut-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-uyku a aamas:Lexeme ;
@@ -684,7 +689,7 @@ aama:Saho-uyku a aamas:Lexeme ;
 	rdfs:label "uyku" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "carry" ;
-	sah:lemma sah:uykuʕ- (S1?) ;
+	aamas:lemma "uykuʕ- (S1?)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-imbiddil a aamas:Lexeme ;
@@ -692,7 +697,7 @@ aama:Saho-imbiddil a aamas:Lexeme ;
 	rdfs:label "imbiddil" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be charged (M)" ;
-	sah:lemma sah:imbiddil- (M) ;
+	aamas:lemma "imbiddil- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eqri a aamas:Lexeme ;
@@ -700,7 +705,7 @@ aama:Saho-eqri a aamas:Lexeme ;
 	rdfs:label "eqri" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "read Koran" ;
-	sah:lemma sah:eqri- ;
+	aamas:lemma "eqri-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-fad a aamas:Lexeme ;
@@ -708,41 +713,41 @@ aama:Saho-fad a aamas:Lexeme ;
 	rdfs:label "fad" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "want" ;
-	sah:lemma sah:faɗ- ;
+	aamas:lemma "faɗ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-hab a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "hab" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-holol a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "holol" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "blaze up" ;
-	sah:lemma sah:bolol- ;
+	aamas:lemma "bolol-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-usul a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "usul" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-abah a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "abah" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-alif a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "alif" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "close (open?)" ;
-	sah:lemma sah:alif- ;
+	aamas:lemma "alif-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-immillik a aamas:Lexeme ;
@@ -750,27 +755,27 @@ aama:Saho-immillik a aamas:Lexeme ;
 	rdfs:label "immillik" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "surrender (M)" ;
-	sah:lemma sah:immillik- (M) ;
+	aamas:lemma "immillik- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-TENSEFORMATION a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "TENSEFORMATION" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-yaysud a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "yaysud" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-eedeg a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "eedeg" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "know" ;
-	sah:lemma sah:eeɗeg- ;
+	aamas:lemma "eeɗeg-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-edirir a aamas:Lexeme ;
@@ -778,7 +783,7 @@ aama:Saho-edirir a aamas:Lexeme ;
 	rdfs:label "edirir" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "eat supper" ;
-	sah:lemma sah:edirir- ;
+	aamas:lemma "edirir-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-edebb a aamas:Lexeme ;
@@ -786,21 +791,21 @@ aama:Saho-edebb a aamas:Lexeme ;
 	rdfs:label "edebb" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "repay" ;
-	sah:lemma sah:edebb- ;
+	aamas:lemma "edebb-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ult a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ult" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-oosol a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "oosol" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "laugh" ;
-	sah:lemma sah:oosol- ;
+	aamas:lemma "oosol-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ifteh a aamas:Lexeme ;
@@ -808,15 +813,7 @@ aama:Saho-ifteh a aamas:Lexeme ;
 	rdfs:label "ifteh" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "untie" ;
-	sah:lemma sah:ifteḥ- ;
-	sah:pos sah:Verb ;
-	.
-aama:Saho-&ul a aamas:Lexeme ;
-	aamas:lang aama:Saho ;
-	rdfs:label "&ul" ;
-	sah:conjClass sah:Suffix ;
-	aamas:gloss "draw water" ;
-	sah:lemma sah:ʕul- ;
+	aamas:lemma "ifteḥ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ootob a aamas:Lexeme ;
@@ -824,27 +821,27 @@ aama:Saho-ootob a aamas:Lexeme ;
 	rdfs:label "ootob" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "repent" ;
-	sah:lemma sah:ootob- ;
+	aamas:lemma "ootob-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-efe a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "efe" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-iggire a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "iggire" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-ooob a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ooob" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "drink" ;
-	sah:lemma sah:ooʕob- ;
+	aamas:lemma "ooʕob-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ifriy a aamas:Lexeme ;
@@ -852,7 +849,7 @@ aama:Saho-ifriy a aamas:Lexeme ;
 	rdfs:label "ifriy" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "bear fruit" ;
-	sah:lemma sah:ifriy- ;
+	aamas:lemma "ifriy-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-beet a aamas:Lexeme ;
@@ -860,7 +857,7 @@ aama:Saho-beet a aamas:Lexeme ;
 	rdfs:label "beet" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "eat" ;
-	sah:lemma sah:beet- ;
+	aamas:lemma "beet-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-err a aamas:Lexeme ;
@@ -868,7 +865,7 @@ aama:Saho-err a aamas:Lexeme ;
 	rdfs:label "err" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "load" ;
-	sah:lemma sah:err- ;
+	aamas:lemma "err-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-defee a aamas:Lexeme ;
@@ -876,7 +873,7 @@ aama:Saho-defee a aamas:Lexeme ;
 	rdfs:label "defee" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "set down" ;
-	sah:lemma sah:defee- ;
+	aamas:lemma "defee-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ekett a aamas:Lexeme ;
@@ -884,7 +881,7 @@ aama:Saho-ekett a aamas:Lexeme ;
 	rdfs:label "ekett" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "gather" ;
-	sah:lemma sah:ekett- ;
+	aamas:lemma "ekett-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ew a aamas:Lexeme ;
@@ -892,7 +889,7 @@ aama:Saho-ew a aamas:Lexeme ;
 	rdfs:label "ew" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "go out" ;
-	sah:lemma sah:ewʕ- ;
+	aamas:lemma "ewʕ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eebeh a aamas:Lexeme ;
@@ -900,7 +897,7 @@ aama:Saho-eebeh a aamas:Lexeme ;
 	rdfs:label "eebeh" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "sell" ;
-	sah:lemma sah:eebeḥ- ;
+	aamas:lemma "eebeḥ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eeneb a aamas:Lexeme ;
@@ -908,21 +905,21 @@ aama:Saho-eeneb a aamas:Lexeme ;
 	rdfs:label "eeneb" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "grow" ;
-	sah:lemma sah:eeneb- ;
+	aamas:lemma "eeneb-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-emlelekke a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "emlelekke" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-ebh a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ebh" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "say" ;
-	sah:lemma sah:ebḥ- ;
+	aamas:lemma "ebḥ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ekkel a aamas:Lexeme ;
@@ -930,7 +927,7 @@ aama:Saho-ekkel a aamas:Lexeme ;
 	rdfs:label "ekkel" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "think" ;
-	sah:lemma sah:ekkel- ;
+	aamas:lemma "ekkel-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-hankbit a aamas:Lexeme ;
@@ -938,7 +935,7 @@ aama:Saho-hankbit a aamas:Lexeme ;
 	rdfs:label "hankbit" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "be frightened" ;
-	sah:lemma sah:hankabit- (T) ;
+	aamas:lemma "hankabit- (T)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eeley a aamas:Lexeme ;
@@ -946,7 +943,7 @@ aama:Saho-eeley a aamas:Lexeme ;
 	rdfs:label "eeley" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "become lost" ;
-	sah:lemma sah:eeley- ;
+	aamas:lemma "eeley-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-iskir a aamas:Lexeme ;
@@ -954,7 +951,7 @@ aama:Saho-iskir a aamas:Lexeme ;
 	rdfs:label "iskir" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "get drunk" ;
-	sah:lemma sah:iskir- ;
+	aamas:lemma "iskir-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-erd a aamas:Lexeme ;
@@ -962,7 +959,7 @@ aama:Saho-erd a aamas:Lexeme ;
 	rdfs:label "erd" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "run" ;
-	sah:lemma sah:erd- ;
+	aamas:lemma "erd-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eheeseb a aamas:Lexeme ;
@@ -970,7 +967,7 @@ aama:Saho-eheeseb a aamas:Lexeme ;
 	rdfs:label "eheeseb" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "think about" ;
-	sah:lemma sah:eḥeeseb- ;
+	aamas:lemma "eḥeeseb-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-iksib a aamas:Lexeme ;
@@ -978,7 +975,7 @@ aama:Saho-iksib a aamas:Lexeme ;
 	rdfs:label "iksib" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "profit" ;
-	sah:lemma sah:iksib- ;
+	aamas:lemma "iksib-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-onqoomot a aamas:Lexeme ;
@@ -986,7 +983,7 @@ aama:Saho-onqoomot a aamas:Lexeme ;
 	rdfs:label "onqoomot" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "pay attention (M)" ;
-	sah:lemma sah:onqoomot- (M) ;
+	aamas:lemma "onqoomot- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-uruf a aamas:Lexeme ;
@@ -994,7 +991,7 @@ aama:Saho-uruf a aamas:Lexeme ;
 	rdfs:label "uruf" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "rest" ;
-	sah:lemma sah:uʕruf- ;
+	aamas:lemma "uʕruf-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-oorof a aamas:Lexeme ;
@@ -1002,7 +999,7 @@ aama:Saho-oorof a aamas:Lexeme ;
 	rdfs:label "oorof" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "sew" ;
-	sah:lemma sah:oorof- ;
+	aamas:lemma "oorof-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-deer a aamas:Lexeme ;
@@ -1010,7 +1007,7 @@ aama:Saho-deer a aamas:Lexeme ;
 	rdfs:label "deer" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "cry out" ;
-	sah:lemma sah:deer- ;
+	aamas:lemma "deer-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-daam a aamas:Lexeme ;
@@ -1018,21 +1015,21 @@ aama:Saho-daam a aamas:Lexeme ;
 	rdfs:label "daam" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "buy" ;
-	sah:lemma sah:ɗaam- ;
+	aamas:lemma "ɗaam-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-hankabit a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "hankabit" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-obb a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "obb" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "hear" ;
-	sah:lemma sah:obb- ;
+	aamas:lemma "obb-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-fuu a aamas:Lexeme ;
@@ -1040,7 +1037,7 @@ aama:Saho-fuu a aamas:Lexeme ;
 	rdfs:label "fuu" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "suck" ;
-	sah:lemma sah:fuuʕ- ;
+	aamas:lemma "fuuʕ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-igre a aamas:Lexeme ;
@@ -1048,7 +1045,7 @@ aama:Saho-igre a aamas:Lexeme ;
 	rdfs:label "igre" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "cut off" ;
-	sah:lemma sah:igreʕ- ;
+	aamas:lemma "igreʕ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ehlif a aamas:Lexeme ;
@@ -1056,7 +1053,7 @@ aama:Saho-ehlif a aamas:Lexeme ;
 	rdfs:label "ehlif" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be annihilated" ;
-	sah:lemma sah:eḥlif- ;
+	aamas:lemma "eḥlif-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-emlelekk a aamas:Lexeme ;
@@ -1064,7 +1061,7 @@ aama:Saho-emlelekk a aamas:Lexeme ;
 	rdfs:label "emlelekk" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be mistaken (M)" ;
-	sah:lemma sah:emlelekk- (M) ;
+	aamas:lemma "emlelekk- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ifrid a aamas:Lexeme ;
@@ -1072,7 +1069,7 @@ aama:Saho-ifrid a aamas:Lexeme ;
 	rdfs:label "ifrid" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "judge" ;
-	sah:lemma sah:ifrid- ;
+	aamas:lemma "ifrid-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eney a aamas:Lexeme ;
@@ -1080,7 +1077,7 @@ aama:Saho-eney a aamas:Lexeme ;
 	rdfs:label "eney" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "flay" ;
-	sah:lemma sah:eney- (?) ;
+	aamas:lemma "eney- (?)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-enzewer a aamas:Lexeme ;
@@ -1088,7 +1085,7 @@ aama:Saho-enzewer a aamas:Lexeme ;
 	rdfs:label "enzewer" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "travel (M)" ;
-	sah:lemma sah:enzewer- (M) ;
+	aamas:lemma "enzewer- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eyteher a aamas:Lexeme ;
@@ -1096,7 +1093,7 @@ aama:Saho-eyteher a aamas:Lexeme ;
 	rdfs:label "eyteher" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "cleanse" ;
-	sah:lemma sah:eyṭeher- ;
+	aamas:lemma "eyṭeher-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-uuluus a aamas:Lexeme ;
@@ -1104,7 +1101,7 @@ aama:Saho-uuluus a aamas:Lexeme ;
 	rdfs:label "uuluus" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "knead" ;
-	sah:lemma sah:uuluus- (?) ;
+	aamas:lemma "uuluus- (?)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-abad a aamas:Lexeme ;
@@ -1112,7 +1109,7 @@ aama:Saho-abad a aamas:Lexeme ;
 	rdfs:label "abad" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "spoil" ;
-	sah:lemma sah:abaḥ- ;
+	aamas:lemma "abaḥ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-suu a aamas:Lexeme ;
@@ -1120,27 +1117,31 @@ aama:Saho-suu a aamas:Lexeme ;
 	rdfs:label "suu" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "hide" ;
-	sah:lemma sah:suʕu- ;
+	aamas:lemma "suʕu-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-emmeeed a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "emmeeed" ;
-	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	sah:conjClass sah:Prefix ;
+	aamas:gloss "stretch self (M)" ;
+	aamas:lemma "emmeʕeʕed- (M)" ;
+	sah:pos sah:Verb ;
 	.
 aama:Saho-di a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "di" ;
-	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	sah:conjClass sah:Suffix ;
+	aamas:gloss "be able" ;
+	aamas:lemma "ɗiʕ-" ;
+	sah:pos sah:Verb ;
 	.
 aama:Saho-ooog a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ooog" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "bury" ;
-	sah:lemma sah:ooʕog- ;
+	aamas:lemma "ooʕog-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ed a aamas:Lexeme ;
@@ -1148,7 +1149,7 @@ aama:Saho-ed a aamas:Lexeme ;
 	rdfs:label "ed" ;
 	sah:conjClass sah:Pref-irreg ;
 	aamas:gloss "go" ;
-	sah:lemma sah:ed- ;
+	aamas:lemma "ed-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-unqusu a aamas:Lexeme ;
@@ -1156,7 +1157,7 @@ aama:Saho-unqusu a aamas:Lexeme ;
 	rdfs:label "unqusu" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be sprained (M)" ;
-	sah:lemma sah:unqusuʕ- (M) ;
+	aamas:lemma "unqusuʕ- (M)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-bad a aamas:Lexeme ;
@@ -1164,7 +1165,7 @@ aama:Saho-bad a aamas:Lexeme ;
 	rdfs:label "bad" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "die (of an animal or fire)" ;
-	sah:lemma sah:bad- ;
+	aamas:lemma "bad-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ab a aamas:Lexeme ;
@@ -1172,7 +1173,7 @@ aama:Saho-ab a aamas:Lexeme ;
 	rdfs:label "ab" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "do" ;
-	sah:lemma sah:ab- ;
+	aamas:lemma "ab-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eeit a aamas:Lexeme ;
@@ -1180,7 +1181,7 @@ aama:Saho-eeit a aamas:Lexeme ;
 	rdfs:label "eeit" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "step on" ;
-	sah:lemma sah:eeʕit- ;
+	aamas:lemma "eeʕit-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-igziy a aamas:Lexeme ;
@@ -1188,21 +1189,21 @@ aama:Saho-igziy a aamas:Lexeme ;
 	rdfs:label "igziy" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "rule over" ;
-	sah:lemma sah:igziy- ;
+	aamas:lemma "igziy-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eyme a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "eyme" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-eehet a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "eehet" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "chew" ;
-	sah:lemma sah:eeḥet- ;
+	aamas:lemma "eeḥet-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-inni a aamas:Lexeme ;
@@ -1210,7 +1211,7 @@ aama:Saho-inni a aamas:Lexeme ;
 	rdfs:label "inni" ;
 	sah:conjClass sah:SuffixIrregular ;
 	aamas:gloss "be in" ;
-	sah:lemma sah:inni- ;
+	aamas:lemma "inni-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-hay a aamas:Lexeme ;
@@ -1218,7 +1219,7 @@ aama:Saho-hay a aamas:Lexeme ;
 	rdfs:label "hay" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "dress" ;
-	sah:lemma sah:hay- ;
+	aamas:lemma "hay-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-dufu a aamas:Lexeme ;
@@ -1226,7 +1227,7 @@ aama:Saho-dufu a aamas:Lexeme ;
 	rdfs:label "dufu" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "push" ;
-	sah:lemma sah:dufu- ;
+	aamas:lemma "dufu-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ehzen a aamas:Lexeme ;
@@ -1234,7 +1235,7 @@ aama:Saho-ehzen a aamas:Lexeme ;
 	rdfs:label "ehzen" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "be sad" ;
-	sah:lemma sah:eḥzen- ;
+	aamas:lemma "eḥzen-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-eelem a aamas:Lexeme ;
@@ -1242,7 +1243,7 @@ aama:Saho-eelem a aamas:Lexeme ;
 	rdfs:label "eelem" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "weave" ;
-	sah:lemma sah:eelem- ;
+	aamas:lemma "eelem-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-sa a aamas:Lexeme ;
@@ -1250,7 +1251,7 @@ aama:Saho-sa a aamas:Lexeme ;
 	rdfs:label "sa" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "enter" ;
-	sah:lemma sah:sa- ;
+	aamas:lemma "sa-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-iklib a aamas:Lexeme ;
@@ -1258,7 +1259,7 @@ aama:Saho-iklib a aamas:Lexeme ;
 	rdfs:label "iklib" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "turn over" ;
-	sah:lemma sah:iklib- ;
+	aamas:lemma "iklib-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-igdif a aamas:Lexeme ;
@@ -1266,7 +1267,7 @@ aama:Saho-igdif a aamas:Lexeme ;
 	rdfs:label "igdif" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "kill" ;
-	sah:lemma sah:igdif- ;
+	aamas:lemma "igdif-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ad a aamas:Lexeme ;
@@ -1274,7 +1275,7 @@ aama:Saho-ad a aamas:Lexeme ;
 	rdfs:label "ad" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "pour out" ;
-	sah:lemma sah:ḥaɗ- ;
+	aamas:lemma "ḥaɗ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-inebe a aamas:Lexeme ;
@@ -1282,29 +1283,21 @@ aama:Saho-inebe a aamas:Lexeme ;
 	rdfs:label "inebe" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "hate" ;
-	sah:lemma sah:inebeʕ- ;
+	aamas:lemma "inebeʕ-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-fu a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "fu" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
-	.
-aama:Saho-emme&e&ed a aamas:Lexeme ;
-	aamas:lang aama:Saho ;
-	rdfs:label "emme&e&ed" ;
-	sah:conjClass sah:Prefix ;
-	aamas:gloss "stretch self (M)" ;
-	sah:lemma sah:emmeʕeʕed- (M) ;
-	sah:pos sah:Verb ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-baah a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "baah" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "bring" ;
-	sah:lemma sah:baah- ;
+	aamas:lemma "baah-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ikfil a aamas:Lexeme ;
@@ -1312,7 +1305,7 @@ aama:Saho-ikfil a aamas:Lexeme ;
 	rdfs:label "ikfil" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "repay" ;
-	sah:lemma sah:ikfil- ;
+	aamas:lemma "ikfil-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-oosoom a aamas:Lexeme ;
@@ -1320,48 +1313,48 @@ aama:Saho-oosoom a aamas:Lexeme ;
 	rdfs:label "oosoom" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "fast" ;
-	sah:lemma sah:oosoom- ;
+	aamas:lemma "oosoom-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-uysuku a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "uysuku" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-ineeb a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ineeb" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-ootok a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ootok" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "hit" ;
-	sah:lemma sah:ootok- ;
+	aamas:lemma "ootok-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-li a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "li" ;
 	aamas:gloss "have" ;
-	sah:lemma sah:li- ;
+	aamas:lemma "li-" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-Aad a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "Aad" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-eymee a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "eymee" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "repair" ;
-	sah:lemma sah:eymeeʕ- (S1 frm meʕe) ;
+	aamas:lemma "eymeeʕ- (S1 frm meʕe)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-oysoom a aamas:Lexeme ;
@@ -1369,27 +1362,27 @@ aama:Saho-oysoom a aamas:Lexeme ;
 	rdfs:label "oysoom" ;
 	sah:conjClass sah:Prefix ;
 	aamas:gloss "spoil" ;
-	sah:lemma sah:oysoom- (S1 frm um-) ;
+	aamas:lemma "oysoom- (S1 frm um-)" ;
 	sah:pos sah:Verb ;
 	.
 aama:Saho-ewe a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "ewe" ;
 	aamas:gloss "[x]" ;
-	sah:lemma sah:[y] ;
+	aamas:lemma "[y]" ;
 	.
 aama:Saho-biaak a aamas:Lexeme ;
 	aamas:lang aama:Saho ;
 	rdfs:label "biaak" ;
 	sah:conjClass sah:Suffix ;
 	aamas:gloss "injure" ;
-	sah:lemma sah:biaak- ;
+	aamas:lemma "biaak-" ;
 	sah:pos sah:Verb ;
 	.
 
 #TERMCLUSTER: saho-VSuffAffJuss-ab
 
-aama:ID4796ee06-6d77-4045-9b35-d9965a976802 a aamas:Term ;
+aama:IDb609a5a7-0858-4eac-86e3-a34cdce6ac00 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1405,10 +1398,10 @@ aama:ID4796ee06-6d77-4045-9b35-d9965a976802 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-inni-ubl
 
-aama:IDdd60ff30-bf9f-4cc9-89da-7c5883d7a9bb a aamas:Term ;
+aama:IDe9ad0af6-fd5e-4132-be72-92d615db4e12 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
-	sah:token-gloss sah:he has seen (it) ;
+	sah:token-gloss "he has seen (it)" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -1422,7 +1415,7 @@ aama:IDdd60ff30-bf9f-4cc9-89da-7c5883d7a9bb a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ul
 
-aama:IDce528075-fcb8-47d3-b7e0-4f0028bac463 a aamas:Term ;
+aama:IDeb3cc51a-eb6f-4ae3-9b65-940b37894e68 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1438,10 +1431,10 @@ aama:IDce528075-fcb8-47d3-b7e0-4f0028bac463 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-ubl
 
-aama:ID394f5e6d-2253-4f84-81ae-247ff5d9ba32 a aamas:Term ;
+aama:IDc66ce53e-df75-4c60-b444-e73b5c4fe8c7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:show ;
+	sah:token-gloss "show" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -1455,7 +1448,7 @@ aama:ID394f5e6d-2253-4f84-81ae-247ff5d9ba32 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-enge
 
-aama:ID5274d05b-a3a9-4441-ab3b-14ca1f21b276 a aamas:Term ;
+aama:IDcdc7ef94-cdd9-4126-99ea-764d232a418a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1471,7 +1464,7 @@ aama:ID5274d05b-a3a9-4441-ab3b-14ca1f21b276 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-oorof
 
-aama:ID291fca4e-77f8-4268-911d-f4fd7c212a3d a aamas:Term ;
+aama:ID3d2b4c1a-0b17-4023-8b05-7b8994fa4be7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1487,7 +1480,7 @@ aama:ID291fca4e-77f8-4268-911d-f4fd7c212a3d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ookom
 
-aama:ID96eeebcf-6aeb-45f5-978b-76dc2882cf85 a aamas:Term ;
+aama:IDb324c046-20ee-4af3-9fff-9e14daac8a45 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1503,7 +1496,7 @@ aama:ID96eeebcf-6aeb-45f5-978b-76dc2882cf85 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-urkut
 
-aama:IDd7c5c3ee-29d9-4112-9c0f-9fd82aac7bf6 a aamas:Term ;
+aama:ID2be6e199-81c8-4f60-b11c-ff2524f14237 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
 	sah:polarity sah:Affirmative ;
@@ -1519,7 +1512,7 @@ aama:IDd7c5c3ee-29d9-4112-9c0f-9fd82aac7bf6 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oorof
 
-aama:ID3fb371bd-cab9-468f-ad7b-af5aa3be856e a aamas:Term ;
+aama:ID82bce161-e55c-4840-82ad-bc4cc5c87440 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1535,7 +1528,7 @@ aama:ID3fb371bd-cab9-468f-ad7b-af5aa3be856e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ifrid
 
-aama:ID286dc4d4-a63b-4767-851c-60bc553eefac a aamas:Term ;
+aama:IDc390670b-1da7-4e76-ba49-11d0cd32e063 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1551,7 +1544,7 @@ aama:ID286dc4d4-a63b-4767-851c-60bc553eefac a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-alaa
 
-aama:ID9a6900e1-1f5e-49bc-bd08-b248903b9873 a aamas:Term ;
+aama:ID599bfbf2-e446-4318-b3d8-4f7300107338 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1567,7 +1560,7 @@ aama:ID9a6900e1-1f5e-49bc-bd08-b248903b9873 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ki-ehzen
 
-aama:ID9a099419-cfd2-495e-aab6-dbf61ac08be2 a aamas:Term ;
+aama:ID42b06446-ff09-456a-8b2a-d2dec8d93a75 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1583,7 +1576,7 @@ aama:ID9a099419-cfd2-495e-aab6-dbf61ac08be2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-emmeeed-
 
-aama:ID94ccb255-0ec1-48de-b164-ddcc6af10506 a aamas:Term ;
+aama:ID3abde56e-3b8f-4e49-889c-0c27befb9ee0 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1599,10 +1592,10 @@ aama:ID94ccb255-0ec1-48de-b164-ddcc6af10506 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-m-uruf
 
-aama:ID35873361-fc10-45d2-b883-342383125c81 a aamas:Term ;
+aama:ID55729fc3-f1d8-443b-8b9d-b40c1894f4c5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:(I want) to rest (subordinate) ;
+	sah:token-gloss "(I want) to rest (subordinate)" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-uruf ;
@@ -1616,7 +1609,7 @@ aama:ID35873361-fc10-45d2-b883-342383125c81 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-uhfus
 
-aama:ID2595d97b-6689-4a27-8ce8-b64bef36d8c2 a aamas:Term ;
+aama:IDfcdbe7ea-f43a-47c2-bc1c-917ff1b7702e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1632,7 +1625,7 @@ aama:ID2595d97b-6689-4a27-8ce8-b64bef36d8c2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ki-uruf
 
-aama:IDfbe7de49-58b7-4191-9e0b-da30d8d0940d a aamas:Term ;
+aama:ID177ea3b2-76f9-4597-90fe-b1d48a36bf87 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -1648,7 +1641,7 @@ aama:IDfbe7de49-58b7-4191-9e0b-da30d8d0940d a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuff-ki
 
-aama:IDa07297ef-995a-41fc-b2d8-b4ffaf0b810f a aamas:Term ;
+aama:IDd37582d4-a5a5-403e-8496-6dbda5b414bd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1659,7 +1652,7 @@ aama:IDa07297ef-995a-41fc-b2d8-b4ffaf0b810f a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID524c4090-88a0-4e20-b195-cf47cb6b0d9b a aamas:Term ;
+aama:ID2f4a81b6-0b91-4e53-a766-976ef80775a3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1670,7 +1663,7 @@ aama:ID524c4090-88a0-4e20-b195-cf47cb6b0d9b a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID54e97596-d2d0-4081-8336-0acb91525aba a aamas:Term ;
+aama:ID03169263-89cb-4acf-8d84-32eef86fa94a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1681,7 +1674,7 @@ aama:ID54e97596-d2d0-4081-8336-0acb91525aba a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDe8740814-b7ac-43a6-8bae-3dad44f84f15 a aamas:Term ;
+aama:ID2de5907f-b882-4585-88f1-78e067a7930a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1692,7 +1685,7 @@ aama:IDe8740814-b7ac-43a6-8bae-3dad44f84f15 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:IDdd37745a-c641-4bea-abae-28ee9c9bd7f4 a aamas:Term ;
+aama:ID4f15a7d8-d0ff-4f4d-a90d-e803082f18dd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1703,7 +1696,7 @@ aama:IDdd37745a-c641-4bea-abae-28ee9c9bd7f4 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID4f33d858-a546-4d34-a2d2-7d2d4e52627a a aamas:Term ;
+aama:ID294b4b9c-ab90-4a27-88e6-ada87f49fa4c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1714,7 +1707,7 @@ aama:ID4f33d858-a546-4d34-a2d2-7d2d4e52627a a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID1c04fcec-450c-433d-a816-b08d29558e78 a aamas:Term ;
+aama:ID3a0d62f8-ddff-4be6-ad72-1627de973544 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ki ;
@@ -1728,7 +1721,7 @@ aama:ID1c04fcec-450c-433d-a816-b08d29558e78 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImprtv-enge
 
-aama:ID4058c5cf-b742-4a77-ae4b-550ee7560377 a aamas:Term ;
+aama:ID0ad5a7f8-bc0e-4e85-8ac1-e2a577594ec3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -1744,7 +1737,7 @@ aama:ID4058c5cf-b742-4a77-ae4b-550ee7560377 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-biil
 
-aama:ID3096775e-bff0-4bc5-955a-5efd7d562ce7 a aamas:Term ;
+aama:ID351663f9-8ba1-4ec2-8409-9479159931fe a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1760,10 +1753,10 @@ aama:ID3096775e-bff0-4bc5-955a-5efd7d562ce7 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegPerf-daam
 
-aama:ID640c8a52-e18f-47c7-b23a-debbabc9a517 a aamas:Term ;
+aama:ID8caa1c65-9598-4711-b6ca-260d441cef56 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:I didn’t buy (it) ;
+	sah:token-gloss "I didn’t buy (it)" ;
 	sah:polarity sah:Negative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-daam ;
@@ -1777,7 +1770,7 @@ aama:ID640c8a52-e18f-47c7-b23a-debbabc9a517 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-uru- (!)
 
-aama:IDbca9c360-3b10-4d3c-802a-24ed9935470b a aamas:Term ;
+aama:ID3d5e6d9e-af44-492e-a67a-f5ac8323a74f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1793,7 +1786,7 @@ aama:IDbca9c360-3b10-4d3c-802a-24ed9935470b a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegImprtv-suu
 
-aama:IDafb5a11a-93bc-47c4-916e-52278ff23c37 a aamas:Term ;
+aama:IDb09b1632-6f1f-42d3-9394-6bcb0ce3974d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -1809,7 +1802,7 @@ aama:IDafb5a11a-93bc-47c4-916e-52278ff23c37 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-daam
 
-aama:IDf1c5f5bc-0b5a-4abe-a7c6-10686e8fd79e a aamas:Term ;
+aama:IDd3a847e3-d8c4-41d6-9c6f-b45caa3fee75 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1825,7 +1818,7 @@ aama:IDf1c5f5bc-0b5a-4abe-a7c6-10686e8fd79e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eeneb
 
-aama:ID7f221804-4221-4b2d-baa6-6df2b29cb09e a aamas:Term ;
+aama:ID606bc7ac-d68b-434c-baf3-62a7d5e49b61 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1841,7 +1834,7 @@ aama:ID7f221804-4221-4b2d-baa6-6df2b29cb09e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-engeeg-
 
-aama:IDfdc03bde-720b-4291-8ba4-997fb1c9a609 a aamas:Term ;
+aama:ID6965c004-07fa-450f-95be-f72075b56aeb a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1857,7 +1850,7 @@ aama:IDfdc03bde-720b-4291-8ba4-997fb1c9a609 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPart-fi
 
-aama:IDa72d5a88-016d-45f3-8566-97da409ec865 a aamas:Term ;
+aama:ID3d4623b7-6274-46f8-8958-4d840b1bec14 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -1873,7 +1866,7 @@ aama:IDa72d5a88-016d-45f3-8566-97da409ec865 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPart-dufu
 
-aama:IDe0f28c91-4308-430d-927f-d570a1985937 a aamas:Term ;
+aama:ID90e9d27c-4561-4d4a-9156-cf0269bba80b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -1889,7 +1882,7 @@ aama:IDe0f28c91-4308-430d-927f-d570a1985937 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eehet
 
-aama:ID095e1a41-400f-476c-8766-bc88049c223c a aamas:Term ;
+aama:ID78fdfa6b-0a50-4e80-820f-b81fbdeb6dc9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1905,7 +1898,7 @@ aama:ID095e1a41-400f-476c-8766-bc88049c223c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eelem
 
-aama:ID01897012-c1f0-44e4-b5f9-dbd0f3e3abe1 a aamas:Term ;
+aama:IDfc8b9f57-b29c-4fba-9ba0-d11888ed29cb a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1921,7 +1914,7 @@ aama:ID01897012-c1f0-44e4-b5f9-dbd0f3e3abe1 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eehet
 
-aama:ID42d4fd56-2377-464f-a803-f46602efa729 a aamas:Term ;
+aama:IDc3b9c12c-2835-4a81-aad8-8c7d22afbbc8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1937,7 +1930,7 @@ aama:ID42d4fd56-2377-464f-a803-f46602efa729 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-uru- (!)
 
-aama:ID453afa0b-343c-4cf0-86ff-a38f3a867b9b a aamas:Term ;
+aama:IDde90e0f4-4770-4120-aee8-00f0477fc799 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1953,7 +1946,7 @@ aama:ID453afa0b-343c-4cf0-86ff-a38f3a867b9b a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegImprtv-daam
 
-aama:ID2dfcaaab-e890-4545-9afc-e248b92bd007 a aamas:Term ;
+aama:ID9886f7b3-a138-4b46-9405-265103972c37 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -1969,7 +1962,7 @@ aama:ID2dfcaaab-e890-4545-9afc-e248b92bd007 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ebh
 
-aama:ID17c1a9e5-8428-473b-8450-2a5dbb518100 a aamas:Term ;
+aama:ID2919d7d1-76a7-4093-8a03-71ca58c6dfc3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -1985,7 +1978,7 @@ aama:ID17c1a9e5-8428-473b-8450-2a5dbb518100 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eeley
 
-aama:IDd0b98ddb-ef16-4681-b87d-9cf01232af16 a aamas:Term ;
+aama:ID61e7863e-3690-4254-9400-00fec501a307 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2001,7 +1994,7 @@ aama:IDd0b98ddb-ef16-4681-b87d-9cf01232af16 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ki-ubl
 
-aama:ID289612bf-9f40-4b83-ac9e-522fb344a00b a aamas:Term ;
+aama:IDf5af5f25-4c03-466b-ad30-210db7a8435f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2017,7 +2010,7 @@ aama:ID289612bf-9f40-4b83-ac9e-522fb344a00b a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPart-ifriy
 
-aama:ID19d2b946-6d1f-412b-8078-07c7fa3aa57f a aamas:Term ;
+aama:IDd1ccab49-6eba-4545-9147-a9153f8a2df3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -2033,7 +2026,7 @@ aama:ID19d2b946-6d1f-412b-8078-07c7fa3aa57f a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eefe
 
-aama:ID50173ffe-4fc2-4b82-a200-4dc819319e6a a aamas:Term ;
+aama:ID3559290c-1783-4313-b771-995d46b8d084 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2049,7 +2042,7 @@ aama:ID50173ffe-4fc2-4b82-a200-4dc819319e6a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-udud
 
-aama:ID3b19206a-dfa3-4732-af33-3af5819a9729 a aamas:Term ;
+aama:ID54d88d36-2114-47a1-81ef-4592e9300f47 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -2065,10 +2058,10 @@ aama:ID3b19206a-dfa3-4732-af33-3af5819a9729 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-inni-beet
 
-aama:ID79de4591-f0d7-46ec-84e8-4c1c31b1dae8 a aamas:Term ;
+aama:IDb47cf850-e2e1-4df1-a870-b1a294d0a248 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:we have eaten it ;
+	sah:token-gloss "we have eaten it" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-beet ;
@@ -2082,7 +2075,7 @@ aama:ID79de4591-f0d7-46ec-84e8-4c1c31b1dae8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-immillik-
 
-aama:IDcf23cb68-16dd-4ec6-861e-17d72bb3f532 a aamas:Term ;
+aama:ID476ccb2d-c484-411a-9cc5-3f050867d7a6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2098,7 +2091,7 @@ aama:IDcf23cb68-16dd-4ec6-861e-17d72bb3f532 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-enge
 
-aama:ID7bcc0460-74a6-45e8-84d3-551fc635252e a aamas:Term ;
+aama:ID52c76f78-722e-4b05-a59b-6ff347568f76 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2114,7 +2107,7 @@ aama:ID7bcc0460-74a6-45e8-84d3-551fc635252e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-uhfus
 
-aama:ID4d91a9b0-ce47-4ab9-bacb-0ee5eb730162 a aamas:Term ;
+aama:ID8a62713e-bb0e-4343-b826-b05bcb52ed4b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2130,7 +2123,7 @@ aama:ID4d91a9b0-ce47-4ab9-bacb-0ee5eb730162 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffJuss-ak
 
-aama:IDcbeabe6e-f26e-41ce-8b06-ed76ac459c36 a aamas:Term ;
+aama:IDa7367352-af22-4875-904c-1cc592b24c86 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2141,7 +2134,7 @@ aama:IDcbeabe6e-f26e-41ce-8b06-ed76ac459c36 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID4cf6d377-68d9-4241-b4ea-24cc2fa51d9c a aamas:Term ;
+aama:IDaf7e7989-f11f-4d15-9609-e605a3930fad a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2152,7 +2145,7 @@ aama:ID4cf6d377-68d9-4241-b4ea-24cc2fa51d9c a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:IDbd2da7d5-b5e0-436e-9e44-7ee24b696fec a aamas:Term ;
+aama:ID75417a3f-de8f-490f-96db-5986a8d0e7b5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2163,7 +2156,7 @@ aama:IDbd2da7d5-b5e0-436e-9e44-7ee24b696fec a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID8c990776-e1ef-476c-ae1e-ae5311836a76 a aamas:Term ;
+aama:ID9303be23-3b32-4cda-b4b5-596ee54c4f61 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2174,7 +2167,7 @@ aama:ID8c990776-e1ef-476c-ae1e-ae5311836a76 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID9c33c116-af66-4801-acda-ca7b555d33fa a aamas:Term ;
+aama:ID3289d184-cebb-4d33-abb5-28ee73fb90b6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2185,7 +2178,7 @@ aama:ID9c33c116-af66-4801-acda-ca7b555d33fa a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID9ff31f5b-8c27-451d-ab03-8f1316148751 a aamas:Term ;
+aama:IDb11861a4-7054-4546-9e0b-f0029d037e2c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2196,7 +2189,7 @@ aama:ID9ff31f5b-8c27-451d-ab03-8f1316148751 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDe8e4d9cb-1092-4ae3-be4b-bb04e20fa864 a aamas:Term ;
+aama:ID6ea0149a-b74d-4f26-8f89-a490c6c29595 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -2210,10 +2203,10 @@ aama:IDe8e4d9cb-1092-4ae3-be4b-bb04e20fa864 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffJuss-li-daam
 
-aama:ID8a6bb5e0-53a0-4b7a-a8fb-ea2ea47288f4 a aamas:Term ;
+aama:ID0dd22400-c6cc-4b23-8e43-9b8480d05872 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:(I guess) I’ll buy it ;
+	sah:token-gloss "(I guess) I’ll buy it" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-daam ;
@@ -2227,7 +2220,7 @@ aama:ID8a6bb5e0-53a0-4b7a-a8fb-ea2ea47288f4 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oosoom
 
-aama:ID8622971a-b15e-4e8e-8da4-5117b9d3e7d8 a aamas:Term ;
+aama:ID8b9b843e-50cf-4b88-8f7b-49cf11545b90 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2243,7 +2236,7 @@ aama:ID8622971a-b15e-4e8e-8da4-5117b9d3e7d8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffPast-ubl-
 
-aama:IDbb684521-c9e3-47be-8c56-fd753945f143 a aamas:Term ;
+aama:ID15f9a9db-309c-4d12-954c-b1f23be3b410 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2254,7 +2247,7 @@ aama:IDbb684521-c9e3-47be-8c56-fd753945f143 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID62434e70-dda9-4a9b-9d0d-a7a4aae32bf5 a aamas:Term ;
+aama:ID8b08b9f9-0147-43ad-9251-fc5b8e7dd5d1 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2265,7 +2258,7 @@ aama:ID62434e70-dda9-4a9b-9d0d-a7a4aae32bf5 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDc8d642ed-50ae-43c1-b281-9a10fbb512b8 a aamas:Term ;
+aama:IDb6c6ae9a-cd6b-4703-b18d-431717a18774 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2276,7 +2269,7 @@ aama:IDc8d642ed-50ae-43c1-b281-9a10fbb512b8 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:ID0846c3f0-85fb-4365-b6b2-930db1df7290 a aamas:Term ;
+aama:ID981545ec-dcb4-49eb-b18e-98eb37610613 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2287,7 +2280,7 @@ aama:ID0846c3f0-85fb-4365-b6b2-930db1df7290 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID77d7d573-588b-4991-94b3-98fa468cb6e0 a aamas:Term ;
+aama:IDa3794c8e-00a0-4831-a03c-fbd764e07a19 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2298,7 +2291,7 @@ aama:ID77d7d573-588b-4991-94b3-98fa468cb6e0 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:IDfe4d17c3-23ae-4008-a3cb-664e175c7ef3 a aamas:Term ;
+aama:IDfd33cccd-cfd8-4159-bf10-953c36d9511d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2309,7 +2302,7 @@ aama:IDfe4d17c3-23ae-4008-a3cb-664e175c7ef3 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID03fb7b09-d2a6-458d-8235-37933f89404f a aamas:Term ;
+aama:IDfa2666e6-da45-4190-a31c-56a4435defd8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2323,7 +2316,7 @@ aama:ID03fb7b09-d2a6-458d-8235-37933f89404f a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-eney-
 
-aama:ID8dbc15f3-e543-44c2-be29-0766e8a81c58 a aamas:Term ;
+aama:ID8c8c1e59-8b83-4f6c-a601-2286a4243e59 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2339,7 +2332,7 @@ aama:ID8dbc15f3-e543-44c2-be29-0766e8a81c58 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-beet
 
-aama:IDb2b676f7-c734-46fc-a683-3349c14bb41a a aamas:Term ;
+aama:ID81097e47-05a6-4929-b549-a5166390ddc8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2355,7 +2348,7 @@ aama:IDb2b676f7-c734-46fc-a683-3349c14bb41a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-alif
 
-aama:IDd007a55a-ba26-4937-b23a-ef6440dfdd49 a aamas:Term ;
+aama:IDc082918a-1a9b-4913-a841-4607b61b3b0f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2371,7 +2364,7 @@ aama:IDd007a55a-ba26-4937-b23a-ef6440dfdd49 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-edebb
 
-aama:ID56e348c3-fa1c-4128-86c1-348f7b8f15fe a aamas:Term ;
+aama:ID94813b2c-816b-4025-9dcb-b40a16b10f39 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2387,7 +2380,7 @@ aama:ID56e348c3-fa1c-4128-86c1-348f7b8f15fe a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eefe
 
-aama:IDf374d8a0-e7e5-494b-88fb-0d5a6785cd7b a aamas:Term ;
+aama:ID022ced7e-a8b2-4096-8bf3-efb8b9bc90fa a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2403,7 +2396,7 @@ aama:IDf374d8a0-e7e5-494b-88fb-0d5a6785cd7b a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-oosol
 
-aama:ID451d87fa-4243-462e-8ea6-40308d850a5c a aamas:Term ;
+aama:ID1abe25bc-67a6-449d-988b-bda0f4002220 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2419,7 +2412,7 @@ aama:ID451d87fa-4243-462e-8ea6-40308d850a5c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-igdif
 
-aama:IDa46fd8b1-cc7c-4cb2-bfd8-35f75c088b8c a aamas:Term ;
+aama:ID0eb0b5f8-9401-41a4-bd7f-d6109ec19d00 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2435,7 +2428,7 @@ aama:IDa46fd8b1-cc7c-4cb2-bfd8-35f75c088b8c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-emlelekke-
 
-aama:IDe44e806e-35b7-4204-b8de-8e9b62743705 a aamas:Term ;
+aama:IDce960926-6edd-4414-aa01-24a8fb917628 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2451,7 +2444,7 @@ aama:IDe44e806e-35b7-4204-b8de-8e9b62743705 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eelem
 
-aama:ID691c546d-27f0-4e7a-861f-732656ce2c01 a aamas:Term ;
+aama:IDbcd3aa36-bf44-447b-a559-15bfbdaedb97 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2467,10 +2460,10 @@ aama:ID691c546d-27f0-4e7a-861f-732656ce2c01 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-inni{perf}-ubl
 
-aama:ID6b255b54-2b55-48dc-9b2b-f6434099e7e3 a aamas:Term ;
+aama:ID51ee3386-e5c2-490e-8e95-26768f185dc6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
-	sah:token-gloss sah:he had seen (it) ;
+	sah:token-gloss "he had seen (it)" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -2484,7 +2477,7 @@ aama:ID6b255b54-2b55-48dc-9b2b-f6434099e7e3 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-idhen
 
-aama:ID43196487-2e49-4dc4-9eda-53c98c04f581 a aamas:Term ;
+aama:ID17516d76-8d22-4929-ae36-03459afe0443 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2500,7 +2493,7 @@ aama:ID43196487-2e49-4dc4-9eda-53c98c04f581 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-emeet
 
-aama:ID9aa3a59e-618a-458d-8825-840e54d0ff43 a aamas:Term ;
+aama:ID3b157551-6765-44d3-a572-73f3282eb1e3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2516,7 +2509,7 @@ aama:ID9aa3a59e-618a-458d-8825-840e54d0ff43 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-eeneb
 
-aama:IDbd1dbe46-f370-4fbb-b7a2-0fb5e147fc47 a aamas:Term ;
+aama:ID6344668b-2745-4c82-b956-cb27e0212e7e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2532,7 +2525,7 @@ aama:IDbd1dbe46-f370-4fbb-b7a2-0fb5e147fc47 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-biil
 
-aama:ID68463a66-727c-46c0-b386-34716f888acc a aamas:Term ;
+aama:ID3061e9f7-8908-4ee1-a797-df4c505f1b40 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2548,7 +2541,7 @@ aama:ID68463a66-727c-46c0-b386-34716f888acc a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ookom
 
-aama:IDf667016a-a33e-41b0-af88-384b784746b6 a aamas:Term ;
+aama:ID4868dc5c-4713-42bb-a3e5-45cf50a2d0d4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2564,7 +2557,7 @@ aama:IDf667016a-a33e-41b0-af88-384b784746b6 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-iklib
 
-aama:ID9d17575e-4a37-4e51-bcee-0fa1439d0a7c a aamas:Term ;
+aama:ID1fd0cdb0-e470-43e4-a281-e800b76ce9f1 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2580,7 +2573,7 @@ aama:ID9d17575e-4a37-4e51-bcee-0fa1439d0a7c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ibbid
 
-aama:ID2d0fa926-8d87-463b-9c61-aef20e10cb6e a aamas:Term ;
+aama:ID8a30148c-6281-479a-bb32-269808911506 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2596,7 +2589,7 @@ aama:ID2d0fa926-8d87-463b-9c61-aef20e10cb6e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-urkut
 
-aama:ID0a7bf1e0-5240-43e6-ae72-e9516080d1c0 a aamas:Term ;
+aama:ID8274351e-56cf-466c-96d7-37e32cc83305 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
 	sah:polarity sah:Affirmative ;
@@ -2612,7 +2605,7 @@ aama:ID0a7bf1e0-5240-43e6-ae72-e9516080d1c0 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eymee
 
-aama:ID18f05378-4346-4ef2-9906-3d54cb674ef0 a aamas:Term ;
+aama:ID37b2f8cb-d063-4d17-9dc5-771699a12fbb a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2628,7 +2621,7 @@ aama:ID18f05378-4346-4ef2-9906-3d54cb674ef0 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eemeg
 
-aama:ID72fc4876-554d-4a32-a867-492d243e9c35 a aamas:Term ;
+aama:ID02b6e7f8-5976-4f84-abab-8125a50227da a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2644,7 +2637,7 @@ aama:ID72fc4876-554d-4a32-a867-492d243e9c35 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oofo
 
-aama:IDdb1287cd-7ab3-4fdf-954f-fe3b02d1c12d a aamas:Term ;
+aama:ID505991be-8c1f-43b1-abc7-2ef644b0f6e6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2660,7 +2653,7 @@ aama:IDdb1287cd-7ab3-4fdf-954f-fe3b02d1c12d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-enge
 
-aama:ID5503d7da-7426-43bc-ba5b-2cd9088c37ad a aamas:Term ;
+aama:IDc1b310dd-5042-4dd1-93a4-8f42a5c7d8e3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2676,7 +2669,7 @@ aama:ID5503d7da-7426-43bc-ba5b-2cd9088c37ad a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-dufu
 
-aama:IDd7512176-9f42-4020-990e-27dd5f1df1a9 a aamas:Term ;
+aama:IDf269ad88-6fed-4c77-be62-5108cddbaaba a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2692,7 +2685,7 @@ aama:IDd7512176-9f42-4020-990e-27dd5f1df1a9 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-edebb
 
-aama:IDded87482-7bd5-4c72-942d-9b6d4b0ee26f a aamas:Term ;
+aama:ID9ac59c3f-69d7-48cd-bc13-a923753f49d9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2708,10 +2701,10 @@ aama:IDded87482-7bd5-4c72-942d-9b6d4b0ee26f a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegPerf-erd
 
-aama:IDa05122f1-9a56-4555-819e-64709387270f a aamas:Term ;
+aama:ID4f9f3ff0-e6a3-40cd-b2c1-6c9c219d0465 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:they didn’t run ;
+	sah:token-gloss "they didn’t run" ;
 	sah:polarity sah:Negative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-erd ;
@@ -2725,7 +2718,7 @@ aama:IDa05122f1-9a56-4555-819e-64709387270f a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eedeg
 
-aama:IDd08489ea-e61c-42d7-9bc4-b8bf02079683 a aamas:Term ;
+aama:IDd4562e50-c828-4383-ad01-ffbfe5838c87 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2741,7 +2734,7 @@ aama:IDd08489ea-e61c-42d7-9bc4-b8bf02079683 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImperf-ubl
 
-aama:IDc85af507-0e49-4768-8265-4a8aa94da6f2 a aamas:Term ;
+aama:ID7842db18-b11e-4956-b35d-6a5e65dc965e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -2757,7 +2750,7 @@ aama:IDc85af507-0e49-4768-8265-4a8aa94da6f2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-do
 
-aama:IDc2df6e81-3b08-4bf9-8b70-235169831226 a aamas:Term ;
+aama:IDd51ba0de-495e-49fa-afbc-de7c39a55b51 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2773,7 +2766,7 @@ aama:IDc2df6e81-3b08-4bf9-8b70-235169831226 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ootok
 
-aama:ID39e61dfe-1eb2-49fa-aa45-76d1b3a1852e a aamas:Term ;
+aama:ID78b68748-d9c6-4be6-8d4e-a7c0f09d2534 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2789,7 +2782,7 @@ aama:ID39e61dfe-1eb2-49fa-aa45-76d1b3a1852e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImperf-ifriy
 
-aama:ID3d904169-a9f3-4fb9-a644-167e9d302abf a aamas:Term ;
+aama:ID8c29f6f9-e5fd-4589-8fde-2edd803cf034 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
 	sah:polarity sah:Negative ;
@@ -2805,7 +2798,7 @@ aama:ID3d904169-a9f3-4fb9-a644-167e9d302abf a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-edh
 
-aama:ID2b01370e-3744-4731-9428-e854830e4920 a aamas:Term ;
+aama:ID6b9e2063-1755-408f-bfb9-d2f876bff7d9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2821,7 +2814,7 @@ aama:ID2b01370e-3744-4731-9428-e854830e4920 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-eedeg
 
-aama:ID52c7089c-46c6-4110-9aec-92c00444a14d a aamas:Term ;
+aama:ID888ea5dc-8002-49fb-af62-7b4022ce8b28 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2837,7 +2830,7 @@ aama:ID52c7089c-46c6-4110-9aec-92c00444a14d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-igziy
 
-aama:IDd7d16814-5b32-47f8-a51d-b900eafe61ec a aamas:Term ;
+aama:ID2d0a11a7-5ffc-422c-b14d-2943824af08d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2853,7 +2846,7 @@ aama:IDd7d16814-5b32-47f8-a51d-b900eafe61ec a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-deer
 
-aama:ID4347a9e3-f79c-4419-9c99-39d156f83926 a aamas:Term ;
+aama:IDc9113f8e-fcd0-4f0e-8d24-575e37a4e8cf a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2869,7 +2862,7 @@ aama:ID4347a9e3-f79c-4419-9c99-39d156f83926 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-udud
 
-aama:ID0799ff9f-96ee-4626-bb38-0e102eb8873a a aamas:Term ;
+aama:ID775506be-a0e2-402f-a3bd-17b3964cfe2b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -2885,7 +2878,7 @@ aama:ID0799ff9f-96ee-4626-bb38-0e102eb8873a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-edirir-
 
-aama:ID16f88607-9aed-4642-86a7-973a09ad8e64 a aamas:Term ;
+aama:ID0a7f6cdd-95e0-41c2-abbb-9727d3c385ed a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2901,7 +2894,7 @@ aama:ID16f88607-9aed-4642-86a7-973a09ad8e64 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-idhen
 
-aama:ID09bea602-3527-4463-a53d-8ecd19168a79 a aamas:Term ;
+aama:ID233300fe-8019-49ff-9401-b4a645828706 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2917,7 +2910,7 @@ aama:ID09bea602-3527-4463-a53d-8ecd19168a79 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ehzen-
 
-aama:ID09ee6ee3-4a52-409c-83f0-10803cfd8823 a aamas:Term ;
+aama:ID4307e116-5b50-4597-a4d5-f3bfa9e421c4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2933,7 +2926,7 @@ aama:ID09ee6ee3-4a52-409c-83f0-10803cfd8823 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-daam
 
-aama:ID45fed7c5-c177-48c3-aba5-7e77d925afaf a aamas:Term ;
+aama:ID25ac17da-4035-4e94-8bfa-1b844f501d3c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2949,7 +2942,7 @@ aama:ID45fed7c5-c177-48c3-aba5-7e77d925afaf a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eeit
 
-aama:IDc7111318-eae8-4494-abc1-586e7ca876a0 a aamas:Term ;
+aama:IDf49568fe-550c-4e5b-b0c7-45715d498172 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2965,7 +2958,7 @@ aama:IDc7111318-eae8-4494-abc1-586e7ca876a0 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-erd
 
-aama:ID44da7a90-7453-4ba2-8567-5d818372b087 a aamas:Term ;
+aama:IDa5531c43-b365-44f3-a3fe-6fc8da9e1f34 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2981,7 +2974,7 @@ aama:ID44da7a90-7453-4ba2-8567-5d818372b087 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ootob
 
-aama:IDa60ebccb-d095-4314-b650-e785f4989f0e a aamas:Term ;
+aama:IDcc663995-3744-4d59-9229-a6566a063159 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -2997,10 +2990,10 @@ aama:IDa60ebccb-d095-4314-b650-e785f4989f0e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eqri
 
-aama:ID85d3264b-636d-408d-b636-5f5479024b33 a aamas:Term ;
+aama:ID39dcf3da-c59d-4978-86ab-790163d413e0 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:read Koran to oneself ;
+	sah:token-gloss "read Koran to oneself" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-eqri ;
@@ -3014,7 +3007,7 @@ aama:ID85d3264b-636d-408d-b636-5f5479024b33 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eebeh
 
-aama:ID3e8674d2-b0ac-4396-8515-e416391b3b43 a aamas:Term ;
+aama:ID942f5950-fed4-4c6f-b2f5-5a4a29419aa6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3030,7 +3023,7 @@ aama:ID3e8674d2-b0ac-4396-8515-e416391b3b43 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-ekkel
 
-aama:IDa7f1b62e-162a-49a4-99b6-fac4889379fd a aamas:Term ;
+aama:ID565afafe-c441-4aef-b4ed-9c5e92d1fc0f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3046,7 +3039,7 @@ aama:IDa7f1b62e-162a-49a4-99b6-fac4889379fd a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eemen
 
-aama:ID2940154b-d894-40d4-8052-d01a814a25f6 a aamas:Term ;
+aama:ID5e9c5811-7994-4dc4-9840-1eb7578a5e61 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3062,7 +3055,7 @@ aama:ID2940154b-d894-40d4-8052-d01a814a25f6 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-edh
 
-aama:IDbcc601e3-8fc4-41bd-96be-a02449efcee7 a aamas:Term ;
+aama:IDc0a9841a-e109-4b80-9d08-b07129171095 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3078,10 +3071,10 @@ aama:IDbcc601e3-8fc4-41bd-96be-a02449efcee7 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-inni-hankabit
 
-aama:ID835fdfb9-c514-4db6-a3bd-4706caf9006c a aamas:Term ;
+aama:ID3c486d6e-d050-4e0c-a675-3e5b1895623c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:you have been frightened ;
+	sah:token-gloss "you have been frightened" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hankabit ;
@@ -3095,7 +3088,7 @@ aama:ID835fdfb9-c514-4db6-a3bd-4706caf9006c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-emeet
 
-aama:IDf71652a6-c995-47d7-a32f-5f1e152b502e a aamas:Term ;
+aama:IDff6b2460-e80a-4729-b501-e5325a9de83e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3111,7 +3104,7 @@ aama:IDf71652a6-c995-47d7-a32f-5f1e152b502e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ubl
 
-aama:ID06d8326c-4139-45fe-b5e3-0cc6f8d46fef a aamas:Term ;
+aama:ID3cc76b94-3b63-4a4e-a09e-f84f4df6fa5f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3127,7 +3120,7 @@ aama:ID06d8326c-4139-45fe-b5e3-0cc6f8d46fef a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ifriy
 
-aama:ID290af5e3-7af0-4e4d-8d24-c21644d01294 a aamas:Term ;
+aama:ID2f44fda2-1243-4bd9-9bd3-c1e6f4f55c8e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3143,7 +3136,7 @@ aama:ID290af5e3-7af0-4e4d-8d24-c21644d01294 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ew
 
-aama:ID45bd9215-792e-4e0c-a83f-540d73c8d4ad a aamas:Term ;
+aama:IDad436459-71ed-4a4b-9b4e-28723b2ea5a2 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3159,7 +3152,7 @@ aama:ID45bd9215-792e-4e0c-a83f-540d73c8d4ad a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-ehzen
 
-aama:IDd35ebd5f-66f0-4f69-a712-ddb6ec475776 a aamas:Term ;
+aama:ID1d138fb8-0714-402f-94c6-abed1de6edba a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3175,7 +3168,7 @@ aama:IDd35ebd5f-66f0-4f69-a712-ddb6ec475776 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-emlelekk
 
-aama:IDbf620d63-ad7d-40ab-8ea0-35ab5956006d a aamas:Term ;
+aama:ID48d8c253-7b30-4848-a759-b52553c0c26c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3191,7 +3184,7 @@ aama:IDbf620d63-ad7d-40ab-8ea0-35ab5956006d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-emeet
 
-aama:ID6e6c4ee2-8260-4ff7-bbae-0d656403b2b1 a aamas:Term ;
+aama:IDc7837a36-864a-48eb-be0f-9c22cc2a5551 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3207,7 +3200,7 @@ aama:ID6e6c4ee2-8260-4ff7-bbae-0d656403b2b1 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-beet
 
-aama:ID2eff7fc8-1bad-458e-a77b-279625bef0a8 a aamas:Term ;
+aama:IDc85da21b-c420-4e05-87b4-466b8aeefa6a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3223,7 +3216,7 @@ aama:ID2eff7fc8-1bad-458e-a77b-279625bef0a8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-err
 
-aama:ID8f22f225-d5b0-481e-a2e4-69682d1dce50 a aamas:Term ;
+aama:ID3c25751a-ca0f-4fab-b0bf-f786451f5665 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3239,7 +3232,7 @@ aama:ID8f22f225-d5b0-481e-a2e4-69682d1dce50 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ooog
 
-aama:ID409ea9d0-1550-43a0-b51e-0b2e853fca13 a aamas:Term ;
+aama:ID7cc7ba57-baee-4766-8337-79aa8b0fc2d1 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3255,7 +3248,7 @@ aama:ID409ea9d0-1550-43a0-b51e-0b2e853fca13 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-ul
 
-aama:ID1e5e18c1-150f-4d89-a664-b8c8be304b0b a aamas:Term ;
+aama:ID605d928f-a1b6-41df-a0e2-d56854d0fba4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3271,7 +3264,7 @@ aama:ID1e5e18c1-150f-4d89-a664-b8c8be304b0b a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegImperf-ab
 
-aama:ID88f1c4e0-3561-4f95-bc5f-281cdc9e9bbb a aamas:Term ;
+aama:ID24b05c2c-f5cc-4ced-84f6-3916bff0d5bc a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -3287,7 +3280,7 @@ aama:ID88f1c4e0-3561-4f95-bc5f-281cdc9e9bbb a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eney-
 
-aama:IDb40ecb0c-ee21-4437-a27f-7cb29518b327 a aamas:Term ;
+aama:IDb2837db3-8add-4d73-9e42-6eba7ff2e98a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3303,7 +3296,7 @@ aama:IDb40ecb0c-ee21-4437-a27f-7cb29518b327 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-eedeg
 
-aama:ID79e61e5b-a8ea-463f-a13f-c50d9d13a4be a aamas:Term ;
+aama:IDe865204e-eda4-4d24-ac7e-3529a410cf0e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3319,7 +3312,7 @@ aama:ID79e61e5b-a8ea-463f-a13f-c50d9d13a4be a aamas:Term ;
 
 #TERMCLUSTER: saho-VIrreg-li
 
-aama:IDf8607fd5-5c74-47a2-ab10-b6a3a21f8a3b a aamas:Term ;
+aama:IDa21a6d00-8bc5-473a-b493-6afb2a06fd71 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3330,7 +3323,7 @@ aama:IDf8607fd5-5c74-47a2-ab10-b6a3a21f8a3b a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:IDb05cf7f8-9b11-4afa-ad2f-265ca54294f0 a aamas:Term ;
+aama:ID983359df-f866-44b3-9b23-998a16a7f2c7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3341,7 +3334,7 @@ aama:IDb05cf7f8-9b11-4afa-ad2f-265ca54294f0 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDdab4b69c-65cc-4cc3-8d24-59ffea3996b1 a aamas:Term ;
+aama:ID68930184-f1ab-487f-9210-5e00a8481b05 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3352,7 +3345,7 @@ aama:IDdab4b69c-65cc-4cc3-8d24-59ffea3996b1 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDeadf21a2-66f4-4f67-adc4-2e8f999c3722 a aamas:Term ;
+aama:ID07241ede-fa0f-4d7d-8c57-3341b8a627c7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3363,7 +3356,7 @@ aama:IDeadf21a2-66f4-4f67-adc4-2e8f999c3722 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDa1abd313-3c2c-4bf1-b38d-1168e0ab1e7c a aamas:Term ;
+aama:IDe3b702e9-5f47-4398-872c-a92234b1238e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3374,7 +3367,7 @@ aama:IDa1abd313-3c2c-4bf1-b38d-1168e0ab1e7c a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:IDdeb4f784-2503-4de9-a393-1e9c74f2cc22 a aamas:Term ;
+aama:ID450967f8-5aaa-414e-b17a-00e349257d2f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3385,7 +3378,7 @@ aama:IDdeb4f784-2503-4de9-a393-1e9c74f2cc22 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID96f2d8a6-8cdb-4cfc-9e60-433031758d33 a aamas:Term ;
+aama:ID88b040a3-0764-4cf1-b6da-a70ff79cae2c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Irregular ;
 	aamas:lexeme aama:Saho-li ;
@@ -3399,7 +3392,7 @@ aama:ID96f2d8a6-8cdb-4cfc-9e60-433031758d33 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eebeh
 
-aama:ID052c57f6-96c5-47b7-93e1-6efa80970693 a aamas:Term ;
+aama:ID70ac2e22-0e76-4842-b06b-6999f9177de9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3415,7 +3408,7 @@ aama:ID052c57f6-96c5-47b7-93e1-6efa80970693 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-igdif
 
-aama:ID3ab5abba-a4ad-4027-a6fa-8baf3fdf0024 a aamas:Term ;
+aama:ID887dc8f4-5910-414a-98e4-7ceb0297f3fa a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3431,7 +3424,7 @@ aama:ID3ab5abba-a4ad-4027-a6fa-8baf3fdf0024 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-di
 
-aama:ID30aefcc2-df49-40d6-a277-3ce024cfecef a aamas:Term ;
+aama:ID5cbaffb4-a20f-4e04-ad2a-458e63243b1f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3447,7 +3440,7 @@ aama:ID30aefcc2-df49-40d6-a277-3ce024cfecef a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPart-gur
 
-aama:ID8292c058-fae1-48d0-b17b-b89db7942f24 a aamas:Term ;
+aama:IDc4a4794e-3949-42b1-ba2c-84aede88d30d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -3463,7 +3456,7 @@ aama:ID8292c058-fae1-48d0-b17b-b89db7942f24 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ootob
 
-aama:ID7461ebb4-ea1f-4afd-9926-a41c7b4f491c a aamas:Term ;
+aama:ID62237efd-d67e-40dc-aef6-dc4f1942c5ac a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3479,7 +3472,7 @@ aama:ID7461ebb4-ea1f-4afd-9926-a41c7b4f491c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oosol
 
-aama:ID1dd1723e-d88f-4157-b8fa-e29aa7df08f3 a aamas:Term ;
+aama:IDcb51fd03-277d-41d5-8661-4fc7c2447755 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3495,7 +3488,7 @@ aama:ID1dd1723e-d88f-4157-b8fa-e29aa7df08f3 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-oofo
 
-aama:IDdf19ea00-3ba2-483a-8a99-6a692f3d56e2 a aamas:Term ;
+aama:IDa996960c-b99a-4bb9-9817-9552b2c9377c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3511,7 +3504,7 @@ aama:IDdf19ea00-3ba2-483a-8a99-6a692f3d56e2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-di
 
-aama:ID680ffc91-e563-468d-9824-207481f641c2 a aamas:Term ;
+aama:ID7edb4890-a1fd-4332-ae2b-39017331c604 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3527,7 +3520,7 @@ aama:ID680ffc91-e563-468d-9824-207481f641c2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPart-ehet
 
-aama:ID90e964b2-5b77-44d0-ae0c-0bcc11b3a2c1 a aamas:Term ;
+aama:IDb1b657e1-7ca7-4393-b7e5-52ee9375aa55 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -3543,7 +3536,7 @@ aama:ID90e964b2-5b77-44d0-ae0c-0bcc11b3a2c1 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eeneb
 
-aama:IDe88e62a5-cd12-4cf5-bb1f-5a78ed68984f a aamas:Term ;
+aama:IDf8b49765-bce1-4523-8140-033840130da7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3559,7 +3552,7 @@ aama:IDe88e62a5-cd12-4cf5-bb1f-5a78ed68984f a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ehlif
 
-aama:IDebfa618f-e928-4dc7-8983-187104f49981 a aamas:Term ;
+aama:IDa460c94b-975d-4136-b887-ca7917408e11 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3575,7 +3568,7 @@ aama:IDebfa618f-e928-4dc7-8983-187104f49981 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-igdil
 
-aama:ID52653933-ac9d-4b0d-b198-82dd822fba5a a aamas:Term ;
+aama:ID7d136155-8c72-4733-87b9-ffa4c8312e5d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3591,7 +3584,7 @@ aama:ID52653933-ac9d-4b0d-b198-82dd822fba5a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefPerf-inni
 
-aama:IDb05bcda2-42ba-4203-9151-0bb1034e78f3 a aamas:Term ;
+aama:IDc8f9966e-a0c4-420e-b238-1642a910f889 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3602,7 +3595,7 @@ aama:IDb05bcda2-42ba-4203-9151-0bb1034e78f3 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID0526985e-0018-46f3-8e35-c429eb5c5579 a aamas:Term ;
+aama:ID431c0777-1c63-4f5b-9ca7-4cd25966f8c7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3613,7 +3606,7 @@ aama:ID0526985e-0018-46f3-8e35-c429eb5c5579 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID36e445af-38fa-441f-818e-b3345f4f207a a aamas:Term ;
+aama:IDd51b2178-dd82-43e6-8170-3422ac08b589 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3624,7 +3617,7 @@ aama:ID36e445af-38fa-441f-818e-b3345f4f207a a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDfd1c2411-19dd-47e6-9c9a-66bf4aaab7f3 a aamas:Term ;
+aama:ID82bda779-2a0e-46ce-8415-2458cf707d44 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3635,7 +3628,7 @@ aama:IDfd1c2411-19dd-47e6-9c9a-66bf4aaab7f3 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:IDaea9f41a-fb87-4fd0-a9ea-e3db17e6eca0 a aamas:Term ;
+aama:ID63a6caaa-0780-47a3-a4eb-9642d7d392e5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3646,7 +3639,7 @@ aama:IDaea9f41a-fb87-4fd0-a9ea-e3db17e6eca0 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:ID7fc4bcfe-c093-42a5-8db2-cd794bf0b89e a aamas:Term ;
+aama:ID6c1fe12e-cbca-4de7-93a4-86ebbdd21cfe a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3657,7 +3650,7 @@ aama:ID7fc4bcfe-c093-42a5-8db2-cd794bf0b89e a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDd1d5b5ed-d56e-46b0-83dd-5298322c4af1 a aamas:Term ;
+aama:ID64247a1d-3591-4690-ae02-ec86ffb8128d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -3671,7 +3664,7 @@ aama:IDd1d5b5ed-d56e-46b0-83dd-5298322c4af1 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-edebb
 
-aama:ID47ac3746-7379-4045-bf98-6b31ee107bf5 a aamas:Term ;
+aama:ID7ca16608-0dab-4979-a2aa-74c7924c5ca6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3687,7 +3680,7 @@ aama:ID47ac3746-7379-4045-bf98-6b31ee107bf5 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-baah
 
-aama:IDedf49661-69e8-40f2-b825-6434cbe73562 a aamas:Term ;
+aama:ID16b58353-11f0-4dec-a3d3-d76d7bc554e8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3703,7 +3696,7 @@ aama:IDedf49661-69e8-40f2-b825-6434cbe73562 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-usul
 
-aama:ID06df70f7-6120-4777-a0c8-f8ebf03d5b2d a aamas:Term ;
+aama:ID9f61cf73-8746-43c5-85ca-ef3468e40e83 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3719,7 +3712,7 @@ aama:ID06df70f7-6120-4777-a0c8-f8ebf03d5b2d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImprtv-erd
 
-aama:ID7ca16f02-bd40-431f-b67e-dacdd679e8cd a aamas:Term ;
+aama:ID7a6541a2-d0aa-43d3-8953-0c7f2abfe72f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -3735,7 +3728,7 @@ aama:ID7ca16f02-bd40-431f-b67e-dacdd679e8cd a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-uuluus-
 
-aama:ID165dc24e-f7f1-4ec4-a054-c6d82a539f15 a aamas:Term ;
+aama:ID7db0e476-2ac6-4324-ab57-674fe615576e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3751,7 +3744,7 @@ aama:ID165dc24e-f7f1-4ec4-a054-c6d82a539f15 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ifrid
 
-aama:ID7554132d-e093-4821-9bc3-8ade0e8291b1 a aamas:Term ;
+aama:ID79b50709-ba4a-4707-88cd-f0498376187c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3767,7 +3760,7 @@ aama:ID7554132d-e093-4821-9bc3-8ade0e8291b1 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-eymee
 
-aama:IDb5119473-2dde-459d-bd7f-60be645744f8 a aamas:Term ;
+aama:ID23b39c99-c928-4246-8a8d-e8cea99baeb4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3783,7 +3776,7 @@ aama:IDb5119473-2dde-459d-bd7f-60be645744f8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-onqoomot-
 
-aama:IDc53c9696-77dd-4af0-8345-279f2a63b0a8 a aamas:Term ;
+aama:IDce1487b6-509a-4ee9-adf1-8024d1fb4098 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3799,7 +3792,7 @@ aama:IDc53c9696-77dd-4af0-8345-279f2a63b0a8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-igre
 
-aama:ID253ff89a-a926-4128-89ae-7e6e6276b61e a aamas:Term ;
+aama:ID872e224f-021b-4e2a-9e35-f80990118d79 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3815,7 +3808,7 @@ aama:ID253ff89a-a926-4128-89ae-7e6e6276b61e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eedeg
 
-aama:ID3a4481d6-df2e-4363-832e-109a6c72fb1d a aamas:Term ;
+aama:IDb65502a9-40ee-4a91-b744-f68e760f8ffc a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3831,7 +3824,7 @@ aama:ID3a4481d6-df2e-4363-832e-109a6c72fb1d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ifteh
 
-aama:ID71305443-de92-4d52-b97f-f57177fedcf5 a aamas:Term ;
+aama:ID770396fa-9236-4d2f-bb24-ae9ba8918d69 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3847,7 +3840,7 @@ aama:ID71305443-de92-4d52-b97f-f57177fedcf5 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ekkel
 
-aama:ID1f50cd7e-9165-4afa-9020-71f9926b7ce9 a aamas:Term ;
+aama:IDa02f51e4-8f57-4771-8e7a-47d834b2c5a1 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3863,7 +3856,7 @@ aama:ID1f50cd7e-9165-4afa-9020-71f9926b7ce9 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-abaas
 
-aama:ID7c98e703-e856-49d2-a28b-d40ca53354c4 a aamas:Term ;
+aama:ID3bfa6846-e8d1-45e0-8bd2-75a32982668c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3879,7 +3872,7 @@ aama:ID7c98e703-e856-49d2-a28b-d40ca53354c4 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-oosoom
 
-aama:ID0e1edd26-ed09-4478-aa27-2c475c0464ab a aamas:Term ;
+aama:ID3a32b7e4-effc-4e41-8843-76cedb4d2378 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3895,7 +3888,7 @@ aama:ID0e1edd26-ed09-4478-aa27-2c475c0464ab a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-uruf
 
-aama:ID811bdb21-00c5-4035-b19b-35398c7f092c a aamas:Term ;
+aama:IDabd8c5df-43a0-47cc-ae09-b336021195f5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -3911,7 +3904,7 @@ aama:ID811bdb21-00c5-4035-b19b-35398c7f092c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-uyku
 
-aama:ID5d8a926c-fedd-45e7-913e-50d56a82726c a aamas:Term ;
+aama:ID15ce1b9f-1eba-41cd-b4e6-9f49b78abe05 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3927,7 +3920,7 @@ aama:ID5d8a926c-fedd-45e7-913e-50d56a82726c a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-baah
 
-aama:ID4b44b417-e681-4641-862f-b87dd2bcc16e a aamas:Term ;
+aama:IDe65c6af4-10b4-4dff-8531-23d03f9f14b8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3943,7 +3936,7 @@ aama:ID4b44b417-e681-4641-862f-b87dd2bcc16e a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-fah
 
-aama:IDd216deb6-23c6-4f39-a917-59d268a3487c a aamas:Term ;
+aama:ID6d55147b-f963-43e7-83ad-06b0a3166899 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3959,7 +3952,7 @@ aama:IDd216deb6-23c6-4f39-a917-59d268a3487c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-imbiddil-
 
-aama:ID56531a67-86de-4309-a169-89aa09ff2600 a aamas:Term ;
+aama:IDd30edee9-bd99-44a9-aa20-632ca6f064ac a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3975,7 +3968,7 @@ aama:ID56531a67-86de-4309-a169-89aa09ff2600 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-infili-
 
-aama:ID7834286e-d5e3-4789-ac6b-53bc785393ce a aamas:Term ;
+aama:ID3922086b-e8e9-43fe-a147-af9958fcd519 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -3991,7 +3984,7 @@ aama:ID7834286e-d5e3-4789-ac6b-53bc785393ce a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImperf-eedeg
 
-aama:IDb612a528-3616-434c-a00f-d99432e8ae28 a aamas:Term ;
+aama:IDcbf6492d-13f9-4187-a445-37b60504c4bd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -4007,7 +4000,7 @@ aama:IDb612a528-3616-434c-a00f-d99432e8ae28 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eemeg
 
-aama:IDcef41cd4-de29-4daa-9118-86db5d8d8718 a aamas:Term ;
+aama:ID109c2772-f554-4b32-977a-e6b631aafb2b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4023,10 +4016,10 @@ aama:IDcef41cd4-de29-4daa-9118-86db5d8d8718 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegJuss-daam
 
-aama:ID9718cc61-07b7-41ad-8b89-742dec3f9f6a a aamas:Term ;
+aama:IDb2a42efc-0730-4218-b3aa-4d38d7b6cea9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:I didn’t (?) buy it ;
+	sah:token-gloss "I didn’t (?) buy it" ;
 	sah:polarity sah:Negative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-daam ;
@@ -4040,7 +4033,7 @@ aama:ID9718cc61-07b7-41ad-8b89-742dec3f9f6a a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-bad
 
-aama:IDed29fe4a-8522-4802-9c8c-cb25745e8b4c a aamas:Term ;
+aama:IDa08fe69e-5f61-4675-ad85-59741ac4a675 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4056,7 +4049,7 @@ aama:IDed29fe4a-8522-4802-9c8c-cb25745e8b4c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-iksib
 
-aama:IDc02d1a9b-f185-4a4d-9215-45c77ad799b4 a aamas:Term ;
+aama:IDb67fadf8-4b01-4879-8daf-090c87b55efc a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4072,10 +4065,10 @@ aama:IDc02d1a9b-f185-4a4d-9215-45c77ad799b4 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-li-emeet
 
-aama:IDa652e860-98e2-4e20-8909-434c8015df72 a aamas:Term ;
+aama:ID5455ef48-62c8-4d79-8fb7-1356797760e3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:we will come (future) ;
+	sah:token-gloss "we will come (future)" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-emeet ;
@@ -4089,7 +4082,7 @@ aama:IDa652e860-98e2-4e20-8909-434c8015df72 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ooob
 
-aama:IDd0f9fe30-6a03-451a-a814-c8834a03d2c5 a aamas:Term ;
+aama:ID3ce817cd-0841-4acb-a7e2-d9e0ecc0887b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4105,7 +4098,7 @@ aama:IDd0f9fe30-6a03-451a-a814-c8834a03d2c5 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-abaas
 
-aama:ID8c1514bc-01b0-4ba0-a43f-7d4c268ada37 a aamas:Term ;
+aama:ID1f7463eb-5f35-4fc2-87ad-f785da64d9ec a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4121,10 +4114,10 @@ aama:ID8c1514bc-01b0-4ba0-a43f-7d4c268ada37 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-m-rab
 
-aama:ID16414ed0-7e24-40d1-9af2-dfdd35abf5d9 a aamas:Term ;
+aama:ID46b30d66-076c-44cb-aaff-64a2104b3b66 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
-	sah:token-gloss sah:rabtem mango ‘many died’ ;
+	sah:token-gloss "rabtem mango ‘many died’" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-rab ;
@@ -4138,7 +4131,7 @@ aama:ID16414ed0-7e24-40d1-9af2-dfdd35abf5d9 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-eehet
 
-aama:ID93f80dcb-4519-4b1d-8b55-f7cc38986b3b a aamas:Term ;
+aama:ID86ea3f65-f37f-44a4-a258-de280e157d5a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4154,7 +4147,7 @@ aama:ID93f80dcb-4519-4b1d-8b55-f7cc38986b3b a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-enzewer-
 
-aama:ID62d67f4b-5785-487b-a91e-92954653ca68 a aamas:Term ;
+aama:ID397577fb-4b60-4865-9563-057fea65fe8c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4170,7 +4163,7 @@ aama:ID62d67f4b-5785-487b-a91e-92954653ca68 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ifriy
 
-aama:ID90d364cc-1c65-43a1-9a4b-f81bd252da1f a aamas:Term ;
+aama:IDdb8af1a4-b4c0-4fbf-8966-2b95407df985 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
 	sah:polarity sah:Affirmative ;
@@ -4186,7 +4179,7 @@ aama:ID90d364cc-1c65-43a1-9a4b-f81bd252da1f a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-abaar
 
-aama:IDa855ef14-100d-4eb6-a03e-6c90a416a43d a aamas:Term ;
+aama:IDd058f1bd-dfeb-4eee-8397-102b4e9dbb37 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4202,7 +4195,7 @@ aama:IDa855ef14-100d-4eb6-a03e-6c90a416a43d a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffPerf-ak
 
-aama:IDeacf4cc1-28dd-4f03-834c-3f2e5cb09733 a aamas:Term ;
+aama:IDfe0d10d4-f5ee-4fbc-a388-0859ac847692 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4213,7 +4206,7 @@ aama:IDeacf4cc1-28dd-4f03-834c-3f2e5cb09733 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:IDfc17aaa0-af91-4156-bae2-255f704ea462 a aamas:Term ;
+aama:IDc545263e-c186-47a3-a87a-81c9c13192c8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4224,7 +4217,7 @@ aama:IDfc17aaa0-af91-4156-bae2-255f704ea462 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDaebd6408-67cc-4e04-b550-fb91ca09a6a6 a aamas:Term ;
+aama:ID889c2fa2-ad81-42c5-8d42-92ca976bb325 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4235,7 +4228,7 @@ aama:IDaebd6408-67cc-4e04-b550-fb91ca09a6a6 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDcb2c22a1-a1a6-44fe-af81-7332b2d9363e a aamas:Term ;
+aama:ID7311d3d3-a3a9-41c9-ab9a-584b3e826479 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4246,7 +4239,7 @@ aama:IDcb2c22a1-a1a6-44fe-af81-7332b2d9363e a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:ID7ccd74cb-e095-4439-9f5e-c0cfefe284ea a aamas:Term ;
+aama:ID543816e0-5585-4395-bda5-7ccc5c092010 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4257,7 +4250,7 @@ aama:ID7ccd74cb-e095-4439-9f5e-c0cfefe284ea a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID5ad13a34-9950-4590-a43e-93377188dfc2 a aamas:Term ;
+aama:ID6e2d55db-9c1e-4335-aa3c-a62e7e1e852f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4268,7 +4261,7 @@ aama:ID5ad13a34-9950-4590-a43e-93377188dfc2 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID2bccc637-524f-4327-a6cb-7bf393728e02 a aamas:Term ;
+aama:IDd1829223-a61c-4262-a954-95d228824a48 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-ak ;
@@ -4282,7 +4275,7 @@ aama:ID2bccc637-524f-4327-a6cb-7bf393728e02 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPart-uruf
 
-aama:ID628b6ce8-c09f-41fb-a47b-460475de2deb a aamas:Term ;
+aama:IDc05c1106-cbad-4c28-af5b-abc773231988 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -4298,10 +4291,10 @@ aama:ID628b6ce8-c09f-41fb-a47b-460475de2deb a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegPerf-iskir
 
-aama:ID28a54dcb-00e1-4019-8a42-959686f593ef a aamas:Term ;
+aama:ID92126e8e-58c4-4707-966c-e0f227621a81 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
-	sah:token-gloss sah:he didn’t get drunk ;
+	sah:token-gloss "he didn’t get drunk" ;
 	sah:polarity sah:Negative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-iskir ;
@@ -4315,7 +4308,7 @@ aama:ID28a54dcb-00e1-4019-8a42-959686f593ef a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eemen
 
-aama:ID65dc38fa-a8c0-4696-a205-5c9d017d0e33 a aamas:Term ;
+aama:ID50c6b7dc-4889-450d-bba0-fc6864bf87da a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4331,7 +4324,7 @@ aama:ID65dc38fa-a8c0-4696-a205-5c9d017d0e33 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oysoom
 
-aama:ID3afd76db-f9ed-4c6f-bb67-3c7adae7192e a aamas:Term ;
+aama:IDe5286bbb-9397-4141-859f-acc5e314ce5d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4347,7 +4340,7 @@ aama:ID3afd76db-f9ed-4c6f-bb67-3c7adae7192e a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-biaak
 
-aama:ID6904b13a-df47-4ea0-b893-25b19f15a771 a aamas:Term ;
+aama:ID70077236-d10a-475e-90a7-5aa898d375ad a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4363,7 +4356,7 @@ aama:ID6904b13a-df47-4ea0-b893-25b19f15a771 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-abaar
 
-aama:IDa2091ec9-f50b-4f1c-832c-94ae6f41ece4 a aamas:Term ;
+aama:ID22b53946-b5ac-4486-a28c-328f8d5a0dbd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4379,7 +4372,7 @@ aama:IDa2091ec9-f50b-4f1c-832c-94ae6f41ece4 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-had
 
-aama:IDa5b7f965-81ea-4e0a-b9cc-a89664591815 a aamas:Term ;
+aama:ID09dc6940-488e-4c22-8e2f-7f423a44e2a9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4395,7 +4388,7 @@ aama:IDa5b7f965-81ea-4e0a-b9cc-a89664591815 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-igziy
 
-aama:IDb56ff240-96df-49cd-b16b-ae747b9cc4fd a aamas:Term ;
+aama:ID03c3a8d8-f599-4bcb-96b2-ef8399fcf14f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4411,7 +4404,7 @@ aama:IDb56ff240-96df-49cd-b16b-ae747b9cc4fd a aamas:Term ;
 
 #TERMCLUSTER: saho-VPref-ed
 
-aama:IDc6242a24-359f-4f16-96d5-eaae215ea90a a aamas:Term ;
+aama:ID50240325-bec7-40c3-a66e-17eed3c4fc1b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ed ;
@@ -4422,7 +4415,7 @@ aama:IDc6242a24-359f-4f16-96d5-eaae215ea90a a aamas:Term ;
 	sah:person sah:Person1 ;
 	sah:number sah:Singular ;
 	.
-aama:ID365946c0-b1a5-4a71-ae2e-7f193f5b8bb4 a aamas:Term ;
+aama:IDac8daa39-15eb-4727-8f74-633b6edd85b4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ed ;
@@ -4433,7 +4426,7 @@ aama:ID365946c0-b1a5-4a71-ae2e-7f193f5b8bb4 a aamas:Term ;
 	sah:person sah:Person1 ;
 	sah:number sah:Singular ;
 	.
-aama:IDe6cfdc17-4d15-4afc-a337-880c9d0e8881 a aamas:Term ;
+aama:IDb5802205-9cff-4231-b7f5-804b0cd5a80c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ed ;
@@ -4444,7 +4437,7 @@ aama:IDe6cfdc17-4d15-4afc-a337-880c9d0e8881 a aamas:Term ;
 	sah:person sah:Person2 ;
 	sah:number sah:Singular ;
 	.
-aama:ID44fb297c-6e33-4f71-99f1-961550937ed9 a aamas:Term ;
+aama:IDca64fe14-4bd8-442a-a9ba-e0b96bd2733c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ed ;
@@ -4455,7 +4448,7 @@ aama:ID44fb297c-6e33-4f71-99f1-961550937ed9 a aamas:Term ;
 	sah:person sah:Common ;
 	sah:number sah:Common ;
 	.
-aama:ID577e2d61-fc1d-49e1-a575-5c8fe7e75ce8 a aamas:Term ;
+aama:ID2d35aacc-d104-4cc8-b093-f54946bde5e8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ed ;
@@ -4469,7 +4462,7 @@ aama:ID577e2d61-fc1d-49e1-a575-5c8fe7e75ce8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-inebe
 
-aama:ID59a3f8c6-9f7d-4b70-95f0-d40827326a7b a aamas:Term ;
+aama:ID8d67e996-fab9-434b-8700-ddf921714dd2 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4485,7 +4478,7 @@ aama:ID59a3f8c6-9f7d-4b70-95f0-d40827326a7b a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-fuu
 
-aama:ID36fba93a-b073-4458-babb-1d7da3cd486e a aamas:Term ;
+aama:ID8ee5b1e1-dfca-4916-898c-92a9aa933d56 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4501,7 +4494,7 @@ aama:ID36fba93a-b073-4458-babb-1d7da3cd486e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ekett
 
-aama:ID905f5d31-6215-4a78-b936-5e8107771c2d a aamas:Term ;
+aama:IDd6b675da-8957-4bd1-b829-081f69296fcd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4517,7 +4510,7 @@ aama:ID905f5d31-6215-4a78-b936-5e8107771c2d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-ekett
 
-aama:ID6474f389-b083-4d4f-8212-37b1c6c10906 a aamas:Term ;
+aama:ID96c72563-da4f-46dc-a5c8-639c36e6ef0b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4533,7 +4526,7 @@ aama:ID6474f389-b083-4d4f-8212-37b1c6c10906 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPart-daam
 
-aama:IDf771272f-0604-42b6-a2f6-9d2bb923ba0a a aamas:Term ;
+aama:ID22f59f38-04a9-40bb-af26-8796de5773a5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -4549,7 +4542,7 @@ aama:IDf771272f-0604-42b6-a2f6-9d2bb923ba0a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eeley
 
-aama:IDecb9a7b3-e155-465d-80b2-e747470a697d a aamas:Term ;
+aama:IDdea99821-d95e-4302-836f-d9c5a50b7742 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4565,7 +4558,7 @@ aama:IDecb9a7b3-e155-465d-80b2-e747470a697d a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImprtv-igdil
 
-aama:ID7644d59f-68e1-4933-a936-bd9d325bf626 a aamas:Term ;
+aama:IDf14bca04-8f7a-42da-bcab-6e457a4fc3e9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -4581,7 +4574,7 @@ aama:ID7644d59f-68e1-4933-a936-bd9d325bf626 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-fah
 
-aama:ID7104ee90-bd26-47df-8ca3-a8acd2093d8a a aamas:Term ;
+aama:IDdac7a363-29d7-4024-999b-b50c6efa60e3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4597,7 +4590,7 @@ aama:ID7104ee90-bd26-47df-8ca3-a8acd2093d8a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-eeley
 
-aama:IDe1ca7beb-279c-4d5f-ba3b-c978c21f3ba7 a aamas:Term ;
+aama:ID4f0a5807-09a5-4a00-a6b3-74b599918ac9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4613,7 +4606,7 @@ aama:IDe1ca7beb-279c-4d5f-ba3b-c978c21f3ba7 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-uuluus-
 
-aama:ID438b29b4-6e0a-4c0d-aef0-e69b709f5474 a aamas:Term ;
+aama:ID421d76e0-40aa-459b-9df1-a9b5147a98ba a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4629,7 +4622,7 @@ aama:ID438b29b4-6e0a-4c0d-aef0-e69b709f5474 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegImperf-daam
 
-aama:IDefa294ac-a8bb-4f60-a02d-22742717681c a aamas:Term ;
+aama:IDb8839364-33fa-44f3-bcb2-20b5423127d6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -4645,7 +4638,7 @@ aama:IDefa294ac-a8bb-4f60-a02d-22742717681c a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-defee
 
-aama:ID7ed0cedd-a3a5-46cc-aff5-1623247233ec a aamas:Term ;
+aama:ID8bb755aa-997d-425e-b3e2-35a0c476ccc5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4661,7 +4654,7 @@ aama:ID7ed0cedd-a3a5-46cc-aff5-1623247233ec a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-bad
 
-aama:ID29cd1aa4-ddf0-4949-8937-e877c6ae717c a aamas:Term ;
+aama:ID21f287b4-970c-42f5-8d25-33cb7c0a1c2f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4677,7 +4670,7 @@ aama:ID29cd1aa4-ddf0-4949-8937-e877c6ae717c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-isniq
 
-aama:IDdb3e62ed-5f7d-401d-bf7b-76ed115b2440 a aamas:Term ;
+aama:ID0d4a86d3-9a68-480d-87bf-c9c8f0598c70 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4693,7 +4686,7 @@ aama:IDdb3e62ed-5f7d-401d-bf7b-76ed115b2440 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-hay
 
-aama:ID3365c0b8-47f5-439b-bad3-75eec8dba334 a aamas:Term ;
+aama:IDf0e96176-6035-4b57-b947-70b05bc084c9 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4709,7 +4702,7 @@ aama:ID3365c0b8-47f5-439b-bad3-75eec8dba334 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-ab
 
-aama:ID049d18a9-7c58-4579-b53c-1b4d08ac55d7 a aamas:Term ;
+aama:ID2d36f1e6-3b2d-47ff-9a1a-dd2209176ba4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4725,7 +4718,7 @@ aama:ID049d18a9-7c58-4579-b53c-1b4d08ac55d7 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffJuss-ki-alif
 
-aama:ID6339897c-637f-4546-89ae-9fa5be1c9d6f a aamas:Term ;
+aama:ID8362ca19-5f2f-4823-8754-5b9a7f52830f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4741,7 +4734,7 @@ aama:ID6339897c-637f-4546-89ae-9fa5be1c9d6f a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-do
 
-aama:ID17b82e50-75c2-4a69-b96a-206dcf47aead a aamas:Term ;
+aama:ID2cc017ac-19e5-42cd-939c-ec401e063081 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4757,7 +4750,7 @@ aama:ID17b82e50-75c2-4a69-b96a-206dcf47aead a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImprtv-iskir
 
-aama:ID1d89e730-2724-42fa-b4f3-8f1d7d61b78d a aamas:Term ;
+aama:ID65314c68-f199-4b07-a3f4-33f78fef2243 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -4773,7 +4766,7 @@ aama:ID1d89e730-2724-42fa-b4f3-8f1d7d61b78d a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPart-sa
 
-aama:IDfe4868aa-3cea-4046-bc1d-43f610099dd9 a aamas:Term ;
+aama:IDbd4a9c8f-3381-4d6c-ac27-eeafb1f559be a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -4789,10 +4782,10 @@ aama:IDfe4868aa-3cea-4046-bc1d-43f610099dd9 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-m-emeet
 
-aama:IDc2ff1513-383f-43a8-a563-46a60564c0fc a aamas:Term ;
+aama:ID085c7a8a-93c6-411f-a183-316ba4e6382a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:temeetem uble ‘I saw you coming’ ;
+	sah:token-gloss "temeetem uble ‘I saw you coming’" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-emeet ;
@@ -4806,7 +4799,7 @@ aama:IDc2ff1513-383f-43a8-a563-46a60564c0fc a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ibbid
 
-aama:ID96ce0618-f8e3-4cbd-80c5-c662b390276a a aamas:Term ;
+aama:ID8c30ee88-a299-4549-948b-eb6df6a4bb6d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4822,7 +4815,7 @@ aama:ID96ce0618-f8e3-4cbd-80c5-c662b390276a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ootok
 
-aama:ID24476f27-3407-49c3-8902-4f6b7f1e6691 a aamas:Term ;
+aama:ID23ecb407-bfd1-4154-8c95-8c9a0b351ea6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4838,7 +4831,7 @@ aama:ID24476f27-3407-49c3-8902-4f6b7f1e6691 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-emlelekk
 
-aama:IDeace63e0-ac7f-42ef-974b-3dcbff5fe896 a aamas:Term ;
+aama:ID78bfb6f4-3dbe-4513-941b-26403e5c4abd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4854,7 +4847,7 @@ aama:IDeace63e0-ac7f-42ef-974b-3dcbff5fe896 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-daam
 
-aama:ID47720cc3-b4aa-4dbe-ac02-892a3434a596 a aamas:Term ;
+aama:IDad8829b2-6b36-4bab-acfc-68765bda3fbf a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4870,7 +4863,7 @@ aama:ID47720cc3-b4aa-4dbe-ac02-892a3434a596 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ehlif
 
-aama:IDd868bafc-9b75-48a0-83f1-86043fdf0a57 a aamas:Term ;
+aama:ID2dd5198c-ca08-4f5e-9551-b038b2718428 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4886,7 +4879,7 @@ aama:IDd868bafc-9b75-48a0-83f1-86043fdf0a57 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-inebe
 
-aama:ID9b07cc1b-f890-4a1c-9c34-a3b703ae8839 a aamas:Term ;
+aama:ID197063e8-d5c9-4ade-ad7b-d5900e3693eb a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4902,7 +4895,7 @@ aama:ID9b07cc1b-f890-4a1c-9c34-a3b703ae8839 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ifteh
 
-aama:ID29d453d2-c92c-4d3d-8180-a0d21892e1cd a aamas:Term ;
+aama:ID7ec76f1d-177a-4b66-8529-f1ab74579d3f a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4918,7 +4911,7 @@ aama:ID29d453d2-c92c-4d3d-8180-a0d21892e1cd a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-obb
 
-aama:IDb5828eda-b258-4306-92b6-52ff948a9a91 a aamas:Term ;
+aama:IDd53de435-2d1d-437c-97b2-4ab955051aaf a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4934,7 +4927,7 @@ aama:IDb5828eda-b258-4306-92b6-52ff948a9a91 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eeit
 
-aama:ID16d38dbc-de1e-44cc-997f-2473eeded090 a aamas:Term ;
+aama:ID15c34eb7-1dbb-47a0-8d5b-bad91d179a91 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4950,7 +4943,7 @@ aama:ID16d38dbc-de1e-44cc-997f-2473eeded090 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-oho-
 
-aama:IDdbbd71b3-8242-4257-a1f8-7ba39de2f40b a aamas:Term ;
+aama:ID01d1195c-68cc-4bcf-afa7-570cda98edcb a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4966,7 +4959,7 @@ aama:IDdbbd71b3-8242-4257-a1f8-7ba39de2f40b a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-oosol
 
-aama:IDc367a802-3a0a-409e-85f4-77acc88364b8 a aamas:Term ;
+aama:ID35d9ef27-9746-480f-938c-3c537b066db3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -4982,7 +4975,7 @@ aama:IDc367a802-3a0a-409e-85f4-77acc88364b8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-edh
 
-aama:ID6da1809e-0a01-4085-bc54-6583cd391602 a aamas:Term ;
+aama:ID6c1acf73-be89-4475-bee0-fc3e7819a89b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -4998,7 +4991,7 @@ aama:ID6da1809e-0a01-4085-bc54-6583cd391602 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-oho-
 
-aama:IDf744d142-444c-41e6-b732-d5007624d3f0 a aamas:Term ;
+aama:IDf83d7ed4-4bcd-4b5b-a05b-406ccf84d71e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5014,7 +5007,7 @@ aama:IDf744d142-444c-41e6-b732-d5007624d3f0 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ibbid
 
-aama:IDb2f7841b-8682-4e83-ac10-42cbf8ec7cc5 a aamas:Term ;
+aama:ID33325a39-1bdd-4b83-9cb6-272627cd8d30 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5030,7 +5023,7 @@ aama:IDb2f7841b-8682-4e83-ac10-42cbf8ec7cc5 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffNegImprtv-fak
 
-aama:IDe87985ea-1977-480c-a9ac-c8fe02672e40 a aamas:Term ;
+aama:IDddbb012a-26dd-4687-86ae-1982e7b8ed73 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -5046,7 +5039,7 @@ aama:IDe87985ea-1977-480c-a9ac-c8fe02672e40 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-abah
 
-aama:ID31885da2-6fb4-4e8b-a42f-d27f9c9a2dea a aamas:Term ;
+aama:ID844c0e22-b799-495f-844d-08e9c152458d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5062,7 +5055,7 @@ aama:ID31885da2-6fb4-4e8b-a42f-d27f9c9a2dea a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefImperf-inni
 
-aama:ID2ae76142-d1f9-45ff-b138-3106539f0ecf a aamas:Term ;
+aama:IDb1237d02-e793-435e-aa8a-dc8b867041a6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5073,7 +5066,7 @@ aama:ID2ae76142-d1f9-45ff-b138-3106539f0ecf a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:ID8445ad40-84fc-4ea3-a344-7d7b0aa9411d a aamas:Term ;
+aama:IDb04532af-5534-45c8-bf62-e2f7e7268acc a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5084,7 +5077,7 @@ aama:ID8445ad40-84fc-4ea3-a344-7d7b0aa9411d a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDe1232161-6c28-4d28-b66d-56ff2ab5cb90 a aamas:Term ;
+aama:ID241f75e9-444d-4c15-a092-73b027d51efd a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5095,7 +5088,7 @@ aama:IDe1232161-6c28-4d28-b66d-56ff2ab5cb90 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:ID72a7983c-fe2b-4b94-bc95-94fea13b6d7d a aamas:Term ;
+aama:ID3e4a337d-8cfb-4be4-a5fa-fa5bd380f687 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5106,7 +5099,7 @@ aama:ID72a7983c-fe2b-4b94-bc95-94fea13b6d7d a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDcb3af15f-1911-428f-b634-58b531e22bbf a aamas:Term ;
+aama:ID65be50b6-75c0-4431-9700-4d065747796e a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5117,7 +5110,7 @@ aama:IDcb3af15f-1911-428f-b634-58b531e22bbf a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDd17b8294-f14e-4326-b3f9-3bb84600c5b7 a aamas:Term ;
+aama:ID2f153bf7-f809-417d-b66c-3d913fa22a16 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5128,7 +5121,7 @@ aama:IDd17b8294-f14e-4326-b3f9-3bb84600c5b7 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDe11f3b4b-b936-48b8-850c-a66105ad3bcb a aamas:Term ;
+aama:IDf950b331-8580-4d36-9556-f1038f5325d2 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5142,7 +5135,7 @@ aama:IDe11f3b4b-b936-48b8-850c-a66105ad3bcb a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ehzen
 
-aama:IDafb92635-0f8c-4ffd-8f98-28abfe7d632a a aamas:Term ;
+aama:ID4f4eaf0e-35bc-4054-8758-a8cc8379139b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5158,7 +5151,7 @@ aama:IDafb92635-0f8c-4ffd-8f98-28abfe7d632a a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eney-
 
-aama:IDa8a9a3da-009f-4ae3-b885-485f151b0f7a a aamas:Term ;
+aama:ID27882c88-a6bf-47dc-8c9a-5962e7630321 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5174,7 +5167,7 @@ aama:IDa8a9a3da-009f-4ae3-b885-485f151b0f7a a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffJuss-dufu
 
-aama:ID3e74e80d-8520-4aef-bbaa-d95990a7e25e a aamas:Term ;
+aama:ID419df954-ee73-40cf-8414-98842b799be7 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5190,7 +5183,7 @@ aama:ID3e74e80d-8520-4aef-bbaa-d95990a7e25e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-eheeseb
 
-aama:ID2a1c6d1f-c8c0-4025-88fa-4a13644ddeea a aamas:Term ;
+aama:ID969b51cb-59d6-49f1-92d7-6afe09bde482 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5206,10 +5199,10 @@ aama:ID2a1c6d1f-c8c0-4025-88fa-4a13644ddeea a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-m-rab
 
-aama:ID17340c8a-b52b-4fa0-bac6-a019eccd8297 a aamas:Term ;
+aama:IDd9865b89-eab6-4511-88f1-7844ca8a5b4d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
-	sah:token-gloss sah:rabtam mango ‘many are dying’ (subordinate) ;
+	sah:token-gloss "rabtam mango ‘many are dying’ (subordinate)" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-rab ;
@@ -5223,7 +5216,7 @@ aama:ID17340c8a-b52b-4fa0-bac6-a019eccd8297 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffPerf-ab
 
-aama:ID7b94c1d1-36cc-4548-8029-d6eb9e14407c a aamas:Term ;
+aama:IDf6928e5a-4d85-4024-b586-8f17bee1a247 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5239,7 +5232,7 @@ aama:ID7b94c1d1-36cc-4548-8029-d6eb9e14407c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-igre
 
-aama:ID0c7d1ffd-eb9d-4b05-ad84-9ed7b307fa5c a aamas:Term ;
+aama:ID912f67ac-76df-4c50-9fb4-ad4568a3ed34 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5255,7 +5248,7 @@ aama:ID0c7d1ffd-eb9d-4b05-ad84-9ed7b307fa5c a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-ab
 
-aama:ID67e69d43-b53c-4557-816a-4801ec495ec3 a aamas:Term ;
+aama:ID6e55e57b-45b0-46e3-80c4-127322231604 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5271,7 +5264,7 @@ aama:ID67e69d43-b53c-4557-816a-4801ec495ec3 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefNegImperf-oosol
 
-aama:IDca465fe7-08be-4729-bded-ae15118204d2 a aamas:Term ;
+aama:IDae00138d-1788-446a-a22e-87fb906f93f1 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Negative ;
@@ -5287,7 +5280,7 @@ aama:IDca465fe7-08be-4729-bded-ae15118204d2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-biaak
 
-aama:ID7147999a-b1b3-4cc0-a537-ccd0cb0509d7 a aamas:Term ;
+aama:IDa60fec07-dfcd-4f78-9b3e-175f9ffad53d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5303,7 +5296,7 @@ aama:ID7147999a-b1b3-4cc0-a537-ccd0cb0509d7 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ooob
 
-aama:ID1c148b50-d893-47d9-a294-0ad7d2651faf a aamas:Term ;
+aama:ID1d91d3d3-b504-45b9-be4e-523419879ead a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5319,7 +5312,7 @@ aama:ID1c148b50-d893-47d9-a294-0ad7d2651faf a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-uruf
 
-aama:IDd4483db4-3526-4e17-92b3-5fd99e001150 a aamas:Term ;
+aama:ID2d962c99-e63e-4ab0-9d5c-94b8a0f45781 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -5335,10 +5328,10 @@ aama:IDd4483db4-3526-4e17-92b3-5fd99e001150 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ubl
 
-aama:IDd2268f26-0930-45e7-9f72-72c5c076da94 a aamas:Term ;
+aama:ID7dd04b40-7c9a-492e-82a9-563330c2dab0 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:show ;
+	sah:token-gloss "show" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -5349,10 +5342,10 @@ aama:IDd2268f26-0930-45e7-9f72-72c5c076da94 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:token "uybullu" ;
 	.
-aama:IDb2cfed04-4571-4825-a6f2-f156a6bf187f a aamas:Term ;
+aama:IDb9a2aa6b-2aec-4c07-a764-93a6c10daa4d a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:show ;
+	sah:token-gloss "show" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-ubl ;
@@ -5366,7 +5359,7 @@ aama:IDb2cfed04-4571-4825-a6f2-f156a6bf187f a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-oysoom
 
-aama:ID10100044-5641-4c16-8ee4-d768e4aa8de8 a aamas:Term ;
+aama:IDa284f2cb-968d-4013-a766-603b1ee9d449 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5382,7 +5375,7 @@ aama:ID10100044-5641-4c16-8ee4-d768e4aa8de8 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ooog
 
-aama:IDd2dae29e-bd69-419b-b2a5-a1b21590b4cf a aamas:Term ;
+aama:IDc9f6291b-d2b5-48a2-a0c7-0a84e4cbd712 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5398,7 +5391,7 @@ aama:IDd2dae29e-bd69-419b-b2a5-a1b21590b4cf a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-deer
 
-aama:ID76fa422a-c3b8-42f2-97b3-c8788d1e6b62 a aamas:Term ;
+aama:ID94aa989c-9b02-4719-a394-de1b7653454b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5414,7 +5407,7 @@ aama:ID76fa422a-c3b8-42f2-97b3-c8788d1e6b62 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-igdil
 
-aama:IDa9c70fca-60ce-449c-b622-1477f60cd67e a aamas:Term ;
+aama:ID8f07510f-f2a6-4753-81ee-cd47bbe2f3e2 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5430,7 +5423,7 @@ aama:IDa9c70fca-60ce-449c-b622-1477f60cd67e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-ifriy
 
-aama:ID88d3274c-19cb-4fec-a397-9254418399e9 a aamas:Term ;
+aama:IDb9bcec00-1c96-4203-b96d-45de9c0c0e27 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5446,7 +5439,7 @@ aama:ID88d3274c-19cb-4fec-a397-9254418399e9 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ekkel
 
-aama:ID28817c2e-270b-4dc0-8520-9d23163896ae a aamas:Term ;
+aama:ID28a78fc4-26fe-4cff-b793-d947a7cb319c a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5462,7 +5455,7 @@ aama:ID28817c2e-270b-4dc0-8520-9d23163896ae a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefCopula-inni
 
-aama:ID09a25ac7-6464-47d6-b979-219f546917b6 a aamas:Term ;
+aama:IDb4be6d89-8bf4-481b-9e17-564f3506df05 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5473,7 +5466,7 @@ aama:ID09a25ac7-6464-47d6-b979-219f546917b6 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID3ff6fe3c-5d93-4baa-866a-5ae8c78bdfad a aamas:Term ;
+aama:ID7d076729-b292-44eb-a1e2-010b28dd2913 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5484,7 +5477,7 @@ aama:ID3ff6fe3c-5d93-4baa-866a-5ae8c78bdfad a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDad60fec8-2f1c-4a2c-b912-de5faf51a711 a aamas:Term ;
+aama:IDa00d6c66-2c9e-40b5-aff8-bedc7b9af5ed a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5495,7 +5488,7 @@ aama:IDad60fec8-2f1c-4a2c-b912-de5faf51a711 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:IDa5fe6279-4e32-4160-9c57-33393a36585c a aamas:Term ;
+aama:IDf33c5f84-4f78-42b6-b819-b149bc99e647 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5506,7 +5499,7 @@ aama:IDa5fe6279-4e32-4160-9c57-33393a36585c a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDf8235d4a-c990-443e-93fc-2f45178b1535 a aamas:Term ;
+aama:IDb1fae769-f5cb-4dab-935d-b99e5f1541b2 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5517,7 +5510,7 @@ aama:IDf8235d4a-c990-443e-93fc-2f45178b1535 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID65b17f37-b89d-4af3-a41f-b89debce8557 a aamas:Term ;
+aama:IDd771f939-8254-4622-b55c-9097b1f0879b a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5528,7 +5521,7 @@ aama:ID65b17f37-b89d-4af3-a41f-b89debce8557 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:IDdbbfbe17-ce94-4d5e-a1eb-02b279fff138 a aamas:Term ;
+aama:ID0b271317-67c1-4a06-b59f-21b71d0202c3 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Prefix ;
 	aamas:lexeme aama:Saho-inni ;
@@ -5542,7 +5535,7 @@ aama:IDdbbfbe17-ce94-4d5e-a1eb-02b279fff138 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-ifriy
 
-aama:ID6716a87a-85a8-4e9e-8e8b-0d329b92e5ee a aamas:Term ;
+aama:ID49ccfa3f-026a-432e-b6bc-dbfca82bb079 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Fem ;
 	sah:polarity sah:Affirmative ;
@@ -5558,7 +5551,7 @@ aama:ID6716a87a-85a8-4e9e-8e8b-0d329b92e5ee a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-ubl
 
-aama:ID35613c59-16e8-445d-b3ba-fa65cf94d1f3 a aamas:Term ;
+aama:IDc2317d12-75bc-4daa-a5b5-a5340ea71469 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5574,10 +5567,10 @@ aama:ID35613c59-16e8-445d-b3ba-fa65cf94d1f3 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-bolol
 
-aama:IDa1694029-175a-4804-b5c5-14486318879b a aamas:Term ;
+aama:IDa4dbdead-36e6-4440-b003-e0954de63ffe a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:have someone set fire ;
+	sah:token-gloss "have someone set fire" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-bolol ;
@@ -5591,7 +5584,7 @@ aama:IDa1694029-175a-4804-b5c5-14486318879b a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ekett
 
-aama:IDfe291418-b838-4f3d-a42c-24e9d4bb1b09 a aamas:Term ;
+aama:ID5b796d1f-47a7-4cc9-9e22-7c4dfc684089 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5607,7 +5600,7 @@ aama:IDfe291418-b838-4f3d-a42c-24e9d4bb1b09 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oho-
 
-aama:IDc970d7de-7009-4d33-9aed-5624a87eef83 a aamas:Term ;
+aama:ID40cba5e1-3abe-462b-8a71-5439f6c04eab a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5623,7 +5616,7 @@ aama:IDc970d7de-7009-4d33-9aed-5624a87eef83 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-erd
 
-aama:IDffcf5381-6228-4e1c-9749-c608f84f6ea0 a aamas:Term ;
+aama:ID826327ca-f4f2-4361-989a-d5f1a8c5c107 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5636,7 +5629,7 @@ aama:IDffcf5381-6228-4e1c-9749-c608f84f6ea0 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:token "erda" ;
 	.
-aama:ID5d70b097-5eae-4b18-b9eb-8ff9702a38c3 a aamas:Term ;
+aama:IDe7eea08a-fe92-43b4-b5dd-c771f3d251e4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5652,7 +5645,7 @@ aama:ID5d70b097-5eae-4b18-b9eb-8ff9702a38c3 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImperf-alif
 
-aama:IDc9063a40-3ae4-4461-820a-9eac2841a202 a aamas:Term ;
+aama:IDcc21b48f-f69c-4504-8519-70a1f4cd5403 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5668,10 +5661,10 @@ aama:IDc9063a40-3ae4-4461-820a-9eac2841a202 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffJuss-daam
 
-aama:ID7698cc3f-d929-47ca-abfe-c69e8e8acdde a aamas:Term ;
+aama:ID5bdd398e-2fff-455b-8c82-5eb2e7c4cf28 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:ɗamo gura/faɗá-iane ‘I want to buy it’ ;
+	sah:token-gloss "ɗamo gura/faɗá-iane ‘I want to buy it’" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-daam ;
@@ -5685,7 +5678,7 @@ aama:ID7698cc3f-d929-47ca-abfe-c69e8e8acdde a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ikfil
 
-aama:ID11dc707d-a9bb-4d80-a282-0cc154d7a768 a aamas:Term ;
+aama:ID9df8537f-c25e-4e27-9c16-db7c854196c6 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5701,7 +5694,7 @@ aama:ID11dc707d-a9bb-4d80-a282-0cc154d7a768 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-ew
 
-aama:ID51bc9568-0004-49ac-a100-f43e3675c3b2 a aamas:Term ;
+aama:ID11cdffcc-6d1b-4f9f-b2f6-9510f5d74e48 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5717,7 +5710,7 @@ aama:ID51bc9568-0004-49ac-a100-f43e3675c3b2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-fuu
 
-aama:IDd82e3cd2-9f7b-4121-94e6-0eb86b0feaf5 a aamas:Term ;
+aama:IDc4fba043-4312-4ccb-aaac-9b9d08b14ec5 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5733,7 +5726,7 @@ aama:IDd82e3cd2-9f7b-4121-94e6-0eb86b0feaf5 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffPast-hab-
 
-aama:IDc9a76717-7e84-4745-84c1-49653db173db a aamas:Term ;
+aama:ID2e16c78d-98a4-4ec1-88d8-57a5ac6de0f0 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5744,7 +5737,7 @@ aama:IDc9a76717-7e84-4745-84c1-49653db173db a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID4f1dfc68-afa8-44c4-9332-f345dc7522c9 a aamas:Term ;
+aama:ID8f3529af-2ec5-4e43-b42b-cf011767cc99 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5755,7 +5748,7 @@ aama:ID4f1dfc68-afa8-44c4-9332-f345dc7522c9 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:IDaed5dcf2-e904-48e4-9b07-38e737fe3d44 a aamas:Term ;
+aama:IDc8922252-a499-4782-a5a2-741c2ce9a549 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5766,7 +5759,7 @@ aama:IDaed5dcf2-e904-48e4-9b07-38e737fe3d44 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Masc ;
 	.
-aama:IDb07aba05-9733-4789-8734-4554557526dc a aamas:Term ;
+aama:IDeef40f60-084e-4484-a9f3-201b294adad8 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5777,7 +5770,7 @@ aama:IDb07aba05-9733-4789-8734-4554557526dc a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Fem ;
 	.
-aama:IDd0c5ef62-a6d1-4278-9d91-d24e515a89c1 a aamas:Term ;
+aama:IDa4eb5cea-3e0b-4e28-b94f-00dd3528f120 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5788,7 +5781,7 @@ aama:IDd0c5ef62-a6d1-4278-9d91-d24e515a89c1 a aamas:Term ;
 	sah:number sah:Singular ;
 	sah:gender sah:Common ;
 	.
-aama:IDff73b1a6-ceb8-49a2-92f1-feb90586ebb3 a aamas:Term ;
+aama:ID3bafeb15-63dc-41a4-a03b-b2d4fc28eceb a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5799,7 +5792,7 @@ aama:IDff73b1a6-ceb8-49a2-92f1-feb90586ebb3 a aamas:Term ;
 	sah:number sah:Plural ;
 	sah:gender sah:Common ;
 	.
-aama:ID7e415515-abdb-4b3f-8d45-ff88b04a13f9 a aamas:Term ;
+aama:IDac1e02ad-d1a9-434e-9843-e0d8fb4b5692 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-hab ;
@@ -5813,7 +5806,7 @@ aama:ID7e415515-abdb-4b3f-8d45-ff88b04a13f9 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-emmeng-
 
-aama:IDc9877ea0-499b-41bd-8b44-8f6b3acc2067 a aamas:Term ;
+aama:ID6d54e766-22be-4d71-b18e-8a6fb7138405 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5829,7 +5822,7 @@ aama:IDc9877ea0-499b-41bd-8b44-8f6b3acc2067 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPerf-unqusu-
 
-aama:IDe5355049-4231-4db4-8bbc-72060d3aa84c a aamas:Term ;
+aama:ID4ca02452-7857-4897-ad4c-5feaf58fe1cc a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5845,7 +5838,7 @@ aama:IDe5355049-4231-4db4-8bbc-72060d3aa84c a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-oofo-
 
-aama:ID156c6ad7-ab3f-4578-a06b-2d5443e08cda a aamas:Term ;
+aama:ID3033f87d-6f8e-44bc-8ea0-1f688e25dac4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5861,7 +5854,7 @@ aama:ID156c6ad7-ab3f-4578-a06b-2d5443e08cda a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-eyteher
 
-aama:ID81e2d158-3ab3-434e-a068-5f5b4a0b62f2 a aamas:Term ;
+aama:IDc71cd116-8820-467a-b444-ee9261bd2923 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5877,7 +5870,7 @@ aama:ID81e2d158-3ab3-434e-a068-5f5b4a0b62f2 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffPart-emeet
 
-aama:ID4ea9a222-5b9f-4946-a679-2c09cc034ac3 a aamas:Term ;
+aama:ID26f302cc-2003-4b5d-8b1f-b0321152dd34 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:nonFiniteForm sah:Participle ;
@@ -5893,10 +5886,10 @@ aama:ID4ea9a222-5b9f-4946-a679-2c09cc034ac3 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffJuss-ki-daam
 
-aama:IDaa81b8b1-2a2b-4f42-b461-ad72009c303e a aamas:Term ;
+aama:ID4efe6bbc-d90e-4bb1-bec9-82cbc7365961 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
-	sah:token-gloss sah:I will buy it ;
+	sah:token-gloss "I will buy it" ;
 	sah:polarity sah:Affirmative ;
 	sah:conjClass sah:Suffix ;
 	aamas:lexeme aama:Saho-daam ;
@@ -5910,7 +5903,7 @@ aama:IDaa81b8b1-2a2b-4f42-b461-ad72009c303e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-err
 
-aama:IDe4574150-0f40-42cb-bc0a-3f6f20a8e961 a aamas:Term ;
+aama:ID0b3c7082-3c30-48f1-b5cb-610993a56216 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5926,7 +5919,7 @@ aama:IDe4574150-0f40-42cb-bc0a-3f6f20a8e961 a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffJuss-alif
 
-aama:ID64c54770-38bd-480a-9cc7-4e9ac24d3a1e a aamas:Term ;
+aama:ID6c9a7318-8c79-46ae-9e07-32e2394691e4 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5942,7 +5935,7 @@ aama:ID64c54770-38bd-480a-9cc7-4e9ac24d3a1e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImprtv-obb
 
-aama:IDcd330ee0-6fed-4de7-9d30-fe99cdc2792e a aamas:Term ;
+aama:IDe4ad1dab-f0a4-4179-bdaa-da75a59baf36 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5958,7 +5951,7 @@ aama:IDcd330ee0-6fed-4de7-9d30-fe99cdc2792e a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffImperf-edh
 
-aama:IDcef7d23f-9003-4d6d-9326-c04654aeb271 a aamas:Term ;
+aama:ID6fab7a7e-240d-4646-b2b5-deadf94ac5c2 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Masc ;
 	sah:polarity sah:Affirmative ;
@@ -5974,7 +5967,7 @@ aama:IDcef7d23f-9003-4d6d-9326-c04654aeb271 a aamas:Term ;
 
 #TERMCLUSTER: saho-VPrefAffJuss-oosol
 
-aama:ID521cf226-0527-40b6-9f71-40ba5355805c a aamas:Term ;
+aama:ID3424abdd-2a56-4a4b-8fa2-622b30f53e54 a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;
@@ -5990,7 +5983,7 @@ aama:ID521cf226-0527-40b6-9f71-40ba5355805c a aamas:Term ;
 
 #TERMCLUSTER: saho-VSuffAffImprtv-abah
 
-aama:ID3c72ad7e-bf6d-4b8b-b7dc-160e39447408 a aamas:Term ;
+aama:IDc9826ed2-18b8-4e04-9863-5cd37e5d9a2a a aamas:Term ;
 	aamas:lang aama:Saho ;
 	sah:gender sah:Common ;
 	sah:polarity sah:Affirmative ;

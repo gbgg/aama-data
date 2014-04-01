@@ -1,6 +1,11 @@
 
 #TTL FROM INPUT FILE:
 # data/egyptian-middle/egyptian-middle-pdgms.edn
+@prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
+@prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
+@prefix egm:   <http://id.oi.uchicago.edu/aama/2013/egyptian-middle/> .
 
 #SCHEMATA:
 
@@ -17,13 +22,13 @@ egm:gender rdfs:range egm:Gender .
 egm:Gender rdfs:subClassOf egm:MuExponent .
 egm:gender rdfs:subPropertyOf egm:muProperty .
 egm:Common aamas:lang aama:Egyptian-middle .
-egm:Common rdf:type Egyptian-middle:Gender .
+egm:Common rdf:type egm:Gender .
 egm:Common rdfs:label "Common".
 egm:Fem aamas:lang aama:Egyptian-middle .
-egm:Fem rdf:type Egyptian-middle:Gender .
+egm:Fem rdf:type egm:Gender .
 egm:Fem rdfs:label "Fem".
 egm:Masc aamas:lang aama:Egyptian-middle .
-egm:Masc rdf:type Egyptian-middle:Gender .
+egm:Masc rdf:type egm:Gender .
 egm:Masc rdfs:label "Masc".
 
 #SCHEMATA: number
@@ -36,13 +41,13 @@ egm:number rdfs:range egm:Number .
 egm:Number rdfs:subClassOf egm:MuExponent .
 egm:number rdfs:subPropertyOf egm:muProperty .
 egm:Du aamas:lang aama:Egyptian-middle .
-egm:Du rdf:type Egyptian-middle:Number .
+egm:Du rdf:type egm:Number .
 egm:Du rdfs:label "Du".
 egm:Plural aamas:lang aama:Egyptian-middle .
-egm:Plural rdf:type Egyptian-middle:Number .
+egm:Plural rdf:type egm:Number .
 egm:Plural rdfs:label "Plural".
 egm:Singular aamas:lang aama:Egyptian-middle .
-egm:Singular rdf:type Egyptian-middle:Number .
+egm:Singular rdf:type egm:Number .
 egm:Singular rdfs:label "Singular".
 
 #SCHEMATA: person
@@ -55,13 +60,13 @@ egm:person rdfs:range egm:Person .
 egm:Person rdfs:subClassOf egm:MuExponent .
 egm:person rdfs:subPropertyOf egm:muProperty .
 egm:Person1 aamas:lang aama:Egyptian-middle .
-egm:Person1 rdf:type Egyptian-middle:Person .
+egm:Person1 rdf:type egm:Person .
 egm:Person1 rdfs:label "Person1".
 egm:Person2 aamas:lang aama:Egyptian-middle .
-egm:Person2 rdf:type Egyptian-middle:Person .
+egm:Person2 rdf:type egm:Person .
 egm:Person2 rdfs:label "Person2".
 egm:Person3 aamas:lang aama:Egyptian-middle .
-egm:Person3 rdf:type Egyptian-middle:Person .
+egm:Person3 rdf:type egm:Person .
 egm:Person3 rdfs:label "Person3".
 
 #SCHEMATA: pos
@@ -74,7 +79,7 @@ egm:pos rdfs:range egm:Pos .
 egm:Pos rdfs:subClassOf egm:MuExponent .
 egm:pos rdfs:subPropertyOf egm:muProperty .
 egm:Pronoun aamas:lang aama:Egyptian-middle .
-egm:Pronoun rdf:type Egyptian-middle:Pos .
+egm:Pronoun rdf:type egm:Pos .
 egm:Pronoun rdfs:label "Pronoun".
 
 #SCHEMATA: proClass
@@ -87,13 +92,13 @@ egm:proClass rdfs:range egm:Proclass .
 egm:Proclass rdfs:subClassOf egm:MuExponent .
 egm:proClass rdfs:subPropertyOf egm:muProperty .
 egm:Dependent aamas:lang aama:Egyptian-middle .
-egm:Dependent rdf:type Egyptian-middle:Proclass .
+egm:Dependent rdf:type egm:Proclass .
 egm:Dependent rdfs:label "Dependent".
 egm:Independent aamas:lang aama:Egyptian-middle .
-egm:Independent rdf:type Egyptian-middle:Proclass .
+egm:Independent rdf:type egm:Proclass .
 egm:Independent rdfs:label "Independent".
 egm:Suffix aamas:lang aama:Egyptian-middle .
-egm:Suffix rdf:type Egyptian-middle:Proclass .
+egm:Suffix rdf:type egm:Proclass .
 egm:Suffix rdfs:label "Suffix".
 
 #MORPHEMES:
@@ -102,19 +107,19 @@ aama:Egyptian-middle-PRODEPENDENT a aamas:Muterm ;
 	aamas:lang aama:Egyptian-middle ;
 	rdfs:label "PRODEPENDENT" ;
 	rdfs:comment "[x]" ;
-	egm:lemma egm:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Egyptian-middle-PROIND a aamas:Muterm ;
 	aamas:lang aama:Egyptian-middle ;
 	rdfs:label "PROIND" ;
 	rdfs:comment "[x]" ;
-	egm:lemma egm:[y] ;
+	rdfs:comment "[y]" ;
 	.
 aama:Egyptian-middle-PROSUFF a aamas:Muterm ;
 	aamas:lang aama:Egyptian-middle ;
 	rdfs:label "PROSUFF" ;
 	rdfs:comment "[x]" ;
-	egm:lemma egm:[y] ;
+	rdfs:comment "[y]" ;
 	.
 
 #LEXEMES:

@@ -1,9 +1,11 @@
 # SHELL SCRIPTS (cf. * script-table.docx)
 
-> Run the scripts from the aama home dir (called <aama> below).  In my case, */aama, so: $ bin/<script.sh>.
+The scripts in bin/ are designed to be run from the aama-data home dir (called <aama> below).  In my case, */aama-data, so: $ bin/<script.sh>.
+
+The scripts in bin/ represent many different stages of project development. The following outline describes the currently (4/1/14) relevant ones under two headings: 1) Command-line Query and Display Utilities, and 2) Data Processing Procedures
 
 * constants.sh. Called by many scripts for location of fuseki, saxon, eyeball, etc.
-* convert.sh converts data from */work/aamadata to */aama/data.
+
 
 ## Command-line Query and Display Utilities
 
@@ -160,61 +162,15 @@ props in question,
 
 ============================================
 
-## Data generating procedure, xml=>rdf (Modified: 09/19/2013)  
+## Data Processing Procedures: (i.e., current SOP, 4/1/14)
 
-* eyeball.sh
+
 * lname-pref.txt: contains abbreviations for languages
 
-1. git checkout lang-data-rev [no longer create new branch for each lang]
-2. Make html: bin/htmlgen.sh dir. -**query**: xml2html-pdgms.xsl, xml2html-pdgms-sort.xsl
-3. Do first-pass bin/lexcheck-gg.sh dir, make sure every term cluster has a lexlabel, mulabel, or classlabel. -**query**: lexcheck-gg.xsl. -**performs corrections**: 
-		* insert in each mu termcluster: \<prop type="mulabel" val="[mulabel]"/\>
-		* insert lexlabels where missing: \<prop type="lexlabel" val="[lexlabel]"/\>
-		* insert in each multiLex termcluster: \<prop type="multiLex" val="[label]"/\>
-		* identify certain tables as: \<prop type="classification" val="[name]/\>
-		* mark each term with: \<prop type="classlabel" val="[classlabel]"/\>
-4. Do second-pass bin/lexadd.sh dir. -**query**: lexadd.xsl. 
-		*outputs newlex, mlex, and muterm entries in log file; 
-		* checks for valid lexlabel in termclusters, writes out newlex if not valid
-		* writes out a dummy multilex lexeme for each multilex termcluster
-		* checks for valid lexlabel in terms w/i multilex termcluster, writes out newlex if not valid
-		* writes out dummy muterm entry for termclusters with mulabel
-		* [TODO: edit dummy/tentative lexemes and add to xml]
-5. Fireup fuseki: bin/fuseki.sh
-6. Generate .data.ttl/rdf: -**usage**: bin/bin/datagen-gg.sh dir abbrev. -**query**: xml2data-gg.sh, which in turn calls  xml2data-gg.xsl, data2rdf.sh. -**variants**: data2rdf-aa.sh, datagen-aa.sh, xml2data-aa.sh, xml2data-aa.xsl
-7. Generate .schema.ttl/rdf: -**usage**: bin/bin/schemagen-gg.sh dir abbrev. -**query**: xml2schema-gg.sh, xml2schema-gg.xsl, uniqschema.sh, schema2rdf.sh, fupost.sh, fuqueries.sh
-8. Regenerate bin/htmlgen.sh dir
-9. git add/commit until git status is clean
-10. close files in notepad++ and oxygen
-11. git checkout dev, git merge [lang]
-12. git push origin [lang]
-
+1. As each LANG-pdgms.edn file is updated, it should be copied to its aama/LANG repo (use aama-cp2lngrepo.sh for larger-scale updates) and pushed to github (can use aama/tools/git-commit-push.sh; for updating local LANG repos after work done on another machine, use aama/tools/git-pull.sh ).
+2. Make ttl file: aama-edn2ttl.sh, uses aama-edn2ttl.jar, produced by lein uberjar from edn2ttl clojure project (~/leiningen/edn2ttl2). As side effect, this passes edn through edn/read-string, which can filter out a certain number of edn format errors.
+3. Make rdf file: aama-ttl2rdf.sh. Uses rdf2rdf.jar, which picks up ttl problems from edn2ttl.
+4. Upload to fuseki server: aama-rdf2fuseki.sh. As check, script runs fuqueries.sh, which counts triples and lists graphs on fuseki server after upload.
 
 ============================================
 
-## Miscellaneous
-
-* arroots.sh
-* convert.sh. Uses:
-	* convert.xsl
-* convertcheck.sh
-* dump.xsl
-* dumpprops.sh. Uses:
-	* dumpprops.xsl
-* dumpvals.sh. Uses:
-	* dumpvals.xsl
-* file-changes-ttl.txt
-* find-replace-strings.txt
-* Makefile
-* pdgm-display.sh
-* pdgm-display-comp.sh
-* postar.sh
-* propdump.sh
-* ttl2rdf.sh
-* ttlcheck.sh
-* uniqprops.sh
-* uniqvals.sh
-* xml-file-changes.txt
-* xml-file-lexeme-template.txt
-* xslcopy.xsl
-* xslcopy-lexemes.xsl
