@@ -30,7 +30,7 @@ do
     l=${f%.rdf}
     lang=${f#data/}
     uncapitalize_path $lang
-    graph="http://oi.uchicago.edu/aama/2013/graph/${newpath,}"
+    graph="http://oi.uchicago.edu/aama/2013/graph/${newpath}"
     echo deleting $graph;
    ${FUSEKIDIR}/s-delete -v http://localhost:3030/aama/data $graph 2>&1 >>logs/fudelete.log
 done

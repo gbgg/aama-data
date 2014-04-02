@@ -7,21 +7,18 @@
 #    aama/$ bin/fuput "schema" -- puts all 3 datasets
 # cumulative logfile written to logs/fuput.log
 
-# 05/10/13: general fuput for all rdf in a lang dir; = fuput-schema.sh + fuput-data.sh
+# 07/13/13: cf. fupost-default.sh for loading data into single default graph
+
 
 . bin/constants.sh
 
-echo "fuput.log" > logs/fuput.log;
-
-#for f in `find $1 -name *.edn`
-for f in `find $1 -name *.edn`
+echo "fuload.log" > logs/fuload.log;
+for f in `find $1 -name *.rdf`
 do
-    lang=`dirname ${f#data/}`
-    echo $lang
-    fn=data/$lang/`basename ${f%-pdgms.edn}`.rdf
-    graph="http://oi.uchicago.edu/aama/$lang"
-    echo putting $fn to $graph;
-    #${FUSEKIDIR}/s-put  http://localhost:3030/aama/data $graph $fn 2>&1 >>logs/fuput.log
+    l=${f%.rdf}
+    lang=${l#data/}
+    graph="http://oi.uchicago.edu/aama/2013/graph/`dirname ${lang/\/\///}`"
+    echo posting $f to $graph;
+    ${FUSEKIDIR}/s-post -v http://localhost:3030/aama/data $graph  $f 2>&1 >>logs/fuload.log
+	#${FUSEKIDIR}/s-post -v http://localhost:3030/aamaData/data 'default'   $f 2>&1 >>logs/fuload.log
 done
-
-#		./s-put http://localhost:3030/aamatrial/data default ../../../home/Gene/coma-2-aama/elmolo/elmolo-pdgms.ttl
