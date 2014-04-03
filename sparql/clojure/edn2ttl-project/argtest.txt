@@ -1,0 +1,21 @@
+(def pdgmmap (edn/read-string 
+	(slurp "beja-atmaan-pdgms-trial.edn")))
+(def lang (name (pdgmmap :lang)))
+(def Lang (clojure.string/capitalize lang))
+(def sgpref (pdgmmap :sgpref))
+(def x ( map println [
+		(format "\n#SCHEMATA:\n")
+		(format "aama:%s a aamas:Language ." Lang)
+		(format  "aama:%s rdfs:label \"%s\" ." Lang Lang)
+	])
+)
+(doall x)
+
+(defn -main
+  "Takes filename as arg, reads in the file, and prints the contents as string"
+  [& file]
+	(def inputfile (first file))
+	(println "The input file is: " inputfile)
+	(def inputstring (slurp inputfile))
+	(prn  inputstring)
+)
