@@ -9,7 +9,7 @@ The scripts in bin/ represent many different stages of project development. The 
 3. Data Revision Routine.
 4. Command-line Query and Display Utilities.
 
-* constants.sh. Called by many scripts for location of fuseki, saxon, eyeball, etc.
+* NB: constants.sh. is called by many scripts for location of fuseki, saxon, eyeball, etc.
 
 ============================================
 
@@ -20,11 +20,14 @@ The scripts in bin/ represent many different stages of project development. The 
 
 1. As each LANG-pdgms.edn file is updated, it should be copied to its aama/LANG repo (use aama-cp2lngrepo.sh for larger-scale updates) and pushed to github (can use aama/tools/git-commit-push.sh; for updating local LANG repos after work done on another machine, use aama/tools/git-pull.sh ).
 
-2. Make ttl file: aama-edn2ttl.sh, uses aama-edn2ttl.jar, produced by lein uberjar from edn2ttl clojure project (~/leiningen/edn2ttl2). As side effect, this passes edn through edn/read-string, which can filter out a certain number of edn format errors.
+2. **aama-edn2ttl.sh** uses aama-edn2ttl.jar, produced by lein uberjar from edn2ttl clojure project (~/leiningen/edn2ttl2), to make ttl file. As side effect, this passes edn through edn/read-string, which can filter out a certain number of edn format errors.
+    - **usage**: bin/aama-edn2ttl.sh data/LANG
 
-3. Make rdf file: aama-ttl2rdf.sh. Uses rdf2rdf.jar, which picks up ttl problems from edn2ttl.
+3. **aama-ttl2rdf.sh**: Make rdf file. Uses rdf2rdf.jar, which picks up ttl problems from edn2ttl.
+   - **usage**: bin/aama-ttl2rdf.sh data/LANG
 
-4. Upload to fuseki server: aama-rdf2fuseki.sh. As check, script runs fuqueries.sh, which counts triples and lists graphs on fuseki server after upload.
+4. **aama-rdf2fuseki.sh**: Upload to fuseki. As check, script runs fuqueries.sh, which counts triples and lists graphs on fuseki server after upload.
+   - **usage**: bin/aama-rdf2fuseki.sh data/LANG
 
 ============================================
 
