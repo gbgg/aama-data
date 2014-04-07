@@ -5,9 +5,9 @@ Afro-Asiatic Morphological Archive
 08/10/13
 Afro-Asiatic Morphological Archive:
 
-You are currently looking at aama-data, which will be the temporary repository for revised language data while questions of format are being formalized. The  current best data for each language is kept in the github/aama organization, where each language has its own repository. The reference file-format is edn (LANG-pdgms.edn).
+You are currently looking at aama-data, which will be the temporary repository for revised language data, and data-processing and -querying procedures while questions of format are being formalized. The  current best data for each language is kept in the github/aama organization, where each language has its own repository. The normative/persistant data format has been changed from xml to [edn: the Extensible Data Notation](https://github.com/edn-format/edn).
 
-In the absence of a UI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), command-line scripts for querying the archive will be found in aama/bin -- see bin/README.md. 	
+In the absence of a GUI (but cf. aama-capp in https://github.com/sibawayhi/aama-capp), command-line scripts for querying the archive will be found in aama/bin -- see bin/README.md. 	
 
 In the current revised data-set, note:
 	1. For each language single lc, 3-character ns prefix is used for the URI of language-specific morphosyntactic properties and values. List of proposed prefixes will be found in bin/lname-pref.txt.
@@ -17,7 +17,7 @@ In the current revised data-set, note:
 	5. Among the important entity-types are:
 			a. Terms
 			b. Lexemes (or "l-terms"): e.g. "ktb 'write'".
-			c. Muterms ("m-terms",  "µ-terms"): e.g. "PRO".
+			c. Muterms ("m-terms",  "ï¿½-terms"): e.g. "PRO".
 	6. Every Term is associated with either a Lexeme or a Muterm. In exceptional cases a term involved in a "paradigm" which is not a term-cluster but rather a cross-classification table is associated instead with a "classLabel". (cf. Arbore, "Sentence Focus Types")
 	7. Lexemes are registered in the archive in a conventional "short form", with summary lemma, gloss, and other relevant morphosyntactic information.
 	8. In the present state of the archive, where the data-source does not provide an easily usable lexeme, a provisional "dummy" lexeme is generated (by bin/lexadd.sh). As data-revision and language research goes on, these "dummy" lexemes will be gradually replaced by conventional ones.
