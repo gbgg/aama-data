@@ -1,24 +1,25 @@
 # SHELL SCRIPTS
 
-The scripts in bin/ are designed to be run from the aama-data home dir (called <aama> below).  In my case, */aama-data, so: $ bin/<script.sh>.
-
-The scripts in bin/ represent many different stages of project development. The following outline describes the currently (4/1/14) relevant ones under the following headings: 
+The scripts in bin/ are designed to be run from the aama-data home dir, in my case, ~/aama-data, so: $ ~/aama-data/bin/\<SCRIPT.sh>\. An [Apache Jena fuseki datastore](http://jena.apache.org/documentation/serving_data/) is assumed for query purposes. The scripts in the bin/ directory represent many different stages of project development. The following outline describes the currently (4/1/14) relevant ones under the following headings: 
 
 1. Data Processing Procedures.
+
 2. General Query Procedures.
+
 3. Data Revision Routine.
+
 4. Command-line Query and Display Utilities.
 
-* NB: constants.sh. is called by many scripts for location of fuseki, saxon, eyeball, etc.
+
+- NB: **constants.sh** is called by many scripts for location of fuseki, saxon, eyeball, etc. **lname-pref.txt** contains the abbreviations for languages used in graph NS prefixes.
 
 ============================================
 
 ## Data Processing Procedures: (i.e., current SOP, 4/1/14)
 
 
-* lname-pref.txt: contains abbreviations for languages
 
-1. As each LANG-pdgms.edn file is updated, it should be copied to its aama/LANG repo (use aama-cp2lngrepo.sh for larger-scale updates) and pushed to github (can use aama/tools/git-commit-push.sh; for updating local LANG repos after work done on another machine, use aama/tools/git-pull.sh ).
+1. The normative/persistant data format is [edn: Extensible Data Notation](https://github.com/edn-format/edn). As each LANG-pdgms.edn file is updated, it should be copied to its aama/LANG repo (use aama-cp2lngrepo.sh for larger-scale updates) and pushed to github (can use aama/tools/git-commit-push.sh; for updating local LANG repos after work done on another machine, use aama/tools/git-pull.sh ).
 
 2. **aama-edn2ttl.sh** uses aama-edn2ttl.jar, produced by lein uberjar from edn2ttl clojure project (~/leiningen/edn2ttl2), to make ttl file. As side effect, this passes edn through edn/read-string, which can filter out a certain number of edn format errors.
     - **usage**: bin/aama-edn2ttl.sh data/LANG
@@ -33,7 +34,8 @@ The scripts in bin/ represent many different stages of project development. The 
 
 ## General Query Procedure
 
-Here and in the following sections, interaction with the fuseki datastore is handled by the fuseki SOH (SPARQL Over HTTP) library, a set of ruby scripts incorporated here, by Gregg Reynolds, into the following bash scripts: 
+Here and in the following sections, interaction with the fuseki datastore is handled by the Jena fuseki SOH (SPARQL Over HTTP) library, a set of ruby scripts incorporated here into the following bash scripts: 
+
 	* fuclear.sh: Drop default graph
 	* fudelete.sh: Delete named graph.
 	* fudrop.sh
@@ -46,7 +48,7 @@ Here and in the following sections, interaction with the fuseki datastore is han
 2. **fuquery-gen.sh**: A script for running any well-formed SPARQL query file, QUERY.rq, against the fuseki triplestore. 
      - **usage**: bin/fuquery-gen.sh QUERYFILE.rq
 
-3. **fuqueries.sh**: A script which uses fuquery-gen.sh to run sparql/rq-ru/count-triples.rq (yields number of triples currently in the triplestore) and sparql/rq-ru/list-graphs.rq (lists the sub-graphs, i.e. the languages, currently contained in the triplestore);useful as a test after a regenerate-delete-post operation.
+3. **fuqueries.sh**: A script which uses fuquery-gen.sh to run sparql/rq-ru/count-triples.rq (yields number of triples currently in the triplestore) and sparql/rq-ru/list-graphs.rq (lists the sub-graphs, i.e. the languages, currently contained in the triplestore); useful as a test after a delete-revise-regenerate-post operation.
     - **usage**: bin/fuqueries.sh 
 
 ============================================
@@ -71,7 +73,7 @@ Working with data in a query-delete-revise-upload cycle typically involves the f
 
 ## Command-line Query and Display Utilities
 
-Pending the development of a GUI, the following scripts permit an ad-hoc querying and display of the aama data which has been loaded into a fuseki datastore (cf. fuseki SOH tools, below). These scripts can hopefully serve as model/prototype for GUI operations with drop-down lists, etc.
+Pending the development of a GUI, the following scripts permit an ad-hoc querying and display of the aama data which has been loaded into a fuseki datastore. These scripts can hopefully be something of a model/prototype for eventual GUI operations with drop-down lists, etc.
 
 For all of these scripts: 
 * The first argument, \<dir\>, is the directory where the data occurs (data/[LANG] for one language; "data/[LANG] data/[LANG] . . ." [with quotations marks!] for more than one language; "data/*" to search all languages). 
