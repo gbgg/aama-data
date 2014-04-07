@@ -86,8 +86,8 @@ For all of these scripts:
         * *pro* 
         * *noun*
     2. **prompt-display** properties: 
-        * *pv*: (prompt is a table of the property-value pairs which can or must be represented in a paradigm for the language and pos in question; out of these, at the prompt, the user supplies a comma-separated list of form 'prop=val,prop=val,...'). 
-        * *pnames*: (prompt a numbered list of comma-separated value combinations which occur with the pos in question, exclusive of png values -- effectively a paradigm-name; out of these, at the prompt, the user enters one number). 
+        * *pv*: (the prompt is a table of the property-value pairs which can or must be represented in a paradigm for the language and pos in question; out of these, at the prompt, the user supplies a comma-separated list of form 'prop=val,prop=val,...'). 
+        * *pnames*: (the prompt is a numbered list of comma-separated value combinations which occur with the pos in question, exclusive of png values -- effectively a paradigm-name; out of these, at the prompt, the user enters one number). 
         * The pv tables and pname lists are generated for any current state of the triple store by the "generate-pnames/prop-list- . . ." scripts. Obviously in a gui the prompts will be supplied by drop-down menus, etc. and user-input will be by clicks.
 
 The individual scripts are:
