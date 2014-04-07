@@ -1,4 +1,4 @@
-# SHELL SCRIPTS (cf. * script-table.docx)
+# SHELL SCRIPTS
 
 The scripts in bin/ are designed to be run from the aama-data home dir (called <aama> below).  In my case, */aama-data, so: $ bin/<script.sh>.
 
@@ -11,47 +11,56 @@ The scripts in bin/ represent many different stages of project development. The 
 
 Pending the development of a UI, the following scripts permit an ad-hoc querying and display of the aama data which has been loaded into a fuseki datastore (cf. fuseki SOH tools, below).
 
-For all of these scripts, the first argument, \<dir\>, is the directory where the data occurs (data/[LANG] for one language; "data/[LANG] data/[LANG] . . ." [with quotations marks!] for more than one language; "data/*" to search all languages). In some cases the shell script operates directly on a template. In other cases there are perl scripts which transform a query string into a SPARQL query or query-template. For most shell scripts there is a final perl script [some of these may be replaceable by SED] which transforms the (here) tsv response into a STDOUT/txt/html display. [NB: For all of these exploratory scripts there is considerable overlap. Obviously many of these can be unified into a single script (with extra arguments, subroutines, etc.) if that turns out to be useful.]
+For all of these scripts: 
+* The first argument, \<dir\>, is the directory where the data occurs (data/[LANG] for one language; "data/[LANG] data/[LANG] . . ." [with quotations marks!] for more than one language; "data/*" to search all languages). 
+* In some cases the shell script operates directly on a template. In other cases there are perl scripts which transform a query string into a SPARQL query or query-template. 
+* For most shell scripts there is a final perl script [some of these may be replaceable by SED] which transforms the (here) tsv response into a STDOUT/txt/html display. [NB: For all of these exploratory scripts there is considerable overlap. Obviously many of these can be unified into a single script (with extra arguments, subroutines, etc.) if that turns out to be useful.]
 
-The "display-pdgms- . . ." (and the "generate-pnames/prop-list- . . .") scripts are distinguished by 
+The "display-pdgms- . . ." (and the "generate-pnames/prop-list- . . .") scripts are distinguished by the following properties:
 
-1. *pos*: **fv** (finite verb: terms with 'pos=Verb' and marked for the property 'person'), **nfv** (non-finite verb: all other 'pos=Verb' forms, including participles, stems, etc.), **pro**, **noun**.
+1. **pos** properties: 
+    * *fv* (finite verb). These are terms with 'pos=Verb', and which are marked for the property 'person'. 
+    * *nfv* (non-finite verb). All other 'pos=Verb' forms, including participles, stems, etc.
+    * *pro* 
+    * *noun*
 
-2. *input-display*: **pv** (script displays a table of the property-value pairs which can or must be represented in a paradigm for the language and pos in question; out of these, at the prompt, the user supplies a comma-separated list of form 'prop=val,prop=val,...'), **pnames** (script displays a numbered list of comma-separated value combinations which occur with the pos in question, exclusive of png values -- effectively a paradigm-name; out of these, at the prompt, the user enters one number). The pv tables and pname lists are generated for any current state of the triple store by the "generate-pnames/prop-list- . . ." scripts.
+2. **output-display** properties: 
+    * *pv*: (script displays a table of the property-value pairs which can or must be represented in a paradigm for the language and pos in question; out of these, at the prompt, the user supplies a comma-separated list of form 'prop=val,prop=val,...'). 
+    * *pnames*: (script displays a numbered list of comma-separated value combinations which occur with the pos in question, exclusive of png values -- effectively a paradigm-name; out of these, at the prompt, the user enters one number). 
 
-Obviously in a gui the prompts will be supplied by drop-down menus, etc. and user-input will be by clicks.
+The pv tables and pname lists are generated for any current state of the triple store by the "generate-pnames/prop-list- . . ." scripts. Obviously in a gui the prompts will be supplied by drop-down menus, etc. and user-input will be by clicks.
 
 The individual scripts are:
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
--**usage**: bin/display-valsforprop.sh \<dir\> prop
--**example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
--**query**: pl/valforproptsv2table.pl to format output
+    - **usage**: bin/display-valsforprop.sh \<dir\> prop
+    - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
+    - **script**: pl/valforproptsv2table.pl to format output
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
--**usage**: bin/display-langsforval.sh \<dir\> v
--**example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
--**query**: pl/langsforvaltsv2table.pl to format output
+    - **usage**: bin/display-langsforval.sh \<dir\> val
+    - **example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
+    - **script**: pl/langsforvaltsv2table.pl to format output
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
 props in question, 
--**usage**: bin/display-langspropval.sh \<dir\> qstring qlabel
--**example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
+    - **usage**: bin/display-langspropval.sh \<dir\> qstring qlabel
+    - **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
  *"What languages have 2f , and if so, in what pos and what num?"*
--**query**: pl/qstring2template.pl (to form query template), pl/langspvtsv2table.pl (to format output)
+    - **script**: pl/qstring2template.pl (to form query template), pl/langspvtsv2table.pl (to format output)
 
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
--**usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
--**example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
--**query**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl to form query template (with or without property names), pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl to format table output (with or without property names).
+    - **usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
+    - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
+    - **script**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl to form query template (with or without property names), pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl to format table output (with or without property names).
 
 5. **display-pdgms-fv-pv.sh**: Displays finite verb png forms in one or more languages which meet *prop=val* constraints entered at the prompt.
--**usage**: bin/display-paradigms.sh \<dir\> 
--**example**: Two langs: bin/display-paradigms.sh "data/beja-arteiga data/oromo" At prompt "beja-arteiga:" enter  "conjClass=Suffix,polarity=Affirmative,tam=Present". At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [For one lang, single prompt, single display.]
--**query**: verb-propvaltsv2table.pl to display table; qstring2query.pl  formulate a unified SPARQL query (not a query-template); pdgmtsv2table.pl to format the tsv response file into table form.
+    - **usage**: bin/display-paradigms.sh \<dir\> 
+    - **example**: Two langs: bin/display-paradigms.sh "data/beja-arteiga data/oromo" At prompt "beja-arteiga:" enter  "conjClass=Suffix,polarity=Affirmative,tam=Present". At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [For one lang, single prompt, single display.]
+    - **script**: verb-propvaltsv2table.pl to display table; qstring2query.pl  formulate a unified SPARQL query (not a query-template); pdgmtsv2table.pl to format the tsv response file into table form.
 
 6. **display-pdgms-fv-pnames.sh**: Displays finite verb png forms with morphosyntactic values contained in "pname".
--**usage**: bin/display-pdgms-fv-pnames.sh \<dir\> 
+    -**usage**: bin/display-pdgms-fv-pnames.sh \<dir\> 
 -**example**: at prompt "beja-arteiga;", "10" shows png forms for Prefix-Affirmative-CCY-Aorist.
 -**query**: pnames-print.pl prints pnames file sparql/pdgms/pname-fv-list-$lang.txt (generated by generate-pnames-fv.sh); qstring-fv-pname2query.pl generates query to be submitted to fuseki; output formatted by pdgm-fv-tsv2table.pl.
 
