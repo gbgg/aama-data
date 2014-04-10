@@ -7,10 +7,10 @@
 response=sparql/pdgms/pdgm-finite-prop-list.tsv
 mv $response "${response}.bck"
 echo "fuquery.log" > logs/fuquery.log;
-for f in `find data/ -name *.html`
+for f in `find data/ -name *.edn`
 do
 	#echo f = $f
-    lang=`basename ${f%-pdgms.html}`
+    lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}

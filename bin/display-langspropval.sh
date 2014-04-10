@@ -27,7 +27,10 @@
 # The template is then applied to each language in the data/[LANG] set, and the response added to the response file.
 # The final response file is formatted into  a display by propvaltsv2table.pl.
 
-. bin/constants.sh
+# example:
+# bin/display-langspropval.sh "data/*" person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
+
+                                                                                      . bin/constants.sh
 
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$2
@@ -44,15 +47,15 @@ echo "Response = $response"
 
 perl pl/qstring2template.pl $qstring $template
 
-fs=`find $1 -name *xml`
+fs=`find $1 -name *edn`
 for f in $fs
 do
 	#echo "f is $f"
-	lang=`basename ${f%-pdgms\.xml}`;
+	lang=`basename ${f%-pdgms\.edn}`;
 	abb=`grep $lang bin/lname-pref.txt`
     Lang="${lang[@]^}"
     localqry="tmp/prop-val/${qlabel}.$lang.rq"
-	echo "Localqry = $localqry"
+    #echo "Localqry = $localqry"
     sed -e "s/%lang%/${lang}/g" -e "s/%Lang%/${Lang}/g" $template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry >> $response
 done

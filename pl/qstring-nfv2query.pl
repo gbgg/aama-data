@@ -70,11 +70,11 @@ foreach my $query (@queries)
 		my $pdgmprops = $_;
 		my ($first, $props) = split("$langname : \"", $pdgmprops);
 		($queryprops, my $last) = split(/"\n/, $props, 2);
-		print "$langname Queryprops = $queryprops\n\n";
+		#print "$langname Queryprops = $queryprops\n\n";
 	}
 	close IN;
 	($lang, my $qprops) = split(/,\s*/, $queryprops, 2);
-	print "$lang qprops = $qprops\n";
+	#print "$lang qprops = $qprops\n";
 	$Langname = ucfirst($langname);
 	my @select = split(/,\s* /, $qprops);
 	foreach my $queryprop (@select)
@@ -94,8 +94,7 @@ foreach my $query (@queries)
 		#print "Queryp = $queryp\n";
 	#}
 }	
-print "selection = $selection\n";
-
+#print "selection = $selection\n";
 
 open(OUT, ">$queryfile") || die "cannot open $queryfile for output"; 
 select(OUT);

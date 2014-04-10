@@ -83,12 +83,12 @@ foreach my $queryprop (@queryproplist)
 		print " \t\t\t?Q$qqueryprop\trdfs:label\t?$qqueryprop . }\n";
 	}
 }
-print "\t\t\tOPTIONAL { ?s\t$lang:number\t?number . \n";
-print "\t\t\t?number\trdfs:label\t?num . }\n";
-print "\t\t\tOPTIONAL {?s\t$lang:person\t?person . \n";
-print "\t\t\t?person\trdfs:label\t?pers . }\n";
-print "\t\t\tOPTIONAL { ?s\t$lang:gender\t?gender . \n";
-print "\t\t\t?gender\trdfs:label\t?gen . }\n";
+#print "\t\t\tOPTIONAL { ?s\t$lang:number\t?number . \n";
+#print "\t\t\t?number\trdfs:label\t?num . }\n";
+#print "\t\t\tOPTIONAL {?s\t$lang:person\t?person . \n";
+#print "\t\t\t?person\trdfs:label\t?pers . }\n";
+#print "\t\t\tOPTIONAL { ?s\t$lang:gender\t?gender . \n";
+#print "\t\t\t?gender\trdfs:label\t?gen . }\n";
 
 print "\t\t\t?s\t$lang:token\t?token . \n";
 print "\t\t}\n";

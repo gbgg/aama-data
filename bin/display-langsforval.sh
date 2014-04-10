@@ -8,7 +8,7 @@
 # Cf. sparql/templates/README.txt
 
 # example:
-#    <aama> $ bin/fuquery.sh data/alaaba 
+#    <aama> $ bin/display-langsforval.sh "data/*" Aorist [What languages have a tam=Aorist?]
 
 . bin/constants.sh
 val=$2
@@ -16,9 +16,9 @@ of=langsforval.template
 response="tmp/prop-val/${of%.template}.$val-resp.tsv"
 
 echo "fuquery.log" > logs/fuquery.log;
-for f in `find $1 -name *.html`
+for f in `find $1 -name *.edn`
 do
-    lang=`basename ${f%-pdgms.html}`
+    lang=`basename ${f%-pdgms.edn}`
     #Lang="${lang[@]^}"
     #echo querying $lang for $type values
     #of=`basename ${2#sparql/templates/}`

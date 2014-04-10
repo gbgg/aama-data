@@ -1,28 +1,13 @@
-#!/bin/bash
-# dependency:  rapper, from raptor, part of redland rdf lib
-# usage:  ttl2rdff "dir"
-# examples:
-#    aama/$ tools/ttl2rdff "data/*" --  converts everything
-#    aama/$ tools/ttl2rdffttl2rdff "data/alaaba" -- converts only alaabe
-#    aama/$ tools/ttl2rdffttl2rdff "data/alaaba data/burji data/coptic" -- converts three files
-#    aama/$ tools/ttl2rdffttl2rdff "schema" -- converts only schema
-# cumulative logfile written to logs/ttl2rdff.log
-# each lang/var gets its own logfile
+#!/bin/sh
 
-. tools/constants.sh
+./bin/constants.sh
 
-echo "ttl2rdff" > logs/ttl2rdff.log;
+echo "ttl2rdf" > logs/ttl2rdf.log;
 
-# for f in `find $1 -name *.xml`
-# do
-    # l1=`dirname $f`
-    # lang=${l1#data/}
-    # from=data/$lang/`basename ${f%-pdgms.xml}`.schema.ttl
-    # to=data/$lang/`basename ${f%-pdgms.xml}`.schema.rdf
-    # echo "$lang: rdfizing "$from to $to
-
-    java -jar ${RDF2RDF} $1 ${1%.ttl}.rdf
-
-    # rapper -q -i guess -o rdfxml schema/$fn 2>&1 \
-    # 	1>schema/${fn%.ttl}.rdf | tee -a logs/ttl2rdff.log | tee schema/${fn%.ttl}.log
-# done
+for f in `find $1 -name *.ttl`
+do
+    l1=`dirname $f`
+    lang=${l1#-pdgms}
+    echo "$lang: rdfizing from ${f} to ${f%.ttl}.rdf by ${RDF2RDF}"
+    java -jar ../.jar/rdf2rdf-1.0.1-2.3.1.jar $f ${f%.ttl}.rdf
+done

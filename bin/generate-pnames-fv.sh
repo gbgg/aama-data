@@ -10,9 +10,9 @@
 
 # After starting the server with fuseki.sh, first copy the query files;
 
-for f in `find $1 -name *.html`
+for f in `find $1 -name *.edn`
 do
-    lang=`basename ${f%-pdgms.html}`
+    lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}

@@ -27,11 +27,11 @@ echo
 echo " In addition to png, each language has its own set of additional "
 echo " properties which can or must be represented in any finite verb "
 echo " paradigm. The following table(s) list those properties and values"
-echo " for \"${1}\":"
+echo " for verb forms in \"${1}\" which are not inflected for person:"
 echo
-for f in `find $1 -name *.html`
+for f in `find $1 -name *.edn`
 do
-    lang=`basename ${f%-pdgms.html}`
+    lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
@@ -55,15 +55,15 @@ do
 	echo " Command line format:"
 	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . .[  or Ctrl-C to exit ]"
 	echo "Example -- "
-	echo " oromo:tam=Present,polarity=Affirmative,clauseType=Main"
+	echo "beja-arteiga:derivedStem=B"
 	echo " [CR at prompt will return all finite-verb pdgms.]"
 	echo
 	read -e -p $lang: propvalset
 	#echo "propvalset = $propvalset"
 	commandline="${commandline}+${lang}:${propvalset}"
-	echo "commandline = $commandline"
+	#echo "commandline = $commandline"
 done
 commandline=${commandline#*+}
-echo "commandline = $commandline"
+#echo commandline = $commandline
 
 bin/pdgm-nfv-pv-display.sh $commandline $querylabel

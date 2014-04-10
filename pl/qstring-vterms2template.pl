@@ -56,8 +56,8 @@ foreach my $specprop (sort keys %specifiedprops)
 	print "<http://id.oi.uchicago.edu/aama/2013/%lang%/$specifiedprops{$specprop}> \;\n";
 }
 print	"<http://id.oi.uchicago.edu/aama/2013/%lang%/token> ?token \;\n";
-print "\taamas:lang aama:%Lang% \.\n";
-print "\taama:%Lang% rdfs:label ?language \.\n";
+print "\taamas:lang ?lng \.\n";
+print "\t ?lng rdfs:label ?language \.\n";
 print "\t?p rdfs:label ?pLabel \.\n";
 print "\t?o rdfs:label ?oLabel \.\n";
 print "FILTER (?p NOT IN (\n";

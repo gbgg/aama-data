@@ -19,6 +19,9 @@
 # The template is then applied to each language in the data/[LANG] set, and the response added to the response file.
 # The final response file is formatted into  a display by langspv-termstsv2table.pl .
 
+# example: 
+#  bin/display-langsvterms.sh "data/beja-arteiga data/beja-atmaan" person=Person2,gender=Fem langpvterms-trial prop 
+
 . bin/constants.sh
 
 # After starting the server with fuseki.sh, first copy the query files;
@@ -44,11 +47,11 @@ else
 	perl pl/qstring-vterms2template.pl $qstring $template
 fi
 
-fs=`find $1 -name *xml`
+fs=`find $1 -name *edn`
 for f in $fs
 do
 	#echo "f is $f"
-	lang=`basename ${f%-pdgms\.xml}`;
+	lang=`basename ${f%-pdgms\.edn}`;
 	abb=`grep $lang bin/lname-pref.txt`
     Lang="${lang[@]^}"
     localqry="tmp/prop-val/${qlabel}.$lang.rq"

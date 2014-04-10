@@ -1,0 +1,22 @@
+# Yields properties that cooccur with non-finite verbs. For the moment (11/26/13) presuming that all nfv paradigms marked with multiLex property. 
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://oi.uchicago.edu/aama/schema/2010#>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX bar: <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+
+SELECT DISTINCT  ?multiLexLabel ?property 
+WHERE {
+GRAPH <http://oi.uchicago.edu/aama/2013/graph/beja-arteiga> {
+	?s ?p ?o ;
+	rdf:type aamas:Term ;
+	bar:multiLex ?multiLex ;
+	bar:pos  bar:Verb .
+	NOT EXISTS {?s bar:person ?person }
+   ?p rdfs:label ?property .
+   ?multiLex rdfs:label ?multiLexLabel .
+  	FILTER (?p NOT IN ( aamas:lang, bar:gender, bar:multiLex, bar:number, bar:person, bar:pos, rdf:type))
+}}
+ORDER BY ASC(?multiLexLabel) ASC(?property)

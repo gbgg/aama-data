@@ -70,8 +70,8 @@ foreach my $selectionprop (@selectionprops)
 {
 	print "\t<http://id.oi.uchicago.edu/aama/2013/%lang%/$selectionprop> ?$selectionprop \;\n";
 }
-print "\taamas:lang aama:%Lang% \.\n";
-print "\taama:%Lang% rdfs:label ?language \.\n";
+print "\taamas:lang ?lng \.\n";
+print "\t?lng rdfs:label ?language \.\n";
 foreach my $selectionprop (@selectionprops)
 {
 	print "\t?$selectionprop rdfs:label ?".$selectionprop."Label.\n";

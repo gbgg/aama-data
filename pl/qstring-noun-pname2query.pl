@@ -67,7 +67,7 @@ print "\t{\n";
 print "\t\tGRAPH aamag:$langname\n\t\t{\n";
 print "\t\t\t?s\t$lang:pos\t$lang:Noun . \n";
 print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
-print "\t\t\t?s\taamas:muterm\taama:$Langname-$proclass .\n";
+print "\t\t\t?s\taamas:morpheme\taama:$Langname-$proclass .\n";
 print "\t\t\t?s\taamas:lang\t?lang .\n";
 print "\t\t\t?lang\trdfs:label\t?langLabel . \n";
 # Iterate through @select if want all values in table

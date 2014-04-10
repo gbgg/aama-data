@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
+PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
+PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
+PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
+
+SELECT  ?case ?postposition ?postpositionClass  ?token 
+WHERE
+{
+	{
+		GRAPH aamag:beja-arteiga
+		{
+			?s	bar:pos	bar:Noun . 
+			?s	aamas:lang	aama:Beja-arteiga .
+			?s	aamas:morpheme	aama:Beja-arteiga-POSTPOSITION .
+			?s	aamas:lang	?lang .
+			?lang	rdfs:label	?langLabel . 
+			OPTIONAL { ?s	bar:case	?Qcase . 
+ 			?Qcase	rdfs:label	?case . }
+			OPTIONAL { ?s	bar:postposition	?Qpostposition . 
+ 			?Qpostposition	rdfs:label	?postposition . }
+			OPTIONAL { ?s	bar:postpositionClass	?QpostpositionClass . 
+ 			?QpostpositionClass	rdfs:label	?postpositionClass . }
+			OPTIONAL { ?s	bar:number	?number . 
+			?number	rdfs:label	?num . }
+			OPTIONAL {?s	bar:person	?person . 
+			?person	rdfs:label	?pers . }
+			OPTIONAL { ?s	bar:gender	?gender . 
+			?gender	rdfs:label	?gen . }
+			?s	bar:token	?token . 
+		}
+	}
+}
+ORDER BY  ?case ?postposition ?postpositionClass   DESC(?num) ?pers DESC(?gen)

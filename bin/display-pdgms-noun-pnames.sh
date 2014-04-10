@@ -11,9 +11,9 @@ echo "fuquery.log" > logs/fuquery.log;
 #echo
 #echo Please provide a label for query --
 #read -e -p Query_Label: querylabel
-for f in `find $1 -name *.html`
+for f in `find $1 -name *.edn`
 do
-    lang=`basename ${f%-pdgms.html}`
+    lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
 	pnamefile="sparql/pdgms/pname-noun-list-$lang.txt";
 	labbrev=`grep $lang bin/lname-pref.txt`

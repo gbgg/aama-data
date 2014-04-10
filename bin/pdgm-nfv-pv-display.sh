@@ -34,10 +34,10 @@ response=sparql/pdgms/output/$qlabel-response.tsv
 # then give "title=$lang-$vstring" as argument to pdgmtsv2table.pl 
 # for output title
 
-echo "Query String = $qstring"
-echo "Localqry = $localqry"
-echo "Response = $response"
-echo " "
+#echo "Query String = $qstring"
+#echo "Localqry = $localqry"
+#echo "Response = $response"
+#echo " "
 #echo "QLabel = $qlabel"
 
 #mv sparql/pdgms/output/$qlabel* sparql/pdgms/output/back/

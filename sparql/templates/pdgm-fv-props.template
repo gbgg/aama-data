@@ -16,8 +16,6 @@ GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
    ?p rdfs:label ?property .
    ?o rdfs:label ?value  .
   	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:number, %abbrev%:person, %abbrev%:pos, rdf:type, %abbrev%:multiLex ))
-	  # For readability
-      BIND (SUBSTR(str(?type), 37) AS ?property)
-}}
+ }}
 ORDER BY ASC(?property) ASC(?value)
 

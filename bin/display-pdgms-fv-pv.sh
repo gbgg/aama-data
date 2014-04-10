@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage:  display-paradigms.sh data/<lang> qlabel, display-paradigms.sh "data/<lang> data/<lang> . . ." qlabel, display-paradigms.sh "data/*" qlabel
+# usage:  display-pdgms-fv-pv.sh data/<lang> , display-paradigms.sh "data/<lang> data/<lang> . . ." , display-paradigms.sh "data/*" 
 
 # 10/30/13
 #11/04/13 generalized to more than one language
@@ -12,7 +12,9 @@
 # Cf. sparql/templates/README.txt
 
 # example:
-#    <aama> $ bin/finite-prop-val-lang.sh data/beja-arteiga 
+# bin/display-paradigms.sh "data/beja-arteiga data/oromo" 
+# At prompt "beja-arteiga:" enter  " conjClass=Suffix,polarity=Affirmative,tam=Present". 
+# At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
 
 . bin/constants.sh
 
@@ -30,13 +32,13 @@ echo " properties which can or must be represented in any finite verb "
 echo " paradigm. The following table(s) list those properties and values"
 echo " for \"${1}\":"
 echo
-for f in `find $1 -name *.html`
+for f in `find $1 -name *.edn`
 do
-    lang=`basename ${f%-pdgms.html}`
-    Lang="${lang[@]^}"
+    lang=`basename ${f%-pdgms.edn}`
+   # Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
-    #echo querying $Lang $lang -- $abbrev
+    echo querying $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
 	of=pdgm-fv-props.template
 	#echo of = $of
@@ -51,9 +53,9 @@ do
 	echo " Command line format:"
 	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . .  [or Ctrl-C to exit]."
 	echo "Example -- "
-	echo " oromo:tam=Present,polarity=Affirmative,clauseType=Main"
+	echo " oromo:clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
+	echo " beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present". 
 	echo " [CR at prompt will return all finite-verb pdgms.]"
-	echo
 	read -e -p $lang: propvalset
 	#echo "propvalset = $propvalset"
 	commandline="${commandline}+${lang}:${propvalset}"
@@ -62,5 +64,5 @@ do
 done
 commandline=${commandline#*+}
 #echo "commandline = $commandline"
-#
+
 bin/pdgm-display.sh $commandline $querylabel
