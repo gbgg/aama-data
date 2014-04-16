@@ -102,9 +102,9 @@ The following enumeration  provides for each script a general description, a usa
     - **procedures**: 
         *    **q-string**: (command line)
         
-	     **query-generation**: sparql/templates/valsforprop.template
+	     **generate-query**: sparql/templates/valsforprop.template
 
-	     **response-format**: pl/valforproptsv2table.pl
+	     **format-response**: pl/valforproptsv2table.pl
 
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
