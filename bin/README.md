@@ -34,13 +34,15 @@ The scripts in bin/ are designed to be run from the aama-data home dir, in my ca
 
 ## General Query Procedure
 
-Here and in the following sections, interaction with the fuseki datastore is handled by the Jena fuseki SOH (SPARQL Over HTTP) library, a set of ruby scripts incorporated here into the following bash scripts: 
+Here and in the following sections, interaction with the fuseki datastore is handled by the Jena fuseki SOH (SPARQL Over HTTP) library, a set of ruby scripts incorporated here into the following bash scripts. (The parenthesized scripts are not actually called by current sh scripts.)
 
-	* fuclear.sh: Drop default graph
-	* fudelete.sh: Delete named graph.
-	* fudrop.sh
-	* fuget.sh
-	* fupost.sh
+	* fupost.sh: 	  s-post
+	* (fuput.sh: 	  s-put)
+	* (fuget.sh: 	  s-get)
+	* fuquery-gen: 	  s-query
+	* fudelete.sh: 	  s-delete [delete named graph]
+	* (fuclear.sh: 	  s-update "CLEAR DEFAULT" )
+	* (fudrop.sh: 	  s-update "DROP ALL")
 
 1. **fuseki.sh**: Launch fuseki with parameters of aamaconfig.ttl. (A variant script, **fuseki-default.sh**, launches fuseki with default parameters.)
     - **usage**: bin/fuseki.sh
