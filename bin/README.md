@@ -100,9 +100,11 @@ The following enumeration  provides for each script a general description, a usa
     - **usage**: bin/display-valsforprop.sh \<dir\> prop
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
     - **procedures**: 
-            a. *q-string*: cl.
-	    b. *query-generation*: sparql/templates/valsforprop.template.
-	    c. *response-format*: pl/valforproptsv2table.pl.
+        *    *q-string*: cl.
+        
+	     *query-generation*: sparql/templates/valsforprop.template.
+
+	     *response-format*: pl/valforproptsv2table.pl.
 
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
