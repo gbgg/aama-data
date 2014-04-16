@@ -124,7 +124,9 @@ props in question,
  *"What languages have 2f , and if so, in what pos and what num?"*
     - **procedures**: 
         *    **q-string**: (command-line)
+
 	     **generate-query**: pl/qstring2template.pl (to form query template)
+
 	     **format-response**: pl/langspvtsv2table.pl
 
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
@@ -132,7 +134,9 @@ props in question,
     - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
     - **procedures**: 
         *    **q-string**: (command-line)
+
 	     **generate-query**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl (with or without property names)
+
 	     **format-response**: pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl  (with or without property names).
       
 
@@ -143,7 +147,9 @@ props in question,
     - **example**: Two langs: bin/display-paradigms.sh "data/beja-arteiga data/oromo" At prompt "beja-arteiga:" enter  "conjClass=Suffix,polarity=Affirmative,tam=Present". At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [For one lang, single prompt, single display.]
     - **procedures**: 
         *    **q-string**: pl/verb-propvaltsv2table.pl (displays table prompt)
+
 	     **generate-query**:  pl/qstring2query.pl  (formulates a unified SPARQL query, not a query-template)
+
 	     **format-response**: pl/pdgmtsv2table.pl 
 
 2. **display-pdgms-fv-pnames.sh**: Displays finite verb png forms with morphosyntactic values contained in "pname".
@@ -275,7 +281,7 @@ props in question,
     - **usage**: bin/generate-lang-prop-val-lists.sh \<dir\> file-tag
     - **example**: *generate-lang-prop-val-lists.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" bejaTest* will generate the tables of permutations of lang-prop-val for all the beja languages and put the files in tmp/prop-val/ . . . -bejaTest.html/txt.
     - **procedures**: 
-        *    **q-string**: (cl)
+        *    **q-string**: (command-line)
 
 	     **generate-query**: sparql/templates/lang-prop-val-list.template
 
