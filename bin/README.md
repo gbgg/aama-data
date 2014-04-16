@@ -102,7 +102,9 @@ The following enumeration  provides for each script a general description, a usa
     - **procedures**: 
  
         1. *q-string*: cl 
+        
 	2. *query-generation*: sparql/templates/valsforprop.template
+	
 	3. *response-format*: pl/valforproptsv2table.pl
 
 
@@ -112,7 +114,9 @@ The following enumeration  provides for each script a general description, a usa
     - **procedures**: 
 
         - *q-string*: cl
+        
 	- *query-generation*: sparql/templates/langsforval.template
+	
 	- *response-format*: pl/langsforvaltsv2table.pl
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
