@@ -101,9 +101,7 @@ The following enumeration  provides for each script a general description, a usa
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
     - **procedures**: 
             1. *q-string*: cl.
-        
 	    2. *query-generation*: sparql/templates/valsforprop.template.
-	
 	    3. *response-format*: pl/valforproptsv2table.pl.
 
 
