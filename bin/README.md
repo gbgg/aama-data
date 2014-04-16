@@ -100,6 +100,7 @@ The following enumeration  provides for each script a general description, a usa
     - **usage**: bin/display-valsforprop.sh \<dir\> prop
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
     - **procedures**: 
+ 
         1. *q-string*: cl 
 	2. *query-generation*: sparql/templates/valsforprop.template
 	3. *response-format*: pl/valforproptsv2table.pl
@@ -109,6 +110,7 @@ The following enumeration  provides for each script a general description, a usa
     - **usage**: bin/display-langsforval.sh \<dir\> val
     - **example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
     - **procedures**: 
+
         - *q-string*: cl
 	- *query-generation*: sparql/templates/langsforval.template
 	- *response-format*: pl/langsforvaltsv2table.pl
