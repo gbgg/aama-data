@@ -100,23 +100,22 @@ The following enumeration  provides for each script a general description, a usa
     - **usage**: bin/display-valsforprop.sh \<dir\> prop
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
     - **procedures**: 
-             *q-string*: cl.
+        *    *q-string*: (command line)
         
-	     *query-generation*: sparql/templates/valsforprop.template.
+	     *query-generation*: sparql/templates/valsforprop.template
 
-	     *response-format*: pl/valforproptsv2table.pl.
+	     *response-format*: pl/valforproptsv2table.pl
 
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
     - **usage**: bin/display-langsforval.sh \<dir\> val
     - **example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
-    - **procedures**: 
-
-        	- *q-string*: cl
+    - **procedures**:
+    	*    *q-string*: cl
         
-		- *query-generation*: sparql/templates/langsforval.template
+	     *query-generation*: sparql/templates/langsforval.template
 	
-		- *response-format*: pl/langsforvaltsv2table.pl
+	     *response-format*: pl/langsforvaltsv2table.pl
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
 props in question, 
