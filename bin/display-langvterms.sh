@@ -8,7 +8,7 @@
 # The script first uses qlabel to name the response (tsv) and template files, and calls qstring-terms2template.pl to form the query template from a qstring with one or more prop=val equations, separated by a comma:
 #     prop1=val1,prop2=val2, . . .
 # Indicating that the query template should return the token and all the relevant "val" terms from each queried language satisfying the propN=valN equations.
-# Finally, if a fourth "output" argument with the value "prop" is included, the query will  return a full "prop=val" form for each term.
+# Finally, if a fourth "prop" argument with the value "yes" is included, the query will  return a full "prop=val" form for each term.
 
 # Sample $qstring:
 # person=Person2,gender=Fem
@@ -20,14 +20,14 @@
 # The final response file is formatted into  a display by langspv-termstsv2table.pl .
 
 # example: 
-#  bin/display-langsvterms.sh "data/beja-arteiga data/beja-atmaan" person=Person2,gender=Fem langpvterms-trial prop 
+#  bin/display-langsvterms.sh "data/beja-arteiga data/beja-atmaan" person=Person2,gender=Fem langpvterms-trial yes 
 
 . bin/constants.sh
 
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$2
 qlabel=$3
-output=$4
+prop=$4
 template=sparql/templates/$qlabel.template
 response=tmp/prop-val/$qlabel-resp.tsv
 localqry=tmp/prop-val/$qlabel.rq
@@ -35,12 +35,12 @@ localqry=tmp/prop-val/$qlabel.rq
 echo "Query String = $qstring"
 echo "Template = $template"
 echo "Response = $response"
-echo "Output = $output"
+echo "Display Property Names = $prop"
 #echo " "
 #echo "Title = $title"
 rm $response
 
-if test $output = "prop" 
+if test $prop = "yes" 
 then
 	perl pl/qstring-pvterms2template.pl $qstring $template
 else 
@@ -61,7 +61,7 @@ do
 done
 # Format with following if want row with single token and all vals in comma-separated list;
 
-if test $output = "prop" 
+if test $prop = "yes" 
 then
 	perl pl/langs-pvtermstsv2table.pl $response $qstring
 else

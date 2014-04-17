@@ -129,9 +129,9 @@ props in question,
 
 	     **format-response**: pl/langspvtsv2table.pl
 
-4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
+4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional"yes" for "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
     - **usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
-    - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial prop *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
+    - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial yes *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
     - **procedures**: 
         *    **q-string**: (command-line)
 
