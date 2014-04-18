@@ -28,9 +28,12 @@ echo
 read -e -p Number: qdnumber
 echo
 
-case
-    $qdnumber in 1)
+case "$qdnumber" in 
+        1)
 	echo " Choose among the following prop-val displays:"
+
+
+
 	echo "    1. vals-for-prop"
 	echo "    2. langs-for-val"
 	echo "    3. langs-prop-val"
@@ -40,20 +43,22 @@ case
 	echo
 	read -e -p Prop-val-number: pvnumber
 	echo
-	case
-	    $pvnumber in 1)
+	case "$pvnumber" in 
+	    1)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Enter property name"
 		read -e -p Property: property
 		bin/display-valsforprop.sh $langdomain $property
-	    $pvnumber in 2)
+		;;
+	    2)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Enter value name"
 		read -e -p Value: value
 		bin/display-langsforval.sh $langdomain $value
-	    $pvnumber in 3)
+		;;
+	    3)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Enter qstring: prop=Val,...prop=?prop,..."
@@ -61,7 +66,8 @@ case
 		echo "Enter query label:"
 		read -e -p Qlabel: qlabel
 		bin/display-langspropval.sh $langdomain $qstring $qlabel
-		    $pvnumber in 4)
+		;;
+	    4)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Enter qstring: prop=Val,...prop=?prop,..."
@@ -71,10 +77,12 @@ case
 		bin/display-langspropval.sh $langdomain $qstring $qlabel
 		prop=""
 		echo "Enter \"yes\" if property-name to be displayed with each value "
-		read -e -p Prop?(yes/no): prop
+		read -e -p Prop?[yes/no]: prop
 		bin/display-valsforprop.sh $langdomain $qstring $qlabel $prop
+		;;
 	esac
-	    $qdnumber in 2)
+	;;
+    2)
 	echo "Display Paradigm for:    "
 	echo "    1. Finite Verb"
 	echo "    2. Non-finite Verb"
@@ -83,10 +91,10 @@ case
 	echo " "
 	echo "Choose a prop-val type number or Ctrl-C to exit"
 	echo
-	read -e -p Prop-val-number: pvnumber
+	read -e -p Pdgm-number: pdgmnumber
 	echo
-	case
-	    $pvnumber in 1)
+	case "$pdgmnumber" in 
+	    1)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Choose Prompt:"
@@ -98,7 +106,8 @@ case
 		else
 		    bin/display-pdgms-fv-pnames.sh $langdomain
 		fi
-	    $pvnumber in 2)
+		;;
+	    2)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Choose Prompt:"
@@ -110,22 +119,26 @@ case
 		else
 		    bin/display-pdgms-nfv-pnames.sh $langdomain
 		fi
-	    $pvnumber in 3)
+		;;
+	    3)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Only prompt currently available for pronominal paradigms is:"
 		echo "    \"2\" = Paradigm Name"
 		read -e -p "Press \"Return\" to continue:" continue
 		bin/display-pdgms-pro-pnames.sh $langdomain
-	    $pvnumber in 4)
+		;;
+	    4)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Only prompt currently available for nominal paradigms is:"
 		echo "    \"2\" = Paradigm Name"
 		read -e -p "Press \"Return\" to continue:" continue
 		bin/display-pdgms-noun-pnames.sh $langdomain
+		;;
 	esac
-    $qdnumber in 3)
+	;;
+    3)
 	echo "Generate list of:    "
                echo "1.  Finite-verb properties: pdgm-finite-prop-list.txt for all languages in the triple store."
                echo "2.  Non-finite-verb properties: pdgm-non-finite-prop-list.txt for all languages in the triple store."
@@ -145,35 +158,35 @@ case
 	echo
 	read -e -p List-type-number: ltnumber
 	echo
-	case
-	    $ltnumber in 1)
-                      bin/generate-prop-list-fv.sh
-	    $ltnumber in 2)
-		bin/generate-prop-list-nfv.sh
-	    $ltnumber in 3)
-		bin/generate-prop-list-pro.sh
-	    $ltnumber in 4)
-		bin/generate-prop-list-noun.sh
-	    $ltnumber in 5)
+	case "$ltnumber" in 
+	    1)
+                bin/generate-prop-list-fv.sh ;;
+	    2)
+		bin/generate-prop-list-nfv.sh ;;
+	    3)
+		bin/generate-prop-list-pro.sh ;;
+	    4)
+		bin/generate-prop-list-noun.sh ;;
+	    5)
 		echo "Define language domain"
 		read -e -p lang-domain: $langdomain
-		bin/generate-pnames-fv.sh $langdomain
-	    $ltnumber in 6)
+		bin/generate-pnames-fv.sh $langdomain ;;
+	    6)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-pnames-nfv.sh $langdomain
-	    $ltnumber in 7)
+		bin/generate-pnames-nfv.sh $langdomain ;;
+	    7)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-pnames-pro.sh $langdomain
-	    $ltnumber in 8)
+		bin/generate-pnames-pro.sh $langdomain ;;
+	    8)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-pnames-noun.sh $langdomain
-	    $ltnumber in 9)
+		bin/generate-pnames-noun.sh $langdomain ;;
+	    9)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-lang-prop-val-lists.sh $langdomain
+		bin/generate-lang-prop-val-lists.sh $langdomain ;;
 	esac
 esac
 
