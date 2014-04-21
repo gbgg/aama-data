@@ -10,13 +10,28 @@
 
 # Cf. bin/README.md
 
-# example:
-#    <aama> $ bin/finite-prop-val-lang.sh data/beja-arteiga 
-
-#echo " 'Non-finite verb' is operationally defined as any form of  a verb that" 
-#echo " is marked for a value of tam, and is marked also at least for" 
-#echo " person  (optionally also for gender and number). "
-#echo
+echo
+echo "========================================================================"
+echo "QUERY AND DISPLAY DEMO "
+echo "========================================================================"
+echo " This is a provisional menu-driven command-line app for  cycling"
+echo " through the 'display-' and 'generate-' shell scripts to demonstrate "
+echo " different kinds of  query strings, their transformation into SPARQL  "
+echo " queries, and a tabular display of the resulting response."
+echo 
+echo " For a general overview and instructions see bin/README.md,"
+echo " and the documentation of the individual scripts."
+#echo "  many of which write the generated query and the "
+#echo " raw response to files to /tmp/prop-val or /sparql/pdgms/output."
+#echo " NB1: This script presupposes that fuseki has been launched in another "
+#echo " tab/window by bin/fuseki.sh. "
+#echo " NB2: In response to the 'Define language domain' prompt:"
+#echo " data/LANG will yield the relevant information for LANG; "
+#echo " \"data/LANG1 data/LANG2 data/LANG3 . . .\" the information for the "
+#echo " set of languages LANG1, LANG2, LANG3 . . .; \"data/*\" the requested"
+#echo " information for all languages in the datastore. "
+echo "======================================================================="
+echo
 echo " The following are the current categories of query and display scripts:"
 echo
 echo "     1. Property-Value displays"
@@ -31,13 +46,11 @@ echo
 case "$qdnumber" in 
         1)
 	echo " Choose among the following prop-val displays:"
-
-
-
-	echo "    1. vals-for-prop"
-	echo "    2. langs-for-val"
-	echo "    3. langs-prop-val"
-	echo "    4. terms-with-prop-val"
+	echo
+	echo "    1. Display all values for a given property in a language or set of languages"
+	echo "    2. Display all languages which have a given value, and the property of which it is a value"
+	echo "    3. List languages in which a set of one or more prop=val equivalences (co)-occur, specified in a comma-separated prop=val 'qstring'; 'qlabel' is used to identify the query-file and output-tsv file. ['qstring' can also contain one or more prop=?val equations, indicating that the query should return the values from the props in question]"
+	echo "    4. Display for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional'yes' for 'prop' argument specifies that property-name will be given with each value (otherwise, only value-names are given). [NB: Script can generate very large output!]"
 	echo " "
 	echo "Choose a prop-val type number or Ctrl-C to exit"
 	echo

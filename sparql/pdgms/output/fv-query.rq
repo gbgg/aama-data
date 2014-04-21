@@ -4,9 +4,8 @@ PREFIX aama: <http://id.oi.uchicago.edu/aama/2013/>
 PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
-PREFIX orm:   <http://id.oi.uchicago.edu/aama/2013/oromo/>
 
-SELECT ?langLabel ?derivedStem ?derivedStemAug ?formType ?pdgmType ?rootClass  ?num ?pers ?gen ?token
+SELECT ?langLabel ?derivedStem ?derivedStemAug ?formType ?pdgmType ?polarity ?rootClass  ?num ?pers ?gen ?token
 WHERE
 {
 	{
@@ -17,7 +16,7 @@ WHERE
 			?s	aamas:lang	?lang .
 			?lang	rdfs:label	?langLabel . 
 			?s	bar:conjClass	bar:Suffix . 
-			?s	bar:polarity	bar:Affirmative . 
+			?s	bar:polarirty	bar:Affirmative . 
 			?s	bar:tam	bar:Present . 
 			OPTIONAL { ?s	bar:derivedStem	?QderivedStem . 
  			?QderivedStem	rdfs:label	?derivedStem . }
@@ -27,6 +26,8 @@ WHERE
  			?QformType	rdfs:label	?formType . }
 			OPTIONAL { ?s	bar:pdgmType	?QpdgmType . 
  			?QpdgmType	rdfs:label	?pdgmType . }
+			OPTIONAL { ?s	bar:polarity	?Qpolarity . 
+ 			?Qpolarity	rdfs:label	?polarity . }
 			OPTIONAL { ?s	bar:rootClass	?QrootClass . 
  			?QrootClass	rdfs:label	?rootClass . }
 			OPTIONAL { ?s	bar:number	?number . 
@@ -38,28 +39,5 @@ WHERE
 			?s	bar:token	?token . 
 		}
 	}
-	UNION
-	{
-		GRAPH aamag:oromo
-		{
-			?s	orm:pos	orm:Verb . 
-			?s	aamas:lang	aama:Oromo .
-			?s	aamas:lang	?lang .
-			?lang	rdfs:label	?langLabel . 
-			?s	orm:clauseType	orm:Main . 
-			?s	orm:derivedStem	orm:Base . 
-			?s	orm:polarity	orm:Affirmative . 
-			?s	orm:tam	orm:Present . 
-			OPTIONAL { ?s	orm:formType	?QformType . 
- 			?QformType	rdfs:label	?formType . }
-			OPTIONAL { ?s	orm:number	?number . 
-			?number	rdfs:label	?num . }
-			?s	orm:person	?person . 
-			?person	rdfs:label	?pers . 
-			OPTIONAL { ?s	orm:gender	?gender . 
-			?gender	rdfs:label	?gen . }
-			?s	orm:token	?token . 
-		}
-	}
 }
-ORDER BY ?langLabel  ?derivedStem ?derivedStemAug ?formType ?pdgmType ?rootClass   DESC(?num) ?pers DESC(?gen)
+ORDER BY ?langLabel  ?derivedStem ?derivedStemAug ?formType ?pdgmType ?polarity ?rootClass   DESC(?num) ?pers DESC(?gen)

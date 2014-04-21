@@ -32,3 +32,4 @@ do
 	> $response
     perl pl/valforproptsv2table.pl $response $type
 done
+bin/aama-query-and-display.sh
