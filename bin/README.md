@@ -82,10 +82,12 @@ The demo presupposes that github/gbgg/aama-data has been cloned in the user's co
 In order to run the demo the user needs to:
 
 1. Have edited bin/constants.sh to reflect the location of fuseki on the user's machine.
-2. If the datastore is not up-to-date, have run bin/aama-datastore-setup.sh (itself requiring the launching of fuseki by bin/fuseki.sh). This script  will:
+2. If the datastore has not been set up, or is not up-to-date, have run bin/aama-datastore-setup.sh (itself requiring the launching of fuseki by bin/fuseki.sh). This script  will:
    
-   a. delete the old datastore directory and make a new one;
+   a. delete the old datastore directory, if it exists, and make a new one;
+
    b. load (with fuput.sh) all the current ttl/rdf files into the datastore;
+
    c. generate the "pname" files needed for pdgm-pname display.
 
 3. Launch the fuseki server with bin/fuseki.sh in one terminal window.
