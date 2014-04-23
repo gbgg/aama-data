@@ -17,6 +17,8 @@
 # At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 echo "fuquery.log" > logs/fuquery.log;
 #echo " 'Finite verb' is operationally defined as any form of  a verb that" 
@@ -66,3 +68,4 @@ commandline=${commandline#*+}
 #echo "commandline = $commandline"
 
 bin/pdgm-display.sh $commandline $querylabel
+bin/aama-query-display-demo.sh

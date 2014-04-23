@@ -4,6 +4,8 @@
 # finite verb pdgms of each language
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 response=sparql/pdgms/pdgm-finite-prop-list.tsv
 mv $response "${response}.bck"
 echo "fuquery.log" > logs/fuquery.log;
@@ -28,3 +30,4 @@ do
 done
 	perl pl/pdgm-proplist2txt.pl $response
 
+bin/aama-query-display-demo.sh

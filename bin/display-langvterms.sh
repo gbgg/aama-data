@@ -23,6 +23,8 @@
 #  bin/display-langsvterms.sh "data/beja-arteiga data/beja-atmaan" person=Person2,gender=Fem langpvterms-trial yes 
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$2
@@ -70,3 +72,4 @@ fi
 # If want rows  with repeated token and single value, use following:
 #perl pl/langspvtsv2table.pl $response
 
+bin/aama-query-display-demo.sh

@@ -6,6 +6,8 @@
 # The script is designed to produce displays of non-finite verb paradigm names in one or more languages. 
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 for f in `find $1 -name *.edn`
 do
@@ -30,3 +32,4 @@ done
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
+bin/aama-query-display-demo.sh

@@ -2,6 +2,8 @@
 # usage:  htmlgen.sh "dir"
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 echo "xml2html" >> logs/xml2html.log;
 
@@ -25,3 +27,4 @@ echo "xml2html" >> logs/xml2html.log;
 	done
 #done
 
+bin/aama-query-display-demo.sh

@@ -11,6 +11,8 @@
 #    <aama> $ bin/display-langsforval.sh "data/*" Aorist [What languages have a tam=Aorist?]
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 val=$2
 of=langsforval.template
 response="tmp/prop-val/${of%.template}.$val-resp.tsv"
@@ -38,3 +40,4 @@ perl pl/langsforvaltsv2table.pl $response $val
 #	--service http://localhost:3030/aamaTestData/query  \
 #	--file=query-temp.rq  \
 #	> ../cygwin/home/Gene/aamadata/tools/rq-ru/query-trial/$response
+bin/aama-query-display-demo.sh

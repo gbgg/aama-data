@@ -8,6 +8,8 @@
 #		prop	lang: v, v, v, ...
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 response=tmp/prop-val/lang-prop-val-list.tsv
 mv $response "${response}.bck"
 filetag=$2
@@ -34,3 +36,4 @@ done
 	perl pl/lang-prop-val-list-tsv2table.pl $response $filetag
 
 #	perl pl/lang-prop-val-list-tsv2table.pl tmp/prop-val/lang-prop-val-list.tsv
+bin/aama-query-display-demo.sh

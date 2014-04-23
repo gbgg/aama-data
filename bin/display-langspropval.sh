@@ -31,6 +31,8 @@
 # bin/display-langspropval.sh "data/*" person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
 
                                                                                       . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$2
@@ -61,3 +63,4 @@ do
 done
 perl pl/langspvtsv2table.pl $response
 
+bin/aama-query-display-demo.sh

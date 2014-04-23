@@ -10,9 +10,12 @@
 #   bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam  
 
 . bin/constants.sh
-
+ldomain=${1//,/ }
+ldomain=${ldomain//\"/}
+#echo "lang domain = ${ldomain}"
+#echo "type = ${2}"
 echo "fuquery.log" > logs/fuquery.log;
-for f in `find $1 -name *.edn`
+for f in `find $ldomain -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
     type=$2
@@ -32,4 +35,4 @@ do
 	> $response
     perl pl/valforproptsv2table.pl $response $type
 done
-bin/aama-query-and-display.sh
+bin/aama-query-display-demo.sh

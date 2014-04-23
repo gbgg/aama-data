@@ -15,6 +15,8 @@
 #    <aama> $ bin/finite-prop-val-lang.sh data/beja-arteiga 
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 echo "fuquery.log" > logs/fuquery.log;
 #echo " 'Non-finite verb' is operationally defined as any form of  a verb that" 
@@ -57,3 +59,4 @@ do
 
 	perl pl/pdgmtsv2table.pl	$response $qstring
 done 
+bin/aama-query-display-demo.sh

@@ -7,6 +7,8 @@
 # in one or more languages. 
 
 . bin/constants.sh
+ldomain=${1//,/ }
+ldomain=${ldomain//"/}
 
 # After starting the server with fuseki.sh, first copy the query files;
 
@@ -39,3 +41,4 @@ done
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
+bin/aama-query-display-demo.sh
