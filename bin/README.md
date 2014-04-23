@@ -7,8 +7,10 @@ The scripts in bin/ are designed to be run from the aama-data home dir, in my ca
 2. General Query Procedures.
 
 3. Data Revision Routine.
+ 
+4. The Query and Display Demo.
 
-4. Command-line Query and Display Utilities.
+5. Command-line Query and Display Utilities.
 
 
 - NB: **constants.sh** is called by many scripts for location of fuseki, saxon, eyeball, etc. **lname-pref.txt** contains the abbreviations for languages used in graph NS prefixes.
