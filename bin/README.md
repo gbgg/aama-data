@@ -73,6 +73,26 @@ Working with data in a query-delete-revise-upload cycle typically involves the f
 
 ============================================
 
+## Query and Display Demo
+
+This demo  is a provisional menu-driven command-line app for  cycling  through the 'display-' and 'generate-' shell scripts described in the following section. Its purpose is to demonstrate  different kinds of  query strings (user-supplied script arguments), their transformation into SPARQL queries, and a tabular display of the resulting response. 
+
+The demo presupposes that github/gbgg/aama-data has been cloned in the user's computer, that the most recent changes have been pulled (which will include the up-to-date edn data files, and their ttl/rdf versions), and that the user has installed Jena Fuseki.
+
+In order to run the demo the user needs to:
+
+1. Have edited bin/constants.sh to reflect the location of fuseki on the user's machine.
+2. If the datastore is not up-to-date, have run bin/aama-datastore-setup.sh (itself requiring the launching of fuseki by bin/fuseki.sh). This script  will:
+   
+   a. delete the old datastore directory and make a new one;
+   b. load (with fuput.sh) all the current ttl/rdf files into the datastore;
+   c. generate the "pname" files needed for pdgm-pname display.
+
+3. Launch the fuseki server with bin/fuseki.sh in one terminal window.
+4. Run bin/aama-query-display-demo.sh in another termnal window.
+
+==============================================
+
 ## Command-line Query and Display Utilities
 
 Pending the development of a GUI, the following scripts permit an ad-hoc querying and display of the aama data which has been loaded into a fuseki datastore. In various ways each of these scripts performs the following tasks:
@@ -80,12 +100,11 @@ Pending the development of a GUI, the following scripts permit an ad-hoc queryin
 * **Build query string**: In some cases  property and/or value identifiers are given directly as command-line arguments; in others the script first displays by way of prompt a table of relevant properties/values or "paradigm identifiers" (see below, "pnames"), out of which the user makes a selection. The tables are either formatted directly by perl/sed commands in the script, or are print-outs of stored lists generated ahead of time by the list-generation scripts mentioned below.
 * **Transform  query string into SPARQL query**. For some simple queries this can be done by direct substitution of language-, property-, and value-identifiers into a query template; in others a distinct query needs to be generated (usually by a perl sub-script).
 * **Format response**. Currently almost all fuseki s-query scripts are set for output in tsv format. This is transformed into appropriate tablular (STDOUT/txt/html) display either directly in the shell script itself, or by a perl sub-script.
-* **QUERY AND DISPLAY DEMO** bin/aama-query-and-display.sh  is a provisional menu-driven command-line app for  cycling  through the following 'display-' and 'generate-' shell scripts to demonstrate  different kinds of  query strings, their transformation into SPARQL   queries, and a tabular display of the resulting response. (NB: This script presupposes that fuseki has been launched in another tab or window by bin/fuseki.sh.)
 
 
 * On inspection it will be obvious that there is considerable overlap among these exploratory scripts, and that many of these could be unified into a single script (with extra arguments, subroutines, etc.) if that turned out to be useful. For now the principal role of these scripts is to serve something of a rough model/prototype for eventual GUI operations with drop-down lists, etc.
 
-* The scripts are named (pending unification) in accordance with the following conventions:
+* *Script Names.* The scripts are named (pending unification) in accordance with the following conventions:
     1. **pos** properties: 
         * *fv* (finite verb). These are terms with 'pos=Verb', and which are marked for the property 'person'. 
         * *nfv* (non-finite verb). All other 'pos=Verb' forms, including participles, stems, etc.
@@ -95,13 +114,14 @@ Pending the development of a GUI, the following scripts permit an ad-hoc queryin
         * *pv*: (the prompt is a table of the property-value pairs which can or must be represented in a paradigm for the language and pos in question; out of these, at the prompt, the user supplies a comma-separated list of form 'prop=val,prop=val,...'). 
         * *pnames*: (the prompt is a numbered list of comma-separated value combinations which occur with the pos in question, exclusive of png values -- effectively a paradigm-name; out of these, at the prompt, the user enters one number). 
 
-The following enumeration  provides for each script a general description, a usage template, an example, and a brief characterization of the processes involved in query-string formation, query formatting, and response formatting.
+The following enumeration  provides for each script a general description, a usage template, an example, the internally generated query and response files, and a brief characterization of the processes involved in query-string formation, query formatting, and response formatting.
 
 **Property-Value Displays**
 
 1. **display-valsforprop.sh**: Gives all values for a given property in the specified languages.
     - **usage**: bin/display-valsforprop.sh \<dir\> prop
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (command line)
         
@@ -113,6 +133,7 @@ The following enumeration  provides for each script a general description, a usa
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
     - **usage**: bin/display-langsforval.sh \<dir\> val
     - **example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (command-line)
 	     
@@ -125,6 +146,7 @@ props in question.
     - **usage**: bin/display-langspropval.sh \<dir\> qstring qlabel
     - **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
  *"What languages have 2f , and if so, in what pos and what num?"*
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (command-line)
 
@@ -135,6 +157,7 @@ props in question.
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional"yes" for "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
     - **usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
     - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial yes *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (command-line)
 
@@ -148,6 +171,7 @@ props in question.
 1. **display-pdgms-fv-pv.sh**: Displays finite verb png forms in one or more languages which meet *prop=val* constraints entered at the prompt.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: Two langs: bin/display-paradigms.sh "data/beja-arteiga data/oromo" At prompt "beja-arteiga:" enter  "conjClass=Suffix,polarity=Affirmative,tam=Present". At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [For one lang, single prompt, single display.]
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: pl/verb-propvaltsv2table.pl (displays table prompt)
 
@@ -158,6 +182,7 @@ props in question.
 2. **display-pdgms-fv-pnames.sh**: Displays finite verb png forms with morphosyntactic values contained in "pname".
     - **usage**: bin/display-pdgms-fv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "10" shows png forms for Prefix-Affirmative-CCY-Aorist.
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames table prompt: file sparql/pdgms/pname-fv-list-$lang.txt, generated by bin/generate-pnames-fv.sh)
 
@@ -168,6 +193,7 @@ props in question.
 3. **display-pdgms-nfv-pv.sh**: Displays non-finite verb forms in one or more languages which meet *prop=val* constraints entered at the prompt.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: At prompt, "derivedStem=B" gives all nfv forms in base stem.
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: sparql/templates/pdgm-nfv-props.template gives tsv list of forms; pl/verb-propvaltsv2table.pl formats to table prompt
 
@@ -178,6 +204,7 @@ props in question.
 4. **display-pdgms-nfv-pnames.sh**: Displays non-finite  forms of verb with morphosyntactic values contained in "pname".
     - **usage**: bin/display-pdgms-nfv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "2" shows stems for all conjClass, derivedStem, rootClass, and tam verb forms.
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames-list prompt file sparql/pdgms/pname-nfv-list-$lang.txt, generated by bin/generate-pnames-nfv.sh)
 
@@ -188,6 +215,7 @@ props in question.
 5. **display-pdgms-pro-pnames.sh**: Displays pronominal  forms with morphosyntactic values contained in "pname". A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
     - **usage**: bin/display-pdgms-pro-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "3" shows all independent pronominal forms.
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames prompt file sparql/pdgms/pname-pro-list-$lang.txt, generated by bin/generate-pnames-pro.sh)
 
@@ -198,6 +226,7 @@ props in question.
 6. **display-pdgms-noun-pnames.sh**: For the moment, nominal paradigms are only incidentally included in aama, but for the few which exist, this script displays nominal  forms with morphosyntactic values contained in "pname".  A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
     - **usage**: bin/display-pdgms-noun-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "1" shows the noun plural classes. 
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames prompt file sparql/pdgms/pname-noun-list-$lang.txt, generated by generate-pnames-noun.sh)
 
@@ -209,6 +238,7 @@ props in question.
 
 1. **generate-prop-list-fv.sh**: Generates the finite-verb property list sparql/pdgms/pdgm-finite-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-fv.sh
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (fv props in all languages)
 
@@ -218,6 +248,7 @@ props in question.
 
 2. **generate-prop-list-nfv.sh**: Generates the non-finite-verb property list sparql/pdgms/pdgm-non-finite-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-nfv.sh
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (nfv props in all languages)
 
@@ -227,6 +258,7 @@ props in question.
 
 3. **generate-prop-list-pro.sh**: Generates the pronoun property list sparql/pdgms/pdgm-pro-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-pro.sh
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (pro props in all languages)
 
@@ -236,6 +268,7 @@ props in question.
 
 4. **generate-prop-list-noun.sh**: Generates the noun property list sparql/pdgms/pdgm-noun-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-noun.sh
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (noun props in all languages)
 
@@ -245,6 +278,7 @@ props in question.
 
 5. **generate-pnames-fv.sh**: Generates a list of finite-verb property-value combinations sparql/pdgms/pname-vf-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-list-fv.sh \<dir\> 
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (fv pnames in designated languages)
 
@@ -254,6 +288,7 @@ props in question.
 
 6. **generate-pnames-nfv.sh**: Generates a list of non-finite-verb property-value combinations sparql/pdgms/pname-nvf-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-list-nfv.sh \<dir\> 
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (nfv pnames in designated languages)
 
@@ -263,6 +298,7 @@ props in question.
 
 7. **generate-pnames-pro.sh**: Generates a list of pronoun property-value combinations sparql/pdgms/pname-pro-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-pro.sh \<dir\> 
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (pro pnames in designated languages)
 
@@ -272,6 +308,7 @@ props in question.
 
 8. **generate-pnames-noun.sh**: Generates a list of noun property-value combinations sparql/pdgms/pname-pro-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-noun.sh \<dir\> 
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (noun pnames in designated languages)
 
@@ -283,6 +320,7 @@ props in question.
 (1) *lang	prop: val, val, val, ...* (all the values for each prop in each language), (2) *prop val: lang, lang, lang, ...* (all the languages in which a given prop has a given val), (3) *val	prop: lang, lang, lang, ...* (all the languages in which a given val is associated with a given prop), (4) *prop	lang: val, val, val, ...* (all the values associated with a given prop in a given language)
     - **usage**: bin/generate-lang-prop-val-lists.sh \<dir\> file-tag
     - **example**: *generate-lang-prop-val-lists.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" bejaTest* will generate the tables of permutations of lang-prop-val for all the beja languages and put the files in tmp/prop-val/ . . . -bejaTest.html/txt.
+    - **generated files**: 
     - **procedures**: 
         *    **q-string**: (command-line)
 
