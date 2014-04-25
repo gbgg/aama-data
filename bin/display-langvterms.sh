@@ -24,7 +24,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 
 # After starting the server with fuseki.sh, first copy the query files;
 qstring=$2

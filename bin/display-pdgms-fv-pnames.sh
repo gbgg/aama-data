@@ -16,7 +16,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 
 echo "fuquery.log" > logs/fuquery.log;
 #echo " 'Non-finite verb' is operationally defined as any form of  a verb that" 
@@ -52,7 +52,6 @@ do
 	echo "Localqry = $localqry"
 	echo "Response = $response"
 	echo 
-	#title=" "
 	perl pl/qstring-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev 
 
 	${FUSEKIDIR}/s-query \

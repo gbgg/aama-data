@@ -1,4 +1,4 @@
- #!/bin/sh
+#!/bin/sh
 
 # rev 11/22/13, adapted from display-paradigms.sh
 # usage: bin/display-pnames.sh <dir>
@@ -8,11 +8,11 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain2=${ldomain//\"/}
 
 # After starting the server with fuseki.sh, first copy the query files;
 
-for f in `find $1 -name *.edn`
+for f in `find $ldomain2 -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"

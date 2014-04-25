@@ -3,7 +3,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 
 echo "xml2html" >> logs/xml2html.log;
 

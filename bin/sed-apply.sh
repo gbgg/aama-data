@@ -2,7 +2,7 @@
 
 
 
-for f in `find bin/ -name generate-p*`
+for f in `find bin/ -name display-*`
 do
 #    f2=${f/%.sh/.bck}
 #   echo "copying $f to ${f2} . . . "
@@ -10,5 +10,6 @@ do
     f3=${f/%.sh/.new}
     echo "renaming $f to ${f3} . . . "
     mv $f $f3
-    sed -f bin/append.sed $f3 > $f
+    sed -e "s/ldomain\/\/\"\//ldomain\/\/\\\\\"\//" $f3 > $f
+    #sed -f bin/append.sed $f3 > $f
 done
