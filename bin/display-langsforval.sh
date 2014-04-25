@@ -12,7 +12,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 val=$2
 of=langsforval.template
 response="tmp/prop-val/${of%.template}.$val-resp.tsv"

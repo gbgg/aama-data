@@ -18,7 +18,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 
 echo "fuquery.log" > logs/fuquery.log;
 #echo " 'Finite verb' is operationally defined as any form of  a verb that" 

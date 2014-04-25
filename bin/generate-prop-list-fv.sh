@@ -5,7 +5,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 response=sparql/pdgms/pdgm-finite-prop-list.tsv
 mv $response "${response}.bck"
 echo "fuquery.log" > logs/fuquery.log;
