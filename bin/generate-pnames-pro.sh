@@ -7,7 +7,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 
 for f in `find $1 -name *.edn`
 do
@@ -15,7 +15,7 @@ do
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
-	#echo "querying $lang $Lang $abbrev"
+	echo "querying $lang $Lang $abbrev"
 	localqry=sparql/pdgms/output/pnames-pro-$lang-query.rq
 	response=sparql/pdgms/output/pnames-pro-$lang-resp.tsv
 	echo "Localqry = $localqry"

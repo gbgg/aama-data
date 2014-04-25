@@ -7,7 +7,7 @@
 
 . bin/constants.sh
 ldomain=${1//,/ }
-ldomain=${ldomain//"/}
+ldomain=${ldomain//\"/}
 
 for f in `find $1 -name *.edn`
 do
@@ -32,4 +32,4 @@ done
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
-bin/aama-query-display-demo.sh
+#bin/aama-query-display-demo.sh
