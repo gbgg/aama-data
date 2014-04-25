@@ -23,10 +23,10 @@ The scripts in bin/ are designed to be run from the aama-data home dir, in my ca
 
 1. The normative/persistant data format is [edn: Extensible Data Notation](https://github.com/edn-format/edn). As each LANG-pdgms.edn file is updated, it should be copied to its aama/LANG repo (use aama-cp2lngrepo.sh for larger-scale updates) and pushed to github (can use aama/tools/git-commit-push.sh; for updating local LANG repos after work done on another machine, use aama/tools/git-pull.sh ).
 
-2. **aama-edn2ttl.sh** uses aama-edn2ttl.jar, produced by lein uberjar from edn2ttl clojure project (~/leiningen/edn2ttl2), to make ttl file. As side effect, this passes edn through edn/read-string, which can filter out a certain number of edn format errors.
+2. **aama-edn2ttl.sh** uses aama-edn2ttl.jar, produced by lein uberjar from edn2ttl clojure project (~/leiningen/edn2ttl2; current version is stored in sparql/clojure, and must be copied to user's JAR directory), to make ttl file. As side effect, this passes edn through edn/read-string, which can filter out a certain number of edn format errors.
     - **usage**: bin/aama-edn2ttl.sh data/LANG
 
-3. **aama-ttl2rdf.sh**: Make rdf file. Uses rdf2rdf.jar, which picks up ttl problems from edn2ttl.
+3. **aama-ttl2rdf.sh**: Make rdf file. Uses rdf2rdf.jar, which picks up ttl problems from edn2ttl. [INCLUDES aama-edn2ttl.jar, for use once eventual edn/read-string problems have been debugged.]
    - **usage**: bin/aama-ttl2rdf.sh data/LANG
 
 4. **aama-rdf2fuseki.sh**: Upload to fuseki using s-post. As check, script runs fuqueries.sh, which counts triples and lists graphs on fuseki server after upload.

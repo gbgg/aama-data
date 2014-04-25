@@ -72,14 +72,14 @@ case "$qdnumber" in
 		read -e -p lang-domain: langdomain
 		echo "Enter property name"
 		read -e -p Property: property
-		bin/display-valsforprop.sh $langdomain $property
+		bin/display-valsforprop.sh $langdomain $property menu
 		;;
 	    2)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
 		echo "Enter value name"
 		read -e -p Value: value
-		bin/display-langsforval.sh $langdomain $value
+		bin/display-langsforval.sh $langdomain $value menu
 		;;
 	    3)
 		echo "Define language domain"
@@ -88,7 +88,7 @@ case "$qdnumber" in
 		read -e -p Qstring: qstring
 		echo "Enter query label:"
 		read -e -p Qlabel: qlabel
-		bin/display-langspropval.sh $langdomain $qstring $qlabel
+		bin/display-langspropval.sh $langdomain $qstring $qlabel menu
 		;;
 	    4)
 		echo "Define language domain"
@@ -97,11 +97,11 @@ case "$qdnumber" in
 		read -e -p Qstring: qstring
 		echo "Enter query label:"
 		read -e -p Qlabel: qlabel
-		bin/display-langspropval.sh $langdomain $qstring $qlabel
+		bin/display-langspropval.sh $langdomain $qstring $qlabel menu
 		prop=""
 		echo "Enter \"yes\" if property-name to be displayed with each value "
 		read -e -p Prop?[yes/no]: prop
-		bin/display-valsforprop.sh $langdomain $qstring $qlabel $prop
+		bin/display-valsforprop.sh $langdomain $qstring $qlabel $prop menu
 		;;
 	esac
 	;;
@@ -125,9 +125,9 @@ case "$qdnumber" in
 		echo "    \"2\" = Paradigm Name"
 		read -e -p Prompt= prompt
 		if [ "$prompt" = "1" ] ; then
-		    bin/display-pdgms-fv-pv.sh $langdomain
+		    bin/display-pdgms-fv-pv.sh $langdomain menu
 		else
-		    bin/display-pdgms-fv-pnames.sh $langdomain
+		    bin/display-pdgms-fv-pnames.sh $langdomain menu
 		fi
 		;;
 	    2)
@@ -138,9 +138,9 @@ case "$qdnumber" in
 		echo "    \"2\" = Paradigm Name"
 		read -e -p Prompt= prompt
 		if [ "$prompt" = "1" ] ; then
-		    bin/display-pdgms-nfv-pv.sh $langdomain
+		    bin/display-pdgms-nfv-pv.sh $langdomain menu
 		else
-		    bin/display-pdgms-nfv-pnames.sh $langdomain
+		    bin/display-pdgms-nfv-pnames.sh $langdomain menu
 		fi
 		;;
 	    3)
@@ -149,7 +149,7 @@ case "$qdnumber" in
 		echo "Only prompt currently available for pronominal paradigms is:"
 		echo "    \"2\" = Paradigm Name"
 		read -e -p "Press \"Return\" to continue:" continue
-		bin/display-pdgms-pro-pnames.sh $langdomain
+		bin/display-pdgms-pro-pnames.sh $langdomain menu
 		;;
 	    4)
 		echo "Define language domain"
@@ -157,7 +157,7 @@ case "$qdnumber" in
 		echo "Only prompt currently available for nominal paradigms is:"
 		echo "    \"2\" = Paradigm Name"
 		read -e -p "Press \"Return\" to continue:" continue
-		bin/display-pdgms-noun-pnames.sh $langdomain
+		bin/display-pdgms-noun-pnames.sh $langdomain menu
 		;;
 	esac
 	;;
@@ -196,13 +196,13 @@ case "$qdnumber" in
 	echo
 	case "$ltnumber" in 
 	    1)
-                bin/generate-prop-list-fv.sh ;;
+                bin/generate-prop-list-fv.sh menu ;;
 	    2)
-		bin/generate-prop-list-nfv.sh ;;
+		bin/generate-prop-list-nfv.sh menu ;;
 	    3)
-		bin/generate-prop-list-pro.sh ;;
+		bin/generate-prop-list-pro.sh menu ;;
 	    4)
-		bin/generate-prop-list-noun.sh ;;
+		bin/generate-prop-list-noun.sh menu ;;
 	    5)
 		echo "Define language domain"
 		read -e -p lang-domain: $langdomain
@@ -210,19 +210,19 @@ case "$qdnumber" in
 	    6)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-pnames-nfv.sh $langdomain ;;
+		bin/generate-pnames-nfv.sh $langdomain menu ;;
 	    7)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-pnames-pro.sh $langdomain ;;
+		bin/generate-pnames-pro.sh $langdomain menu ;;
 	    8)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-pnames-noun.sh $langdomain ;;
+		bin/generate-pnames-noun.sh $langdomain menu ;;
 	    9)
 		echo "Define language domain"
 		read -e -p lang-domain: langdomain
-		bin/generate-lang-prop-val-lists.sh $langdomain ;;
+		bin/generate-lang-prop-val-lists.sh $langdomain menu ;;
 	esac
 esac
 

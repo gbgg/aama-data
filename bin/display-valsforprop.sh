@@ -35,4 +35,8 @@ do
 	> $response
     perl pl/valforproptsv2table.pl $response $type
 done
-bin/aama-query-display-demo.sh
+
+if [ "$3" = "menu" ] ; then
+    bin/aama-query-display-demo.sh
+fi
+
