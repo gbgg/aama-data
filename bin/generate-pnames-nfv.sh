@@ -32,4 +32,7 @@ done
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
-bin/aama-query-display-demo.sh
+
+if [ "$2" = "menu" ] ; then
+    bin/aama-query-display-demo.sh
+fi

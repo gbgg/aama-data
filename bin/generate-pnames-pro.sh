@@ -16,7 +16,7 @@ do
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
-	#echo "querying $lang $Lang $abbrev"
+	echo "querying $lang $Lang $abbrev"
 	localqry=sparql/pdgms/output/pnames-pro-$lang-query.rq
 	response=sparql/pdgms/output/pnames-pro-$lang-resp.tsv
 	echo "Localqry = $localqry"
@@ -33,4 +33,7 @@ done
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
-bin/aama-query-display-demo.sh
+if [ "$2" = "menu" ] ; then
+    bin/aama-query-display-demo.sh
+fi
+
