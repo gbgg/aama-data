@@ -18,6 +18,7 @@ do
 	#echo "querying $lang $Lang $abbrev"
 	localqry=sparql/pdgms/output/pnames-noun-$lang-query.rq
 	response=sparql/pdgms/output/pnames-noun-$lang-resp.tsv
+	echo " "
 	echo "Localqry = $localqry"
 	echo "Response = $response"
 	sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-noun-pnames.template > $localqry

@@ -8,21 +8,23 @@
 	  :dimension [:AboveSpeaker, :FarDist, :FarMid, :NearSpeaker, :belowSpeaker]
 	  :focus [:Decl, :Declarative, :Interrog, :Interrogative, :NoFoc, :NoFocus]
 	  :gender [:Common, :Fem, :Masc]
+          :multilex [:DERVSTEMFORM]
 	  :number [:Plural, :PluralEx, :PluralIn, :Singular]
 	  :pdgmClass [:PersonClass1, :PersonClass2]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Aff, :Affirmative, :Neg, :Negative]
-	  :pos [:Pro, :Pronoun, :Verb]
+	  :pos [:Pronoun, :Verb]
 	  :proClass [:DemPro, :Demonstrative, :Interrogative, :ProInd, :Vocative]
 	  :tam [:ImperativeOptative, :ImprtvOpt, :PastHab, :PastHabitual, :PastPerf, :PastPerfective, :PastProg, :PastProgressive, :PresHab, :PresPerf, :PresProg, :PresentHabitual, :PresentPerfective, :PresentProgressive]
 	  :verbMorphClass [:DervStem]
 	  }
 :lexemes {
-  :PRO {:lemma "Pronoun", :gloss "Pronoun", :pos :Pronoun}
-  :_NULL {:lemma "NULL", :gloss "NULL", }
   :baas {:lemma "ba:s-", :gloss "want", }
   :bee {:lemma "bee-", :gloss "see", :conjClass :Conj2, :pos :Verb}
   :woon {:lemma "woon-", :gloss "buy", :conjClass :Conj1, :pos :Verb}
+}
+:morphemes {
+  :PRO {:lemma "Pronoun", :gloss "Pronoun", :pos :Pronoun}
 }
 :lxterms #{
     {:label "koorete-VAffPresPerfDeclPClass2"
@@ -601,22 +603,6 @@
 	    [:Common, :Plural, :Person2, "hi", "ye-tsha", "woon-g-u-wa-d-i-ko", "woon-g-u-wa-d-i-ko hi ye-tsha"],
 	    [:Common, :Plural, :Person3, "u", "ye-tsha", "woon-g-u-wa-d-i-ko", "woon-g-u-wa-d-i-ko u ye-tsha"]]
     }
-    {:label "koorete-PDemPro"
-    :note "BinyamSisay2008 p. 48. Third-pers persal pronouns are employed together with the
-            above demonstratives in order to form demonstrative pronouns.:This paradigm gives the
-            dem element ha nearSpeaker."
-    :common {:person :Person3,
-	    :lexeme :PRO,
-	    :pos :Pro,
-	    :proClass :DemPro}
-    :terms [[:case, :gender, :number, :token]  ;; schema
-	    [:Nominative, :Masc, :Singular, "ha’es-i"],
-	    [:Nominative, :Fem, :Singular, "ha’is-i"],
-	    [:Nominative, :Common, :Plural, "ha’us-i"],
-	    [:Absolutive, :Masc, :Singular, "ha’es-a"],
-	    [:Absolutive, :Fem, :Singular, "ha’es-o"],
-	    [:Absolutive, :Common, :Plural, "ha’us-o"]]
-    }
     {:label "koorete-VAffPresHabDeclPClass2"
     :note "BinyamSisay2008 Appendix A,Paradigm 2"
     :common {:lexeme :bee,
@@ -634,22 +620,6 @@
 	    [:Common, :PluralIn, :Person1, "ni", "bee-ne", "bee-tta-ko", "bee-tta-ko ni bee-ne"],
 	    [:Common, :Plural, :Person2, "hi", "bee-ne", "bee-tta-ko", "bee-tta-ko hi bee-ne"],
 	    [:Common, :Plural, :Person3, "u", "bee-ne", "bee-tta-ko", "bee-tta-ko u bee-ne"]]
-    }
-    {:label "koorete-PDem"
-    :note "BinyamSisay2008 p. 48. Demonstrative pronouns in Koorete are composed of
-            demonstrative adjectives and third-pers pronouns (Hayward 1982;Binyam 2002). According
-            to Binyam (2002),Koorete has five demonstratives. The choice of the demonstratives is
-            determined by the location and nearness of the referred item with respect to the speaker
-            or hearer and its visibility."
-    :common {:lexeme :PRO,
-	    :pos :Pro,
-	    :proClass :Demonstrative}
-    :terms [[:dimension, :token]  ;; schema
-	    [:AboveSpeaker, "wo"],
-	    [:belowSpeaker, "yede"],
-	    [:NearSpeaker, "ha"],
-	    [:FarMid, "se"],
-	    [:FarDist, "ye"]]
     }
     {:label "koorete-VNegPastPerfInterrogPClass2"
     :note "BinyamSisay2008 Appendix A,Paradigm 2"
@@ -812,53 +782,6 @@
 	    [:Common, :PluralIn, :Person1, "ye-tsha", "ni", "woon-g-iya", "woon-g-iya ni ye-tsha"],
 	    [:Common, :Plural, :Person2, "ye-tsha", "hi", "woon-g-iya", "woon-g-iya hi ye-tsha"],
 	    [:Common, :Plural, :Person3, "ye-tsha", "u", "woon-g-iya", "woon-g-iya u ye-tsha"]]
-    }
-    {:label "koorete-PProInd"
-    :note "BinyamSisay2008 p. 46"
-    :common {:lexeme :PRO,
-	    :pos :Pro,
-	    :proClass :ProInd}
-    :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Nominative, :Common, :Singular, :Person1, "tan-i"],
-	    [:Nominative, :Common, :Singular, :Person2, "nen-i"],
-	    [:Nominative, :Masc, :Singular, :Person3, "es-i"],
-	    [:Nominative, :Fem, :Singular, :Person3, "is-i"],
-	    [:Nominative, :Common, :PluralEx, :Person1, "nun-i"],
-	    [:Nominative, :Common, :PluralIn, :Person1, "nin-i"],
-	    [:Nominative, :Common, :Plural, :Person2, "hinun-i"],
-	    [:Nominative, :Common, :Plural, :Person3, "us-i"],
-	    [:Absolutive, :Common, :Singular, :Person1, "taa(tamba)"],
-	    [:Absolutive, :Common, :Singular, :Person2, "niya(nemba)"],
-	    [:Absolutive, :Masc, :Singular, :Person3, "es-a"],
-	    [:Absolutive, :Fem, :Singular, :Person3, "is-o"],
-	    [:Absolutive, :Common, :PluralEx, :Person1, "nuu(numba)"],
-	    [:Absolutive, :Common, :PluralIn, :Person1, "nii(nimba)"],
-	    [:Absolutive, :Common, :Plural, :Person2, "hinu(mba)"],
-	    [:Absolutive, :Common, :Plural, :Person3, "us-o"],
-	    [:Possessive, :Common, :Singular, :Person1, "ta"],
-	    [:Possessive, :Common, :Singular, :Person2, "ne"],
-	    [:Possessive, :Masc, :Singular, :Person3, "e"],
-	    [:Possessive, :Fem, :Singular, :Person3, "i"],
-	    [:Possessive, :Common, :PluralEx, :Person1, "nu"],
-	    [:Possessive, :Common, :PluralIn, :Person1, "ni"],
-	    [:Possessive, :Common, :Plural, :Person2, "hi"],
-	    [:Possessive, :Common, :Plural, :Person3, "u"],
-	    [:Dative, :Common, :Singular, :Person1, "taa-se"],
-	    [:Dative, :Common, :Singular, :Person2, "nee-se"],
-	    [:Dative, :Masc, :Singular, :Person3, "es-use"],
-	    [:Dative, :Fem, :Singular, :Person3, "is-use"],
-	    [:Dative, :Common, :PluralEx, :Person1, "nuu-se"],
-	    [:Dative, :Common, :PluralIn, :Person1, "nii-se"],
-	    [:Dative, :Common, :Plural, :Person2, "hinu-se"],
-	    [:Dative, :Common, :Plural, :Person3, "us-use"],
-	    [:Instrumental, :Common, :Singular, :Person1, "taa-na"],
-	    [:Instrumental, :Common, :Singular, :Person2, "nee-na"],
-	    [:Instrumental, :Masc, :Singular, :Person3, "es-una"],
-	    [:Instrumental, :Fem, :Singular, :Person3, "is-una"],
-	    [:Instrumental, :Common, :PluralEx, :Person1, "nuu-na"],
-	    [:Instrumental, :Common, :PluralIn, :Person1, "nii-na"],
-	    [:Instrumental, :Common, :Plural, :Person2, "hinu-na"],
-	    [:Instrumental, :Common, :Plural, :Person3, "us-una"]]
     }
     {:label "koorete-VNegPastPerfDecl-bee"
     :note "BinyamSisay2008 Appendix A,Paradigm 2"
@@ -1632,7 +1555,7 @@
     }
     {:label "koorete-VDervStem"
     :note "BinyamSisay2008 #5.3"
-    :common {:lexeme :_NULL,
+    :common {:multilex :DERVSTEMFORM,
 	    :pos :Verb,
 	    :verbMorphClass :DervStem}
     :terms [[:derivedStem, :token-baseGloss, :token-baseShape, :token-dervGloss, :token]  ;; schema
@@ -1664,28 +1587,6 @@
 	    [:Inchoative, "‘rich’", "woduma", "‘become rich’", "wodum"],
 	    [:Inchoative, "‘poor’", "zhi’o", "‘become poor’", "zhi’"],
 	    [:Inchoative, "‘good’", "modhe", "‘become good’", "modh"]]
-    }
-    {:label "koorete-PInterrog"
-    :note "BinyamSisay2008 p. 50"
-    :common {:lexeme :PRO,
-	    :pos :Pro,
-	    :proClass :Interrogative}
-    :terms [[:case, :token, :token-gloss]  ;; schema
-	    [:Nominative, "oon-i", "who"],
-	    [:Absolutive, "oon-a", "who"],
-	    [:Dative, "oone-se", "to whom/whose"],
-	    [:Common, "aba", "what"],
-	    [:Common, "am", "what"],
-	    [:Common, "aya", "where"],
-	    [:Ablative, "aya-pa", "from where--"],
-	    [:Common, "aide", "when"],
-	    [:Common, "waidi", "how"],
-	    [:Common, "waara", "how (in greetings)"],
-	    [:Common, "aasawa", "which"],
-	    [:Common, "abasuw", "why"],
-	    [:Common, "aba bisha", "what type"],
-	    [:Common, "aba genno", "how much"],
-	    [:Common, "aba allo", "how many"]]
     }
     {:label "koorete-VAffPresHabInterrog-woon"
     :note "BinyamSisay2008 Appendix A,Paradigm 1"
@@ -2305,18 +2206,6 @@
 	    [:Common, :Plural, :Person2, "bee-d-o-itu-w-a", "bee-d-o-itu-w-a"],
 	    [:Common, :Plural, :Person3, "bee-y-utt-i-y-a (bee-d-i-y-a)", "bee-y-utt-i-y-a (bee-d-i-y-a)"]]
     }
-    {:label "koorete-PVocative"
-    :note "BinyamSisay2008 Table 10"
-    :common {:person :Person2,
-	    :pos :Pro,
-	    :lexeme :PRO,
-	    :proClass :Vocative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "do"],
-	    [:Fem, :Plural, "duwa-ite"],
-	    [:Masc, :Singular, "busshe"],
-	    [:Fem, :Plural, "bunaish’e"]]
-    }
     {:label "koorete-VNegPastProgInterrog-woon"
     :note "BinyamSisay2008 Appendix A,Paradigm 1"
     :common {:conjClass :Conj1,
@@ -2371,5 +2260,120 @@
 	    [:Common, :Plural, :Person2, "ba-itu-w-a", "woon-d-o", "woon-d-o ba-itu-w-a"],
 	    [:Common, :Plural, :Person3, "baa-y-e", "woom-utt-o (woon-d-o)", "woom-utt-o (woon-d-o) baa-y-e"]]
     }}
-:muterms #{}
+:muterms #{
+    {:label "koorete-PDemPro"
+    :note "BinyamSisay2008 p. 48. Third-pers persal pronouns are employed together with the
+            above demonstratives in order to form demonstrative pronouns.:This paradigm gives the
+            dem element ha nearSpeaker."
+    :common {:person :Person3,
+	    :lexeme PRO,
+	    :pos :Pronoun,
+	    :proClass :DemPro}
+    :terms [[:case, :gender, :number, :token]  ;; schema
+	    [:Nominative, :Masc, :Singular, "ha’es-i"],
+	    [:Nominative, :Fem, :Singular, "ha’is-i"],
+	    [:Nominative, :Common, :Plural, "ha’us-i"],
+	    [:Absolutive, :Masc, :Singular, "ha’es-a"],
+	    [:Absolutive, :Fem, :Singular, "ha’es-o"],
+	    [:Absolutive, :Common, :Plural, "ha’us-o"]]
+    }
+    {:label "koorete-PVocative"
+    :note "BinyamSisay2008 Table 10"
+    :common {:person :Person2,
+	    :pos :Pronoun,
+	    :morpheme :PRO,
+	    :proClass :Vocative}
+    :terms [[:gender, :number, :token]  ;; schema
+	    [:Masc, :Singular, "do"],
+	    [:Fem, :Plural, "duwa-ite"],
+	    [:Masc, :Singular, "busshe"],
+	    [:Fem, :Plural, "bunaish’e"]]
+    }
+    {:label "koorete-PInterrog"
+    :note "BinyamSisay2008 p. 50"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :Interrogative}
+    :terms [[:case, :token, :token-gloss]  ;; schema
+	    [:Nominative, "oon-i", "who"],
+	    [:Absolutive, "oon-a", "who"],
+	    [:Dative, "oone-se", "to whom/whose"],
+	    [:Common, "aba", "what"],
+	    [:Common, "am", "what"],
+	    [:Common, "aya", "where"],
+	    [:Ablative, "aya-pa", "from where--"],
+	    [:Common, "aide", "when"],
+	    [:Common, "waidi", "how"],
+	    [:Common, "waara", "how (in greetings)"],
+	    [:Common, "aasawa", "which"],
+	    [:Common, "abasuw", "why"],
+	    [:Common, "aba bisha", "what type"],
+	    [:Common, "aba genno", "how much"],
+	    [:Common, "aba allo", "how many"]]
+    }
+    {:label "koorete-PProInd"
+    :note "BinyamSisay2008 p. 46"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :ProInd}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Nominative, :Common, :Singular, :Person1, "tan-i"],
+	    [:Nominative, :Common, :Singular, :Person2, "nen-i"],
+	    [:Nominative, :Masc, :Singular, :Person3, "es-i"],
+	    [:Nominative, :Fem, :Singular, :Person3, "is-i"],
+	    [:Nominative, :Common, :PluralEx, :Person1, "nun-i"],
+	    [:Nominative, :Common, :PluralIn, :Person1, "nin-i"],
+	    [:Nominative, :Common, :Plural, :Person2, "hinun-i"],
+	    [:Nominative, :Common, :Plural, :Person3, "us-i"],
+	    [:Absolutive, :Common, :Singular, :Person1, "taa(tamba)"],
+	    [:Absolutive, :Common, :Singular, :Person2, "niya(nemba)"],
+	    [:Absolutive, :Masc, :Singular, :Person3, "es-a"],
+	    [:Absolutive, :Fem, :Singular, :Person3, "is-o"],
+	    [:Absolutive, :Common, :PluralEx, :Person1, "nuu(numba)"],
+	    [:Absolutive, :Common, :PluralIn, :Person1, "nii(nimba)"],
+	    [:Absolutive, :Common, :Plural, :Person2, "hinu(mba)"],
+	    [:Absolutive, :Common, :Plural, :Person3, "us-o"],
+	    [:Possessive, :Common, :Singular, :Person1, "ta"],
+	    [:Possessive, :Common, :Singular, :Person2, "ne"],
+	    [:Possessive, :Masc, :Singular, :Person3, "e"],
+	    [:Possessive, :Fem, :Singular, :Person3, "i"],
+	    [:Possessive, :Common, :PluralEx, :Person1, "nu"],
+	    [:Possessive, :Common, :PluralIn, :Person1, "ni"],
+	    [:Possessive, :Common, :Plural, :Person2, "hi"],
+	    [:Possessive, :Common, :Plural, :Person3, "u"],
+	    [:Dative, :Common, :Singular, :Person1, "taa-se"],
+	    [:Dative, :Common, :Singular, :Person2, "nee-se"],
+	    [:Dative, :Masc, :Singular, :Person3, "es-use"],
+	    [:Dative, :Fem, :Singular, :Person3, "is-use"],
+	    [:Dative, :Common, :PluralEx, :Person1, "nuu-se"],
+	    [:Dative, :Common, :PluralIn, :Person1, "nii-se"],
+	    [:Dative, :Common, :Plural, :Person2, "hinu-se"],
+	    [:Dative, :Common, :Plural, :Person3, "us-use"],
+	    [:Instrumental, :Common, :Singular, :Person1, "taa-na"],
+	    [:Instrumental, :Common, :Singular, :Person2, "nee-na"],
+	    [:Instrumental, :Masc, :Singular, :Person3, "es-una"],
+	    [:Instrumental, :Fem, :Singular, :Person3, "is-una"],
+	    [:Instrumental, :Common, :PluralEx, :Person1, "nuu-na"],
+	    [:Instrumental, :Common, :PluralIn, :Person1, "nii-na"],
+	    [:Instrumental, :Common, :Plural, :Person2, "hinu-na"],
+	    [:Instrumental, :Common, :Plural, :Person3, "us-una"]]
+    }
+    {:label "koorete-PDem"
+    :note "BinyamSisay2008 p. 48. Demonstrative pronouns in Koorete are composed of
+            demonstrative adjectives and third-pers pronouns (Hayward 1982;Binyam 2002). According
+            to Binyam (2002),Koorete has five demonstratives. The choice of the demonstratives is
+            determined by the location and nearness of the referred item with respect to the speaker
+            or hearer and its visibility."
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :Demonstrative}
+    :terms [[:dimension, :token]  ;; schema
+	    [:AboveSpeaker, "wo"],
+	    [:belowSpeaker, "yede"],
+	    [:NearSpeaker, "ha"],
+	    [:FarMid, "se"],
+	    [:FarDist, "ye"]]
+    }
+
+}
 }

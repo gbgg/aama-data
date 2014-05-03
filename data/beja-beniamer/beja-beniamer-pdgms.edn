@@ -14,12 +14,12 @@
 	  :multiLex [:COMPSEM, :DERVSTEMCAUS, :DERVSTEMCOLL, :DERVSTEMPASS, :DERVSTEMRECIP, :DERVSTEMREFL, :DERVSTEMVAR, :TENSESTEMPLUP1, :TENSESTEMPLUP2]
 	  :numHead [:Plural, :Singular]
 	  :number [:Plural, :Plural2, :Singular]
-	  :pdgmSubType [:AuxFay, :AuxHay, :AuxKay, :Auxiliary, :CopAn, :PossCop, :PossSuff]
+	  :pdgmSubType [:AuxFay, :AuxHay, :AuxKay, :Auxiliary, :CopAn]
 	  :pdgmType [:CompSem, :Compound, :DervStemForm, :PrefVsSuff, :RootForm, :StemForm, :StemFormation]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative, :NegativeEmphatic]
 	  :pos [:Pronoun, :Verb]
-	  :proClass [:Independent, :IndependentPossessive, :ObjectSuffix]
+	  :proClass [:Independent, :IndependentPossessive, :ObjectSuffix, :PossCop, :PossSuff]
 	  :rootClass [:CC, :CCC, :CCY, :CHC, :CaC, :CeC]
 	  :stemClass [:Base, :BaseIntns, :CausalIntransitive, :Causative, :Passive, :Reflexive]
 	  :stemFinal [:Common, :Consonant, :Vowel]
@@ -35,7 +35,6 @@
   :Had {:gloss "fluchen", :lemma "sō-‘ad"}
   :Hasis {:gloss "entgegen gehen", :lemma "š-‘ašiš"}
   :Hat {:gloss "treten", :lemma "sō-‘at"}
-  :PRO {:gloss "[x]", :lemma "[y]", }
   :am {:gloss "swell", :lemma "ʔām", }
   :abab {:gloss "", :lemma "abāb-is"}
   :adil {:gloss "fridlich sein", :lemma "s-adil"}
@@ -181,70 +180,6 @@
 	    [:Common, :Plural, :Person3, "hāy-á̄ba"],
 	    [:Masc, :Singular, :Person2, "hāy-á̄b"],
 	    [:Common, :Singular, :Person1, "hāy-á̄b"]]
-    }
-    {:label "beja_Re-PObjSuff"
-    :note "Reinisch1893 #174"
-    :common {:lexeme :PRO,
-	    :pos :Pronoun,
-	    :proClass :ObjectSuffix}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person1, "-hé̄ba"],
-	    [:Common, :Singular, :Person1, "-hēb / -hīb"],
-	    [:Common, :Singular, :Person3, "-hōs"],
-	    [:Common, :Plural, :Person3, "-hó̄sna"],
-	    [:Fem, :Singular, :Person1, "-hé̄bi"],
-	    [:Common, :Singular, :Person2, "-hōk"],
-	    [:Common, :Plural, :Person1, "-hōn"],
-	    [:Fem, :Singular, :Person2, "-hó̄ki"],
-	    [:Common, :Plural, :Person2, "-hó̄kna"],
-	    [:Masc, :Singular, :Person2, "-hó̄ka"]]
-    }
-    {:label "beja_Re-PPossCop"
-    :note "Reinisch1893 #165"
-    :common {:lexeme :PRO,
-	    :pdgmSubType :PossCop,
-	    :pos :Pronoun}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Fem, :Fem, :Plural, :Plural, :Person3, "tá̄-mak batēté̄sna-ta"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "tū-mé̄k baritó̄s-tu"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person2, "tá̄-mak batēté̄knā-ta"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person2, "á-mak baryé̄k-a"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person2, "tá̄-mak batité̄k-ta"],
-	    [:Masc, :Common, :Plural, :Plural, :Person1, "á-mak hannē-b-a"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person2, "á-mak batyé̄k-a"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person2, "ū-mé̄k batēyó̄knā-yu"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person3, "á-mak batyé̄s-a"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "ū-mé̄k aní̄-b-u"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person2, "tū-mé̄k batitó̄k-tu"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person3, "ū-mé̄k barēyó̄snā-yu"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person2, "ū-mé̄k bar̄yó̄knā-yu"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "tū-mé̄k aní̄-tu"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person3, "tá̄-mak barité̄s-ta"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person2, "tū-mé̄k baritó̄k-tu"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "tū-mé̄k hanné̄-tu"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, "ū-mé̄k baryó̄k-u"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "ū-mé̄k batyó̄s-u"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "tū-mé̄k batitó̄s-tu"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person2, "á-mak barēyé̄knā-ya"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person3, "tū-mé̄k batētó̄snā-tu"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person3, "tá̄-mak batité̄s-ta"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person3, "ū-mé̄k batēyó̄snā-yu"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "ū-mé̄k hanné̄-b-u"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person3, "á-mak batēyé̄snā-ya"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person3, "á-mak barēyé̄snā-ya"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person2, "tū-mé̄k batētó̄knā-tu"],
-	    [:Fem, :Common, :Plural, :Singular, :Person1, "tá̄-mak aní̄-t-a"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person2, "tá̄-mak barēté̄knā-ta"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person3, "á-mak baryé̄s-a"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person3, "tá̄-mak barēté̄snā-ta"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "ū-mé̄k baryó̄s-u"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person3, "tū-mé̄k barētó̄snā-tu"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person2, "á-mak batēyé̄knā-ya"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person2, "tá̄-mak barité̄k-ta"],
-	    [:Masc, :Common, :Plural, :Singular, :Person1, "á-mak aní̄-b-a"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person2, "tū-mé̄k barētó̄̄knā-tu"],
-	    [:Fem, :Common, :Plural, :Plural, :Person1, "tá̄-mak hanné̄-ta"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, "ū-mé̄k batyó̄k-u"]]
     }
     {:label "beja_Re-VPrefNegFuture1-dir"
     :note "Reinisch1893 #249-51. Future tenses are formed with main verb participle
@@ -419,55 +354,6 @@
 	    [:Common, :Plural, "bā-dí̄r-na!"],
 	    [:Masc, :Singular, "bá-dīr-a!"]]
     }
-    {:label "beja_Re-PPossSuff"
-    :note "Reinisch1893 ##168-73"
-    :common {:lexeme :PRO,
-	    :pdgmSubType :PossSuff,
-	    :pos :Pronoun}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :stemFinal, :token]  ;; schema
-	    [:Fem, :Common, :Plural, :Plural, :Person3, :Common, "-tá̄sna"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person2, :Vowel, "-yá̄ki"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, :Common, "-tū"],
-	    [:Fem, :Common, :Plural, :Plural, :Person1, :Common, "-tān"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, :Vowel, "-yú̄sna"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, :Consonant, "-ūn"],
-	    [:Masc, :Common, :Plural, :Plural, :Person3, :Consonant, "-á̄sna"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, :Common, "-tūn"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, :Vowel, "-yuki / -yūk"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, :Vowel, "-yūn"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person2, :Consonant, "-á̄ki"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person2, :Common, "-tá̄ka"],
-	    [:Fem, :Common, :Plural, :Singular, :Person1, :Common, "-tā"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person2, :Common, "-tú̄ka / -tūk"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, :Consonant, "-ú̄sna"],
-	    [:Masc, :Common, :Plural, :Singular, :Person3, :Consonant, "-ās"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, :Consonant, "-ú̄ki / -ūk"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, :Common, "-tú̄sna"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, :Consonant, "-ú̄ka / -ūk"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, :Consonant, "-ú̄kna"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, :Consonant, "-ū"],
-	    [:Masc, :Common, :Plural, :Plural, :Person2, :Consonant, "-á̄kna"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, :Vowel, "-yú̄kna"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, :Vowel, "-yú̄ka / -yūk"],
-	    [:Masc, :Common, :Plural, :Plural, :Person1, :Consonant, "-ān"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, :Vowel, "-yū"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, :Common, "-tú̄kna"],
-	    [:Masc, :Common, :Singular, :Singular, :Person3, :Consonant, "-ūs"],
-	    [:Fem, :Common, :Plural, :Singular, :Person3, :Common, "-tās"],
-	    [:Masc, :Common, :Plural, :Singular, :Person3, :Vowel, "-yās"],
-	    [:Masc, :Common, :Singular, :Singular, :Person3, :Vowel, "-yūs"],
-	    [:Masc, :Common, :Plural, :Singular, :Person1, :Consonant, "-ā"],
-	    [:Masc, :Common, :Plural, :Plural, :Person3, :Vowel, "-yá̄sna"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person2, :Common, "-tú̄ki / -tūk"],
-	    [:Masc, :Common, :Plural, :Singular, :Person1, :Vowel, "-yā"],
-	    [:Masc, :Common, :Plural, :Plural, :Person2, :Vowel, "-yá̄kna"],
-	    [:Fem, :Common, :Singular, :Singular, :Person3, :Common, "-tūs"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person2, :Consonant, "-á̄ka"],
-	    [:Fem, :Common, :Plural, :Plural, :Person2, :Common, "-tá̄kna"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person2, :Common, "-tá̄ki"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person2, :Vowel, "-yá̄ka"],
-	    [:Masc, :Common, :Plural, :Plural, :Person1, :Vowel, "-yān"]]
-    }
     {:label "beja_Re-VPrefReflStemForm"
     :note "Reinisch1893 #214-216"
     :common {:conjClass :Prefix,
@@ -533,33 +419,6 @@
 	    [:Fem, :Person2, "dú̄r-e"],
 	    [:Fem, :Person3, "dú̄r-e"],
 	    [:Masc, :Person3, "dú̄r-e"]]
-    }
-    {:label "beja_Re-PInd"
-    :note "Reinisch1893 #157,159"
-    :common {:lexeme :PRO,
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Subject, :Masc, :Plural, :Person2, "bará̄k / bará̄kna "],
-	    [:Subject, :Fem, :Plural, :Person2, "batá̄k / batá̄kna"],
-	    [:Object, :Common, :Plural, :Person1, "henné̄-b"],
-	    [:Object, :Masc, :Plural, :Person2, "baré̄k / baré̄kna"],
-	    [:Subject, :Common, :Plural, :Person1, "hanán / hanín / hinín"],
-	    [:Object, :Masc, :Singular, :Person3, "baró̄s"],
-	    [:Object, :Fem, :Singular, :Person3, "bató̄s"],
-	    [:Subject, :Masc, :Plural, :Person3, "bará̄s / bará̄sna"],
-	    [:Subject, :Fem, :Singular, :Person3, "batú̄s"],
-	    [:Object, :Fem, :Singular, :Person2, "batṓk"],
-	    [:Subject, :Masc, :Singular, :Person3, "barú̄s"],
-	    [:Subject, :Fem, :Plural, :Person3, "batá̄s / batá̄sna"],
-	    [:Object, :Fem, :Plural, :Person2, "baté̄k / baté̄kna"],
-	    [:Subject, :Common, :Singular, :Person1, "aní̄ / aní"],
-	    [:Object, :Masc, :Plural, :Person3, "baré̄s / baré̄sna"],
-	    [:Object, :Common, :Singular, :Person1, "ané̄-b "],
-	    [:Object, :Fem, :Plural, :Person3, "baté̄s / baté̄sna"],
-	    [:Object, :Masc, :Singular, :Person2, "baró̄k"],
-	    [:Subject, :Fem, :Singular, :Person2, "batú̄k"],
-	    [:Subject, :Masc, :Singular, :Person2, "barú̄k"]]
     }
     {:label "beja_Re-VPrefNegImprtv-harid"
     :note "Reinisch1893 #255-256"
@@ -697,53 +556,6 @@
 	    [:Fem, :Singular, "sé̄ni!"],
 	    [:Common, :Plural, "sení̄-na!"],
 	    [:Masc, :Singular, "sény-a!"]]
-    }
-    {:label "beja_Re-PIndPoss"
-    :note "Reinisch1893 #161"
-    :common {:lexeme :PRO,
-	    :pos :Pronoun,
-	    :proClass :IndependentPossessive}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Fem, :Fem, :Plural, :Plural, :Person3, "batē-tá̄sna"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, "bat-y-ú̄k"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person3, "batē-yú̄sna"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "an-í̄"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person3, "bat-i-tās"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person2, "barē-tá̄kna"],
-	    [:Fem, :Common, :Plural, :Plural, :Person1, "hanné̄ / hené̄"],
-	    [:Masc, :Common, :Plural, :Plural, :Person1, "hanné̄ / hené̄"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person3, "bat-y-ās"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person3, "barē-yá̄sna"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person2, "bat-i-tú̄̄k"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person3, "bar-i-tá̄s"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, "bar-y-ú̄k"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person3, "bar-y-á̄s"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "hann-ē / hené̄"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "aní̄"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person2, "bat-y-á̄k"],
-	    [:Fem, :Common, :Plural, :Singular, :Person1, "aní"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person3, "barē-yú̄sna"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person3, "barē-tá̄sna"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person2, "bar-i-tú̄k"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person2, "batē-yá̄kna"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person2, "bar-y-á̄k"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person2, "bat-i-tá̄k"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person2, "batē-yú̄kna"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person2, "bar-i-tá̄k"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person2, "barē-tú̄kna"],
-	    [:Masc, :Common, :Plural, :Singular, :Person1, "aní̄"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person2, "batē-tú̄kna"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person2, "barē-yá̄kna"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "bat-y-ú̄s"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "bar-y-ú̄s"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "bat-i-tú̄s"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person3, "batē-tú̄sna"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person3, "barē-tú̄sna"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "hann-é̄ / hen-é̄"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person2, "barē-yú̄kna"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person2, "batē-tá̄kna"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "bar-i-tú̄s"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person3, "batē-yá̄sna"]]
     }
     {:label "beja_Re-VPrefCCNegPresent-dir"
     :note "Reinisch1893 #246"
@@ -2525,5 +2337,194 @@
 	    [:Fem, :Singular, :Person3, "fedug"],
 	    [:Masc, :Singular, :Person2, "fedug"]]
     }}
-:muterms #{}
+:muterms #{
+    {:label "beja_Re-PObjSuff"
+    :note "Reinisch1893 #174"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :ObjectSuffix}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person1, "-hé̄ba"],
+	    [:Common, :Singular, :Person1, "-hēb / -hīb"],
+	    [:Common, :Singular, :Person3, "-hōs"],
+	    [:Common, :Plural, :Person3, "-hó̄sna"],
+	    [:Fem, :Singular, :Person1, "-hé̄bi"],
+	    [:Common, :Singular, :Person2, "-hōk"],
+	    [:Common, :Plural, :Person1, "-hōn"],
+	    [:Fem, :Singular, :Person2, "-hó̄ki"],
+	    [:Common, :Plural, :Person2, "-hó̄kna"],
+	    [:Masc, :Singular, :Person2, "-hó̄ka"]]
+    }
+    {:label "beja_Re-PPossCop"
+    :note "Reinisch1893 #165"
+    :common {:morpheme :PRO,
+	    :proClass :PossCop,
+	    :pos :Pronoun}
+    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
+	    [:Fem, :Fem, :Plural, :Plural, :Person3, "tá̄-mak batēté̄sna-ta"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person3, "tū-mé̄k baritó̄s-tu"],
+	    [:Fem, :Fem, :Plural, :Plural, :Person2, "tá̄-mak batēté̄knā-ta"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person2, "á-mak baryé̄k-a"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person2, "tá̄-mak batité̄k-ta"],
+	    [:Masc, :Common, :Plural, :Plural, :Person1, "á-mak hannē-b-a"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person2, "á-mak batyé̄k-a"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person2, "ū-mé̄k batēyó̄knā-yu"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person3, "á-mak batyé̄s-a"],
+	    [:Masc, :Common, :Singular, :Singular, :Person1, "ū-mé̄k aní̄-b-u"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person2, "tū-mé̄k batitó̄k-tu"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person3, "ū-mé̄k barēyó̄snā-yu"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person2, "ū-mé̄k bar̄yó̄knā-yu"],
+	    [:Fem, :Common, :Singular, :Singular, :Person1, "tū-mé̄k aní̄-tu"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person3, "tá̄-mak barité̄s-ta"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person2, "tū-mé̄k baritó̄k-tu"],
+	    [:Fem, :Common, :Singular, :Plural, :Person1, "tū-mé̄k hanné̄-tu"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2, "ū-mé̄k baryó̄k-u"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person3, "ū-mé̄k batyó̄s-u"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person3, "tū-mé̄k batitó̄s-tu"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person2, "á-mak barēyé̄knā-ya"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person3, "tū-mé̄k batētó̄snā-tu"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person3, "tá̄-mak batité̄s-ta"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person3, "ū-mé̄k batēyó̄snā-yu"],
+	    [:Masc, :Common, :Singular, :Plural, :Person1, "ū-mé̄k hanné̄-b-u"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person3, "á-mak batēyé̄snā-ya"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person3, "á-mak barēyé̄snā-ya"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person2, "tū-mé̄k batētó̄knā-tu"],
+	    [:Fem, :Common, :Plural, :Singular, :Person1, "tá̄-mak aní̄-t-a"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person2, "tá̄-mak barēté̄knā-ta"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person3, "á-mak baryé̄s-a"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person3, "tá̄-mak barēté̄snā-ta"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person3, "ū-mé̄k baryó̄s-u"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person3, "tū-mé̄k barētó̄snā-tu"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person2, "á-mak batēyé̄knā-ya"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person2, "tá̄-mak barité̄k-ta"],
+	    [:Masc, :Common, :Plural, :Singular, :Person1, "á-mak aní̄-b-a"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person2, "tū-mé̄k barētó̄̄knā-tu"],
+	    [:Fem, :Common, :Plural, :Plural, :Person1, "tá̄-mak hanné̄-ta"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2, "ū-mé̄k batyó̄k-u"]]
+    }
+    {:label "beja_Re-PPossSuff"
+    :note "Reinisch1893 ##168-73"
+    :common {:morpheme :PRO,
+	    :proClass :PossSuff,
+	    :pos :Pronoun}
+    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :stemFinal, :token]  ;; schema
+	    [:Fem, :Common, :Plural, :Plural, :Person3, :Common, "-tá̄sna"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person2, :Vowel, "-yá̄ki"],
+	    [:Fem, :Common, :Singular, :Singular, :Person1, :Common, "-tū"],
+	    [:Fem, :Common, :Plural, :Plural, :Person1, :Common, "-tān"],
+	    [:Masc, :Common, :Singular, :Plural, :Person3, :Vowel, "-yú̄sna"],
+	    [:Masc, :Common, :Singular, :Plural, :Person1, :Consonant, "-ūn"],
+	    [:Masc, :Common, :Plural, :Plural, :Person3, :Consonant, "-á̄sna"],
+	    [:Fem, :Common, :Singular, :Plural, :Person1, :Common, "-tūn"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2, :Vowel, "-yuki / -yūk"],
+	    [:Masc, :Common, :Singular, :Plural, :Person1, :Vowel, "-yūn"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person2, :Consonant, "-á̄ki"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person2, :Common, "-tá̄ka"],
+	    [:Fem, :Common, :Plural, :Singular, :Person1, :Common, "-tā"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person2, :Common, "-tú̄ka / -tūk"],
+	    [:Masc, :Common, :Singular, :Plural, :Person3, :Consonant, "-ú̄sna"],
+	    [:Masc, :Common, :Plural, :Singular, :Person3, :Consonant, "-ās"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2, :Consonant, "-ú̄ki / -ūk"],
+	    [:Fem, :Common, :Singular, :Plural, :Person3, :Common, "-tú̄sna"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2, :Consonant, "-ú̄ka / -ūk"],
+	    [:Masc, :Common, :Singular, :Plural, :Person2, :Consonant, "-ú̄kna"],
+	    [:Masc, :Common, :Singular, :Singular, :Person1, :Consonant, "-ū"],
+	    [:Masc, :Common, :Plural, :Plural, :Person2, :Consonant, "-á̄kna"],
+	    [:Masc, :Common, :Singular, :Plural, :Person2, :Vowel, "-yú̄kna"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2, :Vowel, "-yú̄ka / -yūk"],
+	    [:Masc, :Common, :Plural, :Plural, :Person1, :Consonant, "-ān"],
+	    [:Masc, :Common, :Singular, :Singular, :Person1, :Vowel, "-yū"],
+	    [:Fem, :Common, :Singular, :Plural, :Person2, :Common, "-tú̄kna"],
+	    [:Masc, :Common, :Singular, :Singular, :Person3, :Consonant, "-ūs"],
+	    [:Fem, :Common, :Plural, :Singular, :Person3, :Common, "-tās"],
+	    [:Masc, :Common, :Plural, :Singular, :Person3, :Vowel, "-yās"],
+	    [:Masc, :Common, :Singular, :Singular, :Person3, :Vowel, "-yūs"],
+	    [:Masc, :Common, :Plural, :Singular, :Person1, :Consonant, "-ā"],
+	    [:Masc, :Common, :Plural, :Plural, :Person3, :Vowel, "-yá̄sna"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person2, :Common, "-tú̄ki / -tūk"],
+	    [:Masc, :Common, :Plural, :Singular, :Person1, :Vowel, "-yā"],
+	    [:Masc, :Common, :Plural, :Plural, :Person2, :Vowel, "-yá̄kna"],
+	    [:Fem, :Common, :Singular, :Singular, :Person3, :Common, "-tūs"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person2, :Consonant, "-á̄ka"],
+	    [:Fem, :Common, :Plural, :Plural, :Person2, :Common, "-tá̄kna"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person2, :Common, "-tá̄ki"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person2, :Vowel, "-yá̄ka"],
+	    [:Masc, :Common, :Plural, :Plural, :Person1, :Vowel, "-yān"]]
+    }
+    {:label "beja_Re-PInd"
+    :note "Reinisch1893 #157,159"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :Independent}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Subject, :Masc, :Plural, :Person2, "bará̄k / bará̄kna "],
+	    [:Subject, :Fem, :Plural, :Person2, "batá̄k / batá̄kna"],
+	    [:Object, :Common, :Plural, :Person1, "henné̄-b"],
+	    [:Object, :Masc, :Plural, :Person2, "baré̄k / baré̄kna"],
+	    [:Subject, :Common, :Plural, :Person1, "hanán / hanín / hinín"],
+	    [:Object, :Masc, :Singular, :Person3, "baró̄s"],
+	    [:Object, :Fem, :Singular, :Person3, "bató̄s"],
+	    [:Subject, :Masc, :Plural, :Person3, "bará̄s / bará̄sna"],
+	    [:Subject, :Fem, :Singular, :Person3, "batú̄s"],
+	    [:Object, :Fem, :Singular, :Person2, "batṓk"],
+	    [:Subject, :Masc, :Singular, :Person3, "barú̄s"],
+	    [:Subject, :Fem, :Plural, :Person3, "batá̄s / batá̄sna"],
+	    [:Object, :Fem, :Plural, :Person2, "baté̄k / baté̄kna"],
+	    [:Subject, :Common, :Singular, :Person1, "aní̄ / aní"],
+	    [:Object, :Masc, :Plural, :Person3, "baré̄s / baré̄sna"],
+	    [:Object, :Common, :Singular, :Person1, "ané̄-b "],
+	    [:Object, :Fem, :Plural, :Person3, "baté̄s / baté̄sna"],
+	    [:Object, :Masc, :Singular, :Person2, "baró̄k"],
+	    [:Subject, :Fem, :Singular, :Person2, "batú̄k"],
+	    [:Subject, :Masc, :Singular, :Person2, "barú̄k"]]
+    }
+    {:label "beja_Re-PIndPoss"
+    :note "Reinisch1893 #161"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :IndependentPossessive}
+    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
+	    [:Fem, :Fem, :Plural, :Plural, :Person3, "batē-tá̄sna"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2, "bat-y-ú̄k"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person3, "batē-yú̄sna"],
+	    [:Fem, :Common, :Singular, :Singular, :Person1, "an-í̄"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person3, "bat-i-tās"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person2, "barē-tá̄kna"],
+	    [:Fem, :Common, :Plural, :Plural, :Person1, "hanné̄ / hené̄"],
+	    [:Masc, :Common, :Plural, :Plural, :Person1, "hanné̄ / hené̄"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person3, "bat-y-ās"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person3, "barē-yá̄sna"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person2, "bat-i-tú̄̄k"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person3, "bar-i-tá̄s"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2, "bar-y-ú̄k"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person3, "bar-y-á̄s"],
+	    [:Fem, :Common, :Singular, :Plural, :Person1, "hann-ē / hené̄"],
+	    [:Masc, :Common, :Singular, :Singular, :Person1, "aní̄"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person2, "bat-y-á̄k"],
+	    [:Fem, :Common, :Plural, :Singular, :Person1, "aní"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person3, "barē-yú̄sna"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person3, "barē-tá̄sna"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person2, "bar-i-tú̄k"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person2, "batē-yá̄kna"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person2, "bar-y-á̄k"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person2, "bat-i-tá̄k"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person2, "batē-yú̄kna"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person2, "bar-i-tá̄k"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person2, "barē-tú̄kna"],
+	    [:Masc, :Common, :Plural, :Singular, :Person1, "aní̄"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person2, "batē-tú̄kna"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person2, "barē-yá̄kna"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person3, "bat-y-ú̄s"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person3, "bar-y-ú̄s"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person3, "bat-i-tú̄s"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person3, "batē-tú̄sna"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person3, "barē-tú̄sna"],
+	    [:Masc, :Common, :Singular, :Plural, :Person1, "hann-é̄ / hen-é̄"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person2, "barē-yú̄kna"],
+	    [:Fem, :Fem, :Plural, :Plural, :Person2, "batē-tá̄kna"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person3, "bar-i-tú̄s"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person3, "batē-yá̄sna"]]
+    }
+
+    }
 }

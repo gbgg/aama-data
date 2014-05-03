@@ -6,14 +6,14 @@
 
 
 my ($pnamefile, $lang) = @ARGV;
-print "input file = $pnamefile\n";
+#print "input file = $pnamefile\n";
 my $pos = $pnamefile;
-print "pos = $pos\n";
+#print "pos = $pos\n";non
 $pos =~ s/sparql\/pdgms\/output\/pnames-(.*?)-.*/\1/;
 #$pos = s/^.*?-(.*?)-.*/\1/;
-print "pos = $pos\n";
+#print "pos = $pos\n";
 my $textfile = "sparql/pdgms/pname-$pos-list-$lang.txt";
-print "textfile = $textfile\n\n";
+print "textfile = $textfile\n";
 
 undef $/;
 my $listdata;
@@ -26,7 +26,7 @@ while (<IN>)
 	$listdata =~ s/"//g;
 	my @nfvprops = split(/\n/, $listdata);
 	foreach my $nfvprop (@nfvprops)
-	{
+	{no
 		my($multilex, $prop) = split(/\t/, $nfvprop);
 		$nfvpdgmprops{$multilex} .= $prop.",";
 	}
@@ -52,5 +52,6 @@ foreach my $multilex (sort keys %nfvpdgmprops)
 	print $index.". ".$multilex.":".$proplist."\n";
 	$index++;
 }
+print "\n";
 close(OUT);
 

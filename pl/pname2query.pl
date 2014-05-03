@@ -8,7 +8,7 @@
 use File::Copy;
 my ($proplistfile, $langname, $labbrev, $queryfile) = @ARGV;
 #print "Query string = $qstring\n";
-print "Query file = $queryfile\n";
+#print "Query file = $queryfile\n";
 
 my $selection = "";
 my @queryproplist;
@@ -63,7 +63,7 @@ foreach my $queryprop (@queryproplist)
 	print " \t\t\t?Q$queryprop\trdfs:label\t?$queryprop . }\n";
 }
 #mprint "\t\t\t?s\taamas:lexeme\t?lexeme . \n";
-print "\t\t\t?s\t$labbrev:person\t?person . \n";
+#print "\t\t\t?s\t$labbrev:person\t?person . \n";
 print "\t\t}\n";
 print "\t}\n}\n";
 

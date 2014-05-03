@@ -18,8 +18,6 @@
 	  :tam [:Anticipatory, :Conditional1, :Conditional2, :Contrafactual, :ContrafactualStative, :Hypothetical, :I-Form, :Imperative, :Imperative--p2Only, :Imperfect, :ImperfectAnticipatory, :ImperfectPast1, :ImperfectPast2, :ImperfectPresent, :ImperfectProbable1, :ImperfectProbable2, :Infinitive, :Intentive, :Jussive, :PastState1, :PastState2, :Perfect, :PerfectAnticipatory, :PerfectConditional, :PerfectPast1, :PerfectPast2, :PerfectPresent, :PerfectProbable, :PresentState1, :PresentState2, :Probable, :Purposive1, :Purposive2, :RelativeIndeterminate, :Requestive, :Requestive--p1Only, :VH-Participle, :VHPart]
 	  }
 :lexemes {
-  :AFFIX {:gloss "Subject Marker", :lemma "ZERO LEX", :pos :Verb}
-  :PRO {:gloss "Pronoun", :lemma "PRO", :pos :Pronoun}
   :ab {:conjClass :Suffix, :gloss "do", :lemma "ab-", :pos :Verb}
   :anay-qunda {:conjClass :CompoundStative, :gloss "be softly spoken", :lemma "anày-ʕunɗa-", :pos :Verb}
   :eedheg {:conjClass :Prefix, :gloss "know", :lemma "eeɗeg-", :pos :Verb}
@@ -29,6 +27,10 @@
   :meq {:conjClass :Stative, :gloss "be good", :lemma "meʕ-", :pos :Verb}
   :ruffa-edh {:conjClass :CompoundIntransitive, :gloss "become happy", :lemma "ruffa-eɗḥ-", :pos :Verb}
   :uduur {:conjClass :Prefix, :gloss "return", :lemma "uduur-", :pos :Verb}
+}
+:morphemes {
+  :AFFIX {:gloss "Subject Marker", :pos :Verb}
+  :PRO {:gloss "Pronoun", :pos :Pronoun}
 }
 :lxterms #{
     {:label "afar-VSuffAffJuss-fak"
@@ -1345,46 +1347,6 @@
 	    [:Common, :Singular, :Person2, "rùffa-ìntu wayta"],
 	    [:Common, :Plural, :Person3, "rùffa-iyyoònu waan"]]
     }
-    {:label "afar-PInd"
-    :note "Parker-Hayward1985 pp. 237-238,tab. 8,9,11,12,13"
-    :common {:lexeme :PRO,
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Absolutive, :Common, :Plural, :Person2, "sin (siìni)"],
-	    [:Absolutive, :Common, :Singular, :Person2, "ko(o)"],
-	    [:Possessive-m, :Common, :Singular, :Person2, "kuum (kuùmu)"],
-	    [:Nominative, :Common, :Plural, :Person2, "isin"],
-	    [:Emphatic, :Common, :Plural, :PersonNon-1, "(ìsin ~ òson) isìnnih/sìnnih"],
-	    [:Emphatic-m, :Common, :Plural, :PersonNon-1, "isinnim (isinniìmi)"],
-	    [:Nominative, :Common, :Singular, :Person2, "atu"],
-	    [:Nominative, :Common, :Singular, :Person1, "anu"],
-	    [:Nominative, :Fem, :Singular, :Person3, "is"],
-	    [:Reflexive, :Common, :Singular, :Person1, "ìnni"],
-	    [:Absolutive, :Fem, :Singular, :Person3, "tet (teèti)"],
-	    [:Nominative, :Common, :Plural, :Person3, "òson"],
-	    [:Nominative, :Masc, :Singular, :Person3, "ùsuk"],
-	    [:Absolutive, :Common, :Plural, :Person3, "ken (keèni)"],
-	    [:Possessive-m, :Masc, :Singular, :Person3, "kàyim (kàyimi)"],
-	    [:Absolutive, :Masc, :Singular, :Person3, "kà(a)"],
-	    [:Emphatic-m, :Common, :Singular, :Person1, "innim (inniìmi)"],
-	    [:Reflexive, :Common, :Plural, :PersonNon-1, "isìnni"],
-	    [:Emphatic-m, :Common, :Plural, :Person1, "ninnim (ninniìmi)"],
-	    [:Possessive-m, :Common, :Plural, :Person1, "niim (niìmi)"],
-	    [:Possessive-m, :Common, :Plural, :Person2, "sìnim (sìnimi)"],
-	    [:Possessive-m, :Common, :Singular, :Person1, "yiim (yiìmi)"],
-	    [:Possessive-m, :Common, :Plural, :Person3, "kènim (kènimi)"],
-	    [:Absolutive, :Common, :Singular, :Person1, "yo(o)"],
-	    [:Emphatic, :Common, :Plural, :Person1, "(nanù) nìnnih"],
-	    [:Reflexive, :Common, :Plural, :Person1, "ìnni"],
-	    [:Possessive-m, :Fem, :Singular, :Person3, "tètim (tètimi"],
-	    [:Emphatic-m, :Common, :Singular, :PersonNon-1, "issim (issiìmi)"],
-	    [:Reflexive, :Common, :Singular, :PersonNon-1, "is"],
-	    [:Absolutive, :Common, :Plural, :Person1, "ne(e)"],
-	    [:Emphatic, :Common, :Singular, :PersonNon-1, "(atù ~ ùsuk ~ ìs) ìssih"],
-	    [:Emphatic, :Common, :Singular, :Person1, "(anù) ìnnih"],
-	    [:Nominative, :Common, :Plural, :Person1, "nanu"]]
-    }
     {:label "afar-VCompIntAffPerfPresAux1-ruffa-edh"
     :note "Parker-Hayward1985 pp. 270 - 274:table e"
     :common {:conjClass :CompoundIntransitive,
@@ -2240,23 +2202,6 @@
 	    [:Common, :Plural, :Person3, "fakeenik"],
 	    [:Common, :Plural, :Person1, "faknek"]]
     }
-    {:label "afar-PPossDef"
-    :note "Parker-Hayward1985 p. 235 tab 6,tab 7"
-    :common {:lexeme :PRO,
-	    :pos :Pronoun}
-    :terms [[:gender, :number, :person, :proClass, :token]  ;; schema
-	    [:Common, :Singular, :Person2, :PossessiveDefinite, "ky"],
-	    [:Common, :Singular, :Person1, :PossessiveDefinite, "yi"],
-	    [:Common, :Singular, :Person1, :Reflexive, "inni"],
-	    [:Common, :Plural, :Person3, :PossessiveDefinite, "ken"],
-	    [:Masc, :Singular, :Person3, :PossessiveDefinite, "kay"],
-	    [:Common, :Plural, :PersonNon-1, :Reflexive, "isinni ~ sinni"],
-	    [:Common, :Singular, :PersonNon-1, :Reflexive, "issi"],
-	    [:Common, :Plural, :Person2, :PossessiveDefinite, "sin"],
-	    [:Common, :Plural, :Person1, :Reflexive, "ninni"],
-	    [:Fem, :Singular, :Person3, :PossessiveDefinite, "tet"],
-	    [:Common, :Plural, :Person1, :PossessiveDefinite, "ni"]]
-    }
     {:label "afar-VSuffNegImperfAnticipAux1-fak"
     :note "Parker-Hayward1985 pp. 259 - 263;table k"
     :common {:conjClass :Suffix,
@@ -2994,49 +2939,6 @@
 	    [:Common, :Plural, :Person1, "mànaduura"],
 	    [:Common, :Singular, :Person1, "maàduura"],
 	    [:Common, :Singular, :Person2, "màtaduura"]]
-    }
-    {:label "afar-VSubjMarker"
-    :note "Parker-Hayward1985 p. 252,tab 18"
-    :common {:pdgmSubType :SubjMarker,
-	    :pos :Verb,
-	    :lexeme :AFFIX,
-	    :formType :Affix}
-    :terms [[:conjClass, :gender, :number, :person, :token]  ;; schema
-	    [:CompoundIntransitive, :Common, :Plural, :Person2, "-t-n"],
-	    [:Prefix, :Common, :Singular, :Person1, "Ø"],
-	    [:CompoundTransitive, :Fem, :Singular, :Person3, "-t"],
-	    [:Stative, :Common, :Plural, :Person1, "-ino"],
-	    [:CompoundIntransitive, :Common, :Singular, :Person1, "Ø"],
-	    [:Prefix, :Masc, :Singular, :Person3, "y-"],
-	    [:Prefix, :Common, :Plural, :Person1, "n-"],
-	    [:CompoundIntransitive, :Common, :Singular, :Person2, "-t"],
-	    [:CompoundIntransitive, :Common, :Plural, :Person3, "-y-n"],
-	    [:Suffix, :Common, :Plural, :Person3, "Ø-n"],
-	    [:Suffix, :Common, :Plural, :Person1, "-n"],
-	    [:Stative, :Common, :Plural, :Person3, "-on"],
-	    [:CompoundIntransitive, :Common, :Plural, :Person1, "-n"],
-	    [:CompoundTransitive, :Common, :Singular, :Person2, "-t"],
-	    [:CompoundTransitive, :Masc, :Singular, :Person3, "Ø"],
-	    [:Suffix, :Common, :Singular, :Person1, "Ø"],
-	    [:CompoundIntransitive, :Fem, :Singular, :Person3, "-t"],
-	    [:CompoundTransitive, :Common, :Plural, :Person3, "Ø-n"],
-	    [:Prefix, :Common, :Plural, :Person2, "t- -n"],
-	    [:Stative, :Masc, :Singular, :Person3, "-V"],
-	    [:CompoundIntransitive, :Masc, :Singular, :Person3, "-y"],
-	    [:Stative, :Common, :Plural, :Person2, "-iton"],
-	    [:Stative, :Fem, :Singular, :Person3, "-V"],
-	    [:Prefix, :Common, :Plural, :Person3, "y- -n"],
-	    [:Stative, :Common, :Singular, :Person1, "-iyo"],
-	    [:Suffix, :Common, :Plural, :Person2, "-t-n"],
-	    [:CompoundTransitive, :Common, :Plural, :Person2, "-t-n"],
-	    [:CompoundTransitive, :Common, :Plural, :Person1, "-n"],
-	    [:CompoundTransitive, :Common, :Singular, :Person1, "Ø"],
-	    [:Stative, :Common, :Singular, :Person2, "-ito"],
-	    [:Suffix, :Masc, :Singular, :Person3, "Ø"],
-	    [:Suffix, :Fem, :Singular, :Person3, "-t"],
-	    [:Prefix, :Fem, :Singular, :Person3, "t-"],
-	    [:Suffix, :Common, :Singular, :Person2, "-t"],
-	    [:Prefix, :Common, :Singular, :Person2, "t-"]]
     }
     {:label "afar-VPrefAffPerfPast1Aux1-uduur"
     :note "Parker-Hayward1985 pp. 259 - 263;table c"
@@ -4037,5 +3939,107 @@
     :terms [[:token]  ;; schema
 	    ["miʕih"]]
     }}
-:muterms #{}
+:muterms #{
+    {:label "afar-VSubjMarker"
+    :note "Parker-Hayward1985 p. 252,tab 18"
+    :common {:pdgmSubType :SubjMarker,
+	    :pos :Verb,
+	    :morpheme :AFFIX,
+	    :formType :Affix}
+    :terms [[:conjClass, :gender, :number, :person, :token]  ;; schema
+	    [:CompoundIntransitive, :Common, :Plural, :Person2, "-t-n"],
+	    [:Prefix, :Common, :Singular, :Person1, "Ø"],
+	    [:CompoundTransitive, :Fem, :Singular, :Person3, "-t"],
+	    [:Stative, :Common, :Plural, :Person1, "-ino"],
+	    [:CompoundIntransitive, :Common, :Singular, :Person1, "Ø"],
+	    [:Prefix, :Masc, :Singular, :Person3, "y-"],
+	    [:Prefix, :Common, :Plural, :Person1, "n-"],
+	    [:CompoundIntransitive, :Common, :Singular, :Person2, "-t"],
+	    [:CompoundIntransitive, :Common, :Plural, :Person3, "-y-n"],
+	    [:Suffix, :Common, :Plural, :Person3, "Ø-n"],
+	    [:Suffix, :Common, :Plural, :Person1, "-n"],
+	    [:Stative, :Common, :Plural, :Person3, "-on"],
+	    [:CompoundIntransitive, :Common, :Plural, :Person1, "-n"],
+	    [:CompoundTransitive, :Common, :Singular, :Person2, "-t"],
+	    [:CompoundTransitive, :Masc, :Singular, :Person3, "Ø"],
+	    [:Suffix, :Common, :Singular, :Person1, "Ø"],
+	    [:CompoundIntransitive, :Fem, :Singular, :Person3, "-t"],
+	    [:CompoundTransitive, :Common, :Plural, :Person3, "Ø-n"],
+	    [:Prefix, :Common, :Plural, :Person2, "t- -n"],
+	    [:Stative, :Masc, :Singular, :Person3, "-V"],
+	    [:CompoundIntransitive, :Masc, :Singular, :Person3, "-y"],
+	    [:Stative, :Common, :Plural, :Person2, "-iton"],
+	    [:Stative, :Fem, :Singular, :Person3, "-V"],
+	    [:Prefix, :Common, :Plural, :Person3, "y- -n"],
+	    [:Stative, :Common, :Singular, :Person1, "-iyo"],
+	    [:Suffix, :Common, :Plural, :Person2, "-t-n"],
+	    [:CompoundTransitive, :Common, :Plural, :Person2, "-t-n"],
+	    [:CompoundTransitive, :Common, :Plural, :Person1, "-n"],
+	    [:CompoundTransitive, :Common, :Singular, :Person1, "Ø"],
+	    [:Stative, :Common, :Singular, :Person2, "-ito"],
+	    [:Suffix, :Masc, :Singular, :Person3, "Ø"],
+	    [:Suffix, :Fem, :Singular, :Person3, "-t"],
+	    [:Prefix, :Fem, :Singular, :Person3, "t-"],
+	    [:Suffix, :Common, :Singular, :Person2, "-t"],
+	    [:Prefix, :Common, :Singular, :Person2, "t-"]]
+    }
+    {:label "afar-PPossDef"
+    :note "Parker-Hayward1985 p. 235 tab 6,tab 7"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :person, :proClass, :token]  ;; schema
+	    [:Common, :Singular, :Person2, :PossessiveDefinite, "ky"],
+	    [:Common, :Singular, :Person1, :PossessiveDefinite, "yi"],
+	    [:Common, :Singular, :Person1, :Reflexive, "inni"],
+	    [:Common, :Plural, :Person3, :PossessiveDefinite, "ken"],
+	    [:Masc, :Singular, :Person3, :PossessiveDefinite, "kay"],
+	    [:Common, :Plural, :PersonNon-1, :Reflexive, "isinni ~ sinni"],
+	    [:Common, :Singular, :PersonNon-1, :Reflexive, "issi"],
+	    [:Common, :Plural, :Person2, :PossessiveDefinite, "sin"],
+	    [:Common, :Plural, :Person1, :Reflexive, "ninni"],
+	    [:Fem, :Singular, :Person3, :PossessiveDefinite, "tet"],
+	    [:Common, :Plural, :Person1, :PossessiveDefinite, "ni"]]
+    }
+    {:label "afar-PInd"
+    :note "Parker-Hayward1985 pp. 237-238,tab. 8,9,11,12,13"
+    :common {:morpheme :PRO,
+	    :pos :Pronoun,
+	    :proClass :Independent}
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Absolutive, :Common, :Plural, :Person2, "sin (siìni)"],
+	    [:Absolutive, :Common, :Singular, :Person2, "ko(o)"],
+	    [:Possessive-m, :Common, :Singular, :Person2, "kuum (kuùmu)"],
+	    [:Nominative, :Common, :Plural, :Person2, "isin"],
+	    [:Emphatic, :Common, :Plural, :PersonNon-1, "(ìsin ~ òson) isìnnih/sìnnih"],
+	    [:Emphatic-m, :Common, :Plural, :PersonNon-1, "isinnim (isinniìmi)"],
+	    [:Nominative, :Common, :Singular, :Person2, "atu"],
+	    [:Nominative, :Common, :Singular, :Person1, "anu"],
+	    [:Nominative, :Fem, :Singular, :Person3, "is"],
+	    [:Reflexive, :Common, :Singular, :Person1, "ìnni"],
+	    [:Absolutive, :Fem, :Singular, :Person3, "tet (teèti)"],
+	    [:Nominative, :Common, :Plural, :Person3, "òson"],
+	    [:Nominative, :Masc, :Singular, :Person3, "ùsuk"],
+	    [:Absolutive, :Common, :Plural, :Person3, "ken (keèni)"],
+	    [:Possessive-m, :Masc, :Singular, :Person3, "kàyim (kàyimi)"],
+	    [:Absolutive, :Masc, :Singular, :Person3, "kà(a)"],
+	    [:Emphatic-m, :Common, :Singular, :Person1, "innim (inniìmi)"],
+	    [:Reflexive, :Common, :Plural, :PersonNon-1, "isìnni"],
+	    [:Emphatic-m, :Common, :Plural, :Person1, "ninnim (ninniìmi)"],
+	    [:Possessive-m, :Common, :Plural, :Person1, "niim (niìmi)"],
+	    [:Possessive-m, :Common, :Plural, :Person2, "sìnim (sìnimi)"],
+	    [:Possessive-m, :Common, :Singular, :Person1, "yiim (yiìmi)"],
+	    [:Possessive-m, :Common, :Plural, :Person3, "kènim (kènimi)"],
+	    [:Absolutive, :Common, :Singular, :Person1, "yo(o)"],
+	    [:Emphatic, :Common, :Plural, :Person1, "(nanù) nìnnih"],
+	    [:Reflexive, :Common, :Plural, :Person1, "ìnni"],
+	    [:Possessive-m, :Fem, :Singular, :Person3, "tètim (tètimi"],
+	    [:Emphatic-m, :Common, :Singular, :PersonNon-1, "issim (issiìmi)"],
+	    [:Reflexive, :Common, :Singular, :PersonNon-1, "is"],
+	    [:Absolutive, :Common, :Plural, :Person1, "ne(e)"],
+	    [:Emphatic, :Common, :Singular, :PersonNon-1, "(atù ~ ùsuk ~ ìs) ìssih"],
+	    [:Emphatic, :Common, :Singular, :Person1, "(anù) ìnnih"],
+	    [:Nominative, :Common, :Plural, :Person1, "nanu"]]
+    }
+
+    }
 }

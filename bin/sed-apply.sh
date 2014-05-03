@@ -2,14 +2,12 @@
 
 
 
-for f in `find bin/ -name display-*`
+for f in `find $1 -name *.edn`
 do
-#    f2=${f/%.sh/.bck}
-#   echo "copying $f to ${f2} . . . "
-#  cp $f $f2
-    f3=${f/%.sh/.new}
-    echo "renaming $f to ${f3} . . . "
-    mv $f $f3
-    sed -e "s/ldomain\/\/\"\//ldomain\/\/\\\\\"\//" $f3 > $f
-    #sed -f bin/append.sed $f3 > $f
+    f2=${f/%.edn/.new}     
+    echo "renaming $f to ${f2} . . . "
+    mv $f $f2
+    #sed -e "s/ldomain\/\/\"\//ldomain\/\/\\\\\"\//" $f2 > $f
+    sed -e "s/:Pro,/:Pronoun,/g" $f2 > $f
+    #sed -f bin/append.sed $f2 > $f
 done

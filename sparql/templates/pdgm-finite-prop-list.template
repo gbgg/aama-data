@@ -12,10 +12,12 @@ GRAPH <http://oi.uchicago.edu/aama/2013/graph/%lang%> {
 	?s ?p ?o ;
 	#aamas:lexeme ?lexeme;
     #%abbrev%:tam  ?tam ;
-	%abbrev%:pos  %abbrev%:Verb ;
-	%abbrev%:person ?person .
+	%abbrev%:pos  %abbrev%:Verb .
+    {?s %abbrev%:pngShapeClass ?png .}
+    	UNION
+    {?s %abbrev%:person ?person .}
    ?p rdfs:label ?property .
- 	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:number, %abbrev%:person, %abbrev%:pos, %abbrev%:token, rdf:type, %abbrev%:multiLex ) )
+ 	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:number, %abbrev%:pngShapeClass, %abbrev%:person, %abbrev%:pos, %abbrev%:token, rdf:type, %abbrev%:multiLex ) )
 # 	FILTER (?p NOT IN ( aamas:lang, %abbrev%:gender, %abbrev%:number, %abbrev%:person, %abbrev%:pos, %abbrev%:token, rdf:type) )
 }}
 ORDER BY ASC(?property) 

@@ -6,7 +6,7 @@
 my ($pnamefile, $lang) = @ARGV;
 my $textfile = "sparql/pdgms/pname-nfv-list-$lang.txt";
 #print "input file = $pnamefile\n";
-print "textfile = $textfile\n\n";
+print "textfile = $textfile\n";
 
 undef $/;
 my $listdata;
@@ -45,5 +45,6 @@ foreach my $multilex (sort keys %nfvpdgmprops)
 	print $index.". ".$multilex.":".$proplist."\n";
 	$index++;
 }
+print "\n";
 close(OUT);
 

@@ -10,15 +10,17 @@
 ldomain=${1//,/ }
 ldomain=${ldomain//\"/}
 
-for f in `find $1 -name *.edn`
+for f in `find $ldomain -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
-	echo "querying $lang $Lang $abbrev"
+	echo "  "
+	echo "querying $lang ($abbrev)"
 	localqry=sparql/pdgms/output/pnames-pro-$lang-query.rq
 	response=sparql/pdgms/output/pnames-pro-$lang-resp.tsv
+	echo " "
 	echo "Localqry = $localqry"
 	echo "Response = $response"
 	sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-pro-pnames.template > $localqry
