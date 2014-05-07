@@ -34,38 +34,49 @@ echo " properties which can or must be represented in any finite verb "
 echo " paradigm. The following table(s) list those properties and values"
 echo " for \"${1}\":"
 echo
-for f in `find $1 -name *.edn`
+for f in `find $ldomain -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
-   # Lang="${lang[@]^}"
-	labbrev=`grep $lang bin/lname-pref.txt`
-	abbrev=${labbrev#$lang=}
+    #Lang="${lang[@]^}"
+    labbrev=`grep $lang bin/lname-pref.txt`
+    abbrev=${labbrev#$lang=}
     echo querying $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
-	of=pdgm-fv-props.template
-	#echo of = $of
+    of=pdgm-fv-props.template
+    #echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
-	response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
+    response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
     echo "props query = $localqry"
 
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-fv-props.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	perl pl/verb-propvaltsv2table.pl $response
-	echo " Command line format:"
-	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . .  [or Ctrl-C to exit]."
-	echo "Example -- "
-	echo " oromo:clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
-	echo " beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present". 
-	echo " [CR at prompt will return all finite-verb pdgms.]"
-	read -e -p $lang: propvalset
-	#echo "propvalset = $propvalset"
-	commandline="${commandline}+${lang}:${propvalset}"
-	#echo "commandline = $commandline"
-	echo
+    perl pl/verb-propvaltsv2table.pl $response
+    echo " Command line format:"
+    echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . .  [or Ctrl-C to exit]."
+    echo "Example -- "
+    echo " oromo:clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
+    echo " beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present". 
+    echo " [CR at prompt will return all finite-verb pdgms.]"
+    if [ $lang = "beja-arteiga" ] ; then
+	pvset="conjClass=Suffix,polarity=Affirmative,tam=Present"
+    else
+	pvset="clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
+    fi
+    read -e -p "Prop-val Set (default $pvset) : " input
+    propvalset=${input:-$pvset}
+    #echo "propvalset = $propvalset"
+    commandline="${commandline}+${lang}:${propvalset}"
+    #echo "commandline = $commandline"
+    echo
 done
 commandline=${commandline#*+}
 #echo "commandline = $commandline"
 
 bin/pdgm-display.sh $commandline $querylabel
-bin/aama-query-display-demo.sh
+#bin/aama-query-display-demo.sh
+
+if [ "$2" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi

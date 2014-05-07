@@ -18,7 +18,7 @@ of=langsforval.template
 response="tmp/prop-val/${of%.template}.$val-resp.tsv"
 
 echo "fuquery.log" > logs/fuquery.log;
-for f in `find $1 -name *.edn`
+for f in `find $ldomain -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
     #Lang="${lang[@]^}"
@@ -40,4 +40,8 @@ perl pl/langsforvaltsv2table.pl $response $val
 #	--service http://localhost:3030/aamaTestData/query  \
 #	--file=query-temp.rq  \
 #	> ../cygwin/home/Gene/aamadata/tools/rq-ru/query-trial/$response
-bin/aama-query-display-demo.sh
+
+if [ "$3" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi

@@ -59,4 +59,9 @@ do
 
 	perl pl/pdgmtsv2table.pl	$response $qstring
 done 
-bin/aama-query-display-demo.sh
+#bin/aama-query-display-demo.sh
+
+if [ "$2" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi

@@ -13,14 +13,23 @@
 
 # response=tmp/prop-val/lang-prop-val-list.tsv
 my ($propvalfile, $filetag) = @ARGV;
+my @outputfiles;
 my $textfilelpv = "tmp/prop-val/lang-prop-val-list-$filetag.txt";
+push (@outputfiles, $textfilelpv);
 my $textfilepvl = "tmp/prop-val/prop-val-lang-list-$filetag.txt";
+push (@outputfiles, $textfilepvl);
 my $textfilevpl = "tmp/prop-val/val-prop-lang-list-$filetag.txt";
+push (@outputfiles, $textfilevpl);
 my $textfileplv = "tmp/prop-val/prop-lang-val-list-$filetag.txt";
+push (@outputfiles, $textfilepvl);
 my $htmlfilelpv = "tmp/prop-val/lang-prop-val-list-$filetag.html";
+push (@outputfiles, $htmlfilelpv);
 my $htmlfilepvl = "tmp/prop-val/prop-val-lang-list-$filetag.html";
+push (@outputfiles, $htmlfilepvl);
 my $htmlfilevpl = "tmp/prop-val/val-prop-lang-list-$filetag.html";
+push (@outputfiles, $htmlfilepvl);
 my $htmlfileplv = "tmp/prop-val/prop-lang-val-list-$filetag.html";
+push (@outputfiles, $htmlfileplv);
 
 #undef $/;
 # Will eventually make 4 formats for permutations of l, p, v
@@ -332,4 +341,13 @@ print "            </table>\n";
 print "    </body>\n";
 print "</html>\n";
 close(OUT); 
+
+select STDOUT;
+
+print "\nThe following output files have been produced:\n";
+foreach my $outputfile (@outputfiles)
+{
+    print "\t$outputfile\n";
+}
+
 

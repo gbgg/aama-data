@@ -49,7 +49,7 @@ else
 	perl pl/qstring-vterms2template.pl $qstring $template
 fi
 
-fs=`find $1 -name *edn`
+fs=`find $ldomain -name *edn`
 for f in $fs
 do
 	#echo "f is $f"
@@ -72,4 +72,9 @@ fi
 # If want rows  with repeated token and single value, use following:
 #perl pl/langspvtsv2table.pl $response
 
-bin/aama-query-display-demo.sh
+#bin/aama-query-display-demo.sh
+
+if [ "$5" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi

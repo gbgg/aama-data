@@ -51,22 +51,28 @@ do
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-nfv-props.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
-	# following works for both fv and nfv
-	perl pl/verb-propvaltsv2table.pl $response
-	
-	echo " Command line format:"
-	echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . .[  or Ctrl-C to exit ]"
-	echo "Example -- "
-	echo "beja-arteiga:derivedStem=B"
-	echo " [CR at prompt will return all finite-verb pdgms.]"
-	echo
-	read -e -p $lang: propvalset
-	#echo "propvalset = $propvalset"
-	commandline="${commandline}+${lang}:${propvalset}"
-	#echo "commandline = $commandline"
+    # following works for both fv and nfv
+    perl pl/verb-propvaltsv2table.pl $response
+    echo " Command line format:"
+    echo " [lang]:[property]=[value],[property]=[value],[property]=[value], . . .[  or Ctrl-C to exit ]"
+    echo "Example -- "
+    echo "beja-arteiga:derivedStem=B"
+    echo " [CR at prompt will return all finite-verb pdgms.]"
+    echo
+    pvset="derivedStem=B"
+    read -e -p "Prop-val Set (default $pvset) : " input
+    propvalset=${input:-$pvset}
+    #echo "propvalset = $propvalset"
+    commandline="${commandline}+${lang}:${propvalset}"
+    #echo "commandline = $commandline"
 done
 commandline=${commandline#*+}
 #echo commandline = $commandline
 
 bin/pdgm-nfv-pv-display.sh $commandline $querylabel
-bin/aama-query-display-demo.sh
+#bin/aama-query-display-demo.sh
+
+if [ "$2" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi

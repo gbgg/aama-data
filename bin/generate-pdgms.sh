@@ -27,4 +27,4 @@ echo "xml2html" >> logs/xml2html.log;
 	done
 #done
 
-bin/aama-query-display-demo.sh
+

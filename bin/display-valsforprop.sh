@@ -37,6 +37,7 @@ do
 done
 
 if [ "$3" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
 fi
 

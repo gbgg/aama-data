@@ -5,7 +5,7 @@ PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
 
-SELECT  ?conjClass ?derivedStem ?derivedStemAug ?formType ?rootClass ?tamStemClass ?token  
+SELECT  ?conjClass ?derivedStem ?derivedStemAug ?formType ?rootClass ?tamStemClass  
 WHERE
 {
 	{
@@ -29,8 +29,7 @@ WHERE
  			?QrootClass	rdfs:label	?rootClass . }
 			OPTIONAL { ?s	bar:tamStemClass	?QtamStemClass . 
  			?QtamStemClass	rdfs:label	?tamStemClass . }
-			OPTIONAL { ?s	bar:token	?token . }
 		}
 	}
 }
-ORDER BY  ?conjClass ?derivedStem ?derivedStemAug ?formType ?rootClass ?tamStemClass ?token   
+ORDER BY  ?conjClass ?derivedStem ?derivedStemAug ?formType ?rootClass ?tamStemClass   

@@ -63,4 +63,9 @@ do
 done
 perl pl/langspvtsv2table.pl $response
 
-bin/aama-query-display-demo.sh
+
+if [ "$4" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi
+

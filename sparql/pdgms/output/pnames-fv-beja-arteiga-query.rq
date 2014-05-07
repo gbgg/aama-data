@@ -12,11 +12,13 @@ GRAPH <http://oi.uchicago.edu/aama/2013/graph/beja-arteiga> {
 	?s ?p ?o ;
 	#aamas:lexeme ?lexeme;
     #bar:tam  ?tam ;
-	bar:pos  bar:Verb ;
-	bar:person ?person .
+	bar:pos  bar:Verb .
+    {?s bar:pngShapeClass ?png .}
+    	UNION
+    {?s bar:person ?person .}
    ?p rdfs:label ?property .
- 	FILTER (?p NOT IN ( aamas:lang, bar:gender, bar:number, bar:person, bar:pos, bar:token, rdf:type, bar:multiLex ) )
+ 	FILTER (?p NOT IN ( aamas:lang, bar:gender, bar:number, bar:pngShapeClass, bar:person, bar:pos, bar:token, rdf:type, bar:multiLex ) )
 # 	FILTER (?p NOT IN ( aamas:lang, bar:gender, bar:number, bar:person, bar:pos, bar:token, rdf:type) )
 }}
-ORDER BY ASC(?property) ASC(?lexeme)
+ORDER BY ASC(?property) 
 

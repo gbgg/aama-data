@@ -16,7 +16,7 @@ do
     Lang="${lang[@]^}"
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
-    echo querying $Lang $lang -- $abbrev
+    #echo querying $Lang $lang -- $abbrev
 	echo "##$lang : '$abbrev," >> $response
     #of=`basename ${2#sparql/templates/}`
 	of=pdgm-noun-prop-list.template
@@ -28,6 +28,13 @@ do
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-noun-prop-list.template > $localqry
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry >> $response
 done
-	perl pl/pdgm-proplist2txt.pl $response
 
-bin/aama-query-display-demo.sh
+perl pl/pdgm-proplist2txt.pl $response
+
+echo "    "
+echo "    "
+
+if [ "$1" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-demo.sh
+fi

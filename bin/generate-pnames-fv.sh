@@ -37,13 +37,13 @@ do
 	echo "Response2 = $response2"
 	perl pl/pname-fv-list2txt.pl $response2 $lang 
 done
-
-
+echo "    "
+echo "    "
 
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
-
 if [ "$2" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
 fi

@@ -29,13 +29,15 @@ do
 
 	perl pl/pname-np-list2txt.pl $response $lang 
 done
-
+echo "   "
+echo "   "
 
 
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
 if [ "$2" = "menu" ] ; then
+    read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
 fi
 
