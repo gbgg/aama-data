@@ -26,7 +26,7 @@ while (<IN>)
 	$listdata =~ s/"//g;
 	my @nfvprops = split(/\n/, $listdata);
  	foreach my $nfvprop (@nfvprops)
-	{no
+	{
 		my($multilex, $prop) = split(/\t/, $nfvprop);
 		$nfvpdgmprops{$multilex} .= $prop.",";
 	}

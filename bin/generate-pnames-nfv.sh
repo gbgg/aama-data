@@ -27,9 +27,8 @@ do
 
 	perl pl/pname-nfv-list2txt.pl $response $lang 
 done
-
-
-
+echo "   "
+echo "   "
 
 #perl pl/pnamestsv2txt.pl	$response $qstring
 
