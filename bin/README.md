@@ -93,7 +93,7 @@ In order to run the demo the user needs to:
    c. generate the "pname" files needed for pdgm-pname display.
 
 3. Launch the fuseki server with bin/fuseki.sh in one terminal window.
-4. Run bin/aama-query-display-demo.sh in another termnal window.
+4. Run bin/aama-query-display-demo.sh in another terminal window.
 
 ==============================================
 

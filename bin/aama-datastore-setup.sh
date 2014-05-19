@@ -2,8 +2,9 @@
 
 # rev 04/29/14 
 
-# script to delete current arg graphs from datastore, regenerate ttl/rdf
-# from corrected edn, upload to fuseki, generate pnames.
+# Script to delete current arg graphs from datastore, regenerate ttl/rdf
+# from corrected edn, upload to fuseki, generate pnames files necessary for
+# pdgm "pname" display; assumes fuseki has been launched by bin/fuseki.sh.
 
 . bin/constants.sh
 ldomain=${1//,/ }

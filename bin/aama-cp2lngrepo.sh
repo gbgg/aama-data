@@ -22,5 +22,10 @@ do
     echo "$lang ********************************************"
     echo copying $f to aama/$lang
     cp data/$lang/$lang-pdgms\.edn ../aama/$lang/
+    cd ../aama/$lang
+    git add *.edn
+    git commit -am "revised edn added (after edn2ttl in aama-data)"
+    git push origin master
+    cd ../../aama-data
 done
 
