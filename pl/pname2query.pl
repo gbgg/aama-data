@@ -53,6 +53,7 @@ print "WHERE\n{\n";
 print "\t{\n";
 print "\t\tGRAPH aamag:$langname\n\t\t{\n";
 print "\t\t\t?s\t$labbrev:pos\t$labbrev:Verb . \n";
+print "\t\t\t?s\t$labbrev:person\t?person . \n";
 print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
 print "\t\t\t?s\taamas:lang\t?lang .\n";
 print "\t\t\t?lang\trdfs:label\t?langLabel . \n";

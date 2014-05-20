@@ -113,7 +113,7 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		qstr="person=Person2,gender=Fem"
+		qstr="person=Person2,gender=?gender"
 		echo "Enter qstring: prop=Val,...prop=?prop,..."
 		read -e -p "Qstring (default $qstr) : " input
 		qstring=${input:-$qstr}
