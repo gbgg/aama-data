@@ -67,6 +67,7 @@ foreach my $queryprop (@queryproplist)
 	$qqueryprop =~ s/-//;
 	$selection .= "?".$qqueryprop." "; 
 }
+$selection .= "?token";
 #foreach my $queryp (@queryproplist)
 #{
 	#print "Queryp = $queryp\n";
@@ -94,6 +95,7 @@ print "\t\t\t?s\t$lang:pos\t$lang:Verb . \n";
 print "\t\t\tNOT EXISTS {?s $lang:person ?person } .\n";
 print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
 print "\t\t\t?s\t$lang:multiLex\t$lang:$multilex .\n";
+print "\t\t\t?s\t$lang:token\t?token .\n";
 print "\t\t\t?s\taamas:lang\t?lang .\n";
 print "\t\t\t?lang\trdfs:label\t?langLabel . \n";
 # Iterate through @select if want all values in table

@@ -5,7 +5,7 @@ PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
 
-SELECT  ?conjClass ?derivedStem ?nonFiniteForm ?participle ?token ?tokenaffix ?tokengloss  
+SELECT  ?conjClass ?derivedStem ?nonFiniteForm ?participle ?token 
 WHERE
 {
 	{
@@ -15,6 +15,7 @@ WHERE
 			NOT EXISTS {?s bar:person ?person } .
 			?s	aamas:lang	aama:Beja-arteiga .
 			?s	bar:multiLex	bar:VERBALPARTICIPLES .
+			?s	bar:token	?token .
 			?s	aamas:lang	?lang .
 			?lang	rdfs:label	?langLabel . 
 			OPTIONAL { ?s	bar:conjClass	?QconjClass . 
@@ -25,10 +26,7 @@ WHERE
  			?QnonFiniteForm	rdfs:label	?nonFiniteForm . }
 			OPTIONAL { ?s	bar:participle	?Qparticiple . 
  			?Qparticiple	rdfs:label	?participle . }
-			OPTIONAL { ?s	bar:token	?token . }
-			OPTIONAL { ?s	bar:token-affix	?tokenaffix . }
-			OPTIONAL { ?s	bar:token-gloss	?tokengloss . }
 		}
 	}
 }
-ORDER BY  ?conjClass ?derivedStem ?nonFiniteForm ?participle ?token ?tokenaffix ?tokengloss   
+ORDER BY  ?conjClass ?derivedStem ?nonFiniteForm ?participle ?token  

@@ -60,8 +60,10 @@ do
     echo " [CR at prompt will return all finite-verb pdgms.]"
     if [ $lang = "beja-arteiga" ] ; then
 	pvset="conjClass=Suffix,polarity=Affirmative,tam=Present"
-    else
+    elif [ $lang = "oromo" ] ; then
 	pvset="clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present"
+    else
+	pvset="tam=Present"
     fi
     read -e -p "Prop-val Set (default $pvset) : " input
     propvalset=${input:-$pvset}

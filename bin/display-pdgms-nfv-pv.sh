@@ -60,7 +60,8 @@ do
     echo " [CR at prompt will return all finite-verb pdgms.]"
     echo
     pvset="derivedStem=B"
-    read -e -p "Prop-val Set (default $pvset) : " input
+    # see if something better would work as default nfv pvset
+   read -e -p "Prop-val Set (default $pvset) : " input
     propvalset=${input:-$pvset}
     #echo "propvalset = $propvalset"
     commandline="${commandline}+${lang}:${propvalset}"
