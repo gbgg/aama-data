@@ -14,6 +14,7 @@ ldomain=${1//,/ }
 ldomain=${ldomain//\"/}
 #echo "lang domain = ${ldomain}"
 #echo "type = ${2}"
+
 echo "fuquery.log" > logs/fuquery.log;
 for f in `find $ldomain -name *.edn`
 do
@@ -35,9 +36,15 @@ do
 	> $response
     perl pl/valforproptsv2table.pl $response $type
 done
+echo " "
+echo " "
+echo " "
 
 if [ "$3" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
+else
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-test.sh $3
 fi
 

@@ -20,17 +20,17 @@ while (<IN>)
 	my @nfvprops = split(/\n/, $listdata);
 	foreach my $nfvprop (@nfvprops)
 	{
-		my($multilex, $prop) = split(/\t/, $nfvprop);
-		$nfvpdgmprops{$multilex} .= $prop.",";
+		my($morphClass, $prop) = split(/\t/, $nfvprop);
+		$nfvpdgmprops{$morphClass} .= $prop.",";
 	}
 }
 
 my $index = 1;
-foreach my $multilex (sort keys %nfvpdgmprops)
+foreach my $morphClass (sort keys %nfvpdgmprops)
 {
-	my $proplist = $nfvpdgmprops{$multilex};
+	my $proplist = $nfvpdgmprops{$morphClass};
 	$proplist =~ s/,$//;
-	print $index.". ".$multilex.":".$proplist."\n";
+	print $index.". ".$morphClass.":".$proplist."\n";
 	$index++;
 }
 # print pdgm tsv data and header to tab-delimited tsv file
@@ -38,11 +38,11 @@ foreach my $multilex (sort keys %nfvpdgmprops)
 my $index = 1;
 open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
 select(OUT);
-foreach my $multilex (sort keys %nfvpdgmprops)
+foreach my $morphClass (sort keys %nfvpdgmprops)
 {
-	my $proplist = $nfvpdgmprops{$multilex};
+	my $proplist = $nfvpdgmprops{$morphClass};
 	$proplist =~ s/,$//;
-	print $index.". ".$multilex.":".$proplist."\n";
+	print $index.". ".$morphClass.":".$proplist."\n";
 	$index++;
 }
 print "\n";

@@ -62,10 +62,15 @@ do
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry >> $response
 done
 perl pl/langspvtsv2table.pl $response
-
+echo " "
+echo " "
+echo " "
 
 if [ "$4" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
+else
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-test.sh $4
 fi
 

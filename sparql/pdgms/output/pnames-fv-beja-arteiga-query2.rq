@@ -5,7 +5,7 @@ PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
 
-SELECT DISTINCT ?langLabel ?conjClass ?derivedStem ?derivedStemAug ?formType ?pdgmType ?polarity ?rootClass ?tam  ?lexeme
+SELECT DISTINCT ?langLabel ?conjClass ?derivedStem ?derivedStemAug ?formType ?morphClass ?pdgmType ?polarity ?rootClass ?tam  ?lexeme
 WHERE
 {
 	{
@@ -24,6 +24,8 @@ WHERE
  			?QderivedStemAug	rdfs:label	?derivedStemAug . }
 			OPTIONAL { ?s	bar:formType	?QformType . 
  			?QformType	rdfs:label	?formType . }
+			OPTIONAL { ?s	bar:morphClass	?QmorphClass . 
+ 			?QmorphClass	rdfs:label	?morphClass . }
 			OPTIONAL { ?s	bar:pdgmType	?QpdgmType . 
  			?QpdgmType	rdfs:label	?pdgmType . }
 			OPTIONAL { ?s	bar:polarity	?Qpolarity . 
@@ -35,4 +37,4 @@ WHERE
 		}
 	}
 }
-ORDER BY ?langLabel  ?conjClass ?derivedStem ?derivedStemAug ?formType ?pdgmType ?polarity ?rootClass ?tam  
+ORDER BY ?langLabel  ?conjClass ?derivedStem ?derivedStemAug ?formType ?morphClass ?pdgmType ?polarity ?rootClass ?tam  

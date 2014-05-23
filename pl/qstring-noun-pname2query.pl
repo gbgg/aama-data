@@ -30,8 +30,8 @@ while (<IN>)
 	($queryprops, $after) = split(/\n/, $middle, 2);
 	#print "Queryprops = $queryprops\n";
 }
-my ($proclass, $qprops) = split(/:/, $queryprops, 2);
-print "proclass = $proclass\n";
+my ($morphclass, $qprops) = split(/:/, $queryprops, 2);
+print "morphclass = $morphclass\n";
 print "qprops = $qprops\n";
 my $Lang = ucfirst($lang);
 my $Langname = ucfirst($langname);
@@ -67,7 +67,7 @@ print "\t{\n";
 print "\t\tGRAPH aamag:$langname\n\t\t{\n";
 print "\t\t\t?s\t$lang:pos\t$lang:Noun . \n";
 print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
-print "\t\t\t?s\taamas:morpheme\taama:$Langname-$proclass .\n";
+print "\t\t\t?s\t$lang:morphClass\t$lang:$morphclass .\n";
 print "\t\t\t?s\taamas:lang\t?lang .\n";
 print "\t\t\t?lang\trdfs:label\t?langLabel . \n";
 # Iterate through @select if want all values in table

@@ -16,16 +16,16 @@ do
     f2=${f%/*-pdgms.edn}
     echo "delete f = ${f2}"
     bin/fudelete.sh $f2
-    #bin/fuqueries.sh
-    #echo "[Enter] to continue or Ctl-C to exit"
-    #read
-    echo "2rdf f = ${f}"
+    bin/fuqueries.sh
+    echo "[Enter] to continue or Ctl-C to exit"
+    read
+    echo "edn2ttl2rdf f = ${f}"
     bin/aama-edn2rdf.sh $f
     echo "2fuseki f = ${f2}"
     bin/aama-rdf2fuseki.sh $f2
-    #bin/fuqueries.sh
-    #echo "[Enter] to continue or Ctl-C to exit"
-    #read
+    bin/fuqueries.sh
+    "[Enter] to continue or Ctl-C to exit"
+    read
     echo "pnames f = ${f}"
     bin/generate-pnames-pro.sh $f
     bin/generate-pnames-fv.sh $f

@@ -74,7 +74,14 @@ fi
 
 #bin/aama-query-display-demo.sh
 
+echo " "
+echo " "
+echo " "
+
 if [ "$5" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
+else
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-test.sh $5
 fi

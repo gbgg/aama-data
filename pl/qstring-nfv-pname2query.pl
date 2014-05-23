@@ -55,8 +55,8 @@ while (<IN>)
 	($queryprops, $after) = split(/\n/, $middle, 2);
 	#print "Queryprops = $queryprops\n";
 }
-my ($multilex, $qprops) = split(/:/, $queryprops, 2);
-print "multilex = $multilex\n";
+my ($morphClass, $qprops) = split(/:/, $queryprops, 2);
+print "morphClass = $morphClass\n";
 print "qprops = $qprops\n";
 my $Lang = ucfirst($lang);
 my $Langname = ucfirst($langname);
@@ -94,7 +94,7 @@ print "\t\tGRAPH aamag:$langname\n\t\t{\n";
 print "\t\t\t?s\t$lang:pos\t$lang:Verb . \n";
 print "\t\t\tNOT EXISTS {?s $lang:person ?person } .\n";
 print "\t\t\t?s\taamas:lang\taama:$Langname .\n";
-print "\t\t\t?s\t$lang:multiLex\t$lang:$multilex .\n";
+print "\t\t\t?s\t$lang:morphClass\t$lang:$morphClass .\n";
 print "\t\t\t?s\t$lang:token\t?token .\n";
 print "\t\t\t?s\taamas:lang\t?lang .\n";
 print "\t\t\t?lang\trdfs:label\t?langLabel . \n";

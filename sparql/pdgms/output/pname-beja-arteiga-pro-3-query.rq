@@ -5,7 +5,7 @@ PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
 
-SELECT  ?case ?gender ?number ?person  ?token 
+SELECT  ?case ?gender ?morphClass ?number ?person  ?token 
 WHERE
 {
 	{
@@ -20,6 +20,8 @@ WHERE
  			?Qcase	rdfs:label	?case . }
 			OPTIONAL { ?s	bar:gender	?Qgender . 
  			?Qgender	rdfs:label	?gender . }
+			OPTIONAL { ?s	bar:morphClass	?QmorphClass . 
+ 			?QmorphClass	rdfs:label	?morphClass . }
 			OPTIONAL { ?s	bar:number	?Qnumber . 
  			?Qnumber	rdfs:label	?number . }
 			OPTIONAL { ?s	bar:person	?Qperson . 
@@ -28,4 +30,4 @@ WHERE
 		}
 	}
 }
-ORDER BY  ?case ?gender ?number ?person   DESC(?num) ?pers DESC(?gen)
+ORDER BY  ?case ?gender ?morphClass ?number ?person   DESC(?num) ?pers DESC(?gen)

@@ -85,23 +85,23 @@ case "$qdnumber" in
 		echo "Enter property name"
 		read -e -p "Property (default $pname) : " input
 		property=${input:-$pname}
-		bin/display-valsforprop.sh $langdomain $property menu
+		bin/display-valsforprop.sh $langdomain $property $ldomain
 		;;
 	    2)
 		gldomain=\"data/*\"
 		echo "Define language domain"
-		read -e -p "lang-domain (default $ldomain) : " input
+		read -e -p "lang-domain (default $gldomain) : " input
 		langdomain=${input:-$gldomain}
 		vname=Present
 		echo "Enter value name"
 		read -e -p "Value (default $vname) : " input
 		value=${input:-$vname}
-		bin/display-langsforval.sh $langdomain $value menu
+		bin/display-langsforval.sh $langdomain $value $ldomain
 		;;
 	    3)
 		gldomain=\"data/*\"
 		echo "Define language domain"
-		read -e -p "lang-domain (default $ldomain) : " input
+		read -e -p "lang-domain (default $gldomain) : " input
 		langdomain=${input:-$gldomain}
 		qstr="person=Person3,gender=Fem,pos=?pos,number=?number"
 		echo "Enter qstring: prop=Val,...prop=?prop,..."
@@ -111,15 +111,15 @@ case "$qdnumber" in
 		echo "Enter query label"
 		read -e -p "Qlabel (default $qlbl) : " input
 		qlabel=${input:-$qlbl}
-		bin/display-langspropval.sh $langdomain $qstring $qlabel menu
+		bin/display-langspropval.sh $langdomain $qstring $qlabel $ldomain
 		;;
 	    4)
 		#ldomain=data/beja-arteiga,data/beja-atmaan
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		qstr="person=Person2,gender=?gender"
-		echo "Enter qstring: prop=Val,...prop=?prop,..."
+		qstr="person=Person3,gender=Fem"
+		echo "Enter qstring: prop=Val,prop=Val,..."
 		read -e -p "Qstring (default $qstr) : " input
 		qstring=${input:-$qstr}
 		qlbl=langpvterms-trial
@@ -130,7 +130,7 @@ case "$qdnumber" in
 		echo "Enter \"yes\" if property-name to be displayed with each value "
 		read -e -p "Prop?[yes/no] (default $prop) : " input
 		value=${input:-$prop}
-		bin/display-langvterms.sh $langdomain $qstring $qlabel $prop menu
+		bin/display-langvterms.sh $langdomain $qstring $qlabel $prop $ldomain
 		;;
 	esac
 	;;
@@ -154,42 +154,42 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-fv-pv.sh $langdomain menu
+		bin/display-pdgms-fv-pv.sh $langdomain $ldomain
 		;;
 	    2)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-fv-pnames.sh $langdomain menu
+		bin/display-pdgms-fv-pnames.sh $langdomain $ldomain
 		;;
 	    3)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-nfv-pv.sh $langdomain menu
+		bin/display-pdgms-nfv-pv.sh $langdomain $ldomain
 		;;
 	    4)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-nfv-pnames.sh $langdomain menu
+		bin/display-pdgms-nfv-pnames.sh $langdomain $ldomain
 		;;
 	    5)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-pro-pnames.sh $langdomain menu
+		bin/display-pdgms-pro-pnames.sh $langdomain $ldomain
 		;;
 	    6)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-noun-pnames.sh $langdomain menu
+		bin/display-pdgms-noun-pnames.sh $langdomain $ldomain
 		;;
 	esac
 	;;
@@ -229,37 +229,37 @@ case "$qdnumber" in
 	echo
 	case "$ltnumber" in 
 	    1)
-                bin/generate-prop-list-fv.sh menu ;;
+                bin/generate-prop-list-fv.sh $ldomain ;;
 	    2)
-		bin/generate-prop-list-nfv.sh menu ;;
+		bin/generate-prop-list-nfv.sh $ldomain ;;
 	    3)
-		bin/generate-prop-list-pro.sh menu ;;
+		bin/generate-prop-list-pro.sh $ldomain ;;
 	    4)
-		bin/generate-prop-list-noun.sh menu ;;
+		bin/generate-prop-list-noun.sh $ldomain ;;
 	    5)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/generate-pnames-fv.sh $langdomain menu ;;
+		bin/generate-pnames-fv.sh $langdomain $ldomain ;;
 	    6)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/generate-pnames-nfv.sh $langdomain menu ;;
+		bin/generate-pnames-nfv.sh $langdomain $ldomain ;;
 	    7)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/generate-pnames-pro.sh $langdomain menu ;;
+		bin/generate-pnames-pro.sh $langdomain $ldomain ;;
 	    8)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/generate-pnames-noun.sh $langdomain menu ;;
+		bin/generate-pnames-noun.sh $langdomain $ldomain ;;
 	    9)
 		#ldomain=data/beja-arteiga
 		echo "Define language domain"
@@ -269,7 +269,7 @@ case "$qdnumber" in
 		echo "Provide File Tag"
 		read -e -p "File Tag (default $ftag) : " input
 		filetag=${input:-$ftag}
-		bin/generate-lang-prop-val-lists.sh $langdomain $filetag menu ;;
+		bin/generate-lang-prop-val-lists.sh $langdomain $filetag $ldomain ;;
 	esac
 esac
 

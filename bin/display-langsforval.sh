@@ -16,7 +16,8 @@ ldomain=${ldomain//\"/}
 val=$2
 of=langsforval.template
 response="tmp/prop-val/${of%.template}.$val-resp.tsv"
-
+# Have to start with clean slate
+rm $response
 echo "fuquery.log" > logs/fuquery.log;
 for f in `find $ldomain -name *.edn`
 do
@@ -44,4 +45,7 @@ perl pl/langsforvaltsv2table.pl $response $val
 if [ "$3" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
+else
+    read -e -p "[ENTER] to continue" input
+    bin/aama-query-display-test.sh $3
 fi

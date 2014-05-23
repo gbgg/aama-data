@@ -12,7 +12,7 @@
 	  :formType [:Affix, :Auxiliary, :Compound, :Copula, :Stem]
 	  :gender [:Common, :Fem, :Masc]
 	  :langVar [:Arteiga, :Hadendowa, :bishari]
-	  :multiLex [:DERVSTEMFORM, :IMPTVROOTCLASSES, :TENSESTEM, :VERBALPARTICIPLES]
+	  :morphClass [:DERVSTEMFORM, :IMPTVROOTCLASSES, :TENSESTEM, :VERBALPARTICIPLES, :POSTPOSITION, :PLMARK, :SUBJMARK]
 	  :nonFiniteForm [:Participle]
 	  :number [:Common, :Plural, :Singular]
 	  :participle [:Common, :Conjunctive, :Future, :Negative, :Past, :Present]
@@ -292,7 +292,7 @@
 	    :number :Singular,
 	    :person :Person2,
 	    :tam :Imperative,
-	    :multiLex :IMPTVROOTCLASSES,
+	    :morphClass :IMPTVROOTCLASSES,
 	    :pdgmType :Structure,
 	    :pos :Verb}
     :terms [[:conjClass, :rootClass, :token, :lexeme]  ;; schema
@@ -376,7 +376,7 @@
     }
     {:label "beja_H-VParticiple"
     :common {:derivedStem :B,
-	    :multiLex :VERBALPARTICIPLES,
+	    :morphClass :VERBALPARTICIPLES,
 	    :nonFiniteForm :Participle,
 	    :pos :Verb}
     :terms [[:conjClass, :lexeme, :participle, :token, :token-affix, :token-gloss]  ;; schema
@@ -445,7 +445,7 @@
     }
     {:label "beja_H-VStemClassPrefTense"
     :common {:conjClass :Prefix,
-	    :multiLex :TENSESTEM,
+	    :morphClass :TENSESTEM,
 	    :pos :Verb,
 	    :formType :Stem}
     :terms [[:derivedStem, :derivedStemAug, :lexeme, :rootClass, :tamStemClass, :token]  ;; schema
@@ -882,7 +882,7 @@
 	    [:Fem, :Singular, "b-íi-dagii-`"]]
     }
     {:label "beja_H-VStemDervExx"
-    :common {:multiLex :DERVSTEMFORM,
+    :common {:morphClass :DERVSTEMFORM,
 	    :pdgmType :Structure,
 	    :pos :Verb}
     :terms [[:conjClass, :derivedStem, :derivedStemAug, :lexeme, :rootClass, :token, :token-gloss]  ;; schema
@@ -1053,7 +1053,7 @@
     }}
 :muterms #{
     {:label "beja_H-PPostposition"
-    :common {:morpheme :POSTPOSITION,
+    :common {:morphClass :POSTPOSITION,
 	    :pos :Noun}
     :terms [[:case, :postpositionClass, :token]  ;; schema
 	    [:Ablative, :A, "⊤"],
@@ -1064,7 +1064,7 @@
 	    [:Locative, :B, "⊤"]]
     }
     {:label "beja_H-P3sgProDialectDist"
-    :common {:morpheme :PRO,
+    :common {:morphClass :PRO,
 	    :pdgmType :Structure,
 	    :proClass :ProComp,
 	    :pos :Pronoun}
@@ -1087,7 +1087,7 @@
 	    [:Possessive, :Arteiga, :Singular, "Halanga"]]
     }
     {:label "beja_H-VSubjMarkers"
-    :common {:morpheme :SUBJMARK,
+    :common {:morphClass :SUBJMARK,
 	    :pos :Verb,
 	    :formType :Affix}
     :terms [[:gender, :number, :person, :token]  ;; schema
@@ -1101,7 +1101,7 @@
 	    [:Common, :Plural, :Person2, "ti-/-t- + -`na"]]
     }
     {:label "beja_H-PDefMarker"
-    :common {:morpheme :DEFMARK,
+    :common {:morphClass :DEFMARK,
 	    :pos :Pronoun,
 	    :proClass :DefMarker}
     :terms [[:case, :defClass, :gender, :number, :token]  ;; schema
@@ -1123,7 +1123,7 @@
 	    [:Nominative, :DefClass1, :Fem, :Singular, "tuu-"]]
     }
     {:label "beja_H-NPluralFormation"
-    :common {:morpheme :PLMARK,
+    :common {:morphClass :PLMARK,
 	    :pdgmType :PluralFormation,
 	    :pos :Noun}
     :terms [[:pluralClass, :token, :lexeme]  ;; schema
@@ -1146,7 +1146,7 @@
 	    [:A, "?àb => ?abà", :ab]]
     }
     {:label "beja_H-PPossObj"
-    :common {:morpheme :PRO,
+    :common {:morphClass :PRO,
 	    :pos :Pronoun,
 	    :proClass :PossObj}
     :terms [[:case, :number, :person, :token]  ;; schema
@@ -1164,7 +1164,7 @@
 	    [:Object, :Singular, :Person3, "⊤"]]
     }
     {:label "beja_H-PInd"
-    :common {:morpheme :PRO,
+    :common {:morphClass :PRO,
 	    :pos :Pronoun,
 	    :proClass :Independent}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
@@ -1190,7 +1190,7 @@
 	    [:Nominative, :Fem, :Singular, :Person3, "ba[r]-t-uú"]]
     }
     {:label "beja_H-PDem"
-    :common {:morpheme :DEM,
+    :common {:morphClass :DEM,
 	    :pos :Pronoun,
 	    :proClass :Demonstrative}
     :terms [[:case, :deixis, :gender, :number, :token]  ;; schema

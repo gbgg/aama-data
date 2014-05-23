@@ -113,7 +113,7 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		qstr="person=Person2,gender=?gender"
+		qstr="person=Person2,gender=Fem"
 		echo "Enter qstring: prop=Val,...prop=?prop,..."
 		read -e -p "Qstring (default $qstr) : " input
 		qstring=${input:-$qstr}
@@ -260,7 +260,7 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		ftag=beja-arteiga
+		ftag=$langdomain
 		echo "Provide File Tag"
 		read -e -p "File Tag (default $ftag) : " input
 		filetag=${input:-$ftag}

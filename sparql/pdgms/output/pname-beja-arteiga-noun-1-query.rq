@@ -5,7 +5,7 @@ PREFIX aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/>
 PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>
 PREFIX bar:   <http://id.oi.uchicago.edu/aama/2013/beja-arteiga/>
 
-SELECT  ?pdgmType ?pluralClass  ?token 
+SELECT  ?morphClass ?pdgmType ?pluralClass  ?token 
 WHERE
 {
 	{
@@ -13,9 +13,11 @@ WHERE
 		{
 			?s	bar:pos	bar:Noun . 
 			?s	aamas:lang	aama:Beja-arteiga .
-			?s	aamas:morpheme	aama:Beja-arteiga-PLMARK .
+			?s	bar:morphClass	bar:PLMARK .
 			?s	aamas:lang	?lang .
 			?lang	rdfs:label	?langLabel . 
+			OPTIONAL { ?s	bar:morphClass	?QmorphClass . 
+ 			?QmorphClass	rdfs:label	?morphClass . }
 			OPTIONAL { ?s	bar:pdgmType	?QpdgmType . 
  			?QpdgmType	rdfs:label	?pdgmType . }
 			OPTIONAL { ?s	bar:pluralClass	?QpluralClass . 
@@ -30,4 +32,4 @@ WHERE
 		}
 	}
 }
-ORDER BY  ?pdgmType ?pluralClass   DESC(?num) ?pers DESC(?gen)
+ORDER BY  ?morphClass ?pdgmType ?pluralClass   DESC(?num) ?pers DESC(?gen)
