@@ -166,8 +166,7 @@ The following enumeration  provides for each script a general description, a usa
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
 props in question. 
     - **usage**: bin/display-langspropval.sh \<dir\> qstring qlabel
-    - **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
- *"What languages have 2f , and if so, in what pos and what num?"*
+    - **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial *"What languages have 2f , and if so, in what pos and what num?"*
     - **files generated**: 
         * *sparql/templates/$qlabel.template*
         * *tmp/prop-val/$qlabel-resp.tsv*
