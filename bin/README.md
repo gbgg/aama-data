@@ -61,9 +61,8 @@ Here and in the following sections, it is presumed that interaction with the dat
 ##  Data Revision Routine in fuseki Context
 
 Working with data in a query-delete-revise-upload cycle typically involves periodic invocation of aama-datastore-setup.sh  after a data/LANG/LANG-pdgms.edn has been edited:
-    - **usage**: 
-        - bin/aama-datastore-setup.sh data/LANG (for a single language)
-        - bin/aama-datastore-setup.sh "data/*" (to [re-]initiate the whole datastore)
+    - **usage**: bin/aama-datastore-setup.sh data/LANG (for a single language); bin/aama-datastore-setup.sh "data/*" (to [re-]initiate the whole datastore)
+
 This script invokes the following tasks:
 
 1. **fudelete.sh data/LANG**: Take out the current LANG graph.
@@ -146,8 +145,8 @@ The following enumeration  provides for each script a general description, a usa
     - **usage**: bin/display-valsforprop.sh \<dir\> prop
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
     - **files generated**: 
-        *    **tmp/prop-val/valsforprop.$lang.rq**
-             **tmp/prop-val/valsforprop.$lang-resp.tsv**
+        * *tmp/prop-val/valsforprop.$lang.rq*
+          * *tmp/prop-val/valsforprop.$lang-resp.tsv*
 
     - **procedures**: 
         *    **q-string**: (command line)
@@ -161,8 +160,8 @@ The following enumeration  provides for each script a general description, a usa
     - **usage**: bin/display-langsforval.sh \<dir\> val
     - **example**: bin/display-langsforval.sh "data/\*" Aorist *"What languages have a value 'Aorist', and for what property?"*
     - **files generated**: 
-        *    **tmp/prop-val/langsforval.$val-resp.tsv**
-             **tmp/prop-val/langsforval.$lang.rq**
+        * *tmp/prop-val/langsforval.$val-resp.tsv*
+        * *tmp/prop-val/langsforval.$lang.rq*
     - **procedures**: 
         *    **q-string**: (command-line)
 	     
@@ -176,9 +175,9 @@ props in question.
     - **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
  *"What languages have 2f , and if so, in what pos and what num?"*
     - **files generated**: 
-        *    **sparql/templates/$qlabel.template
-             **tmp/prop-val/$qlabel-resp.tsv**
-             **tmp/prop-val/$qlabel.rq**
+        * *sparql/templates/$qlabel.template
+        * *tmp/prop-val/$qlabel-resp.tsv*
+        * *tmp/prop-val/$qlabel.rq*
 
     - **procedures**: 
         *    **q-string**: (command-line)
@@ -191,9 +190,9 @@ props in question.
     - **usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
     - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial yes *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
     - **files generated**: 
-        *    **sparql/templates/$qlabel.template**
-             **tmp/prop-val/$qlabel-resp.tsv**
-             **tmp/prop-val/$qlabel-$lang.rq**
+        * *sparql/templates/$qlabel.template**
+        * *tmp/prop-val/$qlabel-resp.tsv*
+        * *tmp/prop-val/$qlabel-$lang.rq*
              **(tmp/prop-val/$qlabel.txt)**
 
     - **procedures**: 
@@ -210,16 +209,16 @@ props in question.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: Two langs: bin/display-paradigms.sh "data/beja-arteiga data/oromo" At prompt "beja-arteiga:" enter  "conjClass=Suffix,polarity=Affirmative,tam=Present". At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [For one lang, single prompt, single display.]
     _ **files consulted**
-        *    **sparql/pdgms/pdgm-finite-prop-list.txt**
+        * *sparql/pdgms/pdgm-finite-prop-list.txt*
 
     - **files generated**: 
-        *    **tmp/prop-val/pdgm-fv-props.$lang.rq**
-             **tmp/prop-val/pdgm-fv-props.$lang-resp.tsv**
-	     **tmp/prop-val/pdgm-fv-props.$lang.txt**
-             **tmp/pdgm/$qlabel-query.rq**
-             **tmp/pdgm/$qlabel-response.tsv**
-             **tmp/pdgm/$qlabel-response.txt**
-             **tmp/pdgm/$qlabel-response.html**
+        * *tmp/prop-val/pdgm-fv-props.$lang.rq*
+        * *tmp/prop-val/pdgm-fv-props.$lang-resp.tsv*
+	* *tmp/prop-val/pdgm-fv-props.$lang.txt*
+        * *tmp/pdgm/$qlabel-query.rq*
+        * *tmp/pdgm/$qlabel-response.tsv*
+        * *tmp/pdgm/$qlabel-response.txt*
+        * *tmp/pdgm/$qlabel-response.html*
 
     - **procedures**: 
         *    **q-string**: pl/verb-propvaltsv2table.pl (displays table prompt)
@@ -232,13 +231,13 @@ props in question.
     - **usage**: bin/display-pdgms-fv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "10" shows png forms for Prefix-Affirmative-CCY-Aorist.
     _ **files consulted**
-        *    **sparql/pdgms/pname-fv-list-$lang.txt**
+        * *sparql/pdgms/pname-fv-list-$lang.txt*
 
     - **files generated**: 
-        *    **tmp/pdgm/pname-$lang-fv-$pnumber-query.rq**
-             **tmp/pdgm/pname-$lang-fv-$pnumber-resp.tsv**
-             **tmp/pdgm/pname-$lang-fv-$pnumber-resp.txt**
-	     **tmp/pdgm/pname-$lang-fv-$pnumber-resp.html**
+        * *tmp/pdgm/pname-$lang-fv-$pnumber-query.rq*
+        * *tmp/pdgm/pname-$lang-fv-$pnumber-resp.tsv*
+        * *tmp/pdgm/pname-$lang-fv-$pnumber-resp.txt*
+	* *tmp/pdgm/pname-$lang-fv-$pnumber-resp.html*
 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames table prompt: file sparql/pdgms/pname-fv-list-$lang.txt, generated by bin/generate-pnames-fv.sh)
@@ -251,15 +250,15 @@ props in question.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: At prompt, "derivedStem=B" gives all nfv forms in base stem.
     _ **files consulted**
-        *    **sparql/pdgms/pdgm-non-finite-prop-list.txt**
+        * *sparql/pdgms/pdgm-non-finite-prop-list.txt*
     - **files generated**: 
-        *    **tmp/prop-val/pdgm-nfv-props.$lang.rq**
-             **tmp/prop-val/pdgm-nfv-props.$lang-resp.tsv**
-	     **tmp/prop-val/pdgm-nfv-props.$lang.txt**
-             **tmp/pdgm/$qlabel-query.rq**
-             **tmp/pdgm/$qlabel-response.tsv**
-             **tmp/pdgm/$qlabel-response.txt**
-             **tmp/pdgm/$qlabel-response.html**
+        * *tmp/prop-val/pdgm-nfv-props.$lang.rq*
+        * *tmp/prop-val/pdgm-nfv-props.$lang-resp.tsv*
+	* *tmp/prop-val/pdgm-nfv-props.$lang.txt*
+        * *tmp/pdgm/$qlabel-query.rq*
+        * *tmp/pdgm/$qlabel-response.tsv*
+        * *tmp/pdgm/$qlabel-response.txt*
+        * *tmp/pdgm/$qlabel-response.html*
     - **procedures**: 
         *    **q-string**: sparql/templates/pdgm-nfv-props.template gives tsv list of forms; pl/verb-propvaltsv2table.pl formats to table prompt
 
@@ -271,13 +270,13 @@ props in question.
     - **usage**: bin/display-pdgms-nfv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "2" shows stems for all conjClass, derivedStem, rootClass, and tam verb forms.
     _ **files consulted**
-        *    **sparql/pdgms/pname-nfv-list-$lang.txt**
+        * *sparql/pdgms/pname-nfv-list-$lang.txt*
 
     - **files generated**: 
-        *    **tmp/pdgm/pname-$lang-nfv-$pnumber-query.rq**
-             **tmp/pdgm/pname-$lang-nfv-$pnumber-resp.tsv**
-             **tmp/pdgm/pname-$lang-nfv-$pnumber-resp.txt**
-	     **tmp/pdgm/pname-$lang-nfv-$pnumber-resp.html**
+        * *tmp/pdgm/pname-$lang-nfv-$pnumber-query.rq*
+        * *tmp/pdgm/pname-$lang-nfv-$pnumber-resp.tsv*
+        * *tmp/pdgm/pname-$lang-nfv-$pnumber-resp.txt*
+	* *tmp/pdgm/pname-$lang-nfv-$pnumber-resp.html*
 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames-list prompt file sparql/pdgms/pname-nfv-list-$lang.txt, generated by bin/generate-pnames-nfv.sh)
@@ -290,13 +289,13 @@ props in question.
     - **usage**: bin/display-pdgms-pro-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "3" shows all independent pronominal forms.
     _ **files consulted**
-        *    **sparql/pdgms/pname-pro-list-$lang.txt**
+        * *sparql/pdgms/pname-pro-list-$lang.txt*
 
     - **files generated**: 
-        *    **tmp/pdgm/pname-$lang-pro-$pnumber-query.rq**
-             **tmp/pdgm/pname-$lang-pro-$pnumber-resp.tsv**
-             **tmp/pdgm/pname-$lang-pro-$pnumber-resp.txt**
-	     **tmp/pdgm/pname-$lang-pro-$pnumber-resp.html**
+        * *tmp/pdgm/pname-$lang-pro-$pnumber-query.rq*
+        * *tmp/pdgm/pname-$lang-pro-$pnumber-resp.tsv*
+        * *tmp/pdgm/pname-$lang-pro-$pnumber-resp.txt*
+	* *tmp/pdgm/pname-$lang-pro-$pnumber-resp.html*
 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames prompt file sparql/pdgms/pname-pro-list-$lang.txt, generated by bin/generate-pnames-pro.sh)
@@ -309,13 +308,13 @@ props in question.
     - **usage**: bin/display-pdgms-noun-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "1" shows the noun plural classes. 
     _ **files consulted**
-        *    **sparql/pdgms/pname-noun-list-$lang.txt**
+        * *sparql/pdgms/pname-noun-list-$lang.txt*
 
     - **files generated**: 
-        *    **tmp/pdgm/pname-$lang-noun-$pnumber-query.rq**
-             **tmp/pdgm/pname-$lang-noun-$pnumber-resp.tsv**
-             **tmp/pdgm/pname-$lang-noun-$pnumber-resp.txt**
-	     **tmp/pdgm/pname-$lang-noun-$pnumber-resp.html**
+        * *tmp/pdgm/pname-$lang-noun-$pnumber-query.rq*
+        * *tmp/pdgm/pname-$lang-noun-$pnumber-resp.tsv*
+        * *tmp/pdgm/pname-$lang-noun-$pnumber-resp.txt*
+	* *tmp/pdgm/pname-$lang-noun-$pnumber-resp.html*
 
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames prompt file sparql/pdgms/pname-noun-list-$lang.txt, generated by generate-pnames-noun.sh)
@@ -329,9 +328,9 @@ props in question.
 1. **generate-prop-list-fv.sh**: Generates the finite-verb property list sparql/pdgms/pdgm-finite-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-fv.sh
     - **files generated**: 
-        *    **tmp/pdgm/pdgm-finite-prop-list.$lang.rq**
-             **sparql/pdgms/pdgm-finite-prop-list.tsv**
-	     **sparql/pdgms/pdgm-finite-prop-list.txt**
+        * *tmp/pdgm/pdgm-finite-prop-list.$lang.rq*
+        * *sparql/pdgms/pdgm-finite-prop-list.tsv*
+	* *sparql/pdgms/pdgm-finite-prop-list.txt*
 
     - **procedures**: 
         *    **q-string**: (fv props in all languages)
@@ -343,9 +342,9 @@ props in question.
 2. **generate-prop-list-nfv.sh**: Generates the non-finite-verb property list sparql/pdgms/pdgm-non-finite-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-nfv.sh
     - **files generated**: 
-        *    **tmp/pdgm/pdgm-non-finite-prop-list.$lang.rq**
-             **sparql/pdgms/pdgm-non-finite-prop-list.tsv**
-             **sparql/pdgms/pdgm-non-finite-prop-list.txt**
+        * *tmp/pdgm/pdgm-non-finite-prop-list.$lang.rq*
+        * *sparql/pdgms/pdgm-non-finite-prop-list.tsv*
+        * *sparql/pdgms/pdgm-non-finite-prop-list.txt*
 
     - **procedures**: 
         *    **q-string**: (nfv props in all languages)
@@ -357,9 +356,9 @@ props in question.
 3. **generate-prop-list-pro.sh**: Generates the pronoun property list sparql/pdgms/pdgm-pro-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-pro.sh
     - **files generated**: 
-        *    **tmp/pdgm/pdgm-pro-prop-list.$lang.rq**
-             **sparql/pdgms/pdgm-pro-prop-list.tsv**
-             **sparql/pdgms/pdgm-pro-prop-list.txt**
+        * *tmp/pdgm/pdgm-pro-prop-list.$lang.rq*
+        * *sparql/pdgms/pdgm-pro-prop-list.tsv*
+        * *sparql/pdgms/pdgm-pro-prop-list.txt*
 
     - **procedures**: 
         *    **q-string**: (pro props in all languages)
@@ -371,9 +370,9 @@ props in question.
 4. **generate-prop-list-noun.sh**: Generates the noun property list sparql/pdgms/pdgm-noun-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-noun.sh
     - **files generated**: 
-        *    **tmp/pdgm/pdgm-noun-prop-list.$lang.rq**
-             **sparql/pdgms/pdgm-noun-prop-list.tsv**
-             **sparql/pdgms/pdgm-noun-prop-list.txt**
+        * *tmp/pdgm/pdgm-noun-prop-list.$lang.rq*
+        * *sparql/pdgms/pdgm-noun-prop-list.tsv*
+        * *sparql/pdgms/pdgm-noun-prop-list.txt*
 
     - **procedures**: 
         *    **q-string**: (noun props in all languages)
@@ -386,11 +385,11 @@ props in question.
 The script first queries the datastore for all additional inflectional property=value associations co-occurring with terms marked for  pos=Verb and having a value for the property "person". A second query is then generated to determine which of these propp-val associations co-occur in the verb forms of the datastore (e.g., not all tense values which occur in affirmative forms also occur in negative; also a possibly occurring value combination, for example a given tense form of a less common derived stem, might simply not have been noted in the language description which was the source of the data for this datastore). The output of this query is formatted into a text file with a list of comma-separated value combinations: e.g., from sparql/pdgms/pname-fv-list-beja-arteiga.txt, number 12 is "Beja-arteiga,Prefix,Affirmative,CCY,Optative". This indicates that a set of png-inflected forms exist in Beja-arteiga for the Optative, Affirmative, Prefix-conjugated, CCY-root-class verb.
     - **usage**: bin/generate-pnames-list-fv.sh \<dir\> 
     - **files generated**: 
-        *    **tmp/pdgm/pnames-fv-$lang-query.rq**
-	     **tmp/pdgm/pnames-fv-$lang-resp.tsv**
-	     **tmp/pdgm/pnames-fv-$lang-query2.rq**
-	     **tmp/pdgm/pnames-fv-$lang-resp2.tsv**
-             **sparql/pdgms/pname-fv-list-$lang.txt**
+        * *tmp/pdgm/pnames-fv-$lang-query.rq*
+	* *tmp/pdgm/pnames-fv-$lang-resp.tsv*
+	* *tmp/pdgm/pnames-fv-$lang-query2.rq*
+	* *tmp/pdgm/pnames-fv-$lang-resp2.tsv*
+        * *sparql/pdgms/pname-fv-list-$lang.txt*
 
     - **procedures**: 
         *    **q-string**: (fv pnames in designated languages)
@@ -402,9 +401,9 @@ The script first queries the datastore for all additional inflectional property=
 6. **generate-pnames-nfv.sh**: Generates a list of non-finite-verb property-value combinations sparql/pdgms/pname-nvf-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-list-nfv.sh \<dir\> 
     - **files generated**: 
-        *    **tmp/pdgm/pnames-nfv-$lang-query.rq**
-	     **tmp/pdgm/pnames-nfv-$lang-resp.tsv**
-             **sparql/pdgms/pname-nfv-list-$lang.txt**
+        * *tmp/pdgm/pnames-nfv-$lang-query.rq*
+	* *tmp/pdgm/pnames-nfv-$lang-resp.tsv*
+        * *sparql/pdgms/pname-nfv-list-$lang.txt*
 
     - **procedures**: 
         *    **q-string**: (nfv pnames in designated languages)
@@ -416,9 +415,9 @@ The script first queries the datastore for all additional inflectional property=
 7. **generate-pnames-pro.sh**: Generates a list of pronoun property-value combinations sparql/pdgms/pname-pro-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-pro.sh \<dir\> 
     - **files generated**: 
-        *    **tmp/pdgm/pnames-pro-$lang-query.rq**
-	     **tmp/pdgm/pnames-pro-$lang-resp.tsv**
-             **sparql/pdgms/pname-$pos-list-$lang.txt**
+        * *tmp/pdgm/pnames-pro-$lang-query.rq*
+	* *tmp/pdgm/pnames-pro-$lang-resp.tsv*
+        * *sparql/pdgms/pname-$pos-list-$lang.txt*
 
     - **procedures**: 
         *    **q-string**: (pro pnames in designated languages)
@@ -430,9 +429,9 @@ The script first queries the datastore for all additional inflectional property=
 8. **generate-pnames-noun.sh**: Generates a list of noun property-value combinations sparql/pdgms/pname-pro-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-noun.sh \<dir\> 
     - **files generated**: 
-        *    **tmp/pdgm/pnames-noun-$lang-query.rq**
-	     **tmp/pdgm/pnames-noun-$lang-resp.tsv**
-             **sparql/pdgms/pname-$pos-list-$lang.txt**
+        * *tmp/pdgm/pnames-noun-$lang-query.rq*
+	* *tmp/pdgm/pnames-noun-$lang-resp.tsv*
+        * *sparql/pdgms/pname-$pos-list-$lang.txt*
 
     - **procedures**: 
         *    **q-string**: (noun pnames in designated languages)
@@ -446,16 +445,16 @@ The script first queries the datastore for all additional inflectional property=
     - **usage**: bin/generate-lang-prop-val-lists.sh \<dir\> file-tag
     - **example**: *generate-lang-prop-val-lists.sh "data/beja-arteiga data/beja-atmaan data/beja-beniamer data/beja-bishari data/beja-hadendowa" bejaTest* will generate the tables of permutations of lang-prop-val for all the beja languages and put the files in tmp/prop-val/ . . . -bejaTest.html/txt.
     - **files generated**: 
-        *    **tmp/prop-val/lang-prop-val-list.$lang.rq**
-             **tmp/prop-val/lang-prop-val-list.tsv**
-             **tmp/prop-val/lang-prop-val-list-$filetag.txt**
-             **tmp/prop-val/prop-val-lang-list-$filetag.txt**
-             **tmp/prop-val/val-prop-lang-list-$filetag.txt**
-             **tmp/prop-val/prop-lang-val-list-$filetag.txt**
-             **tmp/prop-val/lang-prop-val-list-$filetag.html**
-             **tmp/prop-val/prop-val-lang-list-$filetag.html**
-             **tmp/prop-val/val-prop-lang-list-$filetag.html**
-             **tmp/prop-val/prop-lang-val-list-$filetag.html**
+        * *tmp/prop-val/lang-prop-val-list.$lang.rq*
+        * *tmp/prop-val/lang-prop-val-list.tsv*
+        * *tmp/prop-val/lang-prop-val-list-$filetag.txt*
+        * *tmp/prop-val/prop-val-lang-list-$filetag.txt*
+        * *tmp/prop-val/val-prop-lang-list-$filetag.txt*
+        * *tmp/prop-val/prop-lang-val-list-$filetag.txt*
+        * *tmp/prop-val/lang-prop-val-list-$filetag.html*
+        * *tmp/prop-val/prop-val-lang-list-$filetag.html*
+        * *tmp/prop-val/val-prop-lang-list-$filetag.html*
+        * *tmp/prop-val/prop-lang-val-list-$filetag.html*
 
     - **procedures**: 
         *    **q-string**: (command-line)
