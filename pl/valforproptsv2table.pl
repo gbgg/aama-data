@@ -21,11 +21,12 @@ $lang = uc($lang);
 undef $/;
 my ( $lenp, $lenv, $lenl);
 my (@vrows);
+my $data;
 
 open(IN, $propvalfile) or die "cannot open $propvalfile for reading";
 while (<IN>)
 { 
-    my $data = $_;
+        $data = $_;
 	$data =~ s/"//g;
 	$data =~ s/⊤/ /g;
 	$data =~ s/\?valuelabel\n//;
@@ -42,7 +43,12 @@ while (<IN>)
 		if ($lv > $lenv) {$lenv = $lv;}
 	}
 }
-close(IN); 
+close(IN);
+
+$lend = length($data);
+#print "$lend\n";
+if ($lend > 0)
+{ 
 my $format ="| %-".$lenl."s | %-".$lenp."s | %s\n";
 my $tablewidth = $lenl + $lenp + $lenv + 15;
 
@@ -61,6 +67,6 @@ foreach my $value (sort @vrows)
 }
 print "-" x $tablewidth;
 print "\n";
-
+}
 close(OUT);
 

@@ -25,8 +25,7 @@ do
     #echo querying $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
     of=lang-prop-val-list.template
-    #echo of = $of
-    localqry="tmp/prop-val/output/${of%.template}.$lang.rq"
+    localqry="tmp/prop-val/${of%.template}.$lang.rq"
     #mv $localqry "${localqry}.bck"
     #echo localqry = $localqry
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry

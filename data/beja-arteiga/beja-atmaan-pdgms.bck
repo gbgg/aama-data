@@ -14,8 +14,8 @@
 	  :genderObj [:Common, :Fem, :Masc]
 	  :genderPoss [:Common, :Fem, :Masc]
 	  :headPosition [:HeadFollow, :HeadPrecede]
-	  :multiLex [:AUX_OVERVIEW, :FUTURE_INTENTION, :IMPRTVOVERVIEW, :INTENSIVEACTION, :NEGOBJSUFF, :NOMINALIZATIONPATTERNS, :PAST_PRESENT, :PREFVERB_PATTERNS]
-	  :nonFiniteForm [:NominalAction, :Participle, :_NULL]
+	  :morphClass [:AUX_OVERVIEW, :FUTURE_INTENTION, :IMPRTVOVERVIEW, :INTENSIVEACTION, :NEGOBJSUFF, :NOMINALIZATIONPATTERNS, :PAST_PRESENT, :PREFVERB_PATTERNS, :REL_SUFF, :SUBJPREF]
+	  :nonFiniteForm [:NominalAction, :Participle]
 	  :numHead [:Plural, :Singular]
 	  :numObj [:Plural, :Singular]
 	  :number [:Common, :Plural, :Singular]
@@ -27,25 +27,24 @@
 	  :proClass [:Independent, :IndependentPersonal, :ObjSuff, :ObjSuffPdgm, :PersSuff, :PossSuff, :Possessive]
 	  :rootClass [:CHiy, :CaC, :Cay, :CiC, :CiCH, :CiCaC, :CiCiC, :CiCiy, :Ciy, :HaCiC]
 	  :stemClass [:HFin, :HamzFin, :HamzInitVFin, :VFin1, :VFin2]
-	  :stemPattern [:CiC-, :CiCiC-, :CiCiy-, :HaCiC-]
 	  :strength [:weak]
-	  :tam [:Aorist, :Future, :Imperative, :ImperativeJussive1, :ImperativeJussive2, :ImperativeJussive3, :Jussive, :Past, :PastPerfect, :Present, :PresentShort, :_NULL]
+	  :tam [:Aorist, :Future, :Imperative, :ImperativeJussive1, :ImperativeJussive2, :ImperativeJussive3, :Jussive, :Past, :PastPerfect, :Present, :PresentShort]
 	  }
 :morphemes {
   :PRO {:gloss "Pronoun", :pos :Pronoun}
   :REL_SUFF {:gloss "Relative Suffixes", }
   :SUBJPREF {:gloss "Subject Prefixes", }
-}
+          }
 :lexemes {
+  :LEX1 {:gloss "[x]", :lemma "[y]" }
   :Handhiwaayii {:gloss "hadendowa", :lemma "Handhiwaayii", }
   :NEGAUX {:gloss "Negative Auxiliaries", :lemma "", }
-  :_NULL {:gloss "[x]", :lemma "[y]", }
-  :abik {:stemPattern :HaCiC-, :gloss "seize"}
+  :abik {:rootClass :HaCiC, :gloss "seize"}
   :adgir {:conjClass :x , :gloss "able", :lemma " ", :pos :Verb}
   :afirh {:gloss "rejoice"}
   :afreey {:gloss "bad"}
   :afrey {:gloss "[x]", :lemma "[y]", }
-  :agir {:stemPattern :HaCiC-, :gloss "return"}
+  :agir {:rootClass :HaCiC, :gloss "return"}
   :agrii {:conjClass :Suffix, :gloss "read", :lemma "agrii-", :pos :Verb}
   :aha {:gloss "take", :lemma "aha", }
   :anf {:gloss "fit"}
@@ -59,22 +58,22 @@
   :bariy {:gloss "[x]", :lemma "[y]", }
   :bariya {:conjClass :Irregular, :gloss "have", :lemma "bariya", :pos :Verb}
   :bay {:conjClass :Prefix, :gloss "go", :lemma "baya", :pos :Verb}
-  :bidil {:stemPattern :CiCiC-, :gloss "change"}
+  :bidil {:rootClass :CiCiC, :gloss "change"}
   :bireet {:gloss "rain"}
   :bis {:gloss "[x]", :lemma "[y]", }
   :d_iy {:conjClass :x , :gloss "do, put", :lemma "d’íya", :pos :Verb}
   :daas {:gloss "put"}
   :dam {:conjClass :Prefix, :gloss "climb, ride", :lemma "dama", :pos :Verb}
-  :dhigwiy {:stemPattern :CiCiy-, :gloss "count"}
-  :dif {:stemPattern :CiC-, }
-  :dilib {:stemPattern :CiCiC-, :gloss "trade"}
+  :dhigwiy {:rootClass :CiCiy, :gloss "count"}
+  :dif {:rootClass :CiC, }
+  :dilib {:rootClass :CiCiC, :gloss "trade"}
   :diliba {:conjClass :Prefix, :gloss "trade", :lemma "diliba", :pos :Verb}
   :dir {:lemma "", :gloss "kill"}
   :diy {:conjClass :Suffix, :gloss "say", :lemma "diya", :pos :Verb}
   :ee {:conjClass :x, :gloss "come", :lemma " ", :pos :Verb}
   :fay {:gloss "[x]", :lemma "[y]", }
   :faya {:conjClass :Irregular, :gloss "be", :lemma "faya", :pos :Verb}
-  :fidig {:stemPattern :CiCiC-, :gloss "open"}
+  :fidig {:rootClass :CiCiC, :gloss "open"}
   :fir {:conjClass :Prefix, :gloss "go out", :lemma "fira", :pos :Verb}
   :fiyak {:conjClass :Prefix, :gloss "carry", :lemma "fiyaka", :pos :Verb}
   :gad {:lemma "gáda", :gloss "stand"}
@@ -82,24 +81,24 @@
   :giig {:conjClass :x, :gloss "leave, go away", :lemma " ", :pos :Verb}
   :gwa {:conjClass :Suffix, :gloss "drink", :lemma "gwa", :pos :Verb}
   :ha {:conjClass :x, :gloss "bring", :lemma " ", :pos :Verb}
-  :hagit {:stemPattern :HaCiC-, :gloss "wait"}
+  :hagit {:rootClass :HaCiC, :gloss "wait"}
   :hariw {:conjClass :Prefix, :gloss "look for", :lemma "hariwa", :pos :Verb}
   :haráayrii {:gloss "liar", :lemma "haráayr’ii", }
-  :hasib {:stemPattern :HaCiC-, :gloss "count"}
+  :hasib {:rootClass :HaCiC, :gloss "count"}
   :hawir {:gloss "[x]", :lemma "[y]", }
-  :hayis {:stemPattern :HaCiC-, :gloss "be better"}
+  :hayis {:rootClass :HaCiC, :gloss "be better"}
   :hiy {:conjClass :Irregular, :gloss "give", :lemma "hiya", :pos :Verb}
-  :ish {:stemPattern :CiC-, :gloss "let"}
+  :ish {:rootClass :CiC, :gloss "let"}
   :kaam {:gloss "camel", :lemma "kaam", }
   :kan {:lemma "", :gloss "know"}
   :kay {:conjClass :Irregular, :gloss "be", :lemma "kaya", :pos :Verb}
-  :kitib {:stemPattern :CiCiC-, :gloss "write"}
-  :kitim {:stemPattern :CiCiC-, :gloss "reach"}
+  :kitib {:rootClass :CiCiC, :gloss "write"}
+  :kitim {:rootClass :CiCiC, :gloss "reach"}
   :kta {:gloss "[x]", :lemma "[y]", }
   :m- {:gloss "[x]", :lemma "[y]", }
   :ma {:conjClass :Suffix, :gloss "come", :lemma "m`-", :pos :Verb}
-  :mikir {:stemPattern :CiCiC-, :gloss "advise"}
-  :mir {:stemPattern :CiC-, :gloss "prepare"}
+  :mikir {:rootClass :CiCiC, :gloss "advise"}
+  :mir {:rootClass :CiC, :gloss "prepare"}
   :miriy {:conjClass :Prefix, :gloss "find", :lemma "miriy", :pos :Verb}
   :naw {:conjClass :Prefix, :gloss "fail", :lemma "nawa", :pos :Verb}
   :ni-di {:conjClass :Prefix, :gloss "say", :lemma "ni ~ di", :pos :Verb}
@@ -111,19 +110,19 @@
   :sak {:conjClass :x, :gloss "work", :lemma " ", :pos :Verb}
   :sdd {:lemma "", :gloss "peel"}
   :sibib {:conjClass :Prefix, :gloss "look", :lemma "šibib", :pos :Verb}
-  :sim {:stemPattern :CiC-, :gloss "mention"}
-  :siniy {:stemPattern :CiCiy-, :gloss "await"}
+  :sim {:rootClass :CiC, :gloss "mention"}
+  :siniy {:rootClass :CiCiy, :gloss "await"}
   :soo {:conjClass :x, :gloss "inform", :lemma " ", :pos :Verb}
   :tam {:conjClass :Suffix, :gloss "eat", :lemma "tam-", :pos :Verb}
   :tama {:conjClass :Suffix, :gloss "eat", :lemma "tama", :pos :Verb}
-  :tikwikw {:stemPattern :CiCiC-, :gloss "prepare"}
-  :uhi {:stemPattern :CiC-, :gloss "let"}
+  :tikwikw {:rootClass :CiCiC, :gloss "prepare"}
+  :uhi {:rootClass :CiC, :gloss "let"}
   :waaw {:conjClass :x, :gloss "weep", :lemma " ", :pos :Verb}
   :yak {:conjClass :Prefix, :gloss "start", :lemma "yak-", :pos :Verb}
   :ústaaz {:gloss "teacher", :lemma "ústaaz (pl. ustáz)", }
   :šibiba {:conjClass :Prefix, :gloss "look", :lemma "šibiba", :pos :Verb}
 }
-:lxterms #{
+:lexterms #{
     {:label "beja_W-VPrefCiCHNegPast-fir"
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
@@ -195,7 +194,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :Ciy}
@@ -223,7 +222,7 @@
     {:label "beja_W-VSuffImprtvImprtvOverview"
     :note "Wedekind-etal2007 p. 97"
     :common {:conjClass :Suffix,
-	    :multiLex :IMPRTVOVERVIEW,
+	    :morphClass :IMPRTVOVERVIEW,
 	    :person :Person2,
 	    :pos :Verb,
 	    :tam :Imperative,
@@ -711,7 +710,7 @@
 	    :lexeme :sibib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCiC}
@@ -725,7 +724,7 @@
 	    :lexeme :miriy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCiy}
@@ -785,7 +784,7 @@
 	    :lexeme :miriy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCiy}
@@ -813,7 +812,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CHiy}
@@ -937,7 +936,7 @@
 	    :lexeme :rib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiC}
@@ -962,7 +961,7 @@
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
 	    :gender :Common,
-	    :lexeme :_NULL,
+	    :lexeme :LEX1,
 	    :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
@@ -1090,7 +1089,7 @@
 	    :lexeme :hariw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :HaCiC}
@@ -1104,7 +1103,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :Ciy}
@@ -1172,7 +1171,7 @@
 	    :lexeme :bay,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :Cay}
@@ -1204,7 +1203,7 @@
 	    :lexeme :miriy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCiy}
@@ -1281,7 +1280,7 @@
     {:label "beja_W-VPrefCiCHNegImprtv-fir"
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
-	    :lexeme :_NULL,
+	    :lexeme :LEX1,
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1594,7 +1593,7 @@
 	    :lexeme :bay,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :Cay}
@@ -1672,7 +1671,7 @@
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
 	    :gender :Common,
-	    :lexeme :_NULL,
+	    :lexeme :LEX1,
 	    :number :Singular,
 	    :person :Person1,
 	    :polarity :Affirmative,
@@ -1725,7 +1724,7 @@
 	    :lexeme :sibib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCiC}
@@ -1792,7 +1791,7 @@
 	    :lexeme :fir,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCH}
@@ -2073,7 +2072,7 @@
 	    :lexeme :rib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiC}
@@ -2087,7 +2086,7 @@
 	    :lexeme :naw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CaC}
@@ -2101,7 +2100,7 @@
 	    :lexeme :bay,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :Cay}
@@ -2181,7 +2180,7 @@
 	    :lexeme :hariw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :HaCiC}
@@ -2213,7 +2212,7 @@
 	    :lexeme :naw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CaC}
@@ -2309,7 +2308,7 @@
 	    :lexeme :bay,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :Cay}
@@ -2362,72 +2361,81 @@
     :terms [[:token]  ;; schema
 	    ["íyaad káadi"]]
     }
+    {:label "beja_W-VSuffPdgmOverview-nonFinite-yak"
+    :note "Wedekind-etal2007 p. 90"
+    :common {:conjClass :Suffix,
+	    :lexeme :yak,
+	    :pos :Verb,
+	    :pdgmType :PdgmOverview}
+    :terms [[:nonFiniteForm,  :polarity, :token]  ;; schema
+	    [:NominalAction, :Common,  "u-yákt"],
+	    [:Participle, :Affirmative, "yákaab"],
+	    [:Participle,  :Negative,  "baayákay"]]
+    }
+
     {:label "beja_W-VSuffPdgmOverview-yak"
     :note "Wedekind-etal2007 p. 90"
     :common {:conjClass :Suffix,
 	    :lexeme :yak,
 	    :pos :Verb,
 	    :pdgmType :PdgmOverview}
-    :terms [[:gender, :nonFiniteForm, :number, :person, :polarity, :tam, :token]  ;; schema
-	    [:Common, :NominalAction, :Common, :Common, :Common, :_NULL, "u-yákti"],
-	    [:Common, :_NULL, :Singular, :Person3, :Negative, :Present, "káyakíyaan"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Past, "yákna"],
-	    [:Common, :_NULL, :Plural, :Person2, :Negative, :Imperative, "báayákaana!"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Affirmative, :Present, "yakíini"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Present, "yáknay"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Imperative, "bíiyákii!"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Present, "yakáni"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Past, "yaktáa"],
-	    [:Common, :_NULL, :Singular, :Person3, :Negative, :Aorist, "yákaab kíikeen"],
-	    [:Common, :Participle, :Common, :Common, :Affirmative, :_NULL, "yákaab"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Negative, :Aorist, "yakáat kíttí"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Negative, :Present, "káyaktá"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Past, "yákaab kínki"],
-	    [:Common, :_NULL, :Singular, :Person2, :Negative, :Aorist, "yákaab kíttéena"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Present, "yaktíniya"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Future, "yáki káadi"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Present, "káyakán"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Aorist, "yáktí"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Past, "yakán"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Affirmative, :Present, "yaktíni"],
-	    [:Common, :Participle, :Common, :Common, :Negative, :_NULL, "baayákay"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Aorist, "yakáab kíttáa"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Past, "yaktáayi"],
-	    [:Common, :_NULL, :Singular, :Person2, :Affirmative, :Past, "yáktaana"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Negative, :Past, "yakáat kítti"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Aorist, "yakáat kíttáayi"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Future, "yáki ándi"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Present, "yaktínii"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Affirmative, :Aorist, "yáktíyi"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Imperative, "yákaa!"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Present, "káyaktáa"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Aorist, "yakáab káaki"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Imperative, "yákii!"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Past, "yakáab kíttaa"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Negative, :Past, "yakáab kíiki"],
-	    [:Common, :_NULL, :Singular, :Person3, :Affirmative, :Past, "yákíyaan"],
-	    [:Common, :_NULL, :Singular, :Person3, :Negative, :Past, "yákaab kíitéena"],
-	    [:Common, :_NULL, :Singular, :Person2, :Negative, :Past, "yákaab kíttéena"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Affirmative, :Past, "yakíya"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Past, "yakáab káaki"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Affirmative, :Aorist, "yáki"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Present, "káyaktáayi"],
-	    [:Common, :_NULL, :Singular, :Person2, :Affirmative, :Aorist, "yáktiina"],
-	    [:Common, :_NULL, :Singular, :Person2, :Affirmative, :Present, "yákteena"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Aorist, "yáktíyi"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Aorist, "yáktíya"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Aorist, "yákí"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Imperative, "báayákaa!"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Negative, :Present, "káyakíya"],
-	    [:Common, :_NULL, :Singular, :Person2, :Negative, :Present, "káyaktáana"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Past, "yakáat kíttaayi"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Negative, :Aorist, "yakáab kíikí"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Present, "káyákna"],
-	    [:Common, :_NULL, :Singular, :Person3, :Affirmative, :Aorist, "yákiin"],
-	    [:Common, :_NULL, :Plural, :Person2, :Affirmative, :Imperative, "yákaana!"],
-	    [:Common, :_NULL, :Singular, :Person3, :Affirmative, :Present, "yákeen"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Affirmative, :Past, "yaktá"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Aorist, "yákaab kínki"]]
+    :terms [[:gender, :number, :person, :polarity, :tam, :token]  ;; schema
+	    [:Common,  :Singular, :Person3, :Negative, :Present, "káyakíyaan"],
+a	    [:Common,  :Singular, :Person1, :Affirmative, :Past, "yákna"],
+	    [:Common,  :Plural, :Person2, :Negative, :Imperative, "báayákaana!"],
+	    [:Masc,  :Singular, :Person3, :Affirmative, :Present, "yakíini"],
+	    [:Common,  :Singular, :Person1, :Affirmative, :Present, "yáknay"],
+	    [:Fem,  :Singular, :Person2, :Negative, :Imperative, "bíiyákii!"],
+	    [:Common,  :Singular, :Person1, :Affirmative, :Present, "yakáni"],
+	    [:Masc,  :Singular, :Person2, :Affirmative, :Past, "yaktáa"],
+	    [:Common,  :Singular, :Person3, :Negative, :Aorist, "yákaab kíikeen"],
+ 	    [:Fem,  :Singular, :Person3, :Negative, :Aorist, "yakáat kíttí"],
+	    [:Fem,  :Singular, :Person3, :Negative, :Present, "káyaktá"],
+	    [:Common,  :Singular, :Person1, :Negative, :Past, "yákaab kínki"],
+	    [:Common,  :Singular, :Person2, :Negative, :Aorist, "yákaab kíttéena"],
+	    [:Masc,  :Singular, :Person2, :Affirmative, :Present, "yaktíniya"],
+	    [:Common,  :Singular, :Person1, :Negative, :Future, "yáki káadi"],
+	    [:Common,  :Singular, :Person1, :Negative, :Present, "káyakán"],
+	    [:Common,  :Singular, :Person1, :Affirmative, :Aorist, "yáktí"],
+	    [:Common,  :Singular, :Person1, :Affirmative, :Past, "yakán"],
+	    [:Fem,  :Singular, :Person3, :Affirmative, :Present, "yaktíni"],
+	    [:Masc,  :Singular, :Person2, :Negative, :Aorist, "yakáab kíttáa"],
+	    [:Fem,  :Singular, :Person2, :Affirmative, :Past, "yaktáayi"],
+	    [:Common,  :Singular, :Person2, :Affirmative, :Past, "yáktaana"],
+	    [:Fem,  :Singular, :Person3, :Negative, :Past, "yakáat kítti"],
+	    [:Fem,  :Singular, :Person2, :Negative, :Aorist, "yakáat kíttáayi"],
+	    [:Common,  :Singular, :Person1, :Affirmative, :Future, "yáki ándi"],
+	    [:Fem,  :Singular, :Person2, :Affirmative, :Present, "yaktínii"],
+	    [:Masc,  :Singular, :Person3, :Affirmative, :Aorist, "yáktíyi"],
+	    [:Masc,  :Singular, :Person2, :Affirmative, :Imperative, "yákaa!"],
+	    [:Masc,  :Singular, :Person2, :Negative, :Present, "káyaktáa"],
+	    [:Common,  :Singular, :Person1, :Negative, :Aorist, "yakáab káaki"],
+	    [:Fem,  :Singular, :Person2, :Affirmative, :Imperative, "yákii!"],
+	    [:Masc,  :Singular, :Person2, :Negative, :Past, "yakáab kíttaa"],
+	    [:Masc,  :Singular, :Person3, :Negative, :Past, "yakáab kíiki"],
+	    [:Common,  :Singular, :Person3, :Affirmative, :Past, "yákíyaan"],
+	    [:Common,  :Singular, :Person3, :Negative, :Past, "yákaab kíitéena"],
+	    [:Common,  :Singular, :Person2, :Negative, :Past, "yákaab kíttéena"],
+	    [:Masc,  :Singular, :Person3, :Affirmative, :Past, "yakíya"],
+	    [:Common,  :Singular, :Person1, :Negative, :Past, "yakáab káaki"],
+	    [:Fem,  :Singular, :Person3, :Affirmative, :Aorist, "yáki"],
+	    [:Fem,  :Singular, :Person2, :Negative, :Present, "káyaktáayi"],
+	    [:Common,  :Singular, :Person2, :Affirmative, :Aorist, "yáktiina"],
+	    [:Common,  :Singular, :Person2, :Affirmative, :Present, "yákteena"],
+	    [:Fem,  :Singular, :Person2, :Affirmative, :Aorist, "yáktíyi"],
+	    [:Masc,  :Singular, :Person2, :Affirmative, :Aorist, "yáktíya"],
+	    [:Common,  :Singular, :Person1, :Affirmative, :Aorist, "yákí"],
+	    [:Masc,  :Singular, :Person2, :Negative, :Imperative, "báayákaa!"],
+	    [:Masc,  :Singular, :Person3, :Negative, :Present, "káyakíya"],
+	    [:Common,  :Singular, :Person2, :Negative, :Present, "káyaktáana"],
+	    [:Fem,  :Singular, :Person2, :Negative, :Past, "yakáat kíttaayi"],
+	    [:Masc,  :Singular, :Person3, :Negative, :Aorist, "yakáab kíikí"],
+	    [:Common,  :Singular, :Person1, :Negative, :Present, "káyákna"],
+	    [:Common,  :Singular, :Person3, :Affirmative, :Aorist, "yákiin"],
+	    [:Common,  :Plural, :Person2, :Affirmative, :Imperative, "yákaana!"],
+	    [:Common,  :Singular, :Person3, :Affirmative, :Present, "yákeen"],
+	    [:Fem,  :Singular, :Person3, :Affirmative, :Past, "yaktá"],
+	    [:Common,  :Singular, :Person1, :Negative, :Aorist, "yákaab kínki"]]
     }
     {:label "beja_W-VIrregAffPast-fay"
     :note "Wedekind-etal2007 p. 123. The morphologically past form éefi,etc.,has present
@@ -2490,7 +2498,7 @@
 	    :lexeme :fir,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCH}
@@ -2601,6 +2609,7 @@
 	    [:Fem, :Singular, :Person2, "bayáat kittáayi"],
 	    [:Masc, :Singular, :Person3, "bayáab kiikí"]]
     }
+
     {:label "beja_W-VPrefCiCHAffPres-fir"
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
@@ -2626,7 +2635,7 @@
 	    :lexeme :rib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiC}
@@ -2671,7 +2680,7 @@
     }
     {:label "beja_W-VNominalizationPatterns"
     :note "Wedekind-etal2007 Table #34-35"
-    :common {:multiLex :NOMINALIZATIONPATTERNS,
+    :common {:morphClass :NOMINALIZATIONPATTERNS,
 	    :pos :Verb,
 	    :pdgmType :NominalizationPatterns}
     :terms [[:conjClass, :lexeme, :token, :token-example]  ;; schema
@@ -2720,7 +2729,7 @@
 	    :lexeme :fiyak,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCaC}
@@ -2875,7 +2884,7 @@
 	    :lexeme :fiyak,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCaC}
@@ -2921,7 +2930,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CHiy}
@@ -3146,7 +3155,7 @@
     }
     {:label "beja_W-VAorRepetitive"
     :note "Wedekind-etal2007 p. 156"
-    :common {:multiLex :INTENSIVEACTION,
+    :common {:morphClass :INTENSIVEACTION,
 	    :number :Singular,
 	    :person :Person1,
 	    :pos :Verb,
@@ -3221,7 +3230,7 @@
 	    :lexeme :naw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CaC}
@@ -3323,7 +3332,7 @@
 	    :lexeme :fir,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCH}
@@ -3419,7 +3428,7 @@
 	    :lexeme :bay,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CaC}
@@ -3516,78 +3525,11 @@
 	    [:Common, :Singular, :Person1, "aríb"],
 	    [:Common, :Plural, :Person2, "tíribna"]]
     }
-    {:label "beja_W-VSuffPdgmOverview"
-    :note "Wedekind-etal2007 p. 90"
-    :common {:conjClass :Suffix,
-	    :lexeme :yak,
-	    :pdgmType :PdgmOverview,
-	    :pos :Verb}
-    :terms [[:gender, :nonFiniteForm, :number, :person, :polarity, :tam, :token]  ;; schema
-	    [:Fem, :_NULL, :Singular, :Person3, :Affirmative, :Past, "yaktá"],
-	    [:Common, :_NULL, :Singular, :Person2, :Negative, :Present, "káyaktáana"],
-	    [:Common, :_NULL, :Singular, :Person2, :Negative, :Past, "yákaab kíttéena"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Negative, :Present, "káyaktá"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Past, "yaktáayi"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Affirmative, :Aorist, "yáki"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Present, "káyakán"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Future, "yáki káadi"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Imperative, "yákaa!"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Negative, :Aorist, "yakáat kíttí"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Present, "yakáni"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Aorist, "yakáab káaki"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Affirmative, :Present, "yakíini"],
-	    [:Common, :Participle, :Common, :Common, :Negative, :_NULL, "baayákay"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Imperative, "yákii!"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Aorist, "yákí"],
-	    [:Common, :_NULL, :Singular, :Person2, :Affirmative, :Aorist, "yáktiina"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Future, "yáki ándi"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Negative, :Past, "yakáat kítti"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Past, "yakáab kíttaa"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Aorist, "yáktí"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Present, "káyákna"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Aorist, "yakáab kíttáa"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Negative, :Past, "yakáab kíiki"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Present, "káyaktáayi"],
-	    [:Common, :Participle, :Common, :Common, :Affirmative, :_NULL, "yákaab"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Negative, :Present, "káyakíya"],
-	    [:Common, :_NULL, :Plural, :Person2, :Affirmative, :Imperative, "yákaana!"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Aorist, "yákaab kínki"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Aorist, "yakáat kíttáayi"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Aorist, "yáktíya"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Affirmative, :Aorist, "yáktíyi"],
-	    [:Common, :_NULL, :Singular, :Person3, :Negative, :Past, "yákaab kíitéena"],
-	    [:Common, :_NULL, :Singular, :Person2, :Affirmative, :Present, "yákteena"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Past, "yákna"],
-	    [:Common, :_NULL, :Plural, :Person2, :Negative, :Imperative, "báayákaana!"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Past, "yakáab káaki"],
-	    [:Common, :_NULL, :Singular, :Person3, :Affirmative, :Present, "yákeen"],
-	    [:Common, :_NULL, :Singular, :Person3, :Negative, :Aorist, "yákaab kíikeen"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Imperative, "bíiyákii!"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Past, "yaktáa"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Aorist, "yáktíyi"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Present, "yáknay"],
-	    [:Common, :_NULL, :Singular, :Person1, :Negative, :Past, "yákaab kínki"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Negative, :Aorist, "yakáab kíikí"],
-	    [:Common, :_NULL, :Singular, :Person3, :Affirmative, :Aorist, "yákiin"],
-	    [:Common, :_NULL, :Singular, :Person1, :Affirmative, :Past, "yakán"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Negative, :Past, "yakáat kíttaayi"],
-	    [:Common, :_NULL, :Singular, :Person2, :Affirmative, :Past, "yáktaana"],
-	    [:Common, :_NULL, :Singular, :Person2, :Negative, :Aorist, "yákaab kíttéena"],
-	    [:Common, :NominalAction, :Common, :Common, :Common, :_NULL, "u-yákti"],
-	    [:Masc, :_NULL, :Singular, :Person3, :Affirmative, :Past, "yakíya"],
-	    [:Fem, :_NULL, :Singular, :Person3, :Affirmative, :Present, "yaktíni"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Imperative, "báayákaa!"],
-	    [:Common, :_NULL, :Singular, :Person3, :Affirmative, :Past, "yákíyaan"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Affirmative, :Present, "yaktíniya"],
-	    [:Common, :_NULL, :Singular, :Person3, :Negative, :Present, "káyakíyaan"],
-	    [:Masc, :_NULL, :Singular, :Person2, :Negative, :Present, "káyaktáa"],
-	    [:Fem, :_NULL, :Singular, :Person2, :Affirmative, :Present, "yaktínii"]]
-    }
     {:label "beja_W-VSuffPastPresOverview"
     :note "Wedekind-etal2007 p. 96"
     :common {:conjClass :Suffix,
 	    :gender :Masc,
-	    :multiLex :PAST_PRESENT,
+	    :morphClass :PAST_PRESENT,
 	    :number :Singular,
 	    :person :Person3,
 	    :pos :Verb,
@@ -3615,7 +3557,7 @@
 	    :lexeme :fiyak,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCaC}
@@ -3625,7 +3567,7 @@
     {:label "beja_W-VSuffFutureIntention"
     :note "Wedekind-etal2007 p. 154. V+a SAY = I want to V;V+1 SAY = I shall V."
     :common {:conjClass :Suffix,
-	    :multiLex :FUTURE_INTENTION,
+	    :morphClass :FUTURE_INTENTION,
 	    :person :Person1,
 	    :pos :Verb,
 	    :tam :Future,
@@ -3728,7 +3670,7 @@
     }
     {:label "beja_W-VAuxOverview"
     :note "Wedekind-etal2007 Table #33"
-    :common {:multiLex :AUX_OVERVIEW,
+    :common {:morphClass :AUX_OVERVIEW,
 	    :pos :Verb,
 	    :pdgmType :AuxOverview}
     :terms [[:lexeme, :token, :token-auxFunction, :token-verbGloss]  ;; schema
@@ -4126,7 +4068,7 @@
 	    :lexeme :rib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiC}
@@ -4443,7 +4385,7 @@
 	    :lexeme :miriy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCiy}
@@ -4453,77 +4395,77 @@
     {:label "beja_W-VPrefTransVerbPatterns"
     :note "Wedekind-etal2007 p. 124"
     :common {:conjClass :Prefix,
-	    :multiLex :PREFVERB_PATTERNS,
+	    :morphClass :PREFVERB_PATTERNS,
 	    :person :Person2,
 	    :pos :Verb,
 	    :pdgmType :TransVerbPatterns}
-    :terms [[:gender, :number, :stemPattern, :token, :lexeme]  ;; schema
-	    [:Common, :Plural, :CiCiy-, "míriina", :miriy],
-	    [:Masc, :Singular, :CiCiC-, "kítibá", :kitib],
-	    [:Common, :Plural, :CiCiy-, "síniina", :siniy],
-	    [:Fem, :Singular, :CiC-, "dífi", :dif],
-	    [:Masc, :Singular, :CiCiC-, "šíbibá", :sibib],
-	    [:Common, :Plural, :CiC-, "dífna", :dif],
-	    [:Fem, :Singular, :CiCiC-, "šíbibí", :sibib],
-	    [:Masc, :Singular, :CiCiC-, "míkir", :mikir],
-	    [:Masc, :Singular, :CiCiC-, "fídigá", :fidig],
-	    [:Fem, :Singular, :CiCiy-, "dhígwiyí", :dhigwiy],
-	    [:Common, :Plural, :CiCiC-, "fídigna", :fidig],
-	    [:Common, :Plural, :CiCiC-, "dílibna", :dilib],
-	    [:Masc, :Singular, :CiCiC-, "bídilá", :bidil],
-	    [:Masc, :Singular, :CiCiy-, "míriyá", :miriy],
-	    [:Masc, :Singular, :HaCiC-, "abíka", :abik],
-	    [:Common, :Plural, :CiCiC-, "tíkwikwna", :tikwikw],
-	    [:Common, :Plural, :CiCiy-, "dhígwiina", :dhigwiy],
-	    [:Common, :Plural, :HaCiC-, "ágirna", :agir],
-	    [:Fem, :Singular, :CiC-, "ríbi", :rib],
-	    [:Masc, :Singular, :CiCiC-, "kítimá", :kitim],
-	    [:Fem, :Singular, :HaCiC-, "háriwí", :hawir],
-	    [:Fem, :Singular, :HaCiC-, "hagíti", :hagit],
-	    [:Masc, :Singular, :CiCiC-, "dílibá", :dilib],
-	    [:Fem, :Singular, :CiCiC-, "kítibí", :kitib],
-	    [:Masc, :Singular, :CiCiy-, "dhígwiyá", :dhigwiy],
-	    [:Common, :Plural, :CiCiC-, "míkirna", :mikir],
-	    [:Fem, :Singular, :CiC-, "míri", :mir],
-	    [:Masc, :Singular, :HaCiC-, "hásibá", :hasib],
-	    [:Common, :Plural, :CiC-, "mírna", :mir],
-	    [:Fem, :Singular, :HaCiC-, "hásibí", :hasib],
-	    [:Common, :Plural, :CiC-, "ríbna", :rib],
-	    [:Common, :Plural, :CiC-, "símna", :sim],
-	    [:Fem, :Singular, :CiCiy-, "síniyí", :siniy],
-	    [:Common, :Plural, :HaCiC-, "háriwna", :hariw],
-	    [:Fem, :Singular, :CiC-, "sími", :sim],
-	    [:Common, :Plural, :HaCiC-, "hágitna", :hagit],
-	    [:Common, :Plural, :CiCiC-, "kítibna", :kitib],
-	    [:Fem, :Singular, :CiCiC-, "kítimí", :kitim],
-	    [:Fem, :Singular, :HaCiC-, "abíki", :abik],
-	    [:Fem, :Singular, :CiCiC-, "míkirí", :mikir],
-	    [:Common, :Plural, :CiCiC-, "šíbibna", :sibib],
-	    [:Fem, :Singular, :CiCiC-, "fídigí", :fidig],
-	    [:Masc, :Singular, :CiC-, "íša úša", :ish],
-	    [:Common, :Plural, :HaCiC-, "hásibna", :hasib],
-	    [:Masc, :Singular, :CiC-, "dífa", :dif],
-	    [:Masc, :Singular, :CiCiC-, "tíkwikwá", :tikwikw],
-	    [:Fem, :Singular, :CiCiC-, "bídilí", :bidil],
-	    [:Masc, :Singular, :HaCiC-, "ágirá", :agir],
-	    [:Common, :Plural, :HaCiC-, "háyisna", :hayis],
-	    [:Common, :Plural, :CiC-, "úšna", :ish],
-	    [:Common, :Plural, :HaCiC-, "ábikna", :abik],
-	    [:Masc, :Singular, :HaCiC-, "háriwá", :hawir],
-	    [:Fem, :Singular, :CiC-, "úhi", :ish],
-	    [:Fem, :Singular, :HaCiC-, "háyisí", :hayis],
-	    [:Masc, :Singular, :CiC-, "síma", :sim],
-	    [:Fem, :Singular, :CiCiy-, "míriyí", :miriy],
-	    [:Masc, :Singular, :CiC-, "ríba", :rib],
-	    [:Masc, :Singular, :CiCiy-, "síniyá", :siniy],
-	    [:Masc, :Singular, :HaCiC-, "hagíta", :hagit],
-	    [:Masc, :Singular, :CiC-, "míra", :mir],
-	    [:Common, :Plural, :CiCiC-, "kítimna", :kitim],
-	    [:Fem, :Singular, :HaCiC-, "ágiri", :agir],
-	    [:Masc, :Singular, :HaCiC-, "háyisá", :hayis],
-	    [:Common, :Plural, :CiCiC-, "bídilna", :bidil],
-	    [:Fem, :Singular, :CiCiC-, "tíkwikwí", :tikwikw],
-	    [:Fem, :Singular, :CiCiC-, "dílibí", :dilib]]
+    :terms [[:gender, :number, :rootClass, :token, :lexeme]  ;; schema
+	    [:Common, :Plural, :CiCiy, "míriina", :miriy],
+	    [:Masc, :Singular, :CiCiC, "kítibá", :kitib],
+	    [:Common, :Plural, :CiCiy, "síniina", :siniy],
+	    [:Fem, :Singular, :CiC, "dífi", :dif],
+	    [:Masc, :Singular, :CiCiC, "šíbibá", :sibib],
+	    [:Common, :Plural, :CiC, "dífna", :dif],
+	    [:Fem, :Singular, :CiCiC, "šíbibí", :sibib],
+	    [:Masc, :Singular, :CiCiC, "míkir", :mikir],
+	    [:Masc, :Singular, :CiCiC, "fídigá", :fidig],
+	    [:Fem, :Singular, :CiCiy, "dhígwiyí", :dhigwiy],
+	    [:Common, :Plural, :CiCiC, "fídigna", :fidig],
+	    [:Common, :Plural, :CiCiC, "dílibna", :dilib],
+	    [:Masc, :Singular, :CiCiC, "bídilá", :bidil],
+	    [:Masc, :Singular, :CiCiy, "míriyá", :miriy],
+	    [:Masc, :Singular, :HaCiC, "abíka", :abik],
+	    [:Common, :Plural, :CiCiC, "tíkwikwna", :tikwikw],
+	    [:Common, :Plural, :CiCiy, "dhígwiina", :dhigwiy],
+	    [:Common, :Plural, :HaCiC, "ágirna", :agir],
+	    [:Fem, :Singular, :CiC, "ríbi", :rib],
+	    [:Masc, :Singular, :CiCiC, "kítimá", :kitim],
+	    [:Fem, :Singular, :HaCiC, "háriwí", :hawir],
+	    [:Fem, :Singular, :HaCiC, "hagíti", :hagit],
+	    [:Masc, :Singular, :CiCiC, "dílibá", :dilib],
+	    [:Fem, :Singular, :CiCiC, "kítibí", :kitib],
+	    [:Masc, :Singular, :CiCiy, "dhígwiyá", :dhigwiy],
+	    [:Common, :Plural, :CiCiC, "míkirna", :mikir],
+	    [:Fem, :Singular, :CiC, "míri", :mir],
+	    [:Masc, :Singular, :HaCiC, "hásibá", :hasib],
+	    [:Common, :Plural, :CiC, "mírna", :mir],
+	    [:Fem, :Singular, :HaCiC, "hásibí", :hasib],
+	    [:Common, :Plural, :CiC, "ríbna", :rib],
+	    [:Common, :Plural, :CiC, "símna", :sim],
+	    [:Fem, :Singular, :CiCiy, "síniyí", :siniy],
+	    [:Common, :Plural, :HaCiC, "háriwna", :hariw],
+	    [:Fem, :Singular, :CiC, "sími", :sim],
+	    [:Common, :Plural, :HaCiC, "hágitna", :hagit],
+	    [:Common, :Plural, :CiCiC, "kítibna", :kitib],
+	    [:Fem, :Singular, :CiCiC, "kítimí", :kitim],
+	    [:Fem, :Singular, :HaCiC, "abíki", :abik],
+	    [:Fem, :Singular, :CiCiC, "míkirí", :mikir],
+	    [:Common, :Plural, :CiCiC, "šíbibna", :sibib],
+	    [:Fem, :Singular, :CiCiC, "fídigí", :fidig],
+	    [:Masc, :Singular, :CiC, "íša úša", :ish],
+	    [:Common, :Plural, :HaCiC, "hásibna", :hasib],
+	    [:Masc, :Singular, :CiC, "dífa", :dif],
+	    [:Masc, :Singular, :CiCiC, "tíkwikwá", :tikwikw],
+	    [:Fem, :Singular, :CiCiC, "bídilí", :bidil],
+	    [:Masc, :Singular, :HaCiC, "ágirá", :agir],
+	    [:Common, :Plural, :HaCiC, "háyisna", :hayis],
+	    [:Common, :Plural, :CiC, "úšna", :ish],
+	    [:Common, :Plural, :HaCiC, "ábikna", :abik],
+	    [:Masc, :Singular, :HaCiC, "háriwá", :hawir],
+	    [:Fem, :Singular, :CiC, "úhi", :ish],
+	    [:Fem, :Singular, :HaCiC, "háyisí", :hayis],
+	    [:Masc, :Singular, :CiC, "síma", :sim],
+	    [:Fem, :Singular, :CiCiy, "míriyí", :miriy],
+	    [:Masc, :Singular, :CiC, "ríba", :rib],
+	    [:Masc, :Singular, :CiCiy, "síniyá", :siniy],
+	    [:Masc, :Singular, :HaCiC, "hagíta", :hagit],
+	    [:Masc, :Singular, :CiC, "míra", :mir],
+	    [:Common, :Plural, :CiCiC, "kítimna", :kitim],
+	    [:Fem, :Singular, :HaCiC, "ágiri", :agir],
+	    [:Masc, :Singular, :HaCiC, "háyisá", :hayis],
+	    [:Common, :Plural, :CiCiC, "bídilna", :bidil],
+	    [:Fem, :Singular, :CiCiC, "tíkwikwí", :tikwikw],
+	    [:Fem, :Singular, :CiCiC, "dílibí", :dilib]]
     }
     {:label "beja_W-VPrefNegCiCiCImprtv"
     :note "Wedekind-etal2007 p. 109"
@@ -4564,7 +4506,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :Ciy}
@@ -4736,7 +4678,7 @@
 	    :lexeme :hariw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :HaCiC}
@@ -4750,7 +4692,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :Ciy}
@@ -5029,7 +4971,7 @@
 	    :lexeme :hariw,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :HaCiC}
@@ -5142,7 +5084,7 @@
 	    :lexeme :fiyak,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCaC}
@@ -5447,7 +5389,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CHiy}
@@ -5521,7 +5463,7 @@
 	    :lexeme :sibib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCiC}
@@ -5553,7 +5495,7 @@
 	    :lexeme :sibib,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :rootClass :CiCiC}
@@ -5807,7 +5749,7 @@
 	    :lexeme :diy,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CHiy}
@@ -5897,7 +5839,7 @@
 	    :lexeme :fir,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CiCH}
@@ -6044,7 +5986,7 @@
     }
     {:label "beja_W-VNegObjSuffExx"
     :note "Wedekind-etal2007 p. 143"
-    :common {:multiLex :NEGOBJSUFF,
+    :common {:morphClass :NEGOBJSUFF,
 	    :polarity :Negative,
 	    :pos :Pronoun,
 	    :pdgmType :ObjSuffExx}
@@ -6097,7 +6039,9 @@
 	    [:Fem, :Singular, :Person2, "ústaaz íikta kíddíi"],
 	    [:Masc, :Singular, :Person3, "ústaax íikta kíidi"],
 	    [:Common, :Plural, :Person3, "ustáz íikta kíidiin"]]
-    }}
+    }
+
+}
 :muterms #{
     {:label "beja_W-PPersInd"
     :note "Wedekind-etal2007 Table #14"
@@ -6370,5 +6314,6 @@
 	    [:Plural, :Singular, :Person3, "-(y)aah -(y)eeh"],
 	    [:Singular, :Singular, :Person3, "-(y)uuh -(y)ooh"],
 	    [:Singular, :Singular, :Person1, "-(y)uu -(y)oo"]]
-    }}
+    }
+}
 }

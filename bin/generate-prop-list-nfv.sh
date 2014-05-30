@@ -21,7 +21,7 @@ do
     #of=`basename ${2#sparql/templates/}`
 	of=pdgm-non-finite-prop-list.template
 	#echo of = $of
-    localqry="sparql/pdgms/output/${of%.template}.$lang.rq"
+    localqry="tmp/pdgm/${of%.template}.$lang.rq"
 	#mv $localqry "${localqry}.bck"
     #echo localqry = $localqry
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry

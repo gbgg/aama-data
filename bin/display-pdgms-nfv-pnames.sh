@@ -43,8 +43,8 @@ do
 	echo
 	read -e -p Number: pnumber
 	echo
-	localqry=sparql/pdgms/output/pname-$lang-$pnumber-query.rq
-	response=sparql/pdgms/output/pname-$lang-$pnumber-resp.tsv
+	localqry=tmp/pdgm/pname-$lang-nfv-$pnumber-query.rq
+	response=tmp/pdgm/pname-$lang-nfv-$pnumber-resp.tsv
 	echo "Localqry = $localqry"
 	echo "Response = $response"
 	echo 

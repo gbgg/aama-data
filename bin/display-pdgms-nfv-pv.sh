@@ -42,8 +42,8 @@ do
 	of=pdgm-nfv-props.template
 	#echo of = $of
 	querylabel="${of%.template}.$lang"
-    localqry="sparql/pdgms/output/${of%.template}.$lang.rq"
-	response="sparql/pdgms/output/${of%.template}.$lang-resp.tsv"
+    localqry="tmp/pdgm/${of%.template}.$lang.rq"
+	response="tmp/pdgm/${of%.template}.$lang-resp.tsv"
     echo "localqry=$localqry"
 	nsv="nsv"
 	echo "nsv=$nsv"

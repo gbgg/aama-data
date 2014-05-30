@@ -32,7 +32,6 @@ qlabel=$3
 prop=$4
 template=sparql/templates/$qlabel.template
 response=tmp/prop-val/$qlabel-resp.tsv
-localqry=tmp/prop-val/$qlabel.rq
 
 echo "Query String = $qstring"
 echo "Template = $template"

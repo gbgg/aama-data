@@ -46,8 +46,8 @@ do
 	read -e -p Number: pnumber
 	echo
 	## Find way to cycle through more than one number
-	localqry=sparql/pdgms/output/pname-$lang-fv-$pnumber-query.rq
-	response=sparql/pdgms/output/pname-$lang-fv-$pnumber-resp.tsv
+	localqry=tmp/pdgm/pname-$lang-fv-$pnumber-query.rq
+	response=tmp/pdgm/pname-$lang-fv-$pnumber-resp.tsv
 	rm $response
 	echo "Localqry = $localqry"
 	echo "Response = $response"

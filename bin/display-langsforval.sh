@@ -45,7 +45,7 @@ perl pl/langsforvaltsv2table.pl $response $val
 if [ "$3" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
-else
+elif [ "$3" = $ldomain ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-test.sh $3
 fi

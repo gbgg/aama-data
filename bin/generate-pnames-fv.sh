@@ -19,8 +19,8 @@ do
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
 	#echo "querying $lang $Lang $abbrev"
-	localqry=sparql/pdgms/output/pnames-fv-$lang-query.rq
-	response=sparql/pdgms/output/pnames-fv-$lang-resp.tsv
+	localqry=tmp/pdgm/pnames-fv-$lang-query.rq
+	response=tmp/pdgm/pnames-fv-$lang-resp.tsv
 	echo " "
 	echo "Localqry = $localqry"
 	echo "Response = $response"
@@ -28,10 +28,10 @@ do
 
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry > $response
 
-	localqry2=sparql/pdgms/output/pnames-fv-$lang-query2.rq
+	localqry2=tmp/pdgm/pnames-fv-$lang-query2.rq
 	echo "Localqry2 = $localqry2"
 	perl pl/pname2query.pl  $response $lang $abbrev $localqry2
-	response2=sparql/pdgms/output/pnames-fv-$lang-resp2.tsv
+	response2=tmp/pdgm/pnames-fv-$lang-resp2.tsv
 
     ${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$localqry2 > $response2
 	echo "Response2 = $response2"
@@ -46,7 +46,9 @@ echo "    "
 if [ "$2" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
-else
+fi
+if [ "$2" = $1 ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-test.sh $1
 fi
+

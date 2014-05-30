@@ -25,9 +25,10 @@ echo "fuquery.log" > logs/fuquery.log;
 #echo " is marked for a value of tam, and is marked also at least for" 
 #echo " person  (optionally also for gender and number). "
 #echo
-querylabel=fv
-#echo Please provide a label for query --
-#read -e -p Query_Label: querylabel
+qlabel=demo-fv
+echo "Please provide a label for query --"
+read -e -p "Query Label (default $qlabel) : " input
+querylabel=${input:-$qlabel}
 echo 
 echo " In addition to png, each language has its own set of additional "
 echo " properties which can or must be represented in any finite verb "
@@ -43,7 +44,6 @@ do
     echo querying $lang -- $abbrev
     #of=`basename ${2#sparql/templates/}`
     of=pdgm-fv-props.template
-    #echo of = $of
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
     response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
     echo "props query = $localqry"

@@ -29,8 +29,8 @@
 qstring=$1
 qlabel=$2
 #echo "QLabel = $qlabel"
-localqry=sparql/pdgms/output/$qlabel-query.rq
-response=sparql/pdgms/output/$qlabel-response.tsv
+localqry=tmp/pdgm/$qlabel-query.rq
+response=tmp/pdgm/$qlabel-response.tsv
 # find way to parse qstring to give value string $vstring
 # then give "title=$lang-$vstring" as argument to pdgmtsv2table.pl 
 # for output title

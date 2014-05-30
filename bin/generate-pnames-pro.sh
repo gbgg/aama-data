@@ -18,8 +18,8 @@ do
 	abbrev=${labbrev#$lang=}
 	echo "  "
 	echo "querying $lang ($abbrev)"
-	localqry=sparql/pdgms/output/pnames-pro-$lang-query.rq
-	response=sparql/pdgms/output/pnames-pro-$lang-resp.tsv
+	localqry=tmp/pdgm/pnames-pro-$lang-query.rq
+	response=tmp/pdgm/pnames-pro-$lang-resp.tsv
 	echo " "
 	echo "Localqry = $localqry"
 	echo "Response = $response"
@@ -39,7 +39,8 @@ echo "   "
 if [ "$2" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
-else
+fi
+if [ "$2" = $1 ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-test.sh $1
 fi

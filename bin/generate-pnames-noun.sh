@@ -16,8 +16,8 @@ do
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
 	#echo "querying $lang $Lang $abbrev"
-	localqry=sparql/pdgms/output/pnames-noun-$lang-query.rq
-	response=sparql/pdgms/output/pnames-noun-$lang-resp.tsv
+	localqry=tmp/pdgm/pnames-noun-$lang-query.rq
+	response=tmp/pdgm/pnames-noun-$lang-resp.tsv
 	echo " "
 	echo "Localqry = $localqry"
 	echo "Response = $response"
@@ -36,7 +36,8 @@ echo "   "
 if [ "$2" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
-else
+fi
+if [ "$2" = $1 ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-test.sh $1
 fi

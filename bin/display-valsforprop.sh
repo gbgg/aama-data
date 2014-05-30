@@ -26,7 +26,7 @@ do
     #of=`basename ${2#sparql/templates/}`
     of=valsforprop.template
     localqry="tmp/prop-val/${of%.template}.$lang.rq"
-    response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
+     response="tmp/prop-val/${of%.template}.$lang-resp.tsv"
     #echo $localqry
     sed -e "s/%type%/${type}/g" -e "s/%lang%/${lang}/g" sparql/templates/valsforprop.template > $localqry
     ${FUSEKIDIR}/s-query \
@@ -43,7 +43,7 @@ echo " "
 if [ "$3" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh
-else
+elif [ "$3" = $ldomain ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-test.sh $3
 fi
