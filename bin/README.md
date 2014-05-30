@@ -146,7 +146,7 @@ The following enumeration  provides for each script a general description, a usa
     - **example**: bin/display-valsforprop.sh "data/beja-arteiga data/beja-atmaan" tam *"Display the values of the property tam for beja-arteiga and beja-atmaa"*
     - **files generated**: 
         * *tmp/prop-val/valsforprop.$lang.rq*
-          * *tmp/prop-val/valsforprop.$lang-resp.tsv*
+        * *tmp/prop-val/valsforprop.$lang-resp.tsv*
 
     - **procedures**: 
         *    **q-string**: (command line)
@@ -154,7 +154,6 @@ The following enumeration  provides for each script a general description, a usa
 	     **generate-query**: sparql/templates/valsforprop.template
 
 	     **format-response**: pl/valforproptsv2table.pl
-
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
     - **usage**: bin/display-langsforval.sh \<dir\> val
@@ -175,7 +174,7 @@ props in question.
     - **example**: display-langspropval.sh "data/\*"  person=Person2,gender=Fem,pos=?pos,number=?number langs-pvtrial
  *"What languages have 2f , and if so, in what pos and what num?"*
     - **files generated**: 
-        * *sparql/templates/$qlabel.template
+        * *sparql/templates/$qlabel.template*
         * *tmp/prop-val/$qlabel-resp.tsv*
         * *tmp/prop-val/$qlabel.rq*
 
@@ -190,10 +189,10 @@ props in question.
     - **usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
     - **example**: bin/display-langvterms.sh "data/beja-arteiga/ data/beja-atmaan/" person=Person2,gender=Fem langpvterms-trial yes *"Give all the terms in beja-arteiga and beja-atmaan with 2f"*
     - **files generated**: 
-        * *sparql/templates/$qlabel.template**
+        * *sparql/templates/$qlabel.template*
         * *tmp/prop-val/$qlabel-resp.tsv*
         * *tmp/prop-val/$qlabel-$lang.rq*
-             **(tmp/prop-val/$qlabel.txt)**
+        * *(tmp/prop-val/$qlabel.txt)*
 
     - **procedures**: 
         *    **q-string**: (command-line)
