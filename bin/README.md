@@ -149,8 +149,8 @@ The following enumeration  provides for each script a general description, a usa
         * *tmp/prop-val/valsforprop.$lang-resp.tsv*
     - **procedures**: 
         *    **q-string**: (command line)
-	     **generate-query**: sparql/templates/valsforprop.template
-	     **format-response**: pl/valforproptsv2table.pl
+	*    **generate-query**: sparql/templates/valsforprop.template
+	*    **format-response**: pl/valforproptsv2table.pl
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
     - **usage**: bin/display-langsforval.sh \<dir\> val
@@ -160,8 +160,8 @@ The following enumeration  provides for each script a general description, a usa
         * *tmp/prop-val/langsforval.$lang.rq*
     - **procedures**: 
         *    **q-string**: (command-line)
-	     **generate-query**: sparql/templates/langsforval.template
-	     **format-response**: pl/langsforvaltsv2table.pl
+	*    **generate-query**: sparql/templates/langsforval.template
+	*    **format-response**: pl/langsforvaltsv2table.pl
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
 props in question. 
@@ -174,8 +174,8 @@ props in question.
         * *tmp/prop-val/$qlabel.rq*
     - **procedures**: 
         *    **q-string**: (command-line)
-	     **generate-query**: pl/qstring2template.pl (to form query template)
-	     **format-response**: pl/langspvtsv2table.pl
+	*    **generate-query**: pl/qstring2template.pl (to form query template)
+	*    **format-response**: pl/langspvtsv2table.pl
 
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional"yes" for "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
     - **usage**: bin/display-langvterms.sh \<dir\> qstring qlabel prop
@@ -187,8 +187,8 @@ props in question.
         * *(tmp/prop-val/$qlabel.txt)*
     - **procedures**: 
         *    **q-string**: (command-line)
-	     **generate-query**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl (with or without property names)
-	     **format-response**: pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl  (with or without property names).
+	*    **generate-query**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl (with or without property names)
+	*    **format-response**: pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl  (with or without property names).
       
 
 **PDGM Displays**
@@ -196,7 +196,7 @@ props in question.
 1. **display-pdgms-fv-pv.sh**: Displays finite verb png forms in one or more languages which meet *prop=val* constraints entered at the prompt.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: Two langs: bin/display-paradigms.sh "data/beja-arteiga data/oromo" At prompt "beja-arteiga:" enter  "conjClass=Suffix,polarity=Affirmative,tam=Present". At prompt "oromo:" enter  "clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present" [For one lang, single prompt, single display.]
-    _ **files consulted**
+    - **files consulted**
         * *sparql/pdgms/pdgm-finite-prop-list.txt*
     - **files generated**: 
         * *tmp/prop-val/pdgm-fv-props.$lang.rq*
@@ -208,13 +208,13 @@ props in question.
         * *tmp/pdgm/$qlabel-response.html*
     - **procedures**: 
         *    **q-string**: pl/verb-propvaltsv2table.pl (displays table prompt)
-	     **generate-query**:  pl/qstring2query.pl  (formulates a unified SPARQL query, not a query-template)
-	     **format-response**: pl/pdgmtsv2table.pl 
+	*    **generate-query**:  pl/qstring2query.pl  (formulates a unified SPARQL query, not a query-template)
+	*    **format-response**: pl/pdgmtsv2table.pl 
 
 2. **display-pdgms-fv-pnames.sh**: Displays finite verb png forms with morphosyntactic values contained in "pname".
     - **usage**: bin/display-pdgms-fv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "10" shows png forms for Prefix-Affirmative-CCY-Aorist.
-    _ **files consulted**
+    - **files consulted**
         * *sparql/pdgms/pname-fv-list-$lang.txt*
     - **files generated**: 
         * *tmp/pdgm/pname-$lang-fv-$pnumber-query.rq*
@@ -223,13 +223,13 @@ props in question.
 	* *tmp/pdgm/pname-$lang-fv-$pnumber-resp.html*
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames table prompt: file sparql/pdgms/pname-fv-list-$lang.txt, generated by bin/generate-pnames-fv.sh)
-	     **generate-query**: pl/qstring-fv-pname2query.pl 
-	     **format-response**:  pl/pdgm-fv-tsv2table.pl.
+	*    **generate-query**: pl/qstring-fv-pname2query.pl 
+	*    **format-response**:  pl/pdgm-fv-tsv2table.pl.
 
 3. **display-pdgms-nfv-pv.sh**: Displays non-finite verb forms in one or more languages which meet *prop=val* constraints entered at the prompt.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: At prompt, "derivedStem=B" gives all nfv forms in base stem.
-    _ **files consulted**
+    - **files consulted**
         * *sparql/pdgms/pdgm-non-finite-prop-list.txt*
     - **files generated**: 
         * *tmp/prop-val/pdgm-nfv-props.$lang.rq*
@@ -241,13 +241,13 @@ props in question.
         * *tmp/pdgm/$qlabel-response.html*
     - **procedures**: 
         *    **q-string**: sparql/templates/pdgm-nfv-props.template gives tsv list of forms; pl/verb-propvaltsv2table.pl formats to table prompt
-	     **generate-query**: pl/qstring-nfv2query.pl
-	     **format-response**: pl/pdgmtsv2table.pl         
+	*    **generate-query**: pl/qstring-nfv2query.pl
+	*    **format-response**: pl/pdgmtsv2table.pl         
 
 4. **display-pdgms-nfv-pnames.sh**: Displays non-finite  forms of verb with morphosyntactic values contained in "pname".
     - **usage**: bin/display-pdgms-nfv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "2" shows stems for all conjClass, derivedStem, rootClass, and tam verb forms.
-    _ **files consulted**
+    - **files consulted**
         * *sparql/pdgms/pname-nfv-list-$lang.txt*
     - **files generated**: 
         * *tmp/pdgm/pname-$lang-nfv-$pnumber-query.rq*
@@ -256,13 +256,13 @@ props in question.
 	* *tmp/pdgm/pname-$lang-nfv-$pnumber-resp.html*
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames-list prompt file sparql/pdgms/pname-nfv-list-$lang.txt, generated by bin/generate-pnames-nfv.sh)
-	     **generate-query**: pl/qstring-nfv-pname2query.pl
-	     **format-response**: pl/pdgm-fv-tsv2table.pl
+	*    **generate-query**: pl/qstring-nfv-pname2query.pl
+	*    **format-response**: pl/pdgm-fv-tsv2table.pl
 
 5. **display-pdgms-pro-pnames.sh**: Displays pronominal  forms with morphosyntactic values contained in "pname". A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
     - **usage**: bin/display-pdgms-pro-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "3" shows all independent pronominal forms.
-    _ **files consulted**
+    - **files consulted**
         * *sparql/pdgms/pname-pro-list-$lang.txt*
     - **files generated**: 
         * *tmp/pdgm/pname-$lang-pro-$pnumber-query.rq*
@@ -271,13 +271,13 @@ props in question.
 	* *tmp/pdgm/pname-$lang-pro-$pnumber-resp.html*
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames prompt file sparql/pdgms/pname-pro-list-$lang.txt, generated by bin/generate-pnames-pro.sh)
-	     **generate-query**: pl/qstring-pro-pname2query.pl
-	     **format-response**: pl/pdgm-tsv2table.pl
+	*    **generate-query**: pl/qstring-pro-pname2query.pl
+	*    **format-response**: pl/pdgm-tsv2table.pl
 
 6. **display-pdgms-noun-pnames.sh**: For the moment, nominal paradigms are only incidentally included in aama, but for the few which exist, this script displays nominal  forms with morphosyntactic values contained in "pname".  A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
     - **usage**: bin/display-pdgms-noun-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "1" shows the noun plural classes. 
-    _ **files consulted**
+    - **files consulted**
         * *sparql/pdgms/pname-noun-list-$lang.txt*
     - **files generated**: 
         * *tmp/pdgm/pname-$lang-noun-$pnumber-query.rq*
@@ -286,8 +286,8 @@ props in question.
 	* *tmp/pdgm/pname-$lang-noun-$pnumber-resp.html*
     - **procedures**: 
         *    **q-string**: pl/pnames-print.pl (prints pnames prompt file sparql/pdgms/pname-noun-list-$lang.txt, generated by generate-pnames-noun.sh)
-	     **generate-query**: pl/qstring-noun-pname2query.pl
-	     **format-response**: pl/pdgm-tsv2table.pl
+	*    **generate-query**: pl/qstring-noun-pname2query.pl
+	*    **format-response**: pl/pdgm-tsv2table.pl
 
 **List Generation**
 
@@ -299,8 +299,8 @@ props in question.
 	* *sparql/pdgms/pdgm-finite-prop-list.txt*
     - **procedures**: 
         *    **q-string**: (fv props in all languages)
-	     **generate-query**: sparql/templates/pdgm-finite-prop-list.template
-	     **format-response**: pl/pdgm-proplist2txt.pl
+	*    **generate-query**: sparql/templates/pdgm-finite-prop-list.template
+	*    **format-response**: pl/pdgm-proplist2txt.pl
 
 2. **generate-prop-list-nfv.sh**: Generates the non-finite-verb property list sparql/pdgms/pdgm-non-finite-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-nfv.sh
@@ -310,8 +310,8 @@ props in question.
         * *sparql/pdgms/pdgm-non-finite-prop-list.txt*
     - **procedures**: 
         *    **q-string**: (nfv props in all languages)
-	     **generate-query**: sparql/templates/pdgm-non-finite-prop-list.template
-	     **format-response**: pl/pdgm-proplist2txt.pl
+	*    **generate-query**: sparql/templates/pdgm-non-finite-prop-list.template
+	*    **format-response**: pl/pdgm-proplist2txt.pl
 
 3. **generate-prop-list-pro.sh**: Generates the pronoun property list sparql/pdgms/pdgm-pro-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-pro.sh
@@ -321,8 +321,8 @@ props in question.
         * *sparql/pdgms/pdgm-pro-prop-list.txt*
     - **procedures**: 
         *    **q-string**: (pro props in all languages)
-	     **generate-query**: sparql/templates/pdgm-pro-prop-list.template
-	     **format-response**: pl/pdgm-proplist2txt.pl
+	*    **generate-query**: sparql/templates/pdgm-pro-prop-list.template
+	*    **format-response**: pl/pdgm-proplist2txt.pl
 
 4. **generate-prop-list-noun.sh**: Generates the noun property list sparql/pdgms/pdgm-noun-prop-list.txt for all languages in the triple store.
     - **usage**: bin/generate-prop-list-noun.sh
@@ -332,8 +332,8 @@ props in question.
         * *sparql/pdgms/pdgm-noun-prop-list.txt*
     - **procedures**: 
         *    **q-string**: (noun props in all languages)
-	     **generate-query**: sparql/templates/pdgm-noun-prop-list.template
-	     **format-response**: pl/pdgm-proplist2txt.pl
+	*    **generate-query**: sparql/templates/pdgm-noun-prop-list.template
+	*    **format-response**: pl/pdgm-proplist2txt.pl
 
 5. **generate-pnames-fv.sh**: Generates a list of finite-verb property-value combinations sparql/pdgms/pname-vf-list-$language.txt for the argument language.
 The script first queries the datastore for all additional inflectional property=value associations co-occurring with terms marked for  pos=Verb and having a value for the property "person". A second query is then generated to determine which of these propp-val associations co-occur in the verb forms of the datastore (e.g., not all tense values which occur in affirmative forms also occur in negative; also a possibly occurring value combination, for example a given tense form of a less common derived stem, might simply not have been noted in the language description which was the source of the data for this datastore). The output of this query is formatted into a text file with a list of comma-separated value combinations: e.g., from sparql/pdgms/pname-fv-list-beja-arteiga.txt, number 12 is "Beja-arteiga,Prefix,Affirmative,CCY,Optative". This indicates that a set of png-inflected forms exist in Beja-arteiga for the Optative, Affirmative, Prefix-conjugated, CCY-root-class verb.
@@ -346,8 +346,8 @@ The script first queries the datastore for all additional inflectional property=
         * *sparql/pdgms/pname-fv-list-$lang.txt*
     - **procedures**: 
         *    **q-string**: (fv pnames in designated languages)
-	     **generate-query**: sparql/templates/pdgm-finite-prop-list.template (yields a property-value tsv file; assembled into a co-occurrence query by:) pl/pname2query.pl
-	     **format-response**: pl/pname-fv-list2txt.pl.
+	*    **generate-query**: sparql/templates/pdgm-finite-prop-list.template (yields a property-value tsv file; assembled into a co-occurrence query by:) pl/pname2query.pl
+	*    **format-response**: pl/pname-fv-list2txt.pl.
 
 6. **generate-pnames-nfv.sh**: Generates a list of non-finite-verb property-value combinations sparql/pdgms/pname-nvf-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-list-nfv.sh \<dir\> 
@@ -357,8 +357,8 @@ The script first queries the datastore for all additional inflectional property=
         * *sparql/pdgms/pname-nfv-list-$lang.txt*
     - **procedures**: 
         *    **q-string**: (nfv pnames in designated languages)
-	     **generate-query**: sparql/templates/pdgm-non-finite-pnames.template
-	     **format-response**: pl/pname-nfv-list2txt.pl
+	*    **generate-query**: sparql/templates/pdgm-non-finite-pnames.template
+	*    **format-response**: pl/pname-nfv-list2txt.pl
 
 7. **generate-pnames-pro.sh**: Generates a list of pronoun property-value combinations sparql/pdgms/pname-pro-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-pro.sh \<dir\> 
@@ -368,8 +368,8 @@ The script first queries the datastore for all additional inflectional property=
         * *sparql/pdgms/pname-$pos-list-$lang.txt*
     - **procedures**: 
         *    **q-string**: (pro pnames in designated languages)
-	     **generate-query**: sparql/templates/pdgm-pro-pnames.template
-	     **format-response**: pl/pname-np-list2txt.pl
+	*    **generate-query**: sparql/templates/pdgm-pro-pnames.template
+	*    **format-response**: pl/pname-np-list2txt.pl
 
 8. **generate-pnames-noun.sh**: Generates a list of noun property-value combinations sparql/pdgms/pname-pro-list-$language.txt for the argument language.
     - **usage**: bin/generate-pnames-noun.sh \<dir\> 
@@ -379,8 +379,8 @@ The script first queries the datastore for all additional inflectional property=
         * *sparql/pdgms/pname-$pos-list-$lang.txt*
     - **procedures**: 
         *    **q-string**: (noun pnames in designated languages)
-	     **generate-query**: sparql/pdgm-noun-pnames.template
-	     **format-response**: pl/pname-np-list2txt.pl
+	*    **generate-query**: sparql/pdgm-noun-pnames.template
+	*    **format-response**: pl/pname-np-list2txt.pl
 
 9. **generate-lang-prop-val-lists.sh**: Generates a tsv file of all lang-prop-val co-occurrences in \<dir>\, and then makes 4 tables (in html form, or tsv for dropping onto a spreadsheet or Word table) with entries: 
 (1) *lang	prop: val, val, val, ...* (all the values for each prop in each language), (2) *prop val: lang, lang, lang, ...* (all the languages in which a given prop has a given val), (3) *val	prop: lang, lang, lang, ...* (all the languages in which a given val is associated with a given prop), (4) *prop	lang: val, val, val, ...* (all the values associated with a given prop in a given language)
@@ -399,8 +399,8 @@ The script first queries the datastore for all additional inflectional property=
         * *tmp/prop-val/prop-lang-val-list-$filetag.html*
     - **procedures**: 
         *    **q-string**: (command-line)
-	     **generate-query**: sparql/templates/lang-prop-val-list.template
-	     **format-response**:  pl/lang-prop-val-list-tsv2table.pl $response $filetag
+	*    **generate-query**: sparql/templates/lang-prop-val-list.template
+	*    **format-response**:  pl/lang-prop-val-list-tsv2table.pl $response $filetag
 
 10. **generate-lex-lists.sh**: [TO BE REVISED: Current version calls xml2html-lexlist.xsl to generate from the LANG-pdgms.xml file an html file, tmp/lexlists/$lang-lexlist.html, of all lexemes and muterms in \<dir>\; need version for edn2html to be used for updating and standardizing lexical information in edn file.]
     - **usage**: bin/generate-lang-prop-val-lists.sh \<dir\> 
@@ -408,9 +408,9 @@ The script first queries the datastore for all additional inflectional property=
     - **procedures**: 
         *    **q-string**:
 
-	     **generate-query**:
+	*    **generate-query**:
 
-	     **format-response**:          
+	*    **format-response**:          
 
 11. **generate-pdgms.sh**: [TO BE REVISED: Current version calls xml2html-pdgms.xsl to generate from the LANG-pdgms.xml file an html file, LANG-pdgms.html, of all pdgms in \<dir>\; need version for edn2html to be used for updating and standardizing lexical information in edn file.]
     - **usage**: bin/generate-pdgms-html.sh \<dir\> 
@@ -418,9 +418,9 @@ The script first queries the datastore for all additional inflectional property=
     - **procedures**: 
         *    **q-string**:
 
-	     **generate-query**:
+	*    **generate-query**:
 
-	     **format-response**:          
+	*    **format-response**:          
 
 
 
