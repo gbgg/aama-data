@@ -147,12 +147,9 @@ The following enumeration  provides for each script a general description, a usa
     - **files generated**: 
         * *tmp/prop-val/valsforprop.$lang.rq*
         * *tmp/prop-val/valsforprop.$lang-resp.tsv*
-
     - **procedures**: 
         *    **q-string**: (command line)
-        
 	     **generate-query**: sparql/templates/valsforprop.template
-
 	     **format-response**: pl/valforproptsv2table.pl
 
 2. **display-langsforval.sh**: Displays all languages which have a given value, and the property of which it is a value. [Recall that in this datastore, all property names begin with lower case and all value names with upper case!]
@@ -163,9 +160,7 @@ The following enumeration  provides for each script a general description, a usa
         * *tmp/prop-val/langsforval.$lang.rq*
     - **procedures**: 
         *    **q-string**: (command-line)
-	     
 	     **generate-query**: sparql/templates/langsforval.template
-	     
 	     **format-response**: pl/langsforvaltsv2table.pl
 
 3. **display-langspropval.sh**: Lists languages in which a set of one or more *prop=val* equivalences (co)-occur, specified in comma-separated *prop=val* *qstring*; *qlabel* is used to identify the query-file and output-tsv file. *qstring* can also contain one or more *prop=?val* equations (prop1=?val1, prop2=?val2, . . .) indicating that the query should return the values from the 
@@ -177,12 +172,9 @@ props in question.
         * *sparql/templates/$qlabel.template*
         * *tmp/prop-val/$qlabel-resp.tsv*
         * *tmp/prop-val/$qlabel.rq*
-
     - **procedures**: 
         *    **q-string**: (command-line)
-
 	     **generate-query**: pl/qstring2template.pl (to form query template)
-
 	     **format-response**: pl/langspvtsv2table.pl
 
 4. **display-langvterms.sh**: Displays for each language all terms having the comma-separated *prop=val* combination specified in the command line; *qlabel* is used to identify the query-file and output-tsv file; optional"yes" for "prop" argument specifies that property-name will be given with each value (otherwise, only value-names are given)
@@ -193,12 +185,9 @@ props in question.
         * *tmp/prop-val/$qlabel-resp.tsv*
         * *tmp/prop-val/$qlabel-$lang.rq*
         * *(tmp/prop-val/$qlabel.txt)*
-
     - **procedures**: 
         *    **q-string**: (command-line)
-
 	     **generate-query**: pl/qstring-vterms2template.pl or pl/qstring-pvterms2template.pl (with or without property names)
-
 	     **format-response**: pl/langs-vtermstsv2table.pl or pl/langs-pvtermstsv2table.pl  (with or without property names).
       
 
