@@ -8,7 +8,7 @@
 	  :formType [:Affix]
 	  :gender [:Common, :Fem, :Masc]
 	  :genderHeadRel [:Common, :Fem, :Masc]
-	  :multiLex [:AGENTNOUN, :Bilin-KemantRel, :DERVSTEM, :INFINITIVE, :VERBINTERROGATIVE]
+	  :morphClass [:AGENTNOUN, :Bilin-KemantRel, :DERVSTEM, :INFINITIVE, :VERBINTERROGATIVE, :CardinalNumeral]
 	  :nounClass [:CardinalNumeral]
 	  :numHeadRel [:Plural, :Singular]
 	  :number [:Plural, :Singular]
@@ -29,11 +29,6 @@
   :SUBJMARK {:gloss "Subject Marker", :pos :Verb}
 }
 :lexemes {
-  :AGENTNOUN {:gloss "[x]", :lemma "[y]", }
-  :Bilin-KemantRel {:gloss "[x]", :lemma "[y]", }
-  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
-  :INFINITIVE {:gloss "[x]", :lemma "[y]", }
-  :VERBINTERROGATIVE {:gloss "[x]", :lemma "[y]", }
   :fay {:gloss "go", :lemma "fäy-", :pos :Verb}
   :gab {:gloss "[x]", :lemma "[y]", }
   :iw {:gloss "give", :lemma "iw-", :pos :Verb}
@@ -157,7 +152,7 @@
     {:label "kemant-VBilin-KemantRel"
     :note "Appleyard1975 pp. 338-339"
     :common {:pdgmType :Comparative,
-	    :multiLex :Bilin-KemantRel,
+	    :morphClass :Bilin-KemantRel,
 	    :pos :Verb}
     :terms [[:aspect, :gender, :lang, :lexeme, :number, :person, :tam, :token]  ;; schema
 	    [:Imperfective, :Common, :Kemant, :was, :Plural, :Person2, :RelativeSubject, "wasinaɣər"],
@@ -285,7 +280,7 @@
     {:label "kemant-VFiniteForm"
     :note "Appleyard1975 7.4 Agent noun marker sing. –änta plur. –äntə"
     :common {:finiteForm :AgentNoun,
-	    :multiLex :AGENTNOUN,
+	    :morphClass :AGENTNOUN,
 	    :pdgmSubType :FiniteVerb,
 	    :pos :Verb}
     :terms [[:gloss, :lexeme, :token]  ;; schema
@@ -400,7 +395,7 @@
     }
     {:label "kemant-VDervStemForms"
     :note "Appleyard1975"
-    :common {:multiLex :DERVSTEM,
+    :common {:morphClass :DERVSTEM,
 	    :pdgmSubType :DervStem,
 	    :pdgmType :Exemplary,
 	    :pos :Verb}
@@ -619,7 +614,7 @@
     }
     {:label "kemant-VInterrog"
     :note "Appleyard1975 7.5"
-    :common {:multiLex :VERBINTERROGATIVE,
+    :common {:morphClass :VERBINTERROGATIVE,
 	    :pdgmSubType :Interrogative,
 	    :pdgmType :Exemplary,
 	    :pos :Verb}
@@ -761,7 +756,7 @@
     {:label "kemant-VInfinitive"
     :note "Appleyard1975 7.4"
     :common {:finiteForm :Infinitive,
-	    :multiLex :INFINITIVE,
+	    :morphClass :INFINITIVE,
 	    :pdgmSubType :FiniteVerb,
 	    :pos :Verb}
     :terms [[:lexeme, :polarity, :token]  ;; schema

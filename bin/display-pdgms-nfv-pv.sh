@@ -45,8 +45,8 @@ do
     localqry="tmp/pdgm/${of%.template}.$lang.rq"
 	response="tmp/pdgm/${of%.template}.$lang-resp.tsv"
     echo "localqry=$localqry"
-	nsv="nsv"
-	echo "nsv=$nsv"
+#	nsv="nsv"
+#	echo "nsv=$nsv"
 
     #sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" $2 > $localqry
     sed -e "s/%abbrev%/${abbrev}/g" -e "s/%lang%/${lang}/g" sparql/templates/pdgm-nfv-props.template > $localqry
@@ -83,3 +83,4 @@ else
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-test.sh $1
 fi
+

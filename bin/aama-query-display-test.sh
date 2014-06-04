@@ -13,6 +13,7 @@
 # Cf. bin/README.md
 
 ldomain=$1
+lang="test"
 
 echo
 echo "========================================================================"
@@ -265,7 +266,7 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		ftag=beja-arteiga
+		ftag=$lang
 		echo "Provide File Tag"
 		read -e -p "File Tag (default $ftag) : " input
 		filetag=${input:-$ftag}

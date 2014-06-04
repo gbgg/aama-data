@@ -32,26 +32,31 @@ while (<IN>)
 	}
 }
 
-my $index = 1;
-foreach my $morphClass (sort keys %nfvpdgmprops)
+#print "listdata = $listdata\n";
+my $lengthdata = length($listdata);
+#print "lengthdata = $lengthdata\n";
+if ($lengthdata > 0)
 {
+    my $index = 1;
+    foreach my $morphClass (sort keys %nfvpdgmprops)
+    {
 	my $proplist = $nfvpdgmprops{$morphClass};
 	$proplist =~ s/,$//;
 	print $index.". ".$morphClass.":".$proplist."\n";
 	$index++;
-}
-# print pdgm tsv data and header to tab-delimited tsv file
-#unlink $tsvfile;
-my $index = 1;
-open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
-select(OUT);
-foreach my $morphClass (sort keys %nfvpdgmprops)
-{
+    }
+    # print pdgm tsv data and header to tab-delimited tsv file
+    #unlink $tsvfile;
+    my $index = 1;
+    open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
+    select(OUT);
+    foreach my $morphClass (sort keys %nfvpdgmprops)
+    {
 	my $proplist = $nfvpdgmprops{$morphClass};
 	$proplist =~ s/,$//;
 	print $index.". ".$morphClass.":".$proplist."\n";
 	$index++;
+    }
+    print "\n";
+    close(OUT);
 }
-print "\n";
-close(OUT);
-

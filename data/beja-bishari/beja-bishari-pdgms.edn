@@ -12,7 +12,7 @@
 	  :genderP1 [:Common, :Fem, :Masc]
 	  :genderPoss [:Common, :Fem, :Masc]
 	  :langVAR [:Bishari]
-	  :multiLex [:PrefixIrregular]
+	  :morphClass [:PrefixIrregular, :PREFSUBJMARK, :PRO, :SUBJSUFFIX]
 	  :nonFiniteForm [:Participle]
 	  :numCop [:Plural, :Singular]
 	  :numHead [:Plural, :Singular]
@@ -28,7 +28,7 @@
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Adjective, :Pronoun, :Verb]
 	  :proClass [:DatInd, :IndObl, :Independent, :ObjSuff, :ObjSuffWithV, :PossInd, :PossSuffAbl, :PossSuffCop, :PossSuffCopExx, :PossSuffDat, :PossSuffExx, :PossSuffGen, :PossSuffGenExx, :PossSuffNom, :PossSuffPlusGen, :Reflexive, :SubjMarker, :SuffComp]
-	  :rootClass [:C, :CC, :CCC, :CCC-a, :CCC-i, :CCC-u, :CCY, :V, :V2, :Vdpth]
+	  :rootClass [:C, :CC, :CCC, :CCCa, :CCCi, :CCCu, :CCY, :V, :V2, :Vdpth]
 	  :tam [:Aorist, :Conditional, :Future1, :Future2, :Imperative, :Infinitive, :Optative, :Perfect, :Pluperfect, :Present, :StemQ, :_NULL]
 	  :verbMorphClass [:SubjMarker]
 	  }
@@ -39,7 +39,7 @@
 }
 :lexemes {
   :lex1 {:conjClass :Prefix, :gloss "knead (kneifen)", :lemma "_NULL", :pos :Verb}
-  :lex2 {:gloss "ride", :lemma "_NULL", :pos :Verb, :rootClass :CCC-i}
+  :lex2 {:gloss "ride", :lemma "_NULL", :pos :Verb, :rootClass :CCCi}
   :lex3 {:gloss "sit", :lemma "_NULL", :pos :Verb, :rootClass :CC}
   :lex4 {:conjClass :Prefix, :gloss "advance (treten)", :lemma "_NULL", :pos :Verb}
   :lex5 {:gloss "bring", :lemma "_NULL", :pos :Verb, :rootClass :CCC}
@@ -69,7 +69,7 @@
   :fai {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :fedig {:gloss "[x]", :lemma "[y]", }
   :for {:gloss "flee", :lemma "for", :pos :Verb, :rootClass :CCY}
-  :fédig {:gloss "leave", :lemma "fédig", :pos :Verb, :rootClass :CCC-i}
+  :fédig {:gloss "leave", :lemma "fédig", :pos :Verb, :rootClass :CCCi}
   :genaf {:gloss "[x]", :lemma "[y]", }
   :gwa {:conjClass :Suffix, :gloss "sleep", :lemma "gwa", :pos :Verb}
   :génaf {:gloss "kneel", :lemma "génaf", :pos :Verb, :rootClass :CCC}
@@ -80,17 +80,17 @@
   :hamai {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :heru {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :hi {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
-  :hájid {:gloss "choose", :lemma "hájid", :pos :Verb, :rootClass :CCC-i}
+  :hájid {:gloss "choose", :lemma "hájid", :pos :Verb, :rootClass :CCCi}
   :ii {:gloss "come", :lemma "ii", :pos :Verb, :rootClass :CCC}
   :jai {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :kai {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :kan {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :ketim {:gloss "[x]", :lemma "[y]", }
   :kwai {:conjClass :Suffix, :gloss "be led", :lemma "kwai", :pos :Verb}
-  :kétim {:gloss "succeed (anlangen)", :lemma "kétim", :pos :Verb, :rootClass :CCC-i}
+  :kétim {:gloss "succeed (anlangen)", :lemma "kétim", :pos :Verb, :rootClass :CCCi}
   :masu {:gloss "[x]", :lemma "[y]", }
   :mehag {:gloss "[x]", :lemma "[y]", }
-  :mehág {:gloss "turn out (auskehren)", :lemma "mehág", :pos :Verb, :rootClass :CCC-a}
+  :mehág {:gloss "turn out (auskehren)", :lemma "mehág", :pos :Verb, :rootClass :CCCa}
   :meri {:gloss "[x]", :langVAR :Bishari, :lemma "[y]", }
   :mitya {:conjClass :Suffix, :gloss "order", :lemma "mitya", :pos :Verb}
   :mwas {:gloss "[x]", :lemma "[y]", }
@@ -122,7 +122,7 @@
   :win-ka {:gloss "big", :lemma "win-ka", :pos :Adjective}
   :úli {:gloss "strike", :lemma "úli", :pos :Verb, :rootClass :CCY}
   :šebob {:gloss "be good", :lemma "šebob", :pos :Verb, :rootClass :CCC}
-  :šúgud {:gloss "wash", :lemma "šúgud", :pos :Verb, :rootClass :CCC-u}
+  :šúgud {:gloss "wash", :lemma "šúgud", :pos :Verb, :rootClass :CCCu}
 }
 :lxterms #{
     {:label "beja_A-VSuffV2CausCausAffPres-wa"
@@ -181,10 +181,10 @@
 	    :lexeme :sugud,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u}
+	    :rootClass :CCCu}
     :terms [[:token]  ;; schema
 	    ["éštagwá̄da"]]
     }
@@ -198,7 +198,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["mehágāb[-āt]ká̄ka"]]
@@ -266,7 +266,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Present}
     :terms [[:token]  ;; schema
 	    ["ká̄tmehāg"]]
@@ -296,7 +296,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bāétmehí̄ga"]]
@@ -553,7 +553,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "áshajīd"],
@@ -566,7 +566,7 @@
 	    :lexeme :ketim,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "tektímna"],
@@ -601,7 +601,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["fédgāb ká̄ka"]]
@@ -673,7 +673,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Future1}
     :terms [[:token]  ;; schema
 	    ["étfedīg ándi"]]
@@ -688,7 +688,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Future2}
     :terms [[:token]  ;; schema
 	    ["etfádgoid hérriu"]]
@@ -720,7 +720,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token]  ;; schema
 	    [:Masc, :Singular, "hájida"],
@@ -753,7 +753,7 @@
 	    :gender :Common,
 	    :lexeme :baden,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -900,7 +900,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Future1}
     :terms [[:token]  ;; schema
 	    ["étehīd ándi"]]
@@ -912,7 +912,7 @@
 	    :lexeme :mehag,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Imperative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person2, "bí̄̄mhīgi"],
@@ -1019,7 +1019,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Conditional}
     :terms [[:number, :token]  ;; schema
 	    [:Plural, "nešágudēk"],
@@ -1301,7 +1301,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Aorist}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Masc, :Person2, "šīšáguda"],
@@ -1502,7 +1502,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Future1}
     :terms [[:token]  ;; schema
 	    ["í̄mhag ándi"]]
@@ -1582,7 +1582,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Aorist}
     :terms [[:token]  ;; schema
 	    ["éštaguá̄dat"]]
@@ -1707,7 +1707,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bāéthají̄da"]]
@@ -1751,10 +1751,10 @@
 	    :gender :Common,
 	    :lexeme :ketim,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["ketú̄m"]]
@@ -1786,7 +1786,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:person, :token]  ;; schema
 	    [:Person2, "kitétfadá̄ga"],
@@ -1834,7 +1834,7 @@
 	    :lexeme :ram,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CC}
@@ -1897,7 +1897,7 @@
 	    :lexeme :fedig,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Plural, :Person1, "nétfadīg"],
@@ -1998,7 +1998,7 @@
 	    :lexeme :fedig,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "ká̄fdig"],
@@ -2047,7 +2047,7 @@
 	    :lexeme :fedig,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "fédgat"],
@@ -2100,7 +2100,7 @@
 	    :lexeme :hajid,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "éhajid"],
@@ -2233,10 +2233,10 @@
 	    :gender :Common,
 	    :lexeme :fedig,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["fedú̄g"]]
@@ -2334,7 +2334,7 @@
 	    :gender :Common,
 	    :lexeme :masu,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -2352,7 +2352,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Present}
     :terms [[:token]  ;; schema
 	    ["ká̄semhag"]]
@@ -2364,7 +2364,7 @@
 	    :lexeme :hajid,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person2, "hájjīda"],
@@ -2383,7 +2383,7 @@
 	    :lexeme :ketim,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "kítmadé̄ni"],
@@ -2569,7 +2569,7 @@
 	    :lexeme :mehag,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "bá̄mhīgu"],
@@ -2677,7 +2677,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Future2}
     :terms [[:token]  ;; schema
 	    ["semhágoid ká̄heru"]]
@@ -2760,7 +2760,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["etmehá̄gab ká̄ka"]]
@@ -2794,7 +2794,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bāšagwí̄da"]]
@@ -2841,7 +2841,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Conditional}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "atméhīgēk"],
@@ -2996,7 +2996,7 @@
 	    :gender :Common,
 	    :lexeme :afu,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :V2,
@@ -3011,7 +3011,7 @@
 	    :lexeme :sugud,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "neší̄šagud"],
@@ -3119,10 +3119,10 @@
 	    :gender :Common,
 	    :lexeme :hajid,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["hajú̄d"]]
@@ -3258,7 +3258,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "sehájdat"],
@@ -3293,7 +3293,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["bāsfádīgēk"]]
@@ -3326,7 +3326,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Imperative}
     :terms [[:gender, :token]  ;; schema
 	    [:Masc, "bāší̄šagwí̄da"],
@@ -3437,7 +3437,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["etfádgāb ká̄ka"]]
@@ -3763,7 +3763,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["askátīmēk"]]
@@ -3841,7 +3841,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["sekátima"]]
@@ -3918,7 +3918,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Aorist}
     :terms [[:token]  ;; schema
 	    ["sémhagat"]]
@@ -3946,7 +3946,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Optative}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "bāší̄šagwí̄du"],
@@ -4211,7 +4211,7 @@
 	    :gender :Common,
 	    :lexeme :masu,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -4290,7 +4290,7 @@
 	    :gender :Common,
 	    :lexeme :tiffo,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :V2,
@@ -4343,7 +4343,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Optative}
     :terms [[:token]  ;; schema
 	    ["bāétfadí̄gu"]]
@@ -4464,7 +4464,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["hájdāb ká̄ka"]]
@@ -4556,7 +4556,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Optative}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Fem, :Person2, "bá̄fadí̄gtwi"],
@@ -4657,7 +4657,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Optative}
     :terms [[:token]  ;; schema
 	    ["bāéthají̄du"]]
@@ -4688,7 +4688,7 @@
 	    :lexeme :hajid,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "éthajād"],
@@ -4703,10 +4703,10 @@
 	    :lexeme :sugud,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u}
+	    :rootClass :CCCu}
     :terms [[:token]  ;; schema
 	    ["šīšáguda"]]
     }
@@ -4802,7 +4802,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bāsfadí̄ga"]]
@@ -4817,7 +4817,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bá̄semhí̄ga"]]
@@ -4898,7 +4898,7 @@
 	    :lexeme :mehag,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person2, "mánhīgi"],
@@ -4934,7 +4934,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["áštagwād"]]
@@ -4987,7 +4987,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Optative}
     :terms [[:token]  ;; schema
 	    ["bāsfadí̄gu"]]
@@ -5227,7 +5227,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["asfádīgēk"]]
@@ -5240,7 +5240,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token]  ;; schema
 	    [:Fem, :Singular, "kétimi"],
@@ -5303,7 +5303,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Future2}
     :terms [[:token]  ;; schema
 	    ["mehú̄̄g ká̄heru"]]
@@ -5550,7 +5550,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Future2}
     :terms [[:token]  ;; schema
 	    ["ethájdoid hérriu"]]
@@ -5613,7 +5613,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:person, :token]  ;; schema
 	    [:Person2, "kitéthajá̄da"],
@@ -5810,7 +5810,7 @@
 	    :lexeme :hajid,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "áthajīd"],
@@ -5955,7 +5955,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Present}
     :terms [[:token]  ;; schema
 	    ["áštagwīd"]]
@@ -6000,7 +6000,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Future1}
     :terms [[:token]  ;; schema
 	    ["ésemhig ándi"]]
@@ -6092,7 +6092,7 @@
 	    :lexeme :sugud,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "ášangwīd"],
@@ -6180,7 +6180,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ásfadīg"],
@@ -6244,7 +6244,7 @@
 	    :lexeme :mehag,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "bitméhīgēk"],
@@ -6349,7 +6349,7 @@
 	    :lexeme :ketim,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "kítketim"],
@@ -6369,7 +6369,7 @@
 	    :lexeme :ketim,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Plural, :Person3, "bīkátīmnēk"],
@@ -6457,7 +6457,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ásfadig"],
@@ -6574,7 +6574,7 @@
 	    :lexeme :genaf,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC}
@@ -6607,7 +6607,7 @@
 	    :lexeme :fedig,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "áfandīg"],
@@ -6672,7 +6672,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Optative}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "bá̄hají̄du"],
@@ -6686,7 +6686,7 @@
             do,hi give,ah take,bari have,meri find,heru go,seek,wish,kan know,awai help,hamai be
             big,jai die,nani milk,bai go,fai sit,be,hai sit,be,kai become,be"
     :common {:conjClass :PrefixIrregular,
-	    :multiLex :PrefixIrregular,
+	    :morphClass :PrefixIrregular,
 	    :pos :Verb,
 	    :rootClass :CC}
     :terms [[:lexeme, :token-gloss]  ;; schema
@@ -6767,7 +6767,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Optative}
     :terms [[:token]  ;; schema
 	    ["bāšagwí̄du"]]
@@ -6888,7 +6888,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Optative}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Fem, :Person2, "bá̄katí̄mwi"],
@@ -6938,7 +6938,7 @@
 	    :lexeme :hajid,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "bīhájīdēk"],
@@ -7135,7 +7135,7 @@
 	    :lexeme :hajid,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person2, "kithájida"],
@@ -7254,7 +7254,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Future1}
     :terms [[:token]  ;; schema
 	    ["í̄šgud ándi"]]
@@ -7266,7 +7266,7 @@
 	    :lexeme :mehag,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "amánhīgēk"],
@@ -7583,10 +7583,10 @@
 	    :lexeme :mehag,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a}
+	    :rootClass :CCCa}
     :terms [[:token]  ;; schema
 	    ["mehága"]]
     }
@@ -7612,10 +7612,10 @@
 	    :gender :Common,
 	    :lexeme :fedig,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["afándīgēk"]]
@@ -7644,7 +7644,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:person, :token]  ;; schema
 	    [:Person3, "bāésketim"],
@@ -7701,7 +7701,7 @@
 	    :lexeme :sugud,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "neší̄šagwīd"],
@@ -7761,7 +7761,7 @@
 	    :lexeme :ketim,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person2, "kántīma"],
@@ -7849,7 +7849,7 @@
 	    :lexeme :sebar,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC}
@@ -7988,7 +7988,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["semhágāb ká̄ka"]]
@@ -8067,7 +8067,7 @@
 	    :lexeme :fedig,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "átfadāg"],
@@ -8120,7 +8120,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Future1}
     :terms [[:token]  ;; schema
 	    ["í̄mhag ká̄di"]]
@@ -8262,7 +8262,7 @@
 	    :lexeme :fedig,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "étfadá̄gat"],
@@ -8449,7 +8449,7 @@
 	    :gender :Common,
 	    :lexeme :sebar,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -8465,7 +8465,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Present}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "átmehīg"],
@@ -8481,7 +8481,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Future2}
     :terms [[:token]  ;; schema
 	    ["mehú̄g hérriu"]]
@@ -8509,7 +8509,7 @@
 	    :lexeme :sa,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CC}
@@ -8524,7 +8524,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token]  ;; schema
 	    [:Common, :Plural, "šugúdna"],
@@ -8587,7 +8587,7 @@
 	    :lexeme :fedig,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person3, "bīfádīgēk"],
@@ -8665,7 +8665,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:gender, :token]  ;; schema
 	    [:Masc, "bí̄fadīg"],
@@ -8746,7 +8746,7 @@
 	    :lexeme :sugud,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "tešgúdna"],
@@ -8787,7 +8787,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["sehájida"]]
@@ -8915,7 +8915,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["bāšágwīdēk"]]
@@ -8979,7 +8979,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["sémhaga"]]
@@ -8991,7 +8991,7 @@
 	    :lexeme :mehag,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "bá̄īmhag"],
@@ -9066,7 +9066,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Present}
     :terms [[:token]  ;; schema
 	    ["ásemhīg"]]
@@ -9308,7 +9308,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["šúgudāb ká̄ka"]]
@@ -9370,7 +9370,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token]  ;; schema
 	    [:Common, :Plural, "fedígna"],
@@ -9599,7 +9599,7 @@
 	    :lexeme :mehag,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person2, "kítmehága"],
@@ -9814,7 +9814,7 @@
 	    :gender :Common,
 	    :lexeme :tiffo,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :V2,
@@ -9829,10 +9829,10 @@
 	    :gender :Common,
 	    :lexeme :hajid,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["sehájdoi"]]
@@ -9847,7 +9847,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["ethájdāb ká̄ka"]]
@@ -9927,10 +9927,10 @@
 	    :gender :Common,
 	    :lexeme :fedig,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["sefádgoi"]]
@@ -9956,7 +9956,7 @@
 	    :gender :Common,
 	    :lexeme :afu,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :V2,
@@ -10027,7 +10027,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Present}
     :terms [[:token]  ;; schema
 	    ["ká̄šgud"]]
@@ -10042,7 +10042,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["akántīmēk"]]
@@ -10168,7 +10168,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token]  ;; schema
 	    [:Fem, :Singular, "mehági"],
@@ -10354,7 +10354,7 @@
 	    :lexeme :am,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CC}
@@ -10371,7 +10371,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bāétfadí̄ga"]]
@@ -10402,7 +10402,7 @@
 	    :lexeme :hajid,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "bá̄tehīd"],
@@ -10423,7 +10423,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "áshajid"],
@@ -10601,7 +10601,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["bāetfádīgēk"]]
@@ -10616,7 +10616,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["bāetméhīgēk"]]
@@ -10729,7 +10729,7 @@
 	    :gender :Common,
 	    :lexeme :genaf,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -10833,7 +10833,7 @@
 	    :gender :Common,
 	    :lexeme :sa,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CC,
@@ -10849,7 +10849,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Conditional}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Masc, :Person2, "biššīšá̄gwīdēk"],
@@ -10898,7 +10898,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Present}
     :terms [[:person, :token]  ;; schema
 	    [:Person2, "kišší̄šagúda"],
@@ -10965,7 +10965,7 @@
 	    :gender :Common,
 	    :lexeme :ram,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CC,
@@ -10983,7 +10983,7 @@
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["sefádiga"]]
@@ -11013,7 +11013,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Optative}
     :terms [[:token]  ;; schema
 	    ["b’̄semhí̄gu"]]
@@ -11039,10 +11039,10 @@
 	    :gender :Common,
 	    :lexeme :sugud,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["šīšágudoi"]]
@@ -11095,7 +11095,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["ásemhag"]]
@@ -11421,7 +11421,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["ahájjīdēk"]]
@@ -11581,7 +11581,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["bāethájīdēk"]]
@@ -11692,7 +11692,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Future2}
     :terms [[:token]  ;; schema
 	    ["šúgud hérriu"]]
@@ -11721,7 +11721,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:gender, :token]  ;; schema
 	    [:Masc, "bá̄hají̄da"],
@@ -11841,10 +11841,10 @@
 	    :gender :Common,
 	    :lexeme :sugud,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["eštagwá̄doi"]]
@@ -11893,7 +11893,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["sefádgāb ká̄ka"]]
@@ -12097,7 +12097,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Aorist}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "etmehá̄gat"],
@@ -12384,7 +12384,7 @@
 	    :lexeme :sugud,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-u,
+	    :rootClass :CCCu,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person2, "šúgudi"],
@@ -12420,7 +12420,7 @@
 	    :number :Singular,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Present}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Masc, :Person2, "kissefádiga"],
@@ -12461,7 +12461,7 @@
 	    :lexeme :mehag,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person2, "témhagi"],
@@ -12641,7 +12641,7 @@
 	    :lexeme :fedig,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person2, "téfdigi"],
@@ -12682,7 +12682,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Optative}
     :terms [[:token]  ;; schema
 	    ["bāétmehí̄gu"]]
@@ -12729,7 +12729,7 @@
 	    :lexeme :masu,
 	    :nonFiniteForm :Participle,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CCC}
@@ -12780,7 +12780,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Masc, :Person3, "bāésfedig"],
@@ -12829,7 +12829,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "áskatim"],
@@ -12844,7 +12844,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:number, :token]  ;; schema
 	    [:Plural, "néskatīm"],
@@ -12927,7 +12927,7 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Imperative}
     :terms [[:gender, :token]  ;; schema
 	    [:Fem, "bí̄katí̄mi"],
@@ -13009,7 +13009,7 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Conditional}
     :terms [[:token]  ;; schema
 	    ["ashájīdēk"]]
@@ -13081,10 +13081,10 @@
 	    :gender :Common,
 	    :lexeme :ketim,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["sekátmoi"]]
@@ -13377,10 +13377,10 @@
 	    :gender :Common,
 	    :lexeme :mehag,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
 	    ["etmehá̄goi"]]
@@ -13392,7 +13392,7 @@
 	    :lexeme :hajid,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "áthajá̄dat"],
@@ -13407,7 +13407,7 @@
 	    :number :Singular,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :rootClass :CCC-a,
+	    :rootClass :CCCa,
 	    :tam :Perfect}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "átmehāg"],
@@ -13423,7 +13423,7 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :rootClass :CCC-i,
+	    :rootClass :CCCi,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["kétmāb ká̄ka"]]
@@ -13450,7 +13450,7 @@
 	    :gender :Common,
 	    :lexeme :am,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :rootClass :CC,
@@ -13753,7 +13753,7 @@
     :common {:conjClass :Suffix,
 	    :morpheme :SUBJSUFFIX,
 	    :pos :Verb,
-	    :verbMorphClass :SubjMarker}
+	    :morphClass :SubjMarker}
     :terms [[:gender, :number, :person, :polarity, :tam, :token]  ;; schema
 	    [:Common, :Plural, :Person2, :Affirmative, :Present, "-tān(a)"],
 	    [:Common, :Plural, :Person3, :Negative, :Future1, "-I kīdīn(a)"],
@@ -14189,7 +14189,7 @@
     {:label "beja_A-VPrefSubjMarker"
     :note "Almkvist1881 #245"
     :common {:conjClass :Prefix,
-	    :morpheme :PREFSUBJMARK,
+	    :morphClass :PREFSUBJMARK,
 	    :nonFiniteForm :Participle,
 	    :pos :Verb,
 	    :proClass :SubjMarker}

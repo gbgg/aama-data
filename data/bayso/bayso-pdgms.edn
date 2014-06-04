@@ -8,19 +8,17 @@
 	  :formType [:Stem]
 	  :gender [:Common, :Fem, :Masc]
 	  :genderObj [:Common, :Fem, :Masc]
-	  :multiLex [:NUMBER, :PARTICLEPREVERB, :STEMDERV]
-	  :nounMorphClass [:Number]
+	  :morphClass [:Copula, :PersSuff, :TnsAspModStem]
 	  :numObj [:Plural, :Singular]
 	  :numRef [:Multi, :Paucal, :Singulative, :Unit]
 	  :number [:Common, :Plural, :Singular]
 	  :numberGender [:Fem, :Masc, :Plural]
 	  :person [:Common, :Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
-	  :pos [:Noun, :Pronoun, :Verb]
+	  :pos [:Pronoun, :Verb]
 	  :proClass [:Independent, :Possessive]
 	  :tam [:Common, :DubitativePast, :Future, :Future1, :Future2, :Future3, :FutureProximate1, :FutureProximate2, :Imperative, :ImperativeJussive, :ImperfectComp, :ImperfectGeneral, :ImperfectPast, :ImperfectPresent, :ImperfectSimple, :Jussive, :Non-past, :Past, :PerfectComp1, :PerfectComp2, :PerfectSimple, :PrefectPast, :Present]
 	  :tamStemForm [:Dubitative, :Imperfect, :Proximal]
-	  :verbMorphClass [:Copula, :DervStem, :PersSuff, :PreVerbParticles, :TnsAspModStem]
 	  }
 :morphemes {
   :COPULA {:gloss "[x]", :lemma "[y]", }
@@ -28,10 +26,6 @@
   :PRO {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :NUMBER {:gloss "[x]", :lemma "[y]", }
-  :PARTICLEPREVERB {:gloss "[x]", :lemma "[y]", }
-  :PRO {:gloss "[x]", :lemma "[y]", }
-  :STEMDERV {:gloss "[x]", :lemma "[y]", }
   :dee {:conjClass :Conjugation3, :gloss "_NULL", :lemma "dee", :pos :Verb}
   :dub {:conjClass :Conjugation1, :gloss "_NULL", :lemma "dub", :pos :Verb}
   :kor {:conjClass :Conjugation4, :gloss "_NULL", :lemma "kor", :pos :Verb}
@@ -132,7 +126,7 @@
     :common {:conjClass :Conjugation4,
 	    :gender :Common,
 	    :lexeme :kor,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -441,7 +435,7 @@
     :common {:conjClass :Conjugation3,
 	    :gender :Common,
 	    :lexeme :dee,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -468,7 +462,7 @@
     :common {:conjClass :Conjugation1,
 	    :gender :Common,
 	    :lexeme :dub,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -537,7 +531,7 @@
     :common {:conjClass :Conjugation2,
 	    :gender :Common,
 	    :lexeme :seg,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -624,7 +618,7 @@
     :common {:conjClass :Conjugation1,
 	    :gender :Common,
 	    :lexeme :dub,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -708,7 +702,7 @@
     :common {:conjClass :Conjugation2,
 	    :gender :Common,
 	    :lexeme :seg,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -762,7 +756,7 @@
     :common {:conjClass :Conjugation4,
 	    :gender :Common,
 	    :lexeme :kor,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -879,7 +873,7 @@
     :common {:lexeme :dub,
 	    :pos :Verb,
 	    :formType :Stem,
-	    :verbMorphClass :TnsAspModStem}
+	    :morphClass :TnsAspModStem}
     :terms [[:tam, :tamStemForm, :token]  ;; schema
 	    [:Present, :Imperfect, "dubaa-"],
 	    [:Past, :Dubitative, "dubi-"],
@@ -1526,7 +1520,7 @@
     :common {:conjClass :Conjugation3,
 	    :gender :Common,
 	    :lexeme :dee,
-	    :person :Common,
+	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1692,7 +1686,7 @@
     {:label "aama:pdgmlabel bayso-VPersAspSuff"
     :common {:morpheme :PERSSUFF,
 	    :pos :Verb,
-	    :verbMorphClass :PersSuff}
+	    :morphClass :PersSuff}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "-tV"],
 	    [:Common, :Plural, :Person3, "-Vn"],
@@ -1707,7 +1701,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "-ta"],
 	    [:Common, :Plural, :Person3, "-yan"],
@@ -1722,7 +1716,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "-ne"],
 	    [:Common, :Singular, :Person2, "-te"],
@@ -1737,7 +1731,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "-yo"],
 	    [:Common, :Plural, :Person2, "-tan"],

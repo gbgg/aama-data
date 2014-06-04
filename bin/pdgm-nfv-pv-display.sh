@@ -35,8 +35,8 @@ response=tmp/pdgm/$qlabel-response.tsv
 # for output title
 
 #echo "Query String = $qstring"
-#echo "Localqry = $localqry"
-#echo "Response = $response"
+echo "Localqry = $localqry"
+echo "Response = $response"
 #echo " "
 #echo "QLabel = $qlabel"
 
@@ -49,7 +49,6 @@ ${FUSEKIDIR}/s-query \
 	--service http://localhost:3030/aama/query  \
 	--query=$localqry  \
 	> $response
-
 
 perl pl/pdgmtsv2table.pl	$response $qstring
 

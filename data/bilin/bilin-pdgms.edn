@@ -8,9 +8,9 @@
 	  :conjClass [:Conjugation1, :Conjugation2, :Conjugation3]
 	  :copType [:CopLoc, :CopMain]
 	  :derivedStem [:Frequentative, :M, :M-Freq, :Reciprocal, :S, :S-Recip, :S2]
-	  :finiteForm [:Agent, :Infinitive]
+	  :nonFiniteForm [:Agent, :Infinitive]
 	  :gender [:Common, :Fem, :Masc]
-	  :multiLex [:ASPECT, :COMPOUNDVERB, :VREL]
+	  :morphClass [:VREL, :Agent, :Infinitive]
 	  :number [:Common, :Plural, :Singular]
 	  :numberGenderHead [:HeadPlural, :HeadSingularFem, :HeadSingularMasc, :U, :_NULL]
 	  :pdgmType [:Comparative]
@@ -32,8 +32,6 @@
   :SUBJMARKC {:gloss "Subject Marker Class C", }
 }
 :lexemes {
-  :ASPECT {:gloss "[x]", :lemma "[y]", }
-  :COMPOUNDVERB {:gloss "[x]", :lemma "[y]", }
   :VREL {:gloss "[x]", :lemma "[y]", }
   :gab {:conjClass :Conjugation1, :gloss "refuse", :lemma "gäb-", :pos :Verb}
   :kab {:conjClass :Conjugation2, :gloss "help", :lemma "kab-", :pos :Verb}
@@ -61,7 +59,7 @@
     {:label "kemant-VBilin-KemantRel"
     :note "Appleyard1975 pp. 338-339"
     :common {:pdgmType :Comparative,
-	    :multiLex :VREL,
+	    :morphClass :VREL,
 	    :pos :Verb}
     :terms [[:aspect, :gender, :lang, :lexeme, :number, :person, :tam, :token]  ;; schema
 	    [:Perfective, :Common, :Kemant, :gab, :Plural, :Person1, :RelativeSubject, "gäbnäxər"],
@@ -193,18 +191,11 @@
     }
     {:label "bilin-VConj1Infinitive-gab"
     :note "Appleyard2007b pp. 497-501"
-    :common {:clauseType :_NULL,
-	    :conjClass :Conjugation1,
-	    :finiteForm :Infinitive,
-	    :gender :Common,
+    :common {:conjClass :Conjugation1,
+	    :nonFiniteForm :Infinitive,
 	    :lexeme :gab,
-	    :number :Common,
-	    :numberGenderHead :U,
-	    :person :Common,
-	    :pngSet :_NULL,
-	    :polarity :U,
-	    :pos :Verb,
-	    :tam :U}
+             :morphClass :Infinitive
+	    :pos :Verb}
     :terms [[:token]  ;; schema
 	    ["gäbna"]]
     }
@@ -392,20 +383,15 @@
     }
     {:label "bilin-VConj1Agent-gab"
     :note "Appleyard2007b pp. 497-501"
-    :common {:clauseType :_NULL,
-	    :conjClass :Conjugation1,
-	    :finiteForm :Agent,
+    :common {:conjClass :Conjugation1,
+	    :nonFiniteForm :Agent,
 	    :gender :Common,
 	    :lexeme :gab,
+             :morphClass :Agent,
 	    :number :Common,
-	    :numberGenderHead :U,
-	    :person :Common,
-	    :pngSet :_NULL,
-	    :polarity :U,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:token]  ;; schema
-	    ["gäbänta {pl. gäbänti)"]]
+	    ["gäbänta (pl. gäbänti)"]]
     }
     {:label "bilin-VConj2MainAffPerfPastPngB-kab"
     :note "Appleyard2007b pp. 497-499"
@@ -927,7 +913,7 @@
     :note "Appleyard2007b pp. 502f. “A peculiar feature of the verb ‘to be’ in Bilin,shared with the other Agaw languages,is the reversal of aspect,whereby a perfective aspect (past tense) form is used in imprefective (present time) function,and vice versa,as for instance:ni gərwa kəxin sänäkw ‘he was a clever man’. “(p. 501) See LEXEMES section."
     :common {:morpheme :COPULA,
 	    :pos :Verb,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:copType, :polarity, :tam, :token, :token-note]  ;; schema
 	    [:CopMain, :Negative, :Perfect, "ʔäx- (~ ʔak-)", "_NULL"],
 	    [:CopLoc, :Affirmative, :Present, "wan-", "_NULL"],
@@ -940,7 +926,7 @@
     :note "Appleyard2007b pp. 493-495"
     :common {:morpheme :DERVSTEMSUFF,
 	    :pos :Verb,
-	    :verbMorphClass :DervSuff}
+	    :morphClass :DervSuff}
     :terms [[:derivedStem, :token]  ;; schema
 	    [:S2, "-sis-"],
 	    [:Reciprocal, "Common"],

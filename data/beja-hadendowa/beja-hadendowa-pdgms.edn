@@ -14,7 +14,7 @@
 	  :genderN2 [:Fem, :Masc]
 	  :genderPoss [:Fem, :Masc]
 	  :mood [:Common, :Imperative]
-	  :multiLex [:DervStemForm]
+	  :morphClass [:DervStemForm, :CONDPERF, :DEFART, :GENADJPART, :GENBEFOREPOSSSUFF, :GENPOSSPRED, :NUMERAL, :ORDNUM, :POSSSUFF, :PREFSUBJMARK, :PROIND, :PROINTERROG, :PROPOSSIND, :PROSUFF, :SUBJMARK, :SUFFCOND, :SUFFIMPR, :VBNOMFORM, :VBSUFFNOM]
 	  :nomForm [:Gerund, :NomAgent, :NominalAction, :NominalAgent, :Participle, :PerfectParticiple, :PresentParticitpl]
 	  :nonFiniteForm [:Gerund, :NomAgent, :NominalAction, :NominalAgent, :Participle, :PerfectParticiple, :PresentParticiple, :_NULL]
 	  :nounMorphClass [:GenAdjPart, :GenBeforePossSuff, :NumOrd, :Numeral]
@@ -378,7 +378,7 @@
     {:label "beja_Ro-VPrefDervStemForm"
     :note "Roper1928 #211-226"
     :common {:conjClass :Prefix,
-	    :multiLex :DervStemForm,
+	    :morphClass :DervStemForm,
 	    :pos :Verb,
 	    :verbMorphClass :DervStemForm}
     :terms [[:derivedStem, :lexeme, :nonFiniteForm, :polarity, :tam, :token]  ;; schema
@@ -1806,7 +1806,7 @@
     :note "Roper1928 #213"
     :common {:conjClass :Prefix,
 	    :derivedStem :Intensive,
-	    :morpheme :SUBJMARK,
+	    :morphClass :SUBJMARK,
 	    :pos :Verb,
 	    :verbMorphClass :SubjMarker}
     :terms [[:gender, :number, :person, :token]  ;; schema
@@ -1823,7 +1823,7 @@
     :note "Roper1928 #127-158"
     :common {:clauseType :_NULL,
 	    :conjClass :Suffix,
-	    :morpheme :CONDPERF,
+	    :morphClass :CONDPERF,
 	    :polarity :U,
 	    :pos :Verb,
 	    :tam :ConditionalPerfect}
@@ -1841,7 +1841,7 @@
     :note "Roper1928 #127-158"
     :common {:clause :_NULL,
 	    :conjClass :Suffix,
-	    :morpheme :SUFFCONDPERF,
+	    :morphClass :SUFFCONDPERF,
 	    :polarity :U,
 	    :pos :Verb,
 	    :tam :ConditionalPerfect}
@@ -1858,7 +1858,7 @@
     {:label "beja_Ro-VPrefNomForm"
     :note "Roper1928 #170-175"
     :common {:conjClass :Prefix,
-	    :morpheme :VBNOMFORM,
+	    :morphClass :VBNOMFORM,
 	    :pos :Verb,
 	    :verbMorphClass :NomForm}
     :terms [[:nomForm, :nonFiniteForm, :polarity, :token]  ;; schema
@@ -1872,28 +1872,29 @@
     {:label "beja_Ro-PInd"
     :note "Roper1928 #80"
     :common {:morpheme :PROIND,
+             :pos :Pronoun,
 	    :proClass :Independent}
-    :terms [[:case, :gender, :number, :person, :pos, :token]  ;; schema
-	    [:Nominative, :Fem, :Plural, :Person2, :Pronoun, "baták"],
-	    [:Accusative, :Masc, :Plural, :Person2, :Pronoun, "barék(na)"],
-	    [:Nominative, :Fem, :Singular, :Person3, :Pronoun, "batu"],
-	    [:Nominative, :Masc, :Singular, :Person2, :Pronoun, "baruk"],
-	    [:Accusative, :Fem, :Singular, :Person3, :Pronoun, "bató"],
-	    [:Accusative, :Masc, :Plural, :Person3, :Pronoun, "bare"],
-	    [:Accusative, :Common, :Plural, :Person1, :Pronoun, "henén"],
-	    [:Nominative, :Fem, :Singular, :Person2, :Pronoun, "batuk"],
-	    [:Accusative, :Masc, :Singular, :Person2, :Pronoun, "barók"],
-	    [:Nominative, :Masc, :Plural, :Person3, :Pronoun, "bará"],
-	    [:Nominative, :Fem, :Plural, :Person3, :Pronoun, "batá"],
-	    [:Nominative, :Masc, :Plural, :Person2, :Pronoun, "barák"],
-	    [:Accusative, :Fem, :Plural, :Person2, :Pronoun, "baték(na)"],
-	    [:Accusative, :Fem, :Singular, :Person2, :Pronoun, "batók"],
-	    [:Nominative, :Common, :Plural, :Person1, :Pronoun, "henén"],
-	    [:Accusative, :Common, :Singular, :Person1, :Pronoun, "áneb"],
-	    [:Accusative, :Masc, :Singular, :Person3, :Pronoun, "baró"],
-	    [:Nominative, :Masc, :Singular, :Person3, :Pronoun, "baru"],
-	    [:Accusative, :Fem, :Plural, :Person3, :Pronoun, "baté"],
-	    [:Nominative, :Common, :Singular, :Person1, :Pronoun, "áne"]]
+    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    [:Nominative, :Fem, :Plural, :Person2,  "baták"],
+	    [:Accusative, :Masc, :Plural, :Person2,  "barék(na)"],
+	    [:Nominative, :Fem, :Singular, :Person3,  "batu"],
+	    [:Nominative, :Masc, :Singular, :Person2,  "baruk"],
+	    [:Accusative, :Fem, :Singular, :Person3,  "bató"],
+	    [:Accusative, :Masc, :Plural, :Person3,  "bare"],
+	    [:Accusative, :Common, :Plural, :Person1,  "henén"],
+	    [:Nominative, :Fem, :Singular, :Person2,  "batuk"],
+	    [:Accusative, :Masc, :Singular, :Person2,  "barók"],
+	    [:Nominative, :Masc, :Plural, :Person3,  "bará"],
+	    [:Nominative, :Fem, :Plural, :Person3,  "batá"],
+	    [:Nominative, :Masc, :Plural, :Person2,  "barák"],
+	    [:Accusative, :Fem, :Plural, :Person2,  "baték(na)"],
+	    [:Accusative, :Fem, :Singular, :Person2,  "batók"],
+	    [:Nominative, :Common, :Plural, :Person1,  "henén"],
+	    [:Accusative, :Common, :Singular, :Person1,  "áneb"],
+	    [:Accusative, :Masc, :Singular, :Person3,  "baró"],
+	    [:Nominative, :Masc, :Singular, :Person3,  "baru"],
+	    [:Accusative, :Fem, :Plural, :Person3,  "baté"],
+	    [:Nominative, :Common, :Singular, :Person1,  "áne"]]
     }
     {:label "beja_H-P3sgProDialectDist"
     :common {:morpheme :PROSUFF,
@@ -1924,36 +1925,37 @@
     {:label "beja_Ro-PPossSuff"
     :note "Roper1928 #102"
     :common {:morpheme :POSSSUFF,
+             :pos :Pronoun,
 	    :proClass :PossSuff}
-    :terms [[:genderHead, :numHead, :number, :person, :pos, :token]  ;; schema
-	    [:Fem, :Singular, :Plural, :Person3, :Pronoun, "-tu"],
-	    [:Masc, :Singular, :Singular, :Person2, :Pronoun, "-uk"],
-	    [:Fem, :Singular, :Singular, :Person3, :Pronoun, "-tu"],
-	    [:Fem, :Plural, :Plural, :Person1, :Pronoun, "-tan"],
-	    [:Masc, :Plural, :Singular, :Person2, :Pronoun, "-ak"],
-	    [:Fem, :Singular, :Singular, :Person2, :Pronoun, "-tuk"],
-	    [:Masc, :Plural, :Singular, :Person1, :Pronoun, "-a"],
-	    [:Masc, :Plural, :Plural, :Person2, :Pronoun, "-akna"],
-	    [:Masc, :Singular, :Plural, :Person2, :Pronoun, "-ukna"],
-	    [:Fem, :Plural, :Singular, :Person2, :Pronoun, "-tak"],
-	    [:Fem, :Singular, :Plural, :Person1, :Pronoun, "-tun "],
-	    [:Fem, :Singular, :Singular, :Person1, :Pronoun, "-ti"],
-	    [:Fem, :Plural, :Plural, :Person3, :Pronoun, "-ta"],
-	    [:Masc, :Singular, :Singular, :Person3, :Pronoun, "-u"],
-	    [:Masc, :Singular, :Plural, :Person3, :Pronoun, "-u"],
-	    [:Masc, :Plural, :Singular, :Person3, :Pronoun, "-a"],
-	    [:Masc, :Plural, :Plural, :Person1, :Pronoun, "-an"],
-	    [:Masc, :Singular, :Singular, :Person1, :Pronoun, "-i"],
-	    [:Masc, :Singular, :Plural, :Person1, :Pronoun, "-un"],
-	    [:Fem, :Plural, :Singular, :Person3, :Pronoun, "-ta"],
-	    [:Masc, :Plural, :Plural, :Person3, :Pronoun, "-a"],
-	    [:Fem, :Plural, :Singular, :Person1, :Pronoun, "-ta"],
-	    [:Fem, :Plural, :Plural, :Person2, :Pronoun, "-takna"],
-	    [:Fem, :Singular, :Plural, :Person2, :Pronoun, "-tukna"]]
+    :terms [[:genderHead, :numHead, :number, :person,  :token]  ;; schema
+	    [:Fem, :Singular, :Plural, :Person3,  "-tu"],
+	    [:Masc, :Singular, :Singular, :Person2,  "-uk"],
+	    [:Fem, :Singular, :Singular, :Person3,  "-tu"],
+	    [:Fem, :Plural, :Plural, :Person1,  "-tan"],
+	    [:Masc, :Plural, :Singular, :Person2,  "-ak"],
+	    [:Fem, :Singular, :Singular, :Person2,  "-tuk"],
+	    [:Masc, :Plural, :Singular, :Person1,  "-a"],
+	    [:Masc, :Plural, :Plural, :Person2,  "-akna"],
+	    [:Masc, :Singular, :Plural, :Person2,  "-ukna"],
+	    [:Fem, :Plural, :Singular, :Person2,  "-tak"],
+	    [:Fem, :Singular, :Plural, :Person1,  "-tun "],
+	    [:Fem, :Singular, :Singular, :Person1,  "-ti"],
+	    [:Fem, :Plural, :Plural, :Person3,  "-ta"],
+	    [:Masc, :Singular, :Singular, :Person3,  "-u"],
+	    [:Masc, :Singular, :Plural, :Person3,  "-u"],
+	    [:Masc, :Plural, :Singular, :Person3,  "-a"],
+	    [:Masc, :Plural, :Plural, :Person1,  "-an"],
+	    [:Masc, :Singular, :Singular, :Person1,  "-i"],
+	    [:Masc, :Singular, :Plural, :Person1,  "-un"],
+	    [:Fem, :Plural, :Singular, :Person3,  "-ta"],
+	    [:Masc, :Plural, :Plural, :Person3,  "-a"],
+	    [:Fem, :Plural, :Singular, :Person1,  "-ta"],
+	    [:Fem, :Plural, :Plural, :Person2,  "-takna"],
+	    [:Fem, :Singular, :Plural, :Person2,  "-tukna"]]
     }
     {:label "beja_Ro-NNumerals"
     :note "Roper1928 #69"
-    :common {:morpheme :NUMERAL,
+    :common {:morphClass :NUMERAL,
 	    :nounMorphClass :Numeral,
 	    :pos :Noun}
     :terms [[:gender, :token-numGloss, :token]  ;; schema
@@ -2012,7 +2014,7 @@
     {:label "beja_Ro-VSuffImprtvFormation"
     :note "Roper1928 #127"
     :common {:conjClass :Suffix,
-	    :morpheme :SUFFIMPRTV,
+	    :morphClass :SUFFIMPRTV,
 	    :mood :Imperative,
 	    :pos :Verb,
 	    :tam :Imperative,
@@ -2028,7 +2030,7 @@
     {:label "beja_Ro-VSuffNomForm"
     :note "Roper1928 #121-126"
     :common {:conjClass :Suffix,
-	    :morpheme :VBSUFFNOMFORM,
+	    :morphClass :VBSUFFNOMFORM,
 	    :mood :Common,
 	    :pos :Verb,
 	    :verbMorphClass :NomForm}
@@ -2045,62 +2047,63 @@
     {:label "beja_Ro-PGen_PossPred"
     :note "Roper1928 #107. for plural nomen rectum [i.e. numPoss pl]change the genitival –i-
             throughout to –e-"
-    :common {:morpheme :GENPOSSPRED,
+    :common {:morphClass :GENPOSSPRED,
 	    :numPoss :Singular,
+             :pos :Pronoun,
 	    :proClass :Gen_PossPred}
-    :terms [[:genderPoss, :genderHead, :numHead, :number, :person, :pos, :token]  ;; schema
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, :Pronoun, "-ithiti"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person1, :Pronoun, "-tiena"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person3, :Pronoun, "-ihtinata"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person2, :Pronoun, "-tieka"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person2, :Pronoun, "-tioki"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person1, :Pronoun, "-iena"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person1, :Pronoun, "-titenta"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person1, :Pronoun, "-tiea"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person2, :Pronoun, "-ieka"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person1, :Pronoun, "-tioni"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, :Pronoun, "-ihii"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person2, :Pronoun, "-tioknai"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person3, :Pronoun, "-ihea"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person2, :Pronoun, "-tieknaa"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person1, :Pronoun, "-itionti"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person2, :Pronoun, "-titeknata"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person1, :Pronoun, "-iteta"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person3, :Pronoun, "-tihtinata"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person2, :Pronoun, "-titokti"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person3, :Pronoun, "-tihinaa"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person2, :Pronoun, "-ioknai"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person2, :Pronoun, "-ieknaa"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person1, :Pronoun, "-iea"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person1, :Pronoun, "-tioi"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person1, :Pronoun, "-ioni"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person2, :Pronoun, "-iteknata"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person3, :Pronoun, "-tihea"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person3, :Pronoun, "-ihinaa"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person3, :Pronoun, "-ithintai"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person3, :Pronoun, "-tihinai"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person1, :Pronoun, "-titeta"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person3, :Pronoun, "-ihinai"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, :Pronoun, "-tithiti"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person3, :Pronoun, "-ihteta"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, :Pronoun, "-itokti"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person1, :Pronoun, "-itenta"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person1, :Pronoun, "-itoti"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person1, :Pronoun, "-ioi"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person2, :Pronoun, "-itoknati"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person2, :Pronoun, "-itekta"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person1, :Pronoun, "-titonti"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, :Pronoun, "-ioki"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person1, :Pronoun, "-titoti"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person3, :Pronoun, "-tihtinati"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person3, :Pronoun, "-tihteta"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, :Pronoun, "-tihii"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person2, :Pronoun, "-titoknati"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person2, :Pronoun, "-titekta"]]
+    :terms [[:genderPoss, :genderHead, :numHead, :number, :person,  :token]  ;; schema
+	    [:Masc, :Fem, :Singular, :Singular, :Person3,  "-ithiti"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person1,  "-tiena"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person3,  "-ihtinata"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person2,  "-tieka"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person2,  "-tioki"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person1,  "-iena"],
+	    [:Fem, :Fem, :Plural, :Plural, :Person1,  "-titenta"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person1,  "-tiea"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person2,  "-ieka"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person1,  "-tioni"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person3,  "-ihii"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person2,  "-tioknai"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person3,  "-ihea"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person2,  "-tieknaa"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person1,  "-itionti"],
+	    [:Fem, :Fem, :Plural, :Plural, :Person2,  "-titeknata"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person1,  "-iteta"],
+	    [:Fem, :Fem, :Plural, :Plural, :Person3,  "-tihtinata"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person2,  "-titokti"],
+	    [:Fem, :Masc, :Plural, :Plural, :Person3,  "-tihinaa"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person2,  "-ioknai"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person2,  "-ieknaa"],
+	    [:Masc, :Masc, :Plural, :Singular, :Person1,  "-iea"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person1,  "-tioi"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person1,  "-ioni"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person2,  "-iteknata"],
+	    [:Fem, :Masc, :Plural, :Singular, :Person3,  "-tihea"],
+	    [:Masc, :Masc, :Plural, :Plural, :Person3,  "-ihinaa"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person3,  "-ithintai"],
+	    [:Fem, :Masc, :Singular, :Plural, :Person3,  "-tihinai"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person1,  "-titeta"],
+	    [:Masc, :Masc, :Singular, :Plural, :Person3,  "-ihinai"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person3,  "-tithiti"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person3,  "-ihteta"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person2,  "-itokti"],
+	    [:Masc, :Fem, :Plural, :Plural, :Person1,  "-itenta"],
+	    [:Masc, :Fem, :Singular, :Singular, :Person1,  "-itoti"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person1,  "-ioi"],
+	    [:Masc, :Fem, :Singular, :Plural, :Person2,  "-itoknati"],
+	    [:Masc, :Fem, :Plural, :Singular, :Person2,  "-itekta"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person1,  "-titonti"],
+	    [:Masc, :Masc, :Singular, :Singular, :Person2,  "-ioki"],
+	    [:Fem, :Fem, :Singular, :Singular, :Person1,  "-titoti"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person3,  "-tihtinati"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person3,  "-tihteta"],
+	    [:Fem, :Masc, :Singular, :Singular, :Person3,  "-tihii"],
+	    [:Fem, :Fem, :Singular, :Plural, :Person2,  "-titoknati"],
+	    [:Fem, :Fem, :Plural, :Singular, :Person2,  "-titekta"]]
     }
     {:label "beja_Ro-NNumOrd"
     :note "Roper1928 #77"
-    :common {:morpheme :ORDNUM,
+    :common {:morphClass :ORDNUM,
 	    :nounMorphClass :NumOrd,
 	    :pos :Noun}
     :terms [[:token, :token-gloss]  ;; schema
@@ -2117,55 +2120,57 @@
     }
     {:label "beja_Ro-PInterrog"
     :note "Roper1928 #110"
-    :common {:morpheme :PROINTERROG,
+    :common {:morphClass :PROINTERROG,
+             :pos :Pronoun
 	    :proClass :Interrogative}
-    :terms [[:case, :gender, :numHead, :number, :pos, :token]  ;; schema
-	    [:Genitive, :Masc, :Singular, :Plural, :Pronoun, "ai"],
-	    [:Accusative, :Fem, :Common, :Plural, :Pronoun, "abtka"],
-	    [:Genitive, :Masc, :Plural, :Plural, :Pronoun, "aigai"],
-	    [:Nominative, :Masc, :Common, :Plural, :Pronoun, "auka"],
-	    [:Genitive, :Fem, :Singular, :Plural, :Pronoun, "ait"],
-	    [:Genitive, :Masc, :Singular, :Singular, :Pronoun, "ai"],
-	    [:Genitive, :Fem, :Plural, :Singular, :Pronoun, "aigaiet"],
-	    [:Genitive, :Fem, :Singular, :Singular, :Pronoun, "ait"],
-	    [:Nominative, :Fem, :Common, :Singular, :Pronoun, "aut"],
-	    [:Accusative, :Masc, :Common, :Singular, :Pronoun, "ab"],
-	    [:Genitive, :Masc, :Plural, :Singular, :Pronoun, "aigai"],
-	    [:Nominative, :Fem, :Common, :Plural, :Pronoun, "autka"],
-	    [:Accusative, :Fem, :Common, :Singular, :Pronoun, "abt"],
-	    [:Genitive, :Fem, :Plural, :Plural, :Pronoun, "aigaiet"],
-	    [:Nominative, :Masc, :Common, :Singular, :Pronoun, "au"],
-	    [:Accusative, :Masc, :Common, :Plural, :Pronoun, "abka"]]
+    :terms [[:case, :gender, :numHead, :number,  :token]  ;; schema
+	    [:Genitive, :Masc, :Singular, :Plural,  "ai"],
+	    [:Accusative, :Fem, :Common, :Plural,  "abtka"],
+	    [:Genitive, :Masc, :Plural, :Plural,  "aigai"],
+	    [:Nominative, :Masc, :Common, :Plural,  "auka"],
+	    [:Genitive, :Fem, :Singular, :Plural,  "ait"],
+	    [:Genitive, :Masc, :Singular, :Singular,  "ai"],
+	    [:Genitive, :Fem, :Plural, :Singular,  "aigaiet"],
+	    [:Genitive, :Fem, :Singular, :Singular,  "ait"],
+	    [:Nominative, :Fem, :Common, :Singular,  "aut"],
+	    [:Accusative, :Masc, :Common, :Singular,  "ab"],
+	    [:Genitive, :Masc, :Plural, :Singular,  "aigai"],
+	    [:Nominative, :Fem, :Common, :Plural,  "autka"],
+	    [:Accusative, :Fem, :Common, :Singular,  "abt"],
+	    [:Genitive, :Fem, :Plural, :Plural,  "aigaiet"],
+	    [:Nominative, :Masc, :Common, :Singular,  "au"],
+	    [:Accusative, :Masc, :Common, :Plural,  "abka"]]
     }
     {:label "beja_Ro-PPossInd"
     :note "Roper1928 #89"
-    :common {:morpheme :PROPOSSIND,
+    :common {:morphClass :PROPOSSIND,
+             :pos :Pronoun,
 	    :proClass :PossInd}
-    :terms [[:gender, :numHead, :number, :person, :pos, :token]  ;; schema
-	    [:Common, :Singular, :Plural, :Person1, :Pronoun, "híne"],
-	    [:Fem, :Singular, :Plural, :Person2, :Pronoun, "bateúk"],
-	    [:Masc, :Plural, :Plural, :Person2, :Pronoun, "bareál"],
-	    [:Fem, :Plural, :Singular, :Person2, :Pronoun, "batiák"],
-	    [:Masc, :Plural, :Plural, :Person3, :Pronoun, "bareá"],
-	    [:Fem, :Plural, :Singular, :Person3, :Pronoun, "batiá"],
-	    [:Common, :Singular, :Singular, :Person1, :Pronoun, "áni"],
-	    [:Common, :Plural, :Singular, :Person1, :Pronoun, "áni"],
-	    [:Masc, :Singular, :Plural, :Person2, :Pronoun, "baréúk"],
-	    [:Fem, :Singular, :Plural, :Person3, :Pronoun, "bateú"],
-	    [:Masc, :Singular, :Plural, :Person3, :Pronoun, "bareú"],
-	    [:Masc, :Plural, :Singular, :Person2, :Pronoun, "bariák"],
-	    [:Masc, :Plural, :Singular, :Person3, :Pronoun, "bariá"],
-	    [:Fem, :Singular, :Singular, :Person3, :Pronoun, "batiú"],
-	    [:Masc, :Singular, :Singular, :Person3, :Pronoun, "bariú"],
-	    [:Common, :Plural, :Plural, :Person1, :Pronoun, "híne"],
-	    [:Masc, :Singular, :Singular, :Person2, :Pronoun, "bariúk"],
-	    [:Fem, :Plural, :Plural, :Person3, :Pronoun, "bateá"],
-	    [:Fem, :Singular, :Singular, :Person2, :Pronoun, "batiúk"],
-	    [:Fem, :Plural, :Plural, :Person2, :Pronoun, "bateák"]]
+    :terms [[:gender, :numHead, :number, :person,  :token]  ;; schema
+	    [:Common, :Singular, :Plural, :Person1,  "híne"],
+	    [:Fem, :Singular, :Plural, :Person2,  "bateúk"],
+	    [:Masc, :Plural, :Plural, :Person2,  "bareál"],
+	    [:Fem, :Plural, :Singular, :Person2,  "batiák"],
+	    [:Masc, :Plural, :Plural, :Person3,  "bareá"],
+	    [:Fem, :Plural, :Singular, :Person3,  "batiá"],
+	    [:Common, :Singular, :Singular, :Person1,  "áni"],
+	    [:Common, :Plural, :Singular, :Person1,  "áni"],
+	    [:Masc, :Singular, :Plural, :Person2,  "baréúk"],
+	    [:Fem, :Singular, :Plural, :Person3,  "bateú"],
+	    [:Masc, :Singular, :Plural, :Person3,  "bareú"],
+	    [:Masc, :Plural, :Singular, :Person2,  "bariák"],
+	    [:Masc, :Plural, :Singular, :Person3,  "bariá"],
+	    [:Fem, :Singular, :Singular, :Person3,  "batiú"],
+	    [:Masc, :Singular, :Singular, :Person3,  "bariú"],
+	    [:Common, :Plural, :Plural, :Person1,  "híne"],
+	    [:Masc, :Singular, :Singular, :Person2,  "bariúk"],
+	    [:Fem, :Plural, :Plural, :Person3,  "bateá"],
+	    [:Fem, :Singular, :Singular, :Person2,  "batiúk"],
+	    [:Fem, :Plural, :Plural, :Person2,  "bateák"]]
     }
     {:label "beja_Ro-NGenBeforePossSuff"
     :note "Roper1928 #106"
-    :common {:morpheme :GENBEFOREPOSSSUFF,
+    :common {:morphClass :GENBEFOREPOSSSUFF,
 	    :nounMorphClass :GenBeforePossSuff,
 	    :pos :Noun}
     :terms [[:genderPoss, :genderHead, :numPoss, :token]  ;; schema
@@ -2180,22 +2185,23 @@
     }
     {:label "beja_Ro-PArtDef"
     :note "Roper1928 #26"
-    :common {:morpheme :DEFART,
+    :common {:morphClass :DEFART,
+             :pos :Pronoun,
 	    :proClass :ArtDef}
-    :terms [[:case, :gender, :number, :pos, :token]  ;; schema
-	    [:Accusative, :Masc, :Plural, :Pronoun, "e"],
-	    [:Accusative, :Fem, :Plural, :Pronoun, "te"],
-	    [:Nominative, :Fem, :Plural, :Pronoun, "ta"],
-	    [:Nominative, :Fem, :Singular, :Pronoun, "tu"],
-	    [:Accusative, :Fem, :Singular, :Pronoun, "to"],
-	    [:Nominative, :Masc, :Singular, :Pronoun, "u"],
-	    [:Accusative, :Masc, :Singular, :Pronoun, "o"],
-	    [:Nominative, :Masc, :Plural, :Pronoun, "a"]]
+    :terms [[:case, :gender, :number, :token]  ;; schema
+	    [:Accusative, :Masc, :Plural,  "e"],
+	    [:Accusative, :Fem, :Plural,  "te"],
+	    [:Nominative, :Fem, :Plural,  "ta"],
+	    [:Nominative, :Fem, :Singular,  "tu"],
+	    [:Accusative, :Fem, :Singular,  "to"],
+	    [:Nominative, :Masc, :Singular,  "u"],
+	    [:Accusative, :Masc, :Singular,  "o"],
+	    [:Nominative, :Masc, :Plural,  "a"]]
     }
     {:label "beja_Ro-NGenAdjPart"
     :note "Roper1928 #62. Possessive construction where N1 is modified by an adjective.
             Pattern is:[N1 Adj]+genAdjPart N2 the Adj N1s N2"
-    :common {:morpheme :GENADJPART,
+    :common {:morphClass :GENADJPART,
 	    :nounMorphClass :GenAdjPart,
 	    :pos :Noun}
     :terms [[:genderN1, :genderN2, :numN1, :token]  ;; schema

@@ -74,7 +74,7 @@ foreach my $query (@queries)
 	}
 	close IN;
 	($lang, my $qprops) = split(/,\s*/, $queryprops, 2);
-	#print "$lang qprops = $qprops\n";
+	print "$lang qprops = $qprops\n";
 	$Langname = ucfirst($langname);
 	my @select = split(/,\s* /, $qprops);
 	foreach my $queryprop (@select)
@@ -122,14 +122,14 @@ foreach my $specifiedprop (sort keys %specifiedprops)
 }
 foreach my $queryprop (@queryproplist) 
 {
-	print "\t\t\tOPTIONAL { ?s\t$lang:$queryprop\t?Q$queryprop . \n";
-	print " \t\t\t?Q$queryprop\trdfs:label\t?$queryprop . }\n";
+    print "\t\t\tOPTIONAL { ?s\t$lang:$queryprop\t?Q$queryprop . \n";
+    print " \t\t\t?Q$queryprop\trdfs:label\t?$queryprop . }\n";
 }
 print "\t\t\t?s\t$lang:token\t?token . \n";
 print "\t\t}\n";
 print "\t}\n";
 print "}\n";
 # Iterate through @select if want all values in table
-print "ORDER BY   $selection  \n";
+print "ORDER BY   $selection ?token  \n";
 close(OUT); 
-#copy($queryfile, "query-temp.rq") or die "Can't copy $queryfile to 'query-temp.rq': $!";
+

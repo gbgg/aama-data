@@ -10,14 +10,14 @@
 	  :conjSubType [:SubClass1, :SubClass2]
 	  :gender [:Common, :Fem, :Invariable, :Masc, :_NULL]
 	  :genderPoss [:Fem, :Masc]
-	  :multiLex [:COMPDASSOM, :FULLREDVAR, :FULLREDVARCLAUSECASETYPE, :INFINITIVEPREF, :INFINITIVESUFF, :PREFMAINNEGPASTINVAR, :PREFSUBVARTENSE, :SUFFC1MAINNEGPASTINVAR]
+	  :morphClass [:COMPDASSOM, :FULLREDVAR, :FULLREDVARCLAUSECASETYPE, :INFINITIVEPREF, :INFINITIVESUFF, :PREFMAINNEGPASTINVAR, :PREFSUBVARTENSE, :SUFFC1MAINNEGPASTINVAR]
 	  :nonFiniteForm [:Infinitive]
 	  :numPersGender [:Invariable]
 	  :number [:Common, :Invariable, :Plural, :Singular]
 	  :numberPersonGender [:Common, :_NULL]
 	  :pdgmSubType [:PastInvar]
 	  :pdgmType [:Comparative, :Compound, :Structure]
-	  :person [:Common, :Invariable, :Person1, :Person1ex, :Person1in, :Person2, :Person3]
+	  :person [:Person1, :Person1ex, :Person1in, :Person2, :Person3]
 	  :pngShapeClass [:Common, :_NULL]
 	  :polarity [:Affirmative, :Negative, :Negative2]
 	  :pos [:Pronoun, :Verb]
@@ -2585,7 +2585,7 @@
 	    :gender :Common,
 	    :lexeme :yahay,
 	    :number :Common,
-	    :person :Common,
+             :morphClass :SubVarTense
 	    :pos :Verb}
     :terms [[:clauseCase, :clauseType, :polarity, :tam, :token]  ;; schema
 	    [:Subject, :Subordinate, :Affirmative, :Future, "{= main}"],
@@ -3193,7 +3193,7 @@
     :note "somali-VSuffInfinitive"
     :common {:clauseType :_NULL,
 	    :conjClass :Suffix,
-	    :multiLex :INFINITIVESUFF,
+	    :morphClass :INFINITIVESUFF,
 	    :nonFiniteForm :Infinitive,
 	    :pos :Verb}
     :terms [[:conjSubClass, :lexeme, :token]  ;; schema
@@ -3334,7 +3334,7 @@
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
-	    :multiLex :PREFMAINNEGPASTINVAR,
+	    :morphClass :PREFMAINNEGPASTINVAR,
 	    :numPersGender :Invariable,
 	    :pdgmSubType :PastInvar,
 	    :pdgmType :Compound,
@@ -3395,7 +3395,7 @@
     :note "somali-VmainSuffNegPastInvar:does not inflect for NPG."
     :common {:clauseType :Main,
 	    :conjClass :Suffix,
-	    :multiLex :SUFFC1MAINNEGPASTINVAR,
+	    :morphClass :SUFFC1MAINNEGPASTINVAR,
 	    :numPersGender :Invariable,
 	    :pdgmSubType :PastInvar,
 	    :polarity :Negative,
@@ -3438,7 +3438,7 @@
     {:label "somali-VPrefInfinitive"
     :note ""
     :common {:conjClass :Prefix,
-	    :multiLex :INFINITIVEPREF,
+	    :morphClass :INFINITIVEPREF,
 	    :nonFiniteForm :Infinitive,
 	    :pos :Verb}
     :terms [[:lexeme, :token]  ;; schema

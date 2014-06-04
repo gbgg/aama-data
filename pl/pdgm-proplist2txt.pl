@@ -17,14 +17,15 @@ open(IN, $propvalfile) or die "cannot open $propvalfile for reading";
 while (<IN>)
 { 
     $listdata = $_;
-	$listdata =~ s/"token.*?"\n//g;
-	$listdata =~ s/\n//g;
-	$listdata =~ s/##/\n\n/g;
-	$listdata =~ s/\?property//g;
-	$listdata =~ s/""/, /g;
-	$listdata =~ s/,"/, /g;
-	$listdata =~ s/'/"/g;
-	$listdata =~ s/,\n/" no $pos pdgm\n/g;
+    $listdata =~ s/"token.*?"\n//g;
+    $listdata =~ s/\n//g;
+    $listdata =~ s/##/\n/g;
+    $listdata =~ s/\?property//g;
+    $listdata =~ s/""/, /g;
+    $listdata =~ s/,"/, /g;
+    $listdata =~ s/'/"/g;
+    $listdata .= "\n";
+    $listdata =~ s/,\n/, NO_PDGM"\n/g;
 }
 print $listdata;
 # print pdgm tsv data and header to tab-delimited tsv file

@@ -1,6 +1,6 @@
 
 #TTL FROM INPUT FILE:
-# data/bilin/bilin-pdgms.edn
+# data/bilin//bilin-pdgms.edn
 @prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
@@ -31,6 +31,22 @@ bil:Masc aamas:lang aama:Bilin .
 bil:Masc rdf:type bil:Gender .
 bil:Masc rdfs:label "Masc".
 
+#SCHEMATA: nonFiniteForm
+bil:nonFiniteForm aamas:lang aama:Bilin .
+bil:Nonfiniteform aamas:lang aama:Bilin .
+bil:nonFiniteForm rdfs:domain aamas:Term .
+bil:Nonfiniteform rdfs:label "nonFiniteForm exponents" .
+bil:nonFiniteForm rdfs:label "nonFiniteForm" .
+bil:nonFiniteForm rdfs:range bil:Nonfiniteform .
+bil:Nonfiniteform rdfs:subClassOf bil:MuExponent .
+bil:nonFiniteForm rdfs:subPropertyOf bil:muProperty .
+bil:Agent aamas:lang aama:Bilin .
+bil:Agent rdf:type bil:Nonfiniteform .
+bil:Agent rdfs:label "Agent".
+bil:Infinitive aamas:lang aama:Bilin .
+bil:Infinitive rdf:type bil:Nonfiniteform .
+bil:Infinitive rdfs:label "Infinitive".
+
 #SCHEMATA: copType
 bil:copType aamas:lang aama:Bilin .
 bil:Coptype aamas:lang aama:Bilin .
@@ -46,22 +62,6 @@ bil:CopLoc rdfs:label "CopLoc".
 bil:CopMain aamas:lang aama:Bilin .
 bil:CopMain rdf:type bil:Coptype .
 bil:CopMain rdfs:label "CopMain".
-
-#SCHEMATA: finiteForm
-bil:finiteForm aamas:lang aama:Bilin .
-bil:Finiteform aamas:lang aama:Bilin .
-bil:finiteForm rdfs:domain aamas:Term .
-bil:Finiteform rdfs:label "finiteForm exponents" .
-bil:finiteForm rdfs:label "finiteForm" .
-bil:finiteForm rdfs:range bil:Finiteform .
-bil:Finiteform rdfs:subClassOf bil:MuExponent .
-bil:finiteForm rdfs:subPropertyOf bil:muProperty .
-bil:Agent aamas:lang aama:Bilin .
-bil:Agent rdf:type bil:Finiteform .
-bil:Agent rdfs:label "Agent".
-bil:Infinitive aamas:lang aama:Bilin .
-bil:Infinitive rdf:type bil:Finiteform .
-bil:Infinitive rdfs:label "Infinitive".
 
 #SCHEMATA: pngSet
 bil:pngSet aamas:lang aama:Bilin .
@@ -274,6 +274,25 @@ bil:S2 aamas:lang aama:Bilin .
 bil:S2 rdf:type bil:Derivedstem .
 bil:S2 rdfs:label "S2".
 
+#SCHEMATA: morphClass
+bil:morphClass aamas:lang aama:Bilin .
+bil:Morphclass aamas:lang aama:Bilin .
+bil:morphClass rdfs:domain aamas:Term .
+bil:Morphclass rdfs:label "morphClass exponents" .
+bil:morphClass rdfs:label "morphClass" .
+bil:morphClass rdfs:range bil:Morphclass .
+bil:Morphclass rdfs:subClassOf bil:MuExponent .
+bil:morphClass rdfs:subPropertyOf bil:muProperty .
+bil:VREL aamas:lang aama:Bilin .
+bil:VREL rdf:type bil:Morphclass .
+bil:VREL rdfs:label "VREL".
+bil:Agent aamas:lang aama:Bilin .
+bil:Agent rdf:type bil:Morphclass .
+bil:Agent rdfs:label "Agent".
+bil:Infinitive aamas:lang aama:Bilin .
+bil:Infinitive rdf:type bil:Morphclass .
+bil:Infinitive rdfs:label "Infinitive".
+
 #SCHEMATA: proClass
 bil:proClass aamas:lang aama:Bilin .
 bil:Proclass aamas:lang aama:Bilin .
@@ -426,25 +445,6 @@ bil:PersSuff aamas:lang aama:Bilin .
 bil:PersSuff rdf:type bil:Verbmorphclass .
 bil:PersSuff rdfs:label "PersSuff".
 
-#SCHEMATA: multiLex
-bil:multiLex aamas:lang aama:Bilin .
-bil:Multilex aamas:lang aama:Bilin .
-bil:multiLex rdfs:domain aamas:Term .
-bil:Multilex rdfs:label "multiLex exponents" .
-bil:multiLex rdfs:label "multiLex" .
-bil:multiLex rdfs:range bil:Multilex .
-bil:Multilex rdfs:subClassOf bil:MuExponent .
-bil:multiLex rdfs:subPropertyOf bil:muProperty .
-bil:ASPECT aamas:lang aama:Bilin .
-bil:ASPECT rdf:type bil:Multilex .
-bil:ASPECT rdfs:label "ASPECT".
-bil:COMPOUNDVERB aamas:lang aama:Bilin .
-bil:COMPOUNDVERB rdf:type bil:Multilex .
-bil:COMPOUNDVERB rdfs:label "COMPOUNDVERB".
-bil:VREL aamas:lang aama:Bilin .
-bil:VREL rdf:type bil:Multilex .
-bil:VREL rdfs:label "VREL".
-
 #MORPHEMES:
 
 aama:Bilin-COPULA a aamas:Morpheme ;
@@ -486,18 +486,6 @@ aama:Bilin-SUBJMARKC a aamas:Morpheme ;
 
 #LEXEMES:
 
-aama:Bilin-ASPECT a aamas:Lexeme ;
-	aamas:lang aama:Bilin ;
-	rdfs:label "ASPECT" ;
-	aamas:gloss "[x]" ;
-	aamas:lemma "[y]" ;
-	.
-aama:Bilin-COMPOUNDVERB a aamas:Lexeme ;
-	aamas:lang aama:Bilin ;
-	rdfs:label "COMPOUNDVERB" ;
-	aamas:gloss "[x]" ;
-	aamas:lemma "[y]" ;
-	.
 aama:Bilin-VREL a aamas:Lexeme ;
 	aamas:lang aama:Bilin ;
 	rdfs:label "VREL" ;
@@ -537,7 +525,7 @@ aama:Bilin-was a aamas:Lexeme ;
 
 #TERMCLUSTER: bilin-VConj2RelSubjAffPerfPngA-kab
 
-aama:ID89feedfa-ff01-4721-bbd1-861bf42728ef a aamas:Term ;
+aama:IDdb08e361-d7f5-4427-a49c-f9ff4cfd1498 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -552,7 +540,7 @@ aama:ID89feedfa-ff01-4721-bbd1-861bf42728ef a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID2a05fb2e-97eb-4256-871d-39ce9b1802e7 a aamas:Term ;
+aama:IDd8bc93dc-7616-414d-99c3-8a1b42d92d94 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -567,7 +555,7 @@ aama:ID2a05fb2e-97eb-4256-871d-39ce9b1802e7 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID53b2ca7a-fdbb-4522-8a8a-8c648ab94701 a aamas:Term ;
+aama:IDac97fa87-26ae-4e01-8e48-e88b9f6d67eb a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -582,7 +570,7 @@ aama:ID53b2ca7a-fdbb-4522-8a8a-8c648ab94701 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID39e6f49d-7df1-4e49-9ebd-1b430b97f752 a aamas:Term ;
+aama:ID0a03d367-76fc-4b03-87a3-5c5fba52df47 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -597,7 +585,7 @@ aama:ID39e6f49d-7df1-4e49-9ebd-1b430b97f752 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDb15a732c-79e5-4f19-a57e-fb0fed2ca273 a aamas:Term ;
+aama:ID683f01bb-42c0-4da7-8fef-45bff60d8cd2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -612,7 +600,7 @@ aama:IDb15a732c-79e5-4f19-a57e-fb0fed2ca273 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDfb19c91b-f290-414f-9839-53aa467a6b56 a aamas:Term ;
+aama:ID0cc62cf7-de2a-4d36-bd99-ba126da8409e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -627,7 +615,7 @@ aama:IDfb19c91b-f290-414f-9839-53aa467a6b56 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDc8593dd4-5aaf-4ead-a104-65bdb522a186 a aamas:Term ;
+aama:ID0134adcd-1ae7-4f32-847b-4d351eb7c7c1 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:RelSubj ;
@@ -645,7 +633,7 @@ aama:IDc8593dd4-5aaf-4ead-a104-65bdb522a186 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvCondAffImperfPngA-gab
 
-aama:ID50f81958-525f-4b15-b6ad-3b61099c0bd5 a aamas:Term ;
+aama:ID1d7d0b78-d858-4307-aa89-1ff575ecbd57 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -664,7 +652,7 @@ aama:ID50f81958-525f-4b15-b6ad-3b61099c0bd5 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvCauseAffPerfPngA-gab
 
-aama:ID6c9f153d-a81a-4a1d-899b-b8f493f133b9 a aamas:Term ;
+aama:ID8951ad25-3621-4635-b7bc-3e652f8a0b73 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -683,7 +671,7 @@ aama:ID6c9f153d-a81a-4a1d-899b-b8f493f133b9 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainAffPerfPastPngB-gab
 
-aama:ID3ffd59cc-e153-4fab-8f2b-863b727e89a6 a aamas:Term ;
+aama:IDd3d7a0d8-5858-42f8-b6bc-a6d0bc536885 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -699,7 +687,7 @@ aama:ID3ffd59cc-e153-4fab-8f2b-863b727e89a6 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDf1086c0a-fd2e-4f2d-b143-b58f6222679a a aamas:Term ;
+aama:ID474355e4-c7e7-4400-bccb-9a392e626c80 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -715,7 +703,7 @@ aama:IDf1086c0a-fd2e-4f2d-b143-b58f6222679a a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDc8570e84-6ad9-4362-abd6-c69892ada07e a aamas:Term ;
+aama:IDa1937af5-e8b5-410d-9d3b-ca251e9b7fa1 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -731,7 +719,7 @@ aama:IDc8570e84-6ad9-4362-abd6-c69892ada07e a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID8053f08d-d761-42dc-a6c6-504b05f24c46 a aamas:Term ;
+aama:IDee2199d3-fa4d-4c4b-ac44-d7ba2408884b a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -747,7 +735,7 @@ aama:ID8053f08d-d761-42dc-a6c6-504b05f24c46 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID26f42058-5b83-4761-93c8-0cfec3b3251f a aamas:Term ;
+aama:IDe8f703f6-ed91-4eee-a5ae-03586c6e9147 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -763,7 +751,7 @@ aama:ID26f42058-5b83-4761-93c8-0cfec3b3251f a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID69e9c10a-ef44-4f4d-8061-564aa7d7511b a aamas:Term ;
+aama:IDe07495bf-8054-47e9-abeb-38e60faa42f8 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -779,7 +767,7 @@ aama:ID69e9c10a-ef44-4f4d-8061-564aa7d7511b a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDc509ca1c-4237-47f9-a156-3f1586352872 a aamas:Term ;
+aama:ID76fdd9d1-08e9-41cf-a097-34134903b1fb a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -798,7 +786,7 @@ aama:IDc509ca1c-4237-47f9-a156-3f1586352872 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvComplNegPerfPngA-gab
 
-aama:IDb4b3d36e-525b-4451-857c-4549f441e4a7 a aamas:Term ;
+aama:IDcd9dbe34-75a7-4cf6-a7a0-ed3caf8b4d34 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -817,7 +805,7 @@ aama:IDb4b3d36e-525b-4451-857c-4549f441e4a7 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvAt1AffImperfPngA-gab
 
-aama:ID34f67aca-804b-4030-9864-f4f329749c1b a aamas:Term ;
+aama:IDfb157fc5-1d27-441f-a781-9a7ee17f46e0 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -836,7 +824,7 @@ aama:ID34f67aca-804b-4030-9864-f4f329749c1b a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj2MainAffPerfFutPngC-kab
 
-aama:IDaf840ca9-c923-4511-8cdc-048ce04baa9e a aamas:Term ;
+aama:ID0b9ee83d-ad3e-4099-9201-df568683c5ae a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -851,7 +839,7 @@ aama:IDaf840ca9-c923-4511-8cdc-048ce04baa9e a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID47b962ad-9e83-418e-b115-4deb36d89ba9 a aamas:Term ;
+aama:ID7937de95-630c-48b9-94b1-138375839a1e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -866,7 +854,7 @@ aama:ID47b962ad-9e83-418e-b115-4deb36d89ba9 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID8f9e17e1-01a9-4e59-8588-93c51fed9f06 a aamas:Term ;
+aama:IDbc97d2c5-2a4b-45e1-8e90-72f1e8a7fdc2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -881,7 +869,7 @@ aama:ID8f9e17e1-01a9-4e59-8588-93c51fed9f06 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID83229bf1-56ea-4ab1-9130-d6cc9723ba75 a aamas:Term ;
+aama:ID5f4a96cd-1506-456c-8ed3-603d41c2efed a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -896,7 +884,7 @@ aama:ID83229bf1-56ea-4ab1-9130-d6cc9723ba75 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID96e4c6ee-3b24-4dbe-a1dc-1e0cc0af6733 a aamas:Term ;
+aama:ID69a35f4f-e07f-4daf-a0be-7e528c13efe2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -911,7 +899,7 @@ aama:ID96e4c6ee-3b24-4dbe-a1dc-1e0cc0af6733 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID6246f0f9-ebd6-42b9-9d64-6898526905c7 a aamas:Term ;
+aama:IDb8c9ace6-d11c-43a4-8976-f25aa4cf2971 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -926,7 +914,7 @@ aama:ID6246f0f9-ebd6-42b9-9d64-6898526905c7 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDace29326-b6f0-491b-98b5-d26ad3cd1bb6 a aamas:Term ;
+aama:ID5ff31022-5393-4898-a0c3-3ff0e1e30ecb a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -944,7 +932,7 @@ aama:IDace29326-b6f0-491b-98b5-d26ad3cd1bb6 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainAffPerfFutPngC-gab
 
-aama:IDdbfd9484-7e71-4daa-b5e0-4dd7fae6402a a aamas:Term ;
+aama:ID85c93e20-1d7d-4623-912b-77e4c67e67ad a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -960,7 +948,7 @@ aama:IDdbfd9484-7e71-4daa-b5e0-4dd7fae6402a a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDa33f2ac1-6ea7-4aa5-bf61-f59781dc92e4 a aamas:Term ;
+aama:IDa170e943-fbc2-4080-ab35-7f6f4873bd2a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -976,7 +964,7 @@ aama:IDa33f2ac1-6ea7-4aa5-bf61-f59781dc92e4 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDb7737e57-5f28-40c7-ad2a-e8e7834a8ccc a aamas:Term ;
+aama:ID72b01348-a586-44e6-bcdc-0ad805c0e3be a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -992,7 +980,7 @@ aama:IDb7737e57-5f28-40c7-ad2a-e8e7834a8ccc a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID948ce863-96bd-4fbd-be76-5317e99c6dce a aamas:Term ;
+aama:ID28cc237c-0614-41b6-8c6b-aed90c444810 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -1008,7 +996,7 @@ aama:ID948ce863-96bd-4fbd-be76-5317e99c6dce a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID811b9acd-3a9d-4e60-869b-94883a2ee04c a aamas:Term ;
+aama:IDe7d582e0-9ce0-433b-bacd-d48f55c5eaac a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -1024,7 +1012,7 @@ aama:ID811b9acd-3a9d-4e60-869b-94883a2ee04c a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID119994e4-a621-48d7-82a4-2f4998331d45 a aamas:Term ;
+aama:ID4a49bc33-63e1-4567-a110-68911f3a923d a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -1040,7 +1028,7 @@ aama:ID119994e4-a621-48d7-82a4-2f4998331d45 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDda8ac20f-635d-4202-bb2c-65fbaa37320c a aamas:Term ;
+aama:IDa872f26d-4bc8-40ed-954c-c3b2183cfa55 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngC ;
 	bil:polarity bil:Affirmative ;
@@ -1057,264 +1045,9 @@ aama:IDda8ac20f-635d-4202-bb2c-65fbaa37320c a aamas:Term ;
 	bil:gender bil:Common ;
 	.
 
-#TERMCLUSTER: kemant-VBilin-KemantRel
-
-aama:IDe214be47-b95d-4d62-a3a4-13489c2616fe a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbnäxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person1 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:IDde03a072-11cc-4761-a464-8a7000923819 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbänäxʷ" ;
-	bil:tam bil:RelativeOblique ;
-	bil:person bil:Person3 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:ID5d06393d-6316-4d39-9bb8-9c51e4293ce2 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbrärí" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person3 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Fem ;
-	bil:aspect bil:Perfective ;
-	.
-aama:ID88559331-d6c3-4121-9b2f-2cfc473304cc a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbäw" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person3 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:ID58729591-6994-4501-b77e-c82221fcf59f a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbnäxʷ" ;
-	bil:tam bil:RelativeOblique ;
-	bil:person bil:Person3 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:IDe168745a-506e-4f4c-b9e8-81950a9e9b51 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbdənäxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person2 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:ID20da6a58-40fe-456d-9b5e-ebe654c078c0 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbäw" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person3 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:IDb00170f1-83ac-445c-9f3b-abbe73ad23f7 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbdanäxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person2 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:ID85226550-841c-4719-af9d-76b23df7bfbc a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbräxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person2 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:ID5d42a0f1-c682-4858-9570-1bf4534a6a2f a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbäxʷ" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person3 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Masc ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:IDd7f53234-552b-4e80-a739-b9783147f383 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "wasänaɣ" ;
-	bil:tam bil:RelativeOblique ;
-	bil:person bil:Person3 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-was ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:ID3bf1f53d-79d4-4746-a9dd-3772a7f0a963 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "was(ə)naɣ" ;
-	bil:tam bil:RelativeOblique ;
-	bil:person bil:Person3 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-was ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:ID905484bd-99aa-4a3e-ab8e-8fca9bedaa29 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbäxʷ" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person3 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Masc ;
-	bil:aspect bil:Perfective ;
-	.
-aama:IDdd109c8d-14e4-4482-bceb-63d90e021e95 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbäxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person1 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:ID2c6c052e-eeb6-46f0-9c1c-574f497cec1d a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbäxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person1 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Perfective ;
-	.
-aama:IDc3714b45-1d59-4302-bc2e-785d179b462a a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbräri" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person3 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Fem ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:ID3f0ff8cc-57a2-48d4-bcd5-2d5e37e9d6bc a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbnäxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person1 ;
-	bil:number bil:Plural ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-aama:ID91a81bd0-afc5-4b3e-af57-c4ebc73efcd8 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:pdgmType bil:Comparative ;
-	bil:multiLex bil:VREL ;
-	bil:pos bil:Verb ;
-	bil:token "gäbräxər" ;
-	bil:tam bil:RelativeSubject ;
-	bil:person bil:Person2 ;
-	bil:number bil:Singular ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:lang bil:Kemant ;
-	bil:gender bil:Common ;
-	bil:aspect bil:Imperfective ;
-	.
-
 #TERMCLUSTER: bilin-VConj1AdvCondAffPerfPngA-gab
 
-aama:IDfeb1378f-e3b0-472a-ba5e-6fcb8cbb72f6 a aamas:Term ;
+aama:IDc361408c-59ac-4d50-9b6b-3f2ade8b9e32 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -1333,7 +1066,7 @@ aama:IDfeb1378f-e3b0-472a-ba5e-6fcb8cbb72f6 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainNegImperfJussPngA-gab
 
-aama:ID97c70e74-516f-4424-af7e-1b503f9b53a3 a aamas:Term ;
+aama:IDd9c13ff9-2ed6-4c54-906d-815bcd466acf a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Negative ;
@@ -1349,7 +1082,7 @@ aama:ID97c70e74-516f-4424-af7e-1b503f9b53a3 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID02a37931-d400-41f6-9355-ebe7a3ab38bd a aamas:Term ;
+aama:ID14675cec-fe42-4a37-bf54-2442085bb6cb a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Negative ;
@@ -1365,7 +1098,7 @@ aama:ID02a37931-d400-41f6-9355-ebe7a3ab38bd a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDa93a7af5-4df7-4235-bafe-af41302b7847 a aamas:Term ;
+aama:ID70619e8e-0d31-4ecc-a2e6-4158b98bfe07 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Negative ;
@@ -1381,7 +1114,7 @@ aama:IDa93a7af5-4df7-4235-bafe-af41302b7847 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID9fc36f23-d370-40d3-bcd5-8d5b5aa41e56 a aamas:Term ;
+aama:IDda474adb-fae2-42c1-a499-085d6f0188d9 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Negative ;
@@ -1397,7 +1130,7 @@ aama:ID9fc36f23-d370-40d3-bcd5-8d5b5aa41e56 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:IDf20d84c7-3735-4d0b-99f4-b6d2f31eb66d a aamas:Term ;
+aama:ID58c71dd2-19d3-4812-bad7-9043732bd336 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Negative ;
@@ -1416,7 +1149,7 @@ aama:IDf20d84c7-3735-4d0b-99f4-b6d2f31eb66d a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainAffImperfJussPngA-gab
 
-aama:ID4862a108-e16c-4fa9-93ec-3a4b20c3af4d a aamas:Term ;
+aama:ID3f3b188b-29c5-4f0f-8722-72374699604a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1432,7 +1165,7 @@ aama:ID4862a108-e16c-4fa9-93ec-3a4b20c3af4d a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID7471b6e1-94e9-4511-a811-b53d9eb970a2 a aamas:Term ;
+aama:ID2f239299-cbf9-47ba-8b28-220a849107ed a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1448,7 +1181,7 @@ aama:ID7471b6e1-94e9-4511-a811-b53d9eb970a2 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID2a319581-92ee-44a4-82e9-716313a784ed a aamas:Term ;
+aama:ID2a5298f2-e1ca-49d8-8ff5-b13785e3bb2b a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1464,7 +1197,7 @@ aama:ID2a319581-92ee-44a4-82e9-716313a784ed a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID78b0043e-d410-464c-8da3-c4d44662f74c a aamas:Term ;
+aama:ID40892b8f-48c0-4323-a580-fb5141062ed5 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1480,7 +1213,7 @@ aama:ID78b0043e-d410-464c-8da3-c4d44662f74c a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID43800f54-b3b7-42f7-8b25-08a161e5e4f8 a aamas:Term ;
+aama:ID68511111-b22f-486e-80cf-f792d07cc329 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1499,7 +1232,7 @@ aama:ID43800f54-b3b7-42f7-8b25-08a161e5e4f8 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvComplAffPerfPngA-gab
 
-aama:IDcb5bb1ae-35ae-40e9-9236-922cc318a0d3 a aamas:Term ;
+aama:ID1ae41112-c4cc-4a4a-bf49-bd3ac4d5ec37 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -1518,7 +1251,7 @@ aama:IDcb5bb1ae-35ae-40e9-9236-922cc318a0d3 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvFutCondNegPerfPngC-gab
 
-aama:IDe109873f-767d-4141-afc0-71be94085784 a aamas:Term ;
+aama:ID29ecda05-3185-46c4-b425-0f2ed40a929a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngC ;
@@ -1535,9 +1268,35 @@ aama:IDe109873f-767d-4141-afc0-71be94085784 a aamas:Term ;
 	bil:token "gäbgid" ;
 	.
 
+#TERMCLUSTER: bilin-VConj1Agent-gab
+
+aama:IDa7de2b0c-938c-4de7-93ce-dd50fbd7e8f1 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:conjClass bil:Conjugation1 ;
+	bil:nonFiniteForm bil:Agent ;
+	bil:gender bil:Common ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:morphClass bil:Agent ;
+	bil:number bil:Common ;
+	bil:pos bil:Verb ;
+	bil:token "gäbänta (pl. gäbänti)" ;
+	.
+
+#TERMCLUSTER: bilin-VConj1Infinitive-gab
+
+aama:ID8a870ad6-331f-4bee-a710-c3d33018d1e4 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:conjClass bil:Conjugation1 ;
+	bil:nonFiniteForm bil:Infinitive ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:morphClass bil:Infinitive ;
+	bil:pos bil:Verb ;
+	bil:token "gäbna" ;
+	.
+
 #TERMCLUSTER: bilin-VConj1AdvConsecNegPerfPngA-gab
 
-aama:ID587a808a-9e1c-4d41-80fe-cbce610ce2e3 a aamas:Term ;
+aama:IDca1b9c04-6797-4b2f-a930-08dd211b6781 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -1556,7 +1315,7 @@ aama:ID587a808a-9e1c-4d41-80fe-cbce610ce2e3 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvWhileAffImperfPngA-gab
 
-aama:ID85e9785f-b921-4f95-889a-599be941f093 a aamas:Term ;
+aama:ID86bd2736-5104-4369-9780-a3d5386e28d7 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -1575,7 +1334,7 @@ aama:ID85e9785f-b921-4f95-889a-599be941f093 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainNegPerfPngA2-gab
 
-aama:IDed687443-85b2-469b-9392-c9b231b42a0f a aamas:Term ;
+aama:IDc3e95792-71d2-49e7-987b-efcd426826e3 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1591,7 +1350,7 @@ aama:IDed687443-85b2-469b-9392-c9b231b42a0f a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID180ca984-7102-40e6-83b1-66442c4ad7f5 a aamas:Term ;
+aama:ID8cdd43c6-7dce-4184-8ae5-ce8f7691a4b4 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1607,7 +1366,7 @@ aama:ID180ca984-7102-40e6-83b1-66442c4ad7f5 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID9b191a89-6a5a-46fc-9caa-93ac2b9719c0 a aamas:Term ;
+aama:ID76903b1d-5d07-4196-a75f-683a337add3e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1623,7 +1382,7 @@ aama:ID9b191a89-6a5a-46fc-9caa-93ac2b9719c0 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID13149e7f-b730-4070-abfc-16fc0f8b21b6 a aamas:Term ;
+aama:IDbfb7dbe7-a3a0-47ab-a97f-63b949aa88fe a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1639,7 +1398,7 @@ aama:ID13149e7f-b730-4070-abfc-16fc0f8b21b6 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDe2f33be6-ff6b-48c4-ad5e-ab76ee75ba55 a aamas:Term ;
+aama:ID4bc08f35-08e0-4172-9e6c-b5c92fc582a0 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1655,7 +1414,7 @@ aama:IDe2f33be6-ff6b-48c4-ad5e-ab76ee75ba55 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:IDcefe693b-d3dc-441e-b8dd-f831418a591d a aamas:Term ;
+aama:IDc44ab721-52d0-44b9-a45d-55601a3be534 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1671,7 +1430,7 @@ aama:IDcefe693b-d3dc-441e-b8dd-f831418a591d a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID80cc42e3-a71e-48a9-8c51-db1c6cdde8ae a aamas:Term ;
+aama:ID62b58a18-d8b4-4611-ad35-c7ac77634c94 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -1690,7 +1449,7 @@ aama:ID80cc42e3-a71e-48a9-8c51-db1c6cdde8ae a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainAffPerfImprtv-gab
 
-aama:ID2bb6eee2-5a01-4b89-ac8d-feac226eab36 a aamas:Term ;
+aama:ID4ce4a481-461f-4e26-8ace-cccd9da30407 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Common ;
 	bil:pngSet bil:U ;
@@ -1706,7 +1465,7 @@ aama:ID2bb6eee2-5a01-4b89-ac8d-feac226eab36 a aamas:Term ;
 	bil:token "gäbi" ;
 	bil:number bil:Singular ;
 	.
-aama:ID03d0bddc-af08-4aa2-b84f-d0a03fa182fd a aamas:Term ;
+aama:IDdfaea277-405b-41dc-b8c7-e4ab79ee3fd9 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Common ;
 	bil:pngSet bil:U ;
@@ -1725,7 +1484,7 @@ aama:ID03d0bddc-af08-4aa2-b84f-d0a03fa182fd a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1RelSubjAffImperfPngA-gab
 
-aama:IDe1113476-bb8f-4788-924f-83768f60e543 a aamas:Term ;
+aama:IDedd2204f-f82b-4f62-8259-e27c0e26a351 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1741,7 +1500,7 @@ aama:IDe1113476-bb8f-4788-924f-83768f60e543 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID9e894331-c9f1-4401-a05f-c6077847ddaa a aamas:Term ;
+aama:ID5a2894a2-33b5-46ba-ae03-1ef79d4c8c93 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1757,7 +1516,7 @@ aama:ID9e894331-c9f1-4401-a05f-c6077847ddaa a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID3fe8ca16-04f4-4485-a223-de85e4c39787 a aamas:Term ;
+aama:IDcf8eb44d-1a99-465f-aa9f-87a1cac401af a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1773,7 +1532,7 @@ aama:ID3fe8ca16-04f4-4485-a223-de85e4c39787 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID00f34336-3a8e-412b-b253-f82ee2eaedac a aamas:Term ;
+aama:IDd3ec4b2d-7f7e-4508-93f8-d9023553ed73 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1789,7 +1548,7 @@ aama:ID00f34336-3a8e-412b-b253-f82ee2eaedac a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDe3740627-e375-4368-aea5-d03bcb3c7e44 a aamas:Term ;
+aama:IDffc80ffd-3840-4c7b-8b27-999eeb1210d8 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1805,7 +1564,7 @@ aama:IDe3740627-e375-4368-aea5-d03bcb3c7e44 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID2daacf06-c456-46e9-9236-945a763b20ff a aamas:Term ;
+aama:IDa46fa268-1608-46e8-91b3-5e415f57c094 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1821,7 +1580,7 @@ aama:ID2daacf06-c456-46e9-9236-945a763b20ff a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID584d78c3-08f4-4342-bffd-df492f5da4ba a aamas:Term ;
+aama:IDf4f3e71d-2353-49d7-9466-ab135f1e1519 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1840,7 +1599,7 @@ aama:ID584d78c3-08f4-4342-bffd-df492f5da4ba a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvConsecAffPerfPngA-gab
 
-aama:IDb1b106ca-d3ae-477c-bdc0-9d5e9f40f798 a aamas:Term ;
+aama:ID30f1ed47-b3de-403a-93a9-395f3390432a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -1857,9 +1616,264 @@ aama:IDb1b106ca-d3ae-477c-bdc0-9d5e9f40f798 a aamas:Term ;
 	bil:token "gäbo" ;
 	.
 
+#TERMCLUSTER: kemant-VBilin-KemantRel
+
+aama:ID8b9459cb-374a-485c-ba18-1b9ff40b9ee6 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbnäxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person1 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:IDdb2e66a4-f2a7-48fe-ac2f-8add4e796f8e a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbänäxʷ" ;
+	bil:tam bil:RelativeOblique ;
+	bil:person bil:Person3 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:IDdac40ceb-e891-4a9f-ad59-89711430b08b a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbrärí" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person3 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Fem ;
+	bil:aspect bil:Perfective ;
+	.
+aama:IDa9d63d66-7eff-4727-a28b-bedfb9395828 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbäw" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person3 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:ID9e373fea-e0dc-488b-a50f-d8a84e3e860a a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbnäxʷ" ;
+	bil:tam bil:RelativeOblique ;
+	bil:person bil:Person3 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:ID711eed54-a8a3-4d46-814c-f50e0d7f3283 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbdənäxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person2 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:IDbf76aed0-bdf4-4465-a1a3-30fc802ab975 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbäw" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person3 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:IDee7c819c-9b6f-4a8b-a0b8-b1b13e2595e8 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbdanäxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person2 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:IDf76ea00e-7b9f-4f1d-b2bb-9c3fb893d5ce a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbräxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person2 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:ID60458c25-f603-44d6-8292-819aff2390bf a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbäxʷ" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person3 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Masc ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:IDe6f0b358-31ba-4778-a841-9e1615d7c274 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "wasänaɣ" ;
+	bil:tam bil:RelativeOblique ;
+	bil:person bil:Person3 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-was ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:ID2f45e229-080f-4f29-a5bb-da18da698ae6 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "was(ə)naɣ" ;
+	bil:tam bil:RelativeOblique ;
+	bil:person bil:Person3 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-was ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:ID60a2badd-1bc9-4a2e-bef6-f58b76d3585a a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbäxʷ" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person3 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Masc ;
+	bil:aspect bil:Perfective ;
+	.
+aama:ID2833b7b7-f08b-4ab5-8684-07abeff6bec4 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbäxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person1 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:IDc1c3ee3d-f360-4075-9209-4767b0eef7a2 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbäxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person1 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Perfective ;
+	.
+aama:ID80138928-6314-4aa5-95af-8c635deedba5 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbräri" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person3 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Fem ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:ID49ebca79-feb6-4aa1-8684-9a876391fa93 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbnäxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person1 ;
+	bil:number bil:Plural ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+aama:IDd54a3510-b67d-4645-9524-4cbcd7df5eb5 a aamas:Term ;
+	aamas:lang aama:Bilin ;
+	bil:pdgmType bil:Comparative ;
+	bil:morphClass bil:VREL ;
+	bil:pos bil:Verb ;
+	bil:token "gäbräxər" ;
+	bil:tam bil:RelativeSubject ;
+	bil:person bil:Person2 ;
+	bil:number bil:Singular ;
+	aamas:lexeme aama:Bilin-gab ;
+	bil:lang bil:Kemant ;
+	bil:gender bil:Common ;
+	bil:aspect bil:Imperfective ;
+	.
+
 #TERMCLUSTER: bilin-VConj1RelObliqAffImperfPngAHeadSgf-gab
 
-aama:ID2e871c38-d7ea-4674-89f6-4016ab74e1d8 a aamas:Term ;
+aama:IDd75075ea-4fd3-4e35-baba-ec9570b09aaf a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1875,7 +1889,7 @@ aama:ID2e871c38-d7ea-4674-89f6-4016ab74e1d8 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDe80f725c-baa4-47de-bad1-2af9f23f53cc a aamas:Term ;
+aama:ID9de15ff3-b845-46f2-ba7d-3e976d124865 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1891,7 +1905,7 @@ aama:IDe80f725c-baa4-47de-bad1-2af9f23f53cc a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID4f9e64be-eced-4281-a29a-cf0d9e0eda78 a aamas:Term ;
+aama:ID51a50e21-a1a4-47be-ad7f-8c71dcde48e9 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1907,7 +1921,7 @@ aama:ID4f9e64be-eced-4281-a29a-cf0d9e0eda78 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDe3c7d56c-50fc-4ad5-87d8-f471cd4f6fe4 a aamas:Term ;
+aama:ID1d448ed7-2b95-48de-a1dc-ffb549fce328 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1923,7 +1937,7 @@ aama:IDe3c7d56c-50fc-4ad5-87d8-f471cd4f6fe4 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID3c9f6d80-857d-4fb8-a538-618532a949d3 a aamas:Term ;
+aama:ID7df67755-77bd-4bda-ba43-d56a13d41479 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1939,7 +1953,7 @@ aama:ID3c9f6d80-857d-4fb8-a538-618532a949d3 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID3109e0b7-8658-401e-ad8a-07bd4a3ea51a a aamas:Term ;
+aama:ID9c901936-e2bd-4453-99bb-3d8d8c796ab4 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1955,7 +1969,7 @@ aama:ID3109e0b7-8658-401e-ad8a-07bd4a3ea51a a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID9763932c-9791-45f2-9430-2ef6ae7151d4 a aamas:Term ;
+aama:ID98c6e6ae-65b7-4e01-95e7-8761dfd2d6f8 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -1974,7 +1988,7 @@ aama:ID9763932c-9791-45f2-9430-2ef6ae7151d4 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainNegPerfImprtv-gab
 
-aama:ID68daab9d-ea69-40e1-8257-d7da9fb5dbcf a aamas:Term ;
+aama:IDf41df2ef-3b72-41e6-bc10-dcc906a79bf4 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Common ;
 	bil:pngSet bil:U ;
@@ -1990,7 +2004,7 @@ aama:ID68daab9d-ea69-40e1-8257-d7da9fb5dbcf a aamas:Term ;
 	bil:token "gäbga" ;
 	bil:number bil:Plural ;
 	.
-aama:ID1f4480bb-431d-4820-b1be-b66d1edf8de8 a aamas:Term ;
+aama:ID614e9c0f-8c69-49eb-a4e2-0f8682afe124 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Common ;
 	bil:pngSet bil:U ;
@@ -2009,7 +2023,7 @@ aama:ID1f4480bb-431d-4820-b1be-b66d1edf8de8 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvWhenAffImperfPngA-gab
 
-aama:ID46abecd6-c4c1-4086-9216-3c6cbef65028 a aamas:Term ;
+aama:ID2525d413-ef53-4b41-ae85-5dd3bab08615 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -2028,7 +2042,7 @@ aama:ID46abecd6-c4c1-4086-9216-3c6cbef65028 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj2MainNegPerfPngA2-kab
 
-aama:IDbedc6949-466b-4974-9aaa-e08f9b15454e a aamas:Term ;
+aama:ID330b65f3-73a0-4ebd-b3a8-ef7ab277d19f a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2043,7 +2057,7 @@ aama:IDbedc6949-466b-4974-9aaa-e08f9b15454e a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID1e30d1fc-addd-4ba0-a312-3d35213a4c91 a aamas:Term ;
+aama:IDff8ffd45-7e06-4142-bf72-1a080e67e84a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2058,7 +2072,7 @@ aama:ID1e30d1fc-addd-4ba0-a312-3d35213a4c91 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID00b835c5-d4c0-4d9e-8e83-96ce1f532b93 a aamas:Term ;
+aama:ID74052956-4ae9-4231-b21a-d4edae924a6a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2073,7 +2087,7 @@ aama:ID00b835c5-d4c0-4d9e-8e83-96ce1f532b93 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDb5965d11-cb32-4027-a8c6-5caf4298f1aa a aamas:Term ;
+aama:ID17cd745e-ed28-4757-9ccb-5e6d3fc85f38 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2088,7 +2102,7 @@ aama:IDb5965d11-cb32-4027-a8c6-5caf4298f1aa a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDa9492d8b-002a-42ed-a2ed-15b94dc582f0 a aamas:Term ;
+aama:ID26a80729-0f73-4154-aaf0-92f36c863b7d a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2103,7 +2117,7 @@ aama:IDa9492d8b-002a-42ed-a2ed-15b94dc582f0 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID2aabdf37-fe0e-4312-885e-eb26fdba090a a aamas:Term ;
+aama:IDd8a8c6e1-4c35-4dcc-a0c4-4f1fe3cbb756 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2118,7 +2132,7 @@ aama:ID2aabdf37-fe0e-4312-885e-eb26fdba090a a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:IDda3cbfa2-2c68-4091-b71e-34116b6f5477 a aamas:Term ;
+aama:ID12fce316-7890-42ad-b673-41d6e252af31 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -2136,7 +2150,7 @@ aama:IDda3cbfa2-2c68-4091-b71e-34116b6f5477 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj3MainAffPerfPastPngB-kw
 
-aama:ID129b9133-e20e-4340-a5b1-085d81d66ff4 a aamas:Term ;
+aama:ID4a3f030e-3644-488f-b914-72b386da55ef a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2151,7 +2165,7 @@ aama:ID129b9133-e20e-4340-a5b1-085d81d66ff4 a aamas:Term ;
 	bil:person bil:Person3 ;
 	bil:gender bil:Masc ;
 	.
-aama:ID73efc723-6ddb-45fb-8fbf-93c5c0d0717c a aamas:Term ;
+aama:ID5b652707-e86e-4abb-81f9-a515978f27a5 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2166,7 +2180,7 @@ aama:ID73efc723-6ddb-45fb-8fbf-93c5c0d0717c a aamas:Term ;
 	bil:person bil:Person2 ;
 	bil:gender bil:Common ;
 	.
-aama:ID03b1182a-48e5-4eaa-80aa-a05322c348ea a aamas:Term ;
+aama:ID449df2f9-2094-4b6b-aff5-b468e7e22c4a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2184,7 +2198,7 @@ aama:ID03b1182a-48e5-4eaa-80aa-a05322c348ea a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainAffImperfPresPngB-gab
 
-aama:IDe4005ca9-efb1-4680-bdba-0a06e4703be2 a aamas:Term ;
+aama:ID02893302-41a2-4ddc-87ce-a887b5309d00 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2200,7 +2214,7 @@ aama:IDe4005ca9-efb1-4680-bdba-0a06e4703be2 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID15f3c989-e9e9-4689-8eeb-f2ff12879a7d a aamas:Term ;
+aama:IDb7cb94cb-ee4e-44d0-b57c-cca155cb75c2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2216,7 +2230,7 @@ aama:ID15f3c989-e9e9-4689-8eeb-f2ff12879a7d a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID062efa45-dad8-4bb5-88bc-92b7e5284925 a aamas:Term ;
+aama:ID50c7cce7-9ee0-404b-87ed-d21947258cb6 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2232,7 +2246,7 @@ aama:ID062efa45-dad8-4bb5-88bc-92b7e5284925 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID09d69cc5-0f19-4463-8ec1-5a6898c39990 a aamas:Term ;
+aama:ID9d003eca-00ca-4724-a42b-fc53719b44a6 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2248,7 +2262,7 @@ aama:ID09d69cc5-0f19-4463-8ec1-5a6898c39990 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID6950ac2e-2b15-4dc2-8850-46da9eb91f2e a aamas:Term ;
+aama:IDd39feb0b-cf4e-426b-b16d-38b84c133749 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2264,7 +2278,7 @@ aama:ID6950ac2e-2b15-4dc2-8850-46da9eb91f2e a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID5a1ccb3a-219b-4817-8905-2ad47ab8f7d5 a aamas:Term ;
+aama:ID8695470c-14c6-46b9-bc5b-995ae72560d5 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2280,7 +2294,7 @@ aama:ID5a1ccb3a-219b-4817-8905-2ad47ab8f7d5 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:IDa3b66849-6ea8-4edc-b2ba-4f7d68e38ada a aamas:Term ;
+aama:IDdc47d1e2-ba71-43e8-bb3f-d486b6664af6 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2299,7 +2313,7 @@ aama:IDa3b66849-6ea8-4edc-b2ba-4f7d68e38ada a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj2MainNegImperfPngA2-kab
 
-aama:IDab5e8f7a-c29a-4c94-a81c-3e301297baaa a aamas:Term ;
+aama:ID49ce8d00-5a37-4f3e-9055-3ca5c1f133ed a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2314,7 +2328,7 @@ aama:IDab5e8f7a-c29a-4c94-a81c-3e301297baaa a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID9f09fc1f-93b2-44bc-818b-4f2e29659b8c a aamas:Term ;
+aama:ID9ee23eb3-2658-47bf-9335-2d9323981694 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2329,7 +2343,7 @@ aama:ID9f09fc1f-93b2-44bc-818b-4f2e29659b8c a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID4377e76d-a249-47fb-a9c2-c8eba0adbdcb a aamas:Term ;
+aama:IDe05de64a-4e40-45d6-9f03-4ae548785006 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2344,7 +2358,7 @@ aama:ID4377e76d-a249-47fb-a9c2-c8eba0adbdcb a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDb667986a-f70f-4d56-910a-84e3ed9505d3 a aamas:Term ;
+aama:ID82130164-d6d2-4a4e-95ac-1d3eaf667440 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2359,7 +2373,7 @@ aama:IDb667986a-f70f-4d56-910a-84e3ed9505d3 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID56c9d53c-65ac-4eda-a0f6-a170f4aeb419 a aamas:Term ;
+aama:ID1c452a1a-348a-45a9-a560-ef3d83a003df a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2374,7 +2388,7 @@ aama:ID56c9d53c-65ac-4eda-a0f6-a170f4aeb419 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID001b9a52-1248-427b-86b0-f9574b38a8de a aamas:Term ;
+aama:IDa103b085-0329-42c3-99bc-87a4bd0e7fed a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2389,7 +2403,7 @@ aama:ID001b9a52-1248-427b-86b0-f9574b38a8de a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDa56c3331-2e73-49d3-9af0-e819c1ac9d7d a aamas:Term ;
+aama:ID03b79fd3-9052-4b94-8b1e-f5e49e979993 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -2407,7 +2421,7 @@ aama:IDa56c3331-2e73-49d3-9af0-e819c1ac9d7d a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvPurpAffPerfPngC-gab
 
-aama:ID9e14c80d-af11-4d6b-9dd3-a54f5d4817ed a aamas:Term ;
+aama:ID25c8a464-98bb-4bee-9dce-76777e4ed801 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngC ;
@@ -2426,7 +2440,7 @@ aama:ID9e14c80d-af11-4d6b-9dd3-a54f5d4817ed a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvFutCondAffPerfPngC-gab
 
-aama:IDdd324a1f-b5bc-4f53-b14c-c3e73f2bd41b a aamas:Term ;
+aama:IDe10b29c5-7bcb-469f-8eaa-64d13a7b7465 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngC ;
@@ -2445,7 +2459,7 @@ aama:IDdd324a1f-b5bc-4f53-b14c-c3e73f2bd41b a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvCondNegPerfPngA-gab
 
-aama:ID3f9ba1a6-d4e8-4c4b-b9a7-61b942467f06 a aamas:Term ;
+aama:IDfa6a5f2e-56d8-4108-a990-3f0c2cc4dc34 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -2462,28 +2476,9 @@ aama:ID3f9ba1a6-d4e8-4c4b-b9a7-61b942467f06 a aamas:Term ;
 	bil:token "gäbgənädik" ;
 	.
 
-#TERMCLUSTER: bilin-VConj1Infinitive-gab
-
-aama:ID97be9d2e-7c56-4923-a3ff-749cb9eddf54 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:gender bil:Common ;
-	bil:finiteForm bil:Infinitive ;
-	bil:pngSet bil:_NULL ;
-	bil:polarity bil:U ;
-	bil:conjClass bil:Conjugation1 ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:numberGenderHead bil:U ;
-	bil:pos bil:Verb ;
-	bil:person bil:Common ;
-	bil:tam bil:U ;
-	bil:clauseType bil:_NULL ;
-	bil:number bil:Common ;
-	bil:token "gäbna" ;
-	.
-
 #TERMCLUSTER: bilin-VConj1AdvAt2AffImperfPngA-gab
 
-aama:ID88463953-7f79-44f1-9dcf-1f5a19c24dca a aamas:Term ;
+aama:IDb7b6ae01-7c4d-4719-b0c2-e2885f6cffaa a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -2502,7 +2497,7 @@ aama:ID88463953-7f79-44f1-9dcf-1f5a19c24dca a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvCondNegImperfPngA-gab
 
-aama:ID1de36ada-cfcd-4980-ac82-67a175512fca a aamas:Term ;
+aama:ID94ce3a05-b174-4563-9cee-7f65282e606a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -2521,7 +2516,7 @@ aama:ID1de36ada-cfcd-4980-ac82-67a175512fca a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvUntilAffPerfPngC-gab
 
-aama:ID52e736bc-45bf-429b-8621-8064ab59be29 a aamas:Term ;
+aama:ID6ae132da-cdad-44cf-af98-b9481b30487e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngC ;
@@ -2540,7 +2535,7 @@ aama:ID52e736bc-45bf-429b-8621-8064ab59be29 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvComplAffImperfPngA-gab
 
-aama:IDa609e01d-664b-478a-8762-213ac2e568f1 a aamas:Term ;
+aama:ID03704dc9-3ee7-478f-931a-5c873a09bbd4 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -2559,7 +2554,7 @@ aama:IDa609e01d-664b-478a-8762-213ac2e568f1 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj3MainAffImperfPresPngB-kw
 
-aama:ID70088196-0310-4ee4-bce2-8332d8c8acc8 a aamas:Term ;
+aama:ID0b895fdb-a0c4-4631-b494-5848e2b5ab81 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2574,7 +2569,7 @@ aama:ID70088196-0310-4ee4-bce2-8332d8c8acc8 a aamas:Term ;
 	bil:person bil:Person3 ;
 	bil:gender bil:Masc ;
 	.
-aama:IDb12fa2a1-6385-4641-9eb1-834e8d77a2fc a aamas:Term ;
+aama:ID2467eaba-85af-4403-83ce-0659919669a8 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2589,7 +2584,7 @@ aama:IDb12fa2a1-6385-4641-9eb1-834e8d77a2fc a aamas:Term ;
 	bil:person bil:Person1 ;
 	bil:gender bil:Common ;
 	.
-aama:IDcf82f8e4-f8bf-40a3-87aa-b066f4f1d751 a aamas:Term ;
+aama:ID417700a5-5f83-4b6f-9401-b03146011151 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngB ;
 	bil:polarity bil:Affirmative ;
@@ -2607,7 +2602,7 @@ aama:IDcf82f8e4-f8bf-40a3-87aa-b066f4f1d751 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvPurpNegPerfPngC-gab
 
-aama:IDd54af72c-c78d-490d-b0b5-3e7706b000c6 a aamas:Term ;
+aama:ID13a2e418-93d4-4127-b206-2fd1bce68bb9 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngC ;
@@ -2626,7 +2621,7 @@ aama:IDd54af72c-c78d-490d-b0b5-3e7706b000c6 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1RelObliqAffImperfPngAHeadSgm-gab
 
-aama:IDb6b5ccb0-f59e-4929-807e-33bc108c20de a aamas:Term ;
+aama:ID7abf93d1-c9bb-461b-b11e-d35df3239e0e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2642,7 +2637,7 @@ aama:IDb6b5ccb0-f59e-4929-807e-33bc108c20de a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID47e406b7-ab36-48b9-9b47-2d25ce0ea92d a aamas:Term ;
+aama:ID956adcd7-e7ba-4239-8155-79f2676fbed2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2658,7 +2653,7 @@ aama:ID47e406b7-ab36-48b9-9b47-2d25ce0ea92d a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID27ec7cb5-1c8f-46db-ba0a-901e4fa6d325 a aamas:Term ;
+aama:ID9a20971e-60f8-4712-96c5-12405eaf097e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2674,7 +2669,7 @@ aama:ID27ec7cb5-1c8f-46db-ba0a-901e4fa6d325 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDe048e26f-3f7b-4bc4-a8ec-8f8ba935547a a aamas:Term ;
+aama:ID20cd8264-a9e8-48d7-b02e-6d3523268eb5 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2690,7 +2685,7 @@ aama:IDe048e26f-3f7b-4bc4-a8ec-8f8ba935547a a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID31e3da69-057c-4cd3-97e0-4aeaca13b9d0 a aamas:Term ;
+aama:ID5b406043-8f11-464e-821b-951b58ffe473 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2706,7 +2701,7 @@ aama:ID31e3da69-057c-4cd3-97e0-4aeaca13b9d0 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID8d720218-2fd1-4ebf-928e-47fcc8fdebed a aamas:Term ;
+aama:IDa809fd9b-6b70-4e36-b1ca-16f66b9075a9 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2722,7 +2717,7 @@ aama:ID8d720218-2fd1-4ebf-928e-47fcc8fdebed a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID3aa255fd-6668-45ef-a860-56bab69d8706 a aamas:Term ;
+aama:ID31762ce1-d2b8-4127-a8af-01ffcdbe51d3 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2741,7 +2736,7 @@ aama:ID3aa255fd-6668-45ef-a860-56bab69d8706 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1RelObliqAffImperfPngAHeadPl-gab
 
-aama:ID9ffa0d61-45fd-4c46-8b5a-3c90d7b88653 a aamas:Term ;
+aama:ID84bf567e-2bfd-438a-803c-07460b33a37a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2757,7 +2752,7 @@ aama:ID9ffa0d61-45fd-4c46-8b5a-3c90d7b88653 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID2f04bac0-b60e-4ee1-94f7-b1f44799df8f a aamas:Term ;
+aama:IDb018a328-1f40-493c-a410-e767feb5fc22 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2773,7 +2768,7 @@ aama:ID2f04bac0-b60e-4ee1-94f7-b1f44799df8f a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDcc7b8377-ac97-4e17-b742-ecc33ba77391 a aamas:Term ;
+aama:ID12441bdc-1381-4582-a34d-af2666d212a9 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2789,7 +2784,7 @@ aama:IDcc7b8377-ac97-4e17-b742-ecc33ba77391 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID403f991e-c18d-4b2d-8a0a-ee2c3b438933 a aamas:Term ;
+aama:ID7c21927b-cf15-40fe-812d-99b717cb1a38 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2805,7 +2800,7 @@ aama:ID403f991e-c18d-4b2d-8a0a-ee2c3b438933 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID6bd8c3c9-b078-4f61-9d28-6322166de773 a aamas:Term ;
+aama:ID338503c1-37c3-4704-980c-f6edfa240b99 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2821,7 +2816,7 @@ aama:ID6bd8c3c9-b078-4f61-9d28-6322166de773 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDdf1b4d0e-bde1-4d65-a41e-84fb5b3880f5 a aamas:Term ;
+aama:ID14266620-3cee-40ba-8de3-288b35513a01 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2837,7 +2832,7 @@ aama:IDdf1b4d0e-bde1-4d65-a41e-84fb5b3880f5 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID16510a39-63db-4dd7-9195-2e162e29b3a4 a aamas:Term ;
+aama:IDbcfa5f66-7467-42bb-983e-3b360740d2fc a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -2856,7 +2851,7 @@ aama:ID16510a39-63db-4dd7-9195-2e162e29b3a4 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvComplNegImperfPngA-gab
 
-aama:ID2d88404c-9823-413b-b140-f1d0c7fa8be0 a aamas:Term ;
+aama:ID0fccf7e7-bf6c-4149-a5ef-b4cd1b6ad4c6 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -2875,7 +2870,7 @@ aama:ID2d88404c-9823-413b-b140-f1d0c7fa8be0 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj2RelSubjAffImperfPngA-kab
 
-aama:ID1151f7f4-3460-4300-b499-303b5409be55 a aamas:Term ;
+aama:IDb6c6a687-7140-4acd-a09c-eb8bfe62c8cd a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2890,7 +2885,7 @@ aama:ID1151f7f4-3460-4300-b499-303b5409be55 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:IDb139e9db-7466-468d-9f5a-5820488cb6ec a aamas:Term ;
+aama:ID420fb632-f0a3-4f25-b317-4e9a509f135d a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2905,7 +2900,7 @@ aama:IDb139e9db-7466-468d-9f5a-5820488cb6ec a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID223801f5-fe1a-4687-9b47-fa183fa900d3 a aamas:Term ;
+aama:ID7fd00b11-2812-4c36-825f-93f390e09e0d a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2920,7 +2915,7 @@ aama:ID223801f5-fe1a-4687-9b47-fa183fa900d3 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDf237d470-974e-492a-98ab-937918656a5e a aamas:Term ;
+aama:ID6c3918fa-e4dd-4a06-9f06-1e26bd952439 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2935,7 +2930,7 @@ aama:IDf237d470-974e-492a-98ab-937918656a5e a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID1ecfc68a-56cf-4099-a01b-fbe34c48b900 a aamas:Term ;
+aama:ID851df704-d731-4a3b-8e11-9ec0fedcc8d1 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2950,7 +2945,7 @@ aama:ID1ecfc68a-56cf-4099-a01b-fbe34c48b900 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID01a02c1c-26ed-463f-b2da-5f97fd49029a a aamas:Term ;
+aama:ID276280dc-8040-451a-b076-19abdd06b022 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2965,7 +2960,7 @@ aama:ID01a02c1c-26ed-463f-b2da-5f97fd49029a a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID8ee9cb7d-8b0a-4022-9188-a58c16030c13 a aamas:Term ;
+aama:ID4d8025b5-3702-4664-9fe3-10ad7bd7510a a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:RelSubj ;
@@ -2983,7 +2978,7 @@ aama:ID8ee9cb7d-8b0a-4022-9188-a58c16030c13 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1AdvCauseNegPerfPngA-gab
 
-aama:ID5e2f34af-6550-4f12-9f8c-ffc6243ce0d6 a aamas:Term ;
+aama:IDc526d97f-4d92-43f9-bdc0-15e9c5e0e712 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:gender bil:Masc ;
 	bil:pngSet bil:PngA ;
@@ -3002,7 +2997,7 @@ aama:ID5e2f34af-6550-4f12-9f8c-ffc6243ce0d6 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj2MainAffPerfPastPngB-kab
 
-aama:ID3336de98-0113-4f7c-aa05-8e57edd7c1e3 a aamas:Term ;
+aama:ID7c6d3279-312b-49f4-ad26-a8b099b6e993 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3017,7 +3012,7 @@ aama:ID3336de98-0113-4f7c-aa05-8e57edd7c1e3 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDbc52079a-b05a-4261-b820-d837c3e4acea a aamas:Term ;
+aama:ID24b03c42-3030-49d7-b8a7-706da26f960c a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3032,7 +3027,7 @@ aama:IDbc52079a-b05a-4261-b820-d837c3e4acea a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID541ec1f3-36a1-4321-b2ce-320ad712b269 a aamas:Term ;
+aama:IDaec127cd-e7cb-40d0-81ff-ec215c6ade2e a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3047,7 +3042,7 @@ aama:ID541ec1f3-36a1-4321-b2ce-320ad712b269 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID3e838e54-1a11-4249-a96a-69237f94b59d a aamas:Term ;
+aama:IDe11ee039-6feb-4dce-92e1-866e68a08047 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3062,7 +3057,7 @@ aama:ID3e838e54-1a11-4249-a96a-69237f94b59d a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID16b61fd2-b675-47a5-8b85-8b14b3f61400 a aamas:Term ;
+aama:IDc8325efb-a78d-4615-801c-50f9ff60ccbc a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3077,7 +3072,7 @@ aama:ID16b61fd2-b675-47a5-8b85-8b14b3f61400 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID0e5354dc-b830-4419-b656-e56978780138 a aamas:Term ;
+aama:ID8b907ff7-0f4d-4ae1-a026-1a28e2bef4d0 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3092,7 +3087,7 @@ aama:ID0e5354dc-b830-4419-b656-e56978780138 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDf2cba608-5f36-4172-b2b3-92803e375ead a aamas:Term ;
+aama:ID2b1cd5ab-0f60-403c-8987-7898ac8a29b8 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Perfective ;
 	bil:clauseType bil:Main ;
@@ -3110,7 +3105,7 @@ aama:IDf2cba608-5f36-4172-b2b3-92803e375ead a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj2MainAffImperfPresPngB-kab
 
-aama:ID7d38e71b-0b71-4cb2-a728-95a4cacd3284 a aamas:Term ;
+aama:IDd5d6214d-209b-49cc-b886-4ed910268ca2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3125,7 +3120,7 @@ aama:ID7d38e71b-0b71-4cb2-a728-95a4cacd3284 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID7ea88cf5-6d58-44a3-8279-7ecefbc217bd a aamas:Term ;
+aama:ID45b219d0-532e-4b41-9990-3eb353c9153c a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3140,7 +3135,7 @@ aama:ID7ea88cf5-6d58-44a3-8279-7ecefbc217bd a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID0c41ab6e-f6f0-41f6-a8e3-8d3771100c8c a aamas:Term ;
+aama:IDee764e59-7e6f-406c-900e-667c5a838c4c a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3155,7 +3150,7 @@ aama:ID0c41ab6e-f6f0-41f6-a8e3-8d3771100c8c a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID3c622abe-5901-401d-a335-a9f5b454005b a aamas:Term ;
+aama:IDac6eb3b3-dcb2-487d-aa80-7a98f46538ea a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3170,7 +3165,7 @@ aama:ID3c622abe-5901-401d-a335-a9f5b454005b a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDde900a81-5133-4021-8d09-e661e0b55c3b a aamas:Term ;
+aama:ID945d4946-35de-401f-ac92-697d20207772 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3185,7 +3180,7 @@ aama:IDde900a81-5133-4021-8d09-e661e0b55c3b a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID6d45c055-5699-44a7-9e86-324d3af5ffd4 a aamas:Term ;
+aama:ID44f58524-0939-4bb2-bdea-c4f5ab1a80e8 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3200,7 +3195,7 @@ aama:ID6d45c055-5699-44a7-9e86-324d3af5ffd4 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDf4c0a075-f5d2-449a-a653-09baaa6bc366 a aamas:Term ;
+aama:ID1fb53ba3-f88c-4424-89bf-f38b210a6d50 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:aspect bil:Imperfective ;
 	bil:clauseType bil:Main ;
@@ -3216,28 +3211,9 @@ aama:IDf4c0a075-f5d2-449a-a653-09baaa6bc366 a aamas:Term ;
 	bil:gender bil:Masc ;
 	.
 
-#TERMCLUSTER: bilin-VConj1Agent-gab
-
-aama:ID4fb440aa-30b6-4411-98c3-e0d48569f8d5 a aamas:Term ;
-	aamas:lang aama:Bilin ;
-	bil:gender bil:Common ;
-	bil:finiteForm bil:Agent ;
-	bil:pngSet bil:_NULL ;
-	bil:polarity bil:U ;
-	bil:conjClass bil:Conjugation1 ;
-	aamas:lexeme aama:Bilin-gab ;
-	bil:numberGenderHead bil:U ;
-	bil:pos bil:Verb ;
-	bil:person bil:Common ;
-	bil:tam bil:U ;
-	bil:clauseType bil:_NULL ;
-	bil:number bil:Common ;
-	bil:token "gäbänta {pl. gäbänti)" ;
-	.
-
 #TERMCLUSTER: bilin-VConj1RelSubjAffPerfPngA-gab
 
-aama:ID3552b023-a9dd-4789-8a4e-92a84e0188bc a aamas:Term ;
+aama:ID89de2837-4834-4b23-b1d7-e393af0105eb a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3253,7 +3229,7 @@ aama:ID3552b023-a9dd-4789-8a4e-92a84e0188bc a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID76fcf63f-08b1-4242-aa04-7b686699b191 a aamas:Term ;
+aama:ID0b94fe6b-cafe-4c14-bc82-4f1eefc68aa0 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3269,7 +3245,7 @@ aama:ID76fcf63f-08b1-4242-aa04-7b686699b191 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID7372f420-d4c5-4a52-a50d-2955388d227d a aamas:Term ;
+aama:ID5a31b641-2ba4-4e6b-b4d2-89b08747eeda a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3285,7 +3261,7 @@ aama:ID7372f420-d4c5-4a52-a50d-2955388d227d a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDc39633eb-f1df-4040-b7b5-dd50c9bb0238 a aamas:Term ;
+aama:IDc72cc347-3a8b-453d-948b-687ea83a1e40 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3301,7 +3277,7 @@ aama:IDc39633eb-f1df-4040-b7b5-dd50c9bb0238 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID8d84bd8b-8bee-49b9-a304-20aaa8196f4c a aamas:Term ;
+aama:ID4234bef7-78d1-473b-97f1-4abe4053239d a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3317,7 +3293,7 @@ aama:ID8d84bd8b-8bee-49b9-a304-20aaa8196f4c a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID3f0df511-fcb8-45d8-ad70-58e16caa42ea a aamas:Term ;
+aama:ID88e16c8c-626f-4c4b-bf9d-13d490c8480f a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3333,7 +3309,7 @@ aama:ID3f0df511-fcb8-45d8-ad70-58e16caa42ea a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID11c609c3-f51c-4090-aad2-fd010cd91072 a aamas:Term ;
+aama:ID6184a78b-4a56-42cf-9018-717e2ee2957f a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA ;
 	bil:polarity bil:Affirmative ;
@@ -3352,7 +3328,7 @@ aama:ID11c609c3-f51c-4090-aad2-fd010cd91072 a aamas:Term ;
 
 #TERMCLUSTER: bilin-VConj1MainNegImperfPngA2-gab
 
-aama:IDfa688637-b8d7-4290-8dc3-53cbda1b9119 a aamas:Term ;
+aama:IDddb6f6c8-c1e2-4251-875f-3d2e30b07f5c a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3368,7 +3344,7 @@ aama:IDfa688637-b8d7-4290-8dc3-53cbda1b9119 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID56693b5e-c15e-4a66-9463-52981049e0b7 a aamas:Term ;
+aama:ID670392ed-9756-4607-adfc-9a01a6c14c94 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3384,7 +3360,7 @@ aama:ID56693b5e-c15e-4a66-9463-52981049e0b7 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID07c247fd-bc1d-4e05-9646-af7d42e72cd6 a aamas:Term ;
+aama:ID6e5d7c5c-38de-4450-81c2-fbb969d46432 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3400,7 +3376,7 @@ aama:ID07c247fd-bc1d-4e05-9646-af7d42e72cd6 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID3c3c9dbf-f365-4dde-8eb9-ee0a8aff2311 a aamas:Term ;
+aama:IDa5664c83-78cf-4f0b-9c59-9e377050d370 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3416,7 +3392,7 @@ aama:ID3c3c9dbf-f365-4dde-8eb9-ee0a8aff2311 a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID86377a08-1b85-4b90-817e-f034d63eb27b a aamas:Term ;
+aama:IDb6c81f4e-af2a-4e6e-80f0-90e8416d9d72 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3432,7 +3408,7 @@ aama:ID86377a08-1b85-4b90-817e-f034d63eb27b a aamas:Term ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID26dac930-6e69-4664-a103-43e6770bf0c9 a aamas:Term ;
+aama:ID8e45a77a-554e-4331-9ec5-ec41f652ae27 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3448,7 +3424,7 @@ aama:ID26dac930-6e69-4664-a103-43e6770bf0c9 a aamas:Term ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDf1056579-5f64-4fca-836a-f81a2ef3961c a aamas:Term ;
+aama:ID2d21efdb-a6b8-47e3-b5a5-c507da4584a2 a aamas:Term ;
 	aamas:lang aama:Bilin ;
 	bil:pngSet bil:PngA2 ;
 	bil:polarity bil:Negative ;
@@ -3467,7 +3443,7 @@ aama:IDf1056579-5f64-4fca-836a-f81a2ef3961c a aamas:Term ;
 
 #MUTERMCLUSTER: bilin-VPngAPngSuff
 
-aama:ID3f4c7fc3-adad-46e2-942e-c6eef49fac19 a aamas:Muterm ;
+aama:ID34f20471-ba82-4a05-8200-bbfc97212879 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3479,7 +3455,7 @@ aama:ID3f4c7fc3-adad-46e2-942e-c6eef49fac19 a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDcd2cc0db-88d0-4620-a0eb-d20f12252d31 a aamas:Muterm ;
+aama:IDed5f0006-c572-4ddf-8e79-136f29446215 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3491,7 +3467,7 @@ aama:IDcd2cc0db-88d0-4620-a0eb-d20f12252d31 a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID93164d35-9278-4d97-8a33-21dbd6242385 a aamas:Muterm ;
+aama:ID58cd5547-3cc0-4d16-bc13-fe4f7af697b7 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3503,7 +3479,7 @@ aama:ID93164d35-9278-4d97-8a33-21dbd6242385 a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDffd73977-715f-4fe4-92c8-e9bc34fb5472 a aamas:Muterm ;
+aama:ID66c0f137-3b61-40e0-ad3e-cc87168335f9 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3515,7 +3491,7 @@ aama:IDffd73977-715f-4fe4-92c8-e9bc34fb5472 a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID0991e915-78ba-4a44-b002-74766d23b8db a aamas:Muterm ;
+aama:ID3371dea4-5b59-4788-a05b-f82496c3cec3 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3527,7 +3503,7 @@ aama:ID0991e915-78ba-4a44-b002-74766d23b8db a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID8a2af6d9-dcf8-4a17-adb7-c8314a98227f a aamas:Muterm ;
+aama:ID4999ae15-cc5a-4f75-88ef-c99543ed299b a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3539,7 +3515,7 @@ aama:ID8a2af6d9-dcf8-4a17-adb7-c8314a98227f a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID94d89ffe-7ba2-4cbb-8185-498bd573b46e a aamas:Muterm ;
+aama:IDddc55939-e346-418b-903c-f268028982dc a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA ;
 	bil:pngSet bil:PngA ;
@@ -3552,76 +3528,9 @@ aama:ID94d89ffe-7ba2-4cbb-8185-498bd573b46e a aamas:Muterm ;
 	bil:gender bil:Fem ;
 	.
 
-#MUTERMCLUSTER: bilin-VDervSuff
-
-aama:ID47b392fa-30ca-49eb-a91f-10ab47c1766d a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "-sis-" ;
-	bil:derivedStem bil:S2 ;
-	.
-aama:ID37b5c992-b54c-4a29-bb79-62699f04d9be a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "Common" ;
-	bil:derivedStem bil:Reciprocal ;
-	.
-aama:ID61e2925f-745e-4936-a7d9-8fd320bd445e a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "freq + -s-/-is-" ;
-	bil:derivedStem bil:M-Freq ;
-	.
-aama:IDb499af59-0df7-49b8-a93c-95efc2b1e250 a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "-s-/-is- ~ -d-" ;
-	bil:derivedStem bil:S ;
-	.
-aama:IDd692b99f-02b6-488c-8e3e-c65e1c467ffc a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "freq + -əst-" ;
-	bil:derivedStem bil:M-Freq ;
-	.
-aama:IDc8102165-fa26-4a09-a2f3-3c80969c9352 a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "-əst- ~ -s- ~ -t-" ;
-	bil:derivedStem bil:M ;
-	.
-aama:ID967e5818-ba59-44b9-b159-ee8fde983245 a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "redup ~ redup+-əŋ-" ;
-	bil:derivedStem bil:Frequentative ;
-	.
-aama:ID3fc1e3ff-9286-4cc6-8a80-4a25ec692830 a aamas:Muterm ;
-	aamas:lang aama:Bilin ;
-	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
-	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:DervSuff ;
-	bil:token "-əŋis-" ;
-	bil:derivedStem bil:S-Recip ;
-	.
-
 #MUTERMCLUSTER: bilin-VPngBPngSuff
 
-aama:IDe364294d-2052-484f-9732-a166d7144339 a aamas:Muterm ;
+aama:IDfcc26533-5a54-44b3-af18-2c71eddf6522 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3632,7 +3541,7 @@ aama:IDe364294d-2052-484f-9732-a166d7144339 a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:ID1fd5a3ec-391c-42bd-8d65-6db22f114471 a aamas:Muterm ;
+aama:IDb24e6ff1-bf31-4da0-8012-3fb7b2a1bbdb a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3643,7 +3552,7 @@ aama:ID1fd5a3ec-391c-42bd-8d65-6db22f114471 a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID85fd2080-1bbd-443e-9d81-0f9d4c681bde a aamas:Muterm ;
+aama:ID6ed22c60-8f2b-48da-b98d-dfefb13203a5 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3654,7 +3563,7 @@ aama:ID85fd2080-1bbd-443e-9d81-0f9d4c681bde a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:IDa4b1f669-1e59-42be-a678-c8b33e61605e a aamas:Muterm ;
+aama:ID5b6111b9-8573-42be-aa0d-dc8e070ca127 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3665,7 +3574,7 @@ aama:IDa4b1f669-1e59-42be-a678-c8b33e61605e a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID68b58c2e-4beb-4ff4-862a-78e8bd7c8793 a aamas:Muterm ;
+aama:IDab878c29-2cff-4287-bdba-525607c0ddee a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3676,7 +3585,7 @@ aama:ID68b58c2e-4beb-4ff4-862a-78e8bd7c8793 a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID94a07bfe-19db-410e-ac8f-67422f729629 a aamas:Muterm ;
+aama:IDd56052ee-409b-48fd-8f40-24fa4a7c708d a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3687,7 +3596,7 @@ aama:ID94a07bfe-19db-410e-ac8f-67422f729629 a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDefaac2fa-ebe4-4820-ade6-2769039f93ae a aamas:Muterm ;
+aama:ID693e6853-bb4f-45f8-b7c2-e2820cffa7ba a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKB ;
 	bil:pngSet bil:PngB ;
@@ -3699,9 +3608,76 @@ aama:IDefaac2fa-ebe4-4820-ade6-2769039f93ae a aamas:Muterm ;
 	bil:gender bil:Masc ;
 	.
 
+#MUTERMCLUSTER: bilin-VDervSuff
+
+aama:ID04b48f99-5c8c-4a95-8bf6-2eaa1bace421 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "-sis-" ;
+	bil:derivedStem bil:S2 ;
+	.
+aama:ID247c29b0-e52d-42f0-a291-4698168a6437 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "Common" ;
+	bil:derivedStem bil:Reciprocal ;
+	.
+aama:ID13877bc4-c18d-496f-99c5-dcb8af7fb630 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "freq + -s-/-is-" ;
+	bil:derivedStem bil:M-Freq ;
+	.
+aama:ID770ad032-8d66-4cbb-b31e-7485a327ba21 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "-s-/-is- ~ -d-" ;
+	bil:derivedStem bil:S ;
+	.
+aama:ID363bc2de-574c-49b2-beb6-dc62a38c8aae a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "freq + -əst-" ;
+	bil:derivedStem bil:M-Freq ;
+	.
+aama:ID4a2ce4d3-b993-4ef6-ad34-4374d14db470 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "-əst- ~ -s- ~ -t-" ;
+	bil:derivedStem bil:M ;
+	.
+aama:IDda35d715-f45b-4bfc-bed8-94effb5df362 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "redup ~ redup+-əŋ-" ;
+	bil:derivedStem bil:Frequentative ;
+	.
+aama:IDf52e78d9-d655-4d61-85cc-6646efebef10 a aamas:Muterm ;
+	aamas:lang aama:Bilin ;
+	aamas:morpheme aama:Bilin-DERVSTEMSUFF ;
+	bil:pos bil:Verb ;
+	bil:morphClass bil:DervSuff ;
+	bil:token "-əŋis-" ;
+	bil:derivedStem bil:S-Recip ;
+	.
+
 #MUTERMCLUSTER: bilin-VPngCPngSuff
 
-aama:ID59446626-b3ec-4acc-be27-0f393cd3781a a aamas:Muterm ;
+aama:IDb08b4494-a7c3-4af5-af0a-5845a1edef6a a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3713,7 +3689,7 @@ aama:ID59446626-b3ec-4acc-be27-0f393cd3781a a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID3ec5a881-7523-4ce6-958a-00c1d29a0bff a aamas:Muterm ;
+aama:IDac25f5ae-6b25-458d-ba0d-82d465a2d5e3 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3725,7 +3701,7 @@ aama:ID3ec5a881-7523-4ce6-958a-00c1d29a0bff a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID3702ab81-aad7-4af8-82b1-33a11d60ac75 a aamas:Muterm ;
+aama:ID5512c65d-a60b-483b-8a6b-e8b0c6d2e379 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3737,7 +3713,7 @@ aama:ID3702ab81-aad7-4af8-82b1-33a11d60ac75 a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDa49c3b45-6ca7-48d1-bca5-4ff0732927a5 a aamas:Muterm ;
+aama:IDfabc3e31-e8ad-4010-a0aa-af66a70ebf5a a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3749,7 +3725,7 @@ aama:IDa49c3b45-6ca7-48d1-bca5-4ff0732927a5 a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID01920d16-06c0-47c8-b018-48ad6111a12b a aamas:Muterm ;
+aama:ID8a7f3b44-0fbc-4fd3-847f-b4950358e843 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3761,7 +3737,7 @@ aama:ID01920d16-06c0-47c8-b018-48ad6111a12b a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:IDba45d812-24e7-461b-927c-dd1f21d5d237 a aamas:Muterm ;
+aama:ID00fcf03c-7dbe-4cdc-865c-74ced83eabcd a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3773,7 +3749,7 @@ aama:IDba45d812-24e7-461b-927c-dd1f21d5d237 a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDbab8a257-497e-44be-bdd8-72c167ab5eca a aamas:Muterm ;
+aama:IDcb71d698-7968-4a2e-a23d-f94a24b0a6b5 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKC ;
 	bil:pngSet bil:PngC ;
@@ -3788,7 +3764,7 @@ aama:IDbab8a257-497e-44be-bdd8-72c167ab5eca a aamas:Muterm ;
 
 #MUTERMCLUSTER: bilin-PInd
 
-aama:ID027441be-9301-48c6-810d-44fc09d31ee6 a aamas:Muterm ;
+aama:ID3aa4ecd8-3994-493c-8cd1-17590fd9f20a a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3799,7 +3775,7 @@ aama:ID027441be-9301-48c6-810d-44fc09d31ee6 a aamas:Muterm ;
 	bil:gender bil:Masc ;
 	bil:case bil:Oblique ;
 	.
-aama:IDe9466127-6eb3-407c-8122-60bf9f4eb52b a aamas:Muterm ;
+aama:ID795a99de-460a-44e4-b74b-5597f75417a6 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3810,7 +3786,7 @@ aama:IDe9466127-6eb3-407c-8122-60bf9f4eb52b a aamas:Muterm ;
 	bil:gender bil:Fem ;
 	bil:case bil:Object ;
 	.
-aama:ID9005bc26-84ea-42f7-9b34-ad42d54f24d5 a aamas:Muterm ;
+aama:IDe8237b45-37c1-46dd-b936-883448b28631 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3821,7 +3797,7 @@ aama:ID9005bc26-84ea-42f7-9b34-ad42d54f24d5 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Absolutive ;
 	.
-aama:ID7d4fc698-7021-4d69-850c-f4ab58e4adba a aamas:Muterm ;
+aama:ID2b8ead25-b8b3-4486-a8bc-44d5c667c1fe a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3832,7 +3808,7 @@ aama:ID7d4fc698-7021-4d69-850c-f4ab58e4adba a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Oblique ;
 	.
-aama:ID585cc068-168b-4853-97f5-78c2d70f39fa a aamas:Muterm ;
+aama:ID1c414365-1115-48e6-9103-bc5659a8883d a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3843,7 +3819,7 @@ aama:ID585cc068-168b-4853-97f5-78c2d70f39fa a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Object ;
 	.
-aama:IDb0dc7fb6-88ad-49d8-bf34-e4fef8afa6d4 a aamas:Muterm ;
+aama:ID3c127f3f-9715-47b7-903c-8fb5a5a51241 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3854,7 +3830,7 @@ aama:IDb0dc7fb6-88ad-49d8-bf34-e4fef8afa6d4 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:IDc733abbc-24fa-4a38-aa58-5f2a3b3e1395 a aamas:Muterm ;
+aama:IDd619560a-31c8-4636-9ac4-f98eb286c177 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3865,7 +3841,7 @@ aama:IDc733abbc-24fa-4a38-aa58-5f2a3b3e1395 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Absolutive ;
 	.
-aama:ID77f917ab-d288-4b0f-ab53-516446ef0319 a aamas:Muterm ;
+aama:IDb9ef13ea-62b3-4066-bee5-a5b35f8968ac a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3876,7 +3852,7 @@ aama:ID77f917ab-d288-4b0f-ab53-516446ef0319 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Absolutive ;
 	.
-aama:ID08680037-d583-4052-b692-adaf901ed781 a aamas:Muterm ;
+aama:ID71fe551d-a470-4a39-965f-fcce4496c341 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3887,7 +3863,7 @@ aama:ID08680037-d583-4052-b692-adaf901ed781 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Absolutive ;
 	.
-aama:IDef20cbc4-000e-4431-968e-48b26cfffc17 a aamas:Muterm ;
+aama:IDc3e7470c-52eb-4c2c-b7c0-69e57890104f a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3898,7 +3874,7 @@ aama:IDef20cbc4-000e-4431-968e-48b26cfffc17 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Oblique ;
 	.
-aama:ID303d6c79-3a96-4de6-9396-618f70c6f207 a aamas:Muterm ;
+aama:ID2ead9612-db7e-42bb-8014-296b7507781a a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3909,7 +3885,7 @@ aama:ID303d6c79-3a96-4de6-9396-618f70c6f207 a aamas:Muterm ;
 	bil:gender bil:Masc ;
 	bil:case bil:Absolutive ;
 	.
-aama:IDcaa33f0e-9a3f-463d-b89c-d51d9c6cf803 a aamas:Muterm ;
+aama:ID9ce1b3d4-c03f-4c2c-ba44-b16c992f674e a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3920,7 +3896,7 @@ aama:IDcaa33f0e-9a3f-463d-b89c-d51d9c6cf803 a aamas:Muterm ;
 	bil:gender bil:Fem ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:ID89e2c0a9-72d3-4529-ab1b-5e45c455b494 a aamas:Muterm ;
+aama:ID18276314-75e9-4d9f-8053-4d9910aa51d9 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3931,7 +3907,7 @@ aama:ID89e2c0a9-72d3-4529-ab1b-5e45c455b494 a aamas:Muterm ;
 	bil:gender bil:Masc ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:IDfff562c4-2038-4f59-ba82-8e5a59e2b263 a aamas:Muterm ;
+aama:ID5e224205-b00e-4388-8e31-118bb41c59b7 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3942,7 +3918,7 @@ aama:IDfff562c4-2038-4f59-ba82-8e5a59e2b263 a aamas:Muterm ;
 	bil:gender bil:Masc ;
 	bil:case bil:Object ;
 	.
-aama:ID4aab8fec-ffb6-43fc-8be2-f8fb69f6fdcd a aamas:Muterm ;
+aama:IDca81a265-db55-44de-b088-895aee2e4e5c a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3953,7 +3929,7 @@ aama:ID4aab8fec-ffb6-43fc-8be2-f8fb69f6fdcd a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:IDbd4910e6-3c8e-45f8-99d7-666a3a6e7b8a a aamas:Muterm ;
+aama:IDfdf20c9a-5744-4056-bc5d-5760a9777a6b a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3964,7 +3940,7 @@ aama:IDbd4910e6-3c8e-45f8-99d7-666a3a6e7b8a a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Oblique ;
 	.
-aama:ID7d57da6f-a47b-4f79-8eb2-2ebd290d3899 a aamas:Muterm ;
+aama:ID337401aa-62b3-484d-a425-4c2a12b057b4 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3975,7 +3951,7 @@ aama:ID7d57da6f-a47b-4f79-8eb2-2ebd290d3899 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Object ;
 	.
-aama:IDe1ba8147-94b7-4e4b-8b71-f39af2e022c8 a aamas:Muterm ;
+aama:ID0dee3b6a-9b3e-4a21-b0e6-016f81003a4c a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3986,7 +3962,7 @@ aama:IDe1ba8147-94b7-4e4b-8b71-f39af2e022c8 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Object ;
 	.
-aama:ID8e805547-064f-41a9-b5bb-a1e0f0805d45 a aamas:Muterm ;
+aama:ID6ab1babf-8167-489d-8817-d8f8e6294e54 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -3997,7 +3973,7 @@ aama:ID8e805547-064f-41a9-b5bb-a1e0f0805d45 a aamas:Muterm ;
 	bil:gender bil:Fem ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:ID5d8b7075-5ab3-41c2-9129-c3b57dab6775 a aamas:Muterm ;
+aama:ID1f36dc9f-c408-4678-8b04-f17419e6ff0b a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4008,7 +3984,7 @@ aama:ID5d8b7075-5ab3-41c2-9129-c3b57dab6775 a aamas:Muterm ;
 	bil:gender bil:Fem ;
 	bil:case bil:Absolutive ;
 	.
-aama:IDb6158815-022c-4f0e-bcb3-547a154cd8f5 a aamas:Muterm ;
+aama:ID163a3c07-96bc-4efa-ac48-ede3b591dbac a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4019,7 +3995,7 @@ aama:IDb6158815-022c-4f0e-bcb3-547a154cd8f5 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Absolutive ;
 	.
-aama:ID5cf06eec-17d3-46a4-8dd5-744b9d647ead a aamas:Muterm ;
+aama:IDc248e254-de11-4dec-acbe-c76289d3603d a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4030,7 +4006,7 @@ aama:ID5cf06eec-17d3-46a4-8dd5-744b9d647ead a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Object ;
 	.
-aama:IDd4601329-a0e3-4b7b-bfe2-5b125e948baf a aamas:Muterm ;
+aama:IDb3d7baf7-9cd7-465b-8490-f129b6044aa4 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4041,7 +4017,7 @@ aama:IDd4601329-a0e3-4b7b-bfe2-5b125e948baf a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:ID8c591f27-5fa3-4c7e-ab05-c5d3e27cea8e a aamas:Muterm ;
+aama:ID2a082520-3a13-4f15-8047-cb0c9616900b a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4052,7 +4028,7 @@ aama:ID8c591f27-5fa3-4c7e-ab05-c5d3e27cea8e a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Oblique ;
 	.
-aama:IDc856797b-d575-48ad-9f77-cfc3445d2092 a aamas:Muterm ;
+aama:ID8e9ee00e-dd4e-4e6a-b1d6-b345b0879d6a a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4063,7 +4039,7 @@ aama:IDc856797b-d575-48ad-9f77-cfc3445d2092 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:Object ;
 	.
-aama:ID9ed93cac-20b6-4ff2-90a8-09b31c684cb1 a aamas:Muterm ;
+aama:ID0d0f4297-50e3-4f8e-aaab-6052cd727d83 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4074,7 +4050,7 @@ aama:ID9ed93cac-20b6-4ff2-90a8-09b31c684cb1 a aamas:Muterm ;
 	bil:gender bil:Masc ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:ID6fbce0e8-54ca-45a6-9449-517977adceb0 a aamas:Muterm ;
+aama:IDa4e8ae32-9120-4f83-b692-6a6f1abf350c a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4085,7 +4061,7 @@ aama:ID6fbce0e8-54ca-45a6-9449-517977adceb0 a aamas:Muterm ;
 	bil:gender bil:Common ;
 	bil:case bil:ObjectSuff ;
 	.
-aama:IDa26f1d0c-42ec-4bb1-9c1a-a30bcad41eb7 a aamas:Muterm ;
+aama:ID881048fa-984c-4335-9598-4ad530cddddf a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4096,7 +4072,7 @@ aama:IDa26f1d0c-42ec-4bb1-9c1a-a30bcad41eb7 a aamas:Muterm ;
 	bil:gender bil:Fem ;
 	bil:case bil:Oblique ;
 	.
-aama:ID2b3c7d07-8e69-41fd-af8c-2d12e51df1ba a aamas:Muterm ;
+aama:ID67b04230-336b-4a83-8ff4-2be20238037e a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-PRO ;
 	bil:pos bil:Pronoun ;
@@ -4110,7 +4086,7 @@ aama:ID2b3c7d07-8e69-41fd-af8c-2d12e51df1ba a aamas:Muterm ;
 
 #MUTERMCLUSTER: bilin-VPngA2PngSuff
 
-aama:ID2996db61-7969-49f8-b933-b75d2b55dced a aamas:Muterm ;
+aama:ID63f76bad-90dd-47c5-ad65-3ac8d2298336 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4121,7 +4097,7 @@ aama:ID2996db61-7969-49f8-b933-b75d2b55dced a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID26799fb2-e23c-449d-a193-1f09f4968019 a aamas:Muterm ;
+aama:ID1f7f06b3-7c33-4d1c-8e0c-16ab2c405aba a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4132,7 +4108,7 @@ aama:ID26799fb2-e23c-449d-a193-1f09f4968019 a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Fem ;
 	.
-aama:IDf04e47a7-d226-4322-9525-deac6bce3bba a aamas:Muterm ;
+aama:ID68399871-f4c9-40aa-bc24-6eca61205566 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4143,7 +4119,7 @@ aama:IDf04e47a7-d226-4322-9525-deac6bce3bba a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID249cdd10-427d-4f2f-8427-840b989a804c a aamas:Muterm ;
+aama:ID76d5dfd1-3178-4f97-b9df-e3505dde4b13 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4154,7 +4130,7 @@ aama:ID249cdd10-427d-4f2f-8427-840b989a804c a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Masc ;
 	.
-aama:ID322ad6ec-c414-45db-9354-492bd7a45e1f a aamas:Muterm ;
+aama:IDf18b8195-fc00-4d44-b913-74a462113ef7 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4165,7 +4141,7 @@ aama:ID322ad6ec-c414-45db-9354-492bd7a45e1f a aamas:Muterm ;
 	bil:number bil:Plural ;
 	bil:gender bil:Common ;
 	.
-aama:ID0a129864-99ce-4328-b8c8-5af77dd85e1e a aamas:Muterm ;
+aama:IDe6db26ec-8620-42ff-8ffd-40d0891f20c2 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4176,7 +4152,7 @@ aama:ID0a129864-99ce-4328-b8c8-5af77dd85e1e a aamas:Muterm ;
 	bil:number bil:Singular ;
 	bil:gender bil:Common ;
 	.
-aama:ID87f27182-a78f-4c0c-88bc-4dabe7d8ce0e a aamas:Muterm ;
+aama:ID1c1d1223-cfef-4143-874e-ee9bb7fcddf9 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-SUBJMARKA2 ;
 	bil:pngSet bil:PngA2 ;
@@ -4190,66 +4166,66 @@ aama:ID87f27182-a78f-4c0c-88bc-4dabe7d8ce0e a aamas:Muterm ;
 
 #MUTERMCLUSTER: bilin-VCopula
 
-aama:ID1cec460c-f5e6-4c9e-b113-06d005d4c096 a aamas:Muterm ;
+aama:IDb36c9f30-dfc5-4b42-9ef4-174d88c4d304 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-COPULA ;
 	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:Copula ;
+	bil:morphClass bil:Copula ;
 	bil:token-note "_NULL" ;
 	bil:token "ʔäx- (~ ʔak-)" ;
 	bil:tam bil:Perfect ;
 	bil:polarity bil:Negative ;
 	bil:copType bil:CopMain ;
 	.
-aama:ID8c89216f-f52f-4cf8-b157-3d858c95132a a aamas:Muterm ;
+aama:ID7c1ac950-e080-4dd5-883b-d60c3fd46116 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-COPULA ;
 	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:Copula ;
+	bil:morphClass bil:Copula ;
 	bil:token-note "_NULL" ;
 	bil:token "wan-" ;
 	bil:tam bil:Present ;
 	bil:polarity bil:Affirmative ;
 	bil:copType bil:CopLoc ;
 	.
-aama:IDea0798eb-38df-4436-ad1e-214981f77569 a aamas:Muterm ;
+aama:ID5ad1441c-3484-465f-b3b0-6642b0723c2a a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-COPULA ;
 	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:Copula ;
+	bil:morphClass bil:Copula ;
 	bil:token-note "invariable" ;
 	bil:token "gən" ;
 	bil:tam bil:Present ;
 	bil:polarity bil:Affirmative ;
 	bil:copType bil:CopMain ;
 	.
-aama:IDa2ad1428-34ec-49ae-a427-508c13ef1518 a aamas:Muterm ;
+aama:ID1ec17273-d526-4246-8bcf-02a922bd4599 a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-COPULA ;
 	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:Copula ;
+	bil:morphClass bil:Copula ;
 	bil:token-note "_NULL" ;
 	bil:token "sän-" ;
 	bil:tam bil:Past ;
 	bil:polarity bil:Affirmative ;
 	bil:copType bil:CopLoc ;
 	.
-aama:IDccd8b37e-cade-42df-8087-69f5fd584f1a a aamas:Muterm ;
+aama:ID9110beab-819b-4a0f-b50a-9c2a42083e2f a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-COPULA ;
 	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:Copula ;
+	bil:morphClass bil:Copula ;
 	bil:token-note "(like perf main neg)" ;
 	bil:token "ʔəl-" ;
 	bil:tam bil:Common ;
 	bil:polarity bil:Negative ;
 	bil:copType bil:CopLoc ;
 	.
-aama:ID3caa88b0-05ff-4b79-a8d4-311c3b48eca9 a aamas:Muterm ;
+aama:ID7ed61d99-d4de-4757-aeea-ac091fe2c98b a aamas:Muterm ;
 	aamas:lang aama:Bilin ;
 	aamas:morpheme aama:Bilin-COPULA ;
 	bil:pos bil:Verb ;
-	bil:verbMorphClass bil:Copula ;
+	bil:morphClass bil:Copula ;
 	bil:token-note "_NULL" ;
 	bil:token "həmb-" ;
 	bil:tam bil:Present ;
