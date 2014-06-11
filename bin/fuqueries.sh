@@ -5,5 +5,5 @@
 
 	
 bin/fuquery-gen.sh sparql/rq-ru/count-triples.rq
-bin/fuquery-gen.sh sparql/rq-ru/list-graphs.rq
+#bin/fuquery-gen.sh sparql/rq-ru/list-graphs.rq
 

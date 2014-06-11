@@ -7,7 +7,6 @@
 	  :derivedStem [:Causative, :Causative2, :Denominal, :Inchoative, :Intensive, :Passive, :PassiveCausative, :Reflexive]
 	  :gender [:Common, :Fem, :Masc]
 	  :modal [:Common, :Mirative, :NewInfo, :NonVerbal, :Perfective, :Veridical]
-	  :multiLex [:VROOTSTRUCTURE]
 	  :number [:Common, :Plural, :Singular]
 	  :person [:Common, :Person1, :Person2, :Person3, :Person3Ref]
 	  :polarity [:Affirmative, :Negative]
@@ -17,7 +16,7 @@
 	  :rootStructure [:Group1, :Group2]
 	  :tam [:Common, :Imperfective, :ImperfectiveFuture, :ImperfectivePresent, :InterrPerm, :Perfective]
 	  :temporal [:Clauses]
-	  :verbMorphClass [:BE, :DervStem, :InflectionTemplate, :RootStructure]
+	  :morphClass [:BE, :DervStem, :InflectionTemplate, :RootStructure]
 	  }
 :morphemes {
   :COPULABE {:gloss "[x]", :lemma "[y]", }
@@ -28,7 +27,8 @@
   :PROIND {:gloss "[x]", :lemma "[y]", }
   :PROPOSS {:gloss "[x]", :lemma "[y]", }
   :PRORESTRICTIVE {:gloss "[x]", :lemma "[y]", }
-  :VINFLECTIONTEMPLATE {:gloss "[x]", :lemma "[y]", }
+  :VINFLECTIONTEMPLATE {:gloss "[x]", :lemma "[y]",} 
+  :VROOTSTRUCTURE {:gloss "[x]", :lemma "[y]",}
 }
 :lexemes {
   :_NULL {:lemma "múʔ", :gloss "eat", }
@@ -278,5 +278,40 @@
 	    [:Absolutive, :Common, :Plural, :Person1, "núná"],
 	    [:Absolutive, :Common, :Plural, :Person2, "ʔíntsi"],
 	    [:Absolutive, :Common, :Plural, :Person3, "ʔiyátó"]]
-    }}
+    }
+    {:label "maale-VRootStructure"
+     :note	"Amha2001 Table 5.1-2. Root structure:group1 – one-peak roots;group2 – two-peak roots"
+     :common {:morpheme :VROOTSTRUCTURE,
+              :pos :Verb,
+              :morphClass :RootStructure}
+     :terms [[:rootStructure	:token :token-structure	:token-translation] ;; schema
+             [:Group1, "t-", :C, "be"],
+             [:Group1, "n-", :C, "be"],
+             [:Group1, "d-", :C, "be"],
+             [:Group1, "⊤", :CV, "Existence"],
+             [:Group1, "geʔ-", :CVC, "say"],
+             [:Group1, "lám-", :CVC, "Repeat"],
+             [:Group1, "maɗ-", :CVC, "work"],
+             [:Group1, "⊤", :CVVC, "go"],
+             [:Group1, "kéér-", :CVVC, "throw"],
+             [:Group1, "biiʔ-", :CVVC, "smear"],
+             [:Group1, "ʔúc’c’-", :CVCC, "wipe"],
+             [:Group1, "ɓull-", :CVCC, "jump"],
+             
+             [:Group1, "soɗɗ-", :CVCC, "drip"],
+             [:Group1, "háík’k-", :CVVCC, "die"],
+             [:Group1, "c’ííʃk-", :CVVCC, "be cold"],
+             [:Group1, "c’uull-", :CVVCC, "Suffocate"],
+             [:Group2, "ɗakal-", :CVCVC, "Inherit"],
+             [:Group2, "galat-", :CVCVC, "thank"],
+             [:Group2, "h/yíɗiʃk-", :CVCVCC, "sneeze"],
+             [:Group2, "gumurk-", :CVCVCC, "believe"],
+             [:Group2, "gadánk’-", :CVCVCC, "curse"],
+             [:Group2, "gumʔat-", :CVCCVC-C, "kneel"],
+             [:Group2, "bunbal-", :CVCCVC-C, "roll over"],
+             [:Group2, "gundum-", :CVCCVC-C, "Murmur"],
+             [:Group2, "gogaik’k’-", :CVCVVCC, "Shiver"],
+             [:Group2, "deeɓisk-", :CVVCVCC, "belch"]]
+     }
+   }
 }

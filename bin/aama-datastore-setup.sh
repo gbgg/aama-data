@@ -17,6 +17,7 @@ do
     echo "delete f = ${f2}"
     bin/fudelete.sh $f2
     bin/fuqueries.sh
+    echo " "
     echo "[Enter] to continue or Ctl-C to exit"
     read
     echo "edn2ttl2rdf f = ${f}"
@@ -24,7 +25,8 @@ do
     echo "2fuseki f = ${f2}"
     bin/aama-rdf2fuseki.sh $f2
     bin/fuqueries.sh
-    "[Enter] to continue or Ctl-C to exit"
+    echo "  "
+    echo "[Enter] to continue or Ctl-C to exit"
     read
     echo "pnames f = ${f}"
     bin/generate-pnames-pro.sh $f

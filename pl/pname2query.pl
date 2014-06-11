@@ -48,7 +48,7 @@ print "PREFIX aamag:	 <http://oi.uchicago.edu/aama/2013/graph/>\n";
 print "PREFIX $labbrev:   <http://id.oi.uchicago.edu/aama/2013/$langname/>\n";
 print "\n";
 # Iterate through @select if want all values in table
-print "SELECT DISTINCT ?langLabel $selection ?lexeme\n";
+print "SELECT ?langLabel $selection ?lexeme\n";
 print "WHERE\n{\n";
 print "\t{\n";
 print "\t\tGRAPH aamag:$langname\n\t\t{\n";

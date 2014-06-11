@@ -8,16 +8,15 @@
 	  :gender [:Common, :Fem, :Masc]
 	  :genderHead [:Fem, :Masc]
 	  :inflClass [:Class1, :Class1a, :Class1b, :Class2]
-	  :multiLex [:CONSECPARTIAL, :IMPERATIVE, :INFINITIVE]
+	  :morphClass [:DervStem, :NegImprtvExx]
 	  :number [:Common, :Plural, :Singular]
 	  :pdgmType [:Template]
-	  :person [:Common, :Impersonal, :Person1, :Person2, :Person3]
+	  :person [:Impersonal, :Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Common, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Independent, :ObjProclitic, :PossSuff, :SubjProclitic]
-	  :tam [:Consecutive, :Imperative, :Imperfective, :Infinitive, :Jussive, :Past, :Perfective, :Present]
+	  :tam [:Consecutive, :Imperative, :Imperfective, :Jussive, :Past, :Perfective, :Present]
 	  :tense2 [:Future, :Habitual]
-	  :verbMorphClass [:DervStem, :Exx, :FocusStructure, :PartialPdgm]
 	  }
 :morphemes {
   :CONSECTEMPLATE {:gloss "[x]", :lemma "[y]", }
@@ -38,9 +37,6 @@
   :PROSUBJPROCLITIC {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :CONSECPARTIAL {:gloss "[x]", :lemma "[y]", }
-  :IMPERATIVE {:gloss "[x]", :lemma "[y]", }
-  :INFINITIVE {:gloss "[x]", :lemma "[y]", }
   :af {:lemma "ʕáf", :gloss "spread", }
   :ug {:lemma "ʕúg-", :gloss "drink", }
   :ass {:lemma "ášša-", :gloss "go", }
@@ -209,7 +205,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :verbMorphClass :Exx}
+	    :morphClass :NegImprtvExx}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ólo ašší"],
 	    [:Plural, "ólo ašší"]]
@@ -301,7 +297,7 @@
     }
     {:label "gawwada-VConsecutiveTemplate"
     :note "Tosco2007b Table 4 (p. 515). There are two tonally distinct inflectional classes of verb in the perfective,imperative,and consecutive positive tenses."
-    :common {:morpheme :CONSECTEMPLATE,
+    :common {:morphClass :CONSECTEMPLATE,
 	    :pdgmType :Template,
 	    :pos :Verb,
 	    :tam :Consecutive}
@@ -456,7 +452,7 @@
 	    :pdgmType :Template,
 	    :tokenType :SuffixShapes,
 	    :pos :Verb,
-	    :verbMorphClass :DervStem}
+	    :morphClass :DervStem}
     :terms [[:derivedStem, :token]  ;; schema
 	    [:Intensive, "C1VC2C1VC2 [reduplication of first CV(V) string of first syllable"],
 	    [:Semelfactive, "CV(CCV)CC [reduplication of all stem C except the first"],

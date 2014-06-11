@@ -13,6 +13,7 @@
 	  :headGen [:Fem, :Masc]
 	  :imprtvClass [:Base, :Hither, :HitherObj, :Object]
 	  :mood [:Indicative, :Q, :Subjunctive]
+	  :morphClass [:DervStemSuff, :Infinitive, :Participle, :SelBE, :SelBEImpersHit, :SelBENom, :SelBEObj, :SelBEVerb, :Selector, :SelectorForms, :SelectorForms2, :StemFormation, :SubjMarker, :TenseFormation, :TenseFormation1, :TenseFormation2]
 	  :numHead [:Plural, :Singular]
 	  :numObj [:Common, :Plural, :Singular]
 	  :numSubj [:Common, :Plural, :Singular]
@@ -30,7 +31,6 @@
 	  :selectorMood [:Common, :Concessive, :Conditional]
 	  :selectorTense [:Background, :Common, :Consecutive, :Consecutive2, :Expectational, :Past, :Perfect]
 	  :tam [:Imperative, :Past, :PastQ, :PresQ, :Present, :RelativePast, :RelativePresent]
-	  :verbMorphClass [:DervStemSuff, :Infinitive, :Participle, :SelBE, :SelBEImpersHit, :SelBENom, :SelBEObj, :SelBEVerb, :Selector, :SelectorForms, :SelectorForms2, :StemFormation, :SubjMarker, :TenseFormation, :TenseFormation1, :TenseFormation2]
 	  }
 :morphemes {
   :DERVSTEMSUFF {:gloss "[x]", :lemma "[y]", }
@@ -118,7 +118,7 @@
 	    :pos :Verb,
 	    :tam :Present,
 	    :token-selector :Common,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:person, :token]  ;; schema
 	    [:Common, "-a"],
 	    [:Person3, "-a/-i[conj 3"]]
@@ -143,7 +143,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresQ,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:number, :person, :token, :token-selector]  ;; schema
 	    [:Singular, :Person1, "dôohla", "a"],
 	    [:Singular, :Person2, "dôhla", "a"],
@@ -193,7 +193,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:gender, :number, :person, :token, :token-selector]  ;; schema
 	    [:Common, :Singular, :Person1, "dóohl+a+ká goes_to doohlaaká", "a"],
 	    [:Common, :Singular, :Person2, "dóhl+a+ká goes_to dohlká", "a"],
@@ -230,7 +230,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :TenseFormation1}
+	    :morphClass :TenseFormation1}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "firiimaaká"],
 	    [:Common, :Singular, :Person2, "firiindaaká"],
@@ -251,7 +251,7 @@
 	    :pos :Verb,
 	    :tam :Imperative,
 	    :token-selector :Common,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "dóohl"],
 	    [:Plural, "_NULL"]]
@@ -267,7 +267,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :StemFormation}
+	    :morphClass :StemFormation}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "eehár"],
 	    [:Common, :Singular, :Person2, "eehát"],
@@ -284,7 +284,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :TenseFormation2}
+	    :morphClass :TenseFormation2}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "firiimiiká"],
 	    [:Common, :Singular, :Person2, "firiindiiká"],
@@ -305,7 +305,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :StemFormation}
+	    :morphClass :StemFormation}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "ʕáay"],
 	    [:Common, :Singular, :Person2, "ʕág"],
@@ -337,14 +337,13 @@
 	    :gender :Common,
 	    :lexeme :doohl,
 	    :number :Common,
-	    :person :Common,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :RelativePast,
 	    :token-selector :ta-,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:token]  ;; schema
-	    ["[past"]]
+	    ["past"]]
     }
     {:label "iraqw-VConj3eNegImprtvTenseFormation-doohl"
     :note "Mous1993 p.155 ff (20). *neg pres = pres [low-tone+syll-red+V-length]+subord+ká.
@@ -357,7 +356,7 @@
 	    :pos :Verb,
 	    :tam :Imperative,
 	    :token-selector :M-,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "doohlaar"],
 	    [:Plural, "_NULL"]]
@@ -373,7 +372,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :StemFormation}
+	    :morphClass :StemFormation}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "läaw"],
 	    [:Common, :Singular, :Person2, "láb"],
@@ -390,7 +389,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :TenseFormation2}
+	    :morphClass :TenseFormation2}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tlawiiká"],
 	    [:Common, :Singular, :Person2, "tleeriiká"],
@@ -408,7 +407,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:gender, :number, :person, :token, :token-selector]  ;; schema
 	    [:Common, :Singular, :Person1, "dóohl", "Aga"],
 	    [:Common, :Singular, :Person2, "dóhl", "Aga"],
@@ -442,7 +441,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:gender, :number, :person, :token, :token-selector]  ;; schema
 	    [:Common, :Singular, :Person1, "dóohl", "a"],
 	    [:Common, :Singular, :Person2, "dóhl", "a"],
@@ -516,7 +515,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :StemFormation}
+	    :morphClass :StemFormation}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "dóohl"],
 	    [:Common, :Singular, :Person2, "dóhl"],
@@ -605,7 +604,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:gender, :number, :person, :token, :token-selector]  ;; schema
 	    [:Common, :Singular, :Person1, "dóohl+i+ká goes_to doohliiká", "Aga"],
 	    [:Common, :Singular, :Person2, "dóhl+i+ká goes_to dohlká", "Aga"],
@@ -653,7 +652,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :TenseFormation2}
+	    :morphClass :TenseFormation2}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "doohliiká"],
 	    [:Common, :Singular, :Person2, "dohlká"],
@@ -672,7 +671,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastQ,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:number, :person, :token, :token-selector]  ;; schema
 	    [:Singular, :Person1, "dôohli", "ga"],
 	    [:Singular, :Person2, "dôhli", "ga"],
@@ -712,7 +711,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :RelativePresent,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:gender, :number, :person, :token, :token-selector]  ;; schema
 	    [:Common, :Singular, :Person1, "doohl", "ni"],
 	    [:Common, :Singular, :Person2, "dohl", "ta"],
@@ -769,7 +768,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :StemFormation}
+	    :morphClass :StemFormation}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "óh"],
 	    [:Common, :Singular, :Person2, "ót"],
@@ -800,7 +799,7 @@
     :note "Mous1993 pp.165-166."
     :common {:lexeme :doohl,
 	    :pos :Verb,
-	    :verbMorphClass :Participle}
+	    :morphClass :Participle}
     :terms [[:genderHead, :numHead, :posHead, :token]  ;; schema
 	    [:Masc, :Singular, :Common, "dóohl"],
 	    [:Fem, :Singular, :Common, "doohl"],
@@ -817,12 +816,11 @@
 	    :gender :Common,
 	    :lexeme :doohl,
 	    :number :Common,
-	    :person :Common,
 	    :polarity :Subordiate,
 	    :pos :Verb,
 	    :tam :Past,
 	    :token-selector :Common,
-	    :verbMorphClass :TenseFormation}
+	    :morphClass :TenseFormation}
     :terms [[:token]  ;; schema
 	    ["-i"]]
     }
@@ -857,7 +855,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :TenseFormation1}
+	    :morphClass :TenseFormation1}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "doohlaaká"],
 	    [:Common, :Singular, :Person2, "dohlká"],
@@ -877,7 +875,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :TenseFormation1}
+	    :morphClass :TenseFormation1}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tlawaaká"],
 	    [:Common, :Singular, :Person2, "tleeraaká"],
@@ -910,7 +908,7 @@
 	    :persObj :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :verbMorphClass :SelectorForms2}
+	    :morphClass :SelectorForms2}
     :terms [[:selectorBE, :selectorMood, :selectorTense, :token-persObj, :token-selBE, :token-selMood, :token-selTense, :token, :token]  ;; schema
 	    [:Independent, :Common, :Past, "g-", "⊤", "⊤", "-na", "g- + ⊤ + ⊤ + -na", "g- + ⊤ + ⊤ + -na"],
 	    [:Independent, :Common, :Expectational, "g-", "⊤", "⊤", "-n", "g- + ⊤ + ⊤ + -n"],
@@ -984,7 +982,7 @@
     :common {:morpheme :SELECTORFORMSAFF1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :verbMorphClass :SelectorForms}
+	    :morphClass :SelectorForms}
     :terms [[:selectorCategory, :selectorClass, :token]  ;; schema
 	    [:Conditional, :SelMood, "bar"],
 	    [:Concessive, :SelMood, "tam"],
@@ -1051,7 +1049,7 @@
             formation of the main clause negative and interrogative tenses."
     :common {:morpheme :INFINITIVESUFF,
 	    :pos :Verb,
-	    :verbMorphClass :Infinitive}
+	    :morphClass :Infinitive}
     :terms [[:tam, :token]  ;; schema
 	    [:Present, "-a"],
 	    [:Past, "-i"]]
@@ -1061,7 +1059,7 @@
     :common {:morpheme :SELECTORBEVERBAFF,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :verbMorphClass :SelBEVerb}
+	    :morphClass :SelBEVerb}
     :terms [[:number, :person, :selectorBE, :token]  ;; schema
 	    [:Singular, :Person1, :Independent, "a"],
 	    [:Singular, :Person2, :Independent, "a"],
@@ -1081,7 +1079,7 @@
     :common {:morpheme :SELECTORBENOM,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :verbMorphClass :SelBENom}
+	    :morphClass :SelBENom}
     :terms [[:person, :selectorBE, :token]  ;; schema
 	    [:Common, :Copula, "a"],
 	    [:Person3, :Copula, "a"],
@@ -1097,7 +1095,7 @@
     :common {:morpheme :SELECTORBEAFF,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :verbMorphClass :SelBE}
+	    :morphClass :SelBE}
     :terms [[:genderObj, :numObj, :numSubj, :persObj, :persSubj, :selectorBE, :token]  ;; schema
 	    [:Common, :Singular, :Common, :Person1, :Common, :Common, "iga"],
 	    [:Masc, :Singular, :Common, :Person2, :Common, :Common, "ugwa"],
@@ -1150,7 +1148,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :selectorTense :Perfect,
-	    :verbMorphClass :Selector}
+	    :morphClass :Selector}
     :terms [[:numSubj, :persSubj, :selectorBE, :token]  ;; schema
 	    [:Singular, :Person1, :Independent, "aga"],
 	    [:Singular, :Person2, :Independent, "aga"],
@@ -1169,7 +1167,7 @@
     :note "Mous1993 p.170-202."
     :common {:morpheme :DERVSTEMSUFF,
 	    :pos :Verb,
-	    :verbMorphClass :DervStemSuff}
+	    :morphClass :DervStemSuff}
     :terms [[:derivedStem, :token]  ;; schema
 	    [:Causative, "-s"],
 	    [:Durative, "-m"],
@@ -1186,7 +1184,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :SubjMarker}
+	    :morphClass :SubjMarker}
     :terms [[:conjClass, :gender, :number, :person, :token]  ;; schema
 	    [:Conj1, :Common, :Singular, :Person1, "VVm"],
 	    [:Conj1, :Common, :Singular, :Person2, "VVn"],
@@ -1265,7 +1263,7 @@
     :common {:morpheme :SELECTORBEOBJ,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :verbMorphClass :SelBEObj}
+	    :morphClass :SelBEObj}
     :terms [[:genderObj, :numObj, :numSubj, :persObj, :persSubj, :selectorBE, :token]  ;; schema
 	    [:Common, :Singular, :Common, :Person1, :Common, :Common, "i"],
 	    [:Masc, :Singular, :Common, :Person2, :Common, :Common, "u"],
@@ -1321,7 +1319,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :selectorBE :Hither,
-	    :verbMorphClass :SelBEImpersHit}
+	    :morphClass :SelBEImpersHit}
     :terms [[:genderObj, :persObj, :token]  ;; schema
 	    [:Common, :Common, "Ti-ndi"],
 	    [:Masc, :Person3, "ku-ngu"],

@@ -13,7 +13,7 @@
 	  :gender [:Common, :Fem, :Masc]
 	  :genderHead [:Fem, :Masc]
 	  :interrogClass [:InterrogProHow, :InterrogProHowMany, :InterrogProWhat, :InterrogProWhen, :InterrogProWhere, :InterrogProWho]
-	  :multiLex [:IMPERFREG-IRREG, :VADJ, :VINFINITIVEAFF]
+	  :morphClass [:DervStem, :SubjMarkers, :IMPERFREG-IRREG, :VADJ, :VINFINITIVEAFF]
 	  :number [:Plural, :Singular]
 	  :pdgmType [:Exemplary]
 	  :person [:Person1, :Person2, :Person3]
@@ -23,10 +23,9 @@
 	  :proClass [:Demonstrative, :Independent, :Interrogative, :Personal, :Possessive]
 	  :proType [:Common, :Id, :WPro, :WoPro]
 	  :suppletion [:NonSuppletive, :Suppletive]
-	  :tam [:FutureIntensive, :Imperative, :Imperfect, :ImperfectProgressive, :Infinitive, :Jussive, :PastProgressive, :Perfect, :PerfectProgressive, :Pluperfect, :PresentPerfect, :PresentProgressive, :SimplePerfect]
+	  :tam [:FutureIntensive, :Imperative, :Imperfect, :ImperfectProgressive, :Jussive, :PastProgressive, :Perfect, :PerfectProgressive, :Pluperfect, :PresentPerfect, :PresentProgressive, :SimplePerfect]
 	  :type [:Abs, :Absolutive, :Nom, :Nominative, :Obj, :Object]
 	  :verbClass [:Focus, :Interrogative]
-	  :verbMorphClass [:DervStem, :SubjMarkers]
 	  }
 :morphemes {
   :DERVSTEM {:gloss "[x]", :lemma "[y]", }
@@ -569,7 +568,7 @@
     }
     {:label "burji-VAffImperfectReg-irreg"
     :note "WedekindC1985 p. 120,paradigms #23 [mar-]and #24 [hayy-]. Author states:The first of the following imperfect paradigms is used when no further context is given. So every form in this paradigm is fully acceptable as a complete,well-formed utterance.[Not certain how to interpret this.]"
-    :common {:multiLex :IMPERFREG-IRREG,
+    :common {:morphClass :IMPERFREG-IRREG,
 	    :pdgmType :Exemplary,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -617,7 +616,7 @@
     :common {:morpheme :DERVSTEM,
 	    :pos :Verb,
 	    :formType :Suffix,
-	    :verbMorphClass :DervStem}
+	    :morphClass :DervStem}
     :terms [[:derivedStem, :token]  ;; schema
 	    [:Causative1, "-(is)s-"],
 	    [:Causative2, "-(is)siis(s)-"],
@@ -659,7 +658,7 @@
     :note "WedekindC1985 p. 117. In the suffix,The –I -u forms are Perfect forms where relevance of the action to the Present is maintained. The –oo forms are Past forms used almost exclusively in narrative discourse."
     :common {:morpheme :SUBJMARKERS,
 	    :pos :Verb,
-	    :verbMorphClass :SubjMarkers}
+	    :morphClass :SubjMarkers}
     :terms [[:gender, :number, :person, :proType, :tam, :token-pro, :token-suff, :token, :token]  ;; schema
 	    [:Common, :Singular, :Person1, :Common, :Perfect, "‘ani", "-anni/-annoo", "‘ani =>  -anni/-annoo", "‘ani =>  -anni/-annoo"],
 	    [:Common, :Singular, :Person2, :Common, :Perfect, "‘as̆i", "-antu/-antoo", "‘as̆i =>  -antu/-antoo"],

@@ -9,14 +9,13 @@
 	  :derivedStem [:Base, :Benefactive, :Causative, :HabitualPartialReduplication, :HabitualTotalReduplication, :Intransitive, :Ventive]
 	  :gender [:Common, :Fem, :Masc]
 	  :headNoun [:Deleted, :Present]
-	  :multiLex [:DERVSTEM, :IMPERATIVE, :PROPOSSEXX]
+	  :morphClass [:Compound, :CopLoc, :Copula, :DervStem, :IMPRTV :ProAgreement, :SubjPref, :SubjSuff, :TenseAspectMoodPref, :have]
 	  :number [:Indefinite, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
+	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Noun, :Pronoun, :Verb]
 	  :proClass [:AgreementMarker, :Demonstrative, :Independent, :PossExx, :Possessive]
 	  :tam [:Future, :Imperative, :Past, :PastProgressive, :Perfect, :Present]
-	  :verbMorphClass [:Compound, :CopLoc, :Copula, :DervStem, :ProAgreement, :SubjPref, :SubjSuff, :TenseAspectMoodPref, :have]
 	  }
 :morphemes {
   :COPULALOCPAST {:gloss "[x]", :lemma "[y]", }
@@ -38,9 +37,6 @@
   :TAMPREF {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
-  :IMPERATIVE {:gloss "[x]", :lemma "[y]", }
-  :PROPOSSEXX {:gloss "[x]", :lemma "[y]", }
   :deet {:lemma "deet", :gloss "eat", :conjClass :FormSet4, :pos :Verb}
   :ek {:lemma "εk", :gloss "eat (obj. oblig)", }
   :eq {:lemma "eq", :gloss "drink", :conjClass :FormSet3, :pos :Verb}
@@ -55,7 +51,7 @@
 :lxterms #{
     {:label "yaaku-VImprtv"
     :note "Heine1975 p. 50"
-    :common {:multiLex :IMPERATIVE,
+    :common {:morphClass :IMPRTV,
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :person, :token, :lexeme]  ;; schema
@@ -113,7 +109,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "sapare ki-na-k’úso’"],
 	    [:Common, :Singular, :Person2, "sapare k-á-k’úhto’"],
@@ -165,7 +161,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "ŋón"],
 	    [:Singular, :Person2, "ŋáú"],
@@ -218,7 +214,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:token]  ;; schema
 	    ["sapare ŋé-ne-ŋ-kúsíno"]]
     }
@@ -232,7 +228,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:token]  ;; schema
 	    ["sapare n’álá-kúsíno"]]
     }
@@ -310,7 +306,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastProgressive,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "sapare ki-mi-ná-á-kúso’"],
 	    [:Common, :Singular, :Person2, "sapare ki-má-á-k’úhto’"],
@@ -328,7 +324,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "kon"],
 	    [:Singular, :Person2, "kau"],
@@ -379,7 +375,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "kon"],
 	    [:Singular, :Person2, "ke"],
@@ -431,7 +427,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:token]  ;; schema
 	    ["sapare ŋé-ŋ-kuséé"]]
     }
@@ -460,7 +456,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "konon"],
 	    [:Singular, :Person2, "kanau"],
@@ -495,7 +491,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:person, :token]  ;; schema
 	    [:Person1, "koonu"],
 	    [:Person2, "koou"],
@@ -509,7 +505,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "konu"],
 	    [:Singular, :Person2, "kau"],
@@ -525,7 +521,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "sapare k-aá-ná-k’úso’"],
 	    [:Common, :Singular, :Person2, "sapare k-áá-kúhto’"],
@@ -560,7 +556,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "koon"],
 	    [:Singular, :Person2, "kaau"],
@@ -596,7 +592,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:token]  ;; schema
 	    ["sapare ŋááná-kúsíno"]]
     }
@@ -607,7 +603,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "sapare ké-ŋ-kúsáá"],
 	    [:Common, :Singular, :Person2, "sapare k-á-kúhtáá"],
@@ -624,7 +620,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :verbMorphClass :Compound}
+	    :morphClass :Compound}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "sapare ki-n’á-a-k’úso’"],
 	    [:Common, :Singular, :Person2, "sapare ki-ná-á-k’úhto’"],
@@ -641,7 +637,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "ŋón"],
 	    [:Singular, :Person2, "ŋáú"],
@@ -707,7 +703,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:person, :token]  ;; schema
 	    [:Person1, "kononu"],
 	    [:Person2, "kanau"],
@@ -718,7 +714,7 @@
     :note "Heine1975 p. 45. These are the same for both affirmative and negative"
     :common {:morpheme :SUBJMARKERPREF,
 	    :pos :Verb,
-	    :verbMorphClass :SubjPref}
+	    :morphClass :SubjPref}
     :terms [[:aspect, :person, :token]  ;; schema
 	    [:Definite, :Person1, "na-"],
 	    [:Definite, :Person2, "a-"],
@@ -757,7 +753,7 @@
     :common {:morpheme :COPULALOCPERF,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :verbMorphClass :CopLoc}
+	    :morphClass :CopLoc}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "onon’ú gwɛ’ɛ nairɔ́bi’"],
 	    [:Common, :Singular, :Person2, "an’aú gwɛ’ɛ(t) nairɔ́bi’"],
@@ -775,7 +771,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :verbMorphClass :have}
+	    :morphClass :have}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "enén-ló’o’ w’aa’"],
 	    [:Singular, :Person2, "aná-ló’o’ w’aa’"],
@@ -823,7 +819,7 @@
     :common {:morpheme :COPULALOCPRES,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :CopLoc}
+	    :morphClass :CopLoc}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "onu/nou gwɛ’ɛ nairɔ́bi’"],
 	    [:Common, :Singular, :Person2, "au gwɛ’ɛ(t) nairɔ́bi’"],
@@ -841,7 +837,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :have}
+	    :morphClass :have}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "eén-ló’o’ w’aa’"],
 	    [:Singular, :Person2, "aá-ló’o’ w’aa’"],
@@ -857,7 +853,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :have}
+	    :morphClass :have}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "‘iíce’ kélói w’aa’"],
 	    [:Common, :Singular, :Person1, "n-t’eet’a w’aa’"],
@@ -895,7 +891,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :have}
+	    :morphClass :have}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "n-l’óo’ w’aa’"],
 	    [:Singular, :Person2, "-al’óo’ w’aa’"],
@@ -908,7 +904,7 @@
     :note "Heine1975 p.46,49. General structure is:NEG/TAM+Subj(+Obj) Verb+Subj (Obj). NEG is n’ala in perfect,otherwise ŋe-"
     :common {:morpheme :TAMPREF,
 	    :pos :Verb,
-	    :verbMorphClass :TenseAspectMoodPref}
+	    :morphClass :TenseAspectMoodPref}
     :terms [[:aspect, :polarity, :tam, :token]  ;; schema
 	    [:Indefinite, :Affirmative, :Present, "⊤"],
 	    [:Indefinite, :Affirmative, :Future, "ke-"],
@@ -929,7 +925,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :verbMorphClass :have}
+	    :morphClass :have}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "kén-l’ó’o’ w’aa’"],
 	    [:Singular, :Person2, "ká-l’ó’o’ w’aa’"],
@@ -942,7 +938,7 @@
     :note "Heine1975 pp. 45,48. On formSets:“It seems hardly possible to generalize on the token of these suffixes as almost every verb as a set of its own.” These are not distinguished in the negative."
     :common {:morpheme :SUBJMARKERSUFF,
 	    :pos :Verb,
-	    :verbMorphClass :SubjSuff}
+	    :morphClass :SubjSuff}
     :terms [[:aspect, :conjClass, :gender, :number, :person, :polarity, :token]  ;; schema
 	    [:Indefinite, :FormSet1, :Common, :Singular, :Person1, :Affirmative, "-a"],
 	    [:Indefinite, :FormSet1, :Common, :Singular, :Person2, :Affirmative, "-it"],
@@ -1040,7 +1036,7 @@
     :common {:morpheme :COPULALOCPAST,
 	    :pos :Verb,
 	    :tam :Past,
-	    :verbMorphClass :CopLoc}
+	    :morphClass :CopLoc}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oon’ú gwɛ’ɛ nairɔ́bi’"],
 	    [:Common, :Singular, :Person2, "aau gwɛ’ɛ(t) nairɔ́bi’"],
@@ -1054,7 +1050,7 @@
     :note "Heine1975 p. 44. General structure is:NEG/TAM+Subj(+Obj) Verb+Subj (Obj). NEG is n’ala in perfect,otherwise ŋe-"
     :common {:morpheme :PROAGREEMENT,
 	    :pos :Verb,
-	    :verbMorphClass :ProAgreement}
+	    :morphClass :ProAgreement}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
 	    [:Subject, :Common, :Singular, :Person1, "n---"],
 	    [:Subject, :Common, :Singular, :Person2, "a---t"],
@@ -1093,7 +1089,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :have}
+	    :morphClass :have}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "na-lo’o’ w’aa’"],
 	    [:Singular, :Person2, "a-lo’o’ w’aa’"],

@@ -73,7 +73,8 @@ do
     echo
 done
 commandline=${commandline#*+}
-#echo "commandline = $commandline"
+echo "commandline = $commandline"
+#beja-arteiga:conjClass=Suffix,polarity=Affirmative,tam=Present+oromo:clauseType=Main,derivedStem=Base,polarity=Affirmative,tam=Present
 
 bin/pdgm-display.sh $commandline $querylabel
 #bin/aama-query-display-demo.sh

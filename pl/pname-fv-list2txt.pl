@@ -13,7 +13,7 @@ my $listdata;
 open(IN, $pnamefile) or die "cannot open $pnamefile for reading";
 while (<IN>)
 { 
-    $listdata = $_;
+        $listdata = $_;
 	$listdata =~ s/^\?.*?\n//g;
 	$listdata =~ s/\t//g;
 	$listdata =~ s/""/,/g;
@@ -21,25 +21,51 @@ while (<IN>)
 }
 #print $listdata;
 my @listdata = split(/\n/, $listdata);
+
+my $currproplist;
 my $index = 1;
+my $pdgmlen = 1;
 foreach my $proplist (sort @listdata)
 {
-	#$proplist =~ s/,$//;
-	print $index.". ".$proplist."\n";
+    #print "proplist = $proplist\ncurrproplist = $currproplist\n";
+    
+    if ($proplist eq $currproplist)
+    {
+	$pdgmlen++;
+    }
+    else
+    {
+	print $index.". ".$proplist." (".$pdgmlen.")\n";
 	$index++;
+	$currproplist = $proplist;
+	$pdgmlen = 1;
+    }
 }
+print $index.". ".$currproplist." (".$pdgmlen.")\n";
 
 # print pdgm tsv data and header to tab-delimited tsv file
 #unlink $tsvfile;
 open(OUT, ">$textfile") or die "cannot open $textfile for output"; 
 select(OUT);
 my $index = 1;
+my $pdgmlen = 1;
 foreach my $proplist (sort @listdata)
 {
-	#$proplist =~ s/,$//;
-	print $index.". ".$proplist."\n";
+    #print "proplist = $proplist\ncurrproplist = $currproplist\n";
+    
+    if ($proplist eq $currproplist)
+    {
+	$pdgmlen++;
+    }
+    else
+    {
+	print $index.". ".$currproplist." (".$pdgmlen.")\n";
 	$index++;
+	$currproplist = $proplist;
+	$pdgmlen = 1;
+    }
 }
+print $index.". ".$currproplist." (".$pdgmlen.")\n";
 print "\n\n";
 close(OUT);
 

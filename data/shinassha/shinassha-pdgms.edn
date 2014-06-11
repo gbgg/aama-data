@@ -7,15 +7,15 @@
 	  :conjClass [:Conj1, :Conj2, :Conj3, :Conj4, :Conj5]
 	  :derivedStem [:Benefactive, :Causative, :Completative, :Iterative]
 	  :gender [:Common, :Fem, :Masc]
-	  :mood [:Command, :Conditional, :ConjClass, :Desiderative, :Gerund, :Indicative, :Infinitive, :InfinitiveInflect, :Irrealis, :Jussive, :Potential, :Relative, :Stem, :SubjunctivepdgmLex]
+	  :mood [:Command, :Conditional, :ConjClass, :Desiderative, :Indicative, :InfinitiveInflect, :Irrealis, :Jussive, :Potential, :Relative, :SubjunctivepdgmLex]
 	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
+	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:IndepCase, :Independent, :PossAdj, :PossNoun, :Subject]
 	  :tam [:Aorist, :AoristHabitual, :AoristIngressive, :AoristProgressive, :AoristPunctual, :Conditional, :ConjClass, :Future, :FuturePerfect, :FutureProgressive, :FuturePunctual, :Habitual, :Imperative, :ImperfectFuture, :ImperfectPresent, :ImperfectPreterite, :Jussive, :PerfectFuture, :PerfectPresent, :PerfectPreterite, :Pluperfect, :Present, :PresentIngressive, :PresentIngressiveA, :PresentIngressiveB, :Preterite, :PreteriteDubitative, :PreteriteEgressive, :PreteriteIngressive, :PreteritePerfect, :PreteritePerfectB, :Progressive, :U]
 	  :vClass [:Aux]
-	  :verbMorphClass [:Copula, :DervStem, :Existence, :InflClass, :InterrSubjMarker, :Interrogative, :Monorad, :SubjSuff, :SubjSuffInterr]
+	  :morphClass [:Copula, :DervStem, :Existence, :Gerund, :InflClass, :InterrSubjMarker, :Infinitive, :Interrogative, :Monorad, :Stem, :SubjSuff, :SubjSuffInterr]
 	  }
 :morphemes {
   :COPULAAFFPRES {:gloss "[x]", :lemma "[y]", }
@@ -92,7 +92,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["màà-f-é"]]
     }
@@ -127,7 +127,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :FutureProgressive,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["màà"]]
     }
@@ -222,9 +222,9 @@
     :common {:conjClass :Conj3,
 	    :gender :Common,
 	    :lexeme :massh,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -254,7 +254,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "mòòw-à"],
 	    [:Masc, :Singular, :Person3, "mòòw-á"],
@@ -274,7 +274,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wàà-f-é"]]
     }
@@ -284,14 +284,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :waa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectFuture,
 	    :token "waa",
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["waa"]]
     }
@@ -301,7 +301,7 @@
     :common {:lexeme :fa,
 	    :pos :Verb,
 	    :tam :ConjClass,
-	    :verbMorphClass :Existence}
+	    :morphClass :Existence}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tə̀-fá-ò"],
 	    [:Common, :Singular, :Person2, "tə́-fá-ò"],
@@ -405,9 +405,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :woott,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U,
@@ -461,7 +461,7 @@
 	    :pos :Verb,
 	    :tam :PreteritePerfect,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wàà-r-é"]]
     }
@@ -551,7 +551,7 @@
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :miits,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectPreterite,
@@ -571,14 +571,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectFuture,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["maa"]]
     }
@@ -588,14 +588,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectFuture,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["màà-rə̀"]]
     }
@@ -610,7 +610,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "wòò"],
 	    [:Plural, "wòòr"]]
@@ -707,9 +707,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectPresent,
@@ -760,9 +760,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U,
@@ -890,14 +890,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mòó ~ moowó"]]
     }
@@ -948,7 +948,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :verbMorphClass :Interrogative}
+	    :morphClass :Interrogative}
     :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
 	    [:Common, :Singular, :Person1, "àm-áá-k-ə̀", "táá-né ~ táá-nè-yáneg"],
 	    [:Masc, :Singular, :Person3, "àm-áá-k-", "é ~ è-yá"],
@@ -981,7 +981,7 @@
     :common {:lexeme :fa,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Existence}
+	    :morphClass :Existence}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "fá-è"],
 	    [:Common, :Singular, :Person2, "fá-ì"],
@@ -1063,14 +1063,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :waa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectPreterite,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wàà-tə́̀̀"]]
     }
@@ -1122,7 +1122,7 @@
 	    :pos :Verb,
 	    :tam :FuturePunctual,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wè-é-ttùw-é"]]
     }
@@ -1172,7 +1172,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "mò"],
 	    [:Plural, "mòòr"]]
@@ -1197,9 +1197,9 @@
     :common {:conjClass :Conj2,
 	    :gender :Common,
 	    :lexeme :kutt,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -1297,7 +1297,7 @@
 	    :pos :Verb,
 	    :tam :Jussive,
 	    :token-aux :_NULL,
-	    :verbMorphClass :Interrogative}
+	    :morphClass :Interrogative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "àmààl-tá-né"],
 	    [:Common, :Singular, :Person2, "àmààl-né-né"],
@@ -1332,14 +1332,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :mood :InfinitiveInflect,
+	    :morphClass :InfinitiveInflect,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mòósh"]]
     }
@@ -1426,7 +1426,7 @@
 	    :pos :Verb,
 	    :tam :Jussive,
 	    :token-aux :_NULL,
-	    :verbMorphClass :Interrogative}
+	    :morphClass :Interrogative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "àm-tá"],
 	    [:Common, :Singular, :Person2, "àmè-né"],
@@ -1456,14 +1456,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :waa,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["woowó"]]
     }
@@ -1473,9 +1473,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectFuture,
@@ -1522,14 +1522,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :gey,
-	    :mood :Stem,
+	    :morphClass :Stem,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["gèér"]]
     }
@@ -1556,9 +1556,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :et,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectFuture,
@@ -1593,9 +1593,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :miits,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectPresent,
@@ -1626,14 +1626,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :waa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectPreterite,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["waa"]]
     }
@@ -1680,9 +1680,9 @@
     :common {:conjClass :Conj5,
 	    :gender :Common,
 	    :lexeme :bey,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -1745,9 +1745,9 @@
     :common {:conjClass :Conj2,
 	    :gender :Common,
 	    :lexeme :tuw,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -1767,7 +1767,7 @@
 	    :pos :Verb,
 	    :tam :FuturePunctual,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mè-é-ttùw-é"]]
     }
@@ -1795,14 +1795,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :maa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectPreterite,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["maa"]]
     }
@@ -1830,9 +1830,9 @@
     :common {:conjClass :Conj3,
 	    :gender :Common,
 	    :lexeme :tool,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -1845,14 +1845,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :waa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectFuture,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wàà-rə̀"]]
     }
@@ -1861,9 +1861,9 @@
     :common {:conjClass :Conj4,
 	    :gender :Common,
 	    :lexeme :baziy,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -1894,14 +1894,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :bey,
-	    :mood :Stem,
+	    :morphClass :Stem,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["bèèr"]]
     }
@@ -1930,9 +1930,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
@@ -1964,14 +1964,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :waa,
-	    :mood :Stem,
+	    :morphClass :Stem,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wààr"]]
     }
@@ -2040,7 +2040,7 @@
 	    :pos :Verb,
 	    :tam :FutureProgressive,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wàà"]]
     }
@@ -2183,9 +2183,9 @@
     :common {:conjClass :Conj4,
 	    :gender :Common,
 	    :lexeme :aaniy,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -2198,14 +2198,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :mood :Stem,
+	    :morphClass :Stem,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mààr"]]
     }
@@ -2266,7 +2266,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "wòòw-à"],
 	    [:Masc, :Singular, :Person3, "wòòw-á"],
@@ -2298,9 +2298,9 @@
     :common {:conjClass :Conj5,
 	    :gender :Common,
 	    :lexeme :tippey,
-	    :mood :Infinitive,
+	    :morphClass :Infinitive,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :U}
@@ -2327,9 +2327,9 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
@@ -2346,7 +2346,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ConjClass,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tu-wàà"],
 	    [:Common, :Singular, :Person2, "nu-wàà"],
@@ -2423,14 +2423,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :maa,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectPreterite,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["màà-tə́̀̀"]]
     }
@@ -2492,7 +2492,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ConjClass,
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tə̀-mmàà"],
 	    [:Common, :Singular, :Person2, "nə́-mmàà"],
@@ -2525,7 +2525,7 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :Gerund,
+	    :morphClass :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectPreterite}
@@ -2544,14 +2544,14 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :keew,
-	    :mood :Stem,
+	    :morphClass :Stem,
 	    :number :Common,
-	    :person :Common,
+	    
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :U,
 	    
-	    :verbMorphClass :Monorad}
+	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["kèèwə̀r"]]
     }}
@@ -2560,7 +2560,7 @@
     :note "Lamberti1993b pp. 95f"
     :common {:morpheme :SUBJMARKERINTERRSUFF,
 	    :pos :Verb,
-	    :verbMorphClass :SubjSuffInterr}
+	    :morphClass :SubjSuffInterr}
     :terms [[:gender, :mood, :number, :person, :token]  ;; schema
 	    [:Common, :Indicative, :Singular, :Person1, "-tá(á)"],
 	    [:Common, :Indicative, :Singular, :Person2, "-yá"],
@@ -2667,7 +2667,7 @@
     :note "Lamberti1993b pp. 93f"
     :common {:morpheme :SUBJMARKER,
 	    :pos :Verb,
-	    :verbMorphClass :SubjSuff}
+	    :morphClass :SubjSuff}
     :terms [[:gender, :mood, :number, :person, :token]  ;; schema
 	    [:Common, :Indicative, :Singular, :Person1, "⊤"],
 	    [:Common, :Indicative, :Singular, :Person2, "⊤"],
@@ -2735,7 +2735,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "táá-nà"],
 	    [:Common, :Singular, :Person2, "néé-nà"],
@@ -2752,7 +2752,7 @@
             neg,and the neg aorHab"
     :common {:morpheme :SUBJMARKERINTERR2,
 	    :pos :Verb,
-	    :verbMorphClass :InterrSubjMarker}
+	    :morphClass :InterrSubjMarker}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "-tá(á)"],
 	    [:Common, :Singular, :Person2, "-yá"],
@@ -2784,7 +2784,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :verbMorphClass :Copula}
+	    :morphClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "táá-n-ààlí"],
 	    [:Common, :Singular, :Person2, "néé-n-ààlí"],
@@ -2798,7 +2798,7 @@
     :note "Lamberti1993b pp. 136. -138"
     :common {:morpheme :VINFLCLASS,
 	    :pos :Verb,
-	    :verbMorphClass :InflClass}
+	    :morphClass :InflClass}
     :terms [[:conjClass, :token-note, :token-stemVowel, :token]  ;; schema
 	    [:Conj1, "characterized by consonant gradations between indicative stem and imperative stem", "-Ø- ~ -ə- ~ -e-", "-Ø- ~ -ə- ~ -e-  :  characterized by consonant gradations between indicative stem and imperative stem"],
 	    [:Conj2, "_NULL", "-Ø- ~ -ə- ~ -i-", "-Ø- ~ -ə- ~ -i-  :  _NULL"],
@@ -2810,7 +2810,7 @@
     :note "Lamberti1993b pp. 126-136."
     :common {:morpheme :DERVSTEM,
 	    :pos :Verb,
-	    :verbMorphClass :DervStem}
+	    :morphClass :DervStem}
     :terms [[:derivedStem, :token]  ;; schema
 	    [:Iterative, "[reduplication"],
 	    [:Completative, "[reduplication]+ tsúw-"],

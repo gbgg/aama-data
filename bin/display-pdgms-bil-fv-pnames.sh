@@ -31,6 +31,8 @@ echo "ldomain = $ldomain"
 qlbl=${1//data\//}
 qlabel=${qlbl//\/,/-}
 echo "qlabel = $qlabel"
+response=tmp/pdgm/pname-$qlabel-resp.tsv
+rm $response
 for f in `find $ldomain -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
@@ -53,21 +55,20 @@ do
 	echo
 	## Find way to cycle through more than one number
 	localqry=tmp/pdgm/pname-$lang-fv-$pnumber-query.rq
-	response=tmp/pdgm/pname-$lang-fv-$pnumber-resp.tsv
-	rm $response
 	echo "Localqry = $localqry"
 	echo "Response = $response"
-	echo 
-	perl pl/qstring-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev 
-
+	echo
+	
+        perl pl/qstring-bil-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev $lang
 	${FUSEKIDIR}/s-query \
 		--output=tsv  \
 		--service http://localhost:3030/aama/query  \
 		--query=$localqry  \
-		> $response
+		>> $response
+done
 
-	perl pl/pdgm-fv-tsv2table.pl	$response 
-done 
+perl pl/pdgm-fv-tsv2table.pl	$response 
+ 
 #bin/aama-query-display-demo.sh
 
 if [ "$2" = "menu" ] ; then

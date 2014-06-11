@@ -2,7 +2,7 @@
 :lang :geez
 :sgpref "gez"
 :schemata {
-:conjuctive [:Prefix, :Suffix]
+          :conjugation [:Prefix, :Suffix]
 	  :derivedClass [:B, :S, :ST, :T]
 	  :derivedStem [:B, :S, :ST, :T]
 	  :gender [:Common, :Fem, :Masc]
@@ -12,14 +12,13 @@
 	  :rootClass [:CCC, :CCW, :CCY, :CWC, :CYC, :WCC]
 	  :stemClass [:A, :A1, :A2, :D, :L]
 	  :tam [:Imperative, :Jussive, :Past, :Present]
-	  :verbMorphClass [:SubjMarker, :VerbStems]
+	  :morphClass [:SubjMarker, :VerbStems]
 	  }
 :morphemes {
   :SUBJMARKER {:gloss "[x]", :lemma "[y]", }
   :VERBSTEMS {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :_NULL {:lemma "astäwä??ä", :gloss "spend", :pos :Verb, :rootClass :WCC, :derivedClass :ST, :stemClass :A2}
   :bdwB {:lemma "bädw-ä/bädo", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedClass :B, :stemClass :A2}
   :bdwS {:lemma "abdäw-ä", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedClass :S, :stemClass :A2}
   :bdwT {:lemma "täbädw-ä", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedClass :T, :stemClass :A2}
@@ -56,6 +55,7 @@
   :wdqS {:lemma "awdäq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedClass :S, :stemClass :A2}
   :wdqT {:lemma "täwädq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedClass :T, :stemClass :A2}
   :whsST {:lemma "astäw?äs-ä", :gloss "lend", :pos :Verb, :rootClass :WCC, :derivedClass :ST, :stemClass :A1}
+  :whyST {:lemma "astäwä??ä", :gloss "spend", :pos :Verb, :rootClass :WCC, :derivedClass :ST, :stemClass :A2}
   :wrdB {:lemma "wäräd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedClass :B, :stemClass :A1}
   :wrdS {:lemma "awräd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedClass :S, :stemClass :A1}
   :wrdT {:lemma "täwärd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedClass :T, :stemClass :A1}
@@ -173,7 +173,7 @@
     {:label "geez-VCCCSImprtv"
     :note ""
     :common {:derivedStem :S,
-	    :lexeme :_NULL,
+	    :lexeme :ngrS,
 	    :person :Person2,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -242,7 +242,7 @@
     {:label "geez-VCCCTPast"
     :note ""
     :common {:derivedStem :T,
-	    :lexeme :_NULL,
+	    :lexeme :ngrT,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Past}
@@ -261,7 +261,7 @@
     {:label "geez-VCCCTJuss"
     :note ""
     :common {:derivedStem :T,
-	    :lexeme :_NULL,
+	    :lexeme :ngrT,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Jussive}
@@ -665,7 +665,7 @@
     {:label "geez-VCCCSPast"
     :note ""
     :common {:derivedStem :S,
-	    :lexeme :_NULL,
+	    :lexeme :ngrS,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Past}
@@ -744,7 +744,7 @@
     {:label "geez-VCCCSPres"
     :note ""
     :common {:derivedStem :S,
-	    :lexeme :_NULL,
+	    :lexeme :ngr,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Present}
@@ -798,7 +798,7 @@
     {:label "geez-VCCCTImprtv"
     :note ""
     :common {:derivedStem :T,
-	    :lexeme :_NULL,
+	    :lexeme :ngrT,
 	    :person :Person2,
 	    :pos :Verb,
 	    :rootClass :CCC,
@@ -812,7 +812,7 @@
     {:label "geez-VCCCSJuss"
     :note ""
     :common {:derivedStem :S,
-	    :lexeme :_NULL,
+	    :lexeme :ngrS,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Jussive}
@@ -871,7 +871,7 @@
     {:label "geez-VCCCTPres"
     :note ""
     :common {:derivedStem :T,
-	    :lexeme :_NULL,
+	    :lexeme :ngrT,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Present}
@@ -963,8 +963,8 @@
     :common {:morpheme :SUBJMARKER,
 	    :pos :Verb,
 	    :token-stem :⊤,
-	    :verbMorphClass :SubjMarker}
-    :terms [[:conjuctive, :gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
+	    :morphClass :SubjMarker}
+    :terms [[:conjugation, :gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
 	    [:Suffix, :Common, :Singular, :Person1, "⊤", "⊤", "-ku", "⊤-⊤--ku"],
 	    [:Suffix, :Masc, :Singular, :Person2, "⊤", "⊤", "-ka", "⊤-⊤--ka"],
 	    [:Suffix, :Fem, :Singular, :Person2, "⊤", "⊤", "-ki", "⊤-⊤--ki"],
@@ -992,7 +992,7 @@
             past with the suffixes of the geezSuffixingVSubject paradigm"
     :common {:morpheme :VERBSTEMS,
 	    :pos :Verb,
-	    :verbMorphClass :VerbStems}
+	    :morphClass :VerbStems}
     :terms [[:derivedStem, :rootClass, :stemClass, :tam, :token]  ;; schema
 	    [:B, :CCC, :A1, :Past, "nägär-"],
 	    [:B, :CCC, :A1, :Present, "-näggər-"],

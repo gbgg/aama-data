@@ -5,30 +5,25 @@
 :case [:Accusative, :Nom, :Nominative, :Voc, :Vocative]
 	  :derivedStem [:Causative, :CausativeReciprocal, :Passive, :Reciprocal]
 	  :gender [:Common, :Fem, :Masc]
-	  :gender-negAux [:Common, :Fem, :Masc]
-	  :morphClass [:CommandForms, :ProInd]
-	  :multiLex [:DERVSTEM, :TENSEASPSUFF]
-	  :nonMainForm [:Conditional, :Coordinate, :DiffSubj, :Gerund, :Infinitive, :RelativeCovert, :RelativeOvert, :SameSubjOvlp, :SameSubjSucc, :Temporal]
+	  :genderNegAux [:Common, :Fem, :Masc]
+	  :morphClass [:AuxNegSuff, :DervStem, :NonMainClauseForms, :PngProclitic, :SubjSuff, :TenseAspSuff]
+	  :nonMainForm [:CommandForms, :Conditional, :Coordinate, :DiffSubj, :Gerund, :Infinitive, :RelativeCovert, :RelativeOvert, :SameSubjOvlp, :SameSubjSucc, :Temporal]
 	  :number [:Du, :Plural, :Pol, :Polite, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Aff, :Affirmative, :Neg, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Independent, :PossPref]
 	  :tam [:Future, :Imperative, :Imperfective, :Imprtv, :Juss, :Jussive, :Past, :Perfect, :Present]
-	  :verbMorphClass [:AuxNegSuff, :DervStem, :NonMainClauseForms, :PngProclitic, :SubjSuff, :TenseAspSuff]
 	  }
 :morphemes {
   :AUXNEGSUFF {:gloss "[x]", :lemma "[y]", }
   :NONMAINCLAUSEFORMS {:gloss "[x]", :lemma "[y]", }
   :PNGPROCLITIC {:gloss "[x]", :lemma "[y]", }
-  :PROIND1 {:gloss "[x]", :lemma "[y]", }
-  :PROIND2 {:gloss "[x]", :lemma "[y]", }
+  :PROIND {:gloss "[x]", :lemma "[y]", }
   :PROPOSSPREF {:gloss "[x]", :lemma "[y]", }
   :SUBJSUFFIX {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :DERVSTEM {:gloss "[x]", :lemma "[y]", }
-  :TENSEASPSUFF {:gloss "[x]", :lemma "[y]", }
   :baasl {:lemma "ba:sl-", :gloss "want", }
   :baasl-2 {:note "same as basl?", :lemma "ba:s-", :gloss "want", }
   :hoo-s {:lemma "ho:-s-", :gloss "help", :derivedStem :Causative, :pos :Verb}
@@ -83,7 +78,7 @@
     :common {:lexeme :baasl,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :verbMorphClass :AuxNegSuff}
+	    :morphClass :AuxNegSuff}
     :terms [[:gender-negAux, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "nan-ǝ-n2"],
 	    [:Common, :Singular, :Person2, "nan-a2"],
@@ -154,7 +149,7 @@
 :muterms #{
     {:label "dizi-PInd"
     :note "Beachy2005 Table 10,16"
-    :common {:morpheme :PROIND1,
+    :common {:morpheme :PROIND,
 	    :pos :Pronoun,
 	    :proClass :Independent}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
@@ -195,7 +190,7 @@
     :note "Beachy2005 Table 10"
     :common {:morpheme :PNGPROCLITIC,
 	    :pos :Verb,
-	    :verbMorphClass :PngProclitic}
+	    :morphClass :PngProclitic}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "ʔŋ2-"],
 	    [:Common, :Singular, :Person2, "a2-"],
@@ -212,7 +207,7 @@
     :note "Beachy2005 Table 10"
     :common {:morpheme :AUXNEGSUFF,
 	    :pos :Verb,
-	    :verbMorphClass :AuxNegSuff}
+	    :morphClass :AuxNegSuff}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "-n2"],
 	    [:Common, :Singular, :Person2, "-a2"],
@@ -232,7 +227,7 @@
             subordinate forms have the PNGProclitics.)"
     :common {:morpheme :NONMAINCLAUSEFORMS,
 	    :pos :Verb,
-	    :verbMorphClass :NonMainClauseForms}
+	    :morphClass :NonMainClauseForms}
     :terms [[:nonMainForm, :token-BeachyRef, :token-remark, :token-structure]  ;; schema
 	    [:DiffSubj, "3.8.8.1.1", "reference switch marker", "(PNGClitic)+verbStem+tense+n"],
 	    [:SameSubjSucc, "3.8.8.1.2", "succession in time", "(PNGClitic)+verbStem+tense+tɛy"],
@@ -267,7 +262,7 @@
     :note "Beachy2005 Table 10,17"
     :common {:morpheme :SUBJSUFFIX,
 	    :pos :Verb,
-	    :verbMorphClass :SubjSuff}
+	    :morphClass :SubjSuff}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "-no1"],
 	    [:Common, :Singular, :Person2, "-to1"],
@@ -280,43 +275,28 @@
 	    [:Common, :Plural, :Person2, "-ni2to1"],
 	    [:Common, :Plural, :Person3, "-ni2šo1 / -ni2ša1 / -ni2ši1 / -šo1"]]
     }
-    {:label "dizi-PProInd"
-    :note "Beachy2005 Table 10,16"
-    :common {:morpheme :PROIND2,
-	    :morphClass :ProInd,
-	    :pos :Pro}
-    :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Nom, :Common, :Singular, :Person1, "yi1nu2"],
-	    [:Nom, :Common, :Singular, :Person2, "e1tu2 / y ɛ1tu2 / ɛ1tu2"],
-	    [:Nom, :Masc, :Singular, :Person3, "i2zu2 / i2za3"],
-	    [:Nom, :Fem, :Singular, :Person3, "iʒ2 / i2ʒi2"],
-	    [:Nom, :Common, :Du, :Person1, "i3na2 / i3nu2"],
-	    [:Nom, :Common, :Du, :Person2, "i3ta2"],
-	    [:Nom, :Common, :Du, :Person3, "i3ša2"],
-	    [:Nom, :Common, :Plural, :Person1, "i3nu3"],
-	    [:Nom, :Common, :Plural, :Person2, "i3ti2"],
-	    [:Nom, :Common, :Plural, :Person3, "i3ši2"],
-	    [:Accusative, :Common, :Singular, :Person1, "yinn"],
-	    [:Accusative, :Common, :Singular, :Person2, "etn / yɛtn"],
-	    [:Accusative, :Masc, :Singular, :Person3, "izn"],
-	    [:Accusative, :Fem, :Singular, :Person3, "iʒn"],
-	    [:Accusative, :Common, :Du, :Person1, "⊤"],
-	    [:Accusative, :Common, :Du, :Person2, "⊤"],
-	    [:Accusative, :Common, :Du, :Person3, "⊤"],
-	    [:Accusative, :Common, :Plural, :Person1, "inn"],
-	    [:Accusative, :Common, :Plural, :Person2, "itin / itn"],
-	    [:Accusative, :Common, :Plural, :Person3, "išin / išn"],
-	    [:Voc, :Common, :Singular, :Person1, "⊤"],
-	    [:Voc, :Common, :Singular, :Person2, "e1tu2"],
-	    [:Voc, :Masc, :Singular, :Person2, "a3rɛy32"],
-	    [:Voc, :Fem, :Singular, :Person2, "i3rɛy32"],
-	    [:Voc, :Masc, :Singular, :Person3, "⊤"],
-	    [:Voc, :Fem, :Singular, :Person3, "⊤"],
-	    [:Voc, :Common, :Du, :Person1, "⊤"],
-	    [:Voc, :Common, :Du, :Person2, "i3ta2"],
-	    [:Voc, :Common, :Du, :Person3, "⊤"],
-	    [:Voc, :Common, :Plural, :Person1, "⊤"],
-	    [:Voc, :Common, :Plural, :Person2, "i3ti2"],
-	    [:Voc, :Common, :Plural, :Person3, "⊤"]]
-    }}
+{
+:label "dizi-VTenseAspSuff"
+:note "Beachy2005 Table 19. Yes/no questions are formed:PNGProclitic[Table 10]+ verbStem + tense + interr (vs. non-interrog:verbStem + tense + subjSuff). Examples:3.8.6 (160)-(164)."
+:common {:pos :Verb
+         :morphClass :TenseAspSuff}
+:terms [[:tam :token :token_exA :token_exQ :token_glossExA :token_glossExQ] ;; schema
+[:Past "⊤" "ho:-s-Ø-e" "i-ho:-s-ŋ" "she helped" "did she help?"],
+[:Present "-2kŋ1" "tus-k-ǝ-no" "a2-tus-2kŋ1" "I know" "do you know?"],
+[:Future "-i" "kez-i-go" "a3-kez-i" "it becomes_hot" "does it become_hot?"],
+[:Imperfective "-d" "kes-dɛ-no" "a2-kes-da" "I pay" "do you pay?"],
+[:Perfect "-1kŋ1" "mam-ki-go" "a3-mam-1kŋ1" "it has been_prepared" "has it been_prepared?"]]
+}
+{
+:label "dizi-VDervStem"
+:note "Beachy2005 #3.8.2. The dervStem suffixes are added directly to the lexical root,before the tense-aspect markers."
+:common {:pos :Verb
+         :morphClass :DervStem}
+:terms [[:derivedStem :token :token_baseForm :token_baseGloss :token_dervForm :token_dervGloss] ;; schema
+[:Causative "-s-" "sam" "be left over" "sam-s-" "leave over"],
+[:Passive "-dn-" "⊤" "bury" "ɛš-dn-" "be buried"],
+[:Reciprocal "-sǝm-" "_NULL" "be attached" "tits-ǝ-sǝm-" "be attached to one another"],
+[:CausativeReciprocal "-s-ǝ-sǝm-" "boy" "be married" "boy-s-ǝ-sǝm-" "marry one another"]]
+}
+}
 }
