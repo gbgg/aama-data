@@ -91,7 +91,7 @@ To facilitate the discovery and display of these configuratons, for each languag
 
 1. **Finite Verbs** (fv): For the purposes of this datastore, a finite verb is taken to be any verb-form inflected for person agreement (frequently accompanied by number and/or gender agreement). For any given language, the output of the script **generate-pnames-fv.sh**  is  a text file, sparql/pdgms/pname-fv-list-LANG.txt with a list of comma-separated value combinations. E.g., from pname-fv-list-beja-arteiga.txt, number 12 is "Beja-arteiga,Prefix,Affirmative,CCY,Optative". This indicates that a set of png-inflected forms exist in Beja-arteiga for the Optative, Affirmative, Prefix-conjugated, CCY-root-class verb. These pname lists are then used in certain paradigm-display scripts, which present the user with a list of png paradigms which can be chosen for display. The important point here is that the  pname does not come from the data-source, nor is it in the datastore, but is dynamically generated from the datastore as forms are added to (or subtracted from) it.
 
-2. **Non-finite Verbs** (nfv): At this point we are operationally defining "non-finite" verb as simply the complement of "finite verb", i.e., any term with ps=verb and no value for the property "person". This categorization throws together for the moment "paradigms" of terms which are partial forms of the verb, e.g., tense stems or derived stems, with paradigms of terms which are simply non-finite adjectival or nominal forms of the verb. This may be corrected later when the nature and distribution of Cushitic and Omotic non-finite verb forms is clearer, and it makes sense to set up an across-the-board property such as "non-finite-form". At present, in order to make useful lists, this means that every verb form not marked for "person" must be marked for what we are for the moment calling "morphClass" (which, in a sense is there to answer the question, "Why is this form in the datastore?"), which, for the time being, we will write in  upper-case letters, i.e., TENSESTEM, NONFINITEFORM. In a manner similar to that described for fv, a script **generate-pnames-nfv.sh** produces for each LANG a pname-nfv-list-LANG.txt whose entries consist formally of a morphClass, followed by a ":", followed by a comma-separated list of properties (MORPHCLASS:property,property, . . .). For example, from pname-nfv-list-beja-arteiga.txt, item 3,"VERBALPARTICIPLES:conjClass,derivedStem,nonFiniteForm,participle" indicates that there is a set of Beja-arteiga forms, belonging to the morphClass VERBALPARTICIPLES whose members are distinguished by different values of the properties conjClass, derivedStem, nonFiniteForm, and participle.
+2. **Non-finite Verbs** (nfv): At this point we are operationally defining "non-finite" verb as simply the complement of "finite verb", i.e., any term with pos=verb and no value for the property "person". This categorization throws together for the moment "paradigms" of terms which are partial forms of the verb, e.g., tense stems or derived stems, with paradigms of terms which are simply non-finite adjectival or nominal forms of the verb. This may be corrected later when the nature and distribution of Cushitic and Omotic non-finite verb forms is clearer, and it makes sense to set up an across-the-board property such as "non-finite-form". At present, in order to make useful lists, this means that every verb form not marked for "person" must be marked for what we are for the moment calling "morphClass" (which, in a sense is there to answer the question, "Why is this form in the datastore?"), which, for the time being, we will write in  upper-case letters, i.e., TENSESTEM, NONFINITEFORM. In a manner similar to that described for fv, a script **generate-pnames-nfv.sh** produces for each LANG a pname-nfv-list-LANG.txt whose entries consist formally of a morphClass, followed by a ":", followed by a comma-separated list of properties (MORPHCLASS:property,property, . . .). For example, from pname-nfv-list-beja-arteiga.txt, item 3,"VERBALPARTICIPLES:conjClass,derivedStem,nonFiniteForm,participle" indicates that there is a set of Beja-arteiga forms, belonging to the morphClass VERBALPARTICIPLES whose members are distinguished by different values of the properties conjClass, derivedStem, nonFiniteForm, and participle.
 
 3. **Pronoun** (pro): These are, straightforwardly, terms with pos=Pronoun; and each pronominal form is marked with a proClass. So, as for nfv, a script **generate-pnames-pro.sh** produces for each LANG a pname-nfv-list-LANG.txt whose entries consist formally of a proClass, followed by a ":", followed by a comma-separated list of properties (proClass:property,property, . . .). For example, from pname-pro-list-beja-arteiga.txt, item 3, "Independent:case,gender,number,person", indicates that there is a set of Beja-arteiga forms belonging to the proClass Independent whose members are distinguished by different values of the properties case, gender, number, and person.
 
@@ -225,7 +225,23 @@ props in question.
         *    **generate-query**: pl/qstring-fv-pname2query.pl 
         *    **format-response**:  pl/pdgm-fv-tsv2table.pl.
 
-3. **display-pdgms-nfv-pv.sh**: Displays non-finite verb forms in one or more languages which meet *prop=val* constraints entered at the prompt.
+3. **display-pdgms-bil-fv-pnames.sh**: Displays in parallel cols finite verb png forms with morphosyntactic values contained in one or more "pname".
+    - **usage**: bin/display-pdgms-bil-fv-pnames.sh \<dir\> 
+    - **example**: at prompts "beja-arteiga:", "10", and "oromo:", "31" shows in parallel cols png forms for Beja-arteiga Prefix-Affirmative-CCY-Aorist and Oromo Main-Base-Affirmative-Present
+    - **files consulted**
+        * *sparql/pdgms/pname-fv-list-$lang.txt*
+    - **files generated**: 
+        * *tmp/pdgm/pname-bil-$lang-fv-$pnumber-query.rq*
+        * *tmp/pdgm/pname-bil-$lang-fv-$pnumber-resp.tsv*
+        * *tmp/pdgm/pname-bil-$lang-fv-$pnumber-resp.txt*
+        * *tmp/pdgm/pname-bil-$lang-fv-$pnumber-resp.html*
+    - **procedures**: 
+        *    **q-string**: pl/pnames-print.pl (prints pnames table prompt: file sparql/pdgms/pname-fv-list-$lang.txt, generated by bin/generate-pnames-fv.sh)
+        *    **generate-query**: pl/qstring-bil-fv-pname2query.pl 
+        *    **format-response**:  pl/pdgm-fv-bil-tsv2table.pl.
+
+
+4. **display-pdgms-nfv-pv.sh**: Displays non-finite verb forms in one or more languages which meet *prop=val* constraints entered at the prompt.
     - **usage**: bin/display-paradigms.sh \<dir\> 
     - **example**: At prompt, "derivedStem=B" gives all nfv forms in base stem.
     - **files consulted**
@@ -243,7 +259,7 @@ props in question.
         *    **generate-query**: pl/qstring-nfv2query.pl
         *    **format-response**: pl/pdgmtsv2table.pl         
 
-4. **display-pdgms-nfv-pnames.sh**: Displays non-finite  forms of verb with morphosyntactic values contained in "pname".
+5. **display-pdgms-nfv-pnames.sh**: Displays non-finite  forms of verb with morphosyntactic values contained in "pname".
     - **usage**: bin/display-pdgms-nfv-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "2" shows stems for all conjClass, derivedStem, rootClass, and tam verb forms.
     - **files consulted**
@@ -258,7 +274,7 @@ props in question.
         *    **generate-query**: pl/qstring-nfv-pname2query.pl
         *    **format-response**: pl/pdgm-fv-tsv2table.pl
 
-5. **display-pdgms-pro-pnames.sh**: Displays pronominal  forms with morphosyntactic values contained in "pname". A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
+6. **display-pdgms-pro-pnames.sh**: Displays pronominal  forms with morphosyntactic values contained in "pname". A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
     - **usage**: bin/display-pdgms-pro-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "3" shows all independent pronominal forms.
     - **files consulted**
@@ -273,7 +289,7 @@ props in question.
         *    **generate-query**: pl/qstring-pro-pname2query.pl
         *    **format-response**: pl/pdgm-tsv2table.pl
 
-6. **display-pdgms-noun-pnames.sh**: For the moment, nominal paradigms are only incidentally included in aama, but for the few which exist, this script displays nominal  forms with morphosyntactic values contained in "pname".  A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
+7. **display-pdgms-noun-pnames.sh**: For the moment, nominal paradigms are only incidentally included in aama, but for the few which exist, this script displays nominal  forms with morphosyntactic values contained in "pname".  A ". . . -pv.sh" script  is in principle possible, but doesn't seem to yield anything more interesting that the pnames script.
     - **usage**: bin/display-pdgms-noun-pnames.sh \<dir\> 
     - **example**: at prompt "beja-arteiga;", "1" shows the noun plural classes. 
     - **files consulted**

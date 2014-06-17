@@ -6,6 +6,7 @@
 # The script is designed to produce displays of finite verb paradigm names
 # in one or more languages. 
 
+
 . bin/constants.sh
 ldomain=${1//,/ }
 ldomain2=${ldomain//\"/}

@@ -6,7 +6,7 @@
 # into a table-formatted text output for display on STDOUT or in 
 # text file. It is invoked by pdgm-display.sh
 
-my ($pdgmfile, $title) = @ARGV;
+my ($pdgmfile, $plists) = @ARGV;
 my $filename = $pdgmfile;
 $filename =~ s/\.tsv//;
 my $textfile = $filename.".txt";
@@ -14,6 +14,24 @@ my $htmlfile = $filename.".html";
 #print "Text file = $textfile\n";
 #print "HTML file = $htmlfile\n\n";
 #print "qstring=$qstring\n";
+
+my ($before, $middle, $after, $queryvals);
+my @plists = split(/\+/, $plists);
+undef $/;
+foreach my $plist (@plists)
+{
+    my ($valsfile, $pnumber) = split(/=/, $plist);
+    open(IN, $valsfile) || die "cannot open $valsfile for reading";
+    while (<IN>)
+    { 
+	($before, $middle) = split(/$pnumber\. /, $_, 2);
+	($queryvals, $after) = split(/\n/, $middle, 2);
+    }
+    close(IN);
+    print "PARADIGM: $queryvals\n";
+}
+#my @plist = split(/+/, $plist);
+#foreach my $pdgm (@plist){ print "$pdgm\n";}
 
 undef $/;
 my ($header, $pdgmrows);
@@ -54,10 +72,12 @@ close(IN);
 
 my $format ="| ";
 my $tablewidth = 2*(@colwidths + 3) + 3;
+#my $tokenwidth;
 foreach my $colwidth (@colwidths)
 {
 	$format .= "%-".$colwidth."s | ";
 	$tablewidth += $colwidth;
+	#$tokenwidth = $colwidth;
 }
 $format .= "\n";
 

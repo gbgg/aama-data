@@ -4,7 +4,6 @@
 
 use File::Copy;
 my ($valsfile,  $queryfile, $pnumber, $lang) = @ARGV;
-
 my ($langname, $Langname, $Lang);
 
 undef $/;
@@ -18,12 +17,12 @@ while (<IN>)
 	($queryvals, $after) = split(/\n/, $middle, 2);
 }
 close(IN);
-print "PARADIGM: $queryvals\n";
+#print "PARADIGM: $queryvals\n";
 ($Langname, $qvals) = split(/,/, $queryvals, 2);
 $Lang = ucfirst($lang);
 $langname = lc($Langname);
 $qvals =~ s/\(.*?\)\s*$//;
-print "qvals = $qvals\n";
+#print "qvals = $qvals\n";
 @queryvallist = split(/,/, $qvals);
 
 open(OUT, ">$queryfile") || die "cannot open $queryfile for output"; 
@@ -37,7 +36,8 @@ print "PREFIX $lang:   <http://id.oi.uchicago.edu/aama/2013/$langname/>\n";
 
 print "\n";
 # Iterate through @select if want all values in table
-print "SELECT ?lex ?num ?pers ?gen ?token \n";
+#print "SELECT ?lex ?num ?pers ?gen ?token \n";
+print "SELECT  ?num ?pers ?gen ?token \n";
 print "WHERE\n{\n";
 print "\t{\n";
 print "\t\tGRAPH aamag:$langname\n\t\t{\n";
@@ -54,7 +54,7 @@ foreach my $queryval (@queryvallist)
 	print " \t\t\t?Q$qqueryval\trdfs:label\t?$qqueryval . \n";
 }
 
-print "\t\t\tOPTIONAL { ?s\taamas:lexeme\t?lex . } \n";
+#print "\t\t\tOPTIONAL { ?s\taamas:lexeme\t?lex . } \n";
 print "\t\t\tOPTIONAL { ?s\t$lang:number\t?number . \n";
 print "\t\t\t?number\trdfs:label\t?num . }\n";
 print "\t\t\t?s\t$lang:person\t?person . \n";

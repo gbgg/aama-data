@@ -133,10 +133,11 @@ case "$qdnumber" in
 	echo "Display Paradigm for:    "
 	echo "    1. Finite Verb: Select pdgm properties from prop-val table"
 	echo "    2. Finite Verb: Select pdgm from 'name-list'"
-	echo "    3. Non-finite Verb: Select pdgm properties from prop-val table"
-	echo "    4. Non-finite Verb: Select pdgm from 'name-list'"
-	echo "    5. Pronoun (from 'name-list')"
-	echo "    6. Noun (from 'name-list')"
+	echo "    3. Finite Verb Pdgm Comparison: Select pdgms from 'name-list'"
+	echo "    4. Non-finite Verb: Select pdgm properties from prop-val table"
+	echo "    5. Non-finite Verb: Select pdgm from 'name-list'"
+	echo "    6. Pronoun (from 'name-list')"
+	echo "    7. Noun (from 'name-list')"
 	echo "       [NB: At present, there are no noun paradigms noted for most languages in this archive!]"
 	echo " "
 	echo "Choose a prop-val type number or Ctrl-C to exit"
@@ -159,27 +160,34 @@ case "$qdnumber" in
 		bin/display-pdgms-fv-pnames.sh $langdomain menu
 		;;
 	    3)
-		ldomain=data/beja-arteiga
+		ldomain=data/beja-arteiga,data/oromo
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-nfv-pv.sh $langdomain menu
+		bin/display-pdgms-bil-fv-pnames.sh $langdomain $ldomain
 		;;
 	    4)
 		ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-nfv-pnames.sh $langdomain menu
+		bin/display-pdgms-nfv-pv.sh $langdomain menu
 		;;
 	    5)
 		ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-pro-pnames.sh $langdomain menu
+		bin/display-pdgms-nfv-pnames.sh $langdomain menu
 		;;
 	    6)
+		ldomain=data/beja-arteiga
+		echo "Define language domain"
+		read -e -p "lang-domain (default $ldomain) : " input
+		langdomain=${input:-$ldomain}
+		bin/display-pdgms-pro-pnames.sh $langdomain menu
+		;;
+	    7)
 		ldomain=data/beja-arteiga
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input

@@ -19,7 +19,7 @@ ldomain=${1//,/ }
 ldomain=${ldomain//\"/}
 
 echo "fuquery.log" > logs/fuquery.log;
-#echo " 'Non-finite verb' is operationally defined as any form of  a verb that" 
+#echo " 'Finite verb' is operationally defined as any form of  a verb that" 
 #echo " is marked for a value of tam, and is marked also at least for" 
 #echo " person  (optionally also for gender and number). "
 #echo
@@ -28,11 +28,16 @@ echo "fuquery.log" > logs/fuquery.log;
 #for f in `find $1 -name *.edn`
 echo " arg1 = $1"
 echo "ldomain = $ldomain"
-qlbl=${1//data\//}
-qlabel=${qlbl//\/,/-}
-echo "qlabel = $qlabel"
+#qlbl=${1//data\//}
+#qlabel=${qlbl//\/,/-}
+#echo "qlabel = $qlabel"
+qlbl=bil-tsv-trial
+echo "Enter query label"
+read -e -p "Qlabel (default $qlbl) : " input
+qlabel=${input:-$qlbl}
 response=tmp/pdgm/pname-$qlabel-resp.tsv
 rm $response
+
 for f in `find $ldomain -name *.edn`
 do
     lang=`basename ${f%-pdgms.edn}`
@@ -58,17 +63,26 @@ do
 	echo "Localqry = $localqry"
 	echo "Response = $response"
 	echo
-	
-        perl pl/qstring-bil-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev $lang
+
+        perl pl/qstring-bil-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev $pdgmlist
+
 	${FUSEKIDIR}/s-query \
 		--output=tsv  \
 		--service http://localhost:3030/aama/query  \
 		--query=$localqry  \
 		>> $response
-done
 
-perl pl/pdgm-fv-tsv2table.pl	$response 
- 
+	pdgmlist="${pdgmlist}+${pnamefile}=${pnumber}"
+	#echo "pdgmlist = $pdgmlist"
+done
+pdgmlist=${pdgmlist#*+}
+echo "plist = $pdgmlist"
+
+echo "  "
+
+perl pl/pdgm-fv-bil-tsv2table.pl $response $pdgmlist
+#perl pl/pdgm-fv-bil-tsv2table.pl  tmp/pdgm/pname-bil-tsv-trial-resp.tsv sparql/pdgms/pname-fv-list-beja-arteiga.txt=10+sparql/pdgms/pname-fv-list-oromo.txt=31
+
 #bin/aama-query-display-demo.sh
 
 if [ "$2" = "menu" ] ; then
