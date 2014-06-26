@@ -3,7 +3,7 @@
 # 11/29/13, called by display-pdgms-fv-pnames.sh
 
 use File::Copy;
-my ($valsfile,  $queryfile, $pnumber, $lang) = @ARGV;
+my ($valsfile,  $queryfile, $pnumber, $lang, $porder) = @ARGV;
 my ($langname, $Langname, $Lang);
 
 undef $/;
@@ -37,7 +37,7 @@ print "PREFIX $lang:   <http://id.oi.uchicago.edu/aama/2013/$langname/>\n";
 print "\n";
 # Iterate through @select if want all values in table
 #print "SELECT ?lex ?num ?pers ?gen ?token \n";
-print "SELECT  ?num ?pers ?gen ?token \n";
+print "SELECT ?pdgm ?num ?pers ?gen ?token \n";
 print "WHERE\n{\n";
 print "\t{\n";
 print "\t\tGRAPH aamag:$langname\n\t\t{\n";
@@ -62,6 +62,7 @@ print "\t\t\t?person\trdfs:label\t?pers . \n";
 print "\t\t\tOPTIONAL { ?s\t$lang:gender\t?gender . \n";
 print "\t\t\t?gender\trdfs:label\t?gen . }\n";
 print "\t\t\t?s\t$lang:token\t?token . \n";
+print "\t\t\tBIND (\"$porder\" as ?pdgm) . \n";
 print "\t\t}\n";
 print "\t}\n";
 print "}\n";

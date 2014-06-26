@@ -15,26 +15,8 @@ my $htmlfile = $filename.".html";
 #print "HTML file = $htmlfile\n\n";
 #print "qstring=$qstring\n";
 
-# Make @pngs, array of all possible row png values
-# Val arrays should be eventually passed into script as arg
 
-my @pngs; # an array of png combos
-my @numvals = ("Singular", "Plural");
-my @persvals = ("Person1", "Person2", "Person3");
-my @genvals = ("Common", "Masc", "Fem");
-foreach my $number (@numvals)
-{
-    foreach my $person (@persvals)
-    {
-	foreach my $gender (@genvals)
-	{
-	    my $png =$number."\t".$person."\t".$gender;
-	    push(@pngs, $png)
-	}
-    }
-}
-
-# List pdgms
+# List "pdgm names"
 my @plists = split(/\+/, $plists);
 undef $/;
 print "\n";
@@ -54,7 +36,7 @@ foreach my $plist (@plists)
 	($queryvals, $after) = split(/\n/, $middle, 2);
     }
     close(IN);
-    push(@pdgmnames, "$token: $queryvals\n");
+    push(@pdgmnames, "$token: $queryvals");
 }
 print "\n";
 
@@ -73,6 +55,7 @@ while (<IN>)
 	$data =~ s/⊤/ /g;
 	# Get first line for header
 	($header, $pdgmrows) = split(/\n/, $data, 2);
+        #$header .= "pdgm\t";
 	$header =~ s/\?//g;
 	# Initialize colwidths with header
 	my $colwidths = $header;
@@ -98,6 +81,65 @@ while (<IN>)
 }
 close(IN); 
 
+# Print mono-data-col version of pdgm:
+# print pdgm titles
+foreach my $pdgmname (@pdgmnames) {print "$pdgmname\n";}
+
+my $format ="| ";
+my $tablewidth = 2*(@colwidths + 3) + 3;
+#my $tokenwidth;
+foreach my $colwidth (@colwidths)
+{
+	$format .= "%-".$colwidth."s | ";
+	$tablewidth += $colwidth;
+	#$tokenwidth = $colwidth;
+}
+$format .= "\n";
+
+# print pdgm table file to STDOUT
+select STDOUT;
+#print "Format= $format\n";
+#print "Tablewidth= $tablewidth\n\n";
+print "-" x $tablewidth;
+print "\n";
+printf $format, @header;
+print "=" x $tablewidth;
+print "\n";
+foreach my $pdgmrow (@pdgmrows)
+ {
+	@rowterms = split('\t', $pdgmrow);
+	if ($rowterms[0] !~ /\?pdgm/)
+	{
+	    printf $format, @rowterms;
+	}
+}
+print "-" x $tablewidth;
+print "\n\n\n";
+
+exit;
+
+# Get png input here
+ 
+# Make @pngs, array of all possible row png values
+# Val arrays should be eventually passed into script as arg
+
+my @pngs; # an array of png combos
+my @numvals = ("Singular", "Plural");
+my @persvals = ("Person1", "Person2", "Person3");
+my @genvals = ("Common", "Masc", "Fem");
+foreach my $number (@numvals)
+{
+    foreach my $person (@persvals)
+    {
+	foreach my $gender (@genvals)
+	{
+	    my $png =$number."\t".$person."\t".$gender;
+	    push(@pngs, $png)
+	}
+    }
+}
+
+
 # If input is bil with parallel token cols, have to make new pdgmfile
 
 # Make combined 2-token array
@@ -111,36 +153,40 @@ open(IN, $pdgmfile) || die "cannot open $pdgmfile for reading";
 while (<IN>)
 { 
     my $data = $_;
-    $data =~ s/(.*?\t.*?\t.*?)\t(.*?\n)/\1&\2/g;
+    $data =~ s/(.*?\t.*?\t.*?\t.*?)\t(.*?\n)/\1&\2/g;
 #   $data =~ s/\t/,/g;
     $data =~ s/["?]//g;
+    $data =~ s/pdgm\t//g;
+    $data =~ s/\nP-\d*?\t/\n/g;
     ($header, $pdgmrows) = split(/\n/, $data, 2);
     $header =~ s/&.*?$//;
     @header = split(/\t/, $header);
-    my @pdgmdata = split(/$header/, $pdgmrows);
-    foreach my $pdgmdata (@pdgmdata)
-    {
-	#print "Sub-pdgm data now is:\n$pdgmdata\n";
-	my %pdgm;
-	@prows = split(/\n/, $pdgmdata);
-	foreach my $prow(@prows)
-	{
-	    my ($png, $token) = split(/&/, $prow);
-	    $pdgm{$png} = $token;
-	}
-	my $pdgmref = \%pdgm;
-	push (@pdgms, $pdgmref);
-    }
+    #print "header = $header\n";
+    #print "pdgmrows = \n$pdgmrows\n";
 
+    # Recalculate colwidths and format strings
+    my $colwidths = $header;
+    @colwidths = split( '\t', $colwidths);
+    foreach my $colwidth (@colwidths)
+    {
+	$colwidth = length($colwidth);
+    }
+    my $termid = "";
+    @pdgmrows = split '\n', $pdgmrows;
+    foreach my $pdgmrow (@pdgmrows)
+    {
+	$pdgmrow =~ s/&/\t/;
+	@rowterms = split('\t', $pdgmrow);
+	# Take care of lex ($rowterms[0])
+	for (my $i = 0; $i <= $#rowterms; $i++)
+	{
+		my $termwidth = length($rowterms[$i]);
+		if ($termwidth > $colwidths[$i]) {$colwidths[$i] = $termwidth;}
+	}
+    }
     $format_png = "| ";
     $tablewidth = 2*(@colwidths + 3) + 3;
     $tokenwidth = $colwidths[$#colwidths];
-
-    #print "tablewidth = $tablewidth\n";
-    #print "tokenwidth = $tokenwidth\n";
-    #print "length of colwidths array = $#colwidths+1\n";
-    #print "length of pdgms array = $#plists+1\n";
-    
     for (my $i = 0; $i < $#colwidths; $i++)
     {
     	$format_png .= "%-".$colwidths[$i]."s | ";
@@ -157,19 +203,41 @@ while (<IN>)
 	$tablewidth += $tokenwidth;
     }
     #print "tablewidth = $tablewidth\n";
+    #print "tablewidth = $tablewidth\n";
+    #print "tokenwidth = $tokenwidth\n";
+    #print "length of colwidths array = $#colwidths+1\n";
+    #print "length of pdgms array = $#plists+1\n";
+    
+
+    # Form array of pdgms
+    my @pdgmdata = split(/$header/, $pdgmrows);
+    foreach my $pdgmdata (@pdgmdata)
+    {
+	#print "Sub-pdgm data now is:\n$pdgmdata\n";
+	my %pdgm;
+	@prows = split(/\n/, $pdgmdata);
+	foreach my $prow(@prows)
+	{
+	    my ($png, $token) = split(/&/, $prow);
+	    $pdgm{$png} = $token;
+	}
+	my $pdgmref = \%pdgm;
+	push (@pdgms, $pdgmref);
+    }
 }
 
 select STDOUT;
-&PrintPdgm;
+
+&PrintCompPdgm;
 
 # print pdgm tsv data and header to tab-delimited txt file
 open(OUT, ">$textfile") || die "cannot open $textfile for output"; 
 select(OUT);
-&PrintPdgm;
+#&PrintPdgm;
 close(OUT);
 
 
-sub PrintPdgm {
+sub PrintCompPdgm {
 
 # print pdgm titles
 foreach my $pdgmname (@pdgmnames) {print "$pdgmname\n";}

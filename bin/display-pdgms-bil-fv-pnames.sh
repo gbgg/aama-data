@@ -26,8 +26,8 @@ echo "fuquery.log" > logs/fuquery.log;
 #echo Please provide a label for query --
 #read -e -p Query_Label: querylabel
 #for f in `find $1 -name *.edn`
-echo " arg1 = $1"
-echo "ldomain = $ldomain"
+#echo " arg1 = $1"
+#echo "ldomain = $ldomain"
 #qlbl=${1//data\//}
 #qlabel=${qlbl//\/,/-}
 #echo "qlabel = $qlabel"
@@ -37,9 +37,12 @@ read -e -p "Qlabel (default $qlbl) : " input
 qlabel=${input:-$qlbl}
 response=tmp/pdgm/pname-$qlabel-resp.tsv
 rm $response
-
+pord=0
 for f in `find $ldomain -name *.edn`
 do
+    pord=`expr $pord + 1`
+    porder="P-$pord"
+    #echo "porder = $porder"
     lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
 	##pnamefile="sparql/pdgms/pname-$pos-list-$lang.txt";
@@ -47,7 +50,7 @@ do
 	pnamefile="sparql/pdgms/pname-fv-list-$lang.txt";
 	labbrev=`grep $lang bin/lname-pref.txt`
 	abbrev=${labbrev#$lang=}
-	echo "pnamefile = $pnamefile"
+	#echo "pnamefile = $pnamefile"
 	echo 
 	echo " The following is a list of property values"
 	echo " for finite verbs in ${Lang}:"
@@ -64,7 +67,7 @@ do
 	echo "Response = $response"
 	echo
 
-        perl pl/qstring-bil-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev $pdgmlist
+        perl pl/qstring-bil-fv-pname2query.pl $pnamefile $localqry $pnumber $abbrev $porder
 
 	${FUSEKIDIR}/s-query \
 		--output=tsv  \
@@ -76,15 +79,40 @@ do
 	#echo "pdgmlist = $pdgmlist"
 done
 pdgmlist=${pdgmlist#*+}
-echo "plist = $pdgmlist"
+#echo "plist = $pdgmlist"
 
 echo "  "
 
 perl pl/pdgm-fv-bil-tsv2table.pl $response $pdgmlist
+
+echo
+echo "[ENTER] to produce parallel-token-col display  or Ctrl-C to exit"
+echo
+read 
+echo
+echo "Choose number-person-gender values for parallel display"
+echo "or {ENTER] to take default value."
+echo " "
+number="Singular,Plural"
+echo "Enter values for property 'Number':"
+read -e -p "Number (default $number) : " input
+numvals=${input:-$number}
+echo "  "
+person="Person1,Person2,Person3"
+echo "Enter values for property 'Person':"
+read -e -p "Person (default $person) : " input
+persvals=${input:-$person}
+echo "  "
+gender="Common,Masc,Fem"
+echo "Enter values for property 'Gender':"
+read -e -p "Gender (default $gender) : " input
+genvals=${input:-$gender}
+echo "  "
+
+perl pl/pdgm-fv-bil-tsv2table2.pl $response $pdgmlist, $numvals, $persvals, $genvals
 #perl pl/pdgm-fv-bil-tsv2table.pl  tmp/pdgm/pname-bil-tsv-trial-resp.tsv sparql/pdgms/pname-fv-list-beja-arteiga.txt=10+sparql/pdgms/pname-fv-list-oromo.txt=31
 
 #bin/aama-query-display-demo.sh
-
 if [ "$2" = "menu" ] ; then
     read -e -p "[ENTER] to continue" input
     bin/aama-query-display-demo.sh

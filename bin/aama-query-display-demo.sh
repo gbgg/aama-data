@@ -164,7 +164,7 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		bin/display-pdgms-bil-fv-pnames.sh $langdomain $ldomain
+		bin/display-pdgms-bil-fv-pnames.sh $langdomain menu
 		;;
 	    4)
 		ldomain=data/beja-arteiga
