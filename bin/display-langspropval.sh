@@ -39,8 +39,10 @@ qstring=$2
 qlabel=$3
 template=sparql/templates/$qlabel.template
 response=tmp/prop-val/$qlabel-resp.tsv
+rm $response
 localqry=tmp/prop-val/$qlabel.rq
 
+echo "Language domain = $ldomain"
 echo "Query String = $qstring"
 echo "Template = $template"
 echo "Response = $response"
@@ -49,7 +51,7 @@ echo "Response = $response"
 
 perl pl/qstring2template.pl $qstring $template
 
-fs=`find $1 -name *edn`
+fs=`find $ldomain -name *edn`
 for f in $fs
 do
 	#echo "f is $f"

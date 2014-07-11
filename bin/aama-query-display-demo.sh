@@ -124,8 +124,8 @@ case "$qdnumber" in
 		prop=yes
 		echo "Enter \"yes\" if property-name to be displayed with each value "
 		read -e -p "Prop?[yes/no] (default $prop) : " input
-		value=${input:-$prop}
-		bin/display-langvterms.sh $langdomain $qstring $qlabel $prop menu
+		pvalue=${input:-$prop}
+		bin/display-langvterms.sh $langdomain $qstring $qlabel $pvalue menu
 		;;
 	esac
 	;;
@@ -268,11 +268,12 @@ case "$qdnumber" in
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		ftag=$langdomain
+		ftag=${langdomain/data\//}
 		echo "Provide File Tag"
 		read -e -p "File Tag (default $ftag) : " input
 		filetag=${input:-$ftag}
 		bin/generate-lang-prop-val-lists.sh $langdomain $filetag menu ;;
 	esac
 esac
+
 

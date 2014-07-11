@@ -11,7 +11,7 @@
 ldomain=${1//,/ }
 ldomain=${ldomain//\"/}
 response=tmp/prop-val/lang-prop-val-list.tsv
-mv $response "${response}.bck"
+rm $response
 filetag=$2
 #echo "filetag = $filetag"
 echo "fuquery.log" > logs/fuquery.log;

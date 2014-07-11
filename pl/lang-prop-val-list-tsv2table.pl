@@ -11,24 +11,24 @@
 #		prop	lang: v, v, v, ...
 # to be used in development of nomenclature/ontology
 
-# response=tmp/prop-val/lang-prop-val-list.tsv
+# response=tmp/prop-val-lists/lang-prop-val-list.tsv
 my ($propvalfile, $filetag) = @ARGV;
 my @outputfiles;
-my $textfilelpv = "tmp/prop-val/lang-prop-val-list-$filetag.txt";
+my $textfilelpv = "tmp/prop-val-lists/lang-prop-val-list-$filetag.txt";
 push (@outputfiles, $textfilelpv);
-my $textfilepvl = "tmp/prop-val/prop-val-lang-list-$filetag.txt";
+my $textfilepvl = "tmp/prop-val-lists/prop-val-lang-list-$filetag.txt";
 push (@outputfiles, $textfilepvl);
-my $textfilevpl = "tmp/prop-val/val-prop-lang-list-$filetag.txt";
+my $textfilevpl = "tmp/prop-val-lists/val-prop-lang-list-$filetag.txt";
 push (@outputfiles, $textfilevpl);
-my $textfileplv = "tmp/prop-val/prop-lang-val-list-$filetag.txt";
+my $textfileplv = "tmp/prop-val-lists/prop-lang-val-list-$filetag.txt";
 push (@outputfiles, $textfilepvl);
-my $htmlfilelpv = "tmp/prop-val/lang-prop-val-list-$filetag.html";
+my $htmlfilelpv = "tmp/prop-val-lists/lang-prop-val-list-$filetag.html";
 push (@outputfiles, $htmlfilelpv);
-my $htmlfilepvl = "tmp/prop-val/prop-val-lang-list-$filetag.html";
+my $htmlfilepvl = "tmp/prop-val-lists/prop-val-lang-list-$filetag.html";
 push (@outputfiles, $htmlfilepvl);
-my $htmlfilevpl = "tmp/prop-val/val-prop-lang-list-$filetag.html";
+my $htmlfilevpl = "tmp/prop-val-lists/val-prop-lang-list-$filetag.html";
 push (@outputfiles, $htmlfilepvl);
-my $htmlfileplv = "tmp/prop-val/prop-lang-val-list-$filetag.html";
+my $htmlfileplv = "tmp/prop-val-lists/prop-lang-val-list-$filetag.html";
 push (@outputfiles, $htmlfileplv);
 
 #undef $/;

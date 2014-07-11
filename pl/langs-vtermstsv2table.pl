@@ -97,7 +97,7 @@ foreach my $langToken (sort keys  %tokenVals)
 	my $values;
 	foreach $value (@values)
 	{
-		$values .= $value.", ";
+		$values .= $value.",";
 	}
 	$values =~ s/, $//;
 	my ($lang, $token) = split(/%/, $langToken);
