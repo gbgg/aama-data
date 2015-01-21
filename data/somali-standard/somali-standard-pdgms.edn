@@ -109,7 +109,7 @@
 	    [:Common, :Plural, :Person1, "karinnó"],
 	    [:Common, :Singular, :Person1, "kariyó"],
 	    [:Common, :Plural, :Person3, "kariyàan"],
-	    [:Common, :Singular, :Person2, "karisó ~karisíd"],
+	    [:Common, :Singular, :Person2, "karisó~karisíd"],
 	    [:Common, :Plural, :Person2, "karisàan"],
 	    [:Fem, :Singular, :Person3, "karisó"],
 	    [:Masc, :Singular, :Person3, "kariyó"]]
@@ -150,7 +150,7 @@
 	    [:Masc, :Singular, :Person3, "súgi doonó"],
 	    [:Fem, :Singular, :Person3, "súgi doontó"],
 	    [:Common, :Singular, :Person1, "súgi doonó"],
-	    [:Common, :Singular, :Person2, "súgi doontó ~doontíd"]]
+	    [:Common, :Singular, :Person2, "súgi doontó~doontíd"]]
     }
     {:label "somali-VPrefMainAffPresProg-yimi"
     :note ""
@@ -178,14 +178,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "oqóon lahaa"],
+		[:Singular, :Person2, :Common, "oqóon lahayd"],
+		[:Singular, :Person3, :Masc, "oqóon lahaa"],
+		[:Singular, :Person3, :Fem, "oqóon lahayd"],
+		[:Plural, :Person1, :Common, "oqóon lahayn"],
+		[:Plural, :Person2, :Common, "oqóon lahaydeen"],
+		[:Plural, :Person3, :Common, "oqóon lahaayeen"]
+	]
     }
     {:label "somali-VSuffC2AMainAffOptative-kari"
     :note ""
@@ -217,13 +218,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"]]
     }
     {:label "somali-VPrefMainNegFuture-yiqiin"
     :note ""
@@ -234,14 +235,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person3, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "oqóon doonó"],
+		[:Singular, :Person2, :Common, "oqóon doontó ~doontíd"],
+		[:Singular, :Person3, :Masc, "oqóon doonó"],
+		[:Singular, :Person3, :Fem, "oqóon doontó"],
+		[:Plural, :Person1, :Common, "oqóon doonnó"],
+		[:Plural, :Person2, :Common, "oqóon doontàan"],
+		[:Plural, :Person3, :Common, "oqóon doonàan"]
+	]
     }
     {:label "somali-VSuffC3AMainAffPresGen-joogso"
     :note ""
@@ -291,13 +293,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"]]
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VPrefMainAffConditional-yimi"
     :note ""
@@ -327,13 +329,13 @@
 	    :pos :Verb,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"]]
     }
     {:label "somali-VSuffC2AMainAffPresGen-kari"
     :note ""
@@ -379,14 +381,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastIndependent}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Common, :Singular, :Person2, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "iqíinay"],
+		[:Singular, :Person2, :Common, "tiqíinay"],
+		[:Singular, :Person3, :Masc, "yiqiináy"],
+		[:Singular, :Person3, :Fem, "tiqíinay"],
+		[:Plural, :Person1, :Common, "niqíinay"],
+		[:Plural, :Person2, :Common, "tiqiiné"],
+		[:Plural, :Person3, :Common, "yiqiiné"]
+	]
     }
     {:label "somali-VSuffC3BMainNegPresProg2-qaado"
     :note ""
@@ -398,13 +401,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive2}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VSuffC2BMainNegImprtv-yar"
     :note ""
@@ -468,13 +471,13 @@
 	    :pos :Verb,
 	    :tam :PastProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"]]
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPastGen-yidi"
     :note ""
@@ -558,13 +561,13 @@
 	    :pos :Verb,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"]]
     }
     {:label "somali-VPrefMainAffConditional-yahay"
     :note ""
@@ -642,9 +645,9 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "òol"],
-	    [:Plural, "óolla"]]
+    :terms [[:number, :gender, :token]  ;; schema
+	    [:Singular, :Common, "òol"],
+	    [:Plural, :Common, "óolla"]]
     }
     {:label "somali-VPrefMainAffPastProg-yimi"
     :note ""
@@ -729,7 +732,7 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Singular, "óqoon(in) ~ áqoon(in)"],
+	    [:Singular, "óqoon(in)~áqoon(in)"],
 	    [:Plural, "oqoonín"]]
     }
     {:label "somali-VSuffC3AFullAbsAffPresProg-joogso"
@@ -796,13 +799,13 @@
 	    :pos :Verb,
 	    :tam :Potential}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VPrefMainAffPastProg-yidi"
     :note ""
@@ -849,14 +852,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastHabitual}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "oqóon jirey"],
+		[:Singular, :Person2, :Common, "oqóon jirtey"],
+		[:Singular, :Person3, :Masc, "oqóon jirey"],
+		[:Singular, :Person3, :Fem, "oqóon jirtey"],
+		[:Plural, :Person1, :Common, "oqóon jirney"],
+		[:Plural, :Person2, :Common, "oqóon jirteen"],
+		[:Plural, :Person3, :Common, "oqóon jireen"]
+	]
     }
     {:label "somali-VPrefRedSubjAffPresGen-yidi"
     :note ""
@@ -999,13 +1003,13 @@
 	    :pos :Verb,
 	    :tam :PastProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"]]
     }
     {:label "somali-VSuffC3AMainNegPresProg2-joogso"
     :note ""
@@ -1017,7 +1021,7 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive2}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "joogsánaysó ~joogsánaysíd"],
+	    [:Common, :Singular, :Person2, "joogsánaysó~joogsánaysíd"],
 	    [:Common, :Plural, :Person1, "joogsánaynó"],
 	    [:Masc, :Singular, :Person3, "joogsánayó"],
 	    [:Common, :Singular, :Person1, "joogsánayó"],
@@ -1041,7 +1045,7 @@
 	    [:Common, :Singular, :Person1, "aháan doonó"],
 	    [:Masc, :Singular, :Person3, "aháan doonó"],
 	    [:Common, :Plural, :Person2, "aháan doontàan"],
-	    [:Common, :Singular, :Person2, "aháan doontó ~doontíd"]]
+	    [:Common, :Singular, :Person2, "aháan doontó~doontíd"]]
     }
     {:label "somali-VSuffC3BMainNegFuture-qaado"
     :note ""
@@ -1053,13 +1057,13 @@
 	    :pos :Verb,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"]]
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPastGen-yiil"
     :note ""
@@ -1124,14 +1128,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person1, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "oqóon doonaa"],
+		[:Singular, :Person2, :Common, "oqóon dontaa"],
+		[:Singular, :Person3, :Masc, "oqóon donaa"],
+		[:Singular, :Person3, :Fem, "oqóon doontaa"],
+		[:Plural, :Person1, :Common, "oqóon doonnaa"],
+		[:Plural, :Person2, :Common, "oqóon doontaan"],
+		[:Plural, :Person3, :Common, "oqóon doonaan"]
+	]
     }
     {:label "somali-VPrefRedAbsAffPastGen-yahay"
     :note ""
@@ -1180,13 +1185,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VPrefMainAffFuture-yimi"
     :note ""
@@ -1235,7 +1240,7 @@
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "joogsán doonàan"],
-	    [:Common, :Singular, :Person2, "joogsán doontó ~doontíd"],
+	    [:Common, :Singular, :Person2, "joogsán doontó~doontíd"],
 	    [:Common, :Plural, :Person1, "joogsán doonnó"],
 	    [:Fem, :Singular, :Person3, "joogsán doontó"],
 	    [:Masc, :Singular, :Person3, "joogsán doonó"],
@@ -1306,13 +1311,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive2}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VSuffC3BMainAffPastGen-qaado"
     :note ""
@@ -1360,14 +1365,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Potential}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "aqaan"],
+		[:Singular, :Person2, :Common, "taqaanee"],
+		[:Singular, :Person3, :Masc, "yaqaanee"],
+		[:Singular, :Person3, :Fem, "taqaanee"],
+		[:Plural, :Person1, :Common, "neeaqaanee"],
+		[:Plural, :Person2, :Common, "taqaanneen"],
+		[:Plural, :Person3, :Common, "yaqaanneen"]
+	]
     }
     {:label "somali-VSuffC2AMainAffPotential-kari"
     :note ""
@@ -1626,13 +1632,13 @@
 	    :pos :Verb,
 	    :tam :Potential}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Masc, :Singular, :Person3, "_"]]
     }
     {:label "somali-VSuffC2BMainNegPresProg-yar"
     :note ""
@@ -1644,13 +1650,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"]]
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VSuffC3BFullAbsAffPresProg-qaado"
     :note ""
@@ -1663,13 +1669,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VPrefMainAffPastHabit-yahay"
     :note ""
@@ -1698,13 +1704,13 @@
 	    :pos :Verb,
 	    :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VSuffC2BMainAffPastProg-yar"
     :note ""
@@ -1716,13 +1722,13 @@
 	    :pos :Verb,
 	    :tam :PastProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"]]
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefMainNegPresGen-yidi"
     :note ""
@@ -1770,14 +1776,14 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastGeneral}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "qaadatéen"],
-	    [:Common, :Singular, :Person1, "qaatáy"],
-	    [:Common, :Singular, :Person2, "qaadatáy"],
-	    [:Fem, :Singular, :Person3, "qaadatáy"],
-	    [:Masc, :Singular, :Person3, "qaatáy"],
-	    [:Common, :Plural, :Person1, "qaadannáy"],
-	    [:Common, :Plural, :Person3, "qaatéen"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "qaatáy"],
+		[:Singular, :Person2, :Common, "qaadatáy"],
+		[:Singular, :Person3, :Masc, "qaatáy"],
+		[:Singular, :Person3, :Fem, "qaadatáy"],
+		[:Plural, :Person1, :Common, "qaadannáy"],
+		[:Plural, :Person2, :Common, "qaadatéen"],
+		[:Plural, :Person3, :Common, "qaatéen"]]
     }
     {:label "somali-VPrefMainAffPresGen-yahay"
     :note ""
@@ -1879,7 +1885,7 @@
 	    [:Common, :Singular, :Person1, "sugó"],
 	    [:Common, :Plural, :Person1, "sugnó"],
 	    [:Common, :Plural, :Person3, "sugàan"],
-	    [:Common, :Singular, :Person2, "sugtó ~sugtíd"]]
+	    [:Common, :Singular, :Person2, "sugtó~sugtíd"]]
     }
     {:label "somali-VPrefMainAffPastProg-yiqiin"
     :note ""
@@ -1889,14 +1895,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "aqóonayey"],
+		[:Singular, :Person2, :Common, "aqóonaysey"],
+		[:Singular, :Person3, :Masc, "aqóonayey"],
+		[:Singular, :Person3, :Fem, "aqóonaysey"],
+		[:Plural, :Person1, :Common, "aqóonayney"],
+		[:Plural, :Person2, :Common, "aqóonayseen"],
+		[:Plural, :Person3, :Common, "aqóonayeen"]
+	]
     }
     {:label "somali-VSuffC1MainAffPastGen-sug"
     :note ""
@@ -1945,7 +1952,7 @@
 	    [:Fem, :Singular, :Person3, "karínaysó"],
 	    [:Masc, :Singular, :Person3, "karínayó"],
 	    [:Common, :Plural, :Person1, "karínaynó"],
-	    [:Common, :Singular, :Person2, "karínaysó ~karínaysíd"],
+	    [:Common, :Singular, :Person2, "karínaysó~karínaysíd"],
 	    [:Common, :Singular, :Person1, "karínayó"],
 	    [:Common, :Plural, :Person2, "karínaysàan"],
 	    [:Common, :Plural, :Person3, "karínayàan"]]
@@ -1980,7 +1987,7 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "oqáada ~ oqóoda ~ aqóoda"],
+	    [:Plural, "oqáada~oqóoda~aqóoda"],
 	    [:Singular, "oqòow"]]
     }
     {:label "somali-VPrefRedSubjAffPastGen-yiqiin"
@@ -2071,7 +2078,7 @@
 	    [:Common, :Plural, :Person3, "oɗán lahaayeen"],
 	    [:Common, :Plural, :Person1, "oɗán lahayn"],
 	    [:Common, :Plural, :Person2, "oɗán lahaydeen"]]
-    }
+     }
     {:label "somali-VPrefMainAffPastGen-yiqiin"
     :note ""
     :common {:clauseType :Main,
@@ -2080,14 +2087,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastGeneral}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person1, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "iqiin"],
+		[:Singular, :Person2, :Common, "tiqiin"],
+		[:Singular, :Person3, :Masc, "yiqiin"],
+		[:Singular, :Person3, :Fem, "tiqiin"],
+		[:Plural, :Person1, :Common, "niqiin"],
+		[:Plural, :Person2, :Common, "itqiinneen"],
+		[:Plural, :Person3, :Common, "yiqiinneen"]
+	]
     }
     {:label "somali-VSuffC3BMainAffImprtv-qaado"
     :note ""
@@ -2129,13 +2137,13 @@
 	    :pos :Verb,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"]]
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC1RedAbsAffPresProg-keen"
     :note ""
@@ -2257,13 +2265,13 @@
 	    :pos :Verb,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VSuffC1MainAffPresGen-sug"
     :note ""
@@ -2308,9 +2316,9 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Plural, "kaaláya"],
-	    [:Singular, "káalay"]]
+    :terms [[:number, :gender, :token]  ;; schema
+	    [:Plural, :Common, "kaaláya"],
+	    [:Singular, :Common, "káalay"]]
     }
     {:label "somali-VPrefMainNegConditional-yiil"
     :note ""
@@ -2341,7 +2349,7 @@
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "súgayó"],
 	    [:Common, :Plural, :Person2, "súgaysàan"],
-	    [:Common, :Singular, :Person2, "súgaysó ~súgaysíd"],
+	    [:Common, :Singular, :Person2, "súgaysó~súgaysíd"],
 	    [:Common, :Singular, :Person1, "súgayó"],
 	    [:Common, :Plural, :Person3, "súgayàan"],
 	    [:Fem, :Singular, :Person3, "súgaysó"],
@@ -2364,7 +2372,7 @@
 	    [:Common, :Plural, :Person2, "súgi maysàan"],
 	    [:Common, :Plural, :Person1, "súgi maynó"],
 	    [:Fem, :Singular, :Person3, "súgi maaysó"],
-	    [:Common, :Singular, :Person2, "súgi maaysó ~maysíd "]]
+	    [:Common, :Singular, :Person2, "súgi maaysó~maysíd "]]
     }
     {:label "somali-VSuffC2AMainAffPastHabit-kari"
     :note ""
@@ -2414,13 +2422,13 @@
 	    :pos :Verb,
 	    :tam :PastIndependent}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"]]
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VPrefMainAffPresProg-yiqiin"
     :note ""
@@ -2430,14 +2438,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "aqóoneyaa"],
+		[:Singular, :Person2, :Common, "aqóoneysaa"],
+		[:Singular, :Person3, :Masc, "aqóoneyaa"],
+		[:Singular, :Person3, :Fem, "aqóoneysaa"],
+		[:Plural, :Person1, :Common, "aqóoneynaa"],
+		[:Plural, :Person2, :Common, "aqóoneysaan"],
+		[:Plural, :Person3, :Common, "aqóoneyaan"]
+	]
     }
     {:label "somali-VPrefMainNegPresGen-yiil"
     :note ""
@@ -2571,13 +2580,13 @@
 	    :pos :Verb,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"]]
     }
     {:label "somali-VPrefSubVarTense-yahay"
     :note ""
@@ -2634,13 +2643,13 @@
 	    :pos :Verb,
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "yaqáan ~ naqaanná"],
-	    [:Fem, :Singular, :Person3, "naqáan ~ taqaanná"],
-	    [:Common, :Plural, :Person2, "yaqáan ~ yaqaanná"],
-	    [:Common, :Plural, :Person3, "yaqáan ~ yaqaanná"],
-	    [:Common, :Singular, :Person2, "yaqáan ~ yaqaanná"],
-	    [:Masc, :Singular, :Person3, "taqáan ~ yaqaanná"],
-	    [:Common, :Singular, :Person1, "yaqáan ~ aqaanná"]]
+	    [:Common, :Plural, :Person1, "yaqáan~naqaanná"],
+	    [:Fem, :Singular, :Person3, "naqáan~taqaanná"],
+	    [:Common, :Plural, :Person2, "yaqáan~yaqaanná"],
+	    [:Common, :Plural, :Person3, "yaqáan~yaqaanná"],
+	    [:Common, :Singular, :Person2, "yaqáan~yaqaanná"],
+	    [:Masc, :Singular, :Person3, "taqáan~yaqaanná"],
+	    [:Common, :Singular, :Person1, "yaqáan~aqaanná"]]
     }
     {:label "somali-VSuffC3AFullAbsAffPresGen-joogso"
     :note ""
@@ -2749,7 +2758,7 @@
 	    [:Common, :Plural, :Person1, "joogsán maynó"],
 	    [:Common, :Singular, :Person1, "joogsán maayó"],
 	    [:Common, :Plural, :Person2, "joogsán maysàan"],
-	    [:Common, :Singular, :Person2, "joogsán maaysó ~maysíd "],
+	    [:Common, :Singular, :Person2, "joogsán maaysó~maysíd "],
 	    [:Common, :Plural, :Person3, "joogsán maayàan"]]
     }
     {:label "somali-VPrefRedSubjAffPastGen-yimi"
@@ -2832,7 +2841,7 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "oɗán maaysó ~maysíd "],
+	    [:Common, :Singular, :Person2, "oɗán maaysó~maysíd "],
 	    [:Common, :Plural, :Person1, "oɗán maynó"],
 	    [:Fem, :Singular, :Person3, "oɗán maaysó"],
 	    [:Common, :Plural, :Person2, "oɗán maysàan"],
@@ -2850,13 +2859,13 @@
 	    :pos :Verb,
 	    :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VPrefRedSubjAffPresGen-yiil"
     :note ""
@@ -2868,13 +2877,13 @@
 	    :pos :Verb,
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "yaal ~ yaallaa"],
-	    [:Common, :Singular, :Person2, "yaal ~ yaallaa"],
-	    [:Common, :Singular, :Person1, "aal ~ aallaa"],
-	    [:Common, :Plural, :Person2, "yaal ~ yaallaa"],
-	    [:Fem, :Singular, :Person3, "taal ~ taallaa"],
-	    [:Common, :Plural, :Person1, "naal ~ naallaa"],
-	    [:Common, :Plural, :Person3, "yaal ~ yaallaa"]]
+	    [:Masc, :Singular, :Person3, "yaal~yaallaa"],
+	    [:Common, :Singular, :Person2, "yaal~yaallaa"],
+	    [:Common, :Singular, :Person1, "aal~aallaa"],
+	    [:Common, :Plural, :Person2, "yaal~yaallaa"],
+	    [:Fem, :Singular, :Person3, "taal~taallaa"],
+	    [:Common, :Plural, :Person1, "naal~naallaa"],
+	    [:Common, :Plural, :Person3, "yaal~yaallaa"]]
     }
     {:label "somali-VPrefMainAffPastGen-yimi"
     :note ""
@@ -2903,13 +2912,13 @@
 	    :pos :Verb,
 	    :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPastProg-yiil"
     :note ""
@@ -2953,13 +2962,13 @@
 	    :pos :Verb,
 	    :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"]]
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VPrefMainNegPresProg-yimi"
     :note ""
@@ -2973,7 +2982,7 @@
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "imán maynó"],
 	    [:Common, :Singular, :Person1, "imán maayó"],
-	    [:Common, :Singular, :Person2, "imán maaysó ~maysíd "],
+	    [:Common, :Singular, :Person2, "imán maaysó~maysíd "],
 	    [:Common, :Plural, :Person2, "imán maysàan"],
 	    [:Fem, :Singular, :Person3, "imán maaysó"],
 	    [:Masc, :Singular, :Person3, "imán maayó"],
@@ -2994,26 +3003,7 @@
 	    [:Fem, :Singular, "óollaysá"],
 	    [:Common, :Plural, "óollayá"]]
     }
-    {:label "somali-VSuffC1RedSubjAffPresProg-keen"
-    :note ""
-    :common {:clauseCase :Subject,
-	    :clauseType :Reduced,
-	    :conjClass :Suffix,
-	    :conjSubClass :C1,
-	    :lexeme :keen,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "keénayay"],
-	    [:Fem, :Singular, :Person3, "keénaysay"],
-	    [:Common, :Plural, :Person2, "keénayay"],
-	    [:Masc, :Singular, :Person3, "keénayay"],
-	    [:Common, :Singular, :Person2, "keénayay"],
-	    [:Common, :Plural, :Person3, "keénayay"],
-	    [:Common, :Plural, :Person1, "keénaynay"]]
-    }
-    {:label "somali-VPrefRedAbsAffPresGen-yimi"
+     {:label "somali-VPrefRedAbsAffPresGen-yimi"
     :note ""
     :common {:clauseCase :Absolutive,
 	    :clauseType :Reduced,
@@ -3030,6 +3020,25 @@
 	    [:Common, :Singular, :Person2, "yimaaddá"],
 	    [:Common, :Plural, :Person3, "yimaaddá"],
 	    [:Masc, :Singular, :Person3, "yimaaddá"]]
+    }
+   {:label "somali-VSuffC1RedSubjAffPresProg-keen"
+    :note ""
+    :common {:clauseCase :Subject,
+	    :clauseType :Reduced,
+	    :conjClass :Suffix,
+	    :conjSubClass :C1,
+	    :lexeme :keen,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+             :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "keénayay"],
+	    [:Fem, :Singular, :Person3, "keénaysay"],
+	    [:Common, :Plural, :Person2, "keénayay"],
+	    [:Masc, :Singular, :Person3, "keénayay"],
+	    [:Common, :Singular, :Person2, "keénayay"],
+	    [:Common, :Plural, :Person3, "keénayay"],
+	    [:Common, :Plural, :Person1, "keénaynay"]]
     }
     {:label "somali-VSuffC1RedAbsAffPastGen-sug"
     :note ""
@@ -3181,13 +3190,13 @@
 	    :pos :Verb,
 	    :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"]]
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffInfinitive"
     :note "somali-VSuffInfinitive"
@@ -3211,14 +3220,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentGeneral}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "aqáan"],
+		[:Singular, :Person2, :Common, "taqáan"],
+		[:Singular, :Person3, :Masc,  "yaqáan"],
+		[:Singular, :Person3, :Fem, "taqáan"],
+		[:Plural, :Person1, :Common, "naqáan"],
+		[:Plural, :Person2, :Common, "taqaannìin"],
+		[:Plural, :Person3, :Common,  "yaqaannìin"]
+	]
     }
     {:label "somali-VSuffC1MainAffOptative-sug"
     :note ""
@@ -3254,7 +3264,7 @@
 	    [:Common, :Plural, :Person1, "óolli doonnó"],
 	    [:Fem, :Singular, :Person3, "óolli doontó"],
 	    [:Common, :Plural, :Person2, "óolli doontàan"],
-	    [:Common, :Singular, :Person2, "óolli doontó ~doontíd"],
+	    [:Common, :Singular, :Person2, "óolli doontó~doontíd"],
 	    [:Common, :Plural, :Person3, "óolli doonàan"]]
     }
     {:label "somali-VPrefMainNegFuture-yidi"
@@ -3272,7 +3282,7 @@
 	    [:Common, :Plural, :Person2, "oɗán doontàan"],
 	    [:Fem, :Singular, :Person3, "oɗán doontó"],
 	    [:Masc, :Singular, :Person3, "oɗán doonó"],
-	    [:Common, :Singular, :Person2, "oɗán doontó ~doontíd"],
+	    [:Common, :Singular, :Person2, "oɗán doontó~doontíd"],
 	    [:Common, :Plural, :Person1, "oɗán doonnó"]]
     }
     {:label "somali-VSuffC2BMainNegFuture-yar"
@@ -3285,13 +3295,13 @@
 	    :pos :Verb,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"]]
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPresProg-yidi"
     :note ""
@@ -3341,16 +3351,16 @@
 	    :polarity :Negative,
 	    :pos :Verb}
     :terms [[:lexeme, :tam, :token]  ;; schema
-	    [:yimi, :PastProgressive, "Common"],
-	    [:yidi, :PastProgressive, "Common"],
-	    [:yqiin, :PastGeneral, "Common"],
+	    [:yimi, :PastProgressive, "_"],
+	    [:yidi, :PastProgressive, "_"],
+	    [:yqiin, :PastGeneral, "_"],
 	    [:yimi, :PastHabitual, "imán jirín"],
 	    [:yahay, :PastHabitual, "aháan jirín"],
-	    [:yiil, :PastGeneral, "Common"],
+	    [:yiil, :PastGeneral, "_"],
 	    [:yiqiin, :PastHabitual, "oqóon jirín"],
-	    [:yimi, :PastGeneral, "Common"],
-	    [:yahay, :PastGeneral, "Common"],
-	    [:yidi, :PastGeneral, "Common"],
+	    [:yimi, :PastGeneral, "_"],
+	    [:yahay, :PastGeneral, "_"],
+	    [:yidi, :PastGeneral, "_"],
 	    [:yiil, :PastHabitual, "óolli jirín"],
 	    [:yidi, :PastHabitual, "o?án jirín"]]
     }
@@ -3401,21 +3411,21 @@
 	    :polarity :Negative,
 	    :pos :Verb}
     :terms [[:conjSubClass, :lexeme, :pdgmType, :tam, :token]  ;; schema
-	    [:C2B, :yar, :Structure, :PastProgressive, "Common"],
+	    [:C2B, :yar, :Structure, :PastProgressive, "_"],
 	    [:C3A, :joogs, :Structure, :PastHabitual, "joogsán jirín"],
-	    [:C1, :sug, :Structure, :PastProgressive, "Common"],
-	    [:C2A, :kar, :Structure, :PastGeneral, "Common"],
-	    [:C3A, :joogs, :Structure, :PastGeneral, "Common"],
+	    [:C1, :sug, :Structure, :PastProgressive, "_"],
+	    [:C2A, :kar, :Structure, :PastGeneral, "_"],
+	    [:C3A, :joogs, :Structure, :PastGeneral, "_"],
 	    [:C2B, :yar, :Structure, :PastHabitual, "CHECK jirín"],
 	    [:C1, :sug, :Structure, :PastHabitual, "súgi jirín"],
 	    [:C3B, :qaad, :Structure, :PastHabitual, "CHECK jirín"],
-	    [:C2A, :kar, :Structure, :PastProgressive, "Common"],
-	    [:C3B, :qaad, :Structure, :PastProgressive, "Common"],
-	    [:C1, :sug, :Structure, :PastGeneral, "Common"],
-	    [:C3A, :joogs, :Structure, :PastProgressive, "Common"],
+	    [:C2A, :kar, :Structure, :PastProgressive, "_"],
+	    [:C3B, :qaad, :Structure, :PastProgressive, "_"],
+	    [:C1, :sug, :Structure, :PastGeneral, "_"],
+	    [:C3A, :joogs, :Structure, :PastProgressive, "_"],
 	    [:C2A, :kar, :Structure, :PastHabitual, "karín jirín"],
-	    [:C3B, :qaad, :Structure, :PastGeneral, "Common"],
-	    [:C2B, :yar, :Structure, :PastGeneral, "Common"]]
+	    [:C3B, :qaad, :Structure, :PastGeneral, "_"],
+	    [:C2B, :yar, :Structure, :PastGeneral, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPresGen-yiil"
     :note ""
@@ -3427,13 +3437,13 @@
 	    :pos :Verb,
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "táal ~ taallá"],
-	    [:Common, :Singular, :Person2, "yáal ~ yaallá"],
-	    [:Common, :Singular, :Person1, "áal ~ aallá"],
-	    [:Common, :Plural, :Person2, "yáal ~ yaallá"],
-	    [:Common, :Plural, :Person1, "náal ~ naallá"],
-	    [:Common, :Plural, :Person3, "yáal ~ yaallá"],
-	    [:Masc, :Singular, :Person3, "yáal ~ yaallá"]]
+	    [:Fem, :Singular, :Person3, "táal~taallá"],
+	    [:Common, :Singular, :Person2, "yáal~yaallá"],
+	    [:Common, :Singular, :Person1, "áal~aallá"],
+	    [:Common, :Plural, :Person2, "yáal~yaallá"],
+	    [:Common, :Plural, :Person1, "náal~naallá"],
+	    [:Common, :Plural, :Person3, "yáal~yaallá"],
+	    [:Masc, :Singular, :Person3, "yáal~yaallá"]]
     }
     {:label "somali-VPrefInfinitive"
     :note ""
@@ -3624,7 +3634,7 @@
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "karín maysàan"],
-	    [:Common, :Singular, :Person2, "karín maaysó ~maysíd "],
+	    [:Common, :Singular, :Person2, "karín maaysó~maysíd "],
 	    [:Common, :Singular, :Person1, "karín maayó"],
 	    [:Fem, :Singular, :Person3, "karín maaysó"],
 	    [:Masc, :Singular, :Person3, "karín maayó"],
@@ -3693,9 +3703,9 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Plural, "ɗáha"],
-	    [:Singular, "ɗé(h)"]]
+    :terms [[:number, :gender, :token]  ;; schema
+	    [:Plural, :Common, "ɗáha"],
+	    [:Singular, :Common, "ɗé(h)"]]
     }
     {:label "somali-VPrefMainNegOptative-yiqiin"
     :note ""
@@ -3706,15 +3716,16 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1ex, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person1in, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person2, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common,  "yàanan oqóon"],
+		[:Singular, :Person2, :Common,  "yàanad oqóon"],
+		[:Singular, :Person3, :Masc,  "yàanu oqóon"],
+		[:Singular, :Person3, :Fem,  "yàaney oqóon"],
+		[:Plural, "p1in", :Common,  "yàanan(u) oqóon"],
+		[:Plural, "p1ex", :Common,  "yàynu oqóon"],
+		[:Plural, :Person2, :Common,  "yàanad oqóon"],
+		[:Plural, :Person3, :Common,  "yàaney oqóon"]
+	]
     }
     {:label "somali-VPrefMainAffOptative-yimi"
     :note ""
@@ -3800,13 +3811,13 @@
 	    :pos :Verb,
 	    :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"]]
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC1MainAffFuture-sug"
     :note ""
@@ -3838,13 +3849,13 @@
 	    :pos :Verb,
 	    :tam :PastProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:_NULL, :Singular, :Person2, "_NULL"],
-	    [:_NULL, :Plural, :Person2, "_NULL"],
-	    [:_NULL, :Plural, :Person1, "_NULL"],
-	    [:_NULL, :Plural, :Person3, "_NULL"],
-	    [:_NULL, :Singular, :Person1, "_NULL"]]
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:_NULL, :Singular, :Person2, "_"],
+	    [:_NULL, :Plural, :Person2, "_"],
+	    [:_NULL, :Plural, :Person1, "_"],
+	    [:_NULL, :Plural, :Person3, "_"],
+	    [:_NULL, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC2BMainAffFuture-yar"
     :note ""
@@ -3856,13 +3867,13 @@
 	    :pos :Verb,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"]]
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"]]
     }
     {:label "somali-VSuffC2AMainAffFuture-kari"
     :note ""
@@ -3961,13 +3972,13 @@
 	    :pos :Verb,
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "yaalliin ~ yaallaan"],
-	    [:Common, :Singular, :Person2, "taal ~ taallaa"],
-	    [:Masc, :Singular, :Person3, "yaal ~ yaallaa"],
-	    [:Common, :Singular, :Person1, "aal ~ aallaa"],
-	    [:Common, :Plural, :Person2, "taalliin ~ taallaan"],
-	    [:Common, :Plural, :Person1, "naal ~ naallaa"],
-	    [:Fem, :Singular, :Person3, "taal ~ taallaa"]]
+	    [:Common, :Plural, :Person3, "yaalliin~yaallaan"],
+	    [:Common, :Singular, :Person2, "taal~taallaa"],
+	    [:Masc, :Singular, :Person3, "yaal~yaallaa"],
+	    [:Common, :Singular, :Person1, "aal~aallaa"],
+	    [:Common, :Plural, :Person2, "taalliin~taallaan"],
+	    [:Common, :Plural, :Person1, "naal~naallaa"],
+	    [:Fem, :Singular, :Person3, "taal~taallaa"]]
     }
     {:label "somali-VPrefMainAffPresGen-yiqiin"
     :note ""
@@ -3977,14 +3988,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresentGeneral}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person3, "Common"]]
+    :terms [[:number, :person, :gender, :token]  ;; schema
+            [:Singular, :Person1, :Common, "aqaan(naa)"],
+            [:Singular, :Person2, :Common, "taqaan(naa)"],
+            [:Singular, :Person3, :Masc, "yaqaan(naa)"],
+            [:Singular, :Person3, :Fem, "taqaan(naa)"],
+            [:Plural, :Person1, :Common, "naqaan(naa)"],
+            [:Plural, :Person2, :Common, "taqaanniin"],
+            [:Plural, :Person3, :Common, "yaqaanniin"]]
+
     }
     {:label "somali-VSuffC3BMainAffPastIndep-qaado"
     :note ""
@@ -3996,13 +4008,13 @@
 	    :pos :Verb,
 	    :tam :PastIndependent}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"]]
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC3BMainNegPresGen-qaado"
     :note ""
@@ -4015,7 +4027,7 @@
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "qaató"],
-	    [:Common, :Singular, :Person2, "qaadató ~qaadatíd"],
+	    [:Common, :Singular, :Person2, "qaadató~qaadatíd"],
 	    [:Common, :Plural, :Person1, "qaadannó"],
 	    [:Common, :Singular, :Person1, "qaató"],
 	    [:Common, :Plural, :Person2, "qaadatàan"],
@@ -4150,7 +4162,7 @@
 	    [:Common, :Plural, :Person2, "imán doontàan"],
 	    [:Common, :Plural, :Person1, "imán doonnó"],
 	    [:Common, :Singular, :Person1, "imán doonó"],
-	    [:Common, :Singular, :Person2, "imán doontó ~doontíd"]]
+	    [:Common, :Singular, :Person2, "imán doontó~doontíd"]]
     }
     {:label "somali-VSuffC3AMainAffFuture-joogso"
     :note ""
@@ -4179,14 +4191,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "Common"],
-	    [:Common, :Plural, :Person1, "Common"],
-	    [:Common, :Plural, :Person2, "Common"],
-	    [:Common, :Plural, :Person3, "Common"],
-	    [:Fem, :Singular, :Person3, "Common"],
-	    [:Common, :Singular, :Person2, "Common"],
-	    [:Common, :Singular, :Person1, "Common"]]
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "CHECK"],
+		[:Singular, :Person2, :Common, "CHECK"],
+		[:Singular, :Person3, :Masc, "CHECK"],
+		[:Singular, :Person3, :Fem, "CHECK"],
+		[:Plural, :Person1, :Common, "CHECK"],
+		[:Plural, :Person2, :Common, "CHECK"],
+		[:Plural, :Person3, :Common, "CHECK"]
+	]
     }
     {:label "somali-VPrefRedSubjAffPastProg-yiil"
     :note ""
@@ -4231,13 +4244,13 @@
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_NULL"],
-	    [:Fem, :Singular, :Person3, "_NULL"],
-	    [:Common, :Plural, :Person2, "_NULL"],
-	    [:Masc, :Singular, :Person3, "_NULL"],
-	    [:Common, :Singular, :Person1, "_NULL"],
-	    [:Common, :Singular, :Person2, "_NULL"],
-	    [:Common, :Plural, :Person1, "_NULL"]]
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Fem, :Singular, :Person3, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Masc, :Singular, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"],
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"]]
     }
     {:label "somali-VSuffC3ARedAbsAffPastGen-joogso"
     :note ""
@@ -4292,7 +4305,7 @@
 	    [:Common, :Plural, :Person1, "karín doonnó"],
 	    [:Common, :Plural, :Person2, "karín doontàan"],
 	    [:Common, :Singular, :Person1, "karín doonó"],
-	    [:Common, :Singular, :Person2, "karín doontó ~doontíd"],
+	    [:Common, :Singular, :Person2, "karín doontó~doontíd"],
 	    [:Masc, :Singular, :Person3, "karín doonó"]]
     }
     {:label "somali-VPrefRedSubjAffPresProg-yiil"
@@ -4324,7 +4337,7 @@
 	    [:Common, :Singular, :Person1, "yareeyó "],
 	    [:Common, :Plural, :Person1, "yareynó "],
 	    [:Common, :Plural, :Person3, "yareeyàan "],
-	    [:Common, :Singular, :Person2, "yareeysó ~yareysíd "],
+	    [:Common, :Singular, :Person2, "yareeysó~yareysíd "],
 	    [:Fem, :Singular, :Person3, "yareeysó "],
 	    [:Common, :Plural, :Person2, "yareysàaan "],
 	    [:Masc, :Singular, :Person3, "yareeyó "]]
@@ -4414,22 +4427,22 @@
 	    :pos :Pronoun,
 	    :proClass :ObjClitic}
     :terms [[:conjSubType, :gender, :number, :person, :token]  ;; schema
-	    [:SubClass2, :Common, :Plural, :Person3, "Common"],
+	    [:SubClass2, :Common, :Plural, :Person3, "_"],
 	    [:SubClass2, :Common, :Singular, :Person2, "káa"],
 	    [:SubClass1, :Common, :Plural, :Person1, "na"],
 	    [:SubClass2, :Common, :Plural, :Person1, "kayó"],
-	    [:SubClass1, :Masc, :Singular, :Person3, "Common"],
+	    [:SubClass1, :Masc, :Singular, :Person3, "_"],
 	    [:SubClass1, :Common, :Plural, :Person2, "idin"],
 	    [:SubClass1, :Common, :Plural, :Person1, "ina"],
-	    [:SubClass1, :Common, :Plural, :Person3, "Common"],
+	    [:SubClass1, :Common, :Plural, :Person3, "_"],
 	    [:SubClass1, :Common, :Singular, :Person1, "i"],
-	    [:SubClass2, :Fem, :Singular, :Person3, "Common"],
+	    [:SubClass2, :Fem, :Singular, :Person3, "_"],
 	    [:SubClass2, :Common, :Plural, :Person1, "kéen"],
 	    [:SubClass1, :Common, :Singular, :Person2, "ku"],
 	    [:SubClass2, :Common, :Singular, :Person1, "káy"],
 	    [:SubClass2, :Common, :Plural, :Person2, "kíin"],
-	    [:SubClass2, :Masc, :Singular, :Person3, "Common"],
-	    [:SubClass1, :Fem, :Singular, :Person3, "Common"]]
+	    [:SubClass2, :Masc, :Singular, :Person3, "_"],
+	    [:SubClass1, :Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-PSubjClit"
     :note "SAEED1999 p. 72"
@@ -4439,7 +4452,7 @@
 	    :proClass :SubjClit}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "aydin"],
-	    [:Common, :Plural, :Person1, "aannu ~ aan"],
+	    [:Common, :Plural, :Person1, "aannu~aan"],
 	    [:Common, :Plural, :Person3, "ay"],
 	    [:Masc, :Singular, :Person3, "uu"],
 	    [:Common, :Singular, :Person2, "aad"],

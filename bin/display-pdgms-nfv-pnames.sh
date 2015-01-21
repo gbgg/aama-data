@@ -1,7 +1,7 @@
 #!/bin/bash
 # usage:  display-paradigms.sh data/<lang> qlabel, display-paradigms.sh "data/<lang> data/<lang> . . ." qlabel, display-paradigms.sh "data/*" qlabel
 
-# 10/30/13
+# 10/15/14
 #11/04/13 generalized to more than one language
 
 # Script to generate finite verb paradigms in one or more languages.

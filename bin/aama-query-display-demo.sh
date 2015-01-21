@@ -48,7 +48,7 @@ case "$qdnumber" in
 	echo " Choose among the following prop-val displays:"
 	echo
 	echo "    1. Display all values for a given property in a language "
-        echo "       or set of languages"
+        	echo "       or set of languages"
 	echo "    2. Display all languages which have a given value, and "
 	echo "       the property of which it is a value"
 	echo "    3. List languages in which a set of one or more prop=val "
@@ -198,9 +198,9 @@ case "$qdnumber" in
 	;;
     3)
 	echo "Generate list of:    "
-        echo "1.  Finite-verb properties: pdgm-finite-prop-list.txt "
+       	echo "1.  Finite-verb properties: pdgm-finite-prop-list.txt "
 	echo "        (for all languages in the triple store)"
-        echo "2.  Non-finite-verb properties: pdgm-non-finite-prop-list.txt"
+	echo "2.  Non-finite-verb properties: pdgm-non-finite-prop-list.txt"
 	echo "        (for all languages in the triple store)"
         echo "3.  Pronoun properties: pdgm-pro-prop-list.txt "
 	echo "        (for all languages in the triple store)"
@@ -225,6 +225,24 @@ case "$qdnumber" in
 	echo "            (all the langs in which a given val is associated with a given prop)"
         echo "        (4) prop lang: val, val, val, ...  "
 	echo "            (all the vals associated with a given prop in a given lang)"
+        echo "    These tables provide in effect a set of complete lang-prop-val "
+        echo "    indices for the <dir> in question. The script uses lang-prop-val-list.template"
+	echo "    to generate for each lang a tsv/jason file which is essentially the schemata"
+	echo "    of the lang in question. The combined schemata are formatted as table 1;"
+	echo "    the other tables are reformatted permutations of the cols of  table 1."
+	disp=yes
+	echo "Display Template?"
+	read -e -p "yes/no (default $disp): " input
+	display=${input:-$disp}
+	echo " "
+	if [ "$display" == "yes" ] ; then
+	    while read line
+	    do
+		echo $line
+	    done < sparql/templates/lang-prop-val-list.template
+	fi
+	echo "  "
+       
 	echo " "
 	echo "Choose a list type number or Ctrl-C to exit"
 	echo
@@ -264,16 +282,20 @@ case "$qdnumber" in
 		langdomain=${input:-$ldomain}
 		bin/generate-pnames-noun.sh $langdomain menu ;;
 	    9)
-		ldomain=data/beja-arteiga
+		ldomain=\"data/beja-*\"
 		echo "Define language domain"
 		read -e -p "lang-domain (default $ldomain) : " input
 		langdomain=${input:-$ldomain}
-		ftag=${langdomain/data\//}
+		ftag=beja
 		echo "Provide File Tag"
 		read -e -p "File Tag (default $ftag) : " input
 		filetag=${input:-$ftag}
 		bin/generate-lang-prop-val-lists.sh $langdomain $filetag menu ;;
+
 	esac
 esac
+
+
+
 
 

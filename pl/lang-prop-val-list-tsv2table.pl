@@ -14,27 +14,31 @@
 # response=tmp/prop-val-lists/lang-prop-val-list.tsv
 my ($propvalfile, $filetag) = @ARGV;
 my @outputfiles;
-my $textfilelpv = "tmp/prop-val-lists/lang-prop-val-list-$filetag.txt";
+my $textfilelpv = "sparql/prop-val-lists/lang-prop-val-list-$filetag.txt";
 push (@outputfiles, $textfilelpv);
-my $textfilepvl = "tmp/prop-val-lists/prop-val-lang-list-$filetag.txt";
+my $textfilepvl = "sparql/prop-val-lists/prop-val-lang-list-$filetag.txt";
 push (@outputfiles, $textfilepvl);
-my $textfilevpl = "tmp/prop-val-lists/val-prop-lang-list-$filetag.txt";
+my $textfilevpl = "sparql/prop-val-lists/val-prop-lang-list-$filetag.txt";
 push (@outputfiles, $textfilevpl);
-my $textfileplv = "tmp/prop-val-lists/prop-lang-val-list-$filetag.txt";
+my $textfileplv = "sparql/prop-val-lists/prop-lang-val-list-$filetag.txt";
 push (@outputfiles, $textfilepvl);
-my $htmlfilelpv = "tmp/prop-val-lists/lang-prop-val-list-$filetag.html";
+my $htmlfilelpv = "sparql/prop-val-lists/lang-prop-val-list-$filetag.html";
 push (@outputfiles, $htmlfilelpv);
-my $htmlfilepvl = "tmp/prop-val-lists/prop-val-lang-list-$filetag.html";
+my $htmlfilepvl = "sparql/prop-val-lists/prop-val-lang-list-$filetag.html";
 push (@outputfiles, $htmlfilepvl);
-my $htmlfilevpl = "tmp/prop-val-lists/val-prop-lang-list-$filetag.html";
+my $htmlfilevpl = "sparql/prop-val-lists/val-prop-lang-list-$filetag.html";
 push (@outputfiles, $htmlfilepvl);
-my $htmlfileplv = "tmp/prop-val-lists/prop-lang-val-list-$filetag.html";
+my $htmlfileplv = "sparql/prop-val-lists/prop-lang-val-list-$filetag.html";
 push (@outputfiles, $htmlfileplv);
 
 #undef $/;
-# Will eventually make 4 formats for permutations of l, p, v
-my ($ll, $lp, $lv,  $lenp, $lenv, $lenl);
 my (%lpv, %pvl, %vpl, %plv);
+# Will eventually make 4 formats for permutations of l, p, v
+# NB [12/8/14]: Following set of vars not used in current output;
+# apparently meant for dimensioning table for command-line  output.
+my ($ll, $lp, $lv,  $lenp, $lenv, $lenl);
+# NB [12/9/14]: Following 2 sets of vars used to calculate rowspan
+# of first category in permutation
 my (%lp, %pv, %vp, %pl);
 my (%langcount, %propvcount, %valcount, %proplcount);
 open(IN, $propvalfile) or die "cannot open $propvalfile for reading";

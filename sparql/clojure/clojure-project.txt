@@ -1,0 +1,57 @@
+1. schemata index for [LANGS] [= demo 3-9]
+      TASKS:
+   	    get lpv tsv by query [=:schemata]
+	    permute lpv tsv [or edn?]
+	    tsv => edn
+      INPUT:
+            [LANGS]
+      OUTPUT:
+	1. lpv{ :LANG {:PROP [:VAL, . . . ]
+	   	         . . .
+		       }
+                    . . .
+	       }
+	2. pvl{ :PROP {:VAL [:LANG, . . . ]
+	   	         . . .
+		       }
+                    . . .
+	       }
+	3. vpl{ :VAL {:PROP [:LANG, . . . ]
+	   	         . . .
+		       }
+                    . . .
+	       }
+	4. plv{ :PROP {:LANG [:VAL, . . . ]
+	   	         . . .
+		       }
+                    . . .
+	       }
+
+2. pos-clusters [props/vals which occur with pos vals [= fv, nfv, pro, noun]]
+      TASKS:
+            generate 2.1 and 2.2 for datastore by query from datastore
+	    	     [2.1 = 3->1-4 of demo; 2.2 = 3->5-8 of demo]
+	    regenerate 	:LANG [:PROP, . . .] and :LANG [[:VAL,...], . . .]
+	    		for individual [LANG] when data is changed/revised.
+      INPUT: [POS], [LANG]
+      OUTPUT: 
+	2.1 prop-clusters
+	   {:fv { :LANG [:PROP, . . .],  :LANG [:PROP, . . .], . . .}
+	    :nfv{ :LANG [:PROP, . . .],  :LANG [:PROP, . . .], . . .}
+	    :pro{ :LANG [:PROP, . . .],  :LANG [:PROP, . . .], . . .}
+	    :noun{ :LANG [:PROP, . . .],  :LANG [:PROP, . . .], . . .}}
+	2.2 val-clusters [= "pdgm names"; works on prop-clusters from 2.1]
+	   {:fv { :LANG [[:VAL,...], . . .],  :LANG [[:VAL,...], . . .], . . .}
+	    :nfv{ :LANG [[:VAL,...], . . .],  :LANG [[:VAL,...], . . .], . . .}
+	    :pro{ :LANG [[:VAL,...], . . .],  :LANG [[:VAL,...], . . .], . . .}
+	    :noun{ :LANG [[:VAL,...], . . .],  :LANG [[:VAL,...], . . .], . . .}}
+      (2.3 term-clusters [logical possibility; = 2->1-7 of demo; works on 
+      	   		 val-clusters of 2.2)]
+
+3. pdgm displays: 
+   	TASK: 
+	      by query from datastore => tsv/edn?
+        INPUT:	      
+	      [LANG(S)] [val-clusters]
+	OUTPUT:
+	      pdgm tabular display

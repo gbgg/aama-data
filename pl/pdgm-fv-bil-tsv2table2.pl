@@ -33,7 +33,7 @@ foreach my $number (@numvals)
 	}
     }
 }
-print "plists = $plists\n";
+#print "plists = $plists\n";
 # List "pdgm names"
 my @plists = split(/\+/, $plists);
 undef $/;
@@ -43,7 +43,7 @@ my (@pdgmnames, @tokencol);
 my ($before, $middle, $after, $queryvals);
 foreach my $plist (@plists)
 {
-    print "plist = $plist\n";
+    #print "plist = $plist\n";
     $plist =~ s/,//;
     $pdgmno++;
     my $token = "P-$pdgmno";
@@ -80,6 +80,7 @@ open(IN, $pdgmfile) || die "cannot open $pdgmfile for reading";
 while (<IN>)
 { 
     my $data = $_;
+    # mark off token from rest with &
     $data =~ s/(.*?\t.*?\t.*?\t.*?)\t(.*?\n)/\1&\2/g;
 #   $data =~ s/\t/,/g;
     $data =~ s/["?]//g;
@@ -177,16 +178,17 @@ print "=" x $tablewidth;
 print "\n";
 
 # Make new data table of occurring strings in pdgms
+# A png will not get printed if it is in neither pdgm
 foreach my $png (@pngs)
 {
-#print "png = $png\n";
+     #print "png = $png\n";
      my $pngprint = 0;
-     my $tokenrank = 0;
-     foreach my $pref (@pdgms)
+     my $pdgmno = 0;
+     foreach my $pdgmref (@pdgms)
      {
-         #print "\npref->png = $pref->{$png}\n";
-	 $tokenrank++;
-	 if ($pref->{$png})
+         #print "\npdgmref->png = $pdgmref->{$png}\n";
+	 $pdgmno++;
+	 if ($pdgmref->{$png})
 	 {
              # If the png is present in the sub-pdgm
 	     if ($pngprint == 0)
@@ -195,17 +197,17 @@ foreach my $png (@pngs)
 		 my @png = split(/\t/, $png);
 		 printf $format_png, @png;
 		 $pngprint = 1;
-		 for (my $i = 1; $i < $tokenrank;$i++)
+		 for (my $i = 1; $i < $pdgmno;$i++)
 		 {
 		     #Print blank tokens if this is not the 1st sub-pdgm
 		     printf $format_token, "  ";
 		 }
 		 # Then print the token
-		 printf $format_token, $pref->{$png};
+		 printf $format_token, $pdgmref->{$png};
 	     }else
 	     {
 		 #Print the token if the png has already been printed
-		 printf $format_token, $pref->{$png};
+		 printf $format_token, $pdgmref->{$png};
 	     }
 	 }else
 	 {

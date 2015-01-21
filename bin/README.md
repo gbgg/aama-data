@@ -60,8 +60,8 @@ Here and in the following sections, it is presumed that interaction with the dat
 
 ##  Data Revision Routine in fuseki Context
 
-Working with data in a query-delete-revise-upload cycle typically involves periodic invocation of aama-datastore-setup.sh  after a data/LANG/LANG-pdgms.edn has been edited:
-    - **usage**: bin/aama-datastore-setup.sh data/LANG (for a single language), bin/aama-datastore-setup.sh "data/*" (to [re-]initiate the whole datastore)
+Working with data in a query-delete-revise-upload cycle typically involves periodic invocation of aama-datastore-update.sh  after a data/LANG/LANG-pdgms.edn has been edited:
+    - **usage**: bin/aama-datastore-update.sh data/LANG (for a single language), bin/aama-datastore-setup.sh "data/*" (to [re-]initiate the whole datastore)
 
 This script invokes the following tasks:
 
@@ -75,7 +75,7 @@ This script invokes the following tasks:
 
 5. **fuqueries.sh**: Make sure it's back.
 
-6. **generate-pnames-fv~nfv~pro~noun.sh**: Generate the "paradigm name" files needed for the display of standard form configurations.
+6. **aama-cp2lngrepo.sh**: Upload to aama/ language repository and push to origin. 
 
 ============================================
 

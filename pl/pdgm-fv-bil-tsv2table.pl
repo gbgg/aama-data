@@ -110,14 +110,17 @@ foreach my $pdgmrow (@pdgmrows)
 	@rowterms = split('\t', $pdgmrow);
 	if ($rowterms[0] !~ /\?pdgm/)
 	{
+	    # the following is to take care of lex
+	    if ($rowterms[0] =~ /http:/) {$rowterms[0] =~ s/.*-(.*?)>/\1/;	}
 	    printf $format, @rowterms;
 	}
 }
 print "-" x $tablewidth;
 print "\n\n\n";
 
-exit;
 
+exit;
+#Following material is transferred to pdgm-fv-bil-tsv2table2.pl
 # Get png input here
  
 # Make @pngs, array of all possible row png values

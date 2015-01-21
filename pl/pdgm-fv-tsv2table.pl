@@ -1,4 +1,4 @@
-﻿#!/usr/local/bin/perl
+#!/usr/local/bin/perl
 
 #06/03/13: adapted to bin/pdgm-display.sh
 # The purpose of this version of pdgmtsv2table.pl is to 
@@ -6,7 +6,7 @@
 # into a table-formatted text output for display on STDOUT or in 
 # text file. It is invoked by pdgm-display.sh
 
-my ($pdgmfile, $plists) = @ARGV;
+my ($pdgmfile, $valsfile, $pnumber) = @ARGV;
 my $filename = $pdgmfile;
 $filename =~ s/\.tsv//;
 my $textfile = $filename.".txt";
@@ -15,21 +15,18 @@ my $htmlfile = $filename.".html";
 #print "HTML file = $htmlfile\n\n";
 #print "qstring=$qstring\n";
 
-my ($before, $middle, $after, $queryvals);
+my ($before, $middle, $after, $queryvals, $pname);
 my @plists = split(/\+/, $plists);
 undef $/;
-foreach my $plist (@plists)
-{
-    my ($valsfile, $pnumber) = split(/=/, $plist);
-    open(IN, $valsfile) || die "cannot open $valsfile for reading";
-    while (<IN>)
-    { 
-	($before, $middle) = split(/$pnumber\. /, $_, 2);
-	($queryvals, $after) = split(/\n/, $middle, 2);
-    }
-    close(IN);
-    print "PARADIGM: $queryvals\n";
+
+open(IN, $valsfile) || die "cannot open $valsfile for reading";
+while (<IN>)
+{ 
+    ($before, $middle) = split(/$pnumber\. /, $_, 2);
+    ($queryvals, $after) = split(/\n/, $middle, 2);
 }
+close(IN);
+
 #my @plist = split(/+/, $plist);
 #foreach my $pdgm (@plist){ print "$pdgm\n";}
 
@@ -83,18 +80,9 @@ $format .= "\n";
 
 # print pdgm table file to STDOUT
 select STDOUT;
-if ($qstring =~ /\w/)
-{
-	print "\nPARADIGM: \n\n";
-	my(@queries) = split(/\+/,$qstring);
-	foreach my $query (@queries)
-	{ 
-		print "\t$query\n";
-	}
-	print "\n";
-}
 #print "Format= $format\n";
 #print "Tablewidth= $tablewidth\n\n";
+print "PARADIGM: $queryvals\n";
 print "-" x $tablewidth;
 print "\n";
 printf $format, @header;
@@ -103,6 +91,7 @@ print "\n";
 foreach my $pdgmrow (@pdgmrows)
  {
 	@rowterms = split('\t', $pdgmrow);
+	# the following is to take care of lex
 	if ($rowterms[0] =~ /http:/) {$rowterms[0] =~ s/.*-(.*?)>/\1/;	}
 	printf $format, @rowterms;
 }

@@ -3,7 +3,7 @@
 # rev 12/22/12
 # Start the server before queries
 
- cd /cygdrive/c/Fuseki-0.2.4/
+ cd /Applications/jena-fuseki-1.0.1/
 #./fuseki-server  --config=aamaconfig.ttl 
 ./fuseki-server -v  --update --loc=aama /aamaData
 

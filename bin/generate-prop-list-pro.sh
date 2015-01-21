@@ -7,7 +7,6 @@
 ldomain=${1//,/ }
 ldomain=${ldomain//\"/}
 response=sparql/pdgms/pdgm-pro-prop-list.tsv
-mv $response "${response}.bck"
 #echo "fuquery.log" > logs/fuquery.log;
 for f in `find data/ -name *.edn`
 do

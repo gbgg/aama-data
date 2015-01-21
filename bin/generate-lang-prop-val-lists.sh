@@ -14,11 +14,11 @@ response=tmp/prop-val/lang-prop-val-list.tsv
 rm $response
 filetag=$2
 #echo "filetag = $filetag"
+#echo "ldomain = $ldomain"
 echo "fuquery.log" > logs/fuquery.log;
-for f in `find $ldomain -name *-pdgms.xml`
+for f in `find $ldomain -name *-pdgms.edn`
 do
-    #echo f = $f
-    lang=`basename ${f%-pdgms.xml}`
+    lang=`basename ${f%-pdgms.edn}`
     Lang="${lang[@]^}"
     labbrev=`grep $lang bin/lname-pref.txt`
     abbrev=${labbrev#$lang=}

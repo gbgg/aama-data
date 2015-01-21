@@ -1,4 +1,4 @@
-﻿#!/usr/local/bin/perl
+#!/usr/local/bin/perl
 
 #10/14/13: adapted from pdgmtsv2table.pl 
 # This program takes output from applications of pdgm-finite-prop-list.template invoked by finite-prop-list-gen.sh and formats it into the text pdgm-prop-list.txt, which gives for each language the categories occurring in finite verb paradigms. The text is used by pdgm-display.sh for command-line display of pdgm(s) from a given language.

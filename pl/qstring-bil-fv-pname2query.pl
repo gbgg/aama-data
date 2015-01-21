@@ -54,10 +54,13 @@ foreach my $queryval (@queryvallist)
 	print " \t\t\t?Q$qqueryval\trdfs:label\t?$qqueryval . \n";
 }
 
-#print "\t\t\tOPTIONAL { ?s\taamas:lexeme\t?lex . } \n";
+print "\t\t\tOPTIONAL { ?s\taamas:lexeme\t?lex . } \n";
 print "\t\t\tOPTIONAL { ?s\t$lang:number\t?number . \n";
 print "\t\t\t?number\trdfs:label\t?num . }\n";
-print "\t\t\t?s\t$lang:person\t?person . \n";
+print "{\t\t\t?s\t$lang:pngShapeClass\t?person .} \n";
+print "UNION \n";
+print "{\t\t\t?s\t$lang:person\t?person .} \n";
+#print "\t\t\t?s\t$lang:person\t?person . \n";
 print "\t\t\t?person\trdfs:label\t?pers . \n";
 print "\t\t\tOPTIONAL { ?s\t$lang:gender\t?gender . \n";
 print "\t\t\t?gender\trdfs:label\t?gen . }\n";

@@ -8,7 +8,7 @@
 
 echo "Query:" $1
 #echo "Response:" $2
-${FUSEKIDIR}/s-query --output=tsv --service http://localhost:3030/aama/query --query=$1 
+../aama/fuseki/jena-fuseki-1.1.1/s-query --output=tsv --service http://localhost:3030/aama/query --query=$1 
 
 
 #./s-query \
