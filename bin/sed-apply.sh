@@ -5,7 +5,7 @@
 for f in `find $1 -name *.edn`
 #for f in `find $1 -name *.sh`
 do
-    f2=${f/%.sh/.new}     
+    f2=${f/%.edn/.new}     
     echo "renaming $f to ${f2} . . . "
     mv $f $f2
     sed -e "s/:Nominative,/:Subject,/g" $f2 > $f

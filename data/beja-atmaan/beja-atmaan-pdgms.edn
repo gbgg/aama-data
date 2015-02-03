@@ -3,24 +3,23 @@
 :sgpref "bat"
 :schemata {
 :case [:Object, :Subject]
-	  :caseHead [:Object, :Subject]
+	  :caseHead [:H_Object, :H_Subject]
 	  :clauseType [:Relative]
-	  :conjClass [:x , :Irregular, :Prefix, :Suffix]
+	  :conjClass [:Irregular, :Prefix, :Suffix :x] 
 	  :conjSubType [:AuxPut, :AuxTake, :NegAux, :NegCop,  :Become]
 	  :derivedStemAug [:Repetitive, :Simple]
 	  :formFrequency [:Frequent, :Rare]
 	  :gender [:Common, :Fem, :Masc]
-	  :genderHead [:Fem, :Masc]
-	  :genderObj [:Common, :Fem, :Masc]
-	  :genderPoss [:Common, :Fem, :Masc]
+	  :genHead [:H_Fem, :H_Masc]
+	  :genObj [:O_Common, :O_Fem, :O_Masc]
 	  :headPosition [:HeadFollow, :HeadPrecede]
 	  :morphClass [:AUX_OVERVIEW, :FUTURE_INTENTION, :IMPRTVOVERVIEW, :INTENSIVEACTION, :NOMINALIZATIONPATTERNS, :PAST_PRESENT, :PREFVERB_PATTERNS, :REL_SUFF, :SUBJPREF, :VNOMFORM]
 	  :nonFiniteForm [:NominalAction, :Participle]
-	  :numHead [:Plural, :Singular]
-	  :numObj [:Plural, :Singular]
+	  :numHead [:H_Plural, :H_Singular]
+	  :numObj [:O_Plural, :O_Singular]
 	  :number [:Common, :Plural, :Singular]
 	  :pdgmType [:AuxOverview, :ImprtvOverview, :Intention, :Mood, :NominalizationPatterns, :PastPresOverview, :PdgmOverview, :Q, :RelSuff, :Repetitive, :SubjPref, :TenseAspOverview, :TransVerbPatterns]
-	  :persObj [:Person1, :Person2, :Person3]
+	  :persObj [:O_Person1, :O_Person2, :O_Person3]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Common, :Negative, :U]
 	  :pos [:Pronoun, :Verb]
@@ -545,8 +544,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :miriy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -606,8 +605,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :miriy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -635,8 +634,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -714,8 +713,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :rib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -729,8 +728,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :LEX1,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCH}
@@ -855,8 +854,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :hariw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -870,8 +869,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -939,8 +938,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -954,8 +953,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :miriy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -1073,7 +1072,7 @@
 	    :polarity :Negative,
 	    :pos :Pronoun,
 	    :proClass :ObjSuffwVerb}
-    :terms [[:gender, :genderObj, :numObj, :number, :persObj, :person, :token]  ;; schema
+    :terms [[:gender, :genObj, :numObj, :number, :persObj, :person, :token]  ;; schema
 	    [:Masc, :Masc, :Plural, :Singular, :Person3, :Person2, "baréeh hiyáab kíttaa"],
 	    [:Masc, :Fem, :Plural, :Plural, :Person2, :Person3, "batéekna hiyaayéekna kíikeen"],
 	    [:Masc, :Masc, :Plural, :Plural, :Person2, :Person3, "baréekna hiyaayéekna kíikeen"],
@@ -1192,8 +1191,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :miriy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCiy}
@@ -1224,7 +1223,7 @@
 	    :polarity :Affirmative,
 	    :pos :Pronoun,
 	    :proClass :ObjSuffwVerb}
-    :terms [[:gender, :genderObj, :numObj, :number, :persObj, :person, :token]  ;; schema
+    :terms [[:gender, :genObj, :numObj, :number, :persObj, :person, :token]  ;; schema
 	    [:Masc, :Masc, :Singular, :Singular, :Person3, :Person3, "baróoh ihí"],
 	    [:Common, :Common, :Singular, :Singular, :Person1, :Person1, "baróok ahíhóok"],
 	    [:Common, :Common, :Plural, :Plural, :Person1, :Person2, "áneeb tihíinahéeb"],
@@ -1280,8 +1279,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -1380,8 +1379,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :sibib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -1430,8 +1429,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fir,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -1523,8 +1522,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :sibib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCiC}
@@ -1602,8 +1601,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :rib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -1617,8 +1616,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :naw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -1632,8 +1631,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -1663,8 +1662,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :hariw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -1696,8 +1695,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :naw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -1729,8 +1728,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -1866,8 +1865,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fir,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -1935,8 +1934,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :rib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -1994,8 +1993,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fiyak,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -2096,8 +2095,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :fiyak,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -2125,8 +2124,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -2258,8 +2257,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :naw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CaC}
@@ -2293,8 +2292,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :naw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -2308,8 +2307,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fiyak,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCaC}
@@ -2321,8 +2320,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :hariw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :HaCiC}
@@ -2334,8 +2333,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :fir,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -2385,8 +2384,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -2414,8 +2413,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :hariw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :HaCiC}
@@ -2466,8 +2465,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :fiyak,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -2545,8 +2544,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :Cay}
@@ -2807,8 +2806,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fir,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCH}
@@ -2820,8 +2819,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :rib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -3034,8 +3033,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :miriy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -3142,8 +3141,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -3207,8 +3206,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :naw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CaC}
@@ -3250,8 +3249,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :miriy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCiy}
@@ -3281,8 +3280,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :hariw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+             :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -3296,8 +3295,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -3378,8 +3377,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :sibib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCiC}
@@ -3423,8 +3422,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fiyak,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiCaC}
@@ -3472,8 +3471,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :hariw,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -3554,8 +3553,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :fiyak,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -3682,8 +3681,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :rib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiC}
@@ -3776,8 +3775,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -3791,8 +3790,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CHiy}
@@ -3804,8 +3803,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :bay,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :Cay}
@@ -3817,8 +3816,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :sibib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,	    
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -3849,8 +3848,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :sibib,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Negative,
@@ -3975,8 +3974,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -3990,8 +3989,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :diy,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :Ciy}
@@ -4003,8 +4002,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Masc,
 	    :lexeme :fir,
-	    :morphClass :VNOMFORM, :nonFiniteForm
- :Participle,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :Participle,
 	    :number :Common,
 	    
 	    :polarity :Affirmative,
@@ -4018,7 +4017,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :rib,
-	    :morphClass :VNOMFORM, :nonFiniteForm :NominalAction,
+	    :morphClass :VNOMFORM, 
+             :nonFiniteForm :NominalAction,
 	    :polarity :U,
 	    :pos :Verb,
 	    :rootClass :CiC}
@@ -4098,7 +4098,7 @@
     :common {:polarity :Negative,
 	    :pos :Pronoun,
 	    :proClass :ObjSuffwVerb}
-    :terms [[:gender, :genderObj, :numObj, :number, :persObj, :person, :token, :lexeme, :token-gloss]  ;; schema
+    :terms [[:gender, :genObj, :numObj, :number, :persObj, :person, :token, :lexeme, :token-gloss]  ;; schema
 	    [:Fem, :Common, :Singular, :Singular, :Person2, :Person1, "rhaatóok káaki", :rih, "I(F) did not see you(M/F)"],
 	    [:Masc, :Masc, :Singular, :Singular, :Person3, :Person3, "(baróoh) rháab kíiki", :rih, "he did not see (him)"],
 	    [:Masc, :Common, :Plural, :Singular, :Person1, :Person2, "rháayoon kíttaa", :rih, "you(M) did not see us"],
@@ -4229,47 +4229,47 @@
     :common {:morpheme :PRO,
 	    :pos :Pronoun,
 	    :proClass :Possessive}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Fem, :Masc, :Singular, :Plural, :Person3, "baréetehoonaatu"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person2, "batiitóoktu"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person3, "batéehoonaaya"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person3, "baréeteheenaata"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person2, "bateetéeknaata"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person2, "bariitéekta"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person3, "batíiyeeha"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person2, "bariiyéeka"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person3, "batéehoonaayu"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, "batiiyóoku"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "aníitu"],
-	    [:Fem, :Fem, :Plural, :Plural, :Person3, "batéeteheenaata"],
-	    [:Masc, :Masc, :Plural, :Singular, :Person3, "baríiyeeha"],
-	    [:Masc, :Common, :Plural, :Singular, :Person1, "niiba"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person2, "batiitéekta"],
-	    [:Fem, :Common, :Plural, :Plural, :Person1, "híneeta"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "hinéetu"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person3, "baréehoonaayu"],
-	    [:Masc, :Common, :Plural, :Plural, :Person1, "híneeba"],
-	    [:Masc, :Fem, :Plural, :Singular, :Person2, "batiiyéeka"],
-	    [:Masc, :Fem, :Plural, :Plural, :Person2, "bateeyéeknaaya"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "batíiyoohu"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person3, "batéetehoonaatu"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person2, "bareeyéeknaaya"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person2, "bariitóoktu"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "baríiyoohu"],
-	    [:Masc, :Fem, :Singular, :Plural, :Person2, "bateeyóoknaayu"],
-	    [:Fem, :Fem, :Plural, :Singular, :Person3, "batíihteeta"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "aníibu"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "hinéebu"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "batíihtootu"],
-	    [:Fem, :Common, :Plural, :Singular, :Person1, "ániita"],
-	    [:Fem, :Masc, :Plural, :Plural, :Person2, "bareetéeknaata"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "baríihtootu"],
-	    [:Fem, :Fem, :Singular, :Plural, :Person2, "bateetéeknaatu"],
-	    [:Fem, :Masc, :Plural, :Singular, :Person3, "baríihteeta"],
-	    [:Masc, :Masc, :Singular, :Plural, :Person2, "bareeyóoknaayu"],
-	    [:Fem, :Masc, :Singular, :Plural, :Person2, "bareetéeknaatu"],
-	    [:Masc, :Masc, :Plural, :Plural, :Person3, "baréehoonaaya"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, "bariiyóoku"]]
+    :terms [[:genHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:H_Fem, :Masc, :H_Singular, :Plural, :Person3, "baréetehoonaatu"],
+	    [:H_Fem, :Fem, :H_Singular, :Singular, :Person2, "batiitóoktu"],
+	    [:H_Masc, :Fem, :H_Plural, :Plural, :Person3, "batéehoonaaya"],
+	    [:H_Fem, :Masc, :H_Plural, :Plural, :Person3, "baréeteheenaata"],
+	    [:H_Fem, :Fem, :H_Plural, :Plural, :Person2, "bateetéeknaata"],
+	    [:H_Fem, :Masc, :H_Plural, :Singular, :Person2, "bariitéekta"],
+	    [:H_Masc, :Fem, :H_Plural, :Singular, :Person3, "batíiyeeha"],
+	    [:H_Masc, :Masc, :H_Plural, :Singular, :Person2, "bariiyéeka"],
+	    [:H_Masc, :Fem, :H_Singular, :Plural, :Person3, "batéehoonaayu"],
+	    [:H_Masc, :Fem, :H_Singular, :Singular, :Person2, "batiiyóoku"],
+	    [:H_Fem, :Common, :H_Singular, :Singular, :Person1, "aníitu"],
+	    [:H_Fem, :Fem, :H_Plural, :Plural, :Person3, "batéeteheenaata"],
+	    [:H_Masc, :Masc, :H_Plural, :Singular, :Person3, "baríiyeeha"],
+	    [:H_Masc, :Common, :H_Plural, :Singular, :Person1, "niiba"],
+	    [:H_Fem, :Fem, :H_Plural, :Singular, :Person2, "batiitéekta"],
+	    [:H_Fem, :Common, :H_Plural, :Plural, :Person1, "híneeta"],
+	    [:H_Fem, :Common, :H_Singular, :Plural, :Person1, "hinéetu"],
+	    [:H_Masc, :Masc, :H_Singular, :Plural, :Person3, "baréehoonaayu"],
+	    [:H_Masc, :Common, :H_Plural, :Plural, :Person1, "híneeba"],
+	    [:H_Masc, :Fem, :H_Plural, :Singular, :Person2, "batiiyéeka"],
+	    [:H_Masc, :Fem, :H_Plural, :Plural, :Person2, "bateeyéeknaaya"],
+	    [:H_Masc, :Fem, :H_Singular, :Singular, :Person3, "batíiyoohu"],
+	    [:H_Fem, :Fem, :H_Singular, :Plural, :Person3, "batéetehoonaatu"],
+	    [:H_Masc, :Masc, :H_Plural, :Plural, :Person2, "bareeyéeknaaya"],
+	    [:H_Fem, :Masc, :H_Singular, :Singular, :Person2, "bariitóoktu"],
+	    [:H_Masc, :Masc, :H_Singular, :Singular, :Person3, "baríiyoohu"],
+	    [:H_Masc, :Fem, :H_Singular, :Plural, :Person2, "bateeyóoknaayu"],
+	    [:H_Fem, :Fem, :H_Plural, :Singular, :Person3, "batíihteeta"],
+	    [:H_Masc, :Common, :H_Singular, :Singular, :Person1, "aníibu"],
+	    [:H_Masc, :Common, :H_Singular, :Plural, :Person1, "hinéebu"],
+	    [:H_Fem, :Fem, :H_Singular, :Singular, :Person3, "batíihtootu"],
+	    [:H_Fem, :Common, :H_Plural, :Singular, :Person1, "ániita"],
+	    [:H_Fem, :Masc, :H_Plural, :Plural, :Person2, "bareetéeknaata"],
+	    [:H_Fem, :Masc, :H_Singular, :Singular, :Person3, "baríihtootu"],
+	    [:H_Fem, :Fem, :H_Singular, :Plural, :Person2, "bateetéeknaatu"],
+	    [:H_Fem, :Masc, :H_Plural, :Singular, :Person3, "baríihteeta"],
+	    [:H_Masc, :Masc, :H_Singular, :Plural, :Person2, "bareeyóoknaayu"],
+	    [:H_Fem, :Masc, :H_Singular, :Plural, :Person2, "bareetéeknaatu"],
+	    [:H_Masc, :Masc, :H_Plural, :Plural, :Person3, "baréehoonaaya"],
+	    [:H_Masc, :Masc, :H_Singular, :Singular, :Person2, "bariiyóoku"]]
     }
     {:label "beja_W-VPrefSubjPref"
     :note "Wedekind-etal2007 Table #30"
@@ -4293,17 +4293,17 @@
 	    :morpheme :REL_SUFF,
 	    :pos :Verb,
 	    :pdgmType :RelSuff}
-    :terms [[:caseHead, :genderHead, :headPosition, :formFrequency, :token]  ;; schema
-	    [:Subject, :Masc, :HeadFollow, :Frequent, "Common"],
-	    [:Subject, :Fem, :HeadFollow, :Frequent, "-t"],
-	    [:Object, :Fem, :HeadFollow, :Frequent, "-eet"],
-	    [:Object, :Masc, :HeadFollow, :Frequent, "-eeb"],
-	    [:Object, :Fem, :HeadPrecede, :Rare, "-eet"],
-	    [:Object, :Fem, :HeadFollow, :Frequent, "-eet –too-na"],
-	    [:Object, :Fem, :HeadFollow, :Frequent, "-ee –na"],
-	    [:Subject, :Masc, :HeadPrecede, :Rare, "-b"],
-	    [:Object, :Masc, :HeadPrecede, :Rare, "-ee"],
-	    [:Subject, :Fem, :HeadPrecede, :Rare, "-t"]]
+    :terms [[:caseHead, :genHead, :headPosition, :formFrequency, :token]  ;; schema
+	    [:H_Subject, :H_Masc, :HeadFollow, :Frequent, "Common"],
+	    [:H_Subject, :H_Fem, :HeadFollow, :Frequent, "-t"],
+	    [:H_Object, :H_Fem, :HeadFollow, :Frequent, "-eet"],
+	    [:H_Object, :H_Masc, :HeadFollow, :Frequent, "-eeb"],
+	    [:H_Object, :H_Fem, :HeadPrecede, :Rare, "-eet"],
+	    [:H_Object, :H_Fem, :HeadFollow, :Frequent, "-eet –too-na"],
+	    [:H_Object, :H_Fem, :HeadFollow, :Frequent, "-ee –na"],
+	    [:H_Subject, :H_Masc, :HeadPrecede, :Rare, "-b"],
+	    [:H_Object, :H_Masc, :HeadPrecede, :Rare, "-ee"],
+	    [:H_Subject, :H_Fem, :HeadPrecede, :Rare, "-t"]]
     }
     {:label "beja_W-PObjSuff"
     :note "Wedekind-etal2007 Table #31"
@@ -4322,18 +4322,18 @@
 	    :pos :Pronoun,
 	    :proClass :PossSuff}
     :terms [[:numHead, :number, :person, :token]  ;; schema
-	    [:Plural, :Plural, :Person1, "-(y)aan -(y)een"],
-	    [:Plural, :Plural, :Person2, "-(y)aakna -(y)eekna"],
-	    [:Singular, :Plural, :Person1, "-(y)uun -(y)oon"],
-	    [:Singular, :Plural, :Person2, "-(y)uukna -(y)ookna"],
-	    [:Singular, :Singular, :Person2, "-(y)uuk -(y)ook"],
-	    [:Plural, :Plural, :Person3, "-(y)aah -(y)eeh"],
-	    [:Plural, :Singular, :Person1, "-(y)ii -(y)ee"],
-	    [:Plural, :Singular, :Person2, "-(y)aak -(y)eek"],
-	    [:Singular, :Plural, :Person3, "-(y)uuh -(y)ooh"],
-	    [:Plural, :Singular, :Person3, "-(y)aah -(y)eeh"],
-	    [:Singular, :Singular, :Person3, "-(y)uuh -(y)ooh"],
-	    [:Singular, :Singular, :Person1, "-(y)uu -(y)oo"]]
+	    [:H_Plural, :Plural, :Person1, "-(y)aan -(y)een"],
+	    [:H_Plural, :Plural, :Person2, "-(y)aakna -(y)eekna"],
+	    [:H_Singular, :Plural, :Person1, "-(y)uun -(y)oon"],
+	    [:H_Singular, :Plural, :Person2, "-(y)uukna -(y)ookna"],
+	    [:H_Singular, :Singular, :Person2, "-(y)uuk -(y)ook"],
+	    [:H_Plural, :Plural, :Person3, "-(y)aah -(y)eeh"],
+	    [:H_Plural, :Singular, :Person1, "-(y)ii -(y)ee"],
+	    [:H_Plural, :Singular, :Person2, "-(y)aak -(y)eek"],
+	    [:H_Singular, :Plural, :Person3, "-(y)uuh -(y)ooh"],
+	    [:H_Plural, :Singular, :Person3, "-(y)aah -(y)eeh"],
+	    [:H_Singular, :Singular, :Person3, "-(y)uuh -(y)ooh"],
+	    [:H_Singular, :Singular, :Person1, "-(y)uu -(y)oo"]]
     }
 }
 }
