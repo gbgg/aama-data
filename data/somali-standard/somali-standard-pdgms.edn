@@ -4,28 +4,30 @@
 :schemata {
 :case [:Nominative, :Object]
 	  :clauseCase [:Absolutive, :Subject]
-	  :clauseType [:Full, :FullReducedVariant, :Main, :Reduced, :Subordinate, :SubordinateVariant, :_NULL]
+	  :clauseType [:Full, :FullReducedVariant, :Main, :Reduced, :Subordinate, :SubordinateVariant]
 	  :conjClass [:Prefix, :Suffix]
 	  :conjSubClass [:C1, :C2A, :C2B, :C3A, :C3B, :Common]
 	  :conjSubType [:SubClass1, :SubClass2]
-	  :gender [:Common, :Fem, :Invariable, :Masc, :_NULL]
+          :gender [:Common, :Fem, :Invariable, :Masc]
 	  :genderPoss [:Fem, :Masc]
 	  :morphClass [:COMPDASSOM, :FULLREDVAR, :FULLREDVARCLAUSECASETYPE, :INFINITIVEPREF, :INFINITIVESUFF, :PREFMAINNEGPASTINVAR, :PREFSUBVARTENSE, :SUFFC1MAINNEGPASTINVAR]
 	  :nonFiniteForm [:Infinitive]
 	  :numPersGender [:Invariable]
 	  :number [:Common, :Invariable, :Plural, :Singular]
-	  :numberPersonGender [:Common, :_NULL]
 	  :pdgmSubType [:PastInvar]
 	  :pdgmType [:Comparative, :Compound, :Structure]
 	  :person [:Person1, :Person1ex, :Person1in, :Person2, :Person3]
-	  :pngShapeClass [:Common, :_NULL]
 	  :polarity [:Affirmative, :Negative, :Negative2]
 	  :pos [:Pronoun, :Verb]
-	  :prefix [:_NULL]
 	  :proClass [:Independent, :ObjClitic, :Possessive, :SubjClit]
-	  :subConj [:C1, :C3B]
 	  :tam [:Conditional, :Future, :Imperative, :Optative, :Past, :PastGeneral, :PastHabitual, :PastIndependent, :PastProgressive, :Potential, :PresentGeneral, :PresentProgressive, :PresentProgressive2]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PROIND {:gloss "[x]", :lemma "[y]", }
   :PROOBJCLIT {:gloss "[x]", :lemma "[y]", }
@@ -47,15 +49,15 @@
   :kari {:conjClass :Suffix, :conjSubClass :C2A, :gloss "cook", :lemma "kári", :pos :Verb}
   :keen {:conjClass :Suffix, :conjSubClass :C1, :gloss "give", :lemma "kéen", :pos :Verb}
   :qaad {:gloss "[x]", :lemma "[y]", }
-  :qaado {:conjClass :Suffix, :gloss "take for oneself", :lemma "qaadó", :pos :Verb, :subConj :C3B}
-  :sug {:conjClass :Suffix, :gloss "wait for", :lemma "súg", :pos :Verb, :subConj :C1}
+  :qaado {:conjClass :Suffix, :gloss "take for oneself", :lemma "qaadó", :pos :Verb, :conjSubClass :C3B}
+  :sug {:conjClass :Suffix, :gloss "wait for", :lemma "súg", :pos :Verb, :conjSubClass :C1}
   :yahay {:conjClass :Prefix, :gloss "be", :lemma "yahay", :pos :Verb}
   :yar {:conjClass :Suffix, :conjSubClass :C2B, :gloss "make small (cf. yár ‘small’)", :lemma "yarèe", :pos :Verb}
   :yaree {:gloss "[x]", :lemma "[y]", }
-  :yidi {:gloss "say", :lemma "yiɗi", :pos :Verb, :prefix :_NULL}
-  :yiil {:gloss "be (in a place)", :lemma "yiil", :pos :Verb, :prefix :_NULL}
-  :yimi {:gloss "come", :lemma "yimi", :pos :Verb, :prefix :_NULL}
-  :yiqiin {:gloss "know", :lemma "yiqiin", :pos :Verb, :prefix :_NULL}
+  :yidi {:gloss "say", :lemma "yiɗi", :pos :Verb, :conjClass :Prefix}
+  :yiil {:gloss "be (in a place)", :lemma "yiil", :pos :Verb, :conjClass :Prefix}
+  :yimi {:gloss "come", :lemma "yimi", :pos :Verb, :conjClass :Prefix}
+  :yiqiin {:gloss "know", :lemma "yiqiin", :pos :Verb, :conjClass :Prefix}
   :yqiin {:gloss "[x]", :lemma "[y]", }
 }
 :lxterms #{
@@ -3200,8 +3202,7 @@
     }
     {:label "somali-VSuffInfinitive"
     :note "somali-VSuffInfinitive"
-    :common {:clauseType :_NULL,
-	    :conjClass :Suffix,
+    :common {:conjClass :Suffix,
 	    :morphClass :INFINITIVESUFF,
 	    :nonFiniteForm :Infinitive,
 	    :pos :Verb}
@@ -3851,11 +3852,11 @@
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "_"],
 	    [:Masc, :Singular, :Person3, "_"],
-	    [:_NULL, :Singular, :Person2, "_"],
-	    [:_NULL, :Plural, :Person2, "_"],
-	    [:_NULL, :Plural, :Person1, "_"],
-	    [:_NULL, :Plural, :Person3, "_"],
-	    [:_NULL, :Singular, :Person1, "_"]]
+	    [:Common, :Singular, :Person2, "_"],
+	    [:Common, :Plural, :Person2, "_"],
+	    [:Common, :Plural, :Person1, "_"],
+	    [:Common, :Plural, :Person3, "_"],
+	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC2BMainAffFuture-yar"
     :note ""

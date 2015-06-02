@@ -13,7 +13,6 @@
            :gender [:Common, :Fem, :Masc]
            :langVar [:Arteiga, :Hadendowa, :bishari]
            :morphClass [:DERVSTEMFORM, :IMPTVROOTCLASSES, :TENSESTEM, :VERBALPARTICIPLES, :POSTPOSITION, :PLMARK, :SUBJMARK]
-           :nonFiniteForm [:Participle]
            :number [:Common, :Plural, :Singular]
            :participle [:Common, :Conjunctive, :Future, :Negative, :Past, :Present]
            :pdgmType [:PluralFormation, :Structure]
@@ -27,6 +26,12 @@
            :tam [:Aorist, :Common, :Future, :Imperative, :Jussive, :Optative, :Past, :Present]
            :tamStemClass [:AoristClass, :ModClass, :NegClass, :PartClass, :PastClass, :PresClass, :PresSgClass]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :DEFMARK {:gloss "Definite Marker", }
   :DEM {:gloss "Demonstrative", :pos :Pronoun}
@@ -377,7 +382,6 @@
     {:label "beja_H-VParticiple"
     :common {:derivedStem :B,
 	    :morphClass :VERBALPARTICIPLES,
-	    :nonFiniteForm :Participle,
 	    :pos :Verb}
     :terms [[:conjClass, :lexeme, :participle, :token, :token-affix, :token-gloss]  ;; schema
 	    [:Suffix, :tam, :Past, "tam-aà", "-aà", "having eaten"],
@@ -1066,22 +1070,22 @@
     {:label "beja_H-P3sgProDialectDist"
     :common {:pdgmType :Structure,
 	    :proClass :ProComp,
-	    :pos :Pronoun
+	    :pos :Var
              :person :Person3}
     :terms [[:case, :langVar, :number, :token]  ;; schema
 	    [:Object, :Arteiga, :Singular, "⊤"],
-	    [:Object, :bishari, :Singular, "-[h]ooh"],
+	    [:Object, :Bishari, :Singular, "-[h]ooh"],
 	    [:Object, :Arteiga, :Plural, "⊤"],
 	    [:Possessive, :Arteiga, :Plural, "-`hina"],
 	    [:Possessive, :Hadendowa, :Singular, "⊤"],
-	    [:Possessive, :bishari, :Singular, "- h"],
+	    [:Possessive, :Bishari, :Singular, "- h"],
 	    [:Object, :Arteiga, :Singular, "Halanga"],
-	    [:Object, :bishari, :Plural, "-[h]oohna"],
+	    [:Object, :Bishari, :Plural, "-[h]oohna"],
 	    [:Possessive, :Hadendowa, :Plural, "-  / - hna"],
 	    [:Object, :Arteiga, :Plural, "Halanga"],
 	    [:Possessive, :Arteiga, :Plural, "Halanga"],
 	    [:Possessive, :Arteiga, :Singular, "⊤"],
-	    [:Possessive, :bishari, :Plural, "- hna"],
+	    [:Possessive, :Bishari, :Plural, "- hna"],
 	    [:Object, :Hadendowa, :Singular, "⊤"],
 	    [:Object, :Hadendowa, :Plural, "⊤"],
 	    [:Possessive, :Arteiga, :Singular, "Halanga"]]

@@ -11,7 +11,7 @@
 # 03/21/14: 
 # 03/26/14: restricted to edn (xml now out of date)
 
-. bin/constants.sh
+#. bin/constants.sh
 
 
 fs=`find $1 -name "*.edn"`
@@ -22,9 +22,12 @@ do
     echo "$lang ********************************************"
     echo copying $f to aama/$lang
     cp data/$lang/$lang-pdgms\.edn ../aama/$lang/
+    cp data/$lang/$lang-pdgms\.ttl ../aama/$lang/
     cd ../aama/$lang
+    rm $lang-pdgms\.rdf
     git add *.edn
-    git commit -am "revised edn added (after edn2ttl in aama-data)"
+    git add *.ttl
+    git commit -am "revised edn/ttl added (after edn2ttl in aama-data)"
     git push origin master
     cd ../../aama-data
 done

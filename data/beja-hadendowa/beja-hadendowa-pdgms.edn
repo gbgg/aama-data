@@ -2,10 +2,9 @@
 :lang :beja-hadendowa
 :sgpref "bha"
 :schemata {
-:aspect [:Perfect, :Present, :_NULL]
+:aspect [:Perfect, :Present, :U]
 	  :case [:Object, :Subject, :Object, :Possessive]
-	  :clause [:_NULL]
-	  :clauseType [:Main, :Subordinate, :_NULL]
+	  :clauseType [:Main, :Subordinate]
 	  :conjClass [:Prefix, :Suffix]
 	  :derivedStem [:B-Freq, :B-Intens, :B-Redup, :Base, :Intensive, :M, :Reciprocal, :S]
 	  :gender [:Common, :Fem, :Masc]
@@ -13,7 +12,6 @@
 	  :genN1 [:N1_Fem, :N1_Masc]
 	  :genN2 [:N2_Fem, :N2_Masc]
 	  :mood [:Common, :Imperative]
-	  :nomForm [:Gerund, :NomAgent, :NominalAction, :NominalAgent, :Participle, :PerfectParticiple, :PresentParticitpl]
 	  :nonFiniteForm [:Gerund, :NomAgent, :NominalAction, :NominalAgent, :Participle, :PerfectParticiple, :PresentParticiple, :_NULL]
 	  :nounMorphClass [:GenAdjPart, :GenBeforePossSuff, :NumOrd, :Numeral]
 	  :numHead [:H_Common, :H_Plural, :H_Singular]
@@ -26,9 +24,15 @@
 	  :pos [:Noun, :Pronoun, :Verb]
 	  :proClass [:ArtDef, :Gen_PossPred, :Independent, :Interrogative, :PossInd, :PossSuff]
 	  :rootClass [:CC, :CCC]
-	  :tam [:Common, :Conditional, :ConditionalPerfect, :ConditionalPredicative, :Future, :Gerund, :Imperative, :Optative, :Past, :PastContinuous, :PerfectPast, :Predicative, :PrefectPast, :Present, :PresentContinuous, :_NULL]
+	  :tam [:Common, :Conditional, :ConditionalPerfect, :ConditionalPredicative, :Future, :Gerund, :Imperative, :Optative, :Past, :PastContinuous, :PerfectPast, :Predicative, :Present, :PresentContinuous, :_NULL]
 	  :verbMorphClass [:DervStemForm, :Formation, :NomForm, :SubjMarker, :SUFFCONDPERF]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :CONDPERF {:gloss "Conditional Perfect Formation", }
   :DEFART {:gloss "Subject Marker", }
@@ -70,8 +74,7 @@
 :lxterms #{
     {:label "beja_Ro-VSuffCond"
     :note "Roper1928 #127-158"
-    :common {:clause :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :U,
 	    :pos :Verb,
@@ -116,8 +119,7 @@
     }
     {:label "beja_Ro-VSuffNegMainPres-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -152,8 +154,7 @@
     }
     {:label "beja_Ro-VSuffMainNegFuture"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -188,8 +189,7 @@
     }
     {:label "beja_Ro-VSuffMainAffPresent"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -224,8 +224,7 @@
     }
     {:label "beja_Ro-VSuffMainNegPresent"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -242,8 +241,7 @@
     }
     {:label "beja_Ro-VSuffNegMainPast-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -356,8 +354,7 @@
     }
     {:label "beja_Ro-VPrefNegCCOpt-bis"
     :note "Roper1928 #167-191"
-    :common {:clause :_NULL,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -428,8 +425,7 @@
     }
     {:label "beja_Ro-VSuffNegOpt"
     :note "Roper1928 #127-158"
-    :common {:clause :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -446,8 +442,7 @@
     }
     {:label "beja_Ro-VSuffMainAffPast"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -464,8 +459,7 @@
     }
     {:label "beja_Ro-VSuffCond-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :U,
 	    :pos :Verb,
@@ -495,8 +489,7 @@
     }
     {:label "beja_Ro-VSuffNegOpt-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -513,8 +506,7 @@
     }
     {:label "beja_Ro-VPrefCCCondPerf-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :_NULL,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :U,
 	    :pos :Verb,
@@ -554,7 +546,7 @@
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PrefectPast}
+	    :tam :PerfectPast}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person2, "tamāt tekatiék"],
 	    [:Masc, :Plural, :Person1, "tamāb nekatiyék"],
@@ -589,8 +581,7 @@
     {:label "beja_Ro-VPrefMainAffCCPast-dif"
     :note "Roper1928 #179-182. [Roper also gives pres neg in predicative of dif – not yet
             included]"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :dif,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -608,8 +599,7 @@
     }
     {:label "beja_Ro-VPrefCCNegMainFuture-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -627,8 +617,7 @@
     }
     {:label "beja_Ro-VSuffMainNegPast"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -682,8 +671,7 @@
     }
     {:label "beja_Ro-VPrefCCAffOpt-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :_NULL,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -701,8 +689,7 @@
     }
     {:label "beja_Ro-VSuffMainAffPredicative"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -723,8 +710,7 @@
     }
     {:label "beja_Ro-VPrefCCAffMainPast-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -742,8 +728,7 @@
     }
     {:label "beja_Ro-VSuffCondPred-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :U,
 	    :pos :Verb,
@@ -764,8 +749,7 @@
     }
     {:label "beja_Ro-VSuffAffMainPast-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -860,8 +844,7 @@
     }
     {:label "beja_Ro-VPrefMainNegCCFuture-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -879,8 +862,7 @@
     }
     {:label "beja_Ro-VPrefCCNegMainPast-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -902,8 +884,7 @@
     }
     {:label "beja_Ro-VSuffNegMainFuture-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -920,8 +901,7 @@
     }
     {:label "beja_Ro-VPrefMainAffCCImprtv-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :number :Person1,
 	    :polarity :Affirmative,
@@ -953,8 +933,7 @@
     }
     {:label "beja_Ro-VPrefCCCond-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :_NULL,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :U,
 	    :pos :Verb,
@@ -972,8 +951,7 @@
     }
     {:label "beja_Ro-VPrefMainAffCCPast-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -991,8 +969,7 @@
     }
     {:label "beja_Ro-VPrefMainAffCCFuture-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1010,8 +987,7 @@
     }
     {:label "beja_Ro-VSuffMainAffFuture"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1028,8 +1004,7 @@
     }
     {:label "beja_Ro-VPrefCCNegMainPres-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1047,8 +1022,7 @@
     }
     {:label "beja_Ro-VPrefCCNegOpt-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :_NULL,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1066,8 +1040,7 @@
     }
     {:label "beja_Ro-VPrefCCAffMainFuture-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1128,12 +1101,12 @@
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :verbMorphClass :NomForm}
-    :terms [[:nomForm, :nonFiniteForm, :polarity, :token]  ;; schema
-	    [:Participle, :Participle, :Negative, "bākátīm"],
-	    [:NominalAction, :NominalAction, :Common, "-ū- kitú̄m"],
-	    [:Participle, :Participle, :Affirmative, "kítime"],
-	    [:NominalAgent, :NominalAgent, :Common, "-ā- kātemána"],
-	    [:Gerund, :Gerund, :Common, "kitmá̄wa"]]
+    :terms [[:nonFiniteForm, :polarity, :token]  ;; schema
+	    [:Participle, :Negative, "bākátīm"],
+	    [:NominalAction, :Common, "-ū- kitú̄m"],
+	    [:Participle, :Affirmative, "kítime"],
+	    [:NominalAgent, :Common, "-ā- kātemána"],
+	    [:Gerund, :Common, "kitmá̄wa"]]
     }
     {:label "beja_Ro-VPrefCCCNegPastNomForm-kitim"
     :note "Roper1928 #192-197"
@@ -1160,8 +1133,7 @@
     }
     {:label "beja_Ro-VPrefMainAffCCPredicative-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1184,8 +1156,7 @@
     {:label "beja_Ro-VPrefCCAffMainPres-dif"
     :note "Roper1928 #179-182. [Roper also gives pres neg in predicative of dif – not yet
             included]"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :dif,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1203,8 +1174,7 @@
     }
     {:label "beja_Ro-VPrefMainNegCCImprtv-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :number :Person1,
 	    :polarity :Negative,
@@ -1218,8 +1188,7 @@
     }
     {:label "beja_Ro-VPrefCCAffMainPredicative-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1267,14 +1236,13 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PrefectPast}
+	    :tam :PerfectPast}
     :terms [[:token]  ;; schema
 	    ["tamāt nekatiyék"]]
     }
     {:label "beja_Ro-VSuffAffMainFuture-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1291,8 +1259,7 @@
     }
     {:label "beja_Ro-VPrefCCNegMainImprtv-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :person :Person2,
 	    :polarity :Negative,
@@ -1306,8 +1273,7 @@
     }
     {:label "beja_Ro-VPrefMainNegCCPast-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1355,14 +1321,13 @@
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PrefectPast}
+	    :tam :PerfectPast}
     :terms [[:token]  ;; schema
 	    ["tamāt nekatiyék"]]
     }
     {:label "beja_Ro-VPrefMainNegCCPresent-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1437,8 +1402,7 @@
     }
     {:label "beja_Ro-VSuffAffOpt"
     :note "Roper1928 #127-158"
-    :common {:clause :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1512,8 +1476,7 @@
     }
     {:label "beja_Ro-VPrefAffCCOpt-bis"
     :note "Roper1928 #167-191"
-    :common {:clause :_NULL,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1531,8 +1494,7 @@
     }
     {:label "beja_Ro-VSuffAffOpt-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :_NULL,
-	    :conjClass :Suffix,
+    :common {:conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1549,8 +1511,7 @@
     }
     {:label "beja_Ro-VPrefCCAffMainImprtv-bis"
     :note "Roper1928 #167-191"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :bis,
 	    :person :Person2,
 	    :polarity :Affirmative,
@@ -1564,8 +1525,7 @@
     }
     {:label "beja_Ro-VSuffAffMainPres-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1635,8 +1595,7 @@
     {:label "beja_Ro-VPrefCCAffMainPast-dif"
     :note "Roper1928 #179-182. [Roper also gives pres neg in predicative of dif – not yet
             included]"
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
+    :common {	    :conjClass :Prefix,
 	    :lexeme :dif,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1654,8 +1613,7 @@
     }
     {:label "beja_Ro-VSuffAffMainPredicative-tam"
     :note "Roper1928 #127-158"
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :lexeme :tam,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1695,8 +1653,7 @@
     }
     {:label "beja_Ro-VSuffCondPerf"
     :note "Roper1928 #127-158"
-    :common {:clause :_NULL,
-	    :conjClass :Suffix,
+    :common {	    :conjClass :Suffix,
 	    :verbMorphClass :SUFFCONDPERF,
 	    :polarity :U,
 	    :pos :Verb,
@@ -1717,13 +1674,13 @@
 	    
 	    :pos :Verb,
 	    :verbMorphClass :NomForm}
-    :terms [[:nomForm, :nonFiniteForm, :polarity, :token]  ;; schema
-	    [:NominalAction, :NominalAction, :Common, "-ā-"],
-	    [:PresentParticitpl, :PresentParticiple, :Affirmative, "-e"],
-	    [:NominalAgent, :NominalAgent, :Common, "-o-"],
-	    [:PresentParticitpl, :PresentParticiple, :Negative, "bā-"],
-	    [:PerfectParticiple, :PerfectParticiple, :Common, "-ti or –tīt"],
-	    [:Gerund, :Gerund, :Common, "-a"]]
+    :terms [[:nonFiniteForm, :polarity, :token]  ;; schema
+	    [:NominalAction, :Common, "-ā-"],
+	    [:PresentParticiple, :Affirmative, "-e"],
+	    [:NominalAgent, :Common, "-o-"],
+	    [:PresentParticiple, :Negative, "bā-"],
+	    [:PerfectParticiple, :Common, "-ti or –tīt"],
+	    [:Gerund, :Common, "-a"]]
     }
     {:label "beja_Ro-PInd"
     :note "Roper1928 #80"
@@ -1891,21 +1848,19 @@
 	    :mood :Common,
 	    :pos :Verb,
 	    :verbMorphClass :NomForm}
-    :terms [[:aspect, :gender, :nomForm, :nonFiniteForm, :number, :polarity, :tam, :token]  ;; schema
-	    [:Present, :Common, :Participle, :Participle, :Common, :Affirmative, :Common, "-e"],
-	    [:_NULL, :Masc, :NominalAction, :NominalAction, :Singular, :Common, :Common, "-ti"],
-	    [:_NULL, :Masc, :NomAgent, :NomAgent, :Singular, :Common, :Common, "-ana"],
-	    [:_NULL, :Common, :Gerund, :Gerund, :Common, :Common, :Common, "-a"],
-	    [:_NULL, :Fem, :NominalAgent, :NominalAgent, :Singular, :Common, :Common, "-ana"],
-	    [:Present, :Common, :Participle, :Participle, :Common, :Negative, :Common, "-ba…e"],
-	    [:Perfect, :Common, :Participle, :Participle, :Common, :Common, :Past, "-etit"],
-	    [:Perfect, :Common, :Participle, :Participle, :Common, :Common, :Present, "-eti"]]
+    :terms [[:aspect, :gender, :nonFiniteForm, :number, :polarity, :tam, :token]  ;; schema
+	    [:Present, :Common, :Participle, :Common, :Affirmative, :Common, "-e"],
+	    [:U, :Masc, :NominalAction, :Singular, :Common, :Common, "-ti"],
+	    [:U, :Masc, :NomAgent, :Singular, :Common, :Common, "-ana"],
+	    [:U, :Common, :Gerund, :Common, :Common, :Common, "-a"],
+	    [:U, :Fem, :NominalAgent, :Singular, :Common, :Common, "-ana"],
+	    [:Present, :Common, :Participle, :Common, :Negative, :Common, "-ba…e"],
+	    [:Perfect, :Common, :Participle, :Common, :Common, :Past, "-etit"],
+	    [:Perfect, :Common, :Participle, :Common, :Common, :Present, "-eti"]]
     }
     {:label "beja_Ro-PGen_PossPred"
     :note "Roper1928 #107. for plural nomen rectum [i.e. numPoss pl]change the genitival –i- throughout to –e-"
-    :common {
-	    :numPoss :Singular,
-             :pos :Pronoun,
+    :common {:pos :Pronoun,
 	    :proClass :Gen_PossPred}
     :terms [[:gender, :genHead, :numHead, :number, :person,  :token]  ;; schema
 	    [:Masc, :H_Fem, :H_Singular, :Singular, :Person3,  "-ithiti"],
