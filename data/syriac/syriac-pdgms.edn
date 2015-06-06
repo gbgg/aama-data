@@ -7,9 +7,10 @@
 	  :gender [:Common, :Fem, :Masc]
 	  :numHead [:Plural, :Singular]
 	  :number [:Plural, :Singular]
-	  :person [:Person1, :Person2, :Person3]
-	  :pos [:Pronoun]
+	  :person [:Person1, :Person2, :Person3 :Not_in_datastore]
+	  :pos [:Pronoun :Verb]
 	  :proClass [:Demostrative, :Independent, :ObjCliticImprtv, :ObjCliticPerf, :PossClitic]
+           :status [:NA]
 	  }
 :morphemes {
   :PRODEM {:gloss "[x]", :lemma "[y]", }
@@ -20,7 +21,11 @@
 }
 :lexemes {
 }
-:lxterms #{}
+:lxterms #{
+           {:label "Egyptian Verb to be added to datastore"
+           :common {:pos :Verb}
+           :terms [[:status :person :token]
+                   [:NA :Not_in_datastore "not attested"]]}}
 :muterms #{
     {:label "syriac-PPossClitic"
     :note "Thackston1999 p. 14;Syriac uses the following set of pronominal enclitics on 1) singular nouns and some prepositions,2) plural nouns and other prepositisions. The forms with singular nouns are also used as infintival objects,though the 1cs suffix becomes –an,the pǝʿal infinitive meqtal becomes meqtǝl- except for infinitives with the 2 plural suffixes which remain meqtal,and the III-weak where meḥzā becomes meḥzǝy- expect for infinitives with the 2 plural suffixes which remain meḥzā:"

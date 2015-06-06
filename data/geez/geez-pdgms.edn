@@ -8,13 +8,16 @@
 	  :gender [:Common, :Fem, :Masc]
 	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
-	  :pos [:Verb]
+	  :pos [:Verb :Pronoun]
+           :proClass [:To_be_added]
 	  :rootClass [:CCC, :CCW, :CCY, :CWC, :CYC, :WCC]
 	  :stemClass [:A, :A1, :A2, :D, :L]
 	  :tam [:Imperative, :Jussive, :Past, :Present]
 	  :morphClass [:SubjMarker, :VerbStems]
+           :status [:NA]
 	  }
 :morphemes {
+  :TOBEADDED {:gloss "[x]", :lemma "[y]", }
   :SUBJMARKER {:gloss "[x]", :lemma "[y]", }
   :VERBSTEMS {:gloss "[x]", :lemma "[y]", }
 }
@@ -1138,5 +1141,11 @@
 	    [:ST, :CCY, :A2, :Past, "astäḫräy-"],
 	    [:ST, :CCY, :A2, :Present, "-astäḫärri-"],
 	    [:ST, :CCY, :A2, :Jussive, "-astäḫräy-"]]
-    }}
+    }
+    {:label "Pronominal Paradigms to be added"
+    :common {:morpheme :TOBEADDED,
+	    :pos :Pronoun,
+	    :proClass :To_be_added}
+    :terms [[:status :person, :token]  ;; schema
+	    [:NA, :Not_in_datastore, "not attested"]]}}
 }

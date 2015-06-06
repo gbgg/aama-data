@@ -8,7 +8,9 @@
 	  :number [:Common, :Plural, :Singular]
 	  :person [:Common, :Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative, :U]
-	  :pos [:Verb]
+	  :pos [:Verb :Pronoun]
+           :proClass [:To_be_added]
+           :status [:NA]
 	  :tam [:Imperative, :Imperfect, :Infinitive, :Perfect]
 	  }
 :pclass {
@@ -17,6 +19,9 @@
            :inflClass [:conjClass  ]
            :otherClass [ ]
           }
+:morphemes {
+  :TOBEADDED {:gloss "[x]", :lemma "[y]", }
+}
 :lexemes {
   :obed {:gloss "[x]", :lemma "[y]", }
 }
@@ -125,5 +130,11 @@
 	    [:Common, :Singular, :Person1, "an húú-‘ow-ne"],
 	    [:Fem, :Singular, :Person3, "ii húú-‘ow-ne"]]
     }}
-:muterms #{}
+:muterms #{
+           {:label "Pronominal Paradigms to be added"
+            :common {:morpheme :TOBEADDED,
+                     :pos :Pronoun,
+                     :proClass :To_be_added}
+            :terms [[:status :person, :token]  ;; schema
+                    [:NA, :Not_in_datastore, "not attested"]]}}
 }

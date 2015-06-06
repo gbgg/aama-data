@@ -1,6 +1,6 @@
 
 #TTL FROM INPUT FILE:
-# data/geez//geez-pdgms.edn
+# ../aama-data/data/geez//geez-pdgms.edn
 @prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
@@ -11,6 +11,19 @@
 
 aama:Geez a aamas:Language .
 aama:Geez rdfs:label "Geez" .
+
+#SCHEMATA: status
+gez:status aamas:lang aama:Geez .
+gez:Status aamas:lang aama:Geez .
+gez:status rdfs:domain aamas:Term .
+gez:Status rdfs:label "status exponents" .
+gez:status rdfs:label "status" .
+gez:status rdfs:range gez:Status .
+gez:Status rdfs:subClassOf gez:MuExponent .
+gez:status rdfs:subPropertyOf gez:muProperty .
+gez:NA aamas:lang aama:Geez .
+gez:NA rdf:type gez:Status .
+gez:NA rdfs:label "NA".
 
 #SCHEMATA: gender
 gez:gender aamas:lang aama:Geez .
@@ -134,6 +147,9 @@ gez:pos rdfs:subPropertyOf gez:muProperty .
 gez:Verb aamas:lang aama:Geez .
 gez:Verb rdf:type gez:Pos .
 gez:Verb rdfs:label "Verb".
+gez:Pronoun aamas:lang aama:Geez .
+gez:Pronoun rdf:type gez:Pos .
+gez:Pronoun rdfs:label "Pronoun".
 
 #SCHEMATA: person
 gez:person aamas:lang aama:Geez .
@@ -192,6 +208,19 @@ gez:VerbStems aamas:lang aama:Geez .
 gez:VerbStems rdf:type gez:Morphclass .
 gez:VerbStems rdfs:label "VerbStems".
 
+#SCHEMATA: proClass
+gez:proClass aamas:lang aama:Geez .
+gez:Proclass aamas:lang aama:Geez .
+gez:proClass rdfs:domain aamas:Term .
+gez:Proclass rdfs:label "proClass exponents" .
+gez:proClass rdfs:label "proClass" .
+gez:proClass rdfs:range gez:Proclass .
+gez:Proclass rdfs:subClassOf gez:MuExponent .
+gez:proClass rdfs:subPropertyOf gez:muProperty .
+gez:To_be_added aamas:lang aama:Geez .
+gez:To_be_added rdf:type gez:Proclass .
+gez:To_be_added rdfs:label "To_be_added".
+
 #SCHEMATA: tam
 gez:tam aamas:lang aama:Geez .
 gez:Tam aamas:lang aama:Geez .
@@ -232,6 +261,12 @@ gez:Singular rdfs:label "Singular".
 
 #MORPHEMES:
 
+aama:Geez-TOBEADDED a aamas:Morpheme ;
+	aamas:lang aama:Geez ;
+	rdfs:label "TOBEADDED" ;
+	rdfs:comment "[x]" ;
+	rdfs:comment "[y]" ;
+	.
 aama:Geez-SUBJMARKER a aamas:Morpheme ;
 	aamas:lang aama:Geez ;
 	rdfs:label "SUBJMARKER" ;
@@ -690,7 +725,7 @@ aama:Geez-wdqB a aamas:Lexeme ;
 
 #TERMCLUSTER: geez-VWCCBA2Pres
 
-aama:IDab122e65-e9d0-4028-bcc4-32b7143c2c93 a aamas:Term ;
+aama:IDf6ee39e7-d732-4bbb-ba81-48f18ec3754f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -706,7 +741,7 @@ aama:IDab122e65-e9d0-4028-bcc4-32b7143c2c93 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDc05b8628-aeb6-461b-bffe-1eaf17441ada a aamas:Term ;
+aama:ID86028450-67fd-4029-ac46-aad546afda34 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -722,7 +757,7 @@ aama:IDc05b8628-aeb6-461b-bffe-1eaf17441ada a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID87b82259-edc8-467c-a725-55ad8c18154d a aamas:Term ;
+aama:ID02532877-68b8-482c-b757-3752ac0c5bfe a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -738,7 +773,7 @@ aama:ID87b82259-edc8-467c-a725-55ad8c18154d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDa805ae1b-875f-41fe-b221-b4032f059441 a aamas:Term ;
+aama:IDc266ffdc-c271-4e5f-9b5f-8ce41e3eb1b2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -754,7 +789,7 @@ aama:IDa805ae1b-875f-41fe-b221-b4032f059441 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf247ac72-39c7-41a2-bc75-3231f0460fa2 a aamas:Term ;
+aama:IDce1dafa8-ad01-436b-9908-983504abf431 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -770,7 +805,7 @@ aama:IDf247ac72-39c7-41a2-bc75-3231f0460fa2 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID380f19d0-22eb-4cec-893a-2398588e075d a aamas:Term ;
+aama:ID1f2f10ce-91e1-461d-88df-92094548ef75 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -786,7 +821,7 @@ aama:ID380f19d0-22eb-4cec-893a-2398588e075d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID37ea8e53-56d5-4939-a477-2e584dc4a1c7 a aamas:Term ;
+aama:ID3584af07-0dc3-4086-a86d-e6ad033a8765 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -802,7 +837,7 @@ aama:ID37ea8e53-56d5-4939-a477-2e584dc4a1c7 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDbfa6311f-bee5-4c3b-98ae-f7789babd48f a aamas:Term ;
+aama:ID1ac1b5c4-a18b-4010-8894-22633c2617e9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -818,7 +853,7 @@ aama:IDbfa6311f-bee5-4c3b-98ae-f7789babd48f a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDa07ca4ad-658e-40ca-a19f-b246427ec331 a aamas:Term ;
+aama:ID49dd2f0e-a53c-4682-9a66-1c367ce7e3a8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -834,7 +869,7 @@ aama:IDa07ca4ad-658e-40ca-a19f-b246427ec331 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID11d4508c-51f3-460c-aaf1-6a6267e19e18 a aamas:Term ;
+aama:ID888e5b4c-b622-49a3-8874-aa12d9c2b63b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -853,7 +888,7 @@ aama:ID11d4508c-51f3-460c-aaf1-6a6267e19e18 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA2Pres
 
-aama:ID44436ff9-98f2-4368-8f42-b89de5044c4e a aamas:Term ;
+aama:IDeb89228c-23fa-4b25-8d97-973766ab5692 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -869,7 +904,7 @@ aama:ID44436ff9-98f2-4368-8f42-b89de5044c4e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID32431e99-3bf6-4758-ab47-0d42b17f3024 a aamas:Term ;
+aama:ID354b5533-d420-4468-863b-dec8b9064277 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -885,7 +920,7 @@ aama:ID32431e99-3bf6-4758-ab47-0d42b17f3024 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe81e74ea-a85a-49e0-ba89-bfefad8dd5fc a aamas:Term ;
+aama:ID2e4d0117-5193-4d56-aacc-82b57f9cbd6e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -901,7 +936,7 @@ aama:IDe81e74ea-a85a-49e0-ba89-bfefad8dd5fc a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDaa6b477e-3bb1-4f76-8d10-ad03d4f8203d a aamas:Term ;
+aama:IDe8b67a63-3f8c-47d0-89e2-baa5d42e3aaf a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -917,7 +952,7 @@ aama:IDaa6b477e-3bb1-4f76-8d10-ad03d4f8203d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID3e09fd01-c702-4671-872f-19e8e85ce540 a aamas:Term ;
+aama:ID8e3a0e5e-c9ac-42a9-bf2c-7e83db218f07 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -933,7 +968,7 @@ aama:ID3e09fd01-c702-4671-872f-19e8e85ce540 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDeec1ef0e-e997-4c10-b3dc-585b300bcd32 a aamas:Term ;
+aama:IDabdc374a-79c4-4a51-b28f-d35086a4cd80 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -949,7 +984,7 @@ aama:IDeec1ef0e-e997-4c10-b3dc-585b300bcd32 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID3f3f149a-ffb0-4335-b09f-7b11cbfac622 a aamas:Term ;
+aama:IDe89570d5-faec-4416-abae-5245732448fa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -965,7 +1000,7 @@ aama:ID3f3f149a-ffb0-4335-b09f-7b11cbfac622 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDfe7ae35e-941b-4ffb-9144-a9eed735fc94 a aamas:Term ;
+aama:IDba368335-e3ae-42b8-a04b-19ce92299e56 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -981,7 +1016,7 @@ aama:IDfe7ae35e-941b-4ffb-9144-a9eed735fc94 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDdcd73903-104a-4307-bcc9-17d1325f6788 a aamas:Term ;
+aama:ID089c634c-7b71-4adb-b1e3-bbbc7f0a1fc5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -997,7 +1032,7 @@ aama:IDdcd73903-104a-4307-bcc9-17d1325f6788 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa7d320d7-0945-432a-9a5f-c4798795bbd9 a aamas:Term ;
+aama:IDb51757ed-fe54-4350-9b07-ae7a9e76267a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -1016,7 +1051,7 @@ aama:IDa7d320d7-0945-432a-9a5f-c4798795bbd9 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA2Past
 
-aama:IDa601da0d-2504-4d9b-accd-c44d5e05de92 a aamas:Term ;
+aama:IDaa972120-8b5e-4ba2-b607-c5596358db51 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1032,7 +1067,7 @@ aama:IDa601da0d-2504-4d9b-accd-c44d5e05de92 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDf7cf9112-fa97-4af7-a13f-d345004de85e a aamas:Term ;
+aama:ID29d3bf21-fe38-46ab-b9e6-79160736df36 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1048,7 +1083,7 @@ aama:IDf7cf9112-fa97-4af7-a13f-d345004de85e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID96bfcb09-3813-4799-8c72-b30acb57401a a aamas:Term ;
+aama:ID2db97cc5-1421-42f9-aca1-24b3c0fac3b5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1064,7 +1099,7 @@ aama:ID96bfcb09-3813-4799-8c72-b30acb57401a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID34d2c55a-2d11-43fd-90b6-92b022513a02 a aamas:Term ;
+aama:IDdd6fd275-f386-4c49-9c7b-37d823229496 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1080,7 +1115,7 @@ aama:ID34d2c55a-2d11-43fd-90b6-92b022513a02 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDc874a7a5-1aa8-4996-ac6e-2994c3d0b7cb a aamas:Term ;
+aama:ID3540335f-a71e-47de-9ad0-16e1fcc98ecd a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1096,7 +1131,7 @@ aama:IDc874a7a5-1aa8-4996-ac6e-2994c3d0b7cb a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDbc50a2e3-ae7e-4058-90ba-6c3120ddcd9e a aamas:Term ;
+aama:ID41c7d7f4-68aa-406c-bb04-f0c6f10430c0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1112,7 +1147,7 @@ aama:IDbc50a2e3-ae7e-4058-90ba-6c3120ddcd9e a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDc7429f33-15a5-4169-aeed-207530223586 a aamas:Term ;
+aama:IDbb7c318b-c8c3-4f95-a1ac-c593df5ab7fb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1128,7 +1163,7 @@ aama:IDc7429f33-15a5-4169-aeed-207530223586 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID081968da-2434-40ce-baa4-c3186d8574a9 a aamas:Term ;
+aama:IDb9c9aefb-e402-41fc-a310-40320432f51d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1144,7 +1179,7 @@ aama:ID081968da-2434-40ce-baa4-c3186d8574a9 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDcd9e6204-747d-4d90-959a-5bf95564da14 a aamas:Term ;
+aama:ID6a7ca56d-42df-4813-83ff-de3f36b2880b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1160,7 +1195,7 @@ aama:IDcd9e6204-747d-4d90-959a-5bf95564da14 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDacdee675-b83b-4c9b-ae1f-2024d27167c3 a aamas:Term ;
+aama:IDb36ddada-f97f-4407-828a-796e4a86e3d3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1179,7 +1214,7 @@ aama:IDacdee675-b83b-4c9b-ae1f-2024d27167c3 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA1Past
 
-aama:IDf3f3e84f-134d-4739-b048-a0a87447193e a aamas:Term ;
+aama:IDf2389210-b63f-4b82-8fd8-07d746666daa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1195,7 +1230,7 @@ aama:IDf3f3e84f-134d-4739-b048-a0a87447193e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID28bc61e0-2652-4212-a904-14f77c212b0f a aamas:Term ;
+aama:ID0077ad14-67c8-49e4-b4dc-c99140f1b7d6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1211,7 +1246,7 @@ aama:ID28bc61e0-2652-4212-a904-14f77c212b0f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID99864428-2256-4214-8ecc-17c8c1ec6c46 a aamas:Term ;
+aama:ID0e5a3691-2798-45d0-9e1f-6c6d8be892c0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1227,7 +1262,7 @@ aama:ID99864428-2256-4214-8ecc-17c8c1ec6c46 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID9b0b7783-7054-447d-bdbd-8f5b75f02210 a aamas:Term ;
+aama:IDf1febae2-88ea-49fc-bff2-222c3d3af434 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1243,7 +1278,7 @@ aama:ID9b0b7783-7054-447d-bdbd-8f5b75f02210 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID0678d2a9-2135-484b-a38c-77d1c7c918f6 a aamas:Term ;
+aama:ID1b9e645f-1d54-44e8-8b6c-75dda79e7d5b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1259,7 +1294,7 @@ aama:ID0678d2a9-2135-484b-a38c-77d1c7c918f6 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID29a68241-1889-4c43-8c87-6b934eb7793a a aamas:Term ;
+aama:ID7c6bf4f4-ca45-429a-98da-599cbb038173 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1275,7 +1310,7 @@ aama:ID29a68241-1889-4c43-8c87-6b934eb7793a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID0114787a-b2e5-455b-84d3-85abad83edb4 a aamas:Term ;
+aama:IDee749c00-b2a9-42a0-b86f-b5684e73be02 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1291,7 +1326,7 @@ aama:ID0114787a-b2e5-455b-84d3-85abad83edb4 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID8332dea7-ef4c-429f-9735-f87a0fb6caba a aamas:Term ;
+aama:ID369d742f-6999-4221-899f-a4931da4a8b5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1307,7 +1342,7 @@ aama:ID8332dea7-ef4c-429f-9735-f87a0fb6caba a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDe0f85bcb-3828-4b60-a4d1-cfc4c1644585 a aamas:Term ;
+aama:ID38a89710-809c-4c79-98d0-25fc47a85629 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1323,7 +1358,7 @@ aama:IDe0f85bcb-3828-4b60-a4d1-cfc4c1644585 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa4b7be5d-36aa-4bd6-b2d6-460518aaa835 a aamas:Term ;
+aama:ID65b065f5-a0af-492e-9e65-112dfd96c94a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -1342,7 +1377,7 @@ aama:IDa4b7be5d-36aa-4bd6-b2d6-460518aaa835 a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA1Past
 
-aama:ID8c7c45a8-0436-42a3-b273-3f7bc153db93 a aamas:Term ;
+aama:IDd219c2ba-ca6c-4227-8b18-fd427e20c309 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1358,7 +1393,7 @@ aama:ID8c7c45a8-0436-42a3-b273-3f7bc153db93 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID612fc0fa-444d-4bf0-873e-91175f449a3c a aamas:Term ;
+aama:ID97a9c2a1-206f-4fd8-b453-e8d09607338f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1374,7 +1409,7 @@ aama:ID612fc0fa-444d-4bf0-873e-91175f449a3c a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID56823278-3d33-4fa3-9f66-9a9a28c2b5e3 a aamas:Term ;
+aama:ID9b788646-ca9c-4b15-a8ce-3caa38819501 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1390,7 +1425,7 @@ aama:ID56823278-3d33-4fa3-9f66-9a9a28c2b5e3 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDe02f2056-766d-4d5b-8ce4-e7b32afedfc8 a aamas:Term ;
+aama:IDfda5880d-3dd7-43e4-b01a-25e081234d39 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1406,7 +1441,7 @@ aama:IDe02f2056-766d-4d5b-8ce4-e7b32afedfc8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf9f13971-c86b-47e2-ac26-387c49b245b1 a aamas:Term ;
+aama:ID994ff449-deed-4e14-8350-0af482865b41 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1422,7 +1457,7 @@ aama:IDf9f13971-c86b-47e2-ac26-387c49b245b1 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID91dfab13-c1e7-462e-af74-1c6c5b1a2ba2 a aamas:Term ;
+aama:IDb0f08ed3-4637-43ec-9a85-fdae5ab4e360 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1438,7 +1473,7 @@ aama:ID91dfab13-c1e7-462e-af74-1c6c5b1a2ba2 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID83ef883a-dc9b-4c67-9b7c-46433bbca218 a aamas:Term ;
+aama:ID9533ea35-10e3-4269-b7b0-f31ffb7bcfa0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1454,7 +1489,7 @@ aama:ID83ef883a-dc9b-4c67-9b7c-46433bbca218 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDddda206e-eda1-4b88-92b1-c702aa4a8c6a a aamas:Term ;
+aama:IDf610e095-0d9d-4270-b0da-03c96c92fdd1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1470,7 +1505,7 @@ aama:IDddda206e-eda1-4b88-92b1-c702aa4a8c6a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID770151a2-757a-46da-b0d6-9697d46eb8ba a aamas:Term ;
+aama:IDc6f627f7-8946-43fe-82cf-c5ae672b9130 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1486,7 +1521,7 @@ aama:ID770151a2-757a-46da-b0d6-9697d46eb8ba a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID315d5438-8e04-475c-b677-d3b9325a8ab5 a aamas:Term ;
+aama:ID197556fc-955f-4d16-940d-aaca29a8ead9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -1505,7 +1540,7 @@ aama:ID315d5438-8e04-475c-b677-d3b9325a8ab5 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCSPres
 
-aama:ID27ecf433-fee2-4c45-98d2-04aa6c6b528c a aamas:Term ;
+aama:ID21421836-0088-4f3c-8c98-9c02f6524e1c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1520,7 +1555,7 @@ aama:ID27ecf433-fee2-4c45-98d2-04aa6c6b528c a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID1ce753fa-59b2-41be-91f5-1dad49865d83 a aamas:Term ;
+aama:ID138bbe33-07b4-40d6-9336-e24562a8d989 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1535,7 +1570,7 @@ aama:ID1ce753fa-59b2-41be-91f5-1dad49865d83 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe1794321-457d-47a2-b00e-6a7ecaf5854d a aamas:Term ;
+aama:ID73189e91-1604-4f52-a541-c35c40706680 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1550,7 +1585,7 @@ aama:IDe1794321-457d-47a2-b00e-6a7ecaf5854d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID9b0f7501-2a63-4750-ada2-ac8228f3d4b0 a aamas:Term ;
+aama:ID81ad6763-1b56-41c5-98c0-aee7f99e9983 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1565,7 +1600,7 @@ aama:ID9b0f7501-2a63-4750-ada2-ac8228f3d4b0 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe79335ce-a3b9-4026-89e0-f7629fac7001 a aamas:Term ;
+aama:IDfcc6177f-915c-4324-8765-96d533219e60 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1580,7 +1615,7 @@ aama:IDe79335ce-a3b9-4026-89e0-f7629fac7001 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID67300c0a-bd2f-4cf2-918a-b62588b2ca21 a aamas:Term ;
+aama:ID6d5a94f7-5314-497b-b858-352e78f6e1e1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1595,7 +1630,7 @@ aama:ID67300c0a-bd2f-4cf2-918a-b62588b2ca21 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID7f58af23-844b-44bb-9b9b-42f2fa9bd05d a aamas:Term ;
+aama:ID0707a0a8-3264-467f-aa2c-a9d48c03815e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1610,7 +1645,7 @@ aama:ID7f58af23-844b-44bb-9b9b-42f2fa9bd05d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID04d4f38f-3e22-4a4c-bfb0-0d5cb095cd5b a aamas:Term ;
+aama:ID2a0ab0fb-50dd-4dfb-9803-52616449bc59 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1625,7 +1660,7 @@ aama:ID04d4f38f-3e22-4a4c-bfb0-0d5cb095cd5b a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDba3e9716-a357-4820-9c7d-1565fd16ea47 a aamas:Term ;
+aama:ID4d366c56-fc69-430c-a472-7543538105cd a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1640,7 +1675,7 @@ aama:IDba3e9716-a357-4820-9c7d-1565fd16ea47 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe76a42d7-9189-41c0-b3c5-0a4933c1f148 a aamas:Term ;
+aama:ID93ee321a-8a5f-4605-b6ca-29ac4ae99a7e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngr ;
@@ -1658,7 +1693,7 @@ aama:IDe76a42d7-9189-41c0-b3c5-0a4933c1f148 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCYCBAImprtv
 
-aama:IDe6bdf76c-93aa-47d1-8c8e-7dea1cc4dec8 a aamas:Term ;
+aama:ID228a75f8-f30c-4688-a98f-bbe2aa165dd3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -1674,7 +1709,7 @@ aama:IDe6bdf76c-93aa-47d1-8c8e-7dea1cc4dec8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd131467d-06ee-445b-83f2-606f91a2e71e a aamas:Term ;
+aama:ID369a8611-2cab-4e1b-ace4-173adc0b18d4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -1690,7 +1725,7 @@ aama:IDd131467d-06ee-445b-83f2-606f91a2e71e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID22bee707-a35d-42be-a7c7-cc50387cb4db a aamas:Term ;
+aama:ID42578a7e-4148-4a88-b4c1-82e280198191 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -1706,7 +1741,7 @@ aama:ID22bee707-a35d-42be-a7c7-cc50387cb4db a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID075556fa-6324-4aa2-8b67-1fc5cb35d6a5 a aamas:Term ;
+aama:ID323f3014-336f-48d1-8a5d-b74f1c4c9a82 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -1725,7 +1760,7 @@ aama:ID075556fa-6324-4aa2-8b67-1fc5cb35d6a5 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA2Imprtv
 
-aama:ID51f3bd13-5c6f-4ec4-9f8b-cfe6dbcf2ee7 a aamas:Term ;
+aama:IDb67d0319-e376-4314-b102-5a36900b19d7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1741,7 +1776,7 @@ aama:ID51f3bd13-5c6f-4ec4-9f8b-cfe6dbcf2ee7 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID4c264d1e-4fb7-459a-b26f-e6884570fd12 a aamas:Term ;
+aama:IDd2dc9fc3-d509-4755-ae54-51af3bbe21dc a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1757,7 +1792,7 @@ aama:ID4c264d1e-4fb7-459a-b26f-e6884570fd12 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDf7cda9ec-3bab-4dc3-92e3-67a47fdc9932 a aamas:Term ;
+aama:IDfec2d693-36ae-45cd-b3d7-d87be12d84aa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1773,7 +1808,7 @@ aama:IDf7cda9ec-3bab-4dc3-92e3-67a47fdc9932 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID028c66e3-2b3a-4e42-887d-74ae4d267028 a aamas:Term ;
+aama:IDb4027c9c-86ae-4eb9-84b0-c044fc6164dd a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -1792,7 +1827,7 @@ aama:ID028c66e3-2b3a-4e42-887d-74ae4d267028 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCSJuss
 
-aama:IDe1b67788-c4b5-4a4c-9f74-a3097ac9089d a aamas:Term ;
+aama:IDdbfd3f45-8e7f-4d1d-b2d9-16f30b198e1b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1807,7 +1842,7 @@ aama:IDe1b67788-c4b5-4a4c-9f74-a3097ac9089d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID386d36e5-8fcb-4ec0-9151-b0c375feb710 a aamas:Term ;
+aama:ID2f7a682c-defa-4342-8a77-a77c969df821 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1822,7 +1857,7 @@ aama:ID386d36e5-8fcb-4ec0-9151-b0c375feb710 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID7db92960-c10c-40ac-8046-925c295b52d8 a aamas:Term ;
+aama:ID4288d035-88b6-4de9-b573-e1f0651cfa39 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1837,7 +1872,7 @@ aama:ID7db92960-c10c-40ac-8046-925c295b52d8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID19a86c53-f65d-4ae3-8828-03fc0547201b a aamas:Term ;
+aama:ID316c3333-e86d-4f45-8a1d-85c801c3271d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1852,7 +1887,7 @@ aama:ID19a86c53-f65d-4ae3-8828-03fc0547201b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDffa75c76-24bd-4982-b343-af0399c66455 a aamas:Term ;
+aama:IDb5e9b4ea-63b0-41d6-8f7b-40de140696cf a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1867,7 +1902,7 @@ aama:IDffa75c76-24bd-4982-b343-af0399c66455 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID0eb4bb4f-2f08-44cc-9770-92533cb52102 a aamas:Term ;
+aama:ID434cd59f-fb64-4d89-9259-55335b6dcc6c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1882,7 +1917,7 @@ aama:ID0eb4bb4f-2f08-44cc-9770-92533cb52102 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID440f78d0-07af-4523-89e4-264917ebf0a3 a aamas:Term ;
+aama:ID32472723-dba5-45b0-86f4-2f3579ab45ad a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1897,7 +1932,7 @@ aama:ID440f78d0-07af-4523-89e4-264917ebf0a3 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID5b7d39f3-1ff0-4c23-a9f5-fe2918c99d4e a aamas:Term ;
+aama:ID7f466143-05a4-4d17-8f53-2155043459ff a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1912,7 +1947,7 @@ aama:ID5b7d39f3-1ff0-4c23-a9f5-fe2918c99d4e a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID821ebe22-60b2-4087-874c-e0aa46f9db85 a aamas:Term ;
+aama:ID7e4cf7c7-8d27-42ea-bb79-d264cd606db6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1927,7 +1962,7 @@ aama:ID821ebe22-60b2-4087-874c-e0aa46f9db85 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe0f5b396-2a4e-4af4-8339-386cd37d7e40 a aamas:Term ;
+aama:IDd8256e91-aa98-4b54-acc4-482c5939ab23 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -1945,7 +1980,7 @@ aama:IDe0f5b396-2a4e-4af4-8339-386cd37d7e40 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCWCBAImprtv
 
-aama:ID6592442d-f825-49fa-b153-e23ce6328c79 a aamas:Term ;
+aama:IDf2db37c9-eb14-42cf-894d-a3be935287de a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -1961,7 +1996,7 @@ aama:ID6592442d-f825-49fa-b153-e23ce6328c79 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd4efb9fb-f42a-4fd5-8004-7a1a32e98444 a aamas:Term ;
+aama:ID1ed988a4-cb6e-403e-a3ed-f733c5accdef a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -1977,7 +2012,7 @@ aama:IDd4efb9fb-f42a-4fd5-8004-7a1a32e98444 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID5def25a4-1b51-447f-b1ec-b656b8f81b5b a aamas:Term ;
+aama:ID252938d2-be3c-4298-ba77-b80c061a33a2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -1993,7 +2028,7 @@ aama:ID5def25a4-1b51-447f-b1ec-b656b8f81b5b a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDaf028111-08be-4ba9-ab1d-8f254657da25 a aamas:Term ;
+aama:ID2e19e042-99e2-4660-af81-125c8bc7421d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2012,7 +2047,7 @@ aama:IDaf028111-08be-4ba9-ab1d-8f254657da25 a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA2Juss
 
-aama:IDe31a5550-0dd7-4f01-8319-16b10b79689e a aamas:Term ;
+aama:IDb727dda9-a12d-4ae6-bffc-de4c2abed57f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2028,7 +2063,7 @@ aama:IDe31a5550-0dd7-4f01-8319-16b10b79689e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDa556a46c-d53b-4b3a-a0b6-90a5e4ae29e9 a aamas:Term ;
+aama:IDe00d493b-96da-416e-987f-1dca6d3d088b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2044,7 +2079,7 @@ aama:IDa556a46c-d53b-4b3a-a0b6-90a5e4ae29e9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID00d16dd1-b837-4df4-9628-9b0852cd1198 a aamas:Term ;
+aama:ID77629103-d54f-4ea8-99a8-ae47603d8c04 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2060,7 +2095,7 @@ aama:ID00d16dd1-b837-4df4-9628-9b0852cd1198 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID2d1bf60d-1647-46b2-ad29-10c3e596eb1a a aamas:Term ;
+aama:IDd7080500-d294-4b18-b19a-02d55cfaf713 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2076,7 +2111,7 @@ aama:ID2d1bf60d-1647-46b2-ad29-10c3e596eb1a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd016d1b7-aefc-466b-8400-99510b014b66 a aamas:Term ;
+aama:ID9653afc3-d027-42fb-9800-1335408f1ef1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2092,7 +2127,7 @@ aama:IDd016d1b7-aefc-466b-8400-99510b014b66 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID502d9503-d2eb-49d0-bc37-a4b9f0c2d5dc a aamas:Term ;
+aama:IDb14ad74a-668b-454b-9bfc-484769451678 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2108,7 +2143,7 @@ aama:ID502d9503-d2eb-49d0-bc37-a4b9f0c2d5dc a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDbe083667-7605-4257-94e7-f74a71b3e3ee a aamas:Term ;
+aama:IDc162a736-2ba5-4d61-8ea9-23bab9edf3c3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2124,7 +2159,7 @@ aama:IDbe083667-7605-4257-94e7-f74a71b3e3ee a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDc54c10e8-29b0-41d2-8291-1aacd7e9d078 a aamas:Term ;
+aama:ID9fac986a-29ad-427e-8f0d-4ff55349c0e2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2140,7 +2175,7 @@ aama:IDc54c10e8-29b0-41d2-8291-1aacd7e9d078 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID793aa62d-241e-4859-b436-9f23ef61ac1e a aamas:Term ;
+aama:IDe53187f3-7c00-43fb-996b-f26f3112e008 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2156,7 +2191,7 @@ aama:ID793aa62d-241e-4859-b436-9f23ef61ac1e a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID63d42cfc-4d90-48d2-ac61-04d49cfb385d a aamas:Term ;
+aama:IDd1ab51b5-7904-4cbe-8b3f-bcfa430e53b6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2175,7 +2210,7 @@ aama:ID63d42cfc-4d90-48d2-ac61-04d49cfb385d a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA2Imprtv
 
-aama:ID2a970e58-2949-449e-a97c-2f209680291a a aamas:Term ;
+aama:ID553d47c7-b57e-44a7-878a-06fbb1bdf6e7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2191,7 +2226,7 @@ aama:ID2a970e58-2949-449e-a97c-2f209680291a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDc4a46a38-341a-4946-aa22-62b7b3968f3f a aamas:Term ;
+aama:IDcfec5d2a-6424-4f46-b61c-cd5852ed2ee9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2207,7 +2242,7 @@ aama:IDc4a46a38-341a-4946-aa22-62b7b3968f3f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID4aef7906-f397-4cbe-9f65-993e3c2a910a a aamas:Term ;
+aama:ID05b5bf39-5a21-432f-bca9-b7d7ec3694c8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2223,7 +2258,7 @@ aama:ID4aef7906-f397-4cbe-9f65-993e3c2a910a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID29be85db-ec16-455b-a7b3-1ad89e264d1d a aamas:Term ;
+aama:ID26e64fc3-fe99-4660-b8f2-5f5a6f3f2ef3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -2242,7 +2277,7 @@ aama:ID29be85db-ec16-455b-a7b3-1ad89e264d1d a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA1Past
 
-aama:IDa1a5d10b-e08d-48f2-b4ec-2e49d5abad4b a aamas:Term ;
+aama:ID2f8ab5af-22ae-4aa5-ab83-5cad42e158f8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2258,7 +2293,7 @@ aama:IDa1a5d10b-e08d-48f2-b4ec-2e49d5abad4b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID3d49cf5c-1632-4f7f-a9da-2922387051b7 a aamas:Term ;
+aama:IDc87d76d4-78dc-4713-b687-60effa777761 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2274,7 +2309,7 @@ aama:ID3d49cf5c-1632-4f7f-a9da-2922387051b7 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID85903586-772d-4a3c-81a3-8532ac8ce5fd a aamas:Term ;
+aama:ID1d3cd58d-b97b-47ad-8232-bbc0efc95119 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2290,7 +2325,7 @@ aama:ID85903586-772d-4a3c-81a3-8532ac8ce5fd a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDa3296378-1e04-40ab-abdc-6186e78b6268 a aamas:Term ;
+aama:ID189f09ff-a961-41db-8c20-677bf3c61423 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2306,7 +2341,7 @@ aama:IDa3296378-1e04-40ab-abdc-6186e78b6268 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDae45204e-24cd-4d3e-9baa-1de66253de24 a aamas:Term ;
+aama:ID8089c459-3185-4674-aec7-e93a0cc1b749 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2322,7 +2357,7 @@ aama:IDae45204e-24cd-4d3e-9baa-1de66253de24 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID1ad286d8-9352-4eb3-ba63-3ebefa168d70 a aamas:Term ;
+aama:ID15cda95a-a9f5-4db9-a6a9-cd26a953bebd a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2338,7 +2373,7 @@ aama:ID1ad286d8-9352-4eb3-ba63-3ebefa168d70 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID2ae82904-4700-4c42-b0cb-0385c65ead24 a aamas:Term ;
+aama:IDb0164f83-178a-451d-bb9f-83c156a3eb18 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2354,7 +2389,7 @@ aama:ID2ae82904-4700-4c42-b0cb-0385c65ead24 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID522e9232-67ed-4263-beaa-55446382b659 a aamas:Term ;
+aama:IDb45b02e3-c1d0-4aef-b745-6f23c96491c5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2370,7 +2405,7 @@ aama:ID522e9232-67ed-4263-beaa-55446382b659 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID93b4bf59-8833-4088-a4b9-e39aba20ebcd a aamas:Term ;
+aama:IDe2289219-33da-41fb-b1f8-387845ed79c6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2386,7 +2421,7 @@ aama:ID93b4bf59-8833-4088-a4b9-e39aba20ebcd a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID27da83d8-9858-4f9a-9370-6d3629bd0201 a aamas:Term ;
+aama:IDed9d12dd-7237-4591-8379-ccbdadd74ab8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2405,7 +2440,7 @@ aama:ID27da83d8-9858-4f9a-9370-6d3629bd0201 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCTPres
 
-aama:ID196adb17-9998-41dd-9ac7-929600432dd0 a aamas:Term ;
+aama:ID347b622c-38b6-4088-a08c-18eed4aaef1f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2420,7 +2455,7 @@ aama:ID196adb17-9998-41dd-9ac7-929600432dd0 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDb5547a50-b6c0-40d1-8224-546d76350e3d a aamas:Term ;
+aama:ID8b9930b6-9fa8-46b7-9bae-2fe221408ace a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2435,7 +2470,7 @@ aama:IDb5547a50-b6c0-40d1-8224-546d76350e3d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd5e2a4f1-1c49-4a09-bb01-d8dcff79ead0 a aamas:Term ;
+aama:ID81f3c892-395d-4235-8468-ae1752e7e969 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2450,7 +2485,7 @@ aama:IDd5e2a4f1-1c49-4a09-bb01-d8dcff79ead0 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDab3d3351-018d-47fb-96a3-0ec4974b8390 a aamas:Term ;
+aama:IDc5be7fd3-3dea-45d7-ab9b-6cd5c2f67e34 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2465,7 +2500,7 @@ aama:IDab3d3351-018d-47fb-96a3-0ec4974b8390 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID266a80ee-c692-4cfa-8c67-6ea2df9cb7a3 a aamas:Term ;
+aama:ID07a48162-f77f-439c-960e-30645c660ad0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2480,7 +2515,7 @@ aama:ID266a80ee-c692-4cfa-8c67-6ea2df9cb7a3 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID7709ff4f-988b-4ca6-9e17-8859b5017208 a aamas:Term ;
+aama:ID694498b7-65bd-4cd9-980e-bba82f885a91 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2495,7 +2530,7 @@ aama:ID7709ff4f-988b-4ca6-9e17-8859b5017208 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID6abff4a6-9bb7-426d-a5d4-9c188b8ab864 a aamas:Term ;
+aama:ID8f55bcf6-8fb9-4ac9-98d5-835968ecacc5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2510,7 +2545,7 @@ aama:ID6abff4a6-9bb7-426d-a5d4-9c188b8ab864 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDfc87cf10-7c5a-4efa-b9cf-d27913b28396 a aamas:Term ;
+aama:IDc7d969aa-27de-430a-b34f-df9bc0184ea2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2525,7 +2560,7 @@ aama:IDfc87cf10-7c5a-4efa-b9cf-d27913b28396 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID0748a98c-c7ff-4a99-b923-7455bfcd13c3 a aamas:Term ;
+aama:ID4ece2806-83db-494b-b3dd-63919042d7cb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2540,7 +2575,7 @@ aama:ID0748a98c-c7ff-4a99-b923-7455bfcd13c3 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID1c836162-6b9b-403f-8792-84e5a1a961cd a aamas:Term ;
+aama:ID5e600d88-2407-4185-8a9d-03c44797b474 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -2558,7 +2593,7 @@ aama:ID1c836162-6b9b-403f-8792-84e5a1a961cd a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA1Juss
 
-aama:ID1984f4b7-67aa-4e8c-9834-046666ca12cc a aamas:Term ;
+aama:ID162ae79a-4bbc-4c47-a83b-bd297599edbe a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2574,7 +2609,7 @@ aama:ID1984f4b7-67aa-4e8c-9834-046666ca12cc a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID0fefe898-7353-48df-bac0-e052479e5d58 a aamas:Term ;
+aama:IDa9d5b41c-83a8-4b84-bbae-64ddb7fd06aa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2590,7 +2625,7 @@ aama:ID0fefe898-7353-48df-bac0-e052479e5d58 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID35e6d62f-93cf-4a35-bb1f-4a9993b23f25 a aamas:Term ;
+aama:ID7229c24d-11c1-4241-8c94-977e3b0ddf81 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2606,7 +2641,7 @@ aama:ID35e6d62f-93cf-4a35-bb1f-4a9993b23f25 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDc1a8e76f-11de-451e-a153-ee1e194bf065 a aamas:Term ;
+aama:ID494d24bb-9623-4992-92cd-b07ca11bd418 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2622,7 +2657,7 @@ aama:IDc1a8e76f-11de-451e-a153-ee1e194bf065 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDaa0ee1e6-54e2-4606-9895-dfc52cb22375 a aamas:Term ;
+aama:IDf4ecd193-3bd4-4ab0-a670-39ffbfd9302e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2638,7 +2673,7 @@ aama:IDaa0ee1e6-54e2-4606-9895-dfc52cb22375 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDb9eb6c06-c3df-4443-a20d-447d6d20915b a aamas:Term ;
+aama:ID47847bb5-3518-4f79-82df-c84108253f80 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2654,7 +2689,7 @@ aama:IDb9eb6c06-c3df-4443-a20d-447d6d20915b a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDbb55022c-b359-4f22-a87c-dd485df29aac a aamas:Term ;
+aama:IDa431ed4c-05e6-4f39-8db2-482e86775845 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2670,7 +2705,7 @@ aama:IDbb55022c-b359-4f22-a87c-dd485df29aac a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf6ec6542-dcee-4d97-b113-450c85d35462 a aamas:Term ;
+aama:ID999f7f54-6a7e-439d-b894-ab939093de5f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2686,7 +2721,7 @@ aama:IDf6ec6542-dcee-4d97-b113-450c85d35462 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDfa0efe98-d821-4cbb-93ac-c72bde0f3c05 a aamas:Term ;
+aama:ID94593147-ddad-4411-b902-6ddc036cc430 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2702,7 +2737,7 @@ aama:IDfa0efe98-d821-4cbb-93ac-c72bde0f3c05 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID87dadfac-95c3-40b7-afbd-30977b9fa4d7 a aamas:Term ;
+aama:ID96c3722e-8e14-47f5-a7eb-77c079ae94f9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -2721,7 +2756,7 @@ aama:ID87dadfac-95c3-40b7-afbd-30977b9fa4d7 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA2Juss
 
-aama:ID5135d880-93ef-4f95-9b5b-97e8177aaf56 a aamas:Term ;
+aama:ID4ad5d8fa-7a54-4ed4-b331-1a7d08ae6333 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2737,7 +2772,7 @@ aama:ID5135d880-93ef-4f95-9b5b-97e8177aaf56 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID5bf42b07-0517-49d4-b2ac-cdea954a8e1a a aamas:Term ;
+aama:IDd4844351-9f9b-4a0f-82e8-0963e794dc66 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2753,7 +2788,7 @@ aama:ID5bf42b07-0517-49d4-b2ac-cdea954a8e1a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd8a9f7b7-4dba-4d0b-8c22-a9fc9bb46e5f a aamas:Term ;
+aama:IDd28c388a-7423-4e75-879a-3581d4ca87df a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2769,7 +2804,7 @@ aama:IDd8a9f7b7-4dba-4d0b-8c22-a9fc9bb46e5f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDc00321e2-3053-4743-b3b1-c93a043cc145 a aamas:Term ;
+aama:IDe5b644c1-a68e-432a-baf5-b7b336b8bb7b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2785,7 +2820,7 @@ aama:IDc00321e2-3053-4743-b3b1-c93a043cc145 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID8bf35728-075b-48d9-b61e-929ccf3b41ef a aamas:Term ;
+aama:ID2b0883c2-615e-48cb-9d3b-16e4136ac5b6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2801,7 +2836,7 @@ aama:ID8bf35728-075b-48d9-b61e-929ccf3b41ef a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID31e322f6-ddfe-4c31-8f68-3e647b502b2a a aamas:Term ;
+aama:IDe7e89a9f-2387-4be5-b98a-397e0e89e024 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2817,7 +2852,7 @@ aama:ID31e322f6-ddfe-4c31-8f68-3e647b502b2a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID19825e44-439b-4efe-8575-3d599edda876 a aamas:Term ;
+aama:ID83616e13-de54-42b0-85be-94ab5d26cf63 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2833,7 +2868,7 @@ aama:ID19825e44-439b-4efe-8575-3d599edda876 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID004ef378-e1de-4cb8-884a-3c32ba4d1509 a aamas:Term ;
+aama:ID71b4e2b6-dfd4-4db0-b087-535601354a6c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2849,7 +2884,7 @@ aama:ID004ef378-e1de-4cb8-884a-3c32ba4d1509 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID1bed4a8c-640e-4a40-865d-626b545fd609 a aamas:Term ;
+aama:IDad215273-ffb4-4519-b747-0928f0df8bb0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2865,7 +2900,7 @@ aama:ID1bed4a8c-640e-4a40-865d-626b545fd609 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID252254b1-bf7d-48ad-81b5-c46c8c8b3806 a aamas:Term ;
+aama:ID71fe4dad-508c-4838-bcc3-ee492afa0abb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -2884,7 +2919,7 @@ aama:ID252254b1-bf7d-48ad-81b5-c46c8c8b3806 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCWCBAPres
 
-aama:IDc00dd88e-9f3f-4449-adb4-7ff00a342cdb a aamas:Term ;
+aama:ID98728626-bf0d-4af2-b15a-4669cc795db5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2900,7 +2935,7 @@ aama:IDc00dd88e-9f3f-4449-adb4-7ff00a342cdb a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID88e56767-da71-417a-9971-df2ebec506ce a aamas:Term ;
+aama:IDe699fcfe-880e-4515-a8e9-a76fe61f9c57 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2916,7 +2951,7 @@ aama:ID88e56767-da71-417a-9971-df2ebec506ce a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf389e265-22b4-400f-a04e-f924c5ef1f01 a aamas:Term ;
+aama:ID851a549a-5d20-4880-b9b9-22bf560a2fe6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2932,7 +2967,7 @@ aama:IDf389e265-22b4-400f-a04e-f924c5ef1f01 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDaa8a4cca-eefe-4400-9771-b7c557c1f9c8 a aamas:Term ;
+aama:ID91a981b0-0fb3-456c-80a4-1e3ca9d28794 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2948,7 +2983,7 @@ aama:IDaa8a4cca-eefe-4400-9771-b7c557c1f9c8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd56caca3-11db-47bd-925a-efd9ead7ccd4 a aamas:Term ;
+aama:ID97332d84-6211-4a3f-9c6b-7bc461bdde8b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2964,7 +2999,7 @@ aama:IDd56caca3-11db-47bd-925a-efd9ead7ccd4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID2f1cbfd2-87b5-4821-a656-fe6111d01af8 a aamas:Term ;
+aama:ID68618942-ba56-498a-bba9-7993ab393133 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2980,7 +3015,7 @@ aama:ID2f1cbfd2-87b5-4821-a656-fe6111d01af8 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDafe54a72-8439-45a8-bcf6-c8662363dac4 a aamas:Term ;
+aama:ID59c481c2-9c66-492c-a8ba-def7b4764d1b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -2996,7 +3031,7 @@ aama:IDafe54a72-8439-45a8-bcf6-c8662363dac4 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDfa5f8c0e-18f9-4bce-8080-52f2837f821c a aamas:Term ;
+aama:IDcd40a7b8-fd81-4683-becb-55609f415acb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3012,7 +3047,7 @@ aama:IDfa5f8c0e-18f9-4bce-8080-52f2837f821c a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID5319f1ff-22f2-4172-bdd0-6b3304456685 a aamas:Term ;
+aama:ID6e9b2e09-e82b-4596-a0ca-65bbf9e4fb5a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3028,7 +3063,7 @@ aama:ID5319f1ff-22f2-4172-bdd0-6b3304456685 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID826a47dd-6738-41ed-9913-1eb751cfe41b a aamas:Term ;
+aama:ID46336ccb-15cb-4a4c-b363-a49266e72372 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3047,7 +3082,7 @@ aama:ID826a47dd-6738-41ed-9913-1eb751cfe41b a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCSPast
 
-aama:ID6c663031-7043-425c-bfe8-f51d53df5a3f a aamas:Term ;
+aama:IDf55dfa60-bfbc-4395-b310-49a4e3d3f668 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3062,7 +3097,7 @@ aama:ID6c663031-7043-425c-bfe8-f51d53df5a3f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID20a7a3a3-0471-4a86-a54d-9c08e6d644ec a aamas:Term ;
+aama:ID4287128d-5e67-44a4-8656-81ba801bdd24 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3077,7 +3112,7 @@ aama:ID20a7a3a3-0471-4a86-a54d-9c08e6d644ec a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDcf004570-1802-4d47-971c-d928a6e5c0fa a aamas:Term ;
+aama:ID2ac98ead-ab0e-4115-89ed-439628976af0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3092,7 +3127,7 @@ aama:IDcf004570-1802-4d47-971c-d928a6e5c0fa a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDc819a4f0-0f30-456f-a3f5-a8900501e370 a aamas:Term ;
+aama:ID1d536b8d-bb90-45b8-810d-12e694388f25 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3107,7 +3142,7 @@ aama:IDc819a4f0-0f30-456f-a3f5-a8900501e370 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID05e0401e-d2ff-4244-bbf5-df1e62297b49 a aamas:Term ;
+aama:ID42237222-b851-419b-bc51-1f643deda801 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3122,7 +3157,7 @@ aama:ID05e0401e-d2ff-4244-bbf5-df1e62297b49 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID16d4341d-49c1-40a2-ab96-6b9d49466cdd a aamas:Term ;
+aama:IDe00a6c3c-2257-405a-8ee8-7be4c258ec4c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3137,7 +3172,7 @@ aama:ID16d4341d-49c1-40a2-ab96-6b9d49466cdd a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDa004b12e-03a8-4786-9bb5-304a7f10a0f0 a aamas:Term ;
+aama:ID22811596-13ac-40d9-bf92-53759e0094e4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3152,7 +3187,7 @@ aama:IDa004b12e-03a8-4786-9bb5-304a7f10a0f0 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDcf74efe5-5bcf-4937-8eb9-7ca6b335d9ea a aamas:Term ;
+aama:IDd5490ac2-3c90-44ea-8c4f-228b302d25d5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3167,7 +3202,7 @@ aama:IDcf74efe5-5bcf-4937-8eb9-7ca6b335d9ea a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID6d68bc6e-4374-4e62-887b-17d656a80a1c a aamas:Term ;
+aama:IDe3412707-7b76-4d25-86a8-9098df01bedf a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3182,7 +3217,7 @@ aama:ID6d68bc6e-4374-4e62-887b-17d656a80a1c a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID4a7d21ae-a204-4e90-9cfc-3b6ede84e4c2 a aamas:Term ;
+aama:ID3a1506c6-795d-4b2b-b62b-5f60d0216eca a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -3200,7 +3235,7 @@ aama:ID4a7d21ae-a204-4e90-9cfc-3b6ede84e4c2 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCWCBAJuss
 
-aama:ID61f9b892-cf87-4864-9bce-9ec80a921f71 a aamas:Term ;
+aama:ID03ff8f91-2d65-47f3-abb9-ed8a4c0339fb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3216,7 +3251,7 @@ aama:ID61f9b892-cf87-4864-9bce-9ec80a921f71 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID9c1726aa-38cd-401d-a472-5a1c074cefdd a aamas:Term ;
+aama:ID754ae9b4-ed36-4043-a8a2-a876aaa2fa7c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3232,7 +3267,7 @@ aama:ID9c1726aa-38cd-401d-a472-5a1c074cefdd a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID1bf1c73f-ca1c-485e-a2e9-bf811ebb1714 a aamas:Term ;
+aama:IDe83dd7ca-bca5-41e9-8a9c-99bfaa8c1f0a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3248,7 +3283,7 @@ aama:ID1bf1c73f-ca1c-485e-a2e9-bf811ebb1714 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID9eebd95a-c8f5-4e91-b4e6-e46eaf279432 a aamas:Term ;
+aama:ID49214489-6c81-4653-ba10-9818e14ed69a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3264,7 +3299,7 @@ aama:ID9eebd95a-c8f5-4e91-b4e6-e46eaf279432 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID7ad93d79-1941-49f0-8b2e-59de2d3159db a aamas:Term ;
+aama:IDbb0bcf8e-5615-42a1-9dbc-b83ae0388839 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3280,7 +3315,7 @@ aama:ID7ad93d79-1941-49f0-8b2e-59de2d3159db a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDb767a907-c388-4cef-9fdb-98ff4415d744 a aamas:Term ;
+aama:IDd7b1c2c3-e2df-4bc1-a674-99a766d8fb5a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3296,7 +3331,7 @@ aama:IDb767a907-c388-4cef-9fdb-98ff4415d744 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID012b58fe-4ebb-4ba7-ac2d-e8767d1e6017 a aamas:Term ;
+aama:IDd73580fa-d2d9-41e9-93b2-d8e17ce10d62 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3312,7 +3347,7 @@ aama:ID012b58fe-4ebb-4ba7-ac2d-e8767d1e6017 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa23f225e-536e-4626-8d32-7895b7e0f528 a aamas:Term ;
+aama:ID51416bda-3960-451a-871f-57f79f128bf7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3328,7 +3363,7 @@ aama:IDa23f225e-536e-4626-8d32-7895b7e0f528 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID015d4c13-fee5-4436-bfd1-8859e85b59fa a aamas:Term ;
+aama:IDe98c490e-a3b5-4950-af7a-8dc09f45486b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3344,7 +3379,7 @@ aama:ID015d4c13-fee5-4436-bfd1-8859e85b59fa a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID9e138647-2a00-4351-bc9c-2881ea49ba55 a aamas:Term ;
+aama:IDdcfef50c-bd33-4c04-958c-ef8ce47e339b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -3363,7 +3398,7 @@ aama:ID9e138647-2a00-4351-bc9c-2881ea49ba55 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA2Imprtv
 
-aama:ID91b4f222-1862-498e-81cf-e4d81d596bb8 a aamas:Term ;
+aama:ID71f221eb-c039-4c3e-b61f-9b54fdc261f0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3379,7 +3414,7 @@ aama:ID91b4f222-1862-498e-81cf-e4d81d596bb8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID4a349cbd-f710-443e-a0aa-0a8685c6b135 a aamas:Term ;
+aama:ID7225b688-617a-4d62-997d-51c9e6461be6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3395,7 +3430,7 @@ aama:ID4a349cbd-f710-443e-a0aa-0a8685c6b135 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID03364be8-3fe5-4b1e-a2eb-0ce40e07637e a aamas:Term ;
+aama:IDed5e35d7-775e-43f1-88d2-5187913cfcfa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3411,7 +3446,7 @@ aama:ID03364be8-3fe5-4b1e-a2eb-0ce40e07637e a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDdc6f36ea-ac1a-41ab-a1ea-451a74545e40 a aamas:Term ;
+aama:ID4b984ba7-8ec4-4929-af31-aaad4b5a3d62 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3430,7 +3465,7 @@ aama:IDdc6f36ea-ac1a-41ab-a1ea-451a74545e40 a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA1Imprtv
 
-aama:IDcf70b5e9-03cb-42cd-8616-5e463460a6ed a aamas:Term ;
+aama:IDc24663d0-8167-4205-9bac-ec87396496d5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -3446,7 +3481,7 @@ aama:IDcf70b5e9-03cb-42cd-8616-5e463460a6ed a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe7bc9f1e-6fbb-4f73-9fa0-db783665a4f9 a aamas:Term ;
+aama:IDcf7738e6-0f24-4e0a-b1c2-588ae994e9ec a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -3462,7 +3497,7 @@ aama:IDe7bc9f1e-6fbb-4f73-9fa0-db783665a4f9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID1e4451ce-2ba5-47bc-a4b7-79a956f4d892 a aamas:Term ;
+aama:ID3f7d0a5c-1b85-475d-9ce6-b1bf55bfc185 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -3478,7 +3513,7 @@ aama:ID1e4451ce-2ba5-47bc-a4b7-79a956f4d892 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf79c9d06-3d2e-4240-93da-f6beba73adcb a aamas:Term ;
+aama:IDcc8b254f-2976-4a40-b7eb-b8a9ce35c6c1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -3497,7 +3532,7 @@ aama:IDf79c9d06-3d2e-4240-93da-f6beba73adcb a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCTImprtv
 
-aama:ID80d3aa4d-b23a-414c-9d43-02644b3909fe a aamas:Term ;
+aama:IDd99335e9-19bb-4f21-81a7-0b96927da01b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -3512,7 +3547,7 @@ aama:ID80d3aa4d-b23a-414c-9d43-02644b3909fe a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf28d571b-829e-4f19-b333-d8ac7898567c a aamas:Term ;
+aama:ID063bfd10-810c-4ce6-b829-e4995db671f7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -3527,7 +3562,7 @@ aama:IDf28d571b-829e-4f19-b333-d8ac7898567c a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID6a0e4ac8-ebe1-403b-a430-71e793de3432 a aamas:Term ;
+aama:ID064469d6-803d-43f7-8594-f25f7baa9942 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -3542,7 +3577,7 @@ aama:ID6a0e4ac8-ebe1-403b-a430-71e793de3432 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID497262a4-5a92-48aa-bf24-4133ebd380c2 a aamas:Term ;
+aama:ID301363d5-f1ce-4938-a7b2-57fef9bc2a79 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -3560,7 +3595,7 @@ aama:ID497262a4-5a92-48aa-bf24-4133ebd380c2 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCYCBAJuss
 
-aama:ID8dfd7935-0e3f-4ee8-9aba-5f75d109ffc6 a aamas:Term ;
+aama:IDd49ea870-2241-41bb-accc-b0554752ab16 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3576,7 +3611,7 @@ aama:ID8dfd7935-0e3f-4ee8-9aba-5f75d109ffc6 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDbe6de068-ba86-478b-b99c-9548e7c330ec a aamas:Term ;
+aama:IDf896d576-89e1-4447-86fc-664ad0a5fd5d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3592,7 +3627,7 @@ aama:IDbe6de068-ba86-478b-b99c-9548e7c330ec a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID695e42a7-4f28-4d3f-829e-c57a830c7ff9 a aamas:Term ;
+aama:IDcd04ba57-821b-41a9-9273-ec2c4a3dc73d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3608,7 +3643,7 @@ aama:ID695e42a7-4f28-4d3f-829e-c57a830c7ff9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID69cfeaf8-8048-457e-b274-988f9a602872 a aamas:Term ;
+aama:ID2fd42e09-b47d-4b02-8ffe-5ef884ea65e7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3624,7 +3659,7 @@ aama:ID69cfeaf8-8048-457e-b274-988f9a602872 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe5b757e7-8130-42b7-8be8-d6d0f2576acb a aamas:Term ;
+aama:ID542daf66-185e-45b3-bd55-976bf2899cb0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3640,7 +3675,7 @@ aama:IDe5b757e7-8130-42b7-8be8-d6d0f2576acb a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDdf51b27d-3dd5-4172-8e7c-691493478f04 a aamas:Term ;
+aama:IDe10ed0d4-1c21-4daf-a7e8-71de6d008cb2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3656,7 +3691,7 @@ aama:IDdf51b27d-3dd5-4172-8e7c-691493478f04 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDfc374140-a1b0-4f58-8723-82130e2bbd92 a aamas:Term ;
+aama:ID15327ce1-15b3-4832-8ed9-b2131dc140dd a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3672,7 +3707,7 @@ aama:IDfc374140-a1b0-4f58-8723-82130e2bbd92 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID51ebc639-4fdc-464c-83e9-485925b2ba77 a aamas:Term ;
+aama:ID7eeec6e4-5e1b-4884-88cf-b491934230b6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3688,7 +3723,7 @@ aama:ID51ebc639-4fdc-464c-83e9-485925b2ba77 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID0e0908d0-88ab-4089-9ee2-8fe6c6154f4b a aamas:Term ;
+aama:ID4287ae84-e39f-49cb-be4f-55d9c859089c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3704,7 +3739,7 @@ aama:ID0e0908d0-88ab-4089-9ee2-8fe6c6154f4b a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID2c9b38a0-0d6a-4ff6-8dd2-a0184e3bcf0b a aamas:Term ;
+aama:ID936adad5-de91-4bdc-992d-04c18d22c6bb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -3723,7 +3758,7 @@ aama:ID2c9b38a0-0d6a-4ff6-8dd2-a0184e3bcf0b a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA2Imprtv
 
-aama:ID6dfefcfb-0e91-4200-af89-c17b30829434 a aamas:Term ;
+aama:IDa7a1a8f9-c792-49b3-8fc7-7a1ce3138324 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -3739,7 +3774,7 @@ aama:ID6dfefcfb-0e91-4200-af89-c17b30829434 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa810e879-315a-4392-9d7d-58aa1f7661f9 a aamas:Term ;
+aama:ID44e35d0a-0f77-467a-8ca3-f6df18ddc3e6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -3755,7 +3790,7 @@ aama:IDa810e879-315a-4392-9d7d-58aa1f7661f9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID3e83d15a-3d3b-44ba-bd0f-4932a33e7897 a aamas:Term ;
+aama:ID4467b719-a2be-456e-b258-95893c00f5aa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -3771,7 +3806,7 @@ aama:ID3e83d15a-3d3b-44ba-bd0f-4932a33e7897 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDaae06b79-9d3b-4d8a-ae33-4c51c901d488 a aamas:Term ;
+aama:ID0d78d131-31aa-4f4a-be40-c92548475d00 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -3790,7 +3825,7 @@ aama:IDaae06b79-9d3b-4d8a-ae33-4c51c901d488 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA2Past
 
-aama:ID3f610517-b0c0-487d-8b07-70a243d6d0a5 a aamas:Term ;
+aama:IDab3932e0-2c4a-4fed-ad9f-e2cf803b2480 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3806,7 +3841,7 @@ aama:ID3f610517-b0c0-487d-8b07-70a243d6d0a5 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDa2a7d37d-a5b5-4883-aee5-c8194575bd49 a aamas:Term ;
+aama:ID05d9da42-89ad-42a3-b2a8-418f776c5718 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3822,7 +3857,7 @@ aama:IDa2a7d37d-a5b5-4883-aee5-c8194575bd49 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID6f4d7566-9da3-40f2-a1f9-c8ee4ead7b2b a aamas:Term ;
+aama:ID513354d9-88cd-47bc-a1f9-79782ebac4d9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3838,7 +3873,7 @@ aama:ID6f4d7566-9da3-40f2-a1f9-c8ee4ead7b2b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID1877e5e2-fa3f-44e2-97e4-4e94562dc17a a aamas:Term ;
+aama:ID68f31049-8c93-4022-af82-19dbfe4e9a8d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3854,7 +3889,7 @@ aama:ID1877e5e2-fa3f-44e2-97e4-4e94562dc17a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID31600aa5-2e10-4cc7-8900-ee598c8cccbb a aamas:Term ;
+aama:IDf2837cb5-d659-47d8-b1f3-018266c5d124 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3870,7 +3905,7 @@ aama:ID31600aa5-2e10-4cc7-8900-ee598c8cccbb a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID71861275-6ea5-45a3-9212-d7fb6f6fe3d2 a aamas:Term ;
+aama:ID09184e7d-d7ff-4138-b789-11a187a6c157 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3886,7 +3921,7 @@ aama:ID71861275-6ea5-45a3-9212-d7fb6f6fe3d2 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDb42f4029-10ea-4500-8e34-65b9489f9a30 a aamas:Term ;
+aama:IDa9c99615-7bd3-4341-ae42-d233e87c6523 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3902,7 +3937,7 @@ aama:IDb42f4029-10ea-4500-8e34-65b9489f9a30 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe2728938-fe98-4e05-9a66-c6347aab9045 a aamas:Term ;
+aama:IDfc8f73c0-45ae-4244-a897-dabe81f91c02 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3918,7 +3953,7 @@ aama:IDe2728938-fe98-4e05-9a66-c6347aab9045 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID87374543-ab17-4782-a964-018fbdc792e1 a aamas:Term ;
+aama:ID2bab5a3d-74af-4dee-a9e5-d0d31cd3a3fd a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3934,7 +3969,7 @@ aama:ID87374543-ab17-4782-a964-018fbdc792e1 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID74946527-1fd3-4c6d-bf9d-268ebdcd21f0 a aamas:Term ;
+aama:ID65f9f178-9559-4b06-bc0f-b1efc26236c9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -3953,7 +3988,7 @@ aama:ID74946527-1fd3-4c6d-bf9d-268ebdcd21f0 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA2Past
 
-aama:ID06a8fcd9-d5f2-41aa-bfb9-9531efa77e34 a aamas:Term ;
+aama:ID80eddb5b-ffe7-4163-a4b8-619001832e77 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -3969,7 +4004,7 @@ aama:ID06a8fcd9-d5f2-41aa-bfb9-9531efa77e34 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID6f841d69-1716-4427-bc71-60abb52244df a aamas:Term ;
+aama:ID35957ec6-452b-4082-967b-9c12d68efebb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -3985,7 +4020,7 @@ aama:ID6f841d69-1716-4427-bc71-60abb52244df a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID28e66c67-0a38-4b23-a8e8-7f40d9ce56f9 a aamas:Term ;
+aama:ID4f6b85d2-c197-446b-a93c-2d2825baa3f4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4001,7 +4036,7 @@ aama:ID28e66c67-0a38-4b23-a8e8-7f40d9ce56f9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID23491cf2-6fac-4644-a135-24fb487622f4 a aamas:Term ;
+aama:IDe339a23f-b299-4cd2-81c0-fed08673c6e2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4017,7 +4052,7 @@ aama:ID23491cf2-6fac-4644-a135-24fb487622f4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe56f4fe1-6ffe-4b35-a038-e56eda5c40e8 a aamas:Term ;
+aama:IDa746a45f-82bf-4447-a311-6056a37d2504 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4033,7 +4068,7 @@ aama:IDe56f4fe1-6ffe-4b35-a038-e56eda5c40e8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDe09b7fd5-7412-4a1c-8601-8fb165dd04b7 a aamas:Term ;
+aama:ID995625e6-82c6-421b-8792-284dd27aaae6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4049,7 +4084,7 @@ aama:IDe09b7fd5-7412-4a1c-8601-8fb165dd04b7 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDf2ff20be-a263-4a5b-a894-6d2ee0e50ee8 a aamas:Term ;
+aama:ID1bf2e221-6baf-4403-ac40-7acff1ab92ef a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4065,7 +4100,7 @@ aama:IDf2ff20be-a263-4a5b-a894-6d2ee0e50ee8 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDfd4ee97a-11da-4f10-b93e-f5466f402250 a aamas:Term ;
+aama:ID1724635e-0cd3-4842-9e99-215af2b27df8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4081,7 +4116,7 @@ aama:IDfd4ee97a-11da-4f10-b93e-f5466f402250 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDe9a66d3f-b3dc-4721-991d-5e545d96d2d8 a aamas:Term ;
+aama:IDc81c0ef1-00fd-480c-9ccb-09d7edd2ccf1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4097,7 +4132,7 @@ aama:IDe9a66d3f-b3dc-4721-991d-5e545d96d2d8 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID85e465ca-5ba8-45c1-a404-a432f6948e5d a aamas:Term ;
+aama:IDf9745ed7-de68-45a0-ba51-a0d0758d3306 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -4116,7 +4151,7 @@ aama:ID85e465ca-5ba8-45c1-a404-a432f6948e5d a aamas:Term ;
 
 #TERMCLUSTER: geez-VCYCBAPast
 
-aama:IDdc3e4536-9f9e-4c64-a29e-94c4e9796edf a aamas:Term ;
+aama:IDa16cbeac-fae4-4ff6-aeda-df73bb2b3d9d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4132,7 +4167,7 @@ aama:IDdc3e4536-9f9e-4c64-a29e-94c4e9796edf a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID9cd95bba-ba0f-4035-8fcb-ded3bbbcf396 a aamas:Term ;
+aama:IDc9bbdac9-0f8e-440e-82c5-78d454ca84d0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4148,7 +4183,7 @@ aama:ID9cd95bba-ba0f-4035-8fcb-ded3bbbcf396 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID8a0d9da3-f630-4a8c-beb4-14a6bc96fad4 a aamas:Term ;
+aama:ID0da287b0-bb9e-49ee-8866-fb582f0e89b5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4164,7 +4199,7 @@ aama:ID8a0d9da3-f630-4a8c-beb4-14a6bc96fad4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDc687a6a1-6934-443c-8138-af119d531fa4 a aamas:Term ;
+aama:IDf8b1cbef-d2cd-42de-bd33-b36a62ac2990 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4180,7 +4215,7 @@ aama:IDc687a6a1-6934-443c-8138-af119d531fa4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID201337cb-da8c-428d-a5bb-662e6d84b17a a aamas:Term ;
+aama:IDdaa08f3d-669e-4355-aa07-37c3527e5716 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4196,7 +4231,7 @@ aama:ID201337cb-da8c-428d-a5bb-662e6d84b17a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID4c90502e-1331-4198-a824-18980839a5cb a aamas:Term ;
+aama:ID39ac3124-1b06-4fd7-97be-9cfc24d9a374 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4212,7 +4247,7 @@ aama:ID4c90502e-1331-4198-a824-18980839a5cb a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID26ef63f6-2f0d-4bab-882c-b0398c4070b2 a aamas:Term ;
+aama:IDf6e1a81f-059b-4e57-8640-6388c4697cee a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4228,7 +4263,7 @@ aama:ID26ef63f6-2f0d-4bab-882c-b0398c4070b2 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDdf18a874-0f85-4ef2-835a-31dabe925c86 a aamas:Term ;
+aama:ID838c0571-55ef-4556-8dce-ea6edbcc9922 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4244,7 +4279,7 @@ aama:IDdf18a874-0f85-4ef2-835a-31dabe925c86 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDba81fc45-7941-45a3-8174-90fb028e5785 a aamas:Term ;
+aama:ID555bb142-5668-454f-b9ba-68f2f8150be0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4260,7 +4295,7 @@ aama:IDba81fc45-7941-45a3-8174-90fb028e5785 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID90d81b97-f9e3-4ff6-9639-50882bea27a0 a aamas:Term ;
+aama:ID5ec0cf19-ae92-46bc-833f-d863b9470d65 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4279,7 +4314,7 @@ aama:ID90d81b97-f9e3-4ff6-9639-50882bea27a0 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCTPast
 
-aama:ID2e50886b-1daf-4eb6-90ab-a841bcb37261 a aamas:Term ;
+aama:ID125674a7-c808-4ed4-9294-183c40590e0d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4294,7 +4329,7 @@ aama:ID2e50886b-1daf-4eb6-90ab-a841bcb37261 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDa295e183-2c55-4f56-9988-15736a28cc86 a aamas:Term ;
+aama:ID5ed3af60-6fe5-4838-ae79-bc1dbebab08d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4309,7 +4344,7 @@ aama:IDa295e183-2c55-4f56-9988-15736a28cc86 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID40f48c2b-371a-4c06-8ace-983c6177d5c3 a aamas:Term ;
+aama:IDb5f8145d-ddc7-48ba-89de-4bcb8c25ca3a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4324,7 +4359,7 @@ aama:ID40f48c2b-371a-4c06-8ace-983c6177d5c3 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDf6a16acf-9381-4f27-97b2-e74ea6de5b64 a aamas:Term ;
+aama:IDb23e62aa-1ec1-4fda-91af-da9580933248 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4339,7 +4374,7 @@ aama:IDf6a16acf-9381-4f27-97b2-e74ea6de5b64 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID1007de49-5e0a-4684-87f8-863fbdba2318 a aamas:Term ;
+aama:ID95b186dd-9e80-441e-be43-34e1a4a7d25d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4354,7 +4389,7 @@ aama:ID1007de49-5e0a-4684-87f8-863fbdba2318 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID01356bd1-7e20-47f0-957b-042f37c5f521 a aamas:Term ;
+aama:IDef6145e1-cdfa-42d5-b89c-8f6fdc62d394 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4369,7 +4404,7 @@ aama:ID01356bd1-7e20-47f0-957b-042f37c5f521 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID503735de-7330-4881-af6a-5154babebf90 a aamas:Term ;
+aama:ID3b8708a7-f0f6-4f1b-bbc6-3a401b55e11d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4384,7 +4419,7 @@ aama:ID503735de-7330-4881-af6a-5154babebf90 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDfe862c79-f770-4326-a18d-0c820d24d01a a aamas:Term ;
+aama:ID2bf915a8-432c-4956-9338-3e8bef3e9985 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4399,7 +4434,7 @@ aama:IDfe862c79-f770-4326-a18d-0c820d24d01a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDe2216241-8e17-4ae4-ab6f-150ce9b7b4d9 a aamas:Term ;
+aama:ID453fdf16-f701-4b9f-ba90-7d938335195d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4414,7 +4449,7 @@ aama:IDe2216241-8e17-4ae4-ab6f-150ce9b7b4d9 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID34e261f5-ca5a-41a8-bd55-9dc2b2cc5819 a aamas:Term ;
+aama:ID3b7bd94a-c70e-4d05-b3c3-146b2d3ba012 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -4432,7 +4467,7 @@ aama:ID34e261f5-ca5a-41a8-bd55-9dc2b2cc5819 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA1Pres
 
-aama:ID8a61b2a0-8808-4c7e-ba3b-005c69fbf569 a aamas:Term ;
+aama:ID910e2c7b-8503-4fce-971d-ed329dae6f2c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4448,7 +4483,7 @@ aama:ID8a61b2a0-8808-4c7e-ba3b-005c69fbf569 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID411a793b-7375-4566-a323-e2042e79b416 a aamas:Term ;
+aama:IDf43ea183-93b2-4840-b9fd-336e206b1df9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4464,7 +4499,7 @@ aama:ID411a793b-7375-4566-a323-e2042e79b416 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDb0282d98-5426-4fb1-abd9-a5f36ed7de0c a aamas:Term ;
+aama:ID6ebc869f-a9fd-4896-8633-bdf44dcf555d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4480,7 +4515,7 @@ aama:IDb0282d98-5426-4fb1-abd9-a5f36ed7de0c a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID381b0793-59a8-4202-a634-625d28e2825e a aamas:Term ;
+aama:IDca128a91-b98c-4e9f-b6d6-592fcf1999dc a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4496,7 +4531,7 @@ aama:ID381b0793-59a8-4202-a634-625d28e2825e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID6efdac70-531c-44d2-8810-e271ed022c32 a aamas:Term ;
+aama:ID55f4175a-9815-4cf9-8c1f-68f5716d9195 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4512,7 +4547,7 @@ aama:ID6efdac70-531c-44d2-8810-e271ed022c32 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDcb057659-7ab5-4e60-abf8-573fe8574f6d a aamas:Term ;
+aama:IDaf592f95-034b-41df-a798-3386480cb731 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4528,7 +4563,7 @@ aama:IDcb057659-7ab5-4e60-abf8-573fe8574f6d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID31e89496-1f9e-4092-b07f-b12ff448e335 a aamas:Term ;
+aama:IDbf3583f4-0988-43e0-a264-229e559eeedb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4544,7 +4579,7 @@ aama:ID31e89496-1f9e-4092-b07f-b12ff448e335 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID79828f7b-d4ad-4f74-a0ee-e8b2f5410c8c a aamas:Term ;
+aama:ID3cbf2a44-e2af-4335-8c37-500a6ad71bc3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4560,7 +4595,7 @@ aama:ID79828f7b-d4ad-4f74-a0ee-e8b2f5410c8c a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID942aba33-d609-4ccb-bc75-a84061a103dc a aamas:Term ;
+aama:ID1b7dffe5-5d03-4ccb-8607-8f7d33237fd2 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4576,7 +4611,7 @@ aama:ID942aba33-d609-4ccb-bc75-a84061a103dc a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID6ba2fe45-b957-41ce-8280-a66abfb6f496 a aamas:Term ;
+aama:IDe489814c-8050-4def-83ce-14ccc904ef07 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -4595,7 +4630,7 @@ aama:ID6ba2fe45-b957-41ce-8280-a66abfb6f496 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA2Juss
 
-aama:IDe594cd11-4494-4160-aaba-f24ae9d37ba0 a aamas:Term ;
+aama:ID49ccb7ab-4b92-4258-8e5f-76864b638516 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4611,7 +4646,7 @@ aama:IDe594cd11-4494-4160-aaba-f24ae9d37ba0 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID8b43a6e0-aa77-4984-874b-46d36ac2787f a aamas:Term ;
+aama:IDe67b0e09-4afb-453b-9ce2-f2c00d40701c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4627,7 +4662,7 @@ aama:ID8b43a6e0-aa77-4984-874b-46d36ac2787f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID6cb89983-dd45-4091-875b-21d460c18ae8 a aamas:Term ;
+aama:ID2816dbdc-70d9-44e2-9f18-1fc08141b8a7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4643,7 +4678,7 @@ aama:ID6cb89983-dd45-4091-875b-21d460c18ae8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID098c57bf-9258-4248-bbab-5d8ce2eaedb3 a aamas:Term ;
+aama:IDa7c7fa72-6d1b-463e-9c8a-5d5c0954be1f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4659,7 +4694,7 @@ aama:ID098c57bf-9258-4248-bbab-5d8ce2eaedb3 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID0b6eec2f-faa8-4a28-b8e1-88460f0cc51d a aamas:Term ;
+aama:ID9dc25243-605a-49ab-b4b6-c25c889cfc86 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4675,7 +4710,7 @@ aama:ID0b6eec2f-faa8-4a28-b8e1-88460f0cc51d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID3c13c448-7f82-4eb1-969f-5f80b07c751d a aamas:Term ;
+aama:ID053dc8cd-9744-44a1-96b8-8737b44182c0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4691,7 +4726,7 @@ aama:ID3c13c448-7f82-4eb1-969f-5f80b07c751d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID3cc77661-84ed-4b9f-83e7-89bd36d66d8f a aamas:Term ;
+aama:ID2cf658f5-b6f8-4460-8769-3bba8bb8d939 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4707,7 +4742,7 @@ aama:ID3cc77661-84ed-4b9f-83e7-89bd36d66d8f a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID0b2475c4-11e1-4b10-9397-e8da87600647 a aamas:Term ;
+aama:ID25d54dce-6493-4458-aada-6378e6332e63 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4723,7 +4758,7 @@ aama:ID0b2475c4-11e1-4b10-9397-e8da87600647 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID45f58db2-2054-4859-b5a1-99d0187d665d a aamas:Term ;
+aama:ID332763dc-0c74-4382-b98f-a0b5119f1938 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4739,7 +4774,7 @@ aama:ID45f58db2-2054-4859-b5a1-99d0187d665d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDf8a74398-9de9-49c4-bac4-d24c73f3eba0 a aamas:Term ;
+aama:IDeab1f4a2-db3b-4df7-99d8-3ffab9f0d26b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -4758,7 +4793,7 @@ aama:IDf8a74398-9de9-49c4-bac4-d24c73f3eba0 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA1Imprtv
 
-aama:ID4a273b66-a161-4b48-af94-b8558b022519 a aamas:Term ;
+aama:IDb590cb7b-8688-454d-8e34-48fd921f17cb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -4774,7 +4809,7 @@ aama:ID4a273b66-a161-4b48-af94-b8558b022519 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDcc7128c2-2ec1-4b03-86c2-c3470af6d0bb a aamas:Term ;
+aama:ID7f52354e-b7bb-4e8f-8dc0-36740d9a2024 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -4790,7 +4825,7 @@ aama:IDcc7128c2-2ec1-4b03-86c2-c3470af6d0bb a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDe2aec1d0-d15c-48a2-8d66-f11f7ff8d8a4 a aamas:Term ;
+aama:ID9b683fe7-6b82-4b34-acec-f10cf8808278 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -4806,7 +4841,7 @@ aama:IDe2aec1d0-d15c-48a2-8d66-f11f7ff8d8a4 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID79fce912-07ef-400d-8a2e-b66bfa9ac4d6 a aamas:Term ;
+aama:ID3030fbd8-aed9-4ded-97ec-80f3d2b568a6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -4825,7 +4860,7 @@ aama:ID79fce912-07ef-400d-8a2e-b66bfa9ac4d6 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCYCBAPres
 
-aama:ID21ae9d36-286d-4eec-88d0-0e4b97ff9e42 a aamas:Term ;
+aama:IDfce34903-c13f-4f29-ad16-0e14bd8c2601 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4841,7 +4876,7 @@ aama:ID21ae9d36-286d-4eec-88d0-0e4b97ff9e42 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID96be73c1-d360-4c4d-90ca-a28e322096b5 a aamas:Term ;
+aama:ID0d19d046-d08d-4f33-96ef-dcec5c00d775 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4857,7 +4892,7 @@ aama:ID96be73c1-d360-4c4d-90ca-a28e322096b5 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID45573261-fc24-4437-bf68-db8ac2d0195b a aamas:Term ;
+aama:ID9983de42-a332-40ba-8dea-3509e46f4035 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4873,7 +4908,7 @@ aama:ID45573261-fc24-4437-bf68-db8ac2d0195b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID0067ee22-2e22-4066-b7b5-1950051690e2 a aamas:Term ;
+aama:ID898c5252-e864-484e-95eb-d1eab7ba6416 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4889,7 +4924,7 @@ aama:ID0067ee22-2e22-4066-b7b5-1950051690e2 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID15662451-2135-477c-bf6d-3a8f3bb2bf91 a aamas:Term ;
+aama:ID5bf8eef4-4872-4686-b4a4-6b620f5563e3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4905,7 +4940,7 @@ aama:ID15662451-2135-477c-bf6d-3a8f3bb2bf91 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID07ef8c3e-aff8-44d1-84d1-c525bdca81e1 a aamas:Term ;
+aama:ID5ce87f3e-7349-44bf-8143-0cbeb8990d75 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4921,7 +4956,7 @@ aama:ID07ef8c3e-aff8-44d1-84d1-c525bdca81e1 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDe41b14f4-e722-481b-9ce6-7d24354556ce a aamas:Term ;
+aama:ID6ea86473-097f-4bae-bd27-74d3aefa6d7b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4937,7 +4972,7 @@ aama:IDe41b14f4-e722-481b-9ce6-7d24354556ce a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID8bfe351f-23cf-4e60-9b78-15f1843b299e a aamas:Term ;
+aama:ID93c9137d-7ea4-4f6f-87e9-c9de2ca49844 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4953,7 +4988,7 @@ aama:ID8bfe351f-23cf-4e60-9b78-15f1843b299e a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDb0e3f581-4f82-4d2d-8af2-bc4a882d13df a aamas:Term ;
+aama:IDab4e10cc-af3d-4504-8e1b-d7389157ed2a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4969,7 +5004,7 @@ aama:IDb0e3f581-4f82-4d2d-8af2-bc4a882d13df a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID9e55d0b6-3024-44fe-ae82-d9465d97eb7c a aamas:Term ;
+aama:ID6404c2d4-e6d9-43a4-8ca3-9c6e51b7e6ac a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-kydB ;
@@ -4988,7 +5023,7 @@ aama:ID9e55d0b6-3024-44fe-ae82-d9465d97eb7c a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA2Past
 
-aama:IDbb6bc212-8ff8-444f-8f2b-2cce6e2ddd43 a aamas:Term ;
+aama:ID5f6e2f50-c97d-480e-a8b6-7d13ec8b2439 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5004,7 +5039,7 @@ aama:IDbb6bc212-8ff8-444f-8f2b-2cce6e2ddd43 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID5fab2308-edde-403b-92cd-964c624ac604 a aamas:Term ;
+aama:IDccb3ddeb-9dba-49b5-a793-dc4cf01f1fd0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5020,7 +5055,7 @@ aama:ID5fab2308-edde-403b-92cd-964c624ac604 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDcc228679-b1e4-421d-a429-b2d387971dde a aamas:Term ;
+aama:ID287f199e-522a-456b-adc8-488edd94cac9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5036,7 +5071,7 @@ aama:IDcc228679-b1e4-421d-a429-b2d387971dde a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID25e5f963-c6c2-488f-a32b-5bb0e659e7a1 a aamas:Term ;
+aama:ID3937ef78-7a93-4c07-a778-e9a826e05509 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5052,7 +5087,7 @@ aama:ID25e5f963-c6c2-488f-a32b-5bb0e659e7a1 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID2555e186-edf4-4f8c-973c-994291f42f4a a aamas:Term ;
+aama:IDe4dca1fb-ff5b-4c94-86d4-157cd88dd1df a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5068,7 +5103,7 @@ aama:ID2555e186-edf4-4f8c-973c-994291f42f4a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDfa57e303-67fc-40dc-b673-3723eba5dd96 a aamas:Term ;
+aama:IDd14e5892-607b-4f8c-a9e7-cad377c48b14 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5084,7 +5119,7 @@ aama:IDfa57e303-67fc-40dc-b673-3723eba5dd96 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID41345366-886c-4fd6-9458-70313d77048f a aamas:Term ;
+aama:ID5821b09e-3aae-4d40-bcfa-89b505b3f9a6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5100,7 +5135,7 @@ aama:ID41345366-886c-4fd6-9458-70313d77048f a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDc4f7d78e-040a-4913-ab6c-1ee55fdfbd22 a aamas:Term ;
+aama:ID2991daf1-3a54-4719-9d20-930bb7fdb84d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5116,7 +5151,7 @@ aama:IDc4f7d78e-040a-4913-ab6c-1ee55fdfbd22 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID7b7a8801-5e61-4463-a7fc-992690e1597c a aamas:Term ;
+aama:ID818534c5-fd3f-4c08-b769-98298788effa a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5132,7 +5167,7 @@ aama:ID7b7a8801-5e61-4463-a7fc-992690e1597c a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID33ded8a8-8d6c-4d4c-99a3-209bd01e7663 a aamas:Term ;
+aama:ID5546ca70-1476-41a7-ac88-f6c90bae9db6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wdqB ;
@@ -5151,7 +5186,7 @@ aama:ID33ded8a8-8d6c-4d4c-99a3-209bd01e7663 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA1Juss
 
-aama:IDd082bab7-35fe-45e9-a78f-89572cebfbd0 a aamas:Term ;
+aama:ID1438178d-05eb-4b8b-a69a-d13c4a51b68f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5167,7 +5202,7 @@ aama:IDd082bab7-35fe-45e9-a78f-89572cebfbd0 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID9eac576f-e8e0-4143-b19a-48ab28ce5fad a aamas:Term ;
+aama:ID7e481d2f-830e-4a01-ab26-ed6dd399cd4a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5183,7 +5218,7 @@ aama:ID9eac576f-e8e0-4143-b19a-48ab28ce5fad a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID22d87f37-2d61-40ac-acd4-f5c8c4ac5b6a a aamas:Term ;
+aama:IDab0a5c7e-ec8b-497b-a0e4-1fde4a9d7802 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5199,7 +5234,7 @@ aama:ID22d87f37-2d61-40ac-acd4-f5c8c4ac5b6a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID8998218e-a1a5-4dee-be24-54945e989c6f a aamas:Term ;
+aama:ID5ae658c7-2f19-4363-8e9a-66cefa038146 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5215,7 +5250,7 @@ aama:ID8998218e-a1a5-4dee-be24-54945e989c6f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID4dc3bb2e-a8ac-4a84-93be-de5a583ad3e6 a aamas:Term ;
+aama:ID775ad269-746b-49a1-8ae0-ea492728076d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5231,7 +5266,7 @@ aama:ID4dc3bb2e-a8ac-4a84-93be-de5a583ad3e6 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDb28b6d3d-2a0e-4c37-882f-f399f31aeb08 a aamas:Term ;
+aama:IDf9b93c55-5e76-49eb-b3ce-3031234ece05 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5247,7 +5282,7 @@ aama:IDb28b6d3d-2a0e-4c37-882f-f399f31aeb08 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID90e57e50-5708-4735-926c-af3a28f637fb a aamas:Term ;
+aama:ID55b7fdb9-6333-44d3-bc41-705c4d01c98e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5263,7 +5298,7 @@ aama:ID90e57e50-5708-4735-926c-af3a28f637fb a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID20d6577a-702f-45d6-a3b0-df68251837d7 a aamas:Term ;
+aama:IDa732330a-b1ed-4dcf-8db6-406dce215dae a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5279,7 +5314,7 @@ aama:ID20d6577a-702f-45d6-a3b0-df68251837d7 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID4faa78f4-5e83-432f-b31a-abf7dc069dae a aamas:Term ;
+aama:ID3e73e85c-1828-40a8-ab90-af30294b0521 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5295,7 +5330,7 @@ aama:ID4faa78f4-5e83-432f-b31a-abf7dc069dae a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID5470cb63-4b8d-4afd-a50c-3ced892d0eb1 a aamas:Term ;
+aama:IDc1cc0a56-0fee-4897-b777-a417a6d65e3e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -5314,7 +5349,7 @@ aama:ID5470cb63-4b8d-4afd-a50c-3ced892d0eb1 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA1Juss
 
-aama:IDa6248482-2a8f-4bd5-9883-d7b09b54f8d3 a aamas:Term ;
+aama:ID416680cb-79c1-4be9-82af-13a94be26e67 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5330,7 +5365,7 @@ aama:IDa6248482-2a8f-4bd5-9883-d7b09b54f8d3 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDe5f70e39-6397-43b6-badd-3ad0cf63519c a aamas:Term ;
+aama:IDa7839c5a-517d-4359-943c-3010d0e580ad a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5346,7 +5381,7 @@ aama:IDe5f70e39-6397-43b6-badd-3ad0cf63519c a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID36746d73-406b-4263-8723-777218aeaf8a a aamas:Term ;
+aama:IDddea61ab-a435-4385-a22f-d3a58f1c62a0 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5362,7 +5397,7 @@ aama:ID36746d73-406b-4263-8723-777218aeaf8a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID4699e2de-03b3-45f5-80ac-101b4dbec829 a aamas:Term ;
+aama:ID9cf80039-b2fe-4bfe-822b-a4c1a290ef3e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5378,7 +5413,7 @@ aama:ID4699e2de-03b3-45f5-80ac-101b4dbec829 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID66cf998b-2f2d-4ff5-976b-ffaea450a62a a aamas:Term ;
+aama:ID682f0584-715b-459f-8afc-4129eee26531 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5394,7 +5429,7 @@ aama:ID66cf998b-2f2d-4ff5-976b-ffaea450a62a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID9732ec90-0a98-4425-ae4c-2da82cd5135d a aamas:Term ;
+aama:IDaac07c5c-1a72-4082-af40-50fa94677e93 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5410,7 +5445,7 @@ aama:ID9732ec90-0a98-4425-ae4c-2da82cd5135d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID02f4e609-1a81-464c-b057-381951d632cd a aamas:Term ;
+aama:ID0c09ea4b-f5d9-444e-887f-ae4d5b83b653 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5426,7 +5461,7 @@ aama:ID02f4e609-1a81-464c-b057-381951d632cd a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID525c2cfc-fc25-4799-af04-bcfd0a3d4b10 a aamas:Term ;
+aama:ID567ac7c8-0014-463a-b7c6-ef002e5c3a32 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5442,7 +5477,7 @@ aama:ID525c2cfc-fc25-4799-af04-bcfd0a3d4b10 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID7e3ff52b-2a30-45c9-be43-a98762d1a5c1 a aamas:Term ;
+aama:IDf9935d12-f497-4e2a-bd40-8d869c86bf7f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5458,7 +5493,7 @@ aama:ID7e3ff52b-2a30-45c9-be43-a98762d1a5c1 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDca03ed33-48e7-4962-b3dd-3e781b17299e a aamas:Term ;
+aama:ID81a0255c-bc39-4c56-80db-d8ae1613d438 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -5477,7 +5512,7 @@ aama:IDca03ed33-48e7-4962-b3dd-3e781b17299e a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA2Pres
 
-aama:ID32628dbb-d597-40b8-8ac8-2f95d9e5a081 a aamas:Term ;
+aama:IDf73a5c48-b26f-4d82-9ab2-310726a8faa8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5493,7 +5528,7 @@ aama:ID32628dbb-d597-40b8-8ac8-2f95d9e5a081 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID47d66e93-518f-4af8-9f3f-6560fc109acf a aamas:Term ;
+aama:IDc8bc72b0-0854-454a-8817-e711f72c6fbe a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5509,7 +5544,7 @@ aama:ID47d66e93-518f-4af8-9f3f-6560fc109acf a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID00411902-6b9b-4520-9edd-dc85fb786f0e a aamas:Term ;
+aama:IDe8c62b2b-593c-409c-ade6-f26d4a4b01b5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5525,7 +5560,7 @@ aama:ID00411902-6b9b-4520-9edd-dc85fb786f0e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID4a9e094a-c107-4773-80ed-8dec6201eb0d a aamas:Term ;
+aama:ID14169674-545f-4bba-8878-82c032cac533 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5541,7 +5576,7 @@ aama:ID4a9e094a-c107-4773-80ed-8dec6201eb0d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID1f49cbaa-2010-4f25-be89-dc6485441c7a a aamas:Term ;
+aama:IDb2e73f61-935d-42bb-8baa-4ae10570f2ce a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5557,7 +5592,7 @@ aama:ID1f49cbaa-2010-4f25-be89-dc6485441c7a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID331b4db3-28d3-4b00-b030-0d7f18d9553a a aamas:Term ;
+aama:ID74f1348e-bc6c-4191-9cc8-5799cbce9d91 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5573,7 +5608,7 @@ aama:ID331b4db3-28d3-4b00-b030-0d7f18d9553a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID80327d3d-c90c-44cb-b0f2-4265937138e1 a aamas:Term ;
+aama:ID17b05b61-804c-4b4c-8526-81a62b56e43b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5589,7 +5624,7 @@ aama:ID80327d3d-c90c-44cb-b0f2-4265937138e1 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID67642c62-3902-429b-bcf9-a0bb3e31e3df a aamas:Term ;
+aama:ID75a9ebaa-2cbb-442d-97ef-6d014625743f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5605,7 +5640,7 @@ aama:ID67642c62-3902-429b-bcf9-a0bb3e31e3df a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID69dd6d34-82cb-4a3e-95aa-d2179031ccfc a aamas:Term ;
+aama:ID9e749f4f-c421-4031-bc44-04a9451667d4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5621,7 +5656,7 @@ aama:ID69dd6d34-82cb-4a3e-95aa-d2179031ccfc a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID2946ba64-a965-45af-8026-b5f5dfd6ea94 a aamas:Term ;
+aama:ID96f50ce8-77fd-4f3a-b086-ce7f3e7042ea a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-lbsB ;
@@ -5640,7 +5675,7 @@ aama:ID2946ba64-a965-45af-8026-b5f5dfd6ea94 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCWCBAPast
 
-aama:ID696393b0-e985-4b1e-829b-ced44c20af89 a aamas:Term ;
+aama:ID1c6e34a3-e0b7-4f8d-ba60-a45badc6bf4c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5656,7 +5691,7 @@ aama:ID696393b0-e985-4b1e-829b-ced44c20af89 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDde93c9a7-6d25-489e-9910-a216e9b497a1 a aamas:Term ;
+aama:ID754376f4-5b16-4d2b-9a29-e18e991eeaf7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5672,7 +5707,7 @@ aama:IDde93c9a7-6d25-489e-9910-a216e9b497a1 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa30e62c0-ed51-4fb3-8640-1016f3b010c1 a aamas:Term ;
+aama:ID1691ee9c-38c4-4dbf-b077-7c052016aa43 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5688,7 +5723,7 @@ aama:IDa30e62c0-ed51-4fb3-8640-1016f3b010c1 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID8b7c7777-72ec-471b-bfee-cbd0fc4e5b72 a aamas:Term ;
+aama:ID2461f0a8-6db7-4790-ae9f-58443a19a84e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5704,7 +5739,7 @@ aama:ID8b7c7777-72ec-471b-bfee-cbd0fc4e5b72 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID379fcdcc-2a04-41cd-87b7-0deeb023c8d9 a aamas:Term ;
+aama:ID543547f7-9b58-4f5d-9f9a-625ae650db0e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5720,7 +5755,7 @@ aama:ID379fcdcc-2a04-41cd-87b7-0deeb023c8d9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID27e20e87-6cb0-4c54-b5f2-8487225bdaad a aamas:Term ;
+aama:ID938078ef-1b87-4538-a252-cd6361a3282c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5736,7 +5771,7 @@ aama:ID27e20e87-6cb0-4c54-b5f2-8487225bdaad a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID0c7becac-f15e-4ce2-a5d6-24c5e77543f6 a aamas:Term ;
+aama:ID3f6d8549-0556-47af-9356-a84b160f264b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5752,7 +5787,7 @@ aama:ID0c7becac-f15e-4ce2-a5d6-24c5e77543f6 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa7aeb122-b70d-4760-864b-2edaac30b43a a aamas:Term ;
+aama:IDd97bb419-2542-48ef-9a71-94b05bfa6a19 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5768,7 +5803,7 @@ aama:IDa7aeb122-b70d-4760-864b-2edaac30b43a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID669c9023-0034-411c-b635-078dd21c306c a aamas:Term ;
+aama:ID8cadb2e3-b617-4c6d-9a72-977b8af1bb1b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5784,7 +5819,7 @@ aama:ID669c9023-0034-411c-b635-078dd21c306c a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID2a9e6ee1-b82b-4527-9131-23fefed50c78 a aamas:Term ;
+aama:IDa6ad9adb-9d04-4c26-a8d3-0ed98b1e3467 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-qwmB ;
@@ -5803,7 +5838,7 @@ aama:ID2a9e6ee1-b82b-4527-9131-23fefed50c78 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA2Juss
 
-aama:ID7bf07c49-0f8f-4595-92cb-e92ddefb5daa a aamas:Term ;
+aama:IDc845ef80-031a-4d9c-be60-4f74624b2e56 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5819,7 +5854,7 @@ aama:ID7bf07c49-0f8f-4595-92cb-e92ddefb5daa a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDeed0605f-0120-44bc-b9d8-1beed65fdb99 a aamas:Term ;
+aama:IDf29aa1fd-9ba5-4025-82a9-5904d44f2c05 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5835,7 +5870,7 @@ aama:IDeed0605f-0120-44bc-b9d8-1beed65fdb99 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID3dc6a0f4-4633-4c05-bf0c-e54b220a3d7b a aamas:Term ;
+aama:ID4ecf2150-d167-41d1-8fb0-3d573fd4ad00 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5851,7 +5886,7 @@ aama:ID3dc6a0f4-4633-4c05-bf0c-e54b220a3d7b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID0449d44f-98f8-40cd-950d-a3f5c911a676 a aamas:Term ;
+aama:IDea528fda-83d2-40fd-b0e3-d663288e7d27 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5867,7 +5902,7 @@ aama:ID0449d44f-98f8-40cd-950d-a3f5c911a676 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID887254e6-9d9e-489f-b4f3-67185a0c170b a aamas:Term ;
+aama:IDf4ce1fea-bd1f-4a78-a78f-ef320b67b5c4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5883,7 +5918,7 @@ aama:ID887254e6-9d9e-489f-b4f3-67185a0c170b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID5e3210ac-348a-430a-9d02-4e7491cf1f34 a aamas:Term ;
+aama:ID05e6e3e0-e053-45ee-816b-b1b09f2a4128 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5899,7 +5934,7 @@ aama:ID5e3210ac-348a-430a-9d02-4e7491cf1f34 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID39eb2a87-061d-4fa1-bde5-da09d3efeda8 a aamas:Term ;
+aama:IDeeb4f480-fdd2-4836-a5a0-e4d14c5a9178 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5915,7 +5950,7 @@ aama:ID39eb2a87-061d-4fa1-bde5-da09d3efeda8 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDb324cf3b-54cc-4b75-b993-6615f4030f33 a aamas:Term ;
+aama:ID618696d3-fbd8-4b02-8499-82c5cebdf27c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5931,7 +5966,7 @@ aama:IDb324cf3b-54cc-4b75-b993-6615f4030f33 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID510c6a86-c83d-49bd-955c-0402e98c71af a aamas:Term ;
+aama:IDbc08f5f8-afbe-4098-be68-5904da027a3a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5947,7 +5982,7 @@ aama:ID510c6a86-c83d-49bd-955c-0402e98c71af a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDcd3c8b8a-d1c2-407a-80a4-d0281a55f7a9 a aamas:Term ;
+aama:IDf4c644cf-6f9e-4812-901c-eba1e7d79fb8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-xryB ;
@@ -5966,7 +6001,7 @@ aama:IDcd3c8b8a-d1c2-407a-80a4-d0281a55f7a9 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCTJuss
 
-aama:IDc221b5e5-643e-4758-8b8a-f753a351554a a aamas:Term ;
+aama:IDc28d7d2c-9b5d-48b6-b74f-10e89af0eb1f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -5981,7 +6016,7 @@ aama:IDc221b5e5-643e-4758-8b8a-f753a351554a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID3d679448-62c3-450b-b234-56ca82fb3c3e a aamas:Term ;
+aama:ID836d0ede-4455-4942-aab2-6926fb34a1cc a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -5996,7 +6031,7 @@ aama:ID3d679448-62c3-450b-b234-56ca82fb3c3e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDcf93e9e5-cf46-4d56-a2e9-cb4895933bbf a aamas:Term ;
+aama:IDe34d86b0-7ce5-4b08-8137-3084239fd316 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6011,7 +6046,7 @@ aama:IDcf93e9e5-cf46-4d56-a2e9-cb4895933bbf a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDd5a6f9b9-e191-430f-bbdf-e52196281d54 a aamas:Term ;
+aama:ID5b5171f3-eb2b-4309-ad01-d4434fb47a7d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6026,7 +6061,7 @@ aama:IDd5a6f9b9-e191-430f-bbdf-e52196281d54 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa5e50868-e12c-44f5-a3e0-32258c4e4fe4 a aamas:Term ;
+aama:IDdafacced-3212-4d8a-a869-177ecf58f359 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6041,7 +6076,7 @@ aama:IDa5e50868-e12c-44f5-a3e0-32258c4e4fe4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID03d46d18-ff83-4394-9f53-c9cb0e15bc78 a aamas:Term ;
+aama:ID19ce9eea-e9d9-46f9-917a-2d8bf84217fb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6056,7 +6091,7 @@ aama:ID03d46d18-ff83-4394-9f53-c9cb0e15bc78 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID99f255c5-14e4-49cc-afce-f6ecb2e44f29 a aamas:Term ;
+aama:ID01e6c2a1-3db8-413e-a996-bc725e25daf4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6071,7 +6106,7 @@ aama:ID99f255c5-14e4-49cc-afce-f6ecb2e44f29 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID7e2ad84a-7768-42cc-9b63-a5f77a96d865 a aamas:Term ;
+aama:IDf09436de-0a52-4758-b1d4-767a6c7d8256 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6086,7 +6121,7 @@ aama:ID7e2ad84a-7768-42cc-9b63-a5f77a96d865 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID79f0b395-7e49-4ac6-bd78-db7721bd21c5 a aamas:Term ;
+aama:IDbcce293a-60a4-447e-bfd9-2948e75725e7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6101,7 +6136,7 @@ aama:ID79f0b395-7e49-4ac6-bd78-db7721bd21c5 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID4deb66c9-15a5-459b-a526-361e765273eb a aamas:Term ;
+aama:ID21c3624c-a7e3-4f0a-abbf-8900e5a7ae5a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:T ;
 	aamas:lexeme aama:Geez-ngrT ;
@@ -6119,7 +6154,7 @@ aama:ID4deb66c9-15a5-459b-a526-361e765273eb a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA1Juss
 
-aama:IDe9a7dc1a-d387-46ae-9537-6ca3d6bf7ba5 a aamas:Term ;
+aama:ID62ec2526-34e5-4008-a35d-d3909bac0769 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6135,7 +6170,7 @@ aama:IDe9a7dc1a-d387-46ae-9537-6ca3d6bf7ba5 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDe7e6a095-b38b-4589-84c6-e74b97de9e85 a aamas:Term ;
+aama:ID3bba8632-e977-48ce-8233-654c5069741f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6151,7 +6186,7 @@ aama:IDe7e6a095-b38b-4589-84c6-e74b97de9e85 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID62c9b82f-b5f1-4238-a390-ed0dd5cd2bb6 a aamas:Term ;
+aama:ID1a117211-f8da-41b5-b19b-5ef5e46cca6a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6167,7 +6202,7 @@ aama:ID62c9b82f-b5f1-4238-a390-ed0dd5cd2bb6 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDafaee509-b048-4b66-bbdb-28283a855483 a aamas:Term ;
+aama:ID3cb0cf47-0556-40f4-85c1-d607241ad7b3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6183,7 +6218,7 @@ aama:IDafaee509-b048-4b66-bbdb-28283a855483 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDeef95c70-4d6a-4684-8fd5-fada4bda94c4 a aamas:Term ;
+aama:IDafeb0f78-b585-484a-bda2-0420eaf44a15 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6199,7 +6234,7 @@ aama:IDeef95c70-4d6a-4684-8fd5-fada4bda94c4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDda83b55c-000b-4384-9e0b-9de477358b96 a aamas:Term ;
+aama:ID0afb5f89-6cf0-4de7-9b0d-ef030018fa94 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6215,7 +6250,7 @@ aama:IDda83b55c-000b-4384-9e0b-9de477358b96 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDed0ed789-3bb0-4c95-b8ba-cb2b59ab25e8 a aamas:Term ;
+aama:ID67fbb7e9-ec86-4919-9dc6-8afd42658f6a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6231,7 +6266,7 @@ aama:IDed0ed789-3bb0-4c95-b8ba-cb2b59ab25e8 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID8a272d5d-c196-4da0-a8ff-30cba30072d7 a aamas:Term ;
+aama:ID7000f658-380d-4278-b6ba-eaffd427719f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6247,7 +6282,7 @@ aama:ID8a272d5d-c196-4da0-a8ff-30cba30072d7 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDc10fb8d4-1895-49b4-a726-43477af012cf a aamas:Term ;
+aama:ID059204ce-07a4-4378-9ef5-9c5d324aef5f a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6263,7 +6298,7 @@ aama:IDc10fb8d4-1895-49b4-a726-43477af012cf a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID39774ed3-41bf-4ebe-9511-18f0cb4eee2a a aamas:Term ;
+aama:ID8a8dcff6-7cc9-4a8a-9856-bdbf085b299e a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6282,7 +6317,7 @@ aama:ID39774ed3-41bf-4ebe-9511-18f0cb4eee2a a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA1Pres
 
-aama:IDe8a95167-2d70-4558-85b2-723bffd64eef a aamas:Term ;
+aama:ID4178ffb5-e480-48f6-8a7a-d0a088731ddb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6298,7 +6333,7 @@ aama:IDe8a95167-2d70-4558-85b2-723bffd64eef a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID260f7148-fea5-491f-82cf-dbd19d61618a a aamas:Term ;
+aama:ID07573123-3c9b-4069-b447-07a8ddf86ca4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6314,7 +6349,7 @@ aama:ID260f7148-fea5-491f-82cf-dbd19d61618a a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID13898c7c-17a7-4739-9b63-35e0b8f4f8ab a aamas:Term ;
+aama:ID5c15b8d5-c104-40fe-b3a8-4d0ad58781a1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6330,7 +6365,7 @@ aama:ID13898c7c-17a7-4739-9b63-35e0b8f4f8ab a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID1b1095e6-451b-404a-a4bd-f2f922ec7a87 a aamas:Term ;
+aama:ID75433d9c-682f-4cf8-884b-f5473ab4b9d1 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6346,7 +6381,7 @@ aama:ID1b1095e6-451b-404a-a4bd-f2f922ec7a87 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID97a99f51-a7fa-4453-b0b9-b64b513315a9 a aamas:Term ;
+aama:IDb775f5f7-0bab-4ade-8a1b-19f6ae69caa8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6362,7 +6397,7 @@ aama:ID97a99f51-a7fa-4453-b0b9-b64b513315a9 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID423344a3-3500-41be-bf23-c37718149d82 a aamas:Term ;
+aama:IDaa982ecc-9b7b-4946-bda1-f7996f9c278b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6378,7 +6413,7 @@ aama:ID423344a3-3500-41be-bf23-c37718149d82 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDddd46f3a-438d-4408-9583-8fecaa28ea96 a aamas:Term ;
+aama:ID6d0e88c0-3d8d-4bfb-8bd8-9c6328e218b4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6394,7 +6429,7 @@ aama:IDddd46f3a-438d-4408-9583-8fecaa28ea96 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe2d4b440-579e-454d-9bdc-52a227a9c315 a aamas:Term ;
+aama:IDb53370d3-ad32-44bb-b038-39770296803a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6410,7 +6445,7 @@ aama:IDe2d4b440-579e-454d-9bdc-52a227a9c315 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID2f07fbb5-9040-4d18-8bb5-cf78fe1484a2 a aamas:Term ;
+aama:ID8469b038-39dc-4052-aaa8-dfbee020c92c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6426,7 +6461,7 @@ aama:ID2f07fbb5-9040-4d18-8bb5-cf78fe1484a2 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDd6b1ad75-f198-4ff6-8c91-0b1c32feb9c3 a aamas:Term ;
+aama:IDf6cdc945-f0d9-480f-840b-2b1c6c904118 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ftwB ;
@@ -6445,7 +6480,7 @@ aama:IDd6b1ad75-f198-4ff6-8c91-0b1c32feb9c3 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA1Past
 
-aama:IDe8c9cf4c-db50-4454-bcd3-68fa94e259f7 a aamas:Term ;
+aama:IDb49ea40b-f5cc-451d-8e9c-9b9fab7b2a61 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6461,7 +6496,7 @@ aama:IDe8c9cf4c-db50-4454-bcd3-68fa94e259f7 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID2dcf9068-a516-4480-92d9-d88e91c34023 a aamas:Term ;
+aama:ID4b0c5ff4-b5fa-4d91-b773-28c36c67dd26 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6477,7 +6512,7 @@ aama:ID2dcf9068-a516-4480-92d9-d88e91c34023 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID23982d7a-ba59-41ff-b8b3-acd4a2b37c1d a aamas:Term ;
+aama:ID03dfa985-46c7-4373-89bb-94c4737ead33 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6493,7 +6528,7 @@ aama:ID23982d7a-ba59-41ff-b8b3-acd4a2b37c1d a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID88d4bc81-fdd3-4413-82e6-9d83a33f6866 a aamas:Term ;
+aama:IDb62e2d96-1462-452e-b89d-1d9bfe14ed31 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6509,7 +6544,7 @@ aama:ID88d4bc81-fdd3-4413-82e6-9d83a33f6866 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID415c3d30-a4af-4e9c-b573-cfdcd0dd159e a aamas:Term ;
+aama:ID7a5c14eb-2ce7-443c-9eb9-4448bb4d8c7b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6525,7 +6560,7 @@ aama:ID415c3d30-a4af-4e9c-b573-cfdcd0dd159e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID9c912ace-6c42-4c26-b7ae-89a7fee997b8 a aamas:Term ;
+aama:IDeb4e0ee0-af07-4633-b930-a097643230de a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6541,7 +6576,7 @@ aama:ID9c912ace-6c42-4c26-b7ae-89a7fee997b8 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID16c78a62-02ff-43cd-bc69-2ace19c3afb4 a aamas:Term ;
+aama:IDde5b9476-0f74-45ec-8fd9-a28ae88c64a3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6557,7 +6592,7 @@ aama:ID16c78a62-02ff-43cd-bc69-2ace19c3afb4 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDab1f123e-ac2f-48cd-9d8e-562d6d78db91 a aamas:Term ;
+aama:ID6e348eaa-03de-419c-ae18-a30d15a3c2a9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6573,7 +6608,7 @@ aama:IDab1f123e-ac2f-48cd-9d8e-562d6d78db91 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID15b47b26-5794-4e06-b3b5-e11ae3e7284d a aamas:Term ;
+aama:IDbacce954-8a01-4949-b416-392269790d9d a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6589,7 +6624,7 @@ aama:ID15b47b26-5794-4e06-b3b5-e11ae3e7284d a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDaaa0b2ad-ec46-491b-ac76-c42f47bdbfac a aamas:Term ;
+aama:IDa7887233-1b86-42a6-895a-a0367aee3051 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6608,7 +6643,7 @@ aama:IDaaa0b2ad-ec46-491b-ac76-c42f47bdbfac a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA1Pres
 
-aama:ID571d2b14-d717-4999-a23c-30514e07b886 a aamas:Term ;
+aama:IDaa703c06-ae44-4160-99bb-dacd58782828 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6624,7 +6659,7 @@ aama:ID571d2b14-d717-4999-a23c-30514e07b886 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID2586b444-8e8d-4812-b471-ecac08041dc4 a aamas:Term ;
+aama:ID2818aaae-9610-4a76-bd27-4514039fa612 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6640,7 +6675,7 @@ aama:ID2586b444-8e8d-4812-b471-ecac08041dc4 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe1286222-d366-4684-916a-9d40bf236a81 a aamas:Term ;
+aama:ID202a2ee1-72da-4a09-bb13-9286e78a7203 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6656,7 +6691,7 @@ aama:IDe1286222-d366-4684-916a-9d40bf236a81 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID26512929-ff15-4d52-bebc-8cb1eac791e0 a aamas:Term ;
+aama:ID63d9033e-344b-4702-ad44-aeeed01363b3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6672,7 +6707,7 @@ aama:ID26512929-ff15-4d52-bebc-8cb1eac791e0 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID145e62a5-287f-44d7-948d-48e5b77c2d66 a aamas:Term ;
+aama:ID4a37df8b-cdfc-47af-9024-491e2ee6362c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6688,7 +6723,7 @@ aama:ID145e62a5-287f-44d7-948d-48e5b77c2d66 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDff2be330-0bb7-472c-b17f-95055d322841 a aamas:Term ;
+aama:IDd841348f-5823-4f46-bda7-13ceb38f3603 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6704,7 +6739,7 @@ aama:IDff2be330-0bb7-472c-b17f-95055d322841 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID69685390-3ffa-49d7-9436-1b4e94671d01 a aamas:Term ;
+aama:IDf05564c6-db59-4366-864d-84ad53a11a1a a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6720,7 +6755,7 @@ aama:ID69685390-3ffa-49d7-9436-1b4e94671d01 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID2bf96644-5509-4dc6-82ec-120d306f9590 a aamas:Term ;
+aama:IDfd8b3ec1-9024-4906-b168-eff48a2d162c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6736,7 +6771,7 @@ aama:ID2bf96644-5509-4dc6-82ec-120d306f9590 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:IDfb911fc8-19ec-4b10-bf37-1ee6a30db1f2 a aamas:Term ;
+aama:IDa3d8ffd2-a640-4ed6-bbc4-36b65a46c823 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6752,7 +6787,7 @@ aama:IDfb911fc8-19ec-4b10-bf37-1ee6a30db1f2 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDa11bf60e-52b5-461c-9be2-955df22d5aa1 a aamas:Term ;
+aama:IDa02c1813-2210-4430-9ec4-cb54223a7d63 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -6771,7 +6806,7 @@ aama:IDa11bf60e-52b5-461c-9be2-955df22d5aa1 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCYBA1Imprtv
 
-aama:ID55bb284e-75ba-4ca8-8d10-feff3a2d2549 a aamas:Term ;
+aama:IDf60fa592-a016-4b82-9b9c-cfef44f1f337 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -6787,7 +6822,7 @@ aama:ID55bb284e-75ba-4ca8-8d10-feff3a2d2549 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID1c64ca34-d26a-45f2-8daa-5a9b4975f51f a aamas:Term ;
+aama:IDadb9e93a-2ec6-48e3-9bea-97936f909306 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -6803,7 +6838,7 @@ aama:ID1c64ca34-d26a-45f2-8daa-5a9b4975f51f a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDc258bbb3-55e8-4150-b5da-0a39f2527c4a a aamas:Term ;
+aama:ID81a20793-8eb3-4400-9d0a-5dc6ce7e1b1b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -6819,7 +6854,7 @@ aama:IDc258bbb3-55e8-4150-b5da-0a39f2527c4a a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID707a0d46-973e-402a-858e-8f5f772a3a72 a aamas:Term ;
+aama:ID1d6566ef-19c6-4b28-88ea-ae9fe742cffb a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-sryB ;
@@ -6838,7 +6873,7 @@ aama:ID707a0d46-973e-402a-858e-8f5f772a3a72 a aamas:Term ;
 
 #TERMCLUSTER: geez-VWCCBA1Pres
 
-aama:ID531a7d1f-d433-4322-9687-5d0acf1cb153 a aamas:Term ;
+aama:ID3f862aa6-9c69-43f3-b19e-320c39abfd61 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6854,7 +6889,7 @@ aama:ID531a7d1f-d433-4322-9687-5d0acf1cb153 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:IDca3e6d92-c074-4b82-aff9-87df8c1b203c a aamas:Term ;
+aama:ID473ecf54-ae47-4b72-a712-c8103b2eff07 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6870,7 +6905,7 @@ aama:IDca3e6d92-c074-4b82-aff9-87df8c1b203c a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID3b4835bd-bc25-46fa-8c66-ed4f5ea5b120 a aamas:Term ;
+aama:IDb2502642-9855-4f6b-bad4-8f9d6c9c9cfc a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6886,7 +6921,7 @@ aama:ID3b4835bd-bc25-46fa-8c66-ed4f5ea5b120 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID5add453f-24be-4fbb-994a-cf95d6302cf8 a aamas:Term ;
+aama:IDc000cb0a-ead5-4286-9e2c-63f6dd138809 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6902,7 +6937,7 @@ aama:ID5add453f-24be-4fbb-994a-cf95d6302cf8 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID5502ae51-ac23-43f5-80b4-fe7859b58c30 a aamas:Term ;
+aama:IDaa41c8d0-164b-4511-91dc-a61edbd98146 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6918,7 +6953,7 @@ aama:ID5502ae51-ac23-43f5-80b4-fe7859b58c30 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID485991f6-f2d9-48ac-a833-de25ddf1bb4e a aamas:Term ;
+aama:ID7b8b3a32-6178-4819-84e6-43a11a5e8dd8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6934,7 +6969,7 @@ aama:ID485991f6-f2d9-48ac-a833-de25ddf1bb4e a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:IDbf26b2fb-a08f-4d33-8090-98370d456586 a aamas:Term ;
+aama:ID2dbcbbd9-5c0f-43dc-9e5b-98570f0931b5 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6950,7 +6985,7 @@ aama:IDbf26b2fb-a08f-4d33-8090-98370d456586 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID0eafe022-f110-4074-8790-ea82178cd2a3 a aamas:Term ;
+aama:ID83b78a39-5283-4caf-8a89-3fd793bb42b3 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6966,7 +7001,7 @@ aama:ID0eafe022-f110-4074-8790-ea82178cd2a3 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID32aaf0c0-e845-4eb0-81fc-48da18710143 a aamas:Term ;
+aama:IDc1e918b7-0955-4af5-8a5d-0566c1e0f2ac a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -6982,7 +7017,7 @@ aama:ID32aaf0c0-e845-4eb0-81fc-48da18710143 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDb4598c44-7985-467f-966e-4df3de2d7ead a aamas:Term ;
+aama:ID22424eb1-83f7-43e8-b3ab-d6288a4f0ff6 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-wrdB ;
@@ -7001,7 +7036,7 @@ aama:IDb4598c44-7985-467f-966e-4df3de2d7ead a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCBA1Imprtv
 
-aama:ID9ca86ce2-7ddd-4f98-b282-3d85b69bd5cd a aamas:Term ;
+aama:ID565303da-bf3b-4d80-8b61-b2e96b7dcc0c a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -7017,7 +7052,7 @@ aama:ID9ca86ce2-7ddd-4f98-b282-3d85b69bd5cd a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID380e3fd9-c11c-404d-88a0-efc23b51608e a aamas:Term ;
+aama:IDfb8bebf9-3c51-4205-9cd3-20c944139cd4 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -7033,7 +7068,7 @@ aama:ID380e3fd9-c11c-404d-88a0-efc23b51608e a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:ID672ecdb2-5507-4fe1-b055-e50e908cc764 a aamas:Term ;
+aama:ID0d6024d6-af6a-4805-8d0a-ca90c865c4f8 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -7049,7 +7084,7 @@ aama:ID672ecdb2-5507-4fe1-b055-e50e908cc764 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID01fe3f43-7ff2-485e-9c0a-e98f124fb581 a aamas:Term ;
+aama:IDd92a0487-d4da-43e1-9dbb-84a244680873 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-ngrB ;
@@ -7068,7 +7103,7 @@ aama:ID01fe3f43-7ff2-485e-9c0a-e98f124fb581 a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCCSImprtv
 
-aama:ID3d0ff07f-ae37-406d-b540-98b76dc07f64 a aamas:Term ;
+aama:ID7391cd17-746a-44de-b259-41859bd973d9 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -7083,7 +7118,7 @@ aama:ID3d0ff07f-ae37-406d-b540-98b76dc07f64 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDade6db17-b16c-4c96-b482-c2c894e16694 a aamas:Term ;
+aama:ID89fc80a7-0b66-4a55-9f5e-e433752aa067 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -7098,7 +7133,7 @@ aama:IDade6db17-b16c-4c96-b482-c2c894e16694 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDd8e579bf-9095-4d27-9553-2f03635e7485 a aamas:Term ;
+aama:ID7dec90cb-cf14-425c-8792-1df18b027829 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -7113,7 +7148,7 @@ aama:IDd8e579bf-9095-4d27-9553-2f03635e7485 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID1431fdcb-8eec-4e83-bb67-090310ea9d5e a aamas:Term ;
+aama:IDf26ef37c-4d9d-4f62-8353-99e11b768414 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:S ;
 	aamas:lexeme aama:Geez-ngrS ;
@@ -7131,7 +7166,7 @@ aama:ID1431fdcb-8eec-4e83-bb67-090310ea9d5e a aamas:Term ;
 
 #TERMCLUSTER: geez-VCCWBA2Pres
 
-aama:IDa0e95573-8e8c-4be7-81f2-56322a3d0d18 a aamas:Term ;
+aama:IDe793ad3d-5368-4027-9494-97cc442ad909 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7147,7 +7182,7 @@ aama:IDa0e95573-8e8c-4be7-81f2-56322a3d0d18 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Common ;
 	.
-aama:ID3d6b8357-bfa3-494d-b8ca-56507a3ee597 a aamas:Term ;
+aama:IDc6036ddc-5c7d-40d6-828c-bd614b39d562 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7163,7 +7198,7 @@ aama:ID3d6b8357-bfa3-494d-b8ca-56507a3ee597 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:IDe9634e47-3a80-40b8-ac13-715a49682adc a aamas:Term ;
+aama:ID69f61358-af0f-4741-8ceb-82301593c738 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7179,7 +7214,7 @@ aama:IDe9634e47-3a80-40b8-ac13-715a49682adc a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDaababa88-4bb8-4205-982a-dbe9f36de840 a aamas:Term ;
+aama:ID87b64185-d1dd-4a30-939e-7826ffc04d4b a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7195,7 +7230,7 @@ aama:IDaababa88-4bb8-4205-982a-dbe9f36de840 a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Masc ;
 	.
-aama:ID56165403-dfa3-475e-a5f5-e3a44bd7226b a aamas:Term ;
+aama:IDd5cae8b8-53af-4d1d-9a19-6963fe9c65d7 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7211,7 +7246,7 @@ aama:ID56165403-dfa3-475e-a5f5-e3a44bd7226b a aamas:Term ;
 	gez:number gez:Singular ;
 	gez:gender gez:Fem ;
 	.
-aama:IDb02a75b9-e09e-4bac-adc7-9801fc927c49 a aamas:Term ;
+aama:ID7a763716-1d1b-4673-a4d9-a9cc7f30db56 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7227,7 +7262,7 @@ aama:IDb02a75b9-e09e-4bac-adc7-9801fc927c49 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Common ;
 	.
-aama:ID84bcdb3c-fe71-4997-901a-f7c5a1331be9 a aamas:Term ;
+aama:IDbf0dc3cb-0ee6-41ae-8c7b-b1a382f00302 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7243,7 +7278,7 @@ aama:ID84bcdb3c-fe71-4997-901a-f7c5a1331be9 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:IDb2736d40-a0f4-431b-8496-022e5532be04 a aamas:Term ;
+aama:ID01504d9c-edb5-4629-9815-1fb8bf8c83ca a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7259,7 +7294,7 @@ aama:IDb2736d40-a0f4-431b-8496-022e5532be04 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Fem ;
 	.
-aama:ID50ea05e4-5427-41c3-bb8b-dc317e29b113 a aamas:Term ;
+aama:IDa40295f3-3625-4f03-856b-ae1a3e744639 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7275,7 +7310,7 @@ aama:ID50ea05e4-5427-41c3-bb8b-dc317e29b113 a aamas:Term ;
 	gez:number gez:Plural ;
 	gez:gender gez:Masc ;
 	.
-aama:ID741e56b5-bd2d-4e07-843e-cc6a7be22ef3 a aamas:Term ;
+aama:ID8301ded0-3295-499f-9708-65ce67ec3c55 a aamas:Term ;
 	aamas:lang aama:Geez ;
 	gez:derivedStem gez:B ;
 	aamas:lexeme aama:Geez-bdwB ;
@@ -7294,7 +7329,7 @@ aama:ID741e56b5-bd2d-4e07-843e-cc6a7be22ef3 a aamas:Term ;
 
 #MUTERMCLUSTER: geez-VSubjMarker
 
-aama:ID48e0e756-57b1-4a92-879a-2468c541b666 a aamas:Muterm ;
+aama:ID2a6c8d03-0627-4ce7-8552-32138a9752d4 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7309,7 +7344,7 @@ aama:ID48e0e756-57b1-4a92-879a-2468c541b666 a aamas:Muterm ;
 	gez:gender gez:Common ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:IDa86a38a6-f162-458f-93fc-64a0e7de0477 a aamas:Muterm ;
+aama:IDebc2d787-bce5-479b-aeac-4425fa2d3dce a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7324,7 +7359,7 @@ aama:IDa86a38a6-f162-458f-93fc-64a0e7de0477 a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID55fa4b9c-1d34-4069-8e3e-a6d68d928645 a aamas:Muterm ;
+aama:ID461bc7c8-c12a-41cc-8681-79d2eb8b9953 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7339,7 +7374,7 @@ aama:ID55fa4b9c-1d34-4069-8e3e-a6d68d928645 a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID4bf0795c-9043-4072-a235-f9b95b01a0c2 a aamas:Muterm ;
+aama:ID9ad9aed3-66de-419d-b2a2-f261dad2a939 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7354,7 +7389,7 @@ aama:ID4bf0795c-9043-4072-a235-f9b95b01a0c2 a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID4a346b0f-bb42-4d37-b72c-6c3d8ac6fe6c a aamas:Muterm ;
+aama:ID62790d6e-c9b0-4f42-88b1-b1357e4e87c5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7369,7 +7404,7 @@ aama:ID4a346b0f-bb42-4d37-b72c-6c3d8ac6fe6c a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID84f6fae6-7cbd-4a71-873f-78bc72c30a32 a aamas:Muterm ;
+aama:IDb461b009-04e1-437d-91ef-c0e6fca3379e a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7384,7 +7419,7 @@ aama:ID84f6fae6-7cbd-4a71-873f-78bc72c30a32 a aamas:Muterm ;
 	gez:gender gez:Common ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID765a21ee-2160-412e-b5dd-64a63d4555ce a aamas:Muterm ;
+aama:IDe0c9e4b0-3530-46b2-a61d-d555a3ca6af6 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7399,7 +7434,7 @@ aama:ID765a21ee-2160-412e-b5dd-64a63d4555ce a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:IDabc751cd-6acb-4ccb-bae1-f324e404d74d a aamas:Muterm ;
+aama:IDb4039133-7b3a-4d8d-bbf3-82db58e5eb8f a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7414,7 +7449,7 @@ aama:IDabc751cd-6acb-4ccb-bae1-f324e404d74d a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID52db7cac-15fa-43d3-b322-dbf1483fc6af a aamas:Muterm ;
+aama:IDad403cc8-8341-42cc-b2ae-0df4189b3fb2 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7429,7 +7464,7 @@ aama:ID52db7cac-15fa-43d3-b322-dbf1483fc6af a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:ID11ca7189-dbf9-48f1-abc8-ca3be0dbc78a a aamas:Muterm ;
+aama:ID12e72a34-a935-426d-b0e7-78064f1ecf15 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7444,7 +7479,7 @@ aama:ID11ca7189-dbf9-48f1-abc8-ca3be0dbc78a a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Suffix ;
 	.
-aama:IDdaa34c9c-8d1c-4b41-b87d-164d433ea241 a aamas:Muterm ;
+aama:ID26832d38-3f49-4f10-9d1c-df5f11ffc1cf a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7459,7 +7494,7 @@ aama:IDdaa34c9c-8d1c-4b41-b87d-164d433ea241 a aamas:Muterm ;
 	gez:gender gez:Common ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:IDc3dad0d1-321a-497c-ae96-c5dde73fd76f a aamas:Muterm ;
+aama:ID31c169a1-fb6e-40c9-82b2-13afac1a21bf a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7474,7 +7509,7 @@ aama:IDc3dad0d1-321a-497c-ae96-c5dde73fd76f a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:IDcf4d1f63-f816-4f0b-9b05-017b5ec92ea5 a aamas:Muterm ;
+aama:ID33e62601-a0e0-4ff1-be73-7f577f0d3119 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7489,7 +7524,7 @@ aama:IDcf4d1f63-f816-4f0b-9b05-017b5ec92ea5 a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:ID7efb5368-be21-4f01-bf03-9e37423e3972 a aamas:Muterm ;
+aama:IDc0245195-abfd-4d4f-9465-b8fe36e3c998 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7504,7 +7539,7 @@ aama:ID7efb5368-be21-4f01-bf03-9e37423e3972 a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:IDfc127a7c-fa8a-40fa-a9b5-177014bbaec5 a aamas:Muterm ;
+aama:IDe901e8b7-ae8b-4e06-bad3-0ef124d13da2 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7519,7 +7554,7 @@ aama:IDfc127a7c-fa8a-40fa-a9b5-177014bbaec5 a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:ID15f6d953-5499-40ea-91e6-c3f74f45ce93 a aamas:Muterm ;
+aama:IDcad3718a-a594-466c-bfda-366081590861 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7534,7 +7569,7 @@ aama:ID15f6d953-5499-40ea-91e6-c3f74f45ce93 a aamas:Muterm ;
 	gez:gender gez:Common ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:IDf192aa3e-098c-4ef1-b83c-cdab7f76567d a aamas:Muterm ;
+aama:ID1e984deb-c3e5-44f1-97ae-a2f1a1e4b4cd a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7549,7 +7584,7 @@ aama:IDf192aa3e-098c-4ef1-b83c-cdab7f76567d a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:ID87a70bea-affa-41e9-b392-308af8c0aeff a aamas:Muterm ;
+aama:IDc1ceed5d-759b-4d95-a951-bb576a352ca3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7564,7 +7599,7 @@ aama:ID87a70bea-affa-41e9-b392-308af8c0aeff a aamas:Muterm ;
 	gez:gender gez:Fem ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:IDf7a3fa17-c820-4536-a271-80488b091477 a aamas:Muterm ;
+aama:ID95cc0c7d-c596-4e35-b935-7bc64de426d1 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7579,7 +7614,7 @@ aama:IDf7a3fa17-c820-4536-a271-80488b091477 a aamas:Muterm ;
 	gez:gender gez:Masc ;
 	gez:conjugation gez:Prefix ;
 	.
-aama:ID3f4eb19f-e4e9-42c4-bf1b-47d5c80869a0 a aamas:Muterm ;
+aama:IDfe77944f-1a4b-4d8e-a152-06abe3dd32e2 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-SUBJMARKER ;
 	gez:pos gez:Verb ;
@@ -7597,7 +7632,7 @@ aama:ID3f4eb19f-e4e9-42c4-bf1b-47d5c80869a0 a aamas:Muterm ;
 
 #MUTERMCLUSTER: geez-VVerbStems
 
-aama:ID40444001-9a24-4bcc-ba4f-953ab757519e a aamas:Muterm ;
+aama:IDc3dac6d9-1025-49a7-857c-3c19a7c70b5a a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7608,7 +7643,7 @@ aama:ID40444001-9a24-4bcc-ba4f-953ab757519e a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID896338f6-fa36-42e9-bcc1-dabe940fa782 a aamas:Muterm ;
+aama:IDb1b6c57f-c703-4f8f-bf15-aedc2ab0c67e a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7619,7 +7654,7 @@ aama:ID896338f6-fa36-42e9-bcc1-dabe940fa782 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID48dc9e5b-0aab-478e-baf6-7c4d8c182ecc a aamas:Muterm ;
+aama:ID688f8cd4-67a3-41c8-81bf-033add3c70eb a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7630,7 +7665,7 @@ aama:ID48dc9e5b-0aab-478e-baf6-7c4d8c182ecc a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID6eeb4525-d475-4fd0-a3bf-a4b7a9b593c0 a aamas:Muterm ;
+aama:ID65ad331a-61bd-480c-a266-8ddda98dc81c a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7641,7 +7676,7 @@ aama:ID6eeb4525-d475-4fd0-a3bf-a4b7a9b593c0 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID8537721b-1063-456e-8f1e-0d03ce1af472 a aamas:Muterm ;
+aama:ID69ac0a22-7327-47b9-833f-5d1b1ad46dff a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7652,7 +7687,7 @@ aama:ID8537721b-1063-456e-8f1e-0d03ce1af472 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDb3d6bd41-00c2-4e40-8846-2db4cd460c49 a aamas:Muterm ;
+aama:ID9a6d20d1-2cea-4791-8643-b71cd7b35003 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7663,7 +7698,7 @@ aama:IDb3d6bd41-00c2-4e40-8846-2db4cd460c49 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDd3cfa081-32f2-4c40-b9bd-7d8d7f93e40f a aamas:Muterm ;
+aama:ID24a5ce35-1e5c-49d8-b626-2923793bb0d3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7674,7 +7709,7 @@ aama:IDd3cfa081-32f2-4c40-b9bd-7d8d7f93e40f a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID223846b8-4296-4cc3-8a7a-2ca0419225c2 a aamas:Muterm ;
+aama:ID5abb6552-0845-4072-81ea-35a2db942ce5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7685,7 +7720,7 @@ aama:ID223846b8-4296-4cc3-8a7a-2ca0419225c2 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDcd8e3d0c-8610-4bac-9a49-d670df89e1ec a aamas:Muterm ;
+aama:IDe1857fe6-3141-49b5-831a-44cfe7eb57a5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7696,7 +7731,7 @@ aama:IDcd8e3d0c-8610-4bac-9a49-d670df89e1ec a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID72b9056e-7df0-4165-aad8-eec46130f66b a aamas:Muterm ;
+aama:IDd97e0709-3478-49ee-9dbc-9e336c9f7d7d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7707,7 +7742,7 @@ aama:ID72b9056e-7df0-4165-aad8-eec46130f66b a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID13ceb0bf-655b-4937-9582-88fb09cd7145 a aamas:Muterm ;
+aama:IDc09bf9ef-bf40-4b06-99c1-dafe2e7826f8 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7718,7 +7753,7 @@ aama:ID13ceb0bf-655b-4937-9582-88fb09cd7145 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID216752ac-a4ae-484e-8db1-f148ab2cbe4b a aamas:Muterm ;
+aama:ID1dac2c8b-d786-45bb-9fce-a5f2683cd213 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7729,7 +7764,7 @@ aama:ID216752ac-a4ae-484e-8db1-f148ab2cbe4b a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDe0e7cef6-4847-4633-842d-013bb7d8f545 a aamas:Muterm ;
+aama:ID73d21e80-1db7-41ce-bd2f-0418ccdd08f1 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7740,7 +7775,7 @@ aama:IDe0e7cef6-4847-4633-842d-013bb7d8f545 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID92b6f47f-f07e-40a4-971d-1c669144716a a aamas:Muterm ;
+aama:ID03c606d5-48c1-410b-858b-9f9ec2a172dd a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7751,7 +7786,7 @@ aama:ID92b6f47f-f07e-40a4-971d-1c669144716a a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDc4f6db42-f1fc-4acc-a3c7-b1d9ade87014 a aamas:Muterm ;
+aama:ID60ae2f60-069a-49cc-8b84-0c7ee6839f7e a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7762,7 +7797,7 @@ aama:IDc4f6db42-f1fc-4acc-a3c7-b1d9ade87014 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID79b40c64-4e58-418a-b559-ac8092b00f8f a aamas:Muterm ;
+aama:IDe59cc264-c2cc-4212-a930-4771c398aa21 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7773,7 +7808,7 @@ aama:ID79b40c64-4e58-418a-b559-ac8092b00f8f a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID70d95f47-bd1a-4a05-8edf-4b21bfccab6b a aamas:Muterm ;
+aama:ID5bc6467a-e4f4-4b02-8a30-20bd15170f07 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7784,7 +7819,7 @@ aama:ID70d95f47-bd1a-4a05-8edf-4b21bfccab6b a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID4d021de6-f892-49a5-833b-83270e84efd0 a aamas:Muterm ;
+aama:ID1ee96d0e-04a1-4fc6-8862-1cf1db5cbd34 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7795,7 +7830,7 @@ aama:ID4d021de6-f892-49a5-833b-83270e84efd0 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID7880f64e-6a0b-49d0-925a-9f7c3d059bd3 a aamas:Muterm ;
+aama:ID30d6dc74-537f-4a4b-a9b8-9cda9d6ff6e6 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7806,7 +7841,7 @@ aama:ID7880f64e-6a0b-49d0-925a-9f7c3d059bd3 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID848d3aee-589c-49f0-abd5-5cafc1704b9a a aamas:Muterm ;
+aama:ID31739490-defb-4278-92f7-769cd73df5fc a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7817,7 +7852,7 @@ aama:ID848d3aee-589c-49f0-abd5-5cafc1704b9a a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDd35246d7-3770-49ec-8fab-93690c5a74c9 a aamas:Muterm ;
+aama:IDf1f515c7-29ea-4b01-955e-652ebf52e4fc a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7828,7 +7863,7 @@ aama:IDd35246d7-3770-49ec-8fab-93690c5a74c9 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDdba298d0-c93f-4704-ba75-05d5c353d777 a aamas:Muterm ;
+aama:IDda35662a-ba0d-4def-8025-30acf19294ba a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7839,7 +7874,7 @@ aama:IDdba298d0-c93f-4704-ba75-05d5c353d777 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID9e8fb276-18fd-4a2e-abab-cc5157366923 a aamas:Muterm ;
+aama:ID652fad4d-1c64-47ec-b4bb-b242f6c49309 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7850,7 +7885,7 @@ aama:ID9e8fb276-18fd-4a2e-abab-cc5157366923 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDf73c4e99-6cd8-4b58-8644-03d0167ef02a a aamas:Muterm ;
+aama:IDf8b58311-561e-495c-9df8-97e09850f843 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7861,7 +7896,7 @@ aama:IDf73c4e99-6cd8-4b58-8644-03d0167ef02a a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID6bbc90d1-a4b4-4e0a-b005-889c7f878532 a aamas:Muterm ;
+aama:ID5bfaf770-16a7-4791-a193-12a2a9277fef a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7872,7 +7907,7 @@ aama:ID6bbc90d1-a4b4-4e0a-b005-889c7f878532 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDe25bcdfd-8fa7-4c13-876c-b9447a583f6e a aamas:Muterm ;
+aama:ID3c24106a-d56b-4a5a-b1e0-758c7e1ad694 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7883,7 +7918,7 @@ aama:IDe25bcdfd-8fa7-4c13-876c-b9447a583f6e a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID84a74cb8-af79-4522-b40f-22342b97856b a aamas:Muterm ;
+aama:ID32e31e37-f94a-49ca-81cd-ca5c36907bb1 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7894,7 +7929,7 @@ aama:ID84a74cb8-af79-4522-b40f-22342b97856b a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID8ec80796-65fb-455d-ba7a-461cf60c465b a aamas:Muterm ;
+aama:ID7a4ea043-7012-4b01-9398-55d84c795ce0 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7905,7 +7940,7 @@ aama:ID8ec80796-65fb-455d-ba7a-461cf60c465b a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID7b290f44-0609-4b1b-af00-35f5e60919c0 a aamas:Muterm ;
+aama:IDe1b5e8dc-f346-4953-b224-f4f2dc174e3b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7916,7 +7951,7 @@ aama:ID7b290f44-0609-4b1b-af00-35f5e60919c0 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID33ac51a1-86e1-4e74-831c-e97588303afd a aamas:Muterm ;
+aama:IDdaa38e8c-96a7-469e-9eeb-d6ccafc16796 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7927,7 +7962,7 @@ aama:ID33ac51a1-86e1-4e74-831c-e97588303afd a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDec4ba83d-a465-4ea3-b267-e4e28f2b0c59 a aamas:Muterm ;
+aama:IDb3797eb6-a150-447c-b80d-6b420ca43fcd a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7938,7 +7973,7 @@ aama:IDec4ba83d-a465-4ea3-b267-e4e28f2b0c59 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDd762a42f-712b-4d6f-8f01-0fc09bb5c8e9 a aamas:Muterm ;
+aama:ID10f86707-5a7d-4e04-9aeb-0f4be5b3a267 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7949,7 +7984,7 @@ aama:IDd762a42f-712b-4d6f-8f01-0fc09bb5c8e9 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID45f2ef87-afa5-40c4-8606-a56ed90b76e4 a aamas:Muterm ;
+aama:ID9e723f6e-8cac-414a-84b8-2250b78073e2 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7960,7 +7995,7 @@ aama:ID45f2ef87-afa5-40c4-8606-a56ed90b76e4 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDbdafdbae-4fc5-4a9d-a73f-5bc9fce73bd2 a aamas:Muterm ;
+aama:IDbe78a0cc-523e-4377-9647-203de71c68fc a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7971,7 +8006,7 @@ aama:IDbdafdbae-4fc5-4a9d-a73f-5bc9fce73bd2 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID1ba678f7-3342-44e4-981e-97ce4ec55186 a aamas:Muterm ;
+aama:IDb9d58e40-13ab-41a2-9f37-451dd601fc7c a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7982,7 +8017,7 @@ aama:ID1ba678f7-3342-44e4-981e-97ce4ec55186 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDf04cf4b9-206e-4778-a00f-9e0c84aa2a8a a aamas:Muterm ;
+aama:ID4e88623b-6534-4a27-a206-bf8df0d61b49 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -7993,7 +8028,7 @@ aama:IDf04cf4b9-206e-4778-a00f-9e0c84aa2a8a a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID77338dab-0b2d-4944-b74e-f0f111b0c397 a aamas:Muterm ;
+aama:IDc59b7732-3906-440d-91b6-916cf53239f0 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8004,7 +8039,7 @@ aama:ID77338dab-0b2d-4944-b74e-f0f111b0c397 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID081aeb6b-07d0-4450-8cd4-1918f643fed3 a aamas:Muterm ;
+aama:ID9f15c313-7240-4974-8957-ad48debe601b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8015,7 +8050,7 @@ aama:ID081aeb6b-07d0-4450-8cd4-1918f643fed3 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID9595ba49-b681-424a-ab9f-6cde343689e4 a aamas:Muterm ;
+aama:IDe667b63c-064f-4578-8f08-96b975ec66ea a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8026,7 +8061,7 @@ aama:ID9595ba49-b681-424a-ab9f-6cde343689e4 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDa242d268-6072-41b9-b87b-1610d7e0e91f a aamas:Muterm ;
+aama:ID35e47e41-ef0a-4f46-b142-304c22250a9e a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8037,7 +8072,7 @@ aama:IDa242d268-6072-41b9-b87b-1610d7e0e91f a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID5770fa79-4ec4-4b21-947c-bb81518b9cf5 a aamas:Muterm ;
+aama:IDa11b6cfe-b63d-4cb8-bcb4-4fcb795434a4 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8048,7 +8083,7 @@ aama:ID5770fa79-4ec4-4b21-947c-bb81518b9cf5 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID5e4d0fa1-04b1-4a27-9d62-80d975a8d9c1 a aamas:Muterm ;
+aama:ID37e20b46-6b71-485d-99d5-ec95ca84dc74 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8059,7 +8094,7 @@ aama:ID5e4d0fa1-04b1-4a27-9d62-80d975a8d9c1 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID6a12660b-0690-4f83-a9a8-be49d246d48e a aamas:Muterm ;
+aama:IDf7df0794-1321-42a0-9569-c4071bb897cd a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8070,7 +8105,7 @@ aama:ID6a12660b-0690-4f83-a9a8-be49d246d48e a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID2a78dadc-121f-4812-b2bd-e37bd5d93e77 a aamas:Muterm ;
+aama:ID53993260-cb4d-4d8b-a220-f25d25540c94 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8081,7 +8116,7 @@ aama:ID2a78dadc-121f-4812-b2bd-e37bd5d93e77 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID3dfc49a7-af0c-4f55-93da-b683d7a523aa a aamas:Muterm ;
+aama:ID2e266d59-311c-4946-8d77-7cfd04daee47 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8092,7 +8127,7 @@ aama:ID3dfc49a7-af0c-4f55-93da-b683d7a523aa a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID78c6cecd-c1f9-43b3-a7f6-609cda32e5b7 a aamas:Muterm ;
+aama:IDd265169a-1115-4918-8b8e-abe39f185d07 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8103,7 +8138,7 @@ aama:ID78c6cecd-c1f9-43b3-a7f6-609cda32e5b7 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDbae0c934-37b2-46a4-9375-d7d751d55fac a aamas:Muterm ;
+aama:ID0c7ded82-9760-41d9-b5fc-d6622c263aa4 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8114,7 +8149,7 @@ aama:IDbae0c934-37b2-46a4-9375-d7d751d55fac a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDc7c384d1-2401-4a03-af3a-4090f9822495 a aamas:Muterm ;
+aama:IDfdfa1211-4c4d-45db-888b-51279d0d2467 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8125,7 +8160,7 @@ aama:IDc7c384d1-2401-4a03-af3a-4090f9822495 a aamas:Muterm ;
 	gez:rootClass gez:CCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDe8fafa06-dc78-47a6-9fc5-8e3218da3ab8 a aamas:Muterm ;
+aama:IDd85777ce-986b-4b4b-8805-ba0d177c71b7 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8136,7 +8171,7 @@ aama:IDe8fafa06-dc78-47a6-9fc5-8e3218da3ab8 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID9e5edff0-2e5f-4a25-8388-6ba2931135fd a aamas:Muterm ;
+aama:ID2802a7c3-7dc5-47be-b4de-e2572de2b2a3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8147,7 +8182,7 @@ aama:ID9e5edff0-2e5f-4a25-8388-6ba2931135fd a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID7d81d0a7-575d-40d1-a329-67e326517ca5 a aamas:Muterm ;
+aama:IDb6d3b9f3-f317-4391-b330-acb4a4e4083d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8158,7 +8193,7 @@ aama:ID7d81d0a7-575d-40d1-a329-67e326517ca5 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID587124fe-576f-4dd3-be20-ebe9e28c6079 a aamas:Muterm ;
+aama:IDfd170a57-a91b-4068-8365-bf98c73dd7c3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8169,7 +8204,7 @@ aama:ID587124fe-576f-4dd3-be20-ebe9e28c6079 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID6ebe91d4-fbc6-4fff-84cb-2137e4969c7f a aamas:Muterm ;
+aama:ID112e85d2-9f63-437e-b921-6e8b1b7c52e5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8180,7 +8215,7 @@ aama:ID6ebe91d4-fbc6-4fff-84cb-2137e4969c7f a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID3e3e81b4-5e86-4df3-95fa-97dca4f10ce1 a aamas:Muterm ;
+aama:ID04963597-ab3a-4526-8ae0-a92880044e04 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8191,7 +8226,7 @@ aama:ID3e3e81b4-5e86-4df3-95fa-97dca4f10ce1 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDddc9d08e-4154-4c90-8c09-33d00fcb97a5 a aamas:Muterm ;
+aama:IDfecd76f8-1033-417c-91a8-7c99c958c83a a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8202,7 +8237,7 @@ aama:IDddc9d08e-4154-4c90-8c09-33d00fcb97a5 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID86d2e68a-db22-434e-ba8b-a9261e0925ec a aamas:Muterm ;
+aama:IDc9136254-df1a-4e51-b151-b964fba2ad60 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8213,7 +8248,7 @@ aama:ID86d2e68a-db22-434e-ba8b-a9261e0925ec a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID84297550-8450-444a-b1ca-e90e2619fdc5 a aamas:Muterm ;
+aama:ID30c42d83-06b2-4407-90db-27740f4c252c a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8224,7 +8259,7 @@ aama:ID84297550-8450-444a-b1ca-e90e2619fdc5 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDe58bc845-19c6-4622-b6f2-2ce017b34208 a aamas:Muterm ;
+aama:ID9595560a-b121-46c7-af47-2cf9e0e227c2 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8235,7 +8270,7 @@ aama:IDe58bc845-19c6-4622-b6f2-2ce017b34208 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID0bb80565-1f6f-4a63-9661-262680577186 a aamas:Muterm ;
+aama:ID1cda18ec-94d7-4ddc-aeeb-2a8abd567745 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8246,7 +8281,7 @@ aama:ID0bb80565-1f6f-4a63-9661-262680577186 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDde730e63-1db4-45b7-886b-4451c154be49 a aamas:Muterm ;
+aama:ID4277459e-4678-4a82-8e4a-d5364d0918e7 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8257,7 +8292,7 @@ aama:IDde730e63-1db4-45b7-886b-4451c154be49 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID8b91857a-97a3-4bd1-ae45-158dfa0b914d a aamas:Muterm ;
+aama:ID4a42142d-6a48-4ec3-af41-4a65c2b36412 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8268,7 +8303,7 @@ aama:ID8b91857a-97a3-4bd1-ae45-158dfa0b914d a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID2755400a-db15-4457-a4f3-c27888be1b78 a aamas:Muterm ;
+aama:ID487fe754-acc0-4db4-9f03-06bdbb01699d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8279,7 +8314,7 @@ aama:ID2755400a-db15-4457-a4f3-c27888be1b78 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDf4b49114-0587-44eb-bbec-b0140768e0ce a aamas:Muterm ;
+aama:ID1a8d12be-8415-4931-97d3-5c798c79efab a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8290,7 +8325,7 @@ aama:IDf4b49114-0587-44eb-bbec-b0140768e0ce a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDbad78932-9b08-47f9-a797-9bde82ff1e9f a aamas:Muterm ;
+aama:IDab2bd0f0-fab6-4733-9828-cf3a278b74b9 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8301,7 +8336,7 @@ aama:IDbad78932-9b08-47f9-a797-9bde82ff1e9f a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDb5a74796-5b24-4692-a2e6-c90105dfa8e4 a aamas:Muterm ;
+aama:IDaed78aed-6438-4ca3-8ffc-104d1b865f2d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8312,7 +8347,7 @@ aama:IDb5a74796-5b24-4692-a2e6-c90105dfa8e4 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID624769a5-35e7-4440-9fc8-5b52af392ca7 a aamas:Muterm ;
+aama:IDa6e340d7-d447-40f4-9582-7a4df83f7200 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8323,7 +8358,7 @@ aama:ID624769a5-35e7-4440-9fc8-5b52af392ca7 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID300c6c09-9505-47cc-9d0e-6d825089735d a aamas:Muterm ;
+aama:ID4cfa1321-8c6e-477c-bd3f-6acf5c19b5ee a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8334,7 +8369,7 @@ aama:ID300c6c09-9505-47cc-9d0e-6d825089735d a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDeff22db9-73e0-4a04-a49c-6d959d7eab18 a aamas:Muterm ;
+aama:IDf03876b1-36ea-4eaf-a55e-ddebdfe8b721 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8345,7 +8380,7 @@ aama:IDeff22db9-73e0-4a04-a49c-6d959d7eab18 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID51999ceb-df34-4e91-805d-8744604dadd7 a aamas:Muterm ;
+aama:IDb03c4f7b-d21f-4d0f-b200-9e1031bdc464 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8356,7 +8391,7 @@ aama:ID51999ceb-df34-4e91-805d-8744604dadd7 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDa92cf0da-16ca-4ccf-910f-ddf3b73d1243 a aamas:Muterm ;
+aama:ID0f4e52ad-8fa7-4cba-a01c-3a47a4e06270 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8367,7 +8402,7 @@ aama:IDa92cf0da-16ca-4ccf-910f-ddf3b73d1243 a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID90d88c54-3f6f-4ad6-a3a7-baf0368c597a a aamas:Muterm ;
+aama:ID02501122-cb9d-4851-b5a1-9fa5fcf3b092 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8378,7 +8413,7 @@ aama:ID90d88c54-3f6f-4ad6-a3a7-baf0368c597a a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDd8c327f4-12dc-4780-aaf1-669542eb04fc a aamas:Muterm ;
+aama:IDf5f068e9-89f5-4092-bf6e-e4cd11f4ec60 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8389,7 +8424,7 @@ aama:IDd8c327f4-12dc-4780-aaf1-669542eb04fc a aamas:Muterm ;
 	gez:rootClass gez:WCC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID6be0003f-2049-48c6-8b62-79a045f83444 a aamas:Muterm ;
+aama:ID21c0dafe-6cdd-4bd0-a2d4-bda581490726 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8400,7 +8435,7 @@ aama:ID6be0003f-2049-48c6-8b62-79a045f83444 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDe313b444-92a2-4352-b8ac-98686eaa5299 a aamas:Muterm ;
+aama:IDef657408-ed95-4a87-a6bd-ea5a1f0126dc a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8411,7 +8446,7 @@ aama:IDe313b444-92a2-4352-b8ac-98686eaa5299 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDa3af65c3-eb72-4613-9659-e6b0ce1433d9 a aamas:Muterm ;
+aama:ID0df2aee0-0b81-4f0c-9004-e87dfd0ae203 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8422,7 +8457,7 @@ aama:IDa3af65c3-eb72-4613-9659-e6b0ce1433d9 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID63f4bb3c-b835-45ca-b377-c7552401caef a aamas:Muterm ;
+aama:ID97324450-1412-435b-b615-b23614b361a0 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8433,7 +8468,7 @@ aama:ID63f4bb3c-b835-45ca-b377-c7552401caef a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID0aa98e08-039c-455e-ac77-2f2cf9298c08 a aamas:Muterm ;
+aama:ID2f8b9f3d-16d0-459d-8b5e-e006f40b616b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8444,7 +8479,7 @@ aama:ID0aa98e08-039c-455e-ac77-2f2cf9298c08 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDac6a5147-c2e2-4492-b21c-e169aeb05c05 a aamas:Muterm ;
+aama:ID38f307ac-d371-4bae-8c72-f193e3a65e0d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8455,7 +8490,7 @@ aama:IDac6a5147-c2e2-4492-b21c-e169aeb05c05 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDec8a80a8-6d56-46b9-a888-f491df1ec4c7 a aamas:Muterm ;
+aama:ID9412748a-5e33-4a32-8598-a66c5ba8ae3b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8466,7 +8501,7 @@ aama:IDec8a80a8-6d56-46b9-a888-f491df1ec4c7 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID7e29ca7e-bc9d-4ee5-8dcc-22bf7d7b27eb a aamas:Muterm ;
+aama:ID0cf74819-55a4-473d-b2d2-e0f5727475b5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8477,7 +8512,7 @@ aama:ID7e29ca7e-bc9d-4ee5-8dcc-22bf7d7b27eb a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDf293d94b-1991-4d46-8f66-2767f8fbc437 a aamas:Muterm ;
+aama:ID74054eb2-a3d4-498b-8f85-00866cd33e54 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8488,7 +8523,7 @@ aama:IDf293d94b-1991-4d46-8f66-2767f8fbc437 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID2763a9ff-3ac8-45da-b746-7f4adc564dcc a aamas:Muterm ;
+aama:ID9e49f6b6-6c50-4202-a777-47181da8b9b3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8499,7 +8534,7 @@ aama:ID2763a9ff-3ac8-45da-b746-7f4adc564dcc a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDcc63153e-98be-47a2-8b2b-90370e33476b a aamas:Muterm ;
+aama:ID74caabfb-e276-4f3c-8727-09d1a24e9b4f a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8510,7 +8545,7 @@ aama:IDcc63153e-98be-47a2-8b2b-90370e33476b a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDf4de7170-921d-47c8-b27f-5c828ada2524 a aamas:Muterm ;
+aama:IDad63e9dc-2ba7-4db4-b587-1809a08469ff a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8521,7 +8556,7 @@ aama:IDf4de7170-921d-47c8-b27f-5c828ada2524 a aamas:Muterm ;
 	gez:rootClass gez:CWC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID30f0bc41-22de-4002-9369-0545b7c78ce2 a aamas:Muterm ;
+aama:IDc2032f66-3fbb-4938-9ba0-d421caf7b7a6 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8532,7 +8567,7 @@ aama:ID30f0bc41-22de-4002-9369-0545b7c78ce2 a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID560837b9-6ae6-49b4-b2bc-223bd05aa503 a aamas:Muterm ;
+aama:IDd254a5f2-2333-4eda-a7f8-38efc9ffd989 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8543,7 +8578,7 @@ aama:ID560837b9-6ae6-49b4-b2bc-223bd05aa503 a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID86967e3c-6170-4452-bb63-18556392275c a aamas:Muterm ;
+aama:ID1987aded-fa2a-490c-b18b-d6b6c2600066 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8554,7 +8589,7 @@ aama:ID86967e3c-6170-4452-bb63-18556392275c a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID5058a19e-f0de-4bc3-a84c-ecbf655ad3c1 a aamas:Muterm ;
+aama:ID47c8e2b7-a8ef-4b69-b2b1-3befe0086d73 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8565,7 +8600,7 @@ aama:ID5058a19e-f0de-4bc3-a84c-ecbf655ad3c1 a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID8fc475d9-2720-411c-b913-d08cde1bfb1c a aamas:Muterm ;
+aama:IDb8c915f7-546b-4ea2-81d3-bf9d23e1ac0f a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8576,7 +8611,7 @@ aama:ID8fc475d9-2720-411c-b913-d08cde1bfb1c a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID0938b525-6a72-48a4-821c-5ae24565bc19 a aamas:Muterm ;
+aama:IDb6b65f0c-9a3e-4fc5-a2c0-3cd3f685f2be a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8587,7 +8622,7 @@ aama:ID0938b525-6a72-48a4-821c-5ae24565bc19 a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID32619d62-1713-43e1-ad8e-ce085152da6e a aamas:Muterm ;
+aama:ID77de85f4-03ae-4c78-89e3-4e521874b697 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8598,7 +8633,7 @@ aama:ID32619d62-1713-43e1-ad8e-ce085152da6e a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDccadabc2-373b-4d65-8646-763763fdc9de a aamas:Muterm ;
+aama:IDb4f8f3ba-7c1c-457f-9ed1-f379358cab49 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8609,7 +8644,7 @@ aama:IDccadabc2-373b-4d65-8646-763763fdc9de a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDa947c519-7393-4b4c-8d2c-05405b1db77b a aamas:Muterm ;
+aama:ID7abcb20e-4da0-4ab3-998e-a6073eedd6ae a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8620,7 +8655,7 @@ aama:IDa947c519-7393-4b4c-8d2c-05405b1db77b a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDa6ae7b70-6d99-4cfb-bc96-d72368b96049 a aamas:Muterm ;
+aama:IDc5694b97-d2da-4b37-9a98-a98eef9cf502 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8631,7 +8666,7 @@ aama:IDa6ae7b70-6d99-4cfb-bc96-d72368b96049 a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDbf31bce5-671e-45f3-ba63-939611d7217d a aamas:Muterm ;
+aama:IDffc2183a-81ae-4dc3-96a5-10a21bb8340c a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8642,7 +8677,7 @@ aama:IDbf31bce5-671e-45f3-ba63-939611d7217d a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID9ba54cd6-f5a3-4a55-bdb0-cbf73731e7e9 a aamas:Muterm ;
+aama:ID3a076094-1f6f-4008-9074-2ebb626d0484 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8653,7 +8688,7 @@ aama:ID9ba54cd6-f5a3-4a55-bdb0-cbf73731e7e9 a aamas:Muterm ;
 	gez:rootClass gez:CYC ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID62cd469a-f18b-4489-a37c-43c75cca90fc a aamas:Muterm ;
+aama:IDad3c816f-9598-4195-88e5-4e6768468a14 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8664,7 +8699,7 @@ aama:ID62cd469a-f18b-4489-a37c-43c75cca90fc a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID32c66c11-63c3-4cb5-8e4b-f79c7f17872b a aamas:Muterm ;
+aama:ID3c18a5ce-270f-4f5c-b46f-065183961b1b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8675,7 +8710,7 @@ aama:ID32c66c11-63c3-4cb5-8e4b-f79c7f17872b a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDc6283eb7-db31-46e0-b21c-63430919c236 a aamas:Muterm ;
+aama:IDaa93ab0e-2211-491a-9ed7-c4f97a955dff a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8686,7 +8721,7 @@ aama:IDc6283eb7-db31-46e0-b21c-63430919c236 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID3bcfd2f8-b18d-4e5a-9ee6-01c0ade97417 a aamas:Muterm ;
+aama:IDf189084d-5f8c-4ade-9275-aa6b20c4f531 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8697,7 +8732,7 @@ aama:ID3bcfd2f8-b18d-4e5a-9ee6-01c0ade97417 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID930cb2e1-f2c2-4898-b3d2-654d18dd6f25 a aamas:Muterm ;
+aama:ID7b82570a-1d21-4451-a1c6-459d4738f163 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8708,7 +8743,7 @@ aama:ID930cb2e1-f2c2-4898-b3d2-654d18dd6f25 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID92dd96e7-2690-466b-b1da-50ded745828a a aamas:Muterm ;
+aama:IDae049f06-0733-48f2-9b29-bd2a980183cf a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8719,7 +8754,7 @@ aama:ID92dd96e7-2690-466b-b1da-50ded745828a a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDcdfcc0c5-2505-44c0-9678-bf67666a85c4 a aamas:Muterm ;
+aama:ID1cadc127-1ae6-4cb1-8206-16543c4ce92a a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8730,7 +8765,7 @@ aama:IDcdfcc0c5-2505-44c0-9678-bf67666a85c4 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID76dd466a-aee0-4509-b7a9-c549d3a78dec a aamas:Muterm ;
+aama:IDefb6d739-79f6-41dc-96fe-cab46d1e175b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8741,7 +8776,7 @@ aama:ID76dd466a-aee0-4509-b7a9-c549d3a78dec a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDbb9ef871-30bb-45da-a1c5-170bd840f4de a aamas:Muterm ;
+aama:IDd722d81f-6b4f-4104-8247-4c8f47aff086 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8752,7 +8787,7 @@ aama:IDbb9ef871-30bb-45da-a1c5-170bd840f4de a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID73f39182-0e9f-45c8-880e-5c6c647af368 a aamas:Muterm ;
+aama:IDb4c990f1-d7d4-4a97-b825-04375d9d7590 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8763,7 +8798,7 @@ aama:ID73f39182-0e9f-45c8-880e-5c6c647af368 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID2905baca-a8d6-4d97-bdc9-b5ed4a7a7627 a aamas:Muterm ;
+aama:IDe57f2258-4f35-4405-a566-ead474b79f48 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8774,7 +8809,7 @@ aama:ID2905baca-a8d6-4d97-bdc9-b5ed4a7a7627 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID7afd475d-f496-4861-96e7-4895026a756b a aamas:Muterm ;
+aama:ID816e1917-debc-4978-b599-dd087b90d56b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8785,7 +8820,7 @@ aama:ID7afd475d-f496-4861-96e7-4895026a756b a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID2313ff14-cd94-4bc4-be17-c71da33cfe01 a aamas:Muterm ;
+aama:ID55bae112-55d3-4c6c-8da0-8205851a08d5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8796,7 +8831,7 @@ aama:ID2313ff14-cd94-4bc4-be17-c71da33cfe01 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID9a40b19b-5be9-406d-b258-e5fec72dea20 a aamas:Muterm ;
+aama:ID8c2cfd51-4760-4fd0-8cc6-59ba6860984d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8807,7 +8842,7 @@ aama:ID9a40b19b-5be9-406d-b258-e5fec72dea20 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDb03df4e8-893d-4ffd-8f42-22940f797112 a aamas:Muterm ;
+aama:ID90149d81-06bd-4e41-883f-a1bba738b3a5 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8818,7 +8853,7 @@ aama:IDb03df4e8-893d-4ffd-8f42-22940f797112 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID599a196e-5ca4-4cdc-8e8b-c461ebb98dc9 a aamas:Muterm ;
+aama:ID6c540255-d4d3-4956-b2a8-c0d7874b5ea3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8829,7 +8864,7 @@ aama:ID599a196e-5ca4-4cdc-8e8b-c461ebb98dc9 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID18c8608c-1734-47d2-bbcd-eb0e042b35cb a aamas:Muterm ;
+aama:ID2eac9841-8f35-44ba-931d-6081b33c102d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8840,7 +8875,7 @@ aama:ID18c8608c-1734-47d2-bbcd-eb0e042b35cb a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID7f2edc30-48c9-45a5-847e-039e07af9e07 a aamas:Muterm ;
+aama:IDcaff98ee-24ad-4ce1-9b44-c0202e651ae3 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8851,7 +8886,7 @@ aama:ID7f2edc30-48c9-45a5-847e-039e07af9e07 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDb64f5a76-61c1-4ffe-838a-b5e2150a44d9 a aamas:Muterm ;
+aama:IDe546ca8f-cead-4540-90fd-4cf77717a810 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8862,7 +8897,7 @@ aama:IDb64f5a76-61c1-4ffe-838a-b5e2150a44d9 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID8f1c93ae-2397-4576-b1d6-4d41801c4374 a aamas:Muterm ;
+aama:ID7994c9f7-a209-4cab-8486-b7a0e6709b30 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8873,7 +8908,7 @@ aama:ID8f1c93ae-2397-4576-b1d6-4d41801c4374 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID92662fa8-5595-441c-ab47-c6f6b1aaad24 a aamas:Muterm ;
+aama:ID1c41bf58-db5e-49fd-b76b-3a430ab1d74a a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8884,7 +8919,7 @@ aama:ID92662fa8-5595-441c-ab47-c6f6b1aaad24 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDf7ee1c5a-7e8d-46b7-943b-536079c24e02 a aamas:Muterm ;
+aama:ID255a2cf8-e42e-47ca-b866-57bd2924730d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8895,7 +8930,7 @@ aama:IDf7ee1c5a-7e8d-46b7-943b-536079c24e02 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDd35a75b2-3e69-4225-b942-345fda10a963 a aamas:Muterm ;
+aama:ID7b3eabe4-4210-4e54-914e-8aa447d21819 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8906,7 +8941,7 @@ aama:IDd35a75b2-3e69-4225-b942-345fda10a963 a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID0f2fe76a-746d-4630-99f0-a72547998c2b a aamas:Muterm ;
+aama:ID68c1ec03-5cef-4094-bbe9-3abf367639bd a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8917,7 +8952,7 @@ aama:ID0f2fe76a-746d-4630-99f0-a72547998c2b a aamas:Muterm ;
 	gez:rootClass gez:CCW ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID74593d0f-749e-4e97-b8a7-8d5b34b45006 a aamas:Muterm ;
+aama:IDfcc7290c-ac48-42fa-be5a-bb58dd1b0e93 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8928,7 +8963,7 @@ aama:ID74593d0f-749e-4e97-b8a7-8d5b34b45006 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID5b778131-7518-40f8-b3f1-f89448bc4dfb a aamas:Muterm ;
+aama:IDc46449b9-1b87-4fe6-a04f-473b1b22cf59 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8939,7 +8974,7 @@ aama:ID5b778131-7518-40f8-b3f1-f89448bc4dfb a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID9e04c9f3-b7b8-497a-9da2-6950224b1f8f a aamas:Muterm ;
+aama:IDa949da5f-5dbf-4956-8570-4b807cc4f695 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8950,7 +8985,7 @@ aama:ID9e04c9f3-b7b8-497a-9da2-6950224b1f8f a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:B ;
 	.
-aama:IDeda20971-34fd-46b3-b4f9-2dbbf043cedb a aamas:Muterm ;
+aama:ID817ebcc7-7fac-4f4a-a112-c78f4a77163b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8961,7 +8996,7 @@ aama:IDeda20971-34fd-46b3-b4f9-2dbbf043cedb a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID5bb8d6f8-3957-4334-b3c6-be2b8aa46bce a aamas:Muterm ;
+aama:ID3863d5d9-18af-4894-989d-d54d14561912 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8972,7 +9007,7 @@ aama:ID5bb8d6f8-3957-4334-b3c6-be2b8aa46bce a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID4919a112-e819-4903-bb51-8d0694035d61 a aamas:Muterm ;
+aama:IDd31a2989-d32b-463a-964a-c79e7ed82068 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8983,7 +9018,7 @@ aama:ID4919a112-e819-4903-bb51-8d0694035d61 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:B ;
 	.
-aama:ID6e3ce5b7-da16-45d3-8090-e073d4ddc2af a aamas:Muterm ;
+aama:ID7cc14730-fbb5-48b4-bb1e-77f1194b7521 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -8994,7 +9029,7 @@ aama:ID6e3ce5b7-da16-45d3-8090-e073d4ddc2af a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID17705b31-43be-4771-a858-89396f4e5dc7 a aamas:Muterm ;
+aama:ID6810f65e-d6da-40bb-b55a-569d2c147468 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9005,7 +9040,7 @@ aama:ID17705b31-43be-4771-a858-89396f4e5dc7 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDf5439823-e695-47c4-8331-661d3e3846b2 a aamas:Muterm ;
+aama:ID45ec5d4a-4424-4bf1-8713-7cf9e41db855 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9016,7 +9051,7 @@ aama:IDf5439823-e695-47c4-8331-661d3e3846b2 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID10bbb706-3c63-434b-b28f-31f9a35fde91 a aamas:Muterm ;
+aama:ID107195a3-d153-44da-a60b-c771783b14f0 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9027,7 +9062,7 @@ aama:ID10bbb706-3c63-434b-b28f-31f9a35fde91 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID4fe15dd1-7156-4a68-8081-36a488fd0859 a aamas:Muterm ;
+aama:IDb6633b84-f2c5-45ef-9ea7-0ca48b51278d a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9038,7 +9073,7 @@ aama:ID4fe15dd1-7156-4a68-8081-36a488fd0859 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:S ;
 	.
-aama:ID9e47db5b-e1f0-4d8a-9ae3-ce689a32e449 a aamas:Muterm ;
+aama:ID3bbcb4c6-7761-432e-8ca9-80674d47ec54 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9049,7 +9084,7 @@ aama:ID9e47db5b-e1f0-4d8a-9ae3-ce689a32e449 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:S ;
 	.
-aama:IDc6ba870e-27c1-45a6-a4b1-d6a9401149a4 a aamas:Muterm ;
+aama:ID4ba59689-2a63-4484-8671-6401755a0bf0 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9060,7 +9095,7 @@ aama:IDc6ba870e-27c1-45a6-a4b1-d6a9401149a4 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDc2beeae7-303c-42a6-9179-ed7d0de14e7f a aamas:Muterm ;
+aama:IDfeb9d2e9-f852-4d85-8f42-afc295cc1bcc a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9071,7 +9106,7 @@ aama:IDc2beeae7-303c-42a6-9179-ed7d0de14e7f a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:T ;
 	.
-aama:IDe4ac0663-e04d-46c4-b1c3-412d93e62714 a aamas:Muterm ;
+aama:IDcfd51c4d-e708-407f-8aa8-3789df1e1ca4 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9082,7 +9117,7 @@ aama:IDe4ac0663-e04d-46c4-b1c3-412d93e62714 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID445267c7-66fe-4dbe-9870-7150b5be5ca5 a aamas:Muterm ;
+aama:IDed573e1f-e35e-49f9-b913-b12ec4d58032 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9093,7 +9128,7 @@ aama:ID445267c7-66fe-4dbe-9870-7150b5be5ca5 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID00217424-acd3-4f9b-b7a1-54a4c9fb3c7c a aamas:Muterm ;
+aama:IDfd53392c-2ad5-4b5a-bac1-006bc95a6304 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9104,7 +9139,7 @@ aama:ID00217424-acd3-4f9b-b7a1-54a4c9fb3c7c a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID85a6f2c8-b445-493c-b587-a3edba887b48 a aamas:Muterm ;
+aama:IDefc73e00-adbd-4916-aed1-9813f1f03265 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9115,7 +9150,7 @@ aama:ID85a6f2c8-b445-493c-b587-a3edba887b48 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:T ;
 	.
-aama:ID31a45208-e3be-424c-8afc-79f7852090ca a aamas:Muterm ;
+aama:ID94c178da-6902-4cb7-bfa3-ec7c825f16bc a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9126,7 +9161,7 @@ aama:ID31a45208-e3be-424c-8afc-79f7852090ca a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDf445ccce-fe8b-4157-a3c8-a3978ad10dae a aamas:Muterm ;
+aama:IDa207aee4-da72-4670-bf77-d3ded7d28a7b a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9137,7 +9172,7 @@ aama:IDf445ccce-fe8b-4157-a3c8-a3978ad10dae a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID55e9ab14-1c36-4491-b3fb-136017b630b2 a aamas:Muterm ;
+aama:ID241b7501-e185-479d-831a-d090a3997516 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9148,7 +9183,7 @@ aama:ID55e9ab14-1c36-4491-b3fb-136017b630b2 a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID3caea4ce-cdd7-4618-a482-c3eee9b5683a a aamas:Muterm ;
+aama:ID65907dd7-e1dd-40b3-9248-75621ce9cfc9 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9159,7 +9194,7 @@ aama:ID3caea4ce-cdd7-4618-a482-c3eee9b5683a a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:ST ;
 	.
-aama:ID76ecf747-5906-4800-a545-1de9dba270dd a aamas:Muterm ;
+aama:ID88b3bd1a-dc25-4fc0-8264-c2c0448654e4 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9170,7 +9205,7 @@ aama:ID76ecf747-5906-4800-a545-1de9dba270dd a aamas:Muterm ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:ST ;
 	.
-aama:IDbf71b3ed-d01e-4235-9c2c-3e62d13e0693 a aamas:Muterm ;
+aama:ID73be317d-d05b-4fba-a97e-f77ee2ec6b37 a aamas:Muterm ;
 	aamas:lang aama:Geez ;
 	aamas:morpheme aama:Geez-VERBSTEMS ;
 	gez:pos gez:Verb ;
@@ -9180,4 +9215,16 @@ aama:IDbf71b3ed-d01e-4235-9c2c-3e62d13e0693 a aamas:Muterm ;
 	gez:stemClass gez:A2 ;
 	gez:rootClass gez:CCY ;
 	gez:derivedStem gez:ST ;
+	.
+
+#MUTERMCLUSTER: Pronominal Paradigms to be added
+
+aama:ID13413b6a-0cc0-462e-a1b1-b91cf9ad5c7d a aamas:Muterm ;
+	aamas:lang aama:Geez ;
+	aamas:morpheme aama:Geez-TOBEADDED ;
+	gez:pos gez:Pronoun ;
+	gez:proClass gez:To_be_added ;
+	gez:token "not attested" ;
+	gez:person gez:Not_in_datastore ;
+	gez:status gez:NA ;
 	.

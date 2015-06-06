@@ -4,9 +4,10 @@
 :schemata {
 :gender [:Common, :Fem, :Masc]
 	  :number [:Du, :Plural, :Singular]
-	  :person [:Person1, :Person2, :Person3]
-	  :pos [:Pronoun]
+	  :person [:Person1, :Person2, :Person3 :Not_in_datastore]
+	  :pos [:Pronoun, :Verb]
 	  :proClass [:Dependent, :Independent, :Suffix]
+           :status [:NA]
 	  }
 :morphemes {
   :PRODEPENDENT {:gloss "[x]", :lemma "[y]", }
@@ -15,7 +16,11 @@
 }
 :lexemes {
 }
-:lxterms #{}
+:lxterms #{
+           {:label "Egyptian Verb to be added to datastore"
+           :common {:pos :Verb}
+           :terms [[:status :person :token]
+                   [:NA :Not_in_datastore "not attested"]]}}
 :muterms #{
     {:label "egyptian_M-PDep"
     :note "Alan Gardiner,Egyptian Grammar,3rd Edition (Oxford:Griffith Institute,2001),§43. James E. Hoch,Middle Egyptian Grammar (Mississauga:Benben Publications,1997),§39."
