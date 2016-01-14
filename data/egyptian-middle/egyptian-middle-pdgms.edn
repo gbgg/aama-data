@@ -1,14 +1,23 @@
 {
 :lang :egyptian-middle
 :sgpref "egm"
+:datasource "Gardiner1957"
+:geodemoURL "http://www.britannica.com/topic/Egyptian-language https://en.wikipedia.org/wiki/Languages_of_Egypt"
+:geodemoTXT "Middle Egyptian is the 'Classic' form of the written language, possibly representing the spoken form of the language in late third and early second millennium BCE."
 :schemata {
 :gender [:Common, :Fem, :Masc]
-	  :number [:Du, :Plural, :Singular]
+	  :number [:Dual, :Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3 :Not_in_datastore]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Dependent, :Independent, :Suffix]
            :status [:NA]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:pos :proClass ]
+           :inflClass [:status  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRODEPENDENT {:gloss "[x]", :lemma "[y]", }
   :PROIND {:gloss "[x]", :lemma "[y]", }
@@ -17,7 +26,7 @@
 :lexemes {
 }
 :lxterms #{
-           {:label "Egyptian Verb to be added to datastore"
+           {:label "Egyptian_Verb_to_be_added_to_datastore"
            :common {:pos :Verb}
            :terms [[:status :person :token]
                    [:NA :Not_in_datastore "not attested"]]}}
@@ -48,11 +57,11 @@
 	    [:Fem, :Singular, :Person2, "-ṯ ~ -t"],
 	    [:Masc, :Singular, :Person3, "-f"],
 	    [:Fem, :Singular, :Person3, "-s"],
-	    [:Common, :Du, :Person1, "-ny"],
-	    [:Common, :Du, :Person2, "-ṯny"],
-	    [:Common, :Du, :Person3, "-sny"],
-	    [:Masc, :Du, :Person3, "-fy"],
-	    [:Fem, :Du, :Person3, "-sy"],
+	    [:Common, :Dual, :Person1, "-ny"],
+	    [:Common, :Dual, :Person2, "-ṯny"],
+	    [:Common, :Dual, :Person3, "-sny"],
+	    [:Masc, :Dual, :Person3, "-fy"],
+	    [:Fem, :Dual, :Person3, "-sy"],
 	    [:Common, :Plural, :Person1, "-n"],
 	    [:Common, :Plural, :Person2, "-ṯn ~ -tn"],
 	    [:Common, :Plural, :Person3, "-sn"]]

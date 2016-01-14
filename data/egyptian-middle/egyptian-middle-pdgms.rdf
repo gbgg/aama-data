@@ -2,6 +2,8 @@
 <rdf:RDF
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:dc="http://purl.org/dc/elements"
+	xmlns:dcterms="http://purl.org/dc/terms"
 	xmlns:aama="http://id.oi.uchicago.edu/aama/2013/"
 	xmlns:aamas="http://id.oi.uchicago.edu/aama/2013/schema/"
 	xmlns:egm="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/">
@@ -9,6 +11,9 @@
 <rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Language"/>
 	<rdfs:label>Egyptian-middle</rdfs:label>
+	<aamas:dataSource>Gardiner1957</aamas:dataSource>
+	<aamas:geodemoURL>http://www.britannica.com/topic/Egyptian-language https://en.wikipedia.org/wiki/Languages_of_Egypt</aamas:geodemoURL>
+	<aamas:geodemoTXT>Middle Egyptian is the 'Classic' form of the written language%% possibly representing the spoken form of the language in late third and early second millennium BCE.</aamas:geodemoTXT>
 </rdf:Description>
 
 <rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/gender">
@@ -87,10 +92,10 @@
 	<rdfs:subPropertyOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/muProperty"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Du">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dual">
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Number"/>
-	<rdfs:label>Du</rdfs:label>
+	<rdfs:label>Dual</rdfs:label>
 </rdf:Description>
 
 <rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Plural">
@@ -281,8 +286,56 @@
 	<rdfs:label>NA</rdfs:label>
 </rdf:Description>
 
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/person">
+	<aamas:pclass rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/pngClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/pngClass">
+	<rdfs:label>pngClass</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/number">
+	<aamas:pclass rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/pngClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/pngClass">
+	<rdfs:label>pngClass</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/gender">
+	<aamas:pclass rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/pngClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/pngClass">
+	<rdfs:label>pngClass</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/pos">
+	<aamas:pclass rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/synsemClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/synsemClass">
+	<rdfs:label>synsemClass</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/proClass">
+	<aamas:pclass rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/synsemClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/synsemClass">
+	<rdfs:label>synsemClass</rdfs:label>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/status">
+	<aamas:pclass rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/inflClass"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/schema/inflClass">
+	<rdfs:label>inflClass</rdfs:label>
+</rdf:Description>
+
 <rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT">
-	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Morpheme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
 	<rdfs:label>PRODEPENDENT</rdfs:label>
 	<rdfs:comment>[x]</rdfs:comment>
@@ -290,7 +343,7 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND">
-	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Morpheme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
 	<rdfs:label>PROIND</rdfs:label>
 	<rdfs:comment>[x]</rdfs:comment>
@@ -298,25 +351,39 @@
 </rdf:Description>
 
 <rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF">
-	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Morpheme"/>
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
 	<rdfs:label>PROSUFF</rdfs:label>
 	<rdfs:comment>[x]</rdfs:comment>
 	<rdfs:comment>[y]</rdfs:comment>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDafa24d83-7fd7-425f-830b-735ee5dc2036">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Egyptian_Verb_to_be_added_to_datastore">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Termcluster"/>
+	<rdfs:label>Egyptian_Verb_to_be_added_to_datastore</rdfs:label>
+	<rdfs:comment></rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID88d67f73-0832-43af-8380-ed51be728f75">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Term"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Egyptian_Verb_to_be_added_to_datastore"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Verb"/>
 	<egm:token>not attested</egm:token>
 	<egm:person rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Not_in_datastore"/>
 	<egm:status rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/NA"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID53627731-7aa9-4f5d-b4a5-4834cba6340a">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuTermcluster"/>
+	<rdfs:label>egyptian_M-PSuff</rdfs:label>
+	<rdfs:comment>Alan Gardiner%%Egyptian Grammar%%3rd Edition (Oxford:Griffith Institute%%2001)%%§34. James E. Hoch%%Middle Egyptian Grammar (Mississauga:Benben Publications%%1997)%%§23. Note existence of the dual set of suffix pronouns.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDbd8276b5-3505-4df7-8ae2-23d1c232b28e">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -326,9 +393,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID07a1a02f-b8c9-4f92-9fd8-1c5d7023c610">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID8829a340-18eb-401b-8323-23765c96fb03">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -338,9 +406,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDf99c35b2-5ac9-491e-b641-e64ae6e2d3bb">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID24bb58e8-e0f3-4266-9061-b8b42fe3412c">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -350,9 +419,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID3aa9c56b-6785-4ef2-a7b9-13c237dbab83">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID269540c2-e8c7-4e38-af0b-b2d06bc114ee">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -362,9 +432,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDd9326d6f-22c9-4869-8dde-9813daad6a06">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID6af514ef-5a9c-4c10-bcd2-1c842289008c">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -374,69 +445,75 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID6649b4e9-cd8e-49eb-8af1-a52b4c067164">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDcd287def-ed4d-4622-bb74-89934ce07d15">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
 	<egm:token>-ny</egm:token>
 	<egm:person rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Person1"/>
-	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Du"/>
+	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dual"/>
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID72f8a3f3-89c5-4f64-b19e-8ad3d38e7308">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID850241c9-c274-4716-a0f6-9406a3a2d25b">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
 	<egm:token>-ṯny</egm:token>
 	<egm:person rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Person2"/>
-	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Du"/>
+	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dual"/>
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID432e7f23-f5d1-4ede-ad7c-7c24ba05516d">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID4f3c9d94-f7c2-41c3-8dd0-7e0c304c73d6">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
 	<egm:token>-sny</egm:token>
 	<egm:person rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Person3"/>
-	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Du"/>
+	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dual"/>
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDf4e89457-7c9e-4c60-929c-bcf327fe2a64">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID7031ad71-0657-4116-a690-8888838a0a2f">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
 	<egm:token>-fy</egm:token>
 	<egm:person rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Person3"/>
-	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Du"/>
+	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dual"/>
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDd1beb1a3-7eee-4f3e-aa46-fa2fc81af016">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID9a314ae6-ceaa-4d45-aee9-c421d68ff1f8">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
 	<egm:token>-sy</egm:token>
 	<egm:person rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Person3"/>
-	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Du"/>
+	<egm:number rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dual"/>
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDfaf87e59-c163-4e9d-a6e0-f04b5b95b113">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDe83e86e4-dc6d-474b-b350-6acd84839601">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -446,9 +523,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID263c2e6f-176e-4f18-9d4b-d20a99113878">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDd24d91ce-a47f-46d7-8474-5136147ec40b">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -458,9 +536,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID0d3c84db-0ba3-445d-be5f-876f7c55655d">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID74dbed96-dadc-468f-b138-39a6c69ff20f">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PSuff"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROSUFF"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Suffix"/>
@@ -470,9 +549,16 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID75b4a578-a5bb-494e-80a3-c1e2b1430f90">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuTermcluster"/>
+	<rdfs:label>egyptian_M-PInd</rdfs:label>
+	<rdfs:comment>Alan Gardiner%%Egyptian Grammar%%3rd Edition (Oxford:Griffith Institute%%2001)%%§64. James E. Hoch%%Middle Egyptian Grammar (Mississauga:Benben Publications%%1997)%%§56.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID995a3206-1471-475e-96b3-193b8b2bab95">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -482,9 +568,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDc9ba48d0-ab28-4c71-8a0b-8f31bd4473c9">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID62ca51d4-71c4-41ad-b4af-daf5d48fbcf3">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -494,9 +581,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID81d3b43d-3399-47a0-bfd9-869d6fb4db7b">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID4ae2e87f-d8f8-4b96-befc-3f72778ce192">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -506,9 +594,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDa86adbc7-8478-4b81-b6ce-e68e9d593e58">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID459c4e76-daf0-4bc7-888d-454d80885d9d">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -518,9 +607,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID5bdcf37e-68ad-4c14-8cf9-4c536c4c0ec5">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDbf9724ee-c398-4be1-8f07-b87b9e475296">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -530,9 +620,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID61a94072-d050-4e0f-9319-2fa650263f8d">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID95a43a61-3f83-4a39-b006-25e045f50a4a">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -542,9 +633,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDc735abb5-b646-44cc-9d0a-bb25929508ce">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID93545bae-d214-4f64-9bc1-68be937dd4b3">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -554,9 +646,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID69152d97-9a9c-4f87-9057-59b80604321e">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDcb836e5f-af73-4a61-8344-b34771929e8f">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PInd"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PROIND"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Independent"/>
@@ -566,9 +659,16 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDd25b374c-8412-4d32-8161-e98fa55a7aed">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep">
+	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/MuTermcluster"/>
+	<rdfs:label>egyptian_M-PDep</rdfs:label>
+	<rdfs:comment>Alan Gardiner%%Egyptian Grammar%%3rd Edition (Oxford:Griffith Institute%%2001)%%§43. James E. Hoch%%Middle Egyptian Grammar (Mississauga:Benben Publications%%1997)%%§39.</rdfs:comment>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDb479f920-f0d8-4435-a138-0e6452ef93cb">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -578,9 +678,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID174fb9d4-67f7-48a9-93d7-607abfc1bf33">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDbd6027ea-2dec-47ec-a7b4-e59e192a04d9">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -590,9 +691,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDc7fe52aa-426e-4bc5-a163-ad1813b88013">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID46d5adef-ecf1-4fdb-a280-9785364359ae">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -602,9 +704,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDbed10264-9966-419f-b3fb-f9db2292c265">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID7ead5c2e-6de9-4a30-8f29-e2ea53509f34">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -614,9 +717,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Masc"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/IDf4be2ed7-b01f-4b43-8ea3-136bf50cbd92">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID97fdbae9-7dc7-43a4-b5a0-556673bf3cfe">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -626,9 +730,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Fem"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID290f3cda-50a5-49b7-89d8-7953ff03d345">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID73370d63-85fa-49cc-bcf8-7db7eef6d895">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -638,9 +743,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID52c8a081-42ae-417f-a30e-d0fbfe9cce17">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID7b99f8cf-4092-4cd5-9dcc-903a05a196b3">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>
@@ -650,9 +756,10 @@
 	<egm:gender rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Common"/>
 </rdf:Description>
 
-<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID0fc57542-56aa-44de-8321-d5b193968d6d">
+<rdf:Description rdf:about="http://id.oi.uchicago.edu/aama/2013/ID761f744b-a6f6-40dc-a3e8-600481c60af2">
 	<rdf:type rdf:resource="http://id.oi.uchicago.edu/aama/2013/schema/Muterm"/>
 	<aamas:lang rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle"/>
+	<aamas:memberOf rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/egyptian_M-PDep"/>
 	<aamas:morpheme rdf:resource="http://id.oi.uchicago.edu/aama/2013/Egyptian-middle-PRODEPENDENT"/>
 	<egm:pos rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Pronoun"/>
 	<egm:proClass rdf:resource="http://id.oi.uchicago.edu/aama/2013/egyptian-middle/Dependent"/>

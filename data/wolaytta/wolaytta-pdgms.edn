@@ -1,22 +1,34 @@
 {
 :lang :wolaytta
 :sgpref "wol"
+:datasource "Lamberti-Sottile1997"
+:geodemoURL "http://www.ethnologue.com/language/wal"
+:geodemoTXT "Varieties and subdialects of the Omotic language Wolaytta are spoken in .....
+Lamberti-Sottile1997 p.146-184. What is here called simply past and aorist in the indicative and compound moods are called pastPerfectand aorPerfectrespectively in Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The relation between these and perfect/imperfect in the relative and gerund moodsremains to be determined. Under the category of complement constructions,complement:comp = tenses formed with a regularly conjugated auxiliary preceded by a complement canonical infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with the verb deʔ- form a problematic middle morphClass.).
+Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single tabular form in Lamberti-Sottile. All and only their forms are quoted here. Basically,any inflected form for a monoradical verb can be derived from the corresponding form of any other by subsituting the root radical. [Note diffference from regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and desiderative;likewise in stem in neg indic past sg 3 m.]" 
 :schemata {
 :case [:Ablative, :Absolutive, :Comitative, :Dative, :Directive, :Genitive, :Locative, :Object, :Subject]
 	  :complement [:Compound, :Simple]
-	  :derived [:Causative, :Causative_Causative-1, :Causative_Causative-2, :Causative_Iterative, :Causative_Iterative_Causative, :Causative_Passive, :DenominativeFromNClass1, :DenominativeFromNClass2, :DenominativeFromNClass3, :Iterative, :Iterative_causative, :Passive, :Passive_causative]
+	  :derived [:Causative, :Causative_Causative1, :Causative_Causative2, :Causative_Iterative, :Causative_Iterative_Causative, :Causative_Passive, :DenominativeFromNClass1, :DenominativeFromNClass2, :DenominativeFromNClass3, :Iterative, :Iterative_causative, :Passive, :Passive_causative]
 	  :gender [:Common, :Fem, :Honorific, :Masc]
 	  :genderRef [:Fem, :Masc]
-	  :mood [:Command, :Desiderative, :Gerund, :Hypothetical, :Indicative, :Infinitive, :Interrogative, :Potential, :Relative, :SubjunctivepdgmLex]
-	  :number [:Common, :Honorific, :Plural, :Singular]
+	  :mood [:Command, :Desiderative, :Gerund, :Hypothetical, :Indicative, :Infinitive, :Interrogative, :Potential, :Relative, :Subjunctive]
+	  :number [:Honorific, :Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:IndepCase, :Independent, :PossAdj, :PossNoun]
-	  :tam [:Aorist, :AoristIngressive, :AoristProgressive, :Future, :FutureProgressive, :Imperfect, :Jussive, :Past, :PastDubitative, :PastIngressive, :Perfect, :Present, :PresentIngressive, :U]
+	  :tam [:Aorist, :AoristIngressive, :AoristProgressive, :Future, :FutureProgressive, :Imperfect, :Jussive, :Past, :PastDubitative, :PastIngressive, :Perfect, :Present, :PresentIngressive]
 	  :vClass [:Aux]
-	  :morphClass [:DervStem, :Monoradical]
+	  :morphClass [:DervStem]
+           :conjClass [:Monoradical]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :genderRef ]
+           :synsemClass [:case :complement :derivedStem :mood :polarity :pos :proClass :tamb  :vClass]
+           :inflClass [ ]
+           :otherClass [ ]
+          }
 :morphemes {
   :DERVSTEM {:gloss "[x]", :lemma "[y]", }
   :PROINDEP {:gloss "[x]", :lemma "[y]", }
@@ -44,13 +56,6 @@
 }
 :lxterms #{
     {:label "wolaytta-VSmplAffRelImperfMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
@@ -60,49 +65,33 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-iya"]]
     }
     {:label "wolaytta-VSmplAffSubjAorMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :number :Singular,
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-oo"]]
     }
     {:label "wolaytta-VSmplAffSubjPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-id-o"],
 	    [:Common, :Singular, :Person2, "oott-id-o"],
@@ -113,67 +102,45 @@
 	    [:Common, :Plural, :Person3, "oott-id-o"]]
     }
     {:label "wolaytta-VSmplAffSubjPresMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :number :Singular,
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-iy-o"]]
     }
     {:label "wolaytta-VCompNegIndicPastIngr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PastIngressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "doomma-beykke"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "doomma-beyakka"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "doommi-beenna"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "doomma-beykku"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "doommi-beykko"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "doommi-beykketa"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "doommi-beykkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + doomma-beykke"],
+	    [:Common, :Singular, :Person2, "oottanaaw + doomma-beyakka"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + doommi-beenna"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + doomma-beykku"],
+	    [:Common, :Plural, :Person1, "oottanaaw + doommi-beykko"],
+	    [:Common, :Plural, :Person2, "oottanaaw + doommi-beykketa"],
+	    [:Common, :Plural, :Person3, "oottanaaw + doommi-beykkoona"]]
     }
     {:label "wolaytta-VSmplAffCommandJussMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :m,
 	    :mood :Command,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "m-aana"],
 	    [:Common, :Singular, :Person2, "m-a"],
@@ -184,21 +151,13 @@
 	    [:Common, :Plural, :Person3, "m-oona"]]
     }
     {:label "wolaytta-VSmplAffGerundImperf-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-a-ydde"],
 	    [:Common, :Singular, :Person2, "oott-a-ydde"],
@@ -209,109 +168,70 @@
 	    [:Common, :Plural, :Person3, "oott-iidde"]]
     }
     {:label "wolaytta-VCompAffIndicPastDubit-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastDubitative}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "ottidaa-dani", "hanaysi"],
-	    [:Common, :Singular, :Person2, "ottidaa-dani", "hanaasa"],
-	    [:Masc, :Singular, :Person3, "ottidaa-dani", "haneese"],
-	    [:Fem, :Singular, :Person3, "ottidaa-dani", "hanawsu"],
-	    [:Common, :Plural, :Person1, "ottidaa-dani", "hanooso"],
-	    [:Common, :Plural, :Person2, "ottidaa-dani", "haneeta"],
-	    [:Common, :Plural, :Person3, "ottidaa-dani", "hanosoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "ottidaa-dani + hanaysi"],
+	    [:Common, :Singular, :Person2, "ottidaa-dani + hanaasa"],
+	    [:Masc, :Singular, :Person3, "ottidaa-dani + haneese"],
+	    [:Fem, :Singular, :Person3, "ottidaa-dani + hanawsu"],
+	    [:Common, :Plural, :Person1, "ottidaa-dani + hanooso"],
+	    [:Common, :Plural, :Person2, "ottidaa-dani + haneeta"],
+	    [:Common, :Plural, :Person3, "ottidaa-dani + hanosoona"]]
     }
     {:label "wolaytta-VSmplAffIndicAorProgr-utt"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :utt,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristProgressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "utt-a-", "deʔaysi"],
-	    [:Common, :Singular, :Person2, "utt-a-", "deʔaasa"],
-	    [:Masc, :Singular, :Person3, "utt-i-", "deʔeese"],
-	    [:Fem, :Singular, :Person3, "utt-a-", "deʔawsu"],
-	    [:Common, :Plural, :Person1, "utt-i-", "deʔooso"],
-	    [:Common, :Plural, :Person2, "utt-i-", "deʔeeta"],
-	    [:Common, :Plural, :Person3, "utt-i-", "deʔosoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "utt-a- + deʔaysi"],
+	    [:Common, :Singular, :Person2, "utt-a- + deʔaasa"],
+	    [:Masc, :Singular, :Person3, "utt-i- + deʔeese"],
+	    [:Fem, :Singular, :Person3, "utt-a- + deʔawsu"],
+	    [:Common, :Plural, :Person1, "utt-i- + deʔooso"],
+	    [:Common, :Plural, :Person2, "utt-i- + deʔeeta"],
+	    [:Common, :Plural, :Person3, "utt-i- + deʔosoona"]]
     }
     {:label "wolaytta-VCompAffPotentialAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Potential,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "dandayaysi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "dandayaasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "dandayeese"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "dandayawsu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "dandayooso"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "dandayeeta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "dandayosoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + dandayaysi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + dandayaasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + dandayeese"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + dandayawsu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + dandayooso"],
+	    [:Common, :Plural, :Person2, "oottanaaw + dandayeeta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + dandayosoona"]]
     }
     {:label "wolaytta-VCompAffPotentialPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Potential,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "dandayaasi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "dandaya-dasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "dandayiisi"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "dandayaasu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "dandayi-da"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "dandayi-deta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "dandayi-soona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + dandayaasi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + dandaya-dasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + dandayiisi"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + dandayaasu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + dandayi-da"],
+	    [:Common, :Plural, :Person2, "oottanaaw + dandayi-deta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + dandayi-soona"]]
     }
     {:label "wolaytta-VCompAffIndicPastIngrMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Common,
 	    :lexeme :b,
@@ -321,51 +241,35 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastIngressive,
-	    :token-aux "doommaasi",
-	    :morphClass :Monoradical}
+	    :token-note-aux "doommaasi",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["baana-w"]]
+	    ["baana-w + doomaasi"]]
     }
     {:label "wolaytta-VCompNegDesidAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Desiderative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "kooyyikke"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "kooyyakka"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "kooyyeenna"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "kooyyukku"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "kooyyokko"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "kooyyekketa"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "kooyyokkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + kooyyikke"],
+	    [:Common, :Singular, :Person2, "oottanaaw + kooyyakka"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + kooyyeenna"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + kooyyukku"],
+	    [:Common, :Plural, :Person1, "oottanaaw + kooyyokko"],
+	    [:Common, :Plural, :Person2, "oottanaaw + kooyyekketa"],
+	    [:Common, :Plural, :Person3, "oottanaaw + kooyyokkoona"]]
     }
     {:label "wolaytta-VSmplAffRelPerf-maadd"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :maad,
 	    :mood :Relative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "maadd-ida"],
 	    [:Common, :Singular, :Person2, "maadd-ida"],
@@ -376,21 +280,13 @@
 	    [:Common, :Plural, :Person3, "maadd-ida"]]
     }
     {:label "wolaytta-VSmplNegInterrJuss-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-ikki-na-yee"],
 	    [:Common, :Singular, :Person2, "oott-ikk-i-yee"],
@@ -401,70 +297,46 @@
 	    [:Common, :Plural, :Person3, "oott-okkoona-yee"]]
     }
     {:label "wolaytta-VSmplNegHypothPres-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Hypothetical,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :token-aux "ʔitt -i"}
+	    :token-note-aux "ʔitt -i"}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "maaddeennani"],
-	    [:Common, :Singular, :Person2, "maaddeennani"],
-	    [:Masc, :Singular, :Person3, "maaddeennani"],
-	    [:Fem, :Singular, :Person3, "maaddeennani"],
-	    [:Common, :Plural, :Person1, "maaddeennani"],
-	    [:Common, :Plural, :Person2, "maaddeennani"],
-	    [:Common, :Plural, :Person3, "maaddeennani"]]
+	    [:Common, :Singular, :Person1, "maaddeennani + ʔitt -i"],
+	    [:Common, :Singular, :Person2, "maaddeennani + ʔitt -i"],
+	    [:Masc, :Singular, :Person3, "maaddeennani + ʔitt -i"],
+	    [:Fem, :Singular, :Person3, "maaddeennani + ʔitt -i"],
+	    [:Common, :Plural, :Person1, "maaddeennani + ʔitt -i"],
+	    [:Common, :Plural, :Person2, "maaddeennani + ʔitt -i"],
+	    [:Common, :Plural, :Person3, "maaddeennani + ʔitt -i"]]
     }
     {:label "wolaytta-VCompAffIndicPresIngr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresentIngressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "doomma-deʔaysi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "doomma-deʔaasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "doommi-deʔeese"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "doomma-deʔawsu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "doommi-deʔooso"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "doommi-deʔeeta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "doommi-deʔosoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + doomma-deʔaysi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + doomma-deʔaasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + doommi-deʔeese"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + doomma-deʔawsu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + doommi-deʔooso"],
+	    [:Common, :Plural, :Person2, "oottanaaw + doommi-deʔeeta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + doommi-deʔosoona"]]
     }
     {:label "wolaytta-VSmplAffInterrPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-a-di-na"],
 	    [:Common, :Singular, :Person2, "oott-a-di"],
@@ -475,21 +347,13 @@
 	    [:Common, :Plural, :Person3, "oott-i-doona"]]
     }
     {:label "wolaytta-VSmplNegSubjAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-eenna"],
 	    [:Common, :Singular, :Person2, "oott-eenna"],
@@ -500,13 +364,6 @@
 	    [:Common, :Plural, :Person3, "oott-eenna"]]
     }
     {:label "wolaytta-VCompAffDesidPastMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Common,
 	    :lexeme :m,
@@ -516,27 +373,19 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "kooyyaasa",
-	    :morphClass :Monoradical}
+	    :token-note-aux "kooyyaasa",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["maanaa-w"]]
+	    ["maanaa-w + kooyyaasa"]]
     }
     {:label "wolaytta-VSmplAffGerundPerf-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-a-de"],
 	    [:Common, :Singular, :Person2, "oott-a-de"],
@@ -547,21 +396,13 @@
 	    [:Common, :Plural, :Person3, "oott-i-di"]]
     }
     {:label "wolaytta-VSmplNegIndicAor-utt"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :utt,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "utt-ikke"],
 	    [:Common, :Singular, :Person2, "utt-akka"],
@@ -572,21 +413,13 @@
 	    [:Common, :Plural, :Person3, "utt-okkoona"]]
     }
     {:label "wolaytta-VSmplNegRelImperf-maadd"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :maad,
 	    :mood :Relative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "maadd-eenna ~ maadd-eennaa-nta"],
 	    [:Common, :Singular, :Person2, "maadd-eenna ~ maadd-eennaa-nta"],
@@ -597,13 +430,6 @@
 	    [:Common, :Plural, :Person3, "maadd-eenna ~ maadd-eennaa-nta"]]
     }
     {:label "wolaytta-VSmplAffIndicFutMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
@@ -613,98 +439,63 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-aana"]]
     }
     {:label "wolaytta-VSmplNegIndicAorProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristProgressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oott-a-", "deʔikke"],
-	    [:Common, :Singular, :Person2, "oott-a-", "deʔakka"],
-	    [:Masc, :Singular, :Person3, "oott-i-", "deʔeenna"],
-	    [:Fem, :Singular, :Person3, "oott-a-", "deʔukku"],
-	    [:Common, :Plural, :Person1, "oott-i-", "deʔokko"],
-	    [:Common, :Plural, :Person2, "oott-i-", "deʔekketa"],
-	    [:Common, :Plural, :Person3, "oott-i-", "deʔokkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oott-a- + deʔikke"],
+	    [:Common, :Singular, :Person2, "oott-a- + deʔakka"],
+	    [:Masc, :Singular, :Person3, "oott-i- + deʔeenna"],
+	    [:Fem, :Singular, :Person3, "oott-a- + deʔukku"],
+	    [:Common, :Plural, :Person1, "oott-i- + deʔokko"],
+	    [:Common, :Plural, :Person2, "oott-i- + deʔekketa"],
+	    [:Common, :Plural, :Person3, "oott-i- + deʔokkoona"]]
     }
     {:label "wolaytta-VSmplNegRelPerf-maadd"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :maad,
 	    :mood :Relative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "taya"}
+	    :token-note-aux "taya"}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "maaddeennan(i)"],
-	    [:Common, :Singular, :Person2, "maaddeennan(i)"],
-	    [:Masc, :Singular, :Person3, "maaddeennan(i)"],
-	    [:Fem, :Singular, :Person3, "maaddeennan(i)"],
-	    [:Common, :Plural, :Person1, "maaddeennan(i)"],
-	    [:Common, :Plural, :Person2, "maaddeennan(i)"],
-	    [:Common, :Plural, :Person3, "maaddeennan(i)"]]
+	    [:Common, :Singular, :Person1, "maaddeennan(i) + taya"],
+	    [:Common, :Singular, :Person2, "maaddeennan(i) + taya"],
+	    [:Masc, :Singular, :Person3, "maaddeennan(i) + taya"],
+	    [:Fem, :Singular, :Person3, "maaddeennan(i) + taya"],
+	    [:Common, :Plural, :Person1, "maaddeennan(i) + taya"],
+	    [:Common, :Plural, :Person2, "maaddeennan(i) + taya"],
+	    [:Common, :Plural, :Person3, "maaddeennan(i) + taya"]]
     }
     {:label "wolaytta-VSmplAffInfinitiveMonoradical-y"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :y,
 	    :mood :Infinitive,
-	    :number :Common,
-	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["y-aana"]]
     }
     {:label "wolaytta-VSmplAffInterrAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-a-y-na"],
 	    [:Common, :Singular, :Person2, "oott-a-a-yi"],
@@ -715,21 +506,13 @@
 	    [:Common, :Plural, :Person3, "oott-i-yuuna"]]
     }
     {:label "wolaytta-VSmplAffSubjPres-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-iy-o"],
 	    [:Common, :Singular, :Person2, "oott-iy-o"],
@@ -740,59 +523,33 @@
 	    [:Common, :Plural, :Person3, "oott-iy-o"]]
     }
     {:label "wolaytta-VCompNegIndicPresIngr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentIngressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottana-w", "doomma-deykke"],
-	    [:Common, :Singular, :Person2, "oottana-w", "doomma-deʔakka"],
-	    [:Masc, :Singular, :Person3, "oottana-w", "doommi-deʔeenna"],
-	    [:Fem, :Singular, :Person3, "oottana-w", "doomma-deʔukku"],
-	    [:Common, :Plural, :Person1, "oottana-w", "doommi-deʔokko"],
-	    [:Common, :Plural, :Person2, "oottana-w", "doommi-deʔekketa"],
-	    [:Common, :Plural, :Person3, "oottana-w", "doommi-deʔokkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottana-w + doomma-deykke"],
+	    [:Common, :Singular, :Person2, "oottana-w + doomma-deʔakka"],
+	    [:Masc, :Singular, :Person3, "oottana-w + doommi-deʔeenna"],
+	    [:Fem, :Singular, :Person3, "oottana-w + doomma-deʔukku"],
+	    [:Common, :Plural, :Person1, "oottana-w + doommi-deʔokko"],
+	    [:Common, :Plural, :Person2, "oottana-w + doommi-deʔekketa"],
+	    [:Common, :Plural, :Person3, "oottana-w + doommi-deʔokkoona"]]
     }
     {:label "wolaytta-VSmplAffInfinitiveMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
 	    :mood :Infinitive,
-	    :number :Common,
-	    
-	    :polarity :Affirmative,
+ 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-aana"]]
     }
     {:label "wolaytta-VSmplAffRelPerfMonoradical-y"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Masc,
 	    :lexeme :y,
@@ -802,19 +559,12 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["y-iida"]]
     }
     {:label "wolaytta-VSmplAffRelPerfMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
@@ -824,43 +574,28 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-iida"]]
     }
     {:label "wolaytta-VSmplNegInterrAorProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristProgressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oott-a-", "deʔikki-na"],
-	    [:Common, :Singular, :Person2, "oott-a-", "deʔikki"],
-	    [:Masc, :Singular, :Person3, "oott-i-", "deʔeenn-e"],
-	    [:Fem, :Singular, :Person3, "oott-a-", "deʔekke"],
-	    [:Common, :Plural, :Person1, "oott-i-", "deʔokko"],
-	    [:Common, :Plural, :Person2, "oott-i-", "deʔekketi"],
-	    [:Common, :Plural, :Person3, "oott-i-", "deʔokkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oott-a- + deʔikki-na"],
+	    [:Common, :Singular, :Person2, "oott-a- + deʔikki"],
+	    [:Masc, :Singular, :Person3, "oott-i- + deʔeenn-e"],
+	    [:Fem, :Singular, :Person3, "oott-a- + deʔekke"],
+	    [:Common, :Plural, :Person1, "oott-i- + deʔokko"],
+	    [:Common, :Plural, :Person2, "oott-i- + deʔekketi"],
+	    [:Common, :Plural, :Person3, "oott-i- + deʔokkoona"]]
     }
     {:label "wolaytta-VSmplNegGerundMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
@@ -869,20 +604,11 @@
 	    :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-eennaa-ni"]]
     }
     {:label "wolaytta-VSmplAffHypothPresMonoradical-g"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Masc,
 	    :lexeme :g,
@@ -892,19 +618,12 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["g-ii"]]
     }
     {:label "wolaytta-VSmplNegGerundMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
@@ -913,42 +632,28 @@
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-eennaa-ni"]]
     }
     {:label "wolaytta-VSmplAffSubjFutMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :number :Singular,
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-ana"]]
     }
     {:label "wolaytta-VSmplAffRelPerfMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
@@ -958,65 +663,43 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-iida"]]
     }
     {:label "wolaytta-VSmplAffSubjFutMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :number :Singular,
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-ana"]]
     }
     {:label "wolaytta-VCompAffDesidPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
-    :common {:complement :Compound,
+        :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Desiderative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "kooyyaasi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "kooyya-dasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "kooyyiisi"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "kooyyaasu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "kooyyi-da"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "kooyyi-deta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "kooyyi-soona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + kooyyaasi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + kooyya-dasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + kooyyiisi"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + kooyyaasu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + kooyyi-da"],
+	    [:Common, :Plural, :Person2, "oottanaaw + kooyyi-deta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + kooyyi-soona"]]
     }
     {:label "wolaytta-VSmplAffIndicFutMonoradical-y"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Masc,
 	    :lexeme :y,
@@ -1026,51 +709,35 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["y-aana"]]
     }
     {:label "wolaytta-VSmplAffInterrAorProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristProgressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oott-a-", "deʔayna"],
-	    [:Common, :Singular, :Person2, "oott-a-", "deʔayi"],
-	    [:Masc, :Singular, :Person3, "oott-i-", "deʔii"],
-	    [:Fem, :Singular, :Person3, "oott-a-", "deʔay"],
-	    [:Common, :Plural, :Person1, "oott-i-", "deʔi"],
-	    [:Common, :Plural, :Person2, "oott-i-", "deʔeeti"],
-	    [:Common, :Plural, :Person3, "oott-i-", "deʔoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oott-a- + deʔayna"],
+	    [:Common, :Singular, :Person2, "oott-a- + deʔayi"],
+	    [:Masc, :Singular, :Person3, "oott-i- + deʔii"],
+	    [:Fem, :Singular, :Person3, "oott-a- + deʔay"],
+	    [:Common, :Plural, :Person1, "oott-i- + deʔi"],
+	    [:Common, :Plural, :Person2, "oott-i- + deʔeeti"],
+	    [:Common, :Plural, :Person3, "oott-i- + deʔoona"]]
     }
     {:label "wolaytta-VSmplAffSubjFut-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-ana"],
 	    [:Common, :Singular, :Person2, "oott-ana"],
@@ -1081,21 +748,13 @@
 	    [:Common, :Plural, :Person3, "oott-ana"]]
     }
     {:label "wolaytta-VSmplAffIndicAor-utt"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :utt,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "utt-aysi"],
 	    [:Common, :Singular, :Person2, "utt-aasa"],
@@ -1106,21 +765,13 @@
 	    [:Common, :Plural, :Person3, "utt-o-soona"]]
     }
     {:label "wolaytta-VSmplAffHypothPres-maadd"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :maad,
 	    :mood :Hypothetical,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "maadd-i"],
 	    [:Common, :Singular, :Person2, "maadd-i"],
@@ -1131,69 +782,45 @@
 	    [:Common, :Plural, :Person3, "maadd-i"]]
     }
     {:label "wolaytta-VCompNegPotentialPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Potential,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "dandaya-beykke"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "dandaya-beyakka"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "dandayi-beenna"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "dandaya-beykku"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "dandayi-beykko"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "dandayi-beykketa"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "dandayi-beykkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + dandaya-beykke"],
+	    [:Common, :Singular, :Person2, "oottanaaw + dandaya-beyakka"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + dandayi-beenna"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + dandaya-beykku"],
+	    [:Common, :Plural, :Person1, "oottanaaw + dandayi-beykko"],
+	    [:Common, :Plural, :Person2, "oottanaaw + dandayi-beykketa"],
+	    [:Common, :Plural, :Person3, "oottanaaw + dandayi-beykkoona"]]
     }
     {:label "wolaytta-VCompNegDesidPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Desiderative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "kooyya-beykke"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "kooyya-beyakka"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "kooyyi-beenna"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "kooyya-beykku"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "kooyyi-beykko"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "kooyyi-beykketa"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "kooyyi-beykkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + kooyya-beykke"],
+	    [:Common, :Singular, :Person2, "oottanaaw + kooyya-beyakka"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + kooyyi-beenna"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + kooyya-beykku"],
+	    [:Common, :Plural, :Person1, "oottanaaw + kooyyi-beykko"],
+	    [:Common, :Plural, :Person2, "oottanaaw + kooyyi-beykketa"],
+	    [:Common, :Plural, :Person3, "oottanaaw + kooyyi-beykkoona"]]
     }
     {:label "wolaytta-VSmplNegGerund-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Gerund,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤"}
+	    
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-eennaa-ni"],
 	    [:Common, :Singular, :Person2, "oott-eennaa-ni"],
@@ -1204,21 +831,14 @@
 	    [:Common, :Plural, :Person3, "oott-eennaa-ni"]]
     }
     {:label "wolaytta-VSmplAffGerundPerfMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :m,
 	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "m-aa-da"],
 	    [:Masc, :Singular, :Person3, "m-aa-di"],
@@ -1228,90 +848,59 @@
 	    [:Common, :Plural, :Person3, "m-aa-di"]]
     }
     {:label "wolaytta-VSmplAffSubjPastMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :number :Singular,
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-id-o"]]
     }
     {:label "wolaytta-VSmplAffIndicFutProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :FutureProgressive,
-	    :token-aux "deʔana"}
+	    :token-note-aux "deʔana"}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "oottaydde ~ oottaadde"],
-	    [:Common, :Singular, :Person2, "oottaydde ~ oottaadde"],
-	    [:Masc, :Singular, :Person3, "oottiidde"],
-	    [:Fem, :Singular, :Person3, "oottaydde ~ oottaadde"],
-	    [:Common, :Plural, :Person1, "oottiidde"],
-	    [:Common, :Plural, :Person2, "oottiidde"],
-	    [:Common, :Plural, :Person3, "oottiidde"]]
+	    [:Common, :Singular, :Person1, "oottaydde ~ oottaadde + deʔana"],
+	    [:Common, :Singular, :Person2, "oottaydde ~ oottaadde + deʔana"],
+	    [:Masc, :Singular, :Person3, "oottiidde + deʔana"],
+	    [:Fem, :Singular, :Person3, "oottaydde ~ oottaadde + deʔana"],
+	    [:Common, :Plural, :Person1, "oottiidde + deʔana"],
+	    [:Common, :Plural, :Person2, "oottiidde + deʔana"],
+	    [:Common, :Plural, :Person3, "oottiidde + deʔana"]]
     }
     {:label "wolaytta-VSmplAffInfinitive-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :oott,
 	    :mood :Infinitive,
-	    :number :Common,
+	    
 	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤"}
+	    
+	    }
     :terms [[:token]  ;; schema
 	    ["oott-anaa-w"]]
     }
     {:label "wolaytta-VSmplAffInterrJuss-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-a-y-na-yee"],
 	    [:Common, :Singular, :Person2, "oott-a-a-yi-yee"],
@@ -1322,21 +911,14 @@
 	    [:Common, :Plural, :Person3, "oott-i-yuuna-yee"]]
     }
     {:label "wolaytta-VSmplAffGerundImperfMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :m,
 	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "m-a-ydde ~ m-aadde"],
 	    [:Common, :Singular, :Person2, "m-a-ydde ~ m-aadde"],
@@ -1347,21 +929,13 @@
 	    [:Common, :Plural, :Person3, "m-ii-di"]]
     }
     {:label "wolaytta-VSmplAffIndicFut-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-ana"],
 	    [:Common, :Singular, :Person2, "oott-ana"],
@@ -1372,21 +946,13 @@
 	    [:Common, :Plural, :Person3, "oott-ana"]]
     }
     {:label "wolaytta-VSmplAffRelImperf-maadd"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :maad,
 	    :mood :Relative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "maadd-iya"],
 	    [:Common, :Singular, :Person2, "maadd-iya"],
@@ -1397,35 +963,21 @@
 	    [:Common, :Plural, :Person3, "maadd-iya"]]
     }
     {:label "wolaytta-VSmplAffInfinitiveMonoradical-g"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :g,
 	    :mood :Infinitive,
-	    :number :Common,
+	    
 	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["g-aana"]]
     }
     {:label "wolaytta-VCompAffDesidPastMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Common,
 	    :lexeme :b,
@@ -1435,19 +987,12 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "kooyyaasi",
-	    :morphClass :Monoradical}
+	    :token-note-aux "kooyyaasi",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["baanaa-w"]]
+	    ["baanaa-w + kooyyaasi"]]
     }
     {:label "wolaytta-VSmplAffRelImperfMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
@@ -1457,41 +1002,27 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-iya"]]
     }
     {:label "wolaytta-VSmplAffSubjPastMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :number :Singular,
 	    :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-id-o"]]
     }
     {:label "wolaytta-VSmplAffHypothAorProgrMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :m,
 	    :mood :Hypothetical,
@@ -1499,20 +1030,13 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristProgressive,
-	    :token-aux "deʔ-i",
-	    :morphClass :Monoradical}
+	    :token-note-aux "deʔ-i",
+	    :conjClass :Monoradical}
     :terms [[:gender, :person, :token]  ;; schema
-	    [:Common, :Person1, "m-a-ydde"],
-	    [:Masc, :Person3, "m-iidde"]]
+	    [:Common, :Person1, "m-a-ydde + deʔ-i"],
+	    [:Masc, :Person3, "m-iidde + deʔ-i"]]
     }
     {:label "wolaytta-VSmplNegIndicPastMonoradical-y"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Masc,
 	    :lexeme :y,
@@ -1522,43 +1046,28 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "beenna",
-	    :morphClass :Monoradical}
+	    :token-note-aux "beenna",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["yi-"]]
+	    ["yi- + beenna"]]
     }
     {:label "wolaytta-VSmplNegIndicFutProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :FutureProgressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottaydde", "deʔikke"],
-	    [:Common, :Singular, :Person2, "oottaydde", "deʔakka"],
-	    [:Masc, :Singular, :Person3, "oottiidde", "deʔeenna"],
-	    [:Fem, :Singular, :Person3, "oottaydde", "deʔukku"],
-	    [:Common, :Plural, :Person1, "oottiidde", "deʔokko"],
-	    [:Common, :Plural, :Person2, "oottiidde", "deʔekketa"],
-	    [:Common, :Plural, :Person3, "oottiidde", "deʔokkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottaydde + deʔikke"],
+	    [:Common, :Singular, :Person2, "oottaydde + deʔakka"],
+	    [:Masc, :Singular, :Person3, "oottiidde + deʔeenna"],
+	    [:Fem, :Singular, :Person3, "oottaydde + deʔukku"],
+	    [:Common, :Plural, :Person1, "oottiidde + deʔokko"],
+	    [:Common, :Plural, :Person2, "oottiidde + deʔekketa"],
+	    [:Common, :Plural, :Person3, "oottiidde + deʔokkoona"]]
     }
     {:label "wolaytta-VSmplAffGerundPerfMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :b,
 	    :mood :Gerund,
@@ -1566,28 +1075,20 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :person, :token]  ;; schema
 	    [:Common, :Person1, "b-aa-da"],
 	    [:Masc, :Person3, "b-ii-di"]]
     }
     {:label "wolaytta-VSmplAffInterrFut-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oottan-ey"],
 	    [:Common, :Singular, :Person2, "oottan-i"],
@@ -1598,21 +1099,13 @@
 	    [:Common, :Plural, :Person3, "oottan-ey"]]
     }
     {:label "wolaytta-VSmplAffCommandJuss-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Command,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-ana"],
 	    [:Common, :Singular, :Person2, "oott-a"],
@@ -1623,21 +1116,13 @@
 	    [:Common, :Plural, :Person3, "oott-oona"]]
     }
     {:label "wolaytta-VSmplAffIndicPast-utt"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :utt,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "utt-aasi"],
 	    [:Common, :Singular, :Person2, "utt-a-dasa"],
@@ -1648,21 +1133,14 @@
 	    [:Common, :Plural, :Person3, "utt-i-soona"]]
     }
     {:label "wolaytta-VSmplNegCommandJussMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :b,
 	    :mood :Command,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "b-iikke"],
 	    [:Common, :Singular, :Person2, "b-oopp-a"],
@@ -1673,13 +1151,6 @@
 	    [:Common, :Plural, :Person3, "b-oopp-oona"]]
     }
     {:label "wolaytta-VSmplNegIndicPastMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
@@ -1688,19 +1159,12 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :morphClass :Monoradical}
-    :terms [[:person, :token, :token-aux]  ;; schema
-	    [:Person1, "b-aa-", "beykke"],
-	    [:Person2, "b-aa-", "beyakka"]]
+	    :conjClass :Monoradical}
+    :terms [[:person, :token]  ;; schema
+	    [:Person1, "b-aa- + beykke"],
+	    [:Person2, "b-aa- + beyakka"]]
     }
     {:label "wolaytta-VCompAffIndicPastIngrMonoradical-y"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Masc,
 	    :lexeme :y,
@@ -1710,75 +1174,52 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastIngressive,
-	    :token-aux "doommiisi",
-	    :morphClass :Monoradical}
+	    :token-note-aux "doommiisi",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["yaana-w"]]
+	    ["yaana-w + doommiisi"]]
     }
     {:label "wolaytta-VCompAffIndicPastIngr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastIngressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "doommaasi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "doomma-dasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "doommiisi"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "doommaasu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "doommi-da"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "doommi-deta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "doommi-soona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + doommaasi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + doomma-dasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + doommiisi"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + doommaasu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + doommi-da"],
+	    [:Common, :Plural, :Person2, "oottanaaw + doommi-deta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + doommi-soona"]]
     }
     {:label "wolaytta-VCompAffIndicAorIngr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristIngressive}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "doommaysi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "doommaasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "doommeese"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "doommawsu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "doommooso"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "doommeeta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "doommosoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + doommaysi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + doommaasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + doommeese"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + doommawsu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + doommooso"],
+	    [:Common, :Plural, :Person2, "oottanaaw + doommeeta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + doommosoona"]]
     }
     {:label "wolaytta-VSmplAffIndicAorMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :b,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "b-ayisi"],
 	    [:Common, :Singular, :Person2, "b-aasa"],
@@ -1789,13 +1230,6 @@
 	    [:Common, :Plural, :Person3, "b-o-soona"]]
     }
     {:label "wolaytta-VCompAffPotentialPastMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Common,
 	    :lexeme :b,
@@ -1805,75 +1239,51 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "dandayaasi",
-	    :morphClass :Monoradical}
+	    :token-note-aux "dandayaasi",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["baanaa-w"]]
+	    ["baanaa-w + dandayaasi"]]
     }
     {:label "wolaytta-VCompAffDesidAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Desiderative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "kooyyaysi"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "kooyyaasa"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "kooyyeese"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "kooyyawsu"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "kooyyooso"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "kooyyeeta"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "kooyyosoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + kooyyaysi"],
+	    [:Common, :Singular, :Person2, "oottanaaw + kooyyaasa"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + kooyyeese"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + kooyyawsu"],
+	    [:Common, :Plural, :Person1, "oottanaaw + kooyyooso"],
+	    [:Common, :Plural, :Person2, "oottanaaw + kooyyeeta"],
+	    [:Common, :Plural, :Person3, "oottanaaw + kooyyosoona"]]
     }
     {:label "wolaytta-VSmplNegInterrPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oott-a-", "beykki-na"],
-	    [:Common, :Singular, :Person2, "oott-a-", "beykki"],
-	    [:Masc, :Singular, :Person3, "oott-i-", "beenn-e"],
-	    [:Fem, :Singular, :Person3, "oott-a-", "beykk-e"],
-	    [:Common, :Plural, :Person1, "oott-i-", "beykko"],
-	    [:Common, :Plural, :Person2, "oott-i-", "beykket-i"],
-	    [:Common, :Plural, :Person3, "oott-i-", "beykkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oott-a- + beykki-na"],
+	    [:Common, :Singular, :Person2, "oott-a- + beykki"],
+	    [:Masc, :Singular, :Person3, "oott-i- + beenn-e"],
+	    [:Fem, :Singular, :Person3, "oott-a- + beykk-e"],
+	    [:Common, :Plural, :Person1, "oott-i- + beykko"],
+	    [:Common, :Plural, :Person2, "oott-i- + beykket-i"],
+	    [:Common, :Plural, :Person3, "oott-i- + beykkoona"]]
     }
     {:label "wolaytta-VSmplNegInterrAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Interrogative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-ikki-na"],
 	    [:Common, :Singular, :Person2, "oott-ikk-i"],
@@ -1884,21 +1294,14 @@
 	    [:Common, :Plural, :Person3, "oott-okkoona"]]
     }
     {:label "wolaytta-VSmplNegIndicAorMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :b,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "b-iikke"],
 	    [:Common, :Singular, :Person2, "b-aakka"],
@@ -1908,45 +1311,30 @@
 	    [:Common, :Plural, :Person2, "b-eekketa"]]
     }
     {:label "wolaytta-VCompNegPotentialAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Compound,
 	    :lexeme :oott,
 	    :mood :Potential,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "oottanaaw", "dandayikke"],
-	    [:Common, :Singular, :Person2, "oottanaaw", "dandayakka"],
-	    [:Masc, :Singular, :Person3, "oottanaaw", "dandayeenna"],
-	    [:Fem, :Singular, :Person3, "oottanaaw", "dandayukku"],
-	    [:Common, :Plural, :Person1, "oottanaaw", "dandayokko"],
-	    [:Common, :Plural, :Person2, "oottanaaw", "dandayekketa"],
-	    [:Common, :Plural, :Person3, "oottanaaw", "dandayokkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "oottanaaw + dandayikke"],
+	    [:Common, :Singular, :Person2, "oottanaaw + dandayakka"],
+	    [:Masc, :Singular, :Person3, "oottanaaw + dandayeenna"],
+	    [:Fem, :Singular, :Person3, "oottanaaw + dandayukku"],
+	    [:Common, :Plural, :Person1, "oottanaaw + dandayokko"],
+	    [:Common, :Plural, :Person2, "oottanaaw + dandayekketa"],
+	    [:Common, :Plural, :Person3, "oottanaaw + dandayokkoona"]]
     }
     {:label "wolaytta-VSmplAffIndicPastMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :lexeme :b,
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "b-aasi"],
 	    [:Common, :Singular, :Person2, "b-a(a)-dasa"],
@@ -1957,13 +1345,6 @@
 	    [:Common, :Plural, :Person3, "b-ii-soona"]]
     }
     {:label "wolaytta-VCompAffPotentialPastMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Common,
 	    :lexeme :m,
@@ -1973,73 +1354,49 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "dandayaasa",
-	    :morphClass :Monoradical}
+	    :token-note-aux "dandayaasa",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["maanaa-w"]]
+	    ["maanaa-w + dandayaasa"]]
     }
     {:label "wolaytta-VSmplNegInfinitive-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :oott,
 	    :mood :Infinitive,
-	    :number :Common,
+	    
 	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤"}
+	    
+	    }
     :terms [[:token]  ;; schema
 	    ["oott-eennaa-ni-ʔagano"]]
     }
     {:label "wolaytta-VSmplNegIndicPast-utt"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :utt,
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
-	    [:Common, :Singular, :Person1, "utt-a-", "beykke"],
-	    [:Common, :Singular, :Person2, "utt-a-", "beyakka"],
-	    [:Masc, :Singular, :Person3, "utt-i-", "beenna"],
-	    [:Fem, :Singular, :Person3, "utt-a-", "beykku"],
-	    [:Common, :Plural, :Person1, "utt-i-", "beykko"],
-	    [:Common, :Plural, :Person2, "utt-i-", "beykketa"],
-	    [:Common, :Plural, :Person3, "utt-i-", "beykkoona"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "utt-a- + beykke"],
+	    [:Common, :Singular, :Person2, "utt-a- + beyakka"],
+	    [:Masc, :Singular, :Person3, "utt-i- + beenna"],
+	    [:Fem, :Singular, :Person3, "utt-a- + beykku"],
+	    [:Common, :Plural, :Person1, "utt-i- + beykko"],
+	    [:Common, :Plural, :Person2, "utt-i- + beykketa"],
+	    [:Common, :Plural, :Person3, "utt-i- + beykkoona"]]
     }
     {:label "wolaytta-VSmplAffSubjAor-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-o"],
 	    [:Common, :Singular, :Person2, "oott-o"],
@@ -2050,38 +1407,23 @@
 	    [:Common, :Plural, :Person3, "oott-o"]]
     }
     {:label "wolaytta-VSmplAffHypothAorProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Hypothetical,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristProgressive,
-	    :token-aux "deʔ-i"}
+	    :token-note-aux "deʔ-i"}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "oott-a-de-"],
-	    [:Common, :Singular, :Person2, "oott-a-de-"],
-	    [:Masc, :Singular, :Person3, "oott-i-de-"],
-	    [:Fem, :Singular, :Person3, "oott-a-de-"],
-	    [:Common, :Plural, :Person1, "oott-i-di-"],
-	    [:Common, :Plural, :Person2, "oott-i-di-"],
-	    [:Common, :Plural, :Person3, "oott-i-di-"]]
+	    [:Common, :Singular, :Person1, "oott-a-de- + deʔ-i"],
+	    [:Common, :Singular, :Person2, "oott-a-de- + deʔ-i"],
+	    [:Masc, :Singular, :Person3, "oott-i-de- + deʔ-i"],
+	    [:Fem, :Singular, :Person3, "oott-a-de- + deʔ-i"],
+	    [:Common, :Plural, :Person1, "oott-i-di- + deʔ-i"],
+	    [:Common, :Plural, :Person2, "oott-i-di- + deʔ-i"],
+	    [:Common, :Plural, :Person3, "oott-i-di- + deʔ-i"]]
     }
     {:label "wolaytta-VCompAffIndicPastIngrMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Compound,
 	    :gender :Common,
 	    :lexeme :m,
@@ -2091,49 +1433,34 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastIngressive,
-	    :token-aux "doomma-dasa",
-	    :morphClass :Monoradical}
+	    :token-note-aux "doomma-dasa",
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
-	    ["maana-w"]]
+	    ["maana-w + doomma-dasa"]]
     }
     {:label "wolaytta-VSmplAffInfinitiveMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
 	    :mood :Infinitive,
-	    :number :Common,
+	    
 	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-aana"]]
     }
     {:label "wolaytta-VSmplNegCommandJuss-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Command,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-ikke"],
 	    [:Common, :Singular, :Person2, "oott-opp-a"],
@@ -2144,38 +1471,23 @@
 	    [:Common, :Plural, :Person3, "oott-opp-oona"]]
     }
     {:label "wolaytta-VSmplNegHypothAorProgr-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
 	    :mood :Hypothetical,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristProgressive,
-	    :token-aux "deʔ-i"}
+	    :token-note-aux "deʔ-i"}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ootteennani"],
-	    [:Common, :Singular, :Person2, "ootteennani"],
-	    [:Masc, :Singular, :Person3, "ootteennani"],
-	    [:Fem, :Singular, :Person3, "ootteennani"],
-	    [:Common, :Plural, :Person1, "ootteennani"],
-	    [:Common, :Plural, :Person2, "ootteennani"],
-	    [:Common, :Plural, :Person3, "ootteennani"]]
+	    [:Common, :Singular, :Person1, "ootteennani + deʔ-i"],
+	    [:Common, :Singular, :Person2, "ootteennani + deʔ-i"],
+	    [:Masc, :Singular, :Person3, "ootteennani + deʔ-i"],
+	    [:Fem, :Singular, :Person3, "ootteennani + deʔ-i"],
+	    [:Common, :Plural, :Person1, "ootteennani + deʔ-i"],
+	    [:Common, :Plural, :Person2, "ootteennani + deʔ-i"],
+	    [:Common, :Plural, :Person3, "ootteennani + deʔ-i"]]
     }
     {:label "wolaytta-VSmplAffCommandJussMonoradical-b"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :b,
@@ -2185,19 +1497,12 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["b-iite"]]
     }
     {:label "wolaytta-VSmplAffIndicFutMonoradical-m"
-    :note "Lamberti-Sottile1997 p.165-168;180-181. [See wolaytta-VInflection for definitions
-            of moods and tenses.]The four monoradical verbs of Wolaytta are given in a single
-            tabular form in Lamberti-Sottile. All and only their forms are quoted here.
-            Basically,any inflected form for a monoradical verb can be derived from the
-            corresponding form of any other by subsituting the root radical. [Note diffference from
-            regular verb in suffix and/or auxiliary shape in hypothetical,gerund,potential,and
-            desiderative;likewise in stem in neg indic past sg 3 m.]"
     :common {:complement :Simple,
 	    :gender :Common,
 	    :lexeme :m,
@@ -2207,27 +1512,19 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future,
-	    :token-aux "⊤",
-	    :morphClass :Monoradical}
+	    
+	    :conjClass :Monoradical}
     :terms [[:token]  ;; schema
 	    ["m-aana"]]
     }
     {:label "wolaytta-VSmplNegSubjPast-oott"
-    :note "Lamberti-Sottile1997 p.146-184. What is here called simply pastand aoristin the
-            indicative and compound moods are called pastPerfectand aorPerfectrespectively in
-            Lamberti-Sottile (in addition to a simple pastand aoristin the subjunctive mood). The
-            relation between these and perfect/imperfect in the relative and gerund moodsremains to
-            be determined. Under the category of complement constructions,complement:comp = tenses
-            formed with a regularly conjugated auxiliary preceded by a complement canonical
-            infinitive or nominal verb form;smpl = others. (The Progr[progressive]tenses formed with
-            the verb deʔ- form a problematic middle morphClass.)"
     :common {:complement :Simple,
 	    :lexeme :oott,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past,
-	    :token-aux "⊤"}
+	    }
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oott-a-beenna"],
 	    [:Common, :Singular, :Person2, "oott-a-beenna"],
@@ -2342,9 +1639,9 @@
 	    [:Iterative_causative, "-erett-iss-"],
 	    [:Passive_causative, "-ett-iss-"],
 	    [:Causative_Passive, "-iss-ett-"],
-	    [:Causative_Causative-1, "-iss-iss-"],
+	    [:Causative_Causative1, "-iss-iss-"],
 	    [:Causative_Iterative, "-t-erett-"],
-	    [:Causative_Causative-2, "-t-iss-"],
+	    [:Causative_Causative2, "-t-iss-"],
 	    [:Causative_Iterative_Causative, "-t-erett-iss-"]]
     }
     {:label "wolaytta-PPossAdj"

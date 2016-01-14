@@ -1,23 +1,32 @@
 {
 :lang :maale
 :sgpref "mal"
+:datasource "Amha2001"
+:geodemoURL "http://www.ethnologue.com/language/mdy"
+:geodemoTXT "Varieties and subdialects of the Omotic language Maale are spoken in"
 :schemata {
-:case [:Ablative, :Absolutive, :Common, :Dative, :Instrumental, :Nominative, :Possessive]
-	  :clauseType [:Causal, :Common, :Conditional, :Converb1, :Converb2, :Converb3, :Declarative, :Imperative, :InterrDubitative, :InterrNonPolar, :InterrPolar, :Optative, :Preventive, :Purposive1, :Purposive2, :Simultaneous, :Temporal1, :Temporal2]
+           :case [:Ablative, :Absolutive, :CaseC, :Dative, :Instrumental, :Nominative, :Possessive]
+	  :clauseType [:Causal, :ClauseC, :Conditional, :Converb1, :Converb2, :Converb3, :Declarative, :Imperative, :InterrDubitative, :InterrNonPolar, :InterrPolar, :Optative, :Preventive, :Purposive1, :Purposive2, :Simultaneous, :Temporal1, :Temporal2]
 	  :derivedStem [:Causative, :Causative2, :Denominal, :Inchoative, :Intensive, :Passive, :PassiveCausative, :Reflexive]
 	  :gender [:Common, :Fem, :Masc]
-	  :modal [:Common, :Mirative, :NewInfo, :NonVerbal, :Perfective, :Veridical]
-	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3, :Person3Ref]
+	  :modal [:ModC, :Mirative, :NewInfo, :NonVerbal, :Perfective, :Veridical]
+	  :number [:NumC, :Plural, :Singular]
+	  :person [:PersC, :Person1, :Person2, :Person3, :Person3Ref]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :possType [:Poss1, :Poss2, :PossNom1, :PossNom2]
-	  :proClass [:BasicPro, :CaseMarking, :Possessive, :Pro2ary, :ProInd, :Restrictive]
+	  :proClass [:BasicPro, :CaseMarking, :ProPoss, :Pro2ary, :ProInd, :Restrictive]
 	  :rootStructure [:Group1, :Group2]
-	  :tam [:Common, :Imperfective, :ImperfectiveFuture, :ImperfectivePresent, :InterrPerm, :Perfective]
+	  :tam [:TamC, :Imperfective, :ImperfectiveFuture, :ImperfectivePresent, :InterrPerm, :Perfective]
 	  :temporal [:Clauses]
 	  :morphClass [:BE, :DervStem, :InflectionTemplate, :RootStructure]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case :clauseType  :derivedStem :modal :polarity :pos possType :proClass :tam :temporal ]
+           :inflClass [:rootStructure  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :COPULABE {:gloss "[x]", :lemma "[y]", }
   :DERVSTEM {:gloss "[x]", :lemma "[y]", }
@@ -31,10 +40,63 @@
   :VROOTSTRUCTURE {:gloss "[x]", :lemma "[y]",}
 }
 :lexemes {
-  :_NULL {:lemma "múʔ", :gloss "eat", }
+  :mu {:lemma "múʔ", :gloss "eat", }
   :ba {:lemma "bá-", :gloss "not exist", }
 }
-:lxterms #{}
+:lxterms #{
+    {:label "maale-VInflectionTemplate"
+    :note "Amha2001 Ch. 7 (summary p. 158);Ch. 8 (summary p. 202). Maale verb morphology does not include subject agreement,with partial exception of imperative-optative. Inflectional template is:[VRoot (+ dervSuff)](+ AspectMarker) + moodClauseMarker. Attested combinations of aspect and clause suffixes given in paradigm. Template: AspSuff + ClauseSuff + Note."
+    :common {:morpheme :VINFLECTIONTEMPLATE,
+	    :pos :Verb,
+             :gender :Common, 
+	    :lexeme :mu,
+	    :verbMorphClass :InflectionTemplate}
+    :terms [[:tam, :clauseType, :modal, :number, :person, :polarity, :token-note-template, :token]  ;; schema
+	    [:Perfective, :Declarative, :ModC, :NumC, :PersC, :Affirmative, "Common + -ne + ", "Common . . .  -ne"],
+	    [:ImperfectivePresent, :Declarative, :ModC, :NumC, :PersC, :Affirmative, "Common + -ne + ", "Common . . .  -ne"],
+	    [:ImperfectiveFuture, :Declarative, :ModC, :NumC, :PersC, :Affirmative, "-andá- + -ne + ", "-andá- . . .  -ne"],
+	    [:Perfective, :Declarative, :ModC, :NumC, :PersC, :Negative, "-ibá- + -se + ", "-ibá- . . .  -se"],
+	    [:Imperfective, :Declarative, :ModC, :NumC, :PersC, :Negative, "-uwá- + -se + ", "-uwá- . . .  -se"],
+	    [:Perfective, :Declarative, :Mirative, :NumC, :PersC, :Affirmative, "Common + -y + contrary to expectation", "Common . . .  -y ['contrary to expectation']"],
+	    [:ImperfectivePresent, :Declarative, :Mirative, :NumC, :PersC, :Affirmative, "Common + -y  + contrary to expectation", "Common . . .  -y ['contrary to expectation']"],
+	    [:TamC, :Declarative, :Veridical, :NumC, :PersC, :Affirmative, "Common + -i + Emphatic", "Common . . .  -i ['Emphatic']"],
+	    [:Perfective, :InterrNonPolar, :ModC, :NumC, :PersC, :Affirmative, "Common + -y  + asking for content info", "Common . . .  -y ['asking for content info']"],
+	    [:ImperfectivePresent, :InterrNonPolar, :ModC, :NumC, :PersC, :Affirmative, "Common + -y   + asking for content info", "Common . . .  -y ['asking for content info["],
+	    [:ImperfectiveFuture, :InterrNonPolar, :ModC, :NumC, :PersC, :Affirmative, "-andá- + -y  + asking for content info", "-andá- . . .  -y ['asking for content info']"],
+	    [:Perfective, :InterrPolar, :ModC, :NumC, :PersC, :Affirmative, "-íya- + RisingIntonation  + yes-no", "-íya- . . .  RisingIntonation ['yes-no']"],
+	    [:ImperfectivePresent, :InterrPolar, :ModC, :NumC, :PersC, :Affirmative, "Common + RisingIntonation  + yes-no", "Common . . .  RisingIntonation ['yes-no']"],
+	    [:ImperfectiveFuture, :InterrPolar, :ModC, :NumC, :PersC, :Affirmative, "-andá- + RisingIntonation  + yes-no", "-andá- . . .  RisingIntonation ['yes-no']"],
+	    [:InterrPerm, :ClauseC, :ModC, :NumC, :PersC, :Affirmative, "-ondó + Common  + ask permission", "-ondó . . .  Common ['ask permission']"],
+	    [:ImperfectiveFuture, :InterrDubitative, :ModC, :NumC, :PersC, :Affirmative, "-andá- + -sinway  + Dubitative", "-andá- . . .  -sinway ['Dubitative']"],
+	    [:InterrPerm, :InterrDubitative, :ModC, :NumC, :PersC, :Affirmative, "-ondó + -sinway  + DubitativePermission", "-ondó . . .  -sinway ['DubitativePermission']"],
+	    [:TamC, :Declarative, :NewInfo, :NumC, :PersC, :Affirmative, "Common + -ískáy +", "Common . . .  -ískáy"],
+	    [:TamC, :Declarative, :NonVerbal, :NumC, :PersC, :Affirmative, "Common + -ke +", "Common . . .  -ke"],
+	    [:TamC, :Declarative, :Perfective, :NumC, :PersC, :Affirmative, "Common + -íya +", "Common . . .  -íya"],
+	    [:TamC, :Imperative, :ModC,:Singular, :Person2, :Affirmative, "Common + Common +", "Common . . .  Common"],
+	    [:TamC, :Imperative, :ModC,:Plural, :Person2, :Affirmative, "Common + -uwáte +", "Common . . .  -uwáte"],
+	    [:TamC, :Imperative, :ModC,:Singular, :Person2, :Negative, "Common + -íppo +", "Common . . .  -íppo"],
+	    [:TamC, :Imperative, :ModC,:Plural, :Person2, :Negative, "Common + -íppote +", "Common . . .  -íppote"],
+	    [:TamC, :Optative, :ModC, :NumC, :Person1, :Affirmative, "Common + -óm +", "Common . . .  -óm"],
+	    [:TamC, :Optative, :ModC, :NumC, :Person3, :Affirmative, "Common + -óngó ~ -ónko +", "Common . . .  -óngó ~ -ónko"],
+	    [:Perfective, :Conditional, :ModC, :NumC, :PersC, :Affirmative, "Common + -to +", "Common . . .  -to"],
+	    [:ImperfectivePresent, :Conditional, :ModC, :NumC, :PersC, :Affirmative, "Common + -to +", "Common . . .  -to"],
+	    [:Perfective, :Causal, :ModC, :NumC, :PersC, :Affirmative, "Common + -tsi-ró +", "Common . . .  -tsi-ró"],
+	    [:ImperfectivePresent, :Causal, :ModC, :NumC, :PersC, :Affirmative, "Common + -tsi-ró +", "Common . . .  -tsi-ró"],
+	    [:ImperfectivePresent, :Simultaneous, :ModC, :NumC, :PersC, :Affirmative, "Common + -nte  + different subject", "Common . . .  -ntem ['different subject']"],
+	    [:Perfective, :Preventive, :ModC, :NumC, :PersC, :Affirmative, "Common + -nte  + Counterfactual", "Common . . .  -nte ['Counterfactual']"],
+	    [:ImperfectiveFuture, :Preventive, :ModC, :NumC, :PersC, :Affirmative, "-andá- + -nte  + Counterfactual", "-andá- . . .  -nte ['Counterfactual']"],
+	    [:ImperfectiveFuture, :Preventive, :ModC, :NumC, :PersC, :Affirmative, "-andá- + -nte-ke  + Counterfactual_main_clause", "-andá- . . .  -nte-ke ['Counterfactual_main_clause']"],
+	    [:TamC, :Temporal1, :ModC, :NumC, :PersC, :Affirmative, "Common + -áza  +  InterrogProWhen", "Common . . .  -áza ['InterrogProWhen']"],
+	    [:TamC, :Temporal2, :ModC, :NumC, :PersC, :Affirmative, "Common + -áána  + as soon as", "Common . . .  -áána ['as soon as']"],
+	    [:TamC, :Purposive1, :ModC, :NumC, :PersC, :Affirmative, "Common + -aní  +  same subject (infinitive)", "Common . . .  -aní ['same subject (infinitive)']"],
+	    [:TamC, :Purposive2, :ModC, :NumC, :PersC, :Affirmative, "Common + -óm  + different subject", "Common . . .  -óm ['different subject']"],
+	    [:TamC, :Purposive1, :ModC, :NumC, :PersC, :Affirmative, "Common + -ani-ke  + DefiniteFuture", "Common . . .  -ani-ke ['DefiniteFuture']"],
+	    [:TamC, :Converb1, :ModC, :NumC, :PersC, :Affirmative, "Common + Common  + SequentialSimultaneous_Same_Subject", "Common . . .  Common ['SequentialSimultaneous_Same_Subject']"],
+	    [:TamC, :Converb2, :ModC, :NumC, :PersC, :Affirmative, "Common + -ém  + different subject", "Common . . .  -ém ['different subject']"],
+	    [:TamC, :Converb3, :ModC, :NumC, :PersC, :Affirmative, "Common + Common  + Sequential_Same_Subject", "Common . . .  Common ['Sequential_Same_Subject']"]]
+    }
+
+}
 :muterms #{
     {:label "maale-P2ary"
     :note "Amha2001 #4.2."
@@ -62,7 +124,7 @@
     :common {:case :Possessive,
 	    :morpheme :PROPOSS,
 	    :pos :Pronoun,
-	    :proClass :Possessive}
+	    :proClass :ProPoss}
     :terms [[:gender, :number, :person, :possType, :token]  ;; schema
 	    [:Common, :Singular, :Person1, :Poss1, "ta"],
 	    [:Common, :Singular, :Person2, :Poss1, "ne"],
@@ -101,62 +163,9 @@
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "taasi"],
 	    [:Singular, :Person2, "neesi"],
-	    [:Common, :Person3, "peesi"],
+	    [:NumC, :Person3, "peesi"],
 	    [:Plural, :Person1, "nuusi"],
 	    [:Plural, :Person2, "ʔíntsísi"]]
-    }
-    {:label "maale-VInflectionTemplate"
-    :note "Amha2001 Ch. 7 (summary p. 158);Ch. 8 (summary p. 202). Maale verb morphology
-            does not include subject agreement,with partial exception of imperative-optative.
-            Inflectional template is:[VRoot (+ dervSuff)](+ AspectMarker) + moodClauseMarker.
-            Attested combinations of aspect and clause suffixes given in paradigm."
-    :common {:morpheme :VINFLECTIONTEMPLATE,
-	    :pos :Verb,
-	    :token-vStem :múʔ-,
-	    :verbMorphClass :InflectionTemplate}
-    :terms [[:tam, :clauseType, :modal, :number, :person, :polarity, :token-aspSuff, :token-clauseSuff, :token, :token, :token-glossNote]  ;; schema
-	    [:Perfective, :Declarative, :Common, :Common, :Common, :Affirmative, "Common", "-ne", "Common . . .  -ne", "Common . . .  -ne", ""],
-	    [:ImperfectivePresent, :Declarative, :Common, :Common, :Common, :Affirmative, "Common", "-ne", "Common . . .  -ne", ""],
-	    [:ImperfectiveFuture, :Declarative, :Common, :Common, :Common, :Affirmative, "-andá-", "-ne", "-andá- . . .  -ne", ""],
-	    [:Perfective, :Declarative, :Common, :Common, :Common, :Negative, "-ibá-", "-se", "-ibá- . . .  -se", ""],
-	    [:Imperfective, :Declarative, :Common, :Common, :Common, :Negative, "-uwá-", "-se", "-uwá- . . .  -se", ""],
-	    [:Perfective, :Declarative, :Mirative, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "contrary to expectation"],
-	    [:ImperfectivePresent, :Declarative, :Mirative, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "contrary to expectation"],
-	    [:Common, :Declarative, :Veridical, :Common, :Common, :Affirmative, "Common", "-i", "Common . . .  -i", "Emphatic"],
-	    [:Perfective, :InterrNonPolar, :Common, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "asking for content info"],
-	    [:ImperfectivePresent, :InterrNonPolar, :Common, :Common, :Common, :Affirmative, "Common", "-y", "Common . . .  -y", "asking for content info"],
-	    [:ImperfectiveFuture, :InterrNonPolar, :Common, :Common, :Common, :Affirmative, "-andá-", "-y", "-andá- . . .  -y", "asking for content info"],
-	    [:Perfective, :InterrPolar, :Common, :Common, :Common, :Affirmative, "-íya-", "RisingIntonation", "-íya- . . .  RisingIntonation", "yes-no"],
-	    [:ImperfectivePresent, :InterrPolar, :Common, :Common, :Common, :Affirmative, "Common", "RisingIntonation", "Common . . .  RisingIntonation", "yes-no"],
-	    [:ImperfectiveFuture, :InterrPolar, :Common, :Common, :Common, :Affirmative, "-andá-", "RisingIntonation", "-andá- . . .  RisingIntonation", "yes-no"],
-	    [:InterrPerm, :Common, :Common, :Common, :Common, :Affirmative, "-ondó", "Common", "-ondó . . .  Common", "ask permission"],
-	    [:ImperfectiveFuture, :InterrDubitative, :Common, :Common, :Common, :Affirmative, "-andá-", "-sinway", "-andá- . . .  -sinway", "Dubitative"],
-	    [:InterrPerm, :InterrDubitative, :Common, :Common, :Common, :Affirmative, "-ondó", "-sinway", "-ondó . . .  -sinway", "DubitativePermission"],
-	    [:Common, :Declarative, :NewInfo, :Common, :Common, :Affirmative, "Common", "-ískáy", "Common . . .  -ískáy", ""],
-	    [:Common, :Declarative, :NonVerbal, :Common, :Common, :Affirmative, "Common", "-ke", "Common . . .  -ke", ""],
-	    [:Common, :Declarative, :Perfective, :Common, :Common, :Affirmative, "Common", "-íya", "Common . . .  -íya", ""],
-	    [:Common, :Imperative, :Common, :Singular, :Person2, :Affirmative, "Common", "Common", "Common . . .  Common", ""],
-	    [:Common, :Imperative, :Common, :Plural, :Person2, :Affirmative, "Common", "-uwáte", "Common . . .  -uwáte", ""],
-	    [:Common, :Imperative, :Common, :Singular, :Person2, :Negative, "Common", "-íppo", "Common . . .  -íppo", ""],
-	    [:Common, :Imperative, :Common, :Plural, :Person2, :Negative, "Common", "-íppote", "Common . . .  -íppote", ""],
-	    [:Common, :Optative, :Common, :Common, :Person1, :Affirmative, "Common", "-óm", "Common . . .  -óm", ""],
-	    [:Common, :Optative, :Common, :Common, :Person3, :Affirmative, "Common", "-óngó ~ -ónko", "Common . . .  -óngó ~ -ónko", ""],
-	    [:Perfective, :Conditional, :Common, :Common, :Common, :Affirmative, "Common", "-to", "Common . . .  -to", ""],
-	    [:ImperfectivePresent, :Conditional, :Common, :Common, :Common, :Affirmative, "Common", "-to", "Common . . .  -to", ""],
-	    [:Perfective, :Causal, :Common, :Common, :Common, :Affirmative, "Common", "-tsi-ró", "Common . . .  -tsi-ró", ""],
-	    [:ImperfectivePresent, :Causal, :Common, :Common, :Common, :Affirmative, "Common", "-tsi-ró", "Common . . .  -tsi-ró", ""],
-	    [:ImperfectivePresent, :Simultaneous, :Common, :Common, :Common, :Affirmative, "Common", "-nte", "Common . . .  -nte", "different subject"],
-	    [:Perfective, :Preventive, :Common, :Common, :Common, :Affirmative, "Common", "-nte", "Common . . .  -nte", "Counterfactual"],
-	    [:ImperfectiveFuture, :Preventive, :Common, :Common, :Common, :Affirmative, "-andá-", "-nte", "-andá- . . .  -nte", "Counterfactual"],
-	    [:ImperfectiveFuture, :Preventive, :Common, :Common, :Common, :Affirmative, "-andá-", "-nte-ke", "-andá- . . .  -nte-ke", "Counterfactual_main_clause"],
-	    [:Common, :Temporal1, :Common, :Common, :Common, :Affirmative, "Common", "-áza", "Common . . .  -áza", "InterrogProWhen"],
-	    [:Common, :Temporal2, :Common, :Common, :Common, :Affirmative, "Common", "-áána", "Common . . .  -áána", "as soon as"],
-	    [:Common, :Purposive1, :Common, :Common, :Common, :Affirmative, "Common", "-aní", "Common . . .  -aní", "same subject (infinitive)"],
-	    [:Common, :Purposive2, :Common, :Common, :Common, :Affirmative, "Common", "-óm", "Common . . .  -óm", "different subject"],
-	    [:Common, :Purposive1, :Common, :Common, :Common, :Affirmative, "Common", "-ani-ke", "Common . . .  -ani-ke", "DefiniteFuture"],
-	    [:Common, :Converb1, :Common, :Common, :Common, :Affirmative, "Common", "Common", "Common . . .  Common", "SequentialSimultaneous_Same_Subject"],
-	    [:Common, :Converb2, :Common, :Common, :Common, :Affirmative, "Common", "-ém", "Common . . .  -ém", "different subject"],
-	    [:Common, :Converb3, :Common, :Common, :Common, :Affirmative, "Common", "Common", "Common . . .  Common", "Sequential_Same_Subject"]]
     }
     {:label "maale-PBasicPro"
     :note "Amha2001 #4.1"
@@ -164,30 +173,30 @@
 	    :pos :Pronoun,
 	    :proClass :BasicPro}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Common, :Masc, :Singular, :Person3Ref, "pe"],
+	    [:CaseC, :Masc, :Singular, :Person3Ref, "pe"],
 	    [:Possessive, :Common, :Singular, :Person1, "ta"],
 	    [:Possessive, :Common, :Singular, :Person2, "ne"],
 	    [:Possessive, :Masc, :Singular, :Person3, "⊤"],
 	    [:Possessive, :Common, :Plural, :Person1, "nu"],
-	    [:Common, :Common, :Singular, :Person1, "tá"],
-	    [:Common, :Common, :Singular, :Person2, "né"],
-	    [:Common, :Masc, :Singular, :Person3, "⊤"],
-	    [:Common, :Common, :Plural, :Person1, "nú"]]
+	    [:CaseC, :Common, :Singular, :Person1, "tá"],
+	    [:CaseC, :Common, :Singular, :Person2, "né"],
+	    [:CaseC, :Masc, :Singular, :Person3, "⊤"],
+	    [:CaseC, :Common, :Plural, :Person1, "nú"]]
     }
     {:label "maale-VBE"
     :note "Amha2001 #5.3.1.3 The various verbs BE/EXIST only occur with aspect suffixes
-            noted in paradigm."
+            noted in paradigm. Template: AspSuff + beStem + Modal Context"
     :common {:morpheme :COPULABE,
 	    :pos :Verb,
 	    :temporal :Clauses,
 	    :verbMorphClass :BE}
-    :terms [[:tam, :polarity, :token-aspSuff, :token-beStem, :token-occurrences, :token, :token]  ;; schema
-	    [:ImperfectivePresent, :Affirmative, "Common", "t-", "PresentConditionals", "t- . . .  Common : PresentConditionals", "t- . . .  Common : PresentConditionals"],
-	    [:ImperfectivePresent, :Negative, "-uwá-", "t-", "NegativeIdentity", "t- . . .  -uwá- : NegativeIdentity"],
-	    [:ImperfectivePresent, :Affirmative, "Common", "d-", "Interrogative", "d- . . .  Common : Interrogative"],
-	    [:ImperfectiveFuture, :Affirmative, "-andá-", "N-", "Dubitative", "N- . . .  -andá- : Dubitative"],
-	    [:ImperfectivePresent, :Affirmative, "Common", "Common", "with imperfPres even when situation refers to past event"],
-	    [:Common, :Negative, "Common", "ba-", "without aspect:bá-se does not exist", "ba- . . .  Common : without aspect:bá-se does not exist"]]
+    :terms [[:tam, :polarity, :token-note-template, :token]  ;; schema
+	    [:ImperfectivePresent, :Affirmative, "Common + t- + PresentConditionals", "t- . . .  Common : PresentConditionals"],
+	    [:ImperfectivePresent, :Negative, "-uwá- + t- + NegativeIdentity", "t- . . .  -uwá- : NegativeIdentity"],
+	    [:ImperfectivePresent, :Affirmative, "Common + d- + Interrogative", "d- . . .  Common : Interrogative"],
+	    [:ImperfectiveFuture, :Affirmative, "-andá- + N- + Dubitative", "N- . . .  -andá- : Dubitative"],
+	    [:ImperfectivePresent, :Affirmative, "Common + Common + with imperfPres even when situation refers to past event", ""],
+	    [:TamC, :Negative, "Common + ba- + without aspect:bá-se does not exist", "ba- . . .  Common : without aspect:bá-se does not exist"]]
     }
     {:label "maale-PCaseMarking"
     :note "Amha2001 #4.6"
@@ -256,7 +265,7 @@
 	    :pos :Pronoun,
 	    :proClass :ProInd}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Common, :Common, :Common, :Person3Ref, "pe-"],
+	    [:CaseC, :Common, :persC, :Person3Ref, "pe-"],
 	    [:Possessive, :Common, :Singular, :Person1, "ta"],
 	    [:Possessive, :Common, :Singular, :Person2, "ne"],
 	    [:Possessive, :Masc, :Singular, :Person3, "ʔízá"],
@@ -284,34 +293,34 @@
      :common {:morpheme :VROOTSTRUCTURE,
               :pos :Verb,
               :morphClass :RootStructure}
-     :terms [[:rootStructure	:token :token-structure	:token-translation] ;; schema
-             [:Group1, "t-", :C, "be"],
-             [:Group1, "n-", :C, "be"],
-             [:Group1, "d-", :C, "be"],
-             [:Group1, "⊤", :CV, "Existence"],
-             [:Group1, "geʔ-", :CVC, "say"],
-             [:Group1, "lám-", :CVC, "Repeat"],
-             [:Group1, "maɗ-", :CVC, "work"],
-             [:Group1, "⊤", :CVVC, "go"],
-             [:Group1, "kéér-", :CVVC, "throw"],
-             [:Group1, "biiʔ-", :CVVC, "smear"],
-             [:Group1, "ʔúc’c’-", :CVCC, "wipe"],
-             [:Group1, "ɓull-", :CVCC, "jump"],
+     :terms [[:rootStructure	:token :token-note-structure] ;; schema
+             [:Group1, "t-", "C + be"],
+             [:Group1, "n-", "C + be"],
+             [:Group1, "d-", "C + be"],
+             [:Group1, "⊤", "CV + Existence"],
+             [:Group1, "geʔ-", "CVC + say"],
+             [:Group1, "lám-", "CVC + Repeat"],
+             [:Group1, "maɗ-", "CVC + work"],
+             [:Group1, "⊤", "CVVC + go"],
+             [:Group1, "kéér-", "CVVC + throw"],
+             [:Group1, "biiʔ-", "CVVC + smear"],
+             [:Group1, "ʔúc’c’-", "CVCC + wipe"],
+             [:Group1, "ɓull-", "CVCC + jump"],
              
-             [:Group1, "soɗɗ-", :CVCC, "drip"],
-             [:Group1, "háík’k-", :CVVCC, "die"],
-             [:Group1, "c’ííʃk-", :CVVCC, "be cold"],
-             [:Group1, "c’uull-", :CVVCC, "Suffocate"],
-             [:Group2, "ɗakal-", :CVCVC, "Inherit"],
-             [:Group2, "galat-", :CVCVC, "thank"],
-             [:Group2, "h/yíɗiʃk-", :CVCVCC, "sneeze"],
-             [:Group2, "gumurk-", :CVCVCC, "believe"],
-             [:Group2, "gadánk’-", :CVCVCC, "curse"],
-             [:Group2, "gumʔat-", :CVCCVC-C, "kneel"],
-             [:Group2, "bunbal-", :CVCCVC-C, "roll over"],
-             [:Group2, "gundum-", :CVCCVC-C, "Murmur"],
-             [:Group2, "gogaik’k’-", :CVCVVCC, "Shiver"],
-             [:Group2, "deeɓisk-", :CVVCVCC, "belch"]]
+             [:Group1, "soɗɗ-", "CVCC + drip"],
+             [:Group1, "háík’k-", "CVVCC + die"],
+             [:Group1, "c’ííʃk-", "CVVCC + be cold"],
+             [:Group1, "c’uull-", "CVVCC + Suffocate"],
+             [:Group2, "ɗakal-", "CVCVC + Inherit"],
+             [:Group2, "galat-", "CVCVC + thank"],
+             [:Group2, "h/yíɗiʃk-", "CVCVCC + sneeze"],
+             [:Group2, "gumurk-", "CVCVCC + believe"],
+             [:Group2, "gadánk’-", "CVCVCC + curse"],
+             [:Group2, "gumʔat-", "CVCCVC-C + kneel"],
+             [:Group2, "bunbal-", "CVCCVC-C + roll over"],
+             [:Group2, "gundum-", "CVCCVC-C + Murmur"],
+             [:Group2, "gogaik’k’-", "CVCVVCC + Shiver"],
+             [:Group2, "deeɓisk-", "CVVCVCC + belch"]]
      }
    }
 }

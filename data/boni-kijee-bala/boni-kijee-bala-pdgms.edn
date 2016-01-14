@@ -1,13 +1,18 @@
 {
 :lang :boni-kijee-bala
 :sgpref "bob"
+:datasource "Heine1982"
+:geodemoURL "http://www.ethnologue.com/language/bob"
+:geodemoTXT "Kijee and Bala are varieties of North-Central Boni. Variant forms from Kijee/Bala which contrast with Kilii and Jara are occasionally noted by Heine."
 :schemata {
-:conjClass [:Suffix2]
+           :conjClass [:Suffix]
+           :conjSubClass [:S_2]
 	  :gender [:Common, :Fem, :Masc]
            :morphClass [:NonFinite]
-	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
-	  :polarity [:Affirmative, :Negative, :U]
+	  :number [:Plural, :Singular]
+	  :person [:Person1, :Person2, :Person3]
+           :pdgmType [:Partial]
+	  :polarity [:Affirmative, :Negative]
 	  :pos [:Verb :Pronoun]
            :proClass [:To_be_added]
            :status [:NA]
@@ -15,8 +20,8 @@
 	  }
 :pclass {
            :pngClass [:person :number :gender ]
-           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
-           :inflClass [:conjClass  ]
+           :synsemClass [:case  :derivedStem :morphClass :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass :conjSubClass ]
            :otherClass [ ]
           }
 :morphemes {
@@ -28,12 +33,12 @@
 :lxterms #{
     {:label "boni_J-VKijee-balaSuff2Infinitive-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :gender :Common,
 	    :lexeme :obed,
-	    :number :Common,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -41,7 +46,8 @@
     }
     {:label "boni_J-VKijee-balaSuff2NegImperf-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :obed,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -57,7 +63,8 @@
     }
     {:label "boni_J-VKijee-balaSuff2AffPerf-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :obed,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -73,7 +80,8 @@
     }
     {:label "boni_J-VKijee-balaSuff2AffImperf-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :obed,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -89,7 +97,8 @@
     }
     {:label "boni_J-VKijee-balaSuff2AffImprtv-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :gender :Common,
 	    :lexeme :obed,
 	    :number :Plural,
@@ -102,7 +111,8 @@
     }
     {:label "boni_J-VKijee-balaSuff2NegImprtv-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :gender :Common,
 	    :lexeme :obed,
 	    :person :Person2,
@@ -111,12 +121,12 @@
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ha-‘ów-ne"],
-	    [:Plural, "ha-‘ow-náha"],
-	    [:Plural, "ha-‘ow-níya"]]
+	    [:Plural, "ha-‘ow-náha ~ ha-‘ow-níya"]]
     }
     {:label "boni_J-VKijee-balaSuff2NegPerf-obed"
     :note "Heine1982"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :obed,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -131,7 +141,7 @@
 	    [:Fem, :Singular, :Person3, "ii húú-‘ow-ne"]]
     }}
 :muterms #{
-           {:label "Pronominal Paradigms to be added"
+           {:label "Pronominal_Paradigms_to_be_added"
             :common {:morpheme :TOBEADDED,
                      :pos :Pronoun,
                      :proClass :To_be_added}

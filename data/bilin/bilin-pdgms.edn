@@ -1,27 +1,36 @@
 {
 :lang :bilin
 :sgpref "bil"
+:datasource "Appleyard2007b"
+:geodemoURL "http://www.ethnologue.com/language/byn"
+:geodemoTXT "Varieties and subdialects of theAgaw (or Central) Cushitic language: Bilin is spoken mainly in the vicinity of the town Keren. The variety represented here is that described in Appleyard2007b."
 :schemata {
 :aspect [:Imperfective, :Perfective]
 	  :case [:Absolutive, :Object, :ObjectSuff, :Oblique]
-	  :clauseType [:AdvAt1, :AdvAt2, :AdvCause, :AdvCompl, :AdvCond, :AdvConsec, :AdvFutCond, :AdvPurp, :AdvUntil, :AdvWhen, :AdvWhile, :Main, :RelObliq, :RelSubj, :_NULL]
+	  :clauseType [:AdvAt1, :AdvAt2, :AdvCause, :AdvCompl, :AdvCond, :AdvConsec, :AdvFutCond, :AdvPurp, :AdvUntil, :AdvWhen, :AdvWhile, :Main, :RelObliq, :RelSub]
 	  :conjClass [:Conjugation1, :Conjugation2, :Conjugation3]
 	  :copType [:CopLoc, :CopMain]
-	  :derivedStem [:Frequentative, :M, :M-Freq, :Reciprocal, :S, :S-Recip, :S2]
+	  :derivedStem [:Frequentative, :M, :MFreq, :Reciprocal, :S, :SRecip, :S2]
 	  :nonFiniteForm [:Agent, :Infinitive]
 	  :gender [:Common, :Fem, :Masc]
 	  :morphClass [:VREL, :Agent, :Infinitive]
 	  :number [:Common, :Plural, :Singular]
-	  :numberGenderHead [:HeadPlural, :HeadSingularFem, :HeadSingularMasc, :U, :_NULL]
+	  :numberGenderHead [:HeadPlural, :HeadSingularFem, :HeadSingularMasc]
 	  :pdgmType [:Comparative]
-	  :person [:Common, :Person1, :Person2, :Person3]
-	  :pngSet [:PngA, :PngA2, :PngB, :PngC, :U, :_NULL]
-	  :polarity [:Affirmative, :Negative, :U]
+	  :person [:Person1, :Person2, :Person3]
+	  :pngSet [:PngA, :PngA2, :PngB, :PngC]
+	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Independent]
-	  :tam [:Common, :Future, :Imperative, :Jussive, :Past, :Perfect, :Present, :RelativeOblique, :RelativeSubject, :U]
+	  :tam [:Future, :Imperative, :Jussive, :Past, :Perfect, :Present, :RelativeOblique, :RelativeSubject]
 	  :verbMorphClass [:Aspect, :CompoundVerbs, :Copula, :DervSuff, :PersSuff]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :pngSet]
+           :synsemClass [:aspect :case :clauseType :copType :nonFiniteForm :derivedStem :polarity :pos :proClass :tam]
+           :inflClass [:conjClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :COPULA {:gloss "Copula Verb", }
   :DERVSTEMSUFF {:gloss "Derived Stem Suffix", }
@@ -46,9 +55,7 @@
 	    :conjClass :Conjugation1,
 	    :gender :Common,
 	    :lexeme :gab,
-	    :numberGenderHead :_NULL,
 	    :person :Person2,
-	    :pngSet :U,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -89,12 +96,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:token]  ;; schema
 	    ["gäbgät"]]
     }
@@ -106,8 +111,7 @@
 	    :lexeme :kab,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "kabäxw"],
 	    [:Common, :Plural, :Person1, "kabnäxər"],
@@ -124,9 +128,7 @@
 	    :conjClass :Conjugation1,
 	    :gender :Common,
 	    :lexeme :gab,
-	    :numberGenderHead :_NULL,
 	    :person :Person2,
-	    :pngSet :U,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -140,8 +142,7 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngA,
+	    	    :pngSet :PngA,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -160,12 +161,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:token]  ;; schema
 	    ["gäbu"]]
     }
@@ -178,8 +177,7 @@
 	    :numberGenderHead :HeadPlural,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "gäbräw"],
 	    [:Common, :Plural, :Person2, "gäbdänäw"],
@@ -207,12 +205,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:token]  ;; schema
 	    ["gäbaka"]]
     }
@@ -224,12 +220,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngC,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:token]  ;; schema
 	    ["gäbrəd"]]
     }
@@ -241,8 +235,7 @@
 	    :lexeme :kab,
 	    :pngSet :PngA2,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "kabili"],
 	    [:Common, :Plural, :Person1, "kabinni"],
@@ -276,12 +269,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbäsäna"]]
     }
@@ -293,12 +284,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngC,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbrasik"]]
     }
@@ -308,11 +297,9 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngA2,
+	    	    :pngSet :PngA2,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "gäbənni"],
 	    [:Common, :Singular, :Person2, "gäbəlla"],
@@ -328,8 +315,7 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngB,
+	    	    :pngSet :PngB,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Present}
@@ -348,8 +334,7 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngC,
+	    	    :pngSet :PngC,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future}
@@ -420,12 +405,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbek"]]
     }
@@ -437,12 +420,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngC,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbro"]]
     }
@@ -452,11 +433,9 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngA2,
+	    	    :pngSet :PngA2,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "gäbäli"],
 	    [:Masc, :Singular, :Person3, "gäbäla"],
@@ -474,12 +453,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbo"]]
     }
@@ -489,11 +466,9 @@
 	    :clauseType :RelSubj,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngA,
+	    	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "gäbäw"],
 	    [:Masc, :Singular, :Person3, "gäbäxw"],
@@ -511,12 +486,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngC,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbgin"]]
     }
@@ -528,12 +501,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbägän"]]
     }
@@ -545,12 +516,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbnädik"]]
     }
@@ -562,12 +531,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbgənädin"]]
     }
@@ -579,8 +546,7 @@
 	    :lexeme :kab,
 	    :pngSet :PngA2,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "kabänni"],
 	    [:Common, :Plural, :Person1, "kabnäli"],
@@ -598,12 +564,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbän"]]
     }
@@ -613,8 +577,7 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngB,
+	    	    :pngSet :PngB,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Past}
@@ -635,12 +598,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbägät"]]
     }
@@ -652,12 +613,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbnädin"]]
     }
@@ -670,8 +629,7 @@
 	    :numberGenderHead :HeadSingularFem,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "gäbräri"],
 	    [:Masc, :Singular, :Person3, "gäbäri"],
@@ -687,11 +645,9 @@
 	    :clauseType :RelSubj,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngA,
+	    	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "gäbäxər"],
 	    [:Common, :Plural, :Person3, "gäbäw"],
@@ -725,12 +681,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngC,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbgid"]]
     }
@@ -742,12 +696,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbät"]]
     }
@@ -757,8 +709,7 @@
 	    :clauseType :Main,
 	    :conjClass :Conjugation1,
 	    :lexeme :gab,
-	    :numberGenderHead :U,
-	    :pngSet :PngA,
+	    	    :pngSet :PngA,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -796,12 +747,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbät"]]
     }
@@ -814,8 +763,7 @@
 	    :numberGenderHead :HeadSingularMasc,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "gäbräxw"],
 	    [:Common, :Plural, :Person3, "gäbänäxw"],
@@ -833,8 +781,7 @@
 	    :lexeme :kab,
 	    :pngSet :PngA,
 	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "kabrexər"],
 	    [:Common, :Plural, :Person2, "kabdinexər"],
@@ -852,12 +799,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbgənädik"]]
     }
@@ -869,12 +814,10 @@
 	    :gender :Masc,
 	    :lexeme :gab,
 	    :number :Singular,
-	    :numberGenderHead :U,
-	    :person :Person3,
+	    	    :person :Person3,
 	    :pngSet :PngA,
 	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :U}
+	    :pos :Verb,}
     :terms [[:token]  ;; schema
 	    ["gäbgi"]]
     }}
@@ -901,13 +844,13 @@
 	    :pos :Verb,
 	    :verbMorphClass :PersSuff}
     :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
-	    [:Common, :Singular, :Person2, "-t", "_NULL"],
+	    [:Common, :Singular, :Person2, "-t", " "],
 	    [:Common, :Singular, :Person1, "-r ~ -y", "purposive only"],
-	    [:Common, :Plural, :Person2, "-tVn", "_NULL"],
-	    [:Common, :Plural, :Person1, "-n", "_NULL"],
-	    [:Common, :Plural, :Person3, "-Vn", "_NULL"],
-	    [:Fem, :Singular, :Person3, "-t", "_NULL"],
-	    [:Masc, :Singular, :Person3, "-r", "_NULL"]]
+	    [:Common, :Plural, :Person2, "-tVn", " "],
+	    [:Common, :Plural, :Person1, "-n", " "],
+	    [:Common, :Plural, :Person3, "-Vn", " "],
+	    [:Fem, :Singular, :Person3, "-t", " "],
+	    [:Masc, :Singular, :Person3, "-r", " "]]
     }
     {:label "bilin-VCopula"
     :note "Appleyard2007b pp. 502f. “A peculiar feature of the verb ‘to be’ in Bilin,shared with the other Agaw languages,is the reversal of aspect,whereby a perfective aspect (past tense) form is used in imprefective (present time) function,and vice versa,as for instance:ni gərwa kəxin sänäkw ‘he was a clever man’. “(p. 501) See LEXEMES section."
@@ -915,12 +858,12 @@
 	    :pos :Verb,
 	    :morphClass :Copula}
     :terms [[:copType, :polarity, :tam, :token, :token-note]  ;; schema
-	    [:CopMain, :Negative, :Perfect, "ʔäx- (~ ʔak-)", "_NULL"],
-	    [:CopLoc, :Affirmative, :Present, "wan-", "_NULL"],
+	    [:CopMain, :Negative, :Perfect, "ʔäx- (~ ʔak-)", " "],
+	    [:CopLoc, :Affirmative, :Present, "wan-", " "],
 	    [:CopMain, :Affirmative, :Present, "gən", "invariable"],
-	    [:CopLoc, :Affirmative, :Past, "sän-", "_NULL"],
+	    [:CopLoc, :Affirmative, :Past, "sän-", " "],
 	    [:CopLoc, :Negative, :Common, "ʔəl-", "(like perf main neg)"],
-	    [:CopLoc, :Affirmative, :Present, "həmb-", "_NULL"]]
+	    [:CopLoc, :Affirmative, :Present, "həmb-", " "]]
     }
     {:label "bilin-VDervSuff"
     :note "Appleyard2007b pp. 493-495"
@@ -930,12 +873,12 @@
     :terms [[:derivedStem, :token]  ;; schema
 	    [:S2, "-sis-"],
 	    [:Reciprocal, "Common"],
-	    [:M-Freq, "freq + -s-/-is-"],
+	    [:MFreq, "freq + -s-/-is-"],
 	    [:S, "-s-/-is- ~ -d-"],
-	    [:M-Freq, "freq + -əst-"],
+	    [:MFreq, "freq + -əst-"],
 	    [:M, "-əst- ~ -s- ~ -t-"],
 	    [:Frequentative, "redup ~ redup+-əŋ-"],
-	    [:S-Recip, "-əŋis-"]]
+	    [:SRecip, "-əŋis-"]]
     }
     {:label "bilin-PInd"
     :note "Appleyard2007b p. 491. The oblique case is also used for the possessive prefix. The object suffix pronouns,attached to verb,are borrowed from Tigre. NOte sg 2 f form (unique in Agaw)."
@@ -980,12 +923,12 @@
 	    :pos :Verb,
 	    :verbMorphClass :PersSuff}
     :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
-	    [:Common, :Singular, :Person1, "-Ø", "_NULL"],
-	    [:Common, :Plural, :Person3, "-Vn", "_NULL"],
+	    [:Common, :Singular, :Person1, "-Ø", " "],
+	    [:Common, :Plural, :Person3, "-Vn", " "],
 	    [:Common, :Singular, :Person2, "-r ~ -d", "d after r"],
-	    [:Common, :Plural, :Person2, "-dVn", "_NULL"],
-	    [:Masc, :Singular, :Person3, "-Ø", "_NULL"],
-	    [:Common, :Plural, :Person1, "-n", "_NULL"],
+	    [:Common, :Plural, :Person2, "-dVn", " "],
+	    [:Masc, :Singular, :Person3, "-Ø", " "],
+	    [:Common, :Plural, :Person1, "-n", " "],
 	    [:Fem, :Singular, :Person3, "-r ~ -d", "d after r"]]
     }
     {:label "bilin-VPngBPngSuff"

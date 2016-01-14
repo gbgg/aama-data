@@ -1,28 +1,36 @@
 {
 :lang :tsamakko
 :sgpref "tsm"
+:datasource "Sava2005"
+:geodemoURL "http://www.ethnologue.com/language/tsb"
+:geodemoTXT "Varieties and subdialects of Tsamakko are spoken in "
 :schemata {
-:case [:Comitative, :Dative, :Directive, :Locative, :Obj-ka, :Object, :Subject]
+:case [:Comitative, :Dative, :Directive, :Locative, :Obj_ka, :Object, :Subject]
 	  :category [:Diff, :InterrGen, :InterrWh]
-	  :conj [:ConjA, :ConjB]
 	  :conjClass [:Common, :ConjA, :ConjB]
 	  :defMarker [:SsaClass, :SseClass, :aClass]
 	  :deixis [:Distal, :Distal2, :Proximal, :Proximal2]
-	  :derivedClass [:Normal, :Verbaliser, :o-assim]
+	  :derivedClass [:Normal, :Verbaliser, :OAssim]
 	  :derivedStem [:Causative1, :Causative2, :Generic, :Inceptive, :Middel, :Passive]
 	  :gender [:Common, :Fem, :Masc]
-	  :genderObj [:Common, :Fem, :Masc]
-	  :numObj [:Plural, :Singular]
+	  :genderHead [:HeadCommon, :HeadFem, :HeadMasc]
+	  :numHead [:HeadPlural, :HeadSingular]
 	  :number [:Common, :Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Common, :Negative, :Subordinate]
 	  :pos [:Pronoun, :Verb]
-	  :proClass [:DefMarker, :Demonstrative, :Independent, :InterrDiff, :Locative, :PossInd, :PossSuff, :ProParticle]
-	  :stemShape [:CVC, :CVC-VC, :CVCVC, :CVVC]
+	  :proClass [:DefMarker, :Demonstrative, :Independent, :InterrDiff, :LocativePro, :PossInd, :PossSuff, :ProParticle]
+	  :stemShape [:CVC, :CVC_VC, :CVCVC, :CVVC]
 	  :suffixSet [:SuffSet1, :SuffSet2, :SuffSet3, :SuffSet4, :SuffSet5]
 	  :tam [:Aorist, :Consecutive, :Future, :Imperative, :Imperfect, :Jussive, :NonPast, :Past]
-	  :morphClass [:ConjA-ConjBComparison, :DervStemFormation, :ProSuff, :SubjMarkers, :TenseSuffSets]
+	  :morphClass [:ConjA_ConjBComparison, :DervStemFormation, :ProSuff, :SubjMarkers, :TenseSuffSets]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :genderHead :numHead ]
+           :synsemClass [:case :category :defMarker :deixis :derivedClass :derivedStem :polarity :pos :proClass :tamb ]
+           :inflClass [:conjClass :suffixSet :stemShape ]
+           :otherClass [ ]
+          }
 :morphemes {
   :DERVSTEM {:gloss "[x]", :lemma "[y]", }
   :PRODEFMARKER {:gloss "[x]", :lemma "[y]", }
@@ -38,14 +46,14 @@
   :TENSESUFFSETS {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :abun {:lemma "ʔabun-", :gloss "rock", :conj :ConjB, :pos :Verb}
-  :bod {:lemma "bood-", :gloss "dig", :conj :ConjB, :pos :Verb}
-  :kais {:lemma "kaʔ-is-", :gloss "make sb. stand up", :conj :ConjA, :pos :Verb}
-  :ooy {:lemma "ʔooy-", :gloss "cry", :conj :ConjA, }
-  :qaba {:lemma "q’abaʔ -", :gloss "hear", :conj :ConjA, :pos :Verb}
-  :ug {:lemma "ʕug", :gloss "drink", :conj :ConjA, :pos :Verb}
-  :zi {:lemma "žíʔ", :gloss "eat", :conj :ConjB, :pos :Verb}
-  :zoq-am {:lemma "žoq’-am-", :gloss "be beaten", :conj :ConjB, :pos :Verb}
+  :abun {:lemma "ʔabun-", :gloss "rock", :conjClass :ConjB, :pos :Verb}
+  :bod {:lemma "bood-", :gloss "dig", :conjClass :ConjB, :pos :Verb}
+  :kais {:lemma "kaʔ-is-", :gloss "make sb. stand up", :conjClass :ConjA, :pos :Verb}
+  :ooy {:lemma "ʔooy-", :gloss "cry", :conjClass :ConjA, }
+  :qaba {:lemma "q’abaʔ -", :gloss "hear", :conjClass :ConjA, :pos :Verb}
+  :ug {:lemma "ʕug", :gloss "drink", :conjClass :ConjA, :pos :Verb}
+  :zi {:lemma "žíʔ", :gloss "eat", :conjClass :ConjB, :pos :Verb}
+  :zoq-am {:lemma "žoq’-am-", :gloss "be beaten", :conjClass :ConjB, :pos :Verb}
 }
 :lxterms #{
     {:label "tsamakko-VConjBCVCVCAffConsecutive-abun"
@@ -139,7 +147,7 @@
 	    :lexeme :kais,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :NonPast}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-í"],
@@ -207,7 +215,7 @@
 	    :lexeme :kais,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "(ʔínnu) káʔ-ís-ú"],
@@ -225,7 +233,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Imperative}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person2, "žóq’-ám-á"],
@@ -271,7 +279,7 @@
 	    :lexeme :ug,
 	    :pos :Verb,
 	    :tam :Consecutive,
-	    :morphClass :ConjA-ConjBComparison}
+	    :morphClass :ConjA_ConjBComparison}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "ʕúg-á"],
 	    [:Common, :Singular, :Person2, "ʕúg-áy"],
@@ -287,7 +295,7 @@
 	    :lexeme :kais,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔʔ-ís-á"],
@@ -334,7 +342,7 @@
 	    :lexeme :kais,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-á"],
@@ -385,7 +393,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq’-ám-á"],
@@ -402,7 +410,7 @@
 	    :lexeme :zi,
 	    :pos :Verb,
 	    :tam :Consecutive,
-	    :morphClass :ConjA-ConjBComparison}
+	    :morphClass :ConjA_ConjBComparison}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "zíʔ-ó"],
 	    [:Common, :Singular, :Person2, "zíʔ-óy"],
@@ -418,7 +426,7 @@
 	    :lexeme :kais,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-na"],
@@ -486,7 +494,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Subordinate,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq-ám-ní"],
@@ -533,7 +541,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq-ám-i"],
@@ -686,7 +694,7 @@
 	    :lexeme :kais,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Consecutive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-á"],
@@ -703,7 +711,7 @@
 	    :lexeme :kais,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Aorist}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-í"],
@@ -752,7 +760,7 @@
 	    :person :Person2,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :morphClass :ConjA-ConjBComparison}
+	    :morphClass :ConjA_ConjBComparison}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ziʔ-á"],
 	    [:Plural, "ziʔ-inɗá"]]
@@ -827,7 +835,7 @@
 	    :lexeme :ug,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :morphClass :ConjA-ConjBComparison}
+	    :morphClass :ConjA_ConjBComparison}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "ʕúg-í"],
 	    [:Common, :Singular, :Person2, "ʕúg-dí*"],
@@ -878,7 +886,7 @@
 	    :lexeme :kais,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Imperative}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person2, "káʔ-ís"],
@@ -977,7 +985,7 @@
 	    :person :Person2,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :morphClass :ConjA-ConjBComparison}
+	    :morphClass :ConjA_ConjBComparison}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ʕúg"],
 	    [:Plural, "ʕug-á"]]
@@ -1022,7 +1030,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :NonPast}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq’-ám-í"],
@@ -1124,7 +1132,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq’-ám-ú"],
@@ -1175,7 +1183,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq-ám-na"],
@@ -1260,7 +1268,7 @@
 	    :lexeme :kais,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-is-ní"],
@@ -1294,7 +1302,7 @@
 	    :lexeme :kais,
 	    :polarity :Subordinate,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-ní"],
@@ -1341,7 +1349,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Consecutive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq’-ám-ó"],
@@ -1392,7 +1400,7 @@
 	    :lexeme :kais,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "káʔ-ís-a"],
@@ -1524,7 +1532,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žoq’-am-ní"],
@@ -1541,7 +1549,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žóq-ám-a"],
@@ -1575,7 +1583,7 @@
 	    :lexeme :zi,
 	    :pos :Verb,
 	    :tam :Aorist,
-	    :morphClass :ConjA-ConjBComparison}
+	    :morphClass :ConjA_ConjBComparison}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "zíʔ-i"],
 	    [:Common, :Singular, :Person2, "zíʔ-ti"],
@@ -1591,7 +1599,7 @@
 	    :lexeme :zoq-am,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :stemShape :CVC-VC,
+	    :stemShape :CVC_VC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "žoq’-am-á"],
@@ -1625,14 +1633,14 @@
 	    [:Object, :Common, :Plural, :Person1, "ʔine"],
 	    [:Object, :Common, :Plural, :Person2, "kune"],
 	    [:Object, :Common, :Plural, :Person3, "ʔufunɗe"],
-	    [:Obj-ka, :Common, :Singular, :Person1, "ʔee=ka"],
-	    [:Obj-ka, :Masc, :Singular, :Person2, "koo=ka"],
-	    [:Obj-ka, :Fem, :Singular, :Person2, "kee=ka"],
-	    [:Obj-ka, :Masc, :Singular, :Person3, "ʔufo=ka"],
-	    [:Obj-ka, :Fem, :Singular, :Person3, "ʔise=ka"],
-	    [:Obj-ka, :Common, :Plural, :Person1, "ʔine=ka"],
-	    [:Obj-ka, :Common, :Plural, :Person2, "kune=ka"],
-	    [:Obj-ka, :Common, :Plural, :Person3, "ʔufunɗe=ka"],
+	    [:Obj_ka, :Common, :Singular, :Person1, "ʔee=ka"],
+	    [:Obj_ka, :Masc, :Singular, :Person2, "koo=ka"],
+	    [:Obj_ka, :Fem, :Singular, :Person2, "kee=ka"],
+	    [:Obj_ka, :Masc, :Singular, :Person3, "ʔufo=ka"],
+	    [:Obj_ka, :Fem, :Singular, :Person3, "ʔise=ka"],
+	    [:Obj_ka, :Common, :Plural, :Person1, "ʔine=ka"],
+	    [:Obj_ka, :Common, :Plural, :Person2, "kune=ka"],
+	    [:Obj_ka, :Common, :Plural, :Person3, "ʔufunɗe=ka"],
 	    [:Dative, :Common, :Singular, :Person1, "ʔi=nnu"],
 	    [:Dative, :Masc, :Singular, :Person2, "ku=nnu"],
 	    [:Dative, :Fem, :Singular, :Person2, "ki=nnu"],
@@ -1746,7 +1754,7 @@
     :common {:morpheme :PROLOC,
 	    :person :Person3,
 	    :pos :Pronoun,
-	    :proClass :Locative}
+	    :proClass :LocativePro}
     :terms [[:case, :gender, :number, :token]  ;; schema
 	    [:Directive, :Masc, :Singular, "naa=ma"],
 	    [:Directive, :Fem, :Singular, "naa=ma"],
@@ -1766,31 +1774,31 @@
     :common {:morpheme :PROPOSSIND,
 	    :pos :Pronoun,
 	    :proClass :PossInd}
-    :terms [[:genderObj, :gender, :numObj, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "kaayu"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person2, "kaako"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person2, "kaaki"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "kuusu"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "kiisi"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "kaani"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "kaakunɗe"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "kuusunɗe"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "taayu"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person2, "taako"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person2, "taaki"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "tuusu"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "tiisi"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "taani"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "taakunɗe"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "tuusunɗe"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "kaayu"],
-	    [:Common, :Masc, :Plural, :Singular, :Person2, "kaako"],
-	    [:Common, :Fem, :Plural, :Singular, :Person2, "kaaki"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "kuusu"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "kiisi"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "kaani"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "kaakunɗe"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "kuusunɗe"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "kaayu"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person2, "kaako"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person2, "kaaki"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "kuusu"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "kiisi"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "kaani"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "kaakunɗe"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "kuusunɗe"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "taayu"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person2, "taako"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person2, "taaki"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "tuusu"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "tiisi"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "taani"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "taakunɗe"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "tuusunɗe"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "kaayu"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person2, "kaako"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person2, "kaaki"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "kuusu"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "kiisi"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "kaani"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "kaakunɗe"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "kuusunɗe"]]
     }
     {:label "tsamakko-PPossSuff"
     :note "Sava2005 Table 21"
@@ -1965,22 +1973,22 @@
 	    :morphClass :DervStemFormation}
     :terms [[:derivedClass, :derivedStem, :token]  ;; schema
 	    [:Normal, :Causative1, "-as"],
-	    [:o-assim, :Causative1, "-os"],
+	    [:OAssim, :Causative1, "-os"],
 	    [:Verbaliser, :Causative1, "-as / -os"],
 	    [:Normal, :Causative2, "-is"],
-	    [:o-assim, :Causative2, "⊤"],
+	    [:OAssim, :Causative2, "⊤"],
 	    [:Verbaliser, :Causative2, "⊤"],
 	    [:Normal, :Generic, "⊤"],
-	    [:o-assim, :Generic, "⊤"],
+	    [:OAssim, :Generic, "⊤"],
 	    [:Verbaliser, :Generic, "-om"],
 	    [:Normal, :Inceptive, "-aw"],
-	    [:o-assim, :Inceptive, "⊤"],
+	    [:OAssim, :Inceptive, "⊤"],
 	    [:Verbaliser, :Inceptive, "-aw"],
 	    [:Normal, :Middel, "-aɗ"],
-	    [:o-assim, :Middel, "-oɗ"],
+	    [:OAssim, :Middel, "-oɗ"],
 	    [:Verbaliser, :Middel, "-aɗ / -oɗ"],
 	    [:Normal, :Passive, "-am"],
-	    [:o-assim, :Passive, "-om"],
+	    [:OAssim, :Passive, "-om"],
 	    [:Verbaliser, :Passive, "⊤"]]
     }}
 }

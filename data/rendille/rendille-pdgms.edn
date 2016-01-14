@@ -1,20 +1,22 @@
 {
 :lang :rendille
 :sgpref "ren"
+:datasource "Pillinger-Glaboran1999"
+:geodemoURL "http://www.ethnologue.com/language/rel"
+:geodemoTXT "Varieties and subdialects of Rendille are spoken in Kenya, between Lake Turkana and Mt. Marsabit."
 :schemata {
 :case [:Long, :Object, :ObjectIndirect, :Short]
 	  :clauseType [:Main, :Subordinate]
 	  :cliticType [:Demonstrative, :Indefinite, :Interrogative, :Relative]
-	  :cohesion [:Common, :Exclusive, :Inclusive]
-	  :conjClaspdgmLexs [:Suffix]
+	  :cohesion [:Exclusive, :Inclusive]
 	  :conjClass [:Prefix, :Stative, :Suffix]
 	  :conjSubType [:Irregular]
-	  :deixis [:Common, :Far, :Medial, :Near]
+	  :deixis [:Far, :Medial, :Near]
 	  :derivedStem [:Base, :Causative, :Pass1, :Pass2, :S, :T]
-	  :focus [:Foc, :Non-focus]
+	  :focus [:Foc, :Non_focus]
 	  :gender [:Common, :Fem, :Masc]
-	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
+	  :number [:Plural, :Singular]
+	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Clitic, :Independent, :Possessive]
@@ -22,8 +24,8 @@
 	  }
 :pclass {
            :pngClass [:person :number :gender ]
-           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
-           :inflClass [:conjClass  ]
+           :synsemClass [:case :clauseType :cliticType :cohesion  :derivedStem :dexis :focus :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass :conjSubType ]
            :otherClass [ ]
           }
 :morphemes {
@@ -428,13 +430,14 @@
 	    [:Common, :Plural, :Person3, "furaan"]]
     }
     {:label "rendille-VMidAffSubj-kar"
-    :note ""
+    :note "p. 49"
     :common {:clauseType :Subordinate,
 	    :conjClass :Suffix,
 	    :derivedStem :T,
 	    :lexeme :kar,
 	    :polarity :Affirmative,
-	    :pos :Verb}
+	    :pos :Verb,
+             :tam :Perfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "karsate"],
 	    [:Fem, :Singular, :Person3, "karsatte"],
@@ -1577,11 +1580,13 @@
 	    :pos :Verb,
 	    :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "á furnamo"],
+ 	    [:Masc, :Singular, :Person3, "á furnamo"],
+ 	    [:Fem, :Singular, :Person3, "á furnanto"],
 	    [:Common, :Singular, :Person1, "á furnamo"],
-	    [:Common, :Plural, :Person3, "á furnamaan"],
-	    [:Common, :Common, :Common, "Common"],
-	    [:Common, :Common, :Common, "Common"]]
+	    [:Common, :Singular, :Person2, "á furnanto"],
+	    [:Common, :Plural, :Person1, "á furnanno ~ á furmanno"],
+	    [:Common, :Plural, :Person2, "á furnanteen"],
+	    [:Common, :Plural, :Person3, "á furnameen"]]
     }
     {:label "rendille-VNegSubjPerfIrreg-he"
     :note "Pillinger-Galboran1999 p. 44"
@@ -1766,7 +1771,7 @@
     {:label "rendille-VPass2NegSubjPerf-fur"
     :note "Passive forms of fur- are mostly extrapolated from Pillinger-Galboran1999 pp. 47- 52;in text (p. 52) only imperf indic aff and neg given."
     :common {:clauseType :Subordinate,
-	    :conjClaspdgmLexs :Suffix,
+	    :conjClass :Suffix,
 	    :derivedStem :Pass2,
 	    :lexeme :fur,
 	    :polarity :Negative,
@@ -1852,21 +1857,21 @@
 	    :pos :Pronoun,
 	    :proClass :Clitic}
     :terms [[:cliticType, :deixis, :gender, :number, :token]  ;; schema
-	    [:Relative, :Common, :Common, :Plural, "hí"],
-	    [:Interrogative, :Common, :Fem, :Singular, "toh"],
+	    [:Relative, :_NA, :Common, :Plural, "hí"],
+	    [:Interrogative, :_NA, :Fem, :Singular, "toh"],
 	    [:Demonstrative, :Near, :Common, :Plural, "ha(n)"],
 	    [:Demonstrative, :Medial, :Fem, :Singular, "táas"],
-	    [:Relative, :Common, :Masc, :Singular, "kí ~ -í"],
+	    [:Relative, :_NA, :Masc, :Singular, "kí ~ -í"],
 	    [:Demonstrative, :Far, :Masc, :Singular, "kúus ~ -úus"],
-	    [:Indefinite, :Common, :Masc, :Singular, "koó ~ -oó"],
-	    [:Indefinite, :Common, :Common, :Plural, "hoó"],
+	    [:Indefinite, :_NA, :Masc, :Singular, "koó ~ -oó"],
+	    [:Indefinite, :_NA, :Common, :Plural, "hoó"],
 	    [:Demonstrative, :Near, :Masc, :Singular, "ka(n) ~ -a"],
-	    [:Interrogative, :Common, :Common, :Plural, "hoh"],
+	    [:Interrogative, :_NA, :Common, :Plural, "hoh"],
 	    [:Demonstrative, :Medial, :Common, :Plural, "háas"],
 	    [:Demonstrative, :Far, :Fem, :Singular, "túus"],
-	    [:Indefinite, :Common, :Fem, :Singular, "toó"],
-	    [:Interrogative, :Common, :Masc, :Singular, "koh ~ -oh"],
-	    [:Relative, :Common, :Fem, :Singular, "tí"],
+	    [:Indefinite, :_NA, :Fem, :Singular, "toó"],
+	    [:Interrogative, :_NA, :Masc, :Singular, "koh ~ -oh"],
+	    [:Relative, :_NA, :Fem, :Singular, "tí"],
 	    [:Demonstrative, :Far, :Common, :Plural, "húus"],
 	    [:Demonstrative, :Medial, :Masc, :Singular, "káas ~ -áas"],
 	    [:Demonstrative, :Near, :Fem, :Singular, "ta(n)"]]
@@ -1877,38 +1882,38 @@
 	    :pos :Pronoun,
 	    :proClass :Independent}
     :terms [[:case, :cohesion, :gender, :number, :person, :token]  ;; schema
-	    [:ObjectIndirect, :Common, :Fem, :Singular, :Person3, "Common"],
+	    [:ObjectIndirect, :_NA, :Fem, :Singular, :Person3, "Common"],
 	    [:Long, :Exclusive, :Common, :Plural, :Person1, "náh"],
 	    [:ObjectIndirect, :Inclusive, :Common, :Plural, :Person1, "Common"],
-	    [:ObjectIndirect, :Common, :Masc, :Singular, :Person3, "Common"],
+	    [:ObjectIndirect, :_NA, :Masc, :Singular, :Person3, "Common"],
 	    [:Short, :Exclusive, :Common, :Plural, :Person1, "Common"],
 	    [:Object, :Inclusive, :Common, :Plural, :Person1, "inno"],
-	    [:Short, :Common, :Common, :Plural, :Person3, "Common"],
-	    [:ObjectIndirect, :Common, :Common, :Singular, :Person1, "Common"],
-	    [:Short, :Common, :Masc, :Singular, :Person3, "us"],
-	    [:Object, :Common, :Common, :Singular, :Person2, "ki-"],
-	    [:Long, :Common, :Masc, :Singular, :Person3, "usú"],
+	    [:Short, :_NA, :Common, :Plural, :Person3, "Common"],
+	    [:ObjectIndirect, :_NA, :Common, :Singular, :Person1, "Common"],
+	    [:Short, :_NA, :Masc, :Singular, :Person3, "us"],
+	    [:Object, :_NA, :Common, :Singular, :Person2, "ki-"],
+	    [:Long, :_NA, :Masc, :Singular, :Person3, "usú"],
 	    [:ObjectIndirect, :Exclusive, :Common, :Plural, :Person1, "Common"],
-	    [:Short, :Common, :Common, :Plural, :Person2, "Common"],
-	    [:Object, :Common, :Common, :Singular, :Person1, "i-"],
-	    [:Long, :Common, :Common, :Singular, :Person2, "atí"],
-	    [:Long, :Common, :Common, :Singular, :Person1, "aní"],
-	    [:ObjectIndirect, :Common, :Common, :Plural, :Person2, "Common"],
-	    [:Object, :Common, :Common, :Plural, :Person2, "atin"],
+	    [:Short, :_NA, :Common, :Plural, :Person2, "Common"],
+	    [:Object, :_NA, :Common, :Singular, :Person1, "i-"],
+	    [:Long, :_NA, :Common, :Singular, :Person2, "atí"],
+	    [:Long, :_NA, :Common, :Singular, :Person1, "aní"],
+	    [:ObjectIndirect, :_NA, :Common, :Plural, :Person2, "Common"],
+	    [:Object, :_NA, :Common, :Plural, :Person2, "atin"],
 	    [:Object, :Exclusive, :Common, :Plural, :Person1, "nah"],
-	    [:Short, :Common, :Common, :Singular, :Person2, "at"],
-	    [:Long, :Common, :Common, :Plural, :Person3, "ičó"],
+	    [:Short, :_NA, :Common, :Singular, :Person2, "at"],
+	    [:Long, :_NA, :Common, :Plural, :Person3, "ičó"],
 	    [:Short, :Inclusive, :Common, :Plural, :Person1, "Common"],
-	    [:Object, :Common, :Masc, :Singular, :Person3, "Common"],
-	    [:Short, :Common, :Common, :Singular, :Person1, "an"],
-	    [:Object, :Common, :Fem, :Singular, :Person3, "Common"],
-	    [:Long, :Common, :Common, :Plural, :Person2, "atín"],
-	    [:ObjectIndirect, :Common, :Common, :Singular, :Person2, "kí-"],
+	    [:Object, :_NA, :Masc, :Singular, :Person3, "Common"],
+	    [:Short, :_NA, :Common, :Singular, :Person1, "an"],
+	    [:Object, :_NA, :Fem, :Singular, :Person3, "Common"],
+	    [:Long, :_NA, :Common, :Plural, :Person2, "atín"],
+	    [:ObjectIndirect, :_NA, :Common, :Singular, :Person2, "kí-"],
 	    [:Long, :Inclusive, :Common, :Plural, :Person1, "innó"],
-	    [:Short, :Common, :Fem, :Singular, :Person3, "Common"],
-	    [:Object, :Common, :Common, :Plural, :Person3, "Common"],
-	    [:Long, :Common, :Fem, :Singular, :Person3, "ičé"],
-	    [:ObjectIndirect, :Common, :Common, :Plural, :Person3, "Common"]]
+	    [:Short, :_NA, :Fem, :Singular, :Person3, "Common"],
+	    [:Object, :_NA, :Common, :Plural, :Person3, "Common"],
+	    [:Long, :_NA, :Fem, :Singular, :Person3, "ičé"],
+	    [:ObjectIndirect, :_NA, :Common, :Plural, :Person3, "Common"]]
     }
     {:label "rendille-PPoss"
     :note "Pillinger-Galboran1999 p. 41"
@@ -1916,20 +1921,20 @@
 	    :pos :Pronoun,
 	    :proClass :Possessive}
     :terms [[:cohesion, :focus, :gender, :number, :person, :token]  ;; schema
-	    [:Common, :Foc, :Common, :Plural, :Person2, "kiinna"],
-	    [:Exclusive, :Non-focus, :Common, :Plural, :Person1, "kényo"],
-	    [:Common, :Non-focus, :Fem, :Singular, :Person3, "kíče"],
-	    [:Common, :Foc, :Common, :Singular, :Person1, "kaaya"],
-	    [:Common, :Foc, :Masc, :Singular, :Person3, "kiissa"],
-	    [:Common, :Non-focus, :Common, :Plural, :Person2, "kíin"],
-	    [:Common, :Foc, :Fem, :Singular, :Person3, "kičeeda"],
-	    [:Common, :Non-focus, :Common, :Singular, :Person2, "káah"],
-	    [:Common, :Non-focus, :Common, :Plural, :Person3, "kíčo"],
-	    [:Common, :Foc, :Common, :Singular, :Person2, "kaahha"],
-	    [:Common, :Non-focus, :Common, :Singular, :Person1, "kéy"],
-	    [:Inclusive, :Non-focus, :Common, :Plural, :Person1, "kéen"],
-	    [:Common, :Non-focus, :Masc, :Singular, :Person3, "kíis"],
-	    [:Common, :Foc, :Common, :Plural, :Person3, "kičooda"],
+	    [:_NA, :Foc, :Common, :Plural, :Person2, "kiinna"],
+	    [:Exclusive, :Non_focus, :Common, :Plural, :Person1, "kényo"],
+	    [:_NA, :Non_focus, :Fem, :Singular, :Person3, "kíče"],
+	    [:_NA, :Foc, :Common, :Singular, :Person1, "kaaya"],
+	    [:_NA, :Foc, :Masc, :Singular, :Person3, "kiissa"],
+	    [:_NA, :Non_focus, :Common, :Plural, :Person2, "kíin"],
+	    [:_NA, :Foc, :Fem, :Singular, :Person3, "kičeeda"],
+	    [:_NA, :Non_focus, :Common, :Singular, :Person2, "káah"],
+	    [:_NA, :Non_focus, :Common, :Plural, :Person3, "kíčo"],
+	    [:_NA, :Foc, :Common, :Singular, :Person2, "kaahha"],
+	    [:_NA, :Non_focus, :Common, :Singular, :Person1, "kéy"],
+	    [:Inclusive, :Non_focus, :Common, :Plural, :Person1, "kéen"],
+	    [:_NA, :Non_focus, :Masc, :Singular, :Person3, "kíis"],
+	    [:_NA, :Foc, :Common, :Plural, :Person3, "kičooda"],
 	    [:Exclusive, :Foc, :Common, :Plural, :Person1, "kaaanya"],
 	    [:Inclusive, :Foc, :Common, :Plural, :Person1, "keenna"]]
     }}

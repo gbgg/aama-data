@@ -1,6 +1,9 @@
 {
 :lang :boni-jara
 :sgpref "boj"
+:datasource "Heine1982"
+:geodemoURL "http://www.ethnologue.com/language/bob"
+:geodemoTXT "Jara is a variety of Central Boni spoken for the most part by residents of the town of Mangai in North-eastern Kenya. It was the object of a dialect study by Bernd Heine published in 1982."
 :schemata {
 :aspect [:Habitual, :Progressive]
 	  :cliticClass [:Ablative, :Causative, :Comitative, :Focus, :Medial, :Passive, :Reflexive, :Ventive, :goal]
@@ -10,9 +13,10 @@
 	  :gender [:Common, :Fem, :Masc]
 	  :mood [:SubjunctivepdgmLex, :Subjunctivepolarity]
            :morphClass [:NonFinite, :VSTEM]
-	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
-	  :polarity [:Affirmative, :Common, :Negative, :U]
+	  :number [:Plural, :Singular]
+	  :person [:Unmarked, :Person1, :Person2, :Person3]
+           :pdgmType [:Partial]
+	  :polarity [:Affirmative, :Negative]
 	  :pos [:Adjective, :Pronoun, :Verb]
 	  :proClass [:Focus, :Independent, :Object, :Possessive, :SubjPrefV, :SubjSuffV]
 	  :tam [:Imperative, :Imperfect, :Infinitive, :Perfect, :Present]
@@ -20,8 +24,8 @@
 	  }
 :pclass {
            :pngClass [:person :number :gender ]
-           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
-           :inflClass [:conjClass  ]
+           :synsemClass [:aspect :cliticClass :case  :derivedStem :mood :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass :cliticType ]
            :otherClass [ ]
           }
 :morphemes {
@@ -206,9 +210,7 @@
     :common {:conjClass :Suffix4,
 	    :gender :Common,
 	    :lexeme :baarin,
-	    :number :Common,
 	    :morphClass :NonFinite,
-	    :polarity :U,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -235,9 +237,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aal,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -376,9 +378,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :uwaad,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -389,9 +391,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aak,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -407,19 +409,30 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Singular, "ha-‘aháŋ-ne"],
 	    [:Singular, "áhaŋ-e"],
-	    [:Plural, "ha-‘ahaŋ-náha"],
 	    [:Plural, "aháŋ-a"]]
+    }
+    {:label "boni_J-VPrefNegImprtv-ahang"
+    :note "Heine1982 2.15.61"
+    :common {:conjClass :Prefix,
+	    :gender :Common,
+	    :lexeme :ahang,
+	    :person :Person2,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Imperative}
+    :terms [[:number, :token]  ;; schema
+	    [:Singular, "ha-‘aháŋ-ne"],
+	    [:Plural, "ha-‘ahaŋ-náha ~ ha-’ahaŋ-níya"]]
     }
     {:label "boni_J-VPrefImperf-ahang"
     :note "Heine1982 2.15.61"
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :ahang,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -430,9 +443,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aal,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -619,9 +632,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iyaad,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -648,9 +661,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iyaas,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -696,8 +709,7 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "ha-‘iyaan-níya"],
-	    [:Plural, "ha-‘iyaan-náha"],
+	    [:Plural, "ha-‘iyaan-náha ~ ha-‘iyaan-níya"],
 	    [:Singular, "ha—‘iyáán-ne"]]
     }
     {:label "boni_J-VPrefInfin-iyaad"
@@ -705,9 +717,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iyaad,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -740,19 +752,17 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "iyéés-a"],
-	    [:Plural, "iyáás-a"],
-	    [:Singular, "iyáàs-e"],
-	    [:Singular, "iyéès"]]
+	    [:Plural, "iyáás-a ~ iyéés-a [Kijee]"],
+	    [:Singular, "iyáàs-e ~ iyéès [Kijee]"]]
     }
     {:label "boni_J-VPrefImperf-iyaad"
     :note "Heine1982 2.15.61"
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iyaad,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -763,9 +773,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aak,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -776,9 +786,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :erah,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -814,7 +824,7 @@
 	    [:Common, :Plural, :Person2, :Affirmative, :Imperative, "sííy-a"],
 	    [:Common, :Plural, :Person2, :Affirmative, :Imperfect, "á-siis-si"],
 	    [:Masc, :Singular, :Person3, :Negative, :Imperfect, "húú-siiy-o"],
-	    [:Common, :Common, :Common, :Common, :Infinitive, "sííy-óó"],
+	    [:Common, :_NA, :_NA, :_NA, :Infinitive, "sííy-óó"],
 	    [:Common, :Singular, :Person2, :Negative, :Imperative, "ha-sííy-ne"],
 	    [:Common, :Singular, :Person1, :Affirmative, :Imperfect, "á-siiy-s"],
 	    [:Common, :Singular, :Person2, :Affirmative, :Imperative, "síi"],
@@ -847,9 +857,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iraad,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -860,9 +870,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iyaas,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1005,9 +1015,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iraad,
-	    :number :Common,
-	    :person :Person2,
-	    :polarity :U,
+	    :person :Unmarked
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1056,8 +1065,7 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "ha-‘ajiŋ-níya"],
-	    [:Singular, "ha-‘ajíŋ-ne"],
+	    [:Singular, "ha-‘ajíŋ-ne ~ ha-‘ajiŋ-níya"],
 	    [:Plural, "ha-‘ajiŋ-náha"]]
     }
     {:label "boni_J-VJaraSuff2Infinitive-obed"
@@ -1065,9 +1073,9 @@
     :common {:conjClass :Suffix2,
 	    :gender :Common,
 	    :lexeme :obed,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1189,9 +1197,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :uwaad,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -1236,8 +1244,7 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "ha-firiis-in-níya"],
-	    [:Plural, "ha-firiis-in-náha"],
+	    [:Plural, "ha-firiis-in-náha ~ ha-firiis-in-níya"],
 	    [:Singular, "ha-firiis-ín-ne"]]
     }
     {:label "boni_J-VPrefNegImprtv-iraad"
@@ -1251,9 +1258,8 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "ha-‘iraan-níya"],
 	    [:Singular, "ha-‘iráán-ne"],
-	    [:Plural, "ha-‘iraan-náha"]]
+	    [:Plural, "ha-‘iraan-náha ~ ha-‘iraan-níya"]]
     }
     {:label "boni_J-VSuff1AffPres-kas"
     :note "Heine1982"
@@ -1284,19 +1290,6 @@
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "bóod"],
 	    [:Plural, "bóód-a"]]
-    }
-    {:label "boni_J-VPrefNegImprtv-ahang"
-    :note "Heine1982 2.15.61"
-    :common {:conjClass :Prefix,
-	    :gender :Common,
-	    :lexeme :ahang,
-	    :number :Common,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:token]  ;; schema
-	    ["ha-’ahaŋ-níya"]]
     }
     {:label "boni_J-VPrefAffImperf-aak"
     :note "Heine1982 2.15.61"
@@ -1384,9 +1377,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :ahang,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1403,8 +1396,7 @@
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ha-‘uwáán-ne"],
-	    [:Plural, "ha-‘uwaan-níya"],
-	    [:Plural, "ha-‘uwaan-náha"]]
+	    [:Plural, "ha-‘uwaan-náha ~ ha-‘uwaan-níya"]]
     }
     {:label "boni_J-VSuffHabNeg-kor"
     :note "Heine1982 2.15.42.2 “There is no imperfect/perfect distinction in the habitual
@@ -1465,8 +1457,7 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Singular, "uwáad"],
-	    [:Plural, "uwáád-a"],
+	    [:Plural, "uwáád-a ~ uwáad [Kijee]"],
 	    [:Singular, "uwáad-e"]]
     }
     {:label "boni_J-VPrefAffPerf-aal"
@@ -1490,9 +1481,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :ahang,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1536,9 +1527,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :ehe,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -1555,17 +1546,16 @@
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "ha-‘iyéin-ne"],
-	    [:Plural, "ha-‘iyein-náha"],
-	    [:Plural, "ha-‘iyein-níya"]]
+	    [:Plural, "ha-‘iyein-náha ~ ha-‘iyein-níya"]]
     }
     {:label "boni_J-VPrefPerf-erah"
     :note "Heine1982 2.15.61"
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :erah,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1689,9 +1679,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aak,
-	    :number :Common,
+	    :person :Unmarked
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -1707,9 +1697,8 @@
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Singular, "ájik"],
 	    [:Plural, "ajík-a"],
-	    [:Singular, "ájik-e"]]
+	    [:Singular, "ájik-e ~ ájik [Kijee]"]]
     }}
 :muterms #{
     {:label "boni_J-VNegation"

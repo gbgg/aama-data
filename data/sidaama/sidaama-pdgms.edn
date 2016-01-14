@@ -1,10 +1,13 @@
 {
 :lang :sidaama
 :sgpref "sid"
+:datasource "Kawachi2007"
+:geodemoURL "http://www.ethnologue.com/language/sid"
+:geodemoTXT "Varieties and subdialects of Sidaama are spoken in"
 :schemata {
 :aspect [:Imperfect, :PresentPerfect, :SimplePerfect]
-	  :case [:Accusative, :Common, :Genitive, :Nominative, :nom-gen]
-	  :causative1Causative2 [:Case-ii, :Case-iv, :Case-vii, :Common]
+	  :case [:Accusative, :Common, :Genitive, :Nominative, :NomGen]
+	  :causative1Causative2 [:Case_ii, :Case_iv, :Case_vii, :Common]
 	  :classification [:DERVSTEMCLASS]
 	  :clauseType [:ImperativeNegative, :MainGeneral, :Optative, :Subordinate]
 	  :configuration [:Connective, :InfinitiveConj, :InfinitiveConn, :SubjMarkerRed]
@@ -13,9 +16,9 @@
 	  :direction [:DirAT, :DirFROM, :DirTO]
 	  :gender [:Common, :Fem, :Masc]
 	  :interrogClass [:InterrogProWhat, :InterrogProWhen, :InterrogProWhere, :InterrogProWhich, :InterrogProWho]
-	  :middleClass [:Case-iii, :Case-v, :Case-vi, :Common]
+	  :middleClass [:Case_iii, :Case_v, :Case_vi, :Common]
 	  :number [:Common, :Plural, :Singular]
-	  :passiveReciprocalClass [:A, :B, :Case-FN40, :Case-i]
+	  :passiveReciprocalClass [:A, :B, :Case_FN40, :Case_i]
 	  :pdgmType [:Compound, :Structure]
 	  :person [:Common, :Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
@@ -25,6 +28,12 @@
 	  :tam [:Connective, :Continuous, :Imperative, :Imperfect, :InfinitiveConj, :InfinitiveConn, :InfinitiveSub, :Optative, :PresentPerfect, :PresentProgressive, :SimplePerfect]
 	  :morphClass [:DervStem, :Existence, :PersNumTenseSuff, :SubjMarkerConnConj, :SubjMarkerInfinSub, :SubjMarkerMain, :SuffStructure, :TensePersNumGenTemplate, :VerbNegation]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:aspect :case :causative1Causative2 :clausetype :configuration :deixis  :derivedStem :direction :interrogClass :middleClass :passiveReckiprocalClass :polarity :pos :posClass :proClass :tamb ]
+           :inflClass [  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :DERVSTEM {:gloss "[x]", :lemma "[y]", }
   :PERSNUMTENSESUFF {:gloss "[x]", :lemma "[y]", }
@@ -69,20 +78,7 @@
 	    [:Common, :Plural, :Person3, "it-t-a=nna"]]
     }
     {:label "sidaama-VPresProg-it"
-    :note "Kawachi2007,(4.182). The verb no- can also be a component of two aspectual
-            markers, they can be used to constitute the present-progressive form of another verb
-            with the infinitive form followedby the instrumental case suffix -nni (lit.,‘by doing
-            sth,came to exist’),as in (4.182) also,they can be used to constitute the present
-            continuous verb form with the connective formof another verb (lit.,‘did sth and came to
-            exist’),as in (4.183). In each of them,the firstpersonand second-person plural forms are
-            irregular. When used in either of these ways,the subject is indicated on a suffix
-            (1SG,3SG.M:-ø,2SG,3SG.F/3PL:-t,1PL:-n(t),2PL:-ti(n) the>initial t of the suffix can
-            be preceded by the epenthetic vowel i when thesuffix is attached to a root ending in a
-            consonant-cluster like hank’-) immediatelypreceding the infinitive suffix -a or the
-            connective suffix -e also, the existential verb thatfollows either of these suffixes
-            inflects for the person/number/gender of the subject,asindicated in (4.181) (for the
-            second-person plural,the existential verb cannot be used ineither aspect).(p.
-            409)"
+    :note "Kawachi2007,(4.182). The verb no- can also be a component of two aspectualmarkers, they can be used to constitute the present-progressive form of another verb with the infinitive form followedby the instrumental case suffix -nni (lit.,‘by doing sth,came to exist’),as in (4.182) also,they can be used to constitute the present continuous verb form with the connective formof another verb (lit.,‘did sth and came to exist’),as in (4.183). In each of them,the firstpersonand second-person plural forms are irregular. When used in either of these ways,the subject is indicated on a suffix (1SG,3SG.M:-ø,2SG,3SG.F/3PL:-t,1PL:-n(t),2PL:-ti(n) the>initial t of the suffix can be preceded by the epenthetic vowel i when thesuffix is attached to a root ending in a consonant-cluster like hank’-) immediatelypreceding the infinitive suffix -a or the connective suffix -e also, the existential verb thatfollows either of these suffixes inflects for the person/number/gender of the subject,asindicated in (4.181) (for the second-person plural,the existential verb cannot be used ineither aspect).(p. 409)"
     :common {:lexeme :it,
 	    :pdgmType :Compound,
 	    :pos :Verb,
@@ -122,7 +118,7 @@
 	    :pos :Verb,
 	    :tam :SimplePerfect,
 	    :morphClass :SuffStructure}
-    :terms [[:gender, :number, :person, :token, :token-structure]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-structure]  ;; schema
 	    [:Masc, :Singular, :Person1, "ani wi’l-u-mm-o", "cry-V-simplePerf+1-1sg-m"],
 	    [:Fem, :Singular, :Person1, "ani wi’l-u-mm-a", "cry-V-simplePerf+1-1sg-f"],
 	    [:Masc, :Singular, :Person2, "ati wi’l-i-tt-o", "cry-V-simplePerf+2-2sg-m"],
@@ -393,7 +389,7 @@
     :common {:morpheme :VNEGATION,
 	    :pos :Verb,
 	    :morphClass :VerbNegation}
-    :terms [[:clauseType, :number, :person, :token, :token-notes]  ;; schema
+    :terms [[:clauseType, :number, :person, :token, :token-note]  ;; schema
 	    [:MainGeneral, :Common, :Common, "di=", "Proclitic"],
 	    [:ImperativeNegative, :Singular, :Person2, "-tooti", ""],
 	    [:ImperativeNegative, :Plural, :Person2, "-tinoonte", ""],
@@ -504,9 +500,9 @@
 	    [:Accusative, :Here, "kawa"],
 	    [:Accusative, :There, "hakka"],
 	    [:Accusative, :overThere, "ka’a"],
-	    [:nom-gen, :Here, "kaw-i"],
-	    [:nom-gen, :There, "hakk-i"],
-	    [:nom-gen, :overThere, "ka’-i"]]
+	    [:NomGen, :Here, "kaw-i"],
+	    [:NomGen, :There, "hakk-i"],
+	    [:NomGen, :overThere, "ka’-i"]]
     }
     {:label "sidaama-PInterrog"
     :note "Kawachi2007,Table 3.15,3.16. Demonstratives can be reduplicated in all case and
@@ -608,13 +604,13 @@
 	    :pos :Pronoun,
 	    :proClass :ReflPoss}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:nom-gen, :Common, :Singular, :Person1, "um-i-’ya"],
-	    [:nom-gen, :Common, :Singular, :Person2, "um-i-kki"],
-	    [:nom-gen, :Masc, :Singular, :Person3, "um-i-si"],
-	    [:nom-gen, :Fem, :Singular, :Person3, "um-i-se"],
-	    [:nom-gen, :Common, :Plural, :Person1, "um-i-nke"],
-	    [:nom-gen, :Common, :Plural, :Person2, "um-i-’ne"],
-	    [:nom-gen, :Common, :Plural, :Person3, "um-i-nsa"],
+	    [:NomGen, :Common, :Singular, :Person1, "um-i-’ya"],
+	    [:NomGen, :Common, :Singular, :Person2, "um-i-kki"],
+	    [:NomGen, :Masc, :Singular, :Person3, "um-i-si"],
+	    [:NomGen, :Fem, :Singular, :Person3, "um-i-se"],
+	    [:NomGen, :Common, :Plural, :Person1, "um-i-nke"],
+	    [:NomGen, :Common, :Plural, :Person2, "um-i-’ne"],
+	    [:NomGen, :Common, :Plural, :Person3, "um-i-nsa"],
 	    [:Accusative, :Common, :Singular, :Person1, "umo-’ya"],
 	    [:Accusative, :Common, :Singular, :Person2, "umo-kki"],
 	    [:Accusative, :Masc, :Singular, :Person3, "umo-si"],
@@ -628,32 +624,32 @@
             Verbs can be marked with suffixes for three types of temporal aspects,the imperfect,the
             simple perfect,and the present perfect,together with suffixes for theperson/number of
             the subject. In addition,the genders of the first- and second-personsingular subjects
-            are also marked with suffixes (M:-o,F:-a)"
+            are also marked with suffixes (M:-o,F:-a). Template note: :token-genF, :token-genM, :token-numPers, :token-tense."
     :common {:morpheme :TENSEPNGTEMPLATE,
 	    :pos :Verb,
 	    :morphClass :TensePersNumGenTemplate}
-    :terms [[:gender, :number, :person, :tam, :token-genF, :token-genM, :token-numPers, :token-tense, :token, :token]  ;; schema
-	    [:Common, :Singular, :Person1, :Imperfect, "-a", "-o", "-mm", "-ee", "-a : -o : -mm : -ee", "-a : -o : -mm : -ee"],
-	    [:Common, :Singular, :Person2, :Imperfect, "-a", "-o", "-tt", "-a", "-a : -o : -tt : -a"],
-	    [:Masc, :Singular, :Person3, :Imperfect, "", "Common", "Common", "-anno", " : Common : Common : -anno"],
-	    [:Fem, :Singular, :Person3, :Imperfect, "", "Common", "-t", "-anno", " : Common : -t : -anno"],
-	    [:Common, :Plural, :Person1, :Imperfect, "", "Common", "-n-V–mmo", "-ee", " : Common : -n-V–mmo : -ee"],
-	    [:Common, :Plural, :Person2, :Imperfect, "", "Common", "-tin", "-anni", " : Common : -tin : -anni"],
-	    [:Common, :Plural, :Person3, :Imperfect, "", "Common", "-t", "-anno", " : Common : -t : -anno"],
-	    [:Common, :Singular, :Person1, :SimplePerfect, "-a", "-o", "-mm", "-u", "-a : -o : -mm : -u"],
-	    [:Common, :Singular, :Person2, :SimplePerfect, "-a", "-o", "-tt", "-i", "-a : -o : -tt : -i"],
-	    [:Masc, :Singular, :Person3, :SimplePerfect, "", "Common", "Common", "-i", " : Common : Common : -i"],
-	    [:Fem, :Singular, :Person3, :SimplePerfect, "", "Common", "-t", "-u", " : Common : -t : -u"],
-	    [:Common, :Plural, :Person1, :SimplePerfect, "", "Common", "-n-V–mmo", "-u", " : Common : -n-V–mmo : -u"],
-	    [:Common, :Plural, :Person2, :SimplePerfect, "", "Common", "-tin", "-i", " : Common : -tin : -i"],
-	    [:Common, :Plural, :Person3, :SimplePerfect, "", "Common", "-t", "-u", " : Common : -t : -u"],
-	    [:Common, :Singular, :Person1, :PresentPerfect, "-a", "-o", "-mm", "-oo", "-a : -o : -mm : -oo"],
-	    [:Common, :Singular, :Person2, :PresentPerfect, "-a", "-o", "-tt", "-oo", "-a : -o : -tt : -oo"],
-	    [:Masc, :Singular, :Person3, :PresentPerfect, "", "Common", "Common", "-ino", " : Common : Common : -ino"],
-	    [:Fem, :Singular, :Person3, :PresentPerfect, "", "Common", "-t", "-ino", " : Common : -t : -ino"],
-	    [:Common, :Plural, :Person1, :PresentPerfect, "", "Common", "-n-V–mmo", "-oo", " : Common : -n-V–mmo : -oo"],
-	    [:Common, :Plural, :Person2, :PresentPerfect, "", "Common", "-tin", "-oonni", " : Common : -tin : -oonni"],
-	    [:Common, :Plural, :Person3, :PresentPerfect, "", "Common", "-t", "-ino", " : Common : -t : -ino"]]
+    :terms [[:gender, :number, :person, :tam, :token-note-template, :token]  ;; schema
+	    [:Common, :Singular, :Person1, :Imperfect, "-a + -o + -mm + -ee", "-a : -o : -mm : -ee",],
+	    [:Common, :Singular, :Person2, :Imperfect, "-a + -o + -tt + -a", "-a : -o : -tt : -a"],
+	    [:Masc, :Singular, :Person3, :Imperfect, " + Common + Common + -anno", " : Common : Common : -anno"],
+	    [:Fem, :Singular, :Person3, :Imperfect, " + Common + -t + -anno", " : Common : -t : -anno"],
+	    [:Common, :Plural, :Person1, :Imperfect, " + Common + -n-V–mmo + -ee", " : Common : -n-V–mmo : -ee"],
+	    [:Common, :Plural, :Person2, :Imperfect, " + Common + -tin + -anni", " : Common : -tin : -anni"],
+	    [:Common, :Plural, :Person3, :Imperfect, " + Common + -t + -anno", " : Common : -t : -anno"],
+	    [:Common, :Singular, :Person1, :SimplePerfect, "-a + -o + -mm + -u", "-a : -o : -mm : -u"],
+	    [:Common, :Singular, :Person2, :SimplePerfect, "-a + -o + -tt + -i", "-a : -o : -tt : -i"],
+	    [:Masc, :Singular, :Person3, :SimplePerfect, " + Common + Common + -i", " : Common : Common : -i"],
+	    [:Fem, :Singular, :Person3, :SimplePerfect, " + Common + -t + -u", " : Common : -t : -u"],
+	    [:Common, :Plural, :Person1, :SimplePerfect, " + Common + -n-V–mmo + -u", " : Common : -n-V–mmo : -u"],
+	    [:Common, :Plural, :Person2, :SimplePerfect, " + Common + -tin + -i", " : Common : -tin : -i"],
+	    [:Common, :Plural, :Person3, :SimplePerfect, " + Common + -t + -u", " : Common : -t : -u"],
+	    [:Common, :Singular, :Person1, :PresentPerfect, "-a + -o + -mm + -oo", "-a : -o : -mm : -oo"],
+	    [:Common, :Singular, :Person2, :PresentPerfect, "-a + -o + -tt + -oo", "-a : -o : -tt : -oo"],
+	    [:Masc, :Singular, :Person3, :PresentPerfect, " + Common + Common + -ino", " : Common : Common : -ino"],
+	    [:Fem, :Singular, :Person3, :PresentPerfect, " + Common + -t + -ino", " : Common : -t : -ino"],
+	    [:Common, :Plural, :Person1, :PresentPerfect, " + Common + -n-V–mmo + -oo", " : Common : -n-V–mmo : -oo"],
+	    [:Common, :Plural, :Person2, :PresentPerfect, " + Common + -tin + -oonni", " : Common : -tin : -oonni"],
+	    [:Common, :Plural, :Person3, :PresentPerfect, " + Common + -t + -ino", " : Common : -t : -ino"]]
     }
     {:label "sidaama-VSubjMarkerInfinSub"
     :note "Kawachi2007,Table 4.12:Infinitive Suffix Accompanied by the Person Suffix when
@@ -687,9 +683,9 @@
 	    [:Accusative, :Here, "kawiččo"],
 	    [:Accusative, :There, "hakkiččo"],
 	    [:Accusative, :overThere, "ka’iččo"],
-	    [:nom-gen, :Here, "kawičč-i"],
-	    [:nom-gen, :There, "hakkičč-i"],
-	    [:nom-gen, :overThere, "ka’ičč-i"]]
+	    [:NomGen, :Here, "kawičč-i"],
+	    [:NomGen, :There, "hakkičč-i"],
+	    [:NomGen, :overThere, "ka’ičč-i"]]
     }
     {:label "sidaama-PDemAreaAdnom"
     :note "Kawachi2007,Table 3.14"

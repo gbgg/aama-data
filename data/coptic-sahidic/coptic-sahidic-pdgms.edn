@@ -1,29 +1,38 @@
 {
 :lang :coptic-sahidic
 :sgpref "csa"
+:datasource "Lambdin1983"
+:geodemoURL "http://www.ethnologue.com/language/cop"
+:geodemoTXT "Varieties of Cooptic, the last stage of Egyptian from about mid-first millennium BCE, were spoken in Egypt until about the 16th century. The Bohairic variety still serves as a liturgical language of the Egyptian Coptic church. Sahidic, whose geographic localization is not clear, was the language of the official Coptic translation of the Bible, and served as the principal literary dialect from about the fourth to the tenth century."
 :schemata {
-:clauseConjugation [:Conditional, :Main, :Relative, :Result, :Subordinate, :Temporal, :TemporalSubordinate, :Terminative, :U, :Variable]
+:clauseConjugation [:Conditional, :Main, :Relative, :Result, :Subordinate, :Temporal, :TemporalSubordinate, :Terminative, :Variable]
 	  :clauseType [:Relative]
 	  :formClass [:AbsoluteInfinitive]
 	  :gender [:Common, :Fem, :Masc]
-	  :genderHead [:Common, :Fem, :Masc]
-	  :imperativeForm [:Construct, :Pronominal]
+	  :genderHead [:HeadCommon, :HeadFem, :HeadMasc]
+	  :imperativeForm [:ImptvConstruct, :ImptvPronominal]
 	  :infinitiveForm [:Absolute, :Construct, :Pronominal]
 	  :morphClass [:DemonstrativeNear, :DemonstrativeRemote, :Infinitive, :InfinitiveCompCaus, :Intensive1, :Intensive2, :Intensive3, :Possessive]
-	  :number [:Common, :Plural, :Singular]
-	  :numberHead [:Plural, :Singular]
-	  :objectGender [:Common, :Fem, :Masc]
-	  :objectNumber [:Common, :Plural, :Singular]
-	  :objectPerson [:Common, :Person1, :Person2, :Person3]
+	  :number [:NumC, :Plural, :Singular]
+	  :numberHead [:HeadPlural, :HeadSingular]
+	  :genderObj [:ObjCommon, :ObjFem, :ObjMasc]
+	  :numberObj [:ObjNumC, :ObjPlural, :ObjSingular]
+	  :personObj [:ObjPersC, :ObjPerson1, :ObjPerson2, :ObjPerson3]
 	  :objectType [:Nominal, :SuffixPron]
 	  :person [:NomSubj, :Person1, :Person2, :Person3]
-	  :polarity [:Affirmative, :Negative, :U]
+	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Independent]
-	  :stemClass [:CV1, :CV2, :CV3, :CV4, :CVC1, :CVC2, :CVC3Irreg, :CVCC, :CVCReg, :CVReg, :U]
-	  :tam [:Aorist, :Circumstantial, :Conditional, :Conjunctive, :Future, :Future3, :Imperative, :Imperfect, :InflectedInfiitive, :Injunct, :NotYet, :Perf1, :Perf2, :Pres1, :Pres2, :SimplePast, :Terminative, :U]
+	  :stemClass [:CV1, :CV2, :CV3, :CV4, :CVC1, :CVC2, :CVC3Irreg, :CVCC, :CVCReg, :CVReg]
+	  :tam [:Aorist, :Circumstantial, :Conditional, :Conjunctive, :Future, :Future3, :Imperative, :Imperfect, :InflectedInfiitive, :Injunct, :NotYet, :Perf1, :Perf2, :Pres1, :Pres2, :SimplePast, :Terminative]
 	  :transitivity [:Intransitive, :Trans]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :genderHead :numberHead :genderObj :numberObj :personObj]
+           :synsemClass [:clauseConjugation :clauseType   :derivedStem :polarity :pos :proClass :tam ]
+           :inflClass [:formClass :imperativeForm :infinitiveForm :objectType :stemClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRODEMNEAR {:gloss "[x]", :lemma "[y]", }
   :PRODEMREMOTE {:gloss "[x]", :lemma "[y]", }
@@ -57,7 +66,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :SimplePast}
-    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-varPref]  ;; schema
 	    [:Common, :Singular, :Person1, "ⲛ̄ⲧⲉⲣⲓⲃⲱⲕ", "ⲛ̄ⲧⲉⲣⲉⲓ-"],
 	    [:Masc, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲉⲕⲃⲱⲕ", "ⲛ̄ⲧⲉⲣⲕ̄-"],
 	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲉⲣⲉⲃⲱⲕ", "Common"],
@@ -176,7 +185,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perf1}
-    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-varPref]  ;; schema
 	    [:Common, :Singular, :Person1, "ⲙ̄ⲡⲓⲃⲱⲕ", "Common"],
 	    [:Masc, :Singular, :Person2, "ⲙ̄ⲡⲉⲕⲃⲱⲕ", "ⲙ̄ⲡⲕ̄-"],
 	    [:Fem, :Singular, :Person2, "ⲙ̄ⲡⲉⲃⲱⲕ", "Common"],
@@ -234,16 +243,16 @@
 	    :pos :Verb,
 	    :stemClass :U,
 	    :tam :Pres1}
-    :terms [[:gender, :number, :person, :token, :token-note, :token-varPref]  ;; schema
-	    [:Common, :Singular, :Person1, "ϯⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Masc, :Singular, :Person2, "ⲕⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Fem, :Singular, :Person2, "ⲧⲉⲣⲓⲙⲉ", "ⲧⲣ̄-", "ⲧⲉⲣ-"],
-	    [:Masc, :Singular, :Person3, "ϥⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Fem, :Singular, :Person3, "ⲥⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Common, :Plural, :Person1, "ⲧ̄ⲛ̄ⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Common, :Plural, :Person2, "ⲧⲉⲧⲛ̄ⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Common, :Plural, :Person3, "ⲥⲉⲣⲓⲙⲉ", "⊤", "Common"],
-	    [:Common, :Common, :NomSubj, "ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ", "indefSubj:ⲟⲩⲛ̄-ⲟⲩⲣⲱⲙⲉ ⲣⲓⲙⲉ", "Common"]]
+    :terms [[:gender, :number, :person, :token, :token-note-varPref]  ;; schema
+	    [:Common, :Singular, :Person1, "ϯⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Masc, :Singular, :Person2, "ⲕⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Fem, :Singular, :Person2, "ⲧⲉⲣⲓⲙⲉ", "ⲧⲣ̄- + ⲧⲉⲣ-"],
+	    [:Masc, :Singular, :Person3, "ϥⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Fem, :Singular, :Person3, "ⲥⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Common, :Plural, :Person1, "ⲧ̄ⲛ̄ⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Common, :Plural, :Person2, "ⲧⲉⲧⲛ̄ⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Common, :Plural, :Person3, "ⲥⲉⲣⲓⲙⲉ", "⊤ + Common"],
+	    [:Common, :Common, :NomSubj, "ⲡⲣⲱⲙⲉ ⲣⲓⲙⲉ", "indefSubj:ⲟⲩⲛ̄-ⲟⲩⲣⲱⲙⲉ ⲣⲓⲙⲉ + Common"]]
     }
     {:label "coptic_S-VAffTerminative-bok"
     :note "The Terminative is also known as the Until Tense,and is generally translated until he goes,etc. Negation is formed with the insertion of -ⲧⲙ̄- before the infinitive."
@@ -431,7 +440,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Pres1}
-    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-varPref]  ;; schema
 	    [:Common, :Singular, :Person1, "ⲉϯⲃⲱⲕ", "Common"],
 	    [:Masc, :Singular, :Person2, "ⲉⲧⲕ̄ⲃⲱⲕ", "Common"],
 	    [:Fem, :Singular, :Person2, "ⲉⲧⲉⲃⲱⲕ", "ⲉⲧⲉⲣ-"],
@@ -590,7 +599,7 @@
 	    :pos :Verb,
 	    :stemClass :U,
 	    :tam :InflectedInfiitive}
-    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-varPref]  ;; schema
 	    [:Common, :Singular, :Person1, "ⲧⲣⲁⲃⲱⲕ", "Common"],
 	    [:Masc, :Singular, :Person2, "ⲧⲣⲉⲕⲃⲱⲕ", "Common"],
 	    [:Fem, :Singular, :Person2, "ⲧⲣⲉⲃⲱⲕ", "Common"],
@@ -687,7 +696,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Future3}
-    :terms [[:gender, :number, :person, :token, :token-varPref]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-varPref]  ;; schema
 	    [:Common, :Singular, :Person1, "ⲛ̄ⲛⲁⲣⲓⲙⲉ", "ⲛ̄ⲛⲉⲓ-"],
 	    [:Masc, :Singular, :Person2, "ⲛ̄ⲛⲉⲕⲣⲓⲙⲉ", "ⲉⲛⲛⲉⲕ-"],
 	    [:Fem, :Singular, :Person2, "ⲛ̄ⲛⲉⲣⲓⲙⲉ", "ⲉⲛⲛⲉ-"],
@@ -731,7 +740,47 @@
 	    [:Fem, :Singular, :Person2, "ⲛ̄ⲧⲟ", "construct form:ⲛ̄ⲧⲉ-"],
 	    [:Masc, :Singular, :Person3, "ⲛ̄ⲧⲟϥ", "construct form:ⲛ̄ⲧϥ̄- (rare)"],
 	    [:Fem, :Singular, :Person3, "ⲛ̄ⲧⲟⲥ", "⊤"],
-	    [:Common, :Plural,	    [:Common, :Singular, :Person1, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲓ"],
+	    [:Common, :Plural, :Person1, "ⲁⲛⲟⲛ" , "construct form:ⲁⲛ-"],	    
+	    [:Common, :Plural, :Person2, "ⲛ̄ⲧⲱⲧⲛ̄", "construct form:ⲛ̄ⲧⲉⲧⲛ̄-" ],	    
+	    [:Common, :Plural, :Person3, "ⲛ̄ⲧⲟⲟⲩ", "⊤"]]
+     }
+    {:label "coptic_S-PIntensive1"
+     :note "This intensive pronoun may be alternately spelled ⲙⲁⲩⲁⲧ= or ⲟⲩⲁⲁ(ⲧ)=.",
+     :common {:morpheme :PROINTENSIVE1,
+              :morphClass :Intensive1,
+              :pos :Pronoun}
+     :terms [[:number, :person, :gender, :token]  ;; schema
+             [:Singular, :Person1, :Common, "ⲙⲁⲩⲁⲁⲧ"],
+             [:Singular, :Person2, :Masc, "ⲙⲁⲩⲁⲁⲕ"],
+             [:Singular, :Person2, :Fem, "ⲙⲁⲩⲁⲁⲧⲉ"],
+             [:Singular, :Person3, :Masc, "ⲙⲁⲩⲁⲁϥ"],
+             [:Singular, :Person3, :Fem, "ⲙⲁⲩⲁⲁⲥ"],
+             [:Plural, :Person1, :Common, "ⲙⲁⲩⲁⲁⲛ"],
+             [:Plural, :Person2, :Common, "ⲙⲁⲩⲁⲁⲧ-ⲧⲉⲩⲧⲛ̄"],
+             [:Plural, :Person3, :Common, "ⲙⲁⲩⲁⲁⲧⲟⲩ"]]
+     }
+    {:label "coptic_S-PIntensive2"
+    :note "The intensive or emphatic pronoun ϩⲱⲱ= or ϩⲱ= is used in apposition to pronominal elements. May also be used adverbially in the 3rd m. sg. (ϩⲱⲱϥ) with the meaning however,on the other hand."
+    :common {:morpheme :PROINTENSIVE2,
+	    :morphClass :Intensive2,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
+	    [:Common, :Singular, :Person1, "ϩⲱⲱⲧ", "alternate spelling:ϩⲱ"],
+	    [:Masc, :Singular, :Person2, "ϩⲱⲱⲕ", "⊤"],
+	    [:Fem, :Singular, :Person2, "ϩⲱⲱⲧⲉ", "⊤"],
+	    [:Masc, :Singular, :Person3, "ϩⲱⲱϥ", "⊤"],
+	    [:Fem, :Singular, :Person3, "ϩⲱⲱⲥ", "⊤"],
+	    [:Common, :Plural, :Person1, "ϩⲱⲱⲛ", "⊤"],
+	    [:Common, :Plural, :Person2, "ϩⲱⲧ-ⲧⲉⲩⲧⲛ̄", "⊤"],
+	    [:Common, :Plural, :Person3, "ϩⲱⲱⲧⲟⲩ", "⊤"]]
+    }
+    {:label "coptic_S-PIntensive3"
+    :note "The intensive pronoun ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟ= is used in apposition to reflexive and possessive pronominal elements."
+    :common {:morpheme :PROINTENSIVE3,
+	    :morphClass :Intensive3,
+	    :pos :Pronoun}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+             [:Common, :Singular, :Person1, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲓ"],
 	    [:Masc, :Singular, :Person2, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟⲕ"],
 	    [:Fem, :Singular, :Person2, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟ"],
 	    [:Masc, :Singular, :Person3, "ⲙ̄ⲙⲓⲛ ⲙ̄ⲙⲟϥ"],
@@ -781,21 +830,6 @@
 	    [:Common, :Fem, :Plural, :Singular, :Person3, "ⲧⲱⲟⲩ"],
 	    [:Common, :Common, :Plural, :Plural, :Person3, "ⲛⲟⲩⲟⲩ"]]
     }
-    {:label "coptic_S-PIntensive2"
-    :note "The intensive or emphatic pronoun ϩⲱⲱ= or ϩⲱ= is used in apposition to pronominal elements. May also be used adverbially in the 3rd m. sg. (ϩⲱⲱϥ) with the meaning however,on the other hand."
-    :common {:morpheme :PROINTENSIVE2,
-	    :morphClass :Intensive2,
-	    :pos :Pronoun}
-    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
-	    [:Common, :Singular, :Person1, "ϩⲱⲱⲧ", "alternate spelling:ϩⲱ"],
-	    [:Masc, :Singular, :Person2, "ϩⲱⲱⲕ", "⊤"],
-	    [:Fem, :Singular, :Person2, "ϩⲱⲱⲧⲉ", "⊤"],
-	    [:Masc, :Singular, :Person3, "ϩⲱⲱϥ", "⊤"],
-	    [:Fem, :Singular, :Person3, "ϩⲱⲱⲥ", "⊤"],
-	    [:Common, :Plural, :Person1, "ϩⲱⲱⲛ", "⊤"],
-	    [:Common, :Plural, :Person2, "ϩⲱⲧ-ⲧⲉⲩⲧⲛ̄", "⊤"],
-	    [:Common, :Plural, :Person3, "ϩⲱⲱⲧⲟⲩ", "⊤"]]
-    }
     {:label "coptic_S-PDemonstrativeNear"
     :note "The near demonstrative pronouns are related to the demonstrative prefixes,ⲡⲉⲓ-,ⲧⲉⲓ-,ⲛⲉⲓ-."
     :common {:morpheme :PRODEMNEAR,
@@ -805,5 +839,4 @@
 	    [:Masc, :Singular, "ⲡⲁⲓ"],
 	    [:Fem, :Singular, "ⲧⲁⲓ"],
 	    [:Common, :Plural, "ⲛⲁⲓ"]]
-    }}
-}
+   }}}}

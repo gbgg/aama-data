@@ -1,22 +1,32 @@
 {
 :lang :yaaku
 :sgpref "yak"
+:datasource "Heine1975"
+:geodemoURL "http://www.ethnologue.com/language/muu"
+:geodemoTXT "Varieties and subdialects of Yaaku are spoken in "
 :schemata {
-:aspect [:Definite, :Indefinite, :U]
+:aspect [:Definite, :Indefinite]
 	  :case [:Indirect, :ObjectGeneral, :ObjectWInitial, :Subject]
-	  :conjClass [:AdjInterr, :Adjective, :Common, :DemFar, :DemNear, :DemRef, :FormSet1, :FormSet2, :FormSet3, :FormSet4, :FormSet5, :Invariable, :PossNom, :PossPro, :Relative, :Verb]
+	  :proSubClass [:AdjInterr, :Adjective, :Common, :DemFar, :DemNear, :DemRef,  :Invariable, :PossNom, :PossPro, :Relative, :VAgreement]
+           :conjClass [:FormSet1, :FormSet2, :FormSet3, :FormSet4, :FormSet5]
 	  :copForm [:CopA, :CopB]
 	  :derivedStem [:Base, :Benefactive, :Causative, :HabitualPartialReduplication, :HabitualTotalReduplication, :Intransitive, :Ventive]
 	  :gender [:Common, :Fem, :Masc]
 	  :headNoun [:Deleted, :Present]
 	  :morphClass [:Compound, :CopLoc, :Copula, :DervStem, :IMPRTV :ProAgreement, :SubjPref, :SubjSuff, :TenseAspectMoodPref, :have]
-	  :number [:Indefinite, :Plural, :Singular]
+	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Noun, :Pronoun, :Verb]
 	  :proClass [:AgreementMarker, :Demonstrative, :Independent, :PossExx, :Possessive]
 	  :tam [:Future, :Imperative, :Past, :PastProgressive, :Perfect, :Present]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:aspect :case  :derivedStem :polarity :pos :proClass :tamb ]
+           :inflClass [:conjClass :copForm  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :COPULALOCPAST {:gloss "[x]", :lemma "[y]", }
   :COPULALOCPERF {:gloss "[x]", :lemma "[y]", }
@@ -433,7 +443,7 @@
     }
     {:label "yaaku-VNegPres-wax"
     :note "Heine1975 pp 46-50."
-    :common {:aspect :U,
+    :common {
 	    :conjClass :FormSet5,
 	    :gender :Common,
 	    :lexeme :wax,
@@ -785,7 +795,7 @@
     :common {:morpheme :NOUNAGREEMENTMARKER,
 	    :pos :Noun,
 	    :proClass :AgreementMarker}
-    :terms [[:conjClass, :gender, :number, :token]  ;; schema
+    :terms [[:proSubClass, :gender, :number, :token]  ;; schema
 	    [:PossNom, :Masc, :Singular, "c’í"],
 	    [:PossPro, :Masc, :Singular, "cí-"],
 	    [:Adjective, :Masc, :Singular, "ci- "],
@@ -794,7 +804,7 @@
 	    [:DemFar, :Masc, :Singular, "se"],
 	    [:DemRef, :Masc, :Singular, "cuk"],
 	    [:Relative, :Masc, :Singular, "ci"],
-	    [:Verb, :Masc, :Singular, "⊤"],
+	    [:VAgreement, :Masc, :Singular, "⊤"],
 	    [:PossNom, :Fem, :Singular, "t’í"],
 	    [:PossPro, :Fem, :Singular, "t’í-"],
 	    [:Adjective, :Fem, :Singular, "ti-"],
@@ -803,7 +813,7 @@
 	    [:DemFar, :Fem, :Singular, "se"],
 	    [:DemRef, :Fem, :Singular, "tuk"],
 	    [:Relative, :Fem, :Singular, "ti"],
-	    [:Verb, :Fem, :Singular, "t"],
+	    [:VAgreement, :Fem, :Singular, "t"],
 	    [:PossNom, :Common, :Plural, "k’eí"],
 	    [:PossPro, :Common, :Plural, "xa-"],
 	    [:Adjective, :Common, :Plural, "ke-"],
@@ -812,7 +822,7 @@
 	    [:DemFar, :Common, :Plural, "sa’a"],
 	    [:DemRef, :Common, :Plural, "xa’au"],
 	    [:Relative, :Common, :Plural, "ke"],
-	    [:Verb, :Common, :Plural, "neut"]]
+	    [:VAgreement, :Common, :Plural, "neut"]]
     }
     {:label "yaaku-VPresCopLoc"
     :note "Heine1975 pp. 56f. Preceded by locative preposition ou. Sentences are glossed “be in Nairobi”."

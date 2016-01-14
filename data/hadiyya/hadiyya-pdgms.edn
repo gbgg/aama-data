@@ -1,6 +1,9 @@
 {
 :lang :hadiyya
 :sgpref "had"
+:datasource "SimR1985"
+:geodemoURL "http://www.ethnologue.com/language/hdy"
+:geodemoTXT "Varieties and subdialects of Hadiyya are spoken in "
 :schemata {
 :case [:Accusative, :Nominative, :Possessive]
 	  :deixis [:Far, :Near]
@@ -8,7 +11,6 @@
 	  :gender [:Common, :Fem, :Masc, :Polite]
 	  :interrogClass [:InterrogProHow, :InterrogProHowMany, :InterrogProWhat, :InterrogProWhere, :InterrogProWho]
 	  :number [:Plural, :Singular]
-	  :numgen [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Interrogative, :Negative]
 	  :pos [:Pronoun, :Pronoun, :Verb]
@@ -16,6 +18,12 @@
 	  :tam [:Imperative, :Imperfect, :Jussive, :PastPerfect, :PastProgressive, :PresenProgressive, :PresentPerfect, :SimplePerfect]
 	  :morphClass [:DervStem, :SubjMarkerTemplates]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case :deixis :derivedStem :interrogClass :polarity :pos :proClass :tamb ]
+           :inflClass [  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :DERVSTEM {:gloss "[x]", :lemma "[y]", }
   :PRODEM {:gloss "[x]", :lemma "[y]", }
@@ -295,19 +303,19 @@
 	    :morpheme :PRODEM,
 	    :pos :Pronoun,
 	    :proClass :Demonstrative}
-    :terms [[:deixis, :numgen, :token]  ;; schema
-	    [:Near, :Singular, "m"],
-	    [:Near, :Singular, "f"],
-	    [:Far, :Singular, "m"],
-	    [:Far, :Singular, "f"],
-	    [:Near, :Plural, "⊤"],
-	    [:Far, :Plural, "⊤"],
-	    [:Near, :Singular, "m"],
-	    [:Near, :Singular, "f"],
-	    [:Far, :Singular, "m"],
-	    [:Far, :Singular, "f"],
-	    [:Near, :Plural, "⊤"],
-	    [:Far, :Plural, "⊤"]]
+    :terms [[:deixis, :number, :gender, :token]  ;; schema
+	    [:Near, :Singular, :Masc, " "],
+	    [:Near, :Singular, :Fem, " "],
+	    [:Far, :Singular, :Masc, " "],
+	    [:Far, :Singular, :Fem, " "],
+	    [:Near, :Plural, :Common, " "],
+	    [:Far, :Plural, :Common, " "],
+	    [:Near, :Singular, :Masc, " "],
+	    [:Near, :Singular, :Fem, " "],
+	    [:Far, :Singular, :Masc, " "],
+	    [:Far, :Singular, :Fem, " "],
+	    [:Near, :Plural, :Common, " "],
+	    [:Far, :Plural, :Common, " "]]
     }
     {:label "hadiyya-VDervStem"
     :note "SimR1985 pp. 32-42. Note discussions of consonant assimilations for causative –s-
@@ -315,7 +323,7 @@
     :common {:morpheme :DERVSTEM,
 	    :pos :Verb,
 	    :morphClass :DervStem}
-    :terms [[:derivedStem, :token-notes, :token]  ;; schema
+    :terms [[:derivedStem, :token-note, :token]  ;; schema
 	    [:Causative1, "", "-s-"],
 	    [:Causative2, "", "-siis-"],
 	    [:Causative3, "", "-siisis-"],
@@ -331,34 +339,31 @@
 	    [:CausativeBenefactivePassive, "makkittamaammo I aimed something from makk-s--am-aammo", "-s--am-"]]
     }
     {:label "hadiyya-VSubjMarkerTemplates"
-    :note "SimR1985 pp. 17-19. The following template applies to the simple perfect and the
-            imperfect tenses. The medial vowel –V is:–u simplePerf,-aa- presPerf,-oo- imperfect.
-            Note that 3rd fem pl and 3rd pol pl are modeled on 3rd fem sg. This template is put into
-            relation with progressive forms on p. 19."
+    :note "SimR1985 pp. 17-19. The following template (MedialVowel + Final + Person1 + Person2) applies to the simple perfect and the imperfect tenses. The medial vowel –V is:–u simplePerf,-aa- presPerf,-oo- imperfect. Note that 3rd fem pl and 3rd pol pl are modeled on 3rd fem sg. This template is put into relation with progressive forms on p. 19."
     :common {:morpheme :SUBJMARKERTEMPLATES,
 	    :pos :Verb,
 	    :morphClass :SubjMarkerTemplates}
-    :terms [[:gender, :number, :person, :token-medialVow, :token-final, :token-pers1, :token-pers2, :token, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "-V", "-o", "_NULL", "-mm", "-V . . . -o . . . _NULL . . . -mm", "-V . . . -o . . . _NULL . . . -mm"],
-	    [:Common, :Singular, :Person2, "-V", "-o", "-t", "-tt", "-V . . . -o . . . -t . . . -tt"],
-	    [:Masc, :Singular, :Person3, "-V", "-o", "_NULL", "-kk", "-V . . . -o . . . _NULL . . . -kk"],
-	    [:Fem, :Singular, :Person3, "_NULL", "-o", "-t", "-o", "_NULL . . . -o . . . -t . . . -o"],
-	    [:Fem, :Singular, :Person3, "_NULL", "-o", "-t", "-am", "_NULL . . . -o . . . -t . . . -am"],
-	    [:Fem, :Singular, :Person3, "_NULL", "-o", "-t", "-ookk", "_NULL . . . -o . . . -t . . . -ookk"],
-	    [:Polite, :Singular, :Person3, "-akk", "-o", "_NULL", "-o", "-akk . . . -o . . . _NULL . . . -o"],
-	    [:Polite, :Singular, :Person3, "-akk", "-o", "_NULL", "-am", "-akk . . . -o . . . _NULL . . . -am"],
-	    [:Polite, :Singular, :Person3, "-akk", "-o", "_NULL", "-ookk", "-akk . . . -o . . . _NULL . . . -ookk"],
-	    [:Common, :Plural, :Person1, "V", "-o", "-n", "-mm", "V . . . -o . . . -n . . . -mm"],
-	    [:Common, :Plural, :Person2, "-akk", "-o", "-t", "-o", "-akk . . . -o . . . -t . . . -o"],
-	    [:Common, :Plural, :Person2, "-akk", "-o", "-t", "-am", "-akk . . . -o . . . -t . . . -am"],
-	    [:Common, :Plural, :Person2, "-akk", "-o", "-t", "-ookk", "-akk . . . -o . . . -t . . . -ookk"],
-	    [:Masc, :Plural, :Person3, "-V", "-o", "-t", "-kk", "-V . . . -o . . . -t . . . -kk"],
-	    [:Fem, :Plural, :Person3, "_NULL", "-o", "-t", "-o", "_NULL . . . -o . . . -t . . . -o"],
-	    [:Fem, :Plural, :Person3, "_NULL", "-o", "-t", "-am", "_NULL . . . -o . . . -t . . . -am"],
-	    [:Fem, :Plural, :Person3, "_NULL", "-o", "-t", "-ookk", "_NULL . . . -o . . . -t . . . -ookk"],
-	    [:Polite, :Plural, :Person3, "_NULL", "-o", "-am-t > -an-t", "-o", "_NULL . . . -o . . . -am-t > -an-t . . . -o"],
-	    [:Polite, :Plural, :Person3, "_NULL", "-o", "-am-t > -an-t", "-am", "_NULL . . . -o . . . -am-t > -an-t . . . -am"],
-	    [:Polite, :Plural, :Person3, "_NULL", "-o", "-am-t > -an-t", "-ookk", "_NULL . . . -o . . . -am-t > -an-t . . . -ookk"]]
+    :terms [[:gender, :number, :person, :token-note-template, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "-V + -o + _NULL + -mm", "-V . . . -o . . . _NULL . . . -mm"],
+	    [:Common, :Singular, :Person2, "-V + -o + -t + -tt", "-V . . . -o . . . -t . . . -tt"],
+	    [:Masc, :Singular, :Person3, "-V + -o + _NULL + -kk", "-V . . . -o . . . _NULL . . . -kk"],
+	    [:Fem, :Singular, :Person3, "_NULL + -o + -t + -o", "_NULL . . . -o . . . -t . . . -o"],
+	    [:Fem, :Singular, :Person3, "_NULL + -o + -t + -am", "_NULL . . . -o . . . -t . . . -am"],
+	    [:Fem, :Singular, :Person3, "_NULL + -o + -t + -ookk", "_NULL . . . -o . . . -t . . . -ookk"],
+	    [:Polite, :Singular, :Person3, "-akk + -o + _NULL + -o", "-akk . . . -o . . . _NULL . . . -o"],
+	    [:Polite, :Singular, :Person3, "-akk + -o + _NULL + -am", "-akk . . . -o . . . _NULL . . . -am"],
+	    [:Polite, :Singular, :Person3, "-akk + -o + _NULL + -ookk", "-akk . . . -o . . . _NULL . . . -ookk"],
+	    [:Common, :Plural, :Person1, "V + -o + -n + -mm", "V . . . -o . . . -n . . . -mm"],
+	    [:Common, :Plural, :Person2, "-akk + -o + -t + -o", "-akk . . . -o . . . -t . . . -o"],
+	    [:Common, :Plural, :Person2, "-akk + -o + -t + -am", "-akk . . . -o . . . -t . . . -am"],
+	    [:Common, :Plural, :Person2, "-akk + -o + -t + -ookk", "-akk . . . -o . . . -t . . . -ookk"],
+	    [:Masc, :Plural, :Person3, "-V + -o + -t + -kk", "-V . . . -o . . . -t . . . -kk"],
+	    [:Fem, :Plural, :Person3, "_NULL + -o + -t + -o", "_NULL . . . -o . . . -t . . . -o"],
+	    [:Fem, :Plural, :Person3, "_NULL + -o + -t + -am", "_NULL . . . -o . . . -t . . . -am"],
+	    [:Fem, :Plural, :Person3, "_NULL + -o + -t + -ookk", "_NULL . . . -o . . . -t . . . -ookk"],
+	    [:Polite, :Plural, :Person3, "_NULL + -o + -am-t > -an-t + -o", "_NULL . . . -o . . . -am-t > -an-t . . . -o"],
+	    [:Polite, :Plural, :Person3, "_NULL + -o + -am-t > -an-t + -am", "_NULL . . . -o . . . -am-t > -an-t . . . -am"],
+	    [:Polite, :Plural, :Person3, "_NULL + -o + -am-t > -an-t + -ookk", "_NULL . . . -o . . . -am-t > -an-t . . . -ookk"]]
     }
     {:label "hadiyya-ProInterrog"
     :note "HudsonG1976 p. 259."

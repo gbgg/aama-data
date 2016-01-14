@@ -1,22 +1,30 @@
 {
 :lang :saho
 :sgpref "sah"
+:datasource "Welmers1952 Banti-Vergari2003"
+:geodemoURL "http://www.ethnologue.com/language/ssy"
+:geodemoTXT "Varieties and subdialects of Saho are spoken in Eritrea and Ethiopia (Irob dialect only). The language is very closely related to Afar."
 :schemata {
-:case [:Emphatic, :Independent, :Object, :ObjectIndirect, :Possessive]
-	  :conjClass [:Irregular, :Pref-irreg, :Prefix, :Suffix, :SuffixIrregular]
-	  :derivedStem [:B, :B-Intens, :M, :S1, :S1-Intens, :S1T, :S2, :T, :T-Intens]
+	  :conjClass [:Irregular, :PrefIrregular, :Prefix, :Suffix, :SuffixIrregular]
+	  :derivedStem [:B, :B_Intens, :M, :S1, :S1_Intens, :S1T, :S2, :T, :T_Intens]
 	  :gender [:Common, :Fem, :Masc]
 	  :morphClass [:TENSEFORMATION]
-	  :nonFiniteForm [:Participle]
-	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
+	  :number [:Plural, :Singular]
+	  :person [:Unmarked, :Person1, :Person2, :Person3]
+           :pdgmType [:Partial]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
-	  :proClass [:Independent]
-	  :tam [:Copula, :Imperative, :Imperfect, :ImperfectInni, :ImperfectLi, :ImperfectM, :ImperfectMa, :Jussive, :JussiveKi, :JussiveLi, :JussiveMa, :MaStemInniCopula, :Past, :Perfect, :PerfectH, :PerfectInniImperfect, :PerfectInniPerfect, :PerfectM, :_NULL]
+	  :proClass [:Emphatic, :Independent, :Object, :ObjectIndirect, :Possessive]
+	  :tam [:Copula, :Imperative, :Imperfect, :ImperfectInni, :ImperfectLi, :ImperfectM, :ImperfectMa, :Jussive, :JussiveKi, :JussiveLi, :JussiveMa, :MaStemInniCopula, :Participle, :Past, :Perfect, :PerfectH, :PerfectInniImperfect, :PerfectInniPerfect, :PerfectM]
 	  :tenseName [:Conjunctive, :Future1, :Future2, :Future3, :ImperfectNegative, :ImperfectSubordinate, :JussiveNegative, :PerfectNegative, :PerfectSubordinate, :Perfective, :Pluperfect]
 	  :verbMorphClass [:TenseFormation]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam :tenseName ]
+           :inflClass [:conjClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRO {:gloss "[x]", :lemma "[y]", }
 }
@@ -48,7 +56,7 @@
   :do {:conjClass :Suffix, :gloss "suck on", :lemma "ɗo-", :pos :Verb}
   :dufu {:conjClass :Suffix, :gloss "push", :lemma "dufu-", :pos :Verb}
   :ebh {:conjClass :Prefix, :gloss "say", :lemma "ebḥ-", :pos :Verb}
-  :ed {:conjClass :Pref-irreg, :gloss "go", :lemma "ed-", :pos :Verb}
+  :ed {:conjClass :PrefIrregular, :gloss "go", :lemma "ed-", :pos :Verb}
   :edebb {:conjClass :Prefix, :gloss "repay", :lemma "edebb-", :pos :Verb}
   :edh {:conjClass :Prefix, :gloss "say", :lemma "eɗḥ-", :pos :Verb}
   :edhet {:conjClass :Prefix, :gloss "chew", :lemma "eḥet-", :pos :Verb}
@@ -160,11 +168,12 @@
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
-	    :derivedStem :S1,
+	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :oofo,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -179,7 +188,8 @@
 	    :gender :Common,
 	    :lexeme :emeet,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -194,7 +204,8 @@
 	    :gender :Fem,
 	    :lexeme :urkut,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -209,7 +220,8 @@
 	    :gender :Common,
 	    :lexeme :ooog,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -223,8 +235,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :eheeseb,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -239,7 +251,8 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -254,7 +267,8 @@
 	    :gender :Masc,
 	    :lexeme :uruf,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -268,8 +282,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :bad,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -283,8 +297,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :di,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -294,15 +308,28 @@
     {:label "saho-VPref-ed"
     :note "Welmers1952b p. 249"
     :common {:conjClass :Prefix,
+	    :derivedStem :B,
 	    :lexeme :ed,
-	    :nonFiniteForm :Participle,
+	    :pdgmType :Partial,
+	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:number, :person, :tam, :token]  ;; schema
 	    [:Singular, :Person1, :Imperfect, "adie"],
 	    [:Singular, :Person1, :Jussive, "adáo"],
 	    [:Singular, :Person2, :Imperative, "adu"],
-	    [:Common, :Common, :_NULL, "adíi"],
 	    [:Singular, :Person1, :Perfect, "ede"]]
+    }
+    {:label "saho-VPrefParticiple-ed"
+    :note "Welmers1952b p. 249"
+    :common {:conjClass :Prefix,
+	    :derivedStem :B,
+	    :lexeme :ed,
+	    :pdgmType :Partial,
+	    :polarity :Affirmative,
+	    :pos :Verb
+             :tam :Participle}
+    :terms [[:token]  ;; schema
+	    ["adíi"]]
     }
     {:label "saho-VPrefAffImperf-ifriy"
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
@@ -312,7 +339,8 @@
 	    :gender :Fem,
 	    :lexeme :ifriy,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -327,7 +355,8 @@
 	    :gender :Common,
 	    :lexeme :eney,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -342,11 +371,12 @@
 	    :gender :Common,
 	    :lexeme :hankabit,
 	    :number :Plural,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectInni,
-	    :token-gloss "you have been frightened"}
+	    :token-note "you have been frightened"}
     :terms [[:token]  ;; schema
 	    ["ḥankabittéhane"]]
     }
@@ -358,7 +388,8 @@
 	    :gender :Common,
 	    :lexeme :beet,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -372,8 +403,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ifriy,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -387,8 +418,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :ikfil,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -403,7 +434,8 @@
 	    :gender :Common,
 	    :lexeme :alaa,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -417,8 +449,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :oho,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -433,7 +465,8 @@
 	    :gender :Common,
 	    :lexeme :eedeg,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -447,8 +480,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ekett,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -463,7 +496,8 @@
 	    :gender :Common,
 	    :lexeme :eemen,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -478,7 +512,8 @@
 	    :gender :Common,
 	    :lexeme :ehlif,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -493,7 +528,8 @@
 	    :gender :Common,
 	    :lexeme :ab,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -508,7 +544,8 @@
 	    :gender :Fem,
 	    :lexeme :ifriy,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -519,11 +556,12 @@
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
-	    :derivedStem :T-Intens,
+	    :derivedStem :T_Intens,
 	    :gender :Common,
 	    :lexeme :igdil,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -538,7 +576,8 @@
 	    :gender :Common,
 	    :lexeme :iggire,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -553,7 +592,8 @@
 	    :gender :Common,
 	    :lexeme :bad,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -583,7 +623,8 @@
 	    :gender :Common,
 	    :lexeme :iksib,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -598,7 +639,8 @@
 	    :gender :Common,
 	    :lexeme :oosoom,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -613,7 +655,8 @@
 	    :gender :Common,
 	    :lexeme :oosol,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -628,7 +671,8 @@
 	    :gender :Common,
 	    :lexeme :eeneb,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -643,7 +687,8 @@
 	    :gender :Common,
 	    :lexeme :ehzen,
 	    :number :Plural,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :JussiveKi}
@@ -658,11 +703,12 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :JussiveKi,
-	    :token-gloss "I will buy it"}
+	    :token-note "I will buy it"}
     :terms [[:token]  ;; schema
 	    ["ɗáamo-kio"]]
     }
@@ -674,7 +720,8 @@
 	    :gender :Common,
 	    :lexeme :emlelekk,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -689,7 +736,8 @@
 	    :gender :Common,
 	    :lexeme :fu,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -703,9 +751,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :sa,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -719,7 +766,8 @@
 	    :gender :Common,
 	    :lexeme :fah,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -734,7 +782,8 @@
 	    :gender :Common,
 	    :lexeme :ab,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -749,7 +798,8 @@
 	    :gender :Common,
 	    :lexeme :edh,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -764,7 +814,8 @@
 	    :gender :Common,
 	    :lexeme :abaar,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -778,8 +829,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :uhfus,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -793,8 +844,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :emmeeed,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -809,7 +860,8 @@
 	    :gender :Common,
 	    :lexeme :ekkel,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -824,7 +876,8 @@
 	    :gender :Common,
 	    :lexeme :ubl,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -839,7 +892,8 @@
 	    :gender :Common,
 	    :lexeme :suu,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -853,8 +907,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :infili,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -869,7 +923,8 @@
 	    :gender :Common,
 	    :lexeme :alif,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -884,7 +939,8 @@
 	    :gender :Common,
 	    :lexeme :idhen,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -895,11 +951,12 @@
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
-	    :derivedStem :S1-Intens,
+	    :derivedStem :S1_Intens,
 	    :gender :Common,
 	    :lexeme :ookom,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -913,8 +970,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eemen,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -929,7 +986,8 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -944,7 +1002,8 @@
 	    :gender :Common,
 	    :lexeme :ibbid,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -959,11 +1018,12 @@
 	    :gender :Fem,
 	    :lexeme :rab,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectM,
-	    :token-gloss "rabtam mango ‘many are dying’ (subordinate)"}
+	    :token-note "rabtam mango ‘many are dying’ (subordinate)"}
     :terms [[:token]  ;; schema
 	    ["rabta-m"]]
     }
@@ -974,8 +1034,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ehlif,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -990,7 +1050,8 @@
 	    :gender :Common,
 	    :lexeme :eney,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1004,8 +1065,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :ifteh,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1020,7 +1081,8 @@
 	    :gender :Common,
 	    :lexeme :ehzen,
 	    :number :Plural,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -1034,8 +1096,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :biil,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1049,8 +1111,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :deer,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1065,7 +1127,8 @@
 	    :gender :Common,
 	    :lexeme :ooob,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1080,7 +1143,8 @@
 	    :gender :Common,
 	    :lexeme :oofo,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1095,7 +1159,8 @@
 	    :gender :Common,
 	    :lexeme :ubl,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -1110,7 +1175,8 @@
 	    :gender :Common,
 	    :lexeme :edirir,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1124,9 +1190,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :emeet,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -1139,9 +1204,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :fi,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -1155,7 +1219,8 @@
 	    :gender :Common,
 	    :lexeme :ehzen,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1170,7 +1235,8 @@
 	    :gender :Common,
 	    :lexeme :ootok,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1184,8 +1250,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :Aad,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1199,8 +1265,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eefe,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1215,7 +1281,8 @@
 	    :gender :Common,
 	    :lexeme :eebeh,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1230,7 +1297,8 @@
 	    :gender :Common,
 	    :lexeme :edebb,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1244,9 +1312,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :gur,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -1260,22 +1327,23 @@
 	    :gender :Common,
 	    :lexeme :biil,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
 	    ["bil"]]
     }
-    {:label "saho-VPrefAffPerf-uru- (!)"
+    {:label "saho-VPrefAffPerf-uru-spec"
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :uru,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1290,7 +1358,8 @@
 	    :gender :Common,
 	    :lexeme :ubl,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :JussiveKi}
@@ -1305,7 +1374,8 @@
 	    :gender :Common,
 	    :lexeme :ineeb,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1320,7 +1390,8 @@
 	    :gender :Common,
 	    :lexeme :ekkel,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1335,7 +1406,8 @@
 	    :gender :Common,
 	    :lexeme :oho,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1349,8 +1421,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :igdif,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1364,8 +1436,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :ookom,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1379,8 +1451,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ootok,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1395,7 +1467,8 @@
 	    :gender :Common,
 	    :lexeme :anga,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1410,7 +1483,8 @@
 	    :gender :Fem,
 	    :lexeme :urkut,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1425,7 +1499,8 @@
 	    :gender :Common,
 	    :lexeme :ootob,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1439,8 +1514,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ootob,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1455,7 +1530,8 @@
 	    :gender :Common,
 	    :lexeme :ewe,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1469,8 +1545,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :immillik,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1485,7 +1561,8 @@
 	    :gender :Masc,
 	    :lexeme :yaysadad,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -1500,7 +1577,8 @@
 	    :gender :Common,
 	    :lexeme :err,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1515,7 +1593,8 @@
 	    :gender :Common,
 	    :lexeme :eyteher,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1530,7 +1609,8 @@
 	    :gender :Common,
 	    :lexeme :eyme,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1544,8 +1624,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :oosol,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1559,8 +1639,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :isniq,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1574,9 +1654,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :dufu,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -1590,7 +1669,8 @@
 	    :gender :Common,
 	    :lexeme :uysuku,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1604,8 +1684,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :edebb,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1619,8 +1699,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eebeh,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1635,7 +1715,8 @@
 	    :gender :Common,
 	    :lexeme :ab,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1649,8 +1730,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ibbid,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1665,7 +1746,8 @@
 	    :gender :Common,
 	    :lexeme :ekett,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1680,7 +1762,8 @@
 	    :gender :Masc,
 	    :lexeme :uruf,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :JussiveKi}
@@ -1695,7 +1778,8 @@
 	    :gender :Common,
 	    :lexeme :dufu,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1710,7 +1794,8 @@
 	    :gender :Common,
 	    :lexeme :eeley,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -1724,9 +1809,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :uruf,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -1739,8 +1823,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eney,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1755,7 +1839,8 @@
 	    :gender :Common,
 	    :lexeme :biaak,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1770,11 +1855,12 @@
 	    :gender :Common,
 	    :lexeme :beet,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectInni,
-	    :token-gloss "we have eaten it"}
+	    :token-note "we have eaten it"}
     :terms [[:token]  ;; schema
 	    ["bennéhane"]]
     }
@@ -1786,7 +1872,8 @@
 	    :gender :Common,
 	    :lexeme :iskir,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1815,8 +1902,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eeley,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1830,8 +1917,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :igre,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1861,7 +1948,8 @@
 	    :gender :Common,
 	    :lexeme :abah,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1876,7 +1964,8 @@
 	    :gender :Common,
 	    :lexeme :di,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1891,7 +1980,8 @@
 	    :gender :Masc,
 	    :lexeme :edh,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -1906,7 +1996,8 @@
 	    :gender :Common,
 	    :lexeme :efe,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1921,11 +2012,12 @@
 	    :gender :Common,
 	    :lexeme :emeet,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectLi,
-	    :token-gloss "we will come (future)"}
+	    :token-note "we will come (future)"}
     :terms [[:token]  ;; schema
 	    ["nemeeté-lio"]]
     }
@@ -1936,8 +2028,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :err,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1952,7 +2044,8 @@
 	    :gender :Common,
 	    :lexeme :eeneb,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -1967,11 +2060,12 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-gloss "I didn’t (?) buy it"}
+	    :token-note "I didn’t (?) buy it"}
     :terms [[:token]  ;; schema
 	    ["maɗáamo-ine"]]
     }
@@ -1982,8 +2076,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :oofo,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -1997,8 +2091,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :emlelekke,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2013,7 +2107,8 @@
 	    :gender :Common,
 	    :lexeme :eehet,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2027,8 +2122,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :engeeg,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2042,8 +2137,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ekkel,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2057,8 +2152,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eelem,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2073,11 +2168,12 @@
 	    :gender :Common,
 	    :lexeme :bolol,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :token-gloss "have someone set fire"}
+	    :token-note "have someone set fire"}
     :terms [[:token]  ;; schema
 	    ["bololsis"]]
     }
@@ -2089,7 +2185,8 @@
 	    :gender :Common,
 	    :lexeme :igdil,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2103,8 +2200,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :emmeng,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2119,7 +2216,8 @@
 	    :gender :Common,
 	    :lexeme :eehet,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2133,8 +2231,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :oosoom,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2148,8 +2246,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :daam,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2163,8 +2261,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :edh,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2179,7 +2277,8 @@
 	    :gender :Common,
 	    :lexeme :oho,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2193,8 +2292,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :enzewer,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2209,7 +2308,8 @@
 	    :gender :Common,
 	    :lexeme :eedeg,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2224,7 +2324,8 @@
 	    :gender :Common,
 	    :lexeme :igziy,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2239,7 +2340,8 @@
 	    :gender :Common,
 	    :lexeme :uhfus,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2253,8 +2355,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :biaak,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2268,8 +2370,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :obb,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2284,7 +2386,8 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2298,8 +2401,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :iklib,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2314,7 +2417,8 @@
 	    :gender :Common,
 	    :lexeme :emeet,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2329,7 +2433,8 @@
 	    :gender :Common,
 	    :lexeme :ibbid,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2343,8 +2448,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eedeg,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2359,7 +2464,8 @@
 	    :gender :Common,
 	    :lexeme :ifriy,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2374,7 +2480,8 @@
 	    :gender :Common,
 	    :lexeme :abaas,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2388,8 +2495,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ew,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2404,11 +2511,12 @@
 	    :gender :Common,
 	    :lexeme :erd,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-gloss "they didn’t run"}
+	    :token-note "they didn’t run"}
     :terms [[:token]  ;; schema
 	    ["méerdinnun"]]
     }
@@ -2420,7 +2528,8 @@
 	    :gender :Common,
 	    :lexeme :emlelekk,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2434,8 +2543,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :fah,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2450,7 +2559,8 @@
 	    :gender :Common,
 	    :lexeme :defee,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2464,8 +2574,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :idhen,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2480,7 +2590,8 @@
 	    :gender :Common,
 	    :lexeme :oysoom,
 	    :number :Singular,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2495,7 +2606,8 @@
 	    :gender :Masc,
 	    :lexeme :yaysud,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2510,11 +2622,12 @@
 	    :gender :Common,
 	    :lexeme :emeet,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectM,
-	    :token-gloss "temeetem uble ‘I saw you coming’"}
+	    :token-note "temeetem uble ‘I saw you coming’"}
     :terms [[:token]  ;; schema
 	    ["temeete-m "]]
     }
@@ -2526,11 +2639,12 @@
 	    :gender :Common,
 	    :lexeme :uruf,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectM,
-	    :token-gloss "(I want) to rest (subordinate)"}
+	    :token-note "(I want) to rest (subordinate)"}
     :terms [[:token]  ;; schema
 	    ["aʕrufe-m"]]
     }
@@ -2542,7 +2656,8 @@
 	    :gender :Common,
 	    :lexeme :enge,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2557,7 +2672,8 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2571,8 +2687,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :fuu,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2587,7 +2703,8 @@
 	    :gender :Common,
 	    :lexeme :ekett,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2617,7 +2734,8 @@
 	    :gender :Fem,
 	    :lexeme :ifriy,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -2631,9 +2749,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ehet,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -2646,8 +2763,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :enge,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2661,8 +2778,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :alif,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2673,11 +2790,12 @@
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
-	    :derivedStem :S1-Intens,
+	    :derivedStem :S1_Intens,
 	    :gender :Common,
 	    :lexeme :eeley,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2691,8 +2809,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eeneb,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2707,7 +2825,8 @@
 	    :gender :Common,
 	    :lexeme :alif,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :JussiveKi}
@@ -2722,11 +2841,12 @@
 	    :gender :Masc,
 	    :lexeme :iskir,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-gloss "he didn’t get drunk"}
+	    :token-note "he didn’t get drunk"}
     :terms [[:token]  ;; schema
 	    ["míiskirinna"]]
     }
@@ -2738,7 +2858,8 @@
 	    :gender :Common,
 	    :lexeme :ehzen,
 	    :number :Plural,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2753,7 +2874,8 @@
 	    :gender :Common,
 	    :lexeme :do,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2768,7 +2890,8 @@
 	    :gender :Common,
 	    :lexeme :fak,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2783,11 +2906,12 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :JussiveLi,
-	    :token-gloss "(I guess) I’ll buy it"}
+	    :token-note "(I guess) I’ll buy it"}
     :terms [[:token]  ;; schema
 	    ["ɗáamo-lio"]]
     }
@@ -2798,8 +2922,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :unqusu,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2813,8 +2937,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :oorof,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2828,8 +2952,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :beet,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2843,8 +2967,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ubl,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2859,7 +2983,8 @@
 	    :gender :Masc,
 	    :lexeme :uruf,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2873,8 +2998,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eehet,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -2889,7 +3014,8 @@
 	    :gender :Common,
 	    :lexeme :uuluus,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2904,12 +3030,12 @@
 	    :gender :Common,
 	    :lexeme :erd,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:token]  ;; schema
-	    ["erda"],
 	    ["erda"]]
     }
     {:label "saho-VPrefAffImprtv-ifteh"
@@ -2920,7 +3046,8 @@
 	    :gender :Common,
 	    :lexeme :ifteh,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2935,7 +3062,8 @@
 	    :gender :Common,
 	    :lexeme :aymaa,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -2965,7 +3093,8 @@
 	    :gender :Common,
 	    :lexeme :eeit,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -2995,11 +3124,12 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-gloss "ɗamo gura/faɗá-iane ‘I want to buy it’"}
+	    :token-note "ɗamo gura/faɗá-iane ‘I want to buy it’"}
     :terms [[:token]  ;; schema
 	    ["ɗáamo"]]
     }
@@ -3011,7 +3141,8 @@
 	    :gender :Common,
 	    :lexeme :eedeg,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -3026,14 +3157,14 @@
 	    :gender :Common,
 	    :lexeme :ubl,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :token-gloss "show"}
+	    :token-note "show"}
     :terms [[:token]  ;; schema
-	    ["uybullu"],
-	    ["uybulla"]]
+	    ["uybullu ~ uybulla"]]
     }
     {:label "saho-VSuffAffPerf-ab"
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
@@ -3042,8 +3173,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ab,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3058,7 +3189,8 @@
 	    :gender :Common,
 	    :lexeme :eemeg,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3072,8 +3204,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :imbiddil,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3084,11 +3216,12 @@
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
-	    :derivedStem :S1-Intens,
+	    :derivedStem :S1_Intens,
 	    :gender :Common,
 	    :lexeme :usul,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3103,7 +3236,8 @@
 	    :gender :Masc,
 	    :lexeme :edh,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3117,15 +3251,15 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :baah,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
 	    ["baahe"]]
     }
-    {:label "saho-VPrefAffImprtv-uru- (!)"
+    {:label "saho-VPrefAffImprtv-uru-spec"
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
@@ -3133,7 +3267,8 @@
 	    :gender :Common,
 	    :lexeme :uru,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3148,11 +3283,12 @@
 	    :gender :Fem,
 	    :lexeme :rab,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectM,
-	    :token-gloss "rabtem mango ‘many died’"}
+	    :token-note "rabtem mango ‘many died’"}
     :terms [[:token]  ;; schema
 	    ["rabte-m"]]
     }
@@ -3163,8 +3299,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :ooog,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3178,8 +3314,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :erd,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3194,7 +3330,8 @@
 	    :gender :Common,
 	    :lexeme :edebb,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3208,8 +3345,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ifrid,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3223,9 +3360,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :daam,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
@@ -3238,8 +3374,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :abaar,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3254,11 +3390,12 @@
 	    :gender :Common,
 	    :lexeme :daam,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :token-gloss "I didn’t buy (it)"}
+	    :token-note "I didn’t buy (it)"}
     :terms [[:token]  ;; schema
 	    ["máɗaaminnio "]]
     }
@@ -3270,7 +3407,8 @@
 	    :gender :Common,
 	    :lexeme :ult,
 	    :number :Plural,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3299,8 +3437,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :emeet,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3314,8 +3452,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :eeit,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3330,11 +3468,12 @@
 	    :gender :Common,
 	    :lexeme :ubl,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :token-gloss "show"}
+	    :token-note "show"}
     :terms [[:token]  ;; schema
 	    ["ayballe"]]
     }
@@ -3346,7 +3485,8 @@
 	    :gender :Common,
 	    :lexeme :erd,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3357,15 +3497,16 @@
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
-	    :derivedStem :B-Intens,
+	    :derivedStem :B_Intens,
 	    :gender :Common,
 	    :lexeme :eqri,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :token-gloss "read Koran to oneself"}
+	    :token-note "read Koran to oneself"}
     :terms [[:token]  ;; schema
 	    ["eqriri"]]
     }
@@ -3377,7 +3518,8 @@
 	    :gender :Common,
 	    :lexeme :baah,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3392,7 +3534,8 @@
 	    :gender :Common,
 	    :lexeme :eedeg,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3407,7 +3550,8 @@
 	    :gender :Common,
 	    :lexeme :oosol,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -3422,7 +3566,8 @@
 	    :gender :Common,
 	    :lexeme :ab,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3436,8 +3581,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :eemeg,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3452,7 +3597,8 @@
 	    :gender :Common,
 	    :lexeme :hay,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3467,7 +3613,8 @@
 	    :gender :Common,
 	    :lexeme :ifrid,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3482,7 +3629,8 @@
 	    :gender :Common,
 	    :lexeme :eelem,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3511,8 +3659,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ooob,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3527,7 +3675,8 @@
 	    :gender :Common,
 	    :lexeme :oosol,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3541,8 +3690,8 @@
 	    :derivedStem :M,
 	    :gender :Common,
 	    :lexeme :onqoomot,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3557,7 +3706,8 @@
 	    :gender :Common,
 	    :lexeme :ult,
 	    :number :Plural,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -3571,8 +3721,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :abaas,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3586,8 +3736,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :abah,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3601,8 +3751,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :inebe,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3631,8 +3781,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :do,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3647,7 +3797,8 @@
 	    :gender :Common,
 	    :lexeme :dufu,
 	    :number :Plural,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive}
@@ -3661,15 +3812,14 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :ifriy,
-	    :nonFiniteForm :Participle,
-	    :number :Common,
-	    :person :Common,
+	    :tam :Participle,
+	    :pdgmType :Partial,
 	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:token]  ;; schema
 	    ["afríyi"]]
     }
-    {:label "saho-VPrefAffImperf-inni{perf}-ubl"
+    {:label "saho-VPrefAffImperf-inniPerf-ubl"
     :note "Welmers1952b p. 237 – 246. If imprtv,num=sg pers=2 gen=c. In B if perf/imperf
             num=sg pers=1 gen=c;in M num=sg pers=3 gen=m."
     :common {:conjClass :Prefix,
@@ -3677,11 +3827,12 @@
 	    :gender :Masc,
 	    :lexeme :ubl,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectInni,
-	    :token-gloss "he had seen (it)"}
+	    :token-note "he had seen (it)"}
     :terms [[:token]  ;; schema
 	    ["yubléhine "]]
     }
@@ -3693,7 +3844,8 @@
 	    :gender :Common,
 	    :lexeme :meenge,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3708,7 +3860,8 @@
 	    :gender :Common,
 	    :lexeme :deer,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3723,7 +3876,8 @@
 	    :gender :Common,
 	    :lexeme :oosol,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3738,7 +3892,8 @@
 	    :gender :Common,
 	    :lexeme :ebh,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3753,7 +3908,8 @@
 	    :gender :Common,
 	    :lexeme :obb,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3767,8 +3923,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :igziy,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3783,7 +3939,8 @@
 	    :gender :Common,
 	    :lexeme :oysoom,
 	    :number :Singular,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3798,7 +3955,8 @@
 	    :gender :Common,
 	    :lexeme :igdif,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3812,8 +3970,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :uuluus,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3828,11 +3986,12 @@
 	    :gender :Masc,
 	    :lexeme :ubl,
 	    :number :Singular,
-	    :person :Person3,
+	    :pdgmType :Partial,
+            :person :Person3,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectInni,
-	    :token-gloss "he has seen (it)"}
+	    :token-note "he has seen (it)"}
     :terms [[:token]  ;; schema
 	    ["yubléhane"]]
     }
@@ -3844,7 +4003,8 @@
 	    :gender :Common,
 	    :lexeme :oorof,
 	    :number :Singular,
-	    :person :Person2,
+	    :pdgmType :Partial,
+            :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
@@ -3858,8 +4018,8 @@
 	    :derivedStem :B,
 	    :gender :Common,
 	    :lexeme :igdil,
-	    :number :Common,
-	    :person :Common,
+	    :pdgmType :Partial,
+            :person :Unmarked,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect}
@@ -3874,7 +4034,8 @@
 	    :gender :Common,
 	    :lexeme :alif,
 	    :number :Plural,
-	    :person :Person1,
+	    :pdgmType :Partial,
+            :person :Person1,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect}
@@ -3886,9 +4047,8 @@
     :note "Welmers1952b p. 236,251. I am assuming that 2pl and 3pl forms are inverted in the
             poss,obj,indir-obj and emph pronouns in the table on pl. 251"
     :common {:morpheme :PRO,
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:case, :gender, :number, :person, :token]  ;; schema
+	    :pos :Pronoun}
+    :terms [[:proClass, :gender, :number, :person, :token]  ;; schema
 	    [:Independent, :Common, :Singular, :Person1, "anu"],
 	    [:Emphatic, :Common, :Singular, :Person2, "kóya"],
 	    [:ObjectIndirect, :Common, :Singular, :Person1, "yoh"],

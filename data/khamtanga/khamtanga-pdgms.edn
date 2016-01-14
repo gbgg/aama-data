@@ -1,18 +1,20 @@
 {
 :lang :khamtanga
 :sgpref "khm"
+:datasource "Appleyard1987a Appleyard1987b"
+:geodemoURL "http://www.ethnologue.com/language/xan"
+:geodemoTXT "Varieties and subdialects of Agaw (or Central) Cushitic language Khamtanga is spoken in the North Amhara region, by the Chamir people. Variety described by Appleyard 1987ab."
 :schemata {
-:case [:Absolutive, :Comitative, :Compound, :Locative, :Object, :Oblique-posessive, :Possessive, :Relative, :Subject]
+:case [:Absolutive, :Comitative, :Compound, :Locative, :Object, :ObliquePossessive, :Possessive, :Relative, :Subject]
 	  :clauseType [:Main, :RelOblique, :RelSubj, :SubAdv]
 	  :conjClass [:Conjugation1, :Conjugation2, :Conjugation3, :Conjugation4, :Conjugation5a, :Conjugation5b]
 	  :defClass [:Common, :Definite, :Indefinite]
 	  :deixis [:Far, :Near]
 	  :gender [:Common, :Fem, :Masc, :Polite]
-	  :genderHead [:Common, :Fem, :Masc]
-	  :genderPoss [:Common, :Fem, :Masc]
+	  :genderHead [:HeadCommon, :HeadFem, :HeadMasc]
 	  :morphClass [:Numeral]
 	  :numClass [:Cardinal, :Ordinal]
-	  :numHead [:Plural, :Singular]
+	  :numHead [:HeadPlural, :HeadSingular]
 	  :number [:Plural, :Singular]
 	  :pdgmType [:Exemplary]
 	  :person [:Person1, :Person2, :Person3]
@@ -23,6 +25,12 @@
 	  :stemClass [:Common, :Consonant, :Vowel, :kinship]
 	  :tam [:Causal, :CoTemporal, :CompPastGer, :Comparative, :Conditional1, :Conditional2, :Conditional3, :Consecutive, :CopulaExist, :Future, :General, :Gerund, :Imperative, :Jussive, :Past, :PastTemporal, :Present, :PresentFuture, :PresentInterrog, :Purposive, :Purposive2, :Temporal]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :genderHead :numHead ]
+           :synsemClass [:case :clauseType :defClass :deixis  :derivedStem :numClass :pluralClass :polarity :pos :proClass :tam :tenseName ]
+           :inflClass [:conjClass :stemClass]
+           :otherClass [ ]
+          }
 :morphemes {
   :ADV {:gloss "[x]", :lemma "[y]", }
   :COPULAAFF {:gloss "[x]", :lemma "[y]", }
@@ -137,28 +145,28 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :General}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "kätâw"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "kätŋâk’ʷ"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "kätrâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "kätrâw"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "kätây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "kätŋâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "kätâw"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "kätnây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "kätnâw"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "kätnâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "kätŋây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "kätɨrnâw"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "kätây"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "kätɨrnây"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "kätâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "kätrây"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "kätɨrnâk’ʷ"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "kätrâk’ʷ"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "kätrây"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "kätrâw"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "kätâk’ʷ"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "kätâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "kätŋâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "kätrâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "kätrâw"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "kätây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "kätŋâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "kätâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "kätnây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "kätnâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "kätnâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "kätŋây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "kätɨrnâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "kätây"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "kätɨrnây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "kätâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "kätrây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "kätɨrnâk’ʷ"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "kätrâk’ʷ"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "kätrây"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "kätrâw"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "kätâk’ʷ"]]
     }
     {:label "khamtanga-VRelSubjNegPastConj1-kab"
     :note "Appleyard1987 4.2.5.1"
@@ -935,7 +943,7 @@
 	    [:Masc, :Singular, :Person3, "zíy"],
 	    [:Fem, :Singular, :Person3, "zíyɨr"]]
     }
-    {:label "khamtanga-VSubAdvAffCoTemp Conj4-ziy"
+    {:label "khamtanga-VSubAdvAffCoTempConj4-ziy"
     :note "Appleyard1987 4.2.5.2"
     :common {:clauseType :SubAdv,
 	    :conjClass :Conjugation4,
@@ -1363,7 +1371,7 @@
 	    [:Common, :Plural, :Person2, "kärayrnâk’ɨm"],
 	    [:Fem, :Singular, :Person3, "kärayrây(ɨ)m"]]
     }
-    {:label "khamtanga-VSubAdvAffCoTemp Conj2-qal"
+    {:label "khamtanga-VSubAdvAffCoTempConj2-qal"
     :note "Appleyard1987 4.2.5.2"
     :common {:clauseType :SubAdv,
 	    :conjClass :Conjugation2,
@@ -1377,7 +1385,7 @@
     :terms [[:token]  ;; schema
 	    ["qaldáŋʷ / -dráŋʷ"]]
     }
-    {:label "khamtanga-VSubAdvAffCoTemp Conj1-kab"
+    {:label "khamtanga-VSubAdvAffCoTempConj1-kab"
     :note "Appleyard1987 4.2.5.2"
     :common {:clauseType :SubAdv,
 	    :conjClass :Conjugation1,
@@ -1645,28 +1653,28 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :General}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "zɨyɨrnâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "zɨqâw"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "zɨyŋây"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "zɨyrây"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "zɨyɨrnâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "zɨnâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "zɨyrâw"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "zɨqâk’ʷ"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "zɨyâw"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "zɨyɨrnây"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "zɨyâk’ʷ"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "zɨyrâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "zɨynây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "zɨŋâw"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "zɨyrây"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "zɨyrâw"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "zɨyây"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "zɨynâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "zɨqây"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "zɨyrâk’ʷ"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "zɨyŋâk’ʷ"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "zɨyɨrnâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "zɨqâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "zɨyŋây"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "zɨyrây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "zɨyɨrnâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "zɨnâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "zɨyrâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "zɨqâk’ʷ"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "zɨyâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "zɨyɨrnây"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "zɨyâk’ʷ"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "zɨyrâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "zɨynây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "zɨŋâw"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "zɨyrây"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "zɨyrâw"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "zɨyây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "zɨynâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "zɨqây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "zɨyrâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "zɨyŋâk’ʷ"]]
     }
     {:label "khamtanga-VSubAdvAffConsecutiveConj4-ziy"
     :note "Appleyard1987 4.2.5.2"
@@ -1812,28 +1820,28 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :General}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "xʷärnây"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "xʷâw"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "xʷärâk’ʷ"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "xʷärnâk’ʷ"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "xʷärâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "xʷärɨrnây"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "xʷärâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "xʷärŋâw"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "xʷärây"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "xʷärŋây"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "xʷärây"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "xʷärnâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "xʷärɨrnâw"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "xʷärâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "xʷärâw"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "xʷärâw"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "xʷärây"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "xʷärŋâk’ʷ"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "xʷärâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "xʷärnâw"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "xʷärây"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "xʷärnây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "xʷâw"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "xʷärâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "xʷärnâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "xʷärâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "xʷärɨrnây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "xʷärâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "xʷärŋâw"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "xʷärây"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "xʷärŋây"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "xʷärây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "xʷärnâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "xʷärɨrnâw"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "xʷärâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "xʷärâw"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "xʷärâw"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "xʷärây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "xʷärŋâk’ʷ"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "xʷärâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "xʷärnâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "xʷärây"]]
     }
     {:label "khamtanga-VMainAffPresConj4-ziy"
     :note "Appleyard1987 4.2.4"
@@ -1911,28 +1919,28 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :General}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "qaldɨrnâw"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "qaldrây"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "qaldnây"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "qaldâw"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "qaldâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "qaldŋây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "qaldnâw"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "qaldâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "qalâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "qaldrâw"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "qaldrâk’ʷ"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "qaldɨrnâk’ʷ"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "qaldnâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "qaldɨrnây"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "qaldrâk’ʷ"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "qaldây"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "qalây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "qaldŋâw"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "qaldŋâk’ʷ"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "qaldrâw"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "qaldrây"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "qaldɨrnâw"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "qaldrây"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "qaldnây"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "qaldâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "qaldâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "qaldŋây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "qaldnâw"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "qaldâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "qalâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "qaldrâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "qaldrâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "qaldɨrnâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "qaldnâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "qaldɨrnây"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "qaldrâk’ʷ"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "qaldây"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "qalây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "qaldŋâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "qaldŋâk’ʷ"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "qaldrâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "qaldrây"]]
     }
     {:label "khamtanga-VSubAdvAffPurposiveConj1-kab"
     :note "Appleyard1987 4.2.5.2"
@@ -2158,28 +2166,28 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :General}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "k’äbâw"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "k’äbây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "k’äbnâw"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "k’äbnây"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "k’äbɨrnâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "k’äbây"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "k’äbrây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "k’äbɨrnâw"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "k’äbŋây"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "k’äbâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "k’äbrây"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "k’äbrâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "k’äbɨrnây"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "k’äbnâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "k’äbrâw"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "k’äbâk’ʷ"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "k’äbâw"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "k’äbrâk’ʷ"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "k’äbrâw"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "k’äbŋâw"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "k’äbŋâk’ʷ"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "k’äbâw"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "k’äbây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "k’äbnâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "k’äbnây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "k’äbɨrnâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "k’äbây"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "k’äbrây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "k’äbɨrnâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "k’äbŋây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "k’äbâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "k’äbrây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "k’äbrâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "k’äbɨrnây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "k’äbnâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "k’äbrâw"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "k’äbâk’ʷ"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "k’äbâw"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "k’äbrâk’ʷ"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "k’äbrâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "k’äbŋâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "k’äbŋâk’ʷ"]]
     }
     {:label "khamtanga-VSubAdvAffCond2Conj1-kab"
     :note "Appleyard1987 4.2.5.2"
@@ -2326,7 +2334,7 @@
 	    [:Masc, :Singular, :Person3, "zɨyáŋʷ"],
 	    [:Fem, :Singular, :Person3, "zɨyráŋʷ"]]
     }
-    {:label "khamtanga-VSubAdvAffCoTemp Conj3-kar"
+    {:label "khamtanga-VSubAdvAffCoTempConj3-kar"
     :note "Appleyard1987 4.2.5.2"
     :common {:clauseType :SubAdv,
 	    :conjClass :Conjugation3,
@@ -2675,28 +2683,28 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentFuture}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "k’äbayrnâw"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "k’äbaynây"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "k’äbawâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "k’äbayrâw / -arâw"],
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "k’äbarây / -ayây"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "k’äbak’ây / -ayk’ây"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "k’äbayŋây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "k’äbaynâw"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "k’äbarâw / -ayâw"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "k’äbawâk’ʷ"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "k’äbarâk’ʷ / -ayâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "k’äbayrnây"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "k’äbayrây / -arây"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "k’äbawây"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "k’äbak’âk’ʷ / -ayk’âk’ʷ"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "k’äbayŋâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "k’äbayŋâw"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "k’äbak’âw / -ayk’âw"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "k’äbaynâk’ʷ"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "k’äbayrnâk’ʷ"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "k’äbayrâk’ʷ / -arâk’ʷ"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "k’äbayrnâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "k’äbaynây"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "k’äbawâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "k’äbayrâw / -arâw"],
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "k’äbarây / -ayây"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "k’äbak’ây / -ayk’ây"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "k’äbayŋây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "k’äbaynâw"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "k’äbarâw / -ayâw"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "k’äbawâk’ʷ"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "k’äbarâk’ʷ / -ayâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "k’äbayrnây"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "k’äbayrây / -arây"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "k’äbawây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "k’äbak’âk’ʷ / -ayk’âk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "k’äbayŋâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "k’äbayŋâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "k’äbak’âw / -ayk’âw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "k’äbaynâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "k’äbayrnâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "k’äbayrâk’ʷ / -arâk’ʷ"]]
     }
     {:label "khamtanga-VMainAffPresConj5a-xwa"
     :note "Appleyard1987 4.2.4"
@@ -2740,30 +2748,30 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Past}
-    :terms [[:genderHead, :genderPoss, :numHead, :number, :person, :token]  ;; schema
-	    [:Fem, :Fem, :Singular, :Singular, :Person3, "k’äbirây"],
-	    [:Fem, :Common, :Singular, :Plural, :Person2, "k’äbirnây"],
-	    [:Masc, :Fem, :Singular, :Singular, :Person3, "k’äbirâw"],
-	    [:Common, :Common, :Plural, :Plural, :Person3, "k’äbiŋâk’ʷ"],
-	    [:Fem, :Masc, :Singular, :Singular, :Person3, "k’äbiyây"],
-	    [:Common, :Common, :Plural, :Plural, :Person2, "k’äbirnâk’ʷ"],
-	    [:Common, :Common, :Plural, :Singular, :Person1, "k’äbik’âk’ʷ"],
-	    [:Fem, :Common, :Singular, :Singular, :Person1, "k’äbik’ây"],
-	    [:Masc, :Common, :Singular, :Plural, :Person1, "k’äbinâw"],
-	    [:Common, :Masc, :Plural, :Singular, :Person3, "k’äbiyâk’ʷ"],
-	    [:Common, :Common, :Plural, :Singular, :Person2, "k’äbirâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Plural, :Person2, "k’äbirnâw"],
-	    [:Masc, :Masc, :Singular, :Singular, :Person3, "k’äbiyâw"],
-	    [:Masc, :Common, :Singular, :Plural, :Person3, "k’äbiŋâw"],
-	    [:Common, :Fem, :Plural, :Singular, :Person3, "k’äbirâk’ʷ"],
-	    [:Masc, :Common, :Singular, :Singular, :Person1, "k’äbik’âw"],
-	    [:Common, :Common, :Plural, :Plural, :Person1, "k’äbinâk’ʷ"],
-	    [:Fem, :Common, :Singular, :Plural, :Person3, "k’äbiŋây"],
-	    [:Masc, :Common, :Singular, :Singular, :Person2, "k’äbirâw"],
-	    [:Fem, :Common, :Singular, :Singular, :Person2, "k’äbirây"],
-	    [:Fem, :Common, :Singular, :Plural, :Person1, "k’äbinây"]]
+    :terms [[:genderHead, :gender, :numHead, :number, :person, :token]  ;; schema
+	    [:HeadFem, :Fem, :HeadSingular, :Singular, :Person3, "k’äbirây"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person2, "k’äbirnây"],
+	    [:HeadMasc, :Fem, :HeadSingular, :Singular, :Person3, "k’äbirâw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person3, "k’äbiŋâk’ʷ"],
+	    [:HeadFem, :Masc, :HeadSingular, :Singular, :Person3, "k’äbiyây"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person2, "k’äbirnâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person1, "k’äbik’âk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person1, "k’äbik’ây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person1, "k’äbinâw"],
+	    [:HeadCommon, :Masc, :HeadPlural, :Singular, :Person3, "k’äbiyâk’ʷ"],
+	    [:HeadCommon, :Common, :HeadPlural, :Singular, :Person2, "k’äbirâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person2, "k’äbirnâw"],
+	    [:HeadMasc, :Masc, :HeadSingular, :Singular, :Person3, "k’äbiyâw"],
+	    [:HeadMasc, :Common, :HeadSingular, :Plural, :Person3, "k’äbiŋâw"],
+	    [:HeadCommon, :Fem, :HeadPlural, :Singular, :Person3, "k’äbirâk’ʷ"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person1, "k’äbik’âw"],
+	    [:HeadCommon, :Common, :HeadPlural, :Plural, :Person1, "k’äbinâk’ʷ"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person3, "k’äbiŋây"],
+	    [:HeadMasc, :Common, :HeadSingular, :Singular, :Person2, "k’äbirâw"],
+	    [:HeadFem, :Common, :HeadSingular, :Singular, :Person2, "k’äbirây"],
+	    [:HeadFem, :Common, :HeadSingular, :Plural, :Person1, "k’äbinây"]]
     }
-    {:label "khamtanga-VSubAdvAffCoTemp Conj5a-xwa"
+    {:label "khamtanga-VSubAdvAffCoTempConj5a-xwa"
     :note "Appleyard1987 4.2.5.2"
     :common {:clauseType :SubAdv,
 	    :conjClass :Conjugation5a,
@@ -2959,7 +2967,7 @@
     :common {:morpheme :ADV,
 	    :pdgmType :Exemplary,
 	    :pos :Adverb}
-    :terms [[:token, :token-gloss]  ;; schema
+    :terms [[:token, :token-note]  ;; schema
 	    ["ɨdɨs ~ ɨdís", "thence"],
 	    ["ɨdɨl", "there"],
 	    ["ɨnɨl ~ ɨníl", "here"],
@@ -2988,28 +2996,28 @@
 	    :proClass :Independent1}
     :terms [[:case, :gender, :number, :person, :token]  ;; schema
 	    [:Subject, :Common, :Plural, :Person2, "kítɨn"],
-	    [:Oblique-posessive, :Common, :Singular, :Person2, "kɨ-"],
+	    [:ObliquePossessive, :Common, :Singular, :Person2, "kɨ-"],
 	    [:Subject, :Common, :Plural, :Person3, "ŋáy"],
 	    [:Subject, :Common, :Singular, :Person1, "án ~ yán"],
-	    [:Oblique-posessive, :Common, :Plural, :Person3, "ŋata ~ ŋatä-/"],
+	    [:ObliquePossessive, :Common, :Plural, :Person3, "ŋata ~ ŋatä-/"],
 	    [:Subject, :Masc, :Singular, :Person3, "ŋâŋ"],
-	    [:Oblique-posessive, :Common, :Plural, :Person2, "kɨta ~ kɨtä-"],
-	    [:Oblique-posessive, :Masc, :Singular, :Person3, "Common"],
+	    [:ObliquePossessive, :Common, :Plural, :Person2, "kɨta ~ kɨtä-"],
+	    [:ObliquePossessive, :Masc, :Singular, :Person3, "Common"],
 	    [:Subject, :Fem, :Singular, :Person3, "ŋí ~ ŋɨr"],
-	    [:Oblique-posessive, :Common, :Singular, :Person1, "yɨ-"],
-	    [:Oblique-posessive, :Common, :Plural, :Person3, "ŋa-"],
+	    [:ObliquePossessive, :Common, :Singular, :Person1, "yɨ-"],
+	    [:ObliquePossessive, :Common, :Plural, :Person3, "ŋa-"],
 	    [:Subject, :Common, :Plural, :Person1, "yɨn"],
 	    [:Subject, :Common, :Singular, :Person2, "kɨt"],
-	    [:Oblique-posessive, :Common, :Plural, :Person3, "ŋita ~ ŋitä-/ "],
-	    [:Oblique-posessive, :Common, :Plural, :Person1, "yɨna ~ yɨnä"],
-	    [:Oblique-posessive, :Fem, :Singular, :Person3, "ŋi- ~ ŋɨr-"]]
+	    [:ObliquePossessive, :Common, :Plural, :Person3, "ŋita ~ ŋitä-/ "],
+	    [:ObliquePossessive, :Common, :Plural, :Person1, "yɨna ~ yɨnä"],
+	    [:ObliquePossessive, :Fem, :Singular, :Person3, "ŋi- ~ ŋɨr-"]]
     }
     {:label "khamtanga-NNumeral"
     :note "Appleyard1987 3.4"
     :common {:morpheme :NUMERAL,
 	    :morphClass :Numeral,
 	    :pos :Noun}
-    :terms [[:numClass, :token, :token-numGloss]  ;; schema
+    :terms [[:numClass, :token, :token-note]  ;; schema
 	    [:Ordinal, "s’áyc̆’äntɨrna", "9"],
 	    [:Ordinal, "sízäntɨrna", "4"],
 	    [:Cardinal, "sâwta", "8"],

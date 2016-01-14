@@ -1,17 +1,27 @@
 {
 :lang :syriac
 :sgpref "syr"
+:datasource "Thackston1999"
+:geodemoURL "http://www.ethnologue.com/language/syc"
+:geodemoTXT "Classical Syriac, a member of the Aramaic branch of Semitic was the language of the early Christian communities in Syria and Northern Mesopotamia during the first millennium CE. It continued as a language of scholarship until the early modern period, and until today as a liturgical language of many branches of Eastern Christianity."
 :schemata {
           :case [:Accusative, :Genitive, :Object]
+           :cliticEnv [:Env1, :Env2, :Env3, :Env4, :Env5, :Env6, :Env7, :Env8]
 	  :deixis [:Far, :Near]
 	  :gender [:Common, :Fem, :Masc]
-	  :numHead [:Plural, :Singular]
+	  :numHead [:HeadPlural, :HeadSingular]
 	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3 :Not_in_datastore]
 	  :pos [:Pronoun :Verb]
 	  :proClass [:Demostrative, :Independent, :ObjCliticImprtv, :ObjCliticPerf, :PossClitic]
            :status [:NA]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :numHead ]
+           :synsemClass [:case :deixis :derivedStem :polarity :pos :proClass ]
+           :inflClass [:status :cliticEnv  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRODEM {:gloss "[x]", :lemma "[y]", }
   :PROIND {:gloss "[x]", :lemma "[y]", }
@@ -22,7 +32,7 @@
 :lexemes {
 }
 :lxterms #{
-           {:label "Egyptian Verb to be added to datastore"
+           {:label "Syriac_Verb_to_be_added_to_datastore"
            :common {:pos :Verb}
            :terms [[:status :person :token]
                    [:NA :Not_in_datastore "not attested"]]}}
@@ -34,26 +44,26 @@
 	    :pos :Pronoun,
 	    :proClass :PossClitic}
     :terms [[:gender, :numHead, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Singular, :Person1, "-Ø ~ -i"],
-	    [:Masc, :Singular, :Singular, :Person2, "-āk"],
-	    [:Fem, :Singular, :Singular, :Person2, "-ek"],
-	    [:Masc, :Singular, :Singular, :Person3, "-eh"],
-	    [:Fem, :Singular, :Singular, :Person3, "-āh"],
-	    [:Common, :Singular, :Plural, :Person1, "-an"],
-	    [:Masc, :Singular, :Plural, :Person2, "-ḵon"],
-	    [:Fem, :Singular, :Plural, :Person2, "-ḵēn"],
-	    [:Masc, :Singular, :Plural, :Person3, "-hon"],
-	    [:Fem, :Singular, :Plural, :Person3, "-hēn"],
-	    [:Common, :Plural, :Singular, :Person1, "-ay"],
-	    [:Masc, :Plural, :Singular, :Person2, "-ayk"],
-	    [:Fem, :Plural, :Singular, :Person2, "-ayk"],
-	    [:Masc, :Plural, :Singular, :Person3, "-aw"],
-	    [:Fem, :Plural, :Singular, :Person3, "-ēh"],
-	    [:Common, :Plural, :Plural, :Person1, "-ayn"],
-	    [:Masc, :Plural, :Plural, :Person2, "-ayḵon"],
-	    [:Fem, :Plural, :Plural, :Person2, "-ayḵēn"],
-	    [:Masc, :Plural, :Plural, :Person3, "-ayhon"],
-	    [:Masc, :Plural, :Plural, :Person3, "-ayhēn"]]
+	    [:Common, :HeadSingular, :Singular, :Person1, "-Ø ~ -i"],
+	    [:Masc, :HeadSingular, :Singular, :Person2, "-āk"],
+	    [:Fem, :HeadSingular, :Singular, :Person2, "-ek"],
+	    [:Masc, :HeadSingular, :Singular, :Person3, "-eh"],
+	    [:Fem, :HeadSingular, :Singular, :Person3, "-āh"],
+	    [:Common, :HeadSingular, :Plural, :Person1, "-an"],
+	    [:Masc, :HeadSingular, :Plural, :Person2, "-ḵon"],
+	    [:Fem, :HeadSingular, :Plural, :Person2, "-ḵēn"],
+	    [:Masc, :HeadSingular, :Plural, :Person3, "-hon"],
+	    [:Fem, :HeadSingular, :Plural, :Person3, "-hēn"],
+	    [:Common, :HeadPlural, :Singular, :Person1, "-ay"],
+	    [:Masc, :HeadPlural, :Singular, :Person2, "-ayk"],
+	    [:Fem, :HeadPlural, :Singular, :Person2, "-ayk"],
+	    [:Masc, :HeadPlural, :Singular, :Person3, "-aw"],
+	    [:Fem, :HeadPlural, :Singular, :Person3, "-ēh"],
+	    [:Common, :HeadPlural, :Plural, :Person1, "-ayn"],
+	    [:Masc, :HeadPlural, :Plural, :Person2, "-ayḵon"],
+	    [:Fem, :HeadPlural, :Plural, :Person2, "-ayḵēn"],
+	    [:Masc, :HeadPlural, :Plural, :Person3, "-ayhon"],
+	    [:Masc, :HeadPlural, :Plural, :Person3, "-ayhēn"]]
     }
     {:label "syriac-PDem"
     :note "Thackston1999 pp. 29-30;Syriac has two sets of demonstratives,near and far,which serve both as adjectives and pronouns."
@@ -76,39 +86,39 @@
 	    :morpheme :PROOBJCLITICIMPRTV,
 	    :pos :Pronoun,
 	    :proClass :ObjCliticImprtv}
-    :terms [[:gender, :number, :person, :token, :token-environment]  ;; schema
-	    [:Common, :Singular, :Person1, "-ayn", "ENV1"],
-	    [:Masc, :Singular, :Person3, "-āy", "ENV1"],
-	    [:Fem, :Singular, :Person3, "-ēh", "ENV1"],
-	    [:Common, :Plural, :Person1, "-ayn", "ENV1"],
-	    [:Common, :Singular, :Person1, "-n", "ENV2"],
-	    [:Masc, :Singular, :Person3, "-w", "ENV2"],
-	    [:Fem, :Singular, :Person3, "-h", "ENV2"],
-	    [:Common, :Plural, :Person1, "-n", "ENV2"],
-	    [:Common, :Singular, :Person1, "-n ~ -nān", "ENV3"],
-	    [:Masc, :Singular, :Person3, "-Ø ~ -nāy", "ENV3"],
-	    [:Fem, :Singular, :Person3, "-h ~ -nāh", "ENV3"],
-	    [:Common, :Plural, :Person1, "-n ~ -nān", "ENV3"],
-	    [:Common, :Singular, :Person1, "-ān ~ -ēnān", "ENV4"],
-	    [:Masc, :Singular, :Person3, "-āy ~ -ēnāy", "ENV4"],
-	    [:Fem, :Singular, :Person3, "-āh ~ -ēnāh", "ENV4"],
-	    [:Common, :Plural, :Person1, "-ān ~ -ēnān", "ENV4"],
-	    [:Common, :Singular, :Person1, "-n", "ENV5"],
-	    [:Masc, :Singular, :Person3, "-w", "ENV5"],
-	    [:Fem, :Singular, :Person3, "-h", "ENV5"],
-	    [:Common, :Plural, :Person1, "-n", "ENV5"],
-	    [:Common, :Singular, :Person1, "-n", "ENV6"],
-	    [:Masc, :Singular, :Person3, "-w", "ENV6"],
-	    [:Fem, :Singular, :Person3, "-h", "ENV6"],
-	    [:Common, :Plural, :Person1, "-n", "ENV6"],
-	    [:Common, :Singular, :Person1, "-n", "ENV7"],
-	    [:Masc, :Singular, :Person3, "⊤", "ENV7"],
-	    [:Fem, :Singular, :Person3, "-h", "ENV7"],
-	    [:Common, :Plural, :Person1, "-n", "ENV7"],
-	    [:Common, :Singular, :Person1, "-ān", "ENV8"],
-	    [:Masc, :Singular, :Person3, "-āy", "ENV8"],
-	    [:Fem, :Singular, :Person3, "-āh", "ENV8"],
-	    [:Common, :Plural, :Person1, "-ān", "ENV8"]]
+    :terms [[:gender, :number, :person, :token, :cliticEnv]  ;; schema
+	    [:Common, :Singular, :Person1, "-ayn", :Env1],
+	    [:Masc, :Singular, :Person3, "-āy", :Env1],
+	    [:Fem, :Singular, :Person3, "-ēh", :Env1],
+	    [:Common, :Plural, :Person1, "-ayn", :Env1],
+	    [:Common, :Singular, :Person1, "-n", :Env2],
+	    [:Masc, :Singular, :Person3, "-w", :Env2],
+	    [:Fem, :Singular, :Person3, "-h", :Env2],
+	    [:Common, :Plural, :Person1, "-n", :Env2],
+	    [:Common, :Singular, :Person1, "-n ~ -nān", :Env3],
+	    [:Masc, :Singular, :Person3, "-Ø ~ -nāy", :Env3],
+	    [:Fem, :Singular, :Person3, "-h ~ -nāh", :Env3],
+	    [:Common, :Plural, :Person1, "-n ~ -nān", :Env3],
+	    [:Common, :Singular, :Person1, "-ān ~ -ēnān", :Env4],
+	    [:Masc, :Singular, :Person3, "-āy ~ -ēnāy", :Env4],
+	    [:Fem, :Singular, :Person3, "-āh ~ -ēnāh", :Env4],
+	    [:Common, :Plural, :Person1, "-ān ~ -ēnān", :Env4],
+	    [:Common, :Singular, :Person1, "-n", :Env5],
+	    [:Masc, :Singular, :Person3, "-w", :Env5],
+	    [:Fem, :Singular, :Person3, "-h", :Env5],
+	    [:Common, :Plural, :Person1, "-n", :Env5],
+	    [:Common, :Singular, :Person1, "-n", :Env6],
+	    [:Masc, :Singular, :Person3, "-w", :Env6],
+	    [:Fem, :Singular, :Person3, "-h", :Env6],
+	    [:Common, :Plural, :Person1, "-n", :Env6],
+	    [:Common, :Singular, :Person1, "-n", :Env7],
+	    [:Masc, :Singular, :Person3, "⊤", :Env7],
+	    [:Fem, :Singular, :Person3, "-h", :Env7],
+	    [:Common, :Plural, :Person1, "-n", :Env7],
+	    [:Common, :Singular, :Person1, "-ān", :Env8],
+	    [:Masc, :Singular, :Person3, "-āy", :Env8],
+	    [:Fem, :Singular, :Person3, "-āh", :Env8],
+	    [:Common, :Plural, :Person1, "-ān", :Env8]]
     }
     {:label "syriac-PInd"
     :note "Thackston1999,p. 28. Independent pronouns in Syriac are used as 1) sentence subjects of verbless sentences and for stressing the pronominal subject of a verb. Whereas Thackston does not indicate initial aleph,the following paradigm as included the aleph in transliteration."
@@ -133,54 +143,54 @@
 	    :morpheme :PROOBJCLITICPERF,
 	    :pos :Pronoun,
 	    :proClass :ObjCliticPerf}
-    :terms [[:gender, :number, :person, :token, :token-environment]  ;; schema
-	    [:Common, :Singular, :Person1, "-an", "ENV1"],
-	    [:Masc, :Singular, :Person2, "⊤", "ENV1"],
-	    [:Fem, :Singular, :Person2, "-eḵ", "ENV1"],
-	    [:Masc, :Singular, :Person3, "-eh", "ENV1"],
-	    [:Fem, :Singular, :Person3, "-āh", "ENV1"],
-	    [:Common, :Plural, :Person1, "-an", "ENV1"],
-	    [:Masc, :Plural, :Person2, "-ḵon", "ENV1"],
-	    [:Fem, :Plural, :Person2, "-ḵēn", "ENV1"],
-	    [:Masc, :Plural, :Person3, "⊤", "ENV1"],
-	    [:Fem, :Plural, :Person3, "⊤", "ENV1"],
-	    [:Common, :Singular, :Person1, "-un", "ENV2"],
-	    [:Masc, :Singular, :Person2, "-uk", "ENV2"],
-	    [:Fem, :Singular, :Person2, "-uk", "ENV2"],
-	    [:Masc, :Singular, :Person3, "-u", "ENV2"],
-	    [:Fem, :Singular, :Person3, "-uh", "ENV2"],
-	    [:Common, :Plural, :Person1, "-un", "ENV2"],
-	    [:Masc, :Plural, :Person2, "-uḵon", "ENV2"],
-	    [:Fem, :Plural, :Person2, "-uḵēn", "ENV2"],
-	    [:Masc, :Plural, :Person3, "⊤", "ENV2"],
-	    [:Fem, :Plural, :Person3, "⊤", "ENV2"],
-	    [:Common, :Singular, :Person1, "-ān", "ENV3"],
-	    [:Masc, :Singular, :Person2, "-āk", "ENV3"],
-	    [:Fem, :Singular, :Person2, "-ek", "ENV3"],
-	    [:Masc, :Singular, :Person3, "-āy", "ENV3"],
-	    [:Fem, :Singular, :Person3, "-āh", "ENV3"],
-	    [:Common, :Plural, :Person1, "-ān", "ENV3"],
-	    [:Masc, :Plural, :Person2, "-ḵon", "ENV3"],
-	    [:Fem, :Plural, :Person2, "-ḵēn", "ENV3"],
-	    [:Masc, :Plural, :Person3, "⊤", "ENV3"],
-	    [:Fem, :Plural, :Person3, "⊤", "ENV3"],
-	    [:Common, :Singular, :Person1, "-n", "ENV4"],
-	    [:Masc, :Singular, :Person3, "-y", "ENV4"],
-	    [:Fem, :Singular, :Person3, "-h", "ENV4"],
-	    [:Common, :Plural, :Person1, "-n", "ENV4"],
-	    [:Masc, :Plural, :Person3, "⊤", "ENV4"],
-	    [:Fem, :Plural, :Person3, "⊤", "ENV4"],
-	    [:Common, :Singular, :Person1, "-n", "ENV5"],
-	    [:Masc, :Singular, :Person3, "-w", "ENV5"],
-	    [:Fem, :Singular, :Person3, "-h", "ENV5"],
-	    [:Common, :Plural, :Person1, "-n", "ENV5"],
-	    [:Masc, :Plural, :Person3, "⊤", "ENV5"],
-	    [:Fem, :Plural, :Person3, "⊤", "ENV5"],
-	    [:Common, :Singular, :Person1, "-ān", "ENV6"],
-	    [:Masc, :Singular, :Person3, "-āy", "ENV6"],
-	    [:Fem, :Singular, :Person3, "-āh", "ENV6"],
-	    [:Common, :Plural, :Person1, "-ān", "ENV6"],
-	    [:Masc, :Plural, :Person3, "⊤", "ENV6"],
-	    [:Fem, :Plural, :Person3, "⊤", "ENV6"]]
+    :terms [[:gender, :number, :person, :token, :cliticEnv]  ;; schema
+	    [:Common, :Singular, :Person1, "-an", :Env1],
+	    [:Masc, :Singular, :Person2, "⊤", :Env1],
+	    [:Fem, :Singular, :Person2, "-eḵ", :Env1],
+	    [:Masc, :Singular, :Person3, "-eh", :Env1],
+	    [:Fem, :Singular, :Person3, "-āh", :Env1],
+	    [:Common, :Plural, :Person1, "-an", :Env1],
+	    [:Masc, :Plural, :Person2, "-ḵon", :Env1],
+	    [:Fem, :Plural, :Person2, "-ḵēn", :Env1],
+	    [:Masc, :Plural, :Person3, "⊤", :Env1],
+	    [:Fem, :Plural, :Person3, "⊤", :Env1],
+	    [:Common, :Singular, :Person1, "-un", :Env2],
+	    [:Masc, :Singular, :Person2, "-uk", :Env2],
+	    [:Fem, :Singular, :Person2, "-uk", :Env2],
+	    [:Masc, :Singular, :Person3, "-u", :Env2],
+	    [:Fem, :Singular, :Person3, "-uh", :Env2],
+	    [:Common, :Plural, :Person1, "-un", :Env2],
+	    [:Masc, :Plural, :Person2, "-uḵon", :Env2],
+	    [:Fem, :Plural, :Person2, "-uḵēn", :Env2],
+	    [:Masc, :Plural, :Person3, "⊤", :Env2],
+	    [:Fem, :Plural, :Person3, "⊤", :Env2],
+	    [:Common, :Singular, :Person1, "-ān", :Env3],
+	    [:Masc, :Singular, :Person2, "-āk", :Env3],
+	    [:Fem, :Singular, :Person2, "-ek", :Env3],
+	    [:Masc, :Singular, :Person3, "-āy", :Env3],
+	    [:Fem, :Singular, :Person3, "-āh", :Env3],
+	    [:Common, :Plural, :Person1, "-ān", :Env3],
+	    [:Masc, :Plural, :Person2, "-ḵon", :Env3],
+	    [:Fem, :Plural, :Person2, "-ḵēn", :Env3],
+	    [:Masc, :Plural, :Person3, "⊤", :Env3],
+	    [:Fem, :Plural, :Person3, "⊤", :Env3],
+	    [:Common, :Singular, :Person1, "-n", :Env4],
+	    [:Masc, :Singular, :Person3, "-y", :Env4],
+	    [:Fem, :Singular, :Person3, "-h", :Env4],
+	    [:Common, :Plural, :Person1, "-n", :Env4],
+	    [:Masc, :Plural, :Person3, "⊤", :Env4],
+	    [:Fem, :Plural, :Person3, "⊤", :Env4],
+	    [:Common, :Singular, :Person1, "-n", :Env5],
+	    [:Masc, :Singular, :Person3, "-w", :Env5],
+	    [:Fem, :Singular, :Person3, "-h", :Env5],
+	    [:Common, :Plural, :Person1, "-n", :Env5],
+	    [:Masc, :Plural, :Person3, "⊤", :Env5],
+	    [:Fem, :Plural, :Person3, "⊤", :Env5],
+	    [:Common, :Singular, :Person1, "-ān", :Env6],
+	    [:Masc, :Singular, :Person3, "-āy", :Env6],
+	    [:Fem, :Singular, :Person3, "-āh", :Env6],
+	    [:Common, :Plural, :Person1, "-ān", :Env6],
+	    [:Masc, :Plural, :Person3, "⊤", :Env6],
+	    [:Fem, :Plural, :Person3, "⊤", :Env6]]
     }}
 }

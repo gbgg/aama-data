@@ -1,16 +1,22 @@
-
 #TTL FROM INPUT FILE:
-# ../aama-data/data/egyptian-middle//egyptian-middle-pdgms.edn
+#../aama-data/data/egyptian-middle//egyptian-middle-pdgms.edn
+
 @prefix rdf:	 <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:	 <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements>.
+@prefix dcterms:    <http://purl.org/dc/terms>.
 @prefix aama:	 <http://id.oi.uchicago.edu/aama/2013/> .
 @prefix aamas:	 <http://id.oi.uchicago.edu/aama/2013/schema/> .
 @prefix egm:   <http://id.oi.uchicago.edu/aama/2013/egyptian-middle/> .
 
-#SCHEMATA:
+#LANG INFO:
 
 aama:Egyptian-middle a aamas:Language .
 aama:Egyptian-middle rdfs:label "Egyptian-middle" .
+aama:Egyptian-middle aamas:dataSource "Gardiner1957" .
+aama:Egyptian-middle aamas:geodemoURL "http://www.britannica.com/topic/Egyptian-language https://en.wikipedia.org/wiki/Languages_of_Egypt" .
+aama:Egyptian-middle aamas:geodemoTXT "Middle Egyptian is the 'Classic' form of the written language%% possibly representing the spoken form of the language in late third and early second millennium BCE." .
+
 
 #SCHEMATA: gender
 egm:gender aamas:lang aama:Egyptian-middle .
@@ -23,13 +29,13 @@ egm:Gender rdfs:subClassOf egm:MuExponent .
 egm:gender rdfs:subPropertyOf egm:muProperty .
 egm:Common aamas:lang aama:Egyptian-middle .
 egm:Common rdf:type egm:Gender .
-egm:Common rdfs:label "Common".
+egm:Common rdfs:label "Common" .
 egm:Fem aamas:lang aama:Egyptian-middle .
 egm:Fem rdf:type egm:Gender .
-egm:Fem rdfs:label "Fem".
+egm:Fem rdfs:label "Fem" .
 egm:Masc aamas:lang aama:Egyptian-middle .
 egm:Masc rdf:type egm:Gender .
-egm:Masc rdfs:label "Masc".
+egm:Masc rdfs:label "Masc" .
 
 #SCHEMATA: number
 egm:number aamas:lang aama:Egyptian-middle .
@@ -40,15 +46,15 @@ egm:number rdfs:label "number" .
 egm:number rdfs:range egm:Number .
 egm:Number rdfs:subClassOf egm:MuExponent .
 egm:number rdfs:subPropertyOf egm:muProperty .
-egm:Du aamas:lang aama:Egyptian-middle .
-egm:Du rdf:type egm:Number .
-egm:Du rdfs:label "Du".
+egm:Dual aamas:lang aama:Egyptian-middle .
+egm:Dual rdf:type egm:Number .
+egm:Dual rdfs:label "Dual" .
 egm:Plural aamas:lang aama:Egyptian-middle .
 egm:Plural rdf:type egm:Number .
-egm:Plural rdfs:label "Plural".
+egm:Plural rdfs:label "Plural" .
 egm:Singular aamas:lang aama:Egyptian-middle .
 egm:Singular rdf:type egm:Number .
-egm:Singular rdfs:label "Singular".
+egm:Singular rdfs:label "Singular" .
 
 #SCHEMATA: person
 egm:person aamas:lang aama:Egyptian-middle .
@@ -61,16 +67,16 @@ egm:Person rdfs:subClassOf egm:MuExponent .
 egm:person rdfs:subPropertyOf egm:muProperty .
 egm:Person1 aamas:lang aama:Egyptian-middle .
 egm:Person1 rdf:type egm:Person .
-egm:Person1 rdfs:label "Person1".
+egm:Person1 rdfs:label "Person1" .
 egm:Person2 aamas:lang aama:Egyptian-middle .
 egm:Person2 rdf:type egm:Person .
-egm:Person2 rdfs:label "Person2".
+egm:Person2 rdfs:label "Person2" .
 egm:Person3 aamas:lang aama:Egyptian-middle .
 egm:Person3 rdf:type egm:Person .
-egm:Person3 rdfs:label "Person3".
+egm:Person3 rdfs:label "Person3" .
 egm:Not_in_datastore aamas:lang aama:Egyptian-middle .
 egm:Not_in_datastore rdf:type egm:Person .
-egm:Not_in_datastore rdfs:label "Not_in_datastore".
+egm:Not_in_datastore rdfs:label "Not_in_datastore" .
 
 #SCHEMATA: pos
 egm:pos aamas:lang aama:Egyptian-middle .
@@ -83,10 +89,10 @@ egm:Pos rdfs:subClassOf egm:MuExponent .
 egm:pos rdfs:subPropertyOf egm:muProperty .
 egm:Pronoun aamas:lang aama:Egyptian-middle .
 egm:Pronoun rdf:type egm:Pos .
-egm:Pronoun rdfs:label "Pronoun".
+egm:Pronoun rdfs:label "Pronoun" .
 egm:Verb aamas:lang aama:Egyptian-middle .
 egm:Verb rdf:type egm:Pos .
-egm:Verb rdfs:label "Verb".
+egm:Verb rdfs:label "Verb" .
 
 #SCHEMATA: proClass
 egm:proClass aamas:lang aama:Egyptian-middle .
@@ -99,13 +105,13 @@ egm:Proclass rdfs:subClassOf egm:MuExponent .
 egm:proClass rdfs:subPropertyOf egm:muProperty .
 egm:Dependent aamas:lang aama:Egyptian-middle .
 egm:Dependent rdf:type egm:Proclass .
-egm:Dependent rdfs:label "Dependent".
+egm:Dependent rdfs:label "Dependent" .
 egm:Independent aamas:lang aama:Egyptian-middle .
 egm:Independent rdf:type egm:Proclass .
-egm:Independent rdfs:label "Independent".
+egm:Independent rdfs:label "Independent" .
 egm:Suffix aamas:lang aama:Egyptian-middle .
 egm:Suffix rdf:type egm:Proclass .
-egm:Suffix rdfs:label "Suffix".
+egm:Suffix rdfs:label "Suffix" .
 
 #SCHEMATA: status
 egm:status aamas:lang aama:Egyptian-middle .
@@ -118,23 +124,38 @@ egm:Status rdfs:subClassOf egm:MuExponent .
 egm:status rdfs:subPropertyOf egm:muProperty .
 egm:NA aamas:lang aama:Egyptian-middle .
 egm:NA rdf:type egm:Status .
-egm:NA rdfs:label "NA".
+egm:NA rdfs:label "NA" .
+
+#PCLASSES:
+
+egm:person aamas:pclass aamas:pngClass .
+aamas:pngClass rdfs:label "pngClass" .
+egm:number aamas:pclass aamas:pngClass .
+aamas:pngClass rdfs:label "pngClass" .
+egm:gender aamas:pclass aamas:pngClass .
+aamas:pngClass rdfs:label "pngClass" .
+egm:pos aamas:pclass aamas:synsemClass .
+aamas:synsemClass rdfs:label "synsemClass" .
+egm:proClass aamas:pclass aamas:synsemClass .
+aamas:synsemClass rdfs:label "synsemClass" .
+egm:status aamas:pclass aamas:inflClass .
+aamas:inflClass rdfs:label "inflClass" .
 
 #MORPHEMES:
 
-aama:Egyptian-middle-PRODEPENDENT a aamas:Morpheme ;
+aama:Egyptian-middle-PRODEPENDENT a aamas:Muterm ;
 	aamas:lang aama:Egyptian-middle ;
 	rdfs:label "PRODEPENDENT" ;
 	rdfs:comment "[x]" ;
 	rdfs:comment "[y]" ;
 	.
-aama:Egyptian-middle-PROIND a aamas:Morpheme ;
+aama:Egyptian-middle-PROIND a aamas:Muterm ;
 	aamas:lang aama:Egyptian-middle ;
 	rdfs:label "PROIND" ;
 	rdfs:comment "[x]" ;
 	rdfs:comment "[y]" ;
 	.
-aama:Egyptian-middle-PROSUFF a aamas:Morpheme ;
+aama:Egyptian-middle-PROSUFF a aamas:Muterm ;
 	aamas:lang aama:Egyptian-middle ;
 	rdfs:label "PROSUFF" ;
 	rdfs:comment "[x]" ;
@@ -143,21 +164,31 @@ aama:Egyptian-middle-PROSUFF a aamas:Morpheme ;
 
 #LEXEMES:
 
+#TERMCLUSTER:  Egyptian_Verb_to_be_added_to_datastore
 
-#TERMCLUSTER: Egyptian Verb to be added to datastore
+egm:Egyptian_Verb_to_be_added_to_datastore a aamas:Termcluster ;
+	rdfs:label "Egyptian_Verb_to_be_added_to_datastore" ;
+	rdfs:comment "" 
+	.
 
-aama:IDafa24d83-7fd7-425f-830b-735ee5dc2036 a aamas:Term ;
+aama:ID88d67f73-0832-43af-8380-ed51be728f75 a aamas:Term ;
 	aamas:lang aama:Egyptian-middle ;
+	aamas:memberOf egm:Egyptian_Verb_to_be_added_to_datastore ;
 	egm:pos egm:Verb ;
 	egm:token "not attested" ;
 	egm:person egm:Not_in_datastore ;
 	egm:status egm:NA ;
 	.
 
-#MUTERMCLUSTER: egyptian_M-PSuff
+#MUTERMCLUSTER:  egyptian_M-PSuff
 
-aama:ID53627731-7aa9-4f5d-b4a5-4834cba6340a a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+egm:egyptian_M-PSuff a aamas:MuTermcluster ;
+	rdfs:label "egyptian_M-PSuff" ;
+	rdfs:comment "Alan Gardiner%%Egyptian Grammar%%3rd Edition (Oxford:Griffith Institute%%2001)%%§34. James E. Hoch%%Middle Egyptian Grammar (Mississauga:Benben Publications%%1997)%%§23. Note existence of the dual set of suffix pronouns." 
+	.
+
+aama:IDbd8276b5-3505-4df7-8ae2-23d1c232b28e a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -166,8 +197,9 @@ aama:ID53627731-7aa9-4f5d-b4a5-4834cba6340a a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Common ;
 	.
-aama:ID07a1a02f-b8c9-4f92-9fd8-1c5d7023c610 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID8829a340-18eb-401b-8323-23765c96fb03 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -176,8 +208,9 @@ aama:ID07a1a02f-b8c9-4f92-9fd8-1c5d7023c610 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Masc ;
 	.
-aama:IDf99c35b2-5ac9-491e-b641-e64ae6e2d3bb a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID24bb58e8-e0f3-4266-9061-b8b42fe3412c a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -186,8 +219,9 @@ aama:IDf99c35b2-5ac9-491e-b641-e64ae6e2d3bb a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Fem ;
 	.
-aama:ID3aa9c56b-6785-4ef2-a7b9-13c237dbab83 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID269540c2-e8c7-4e38-af0b-b2d06bc114ee a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -196,8 +230,9 @@ aama:ID3aa9c56b-6785-4ef2-a7b9-13c237dbab83 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Masc ;
 	.
-aama:IDd9326d6f-22c9-4869-8dde-9813daad6a06 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID6af514ef-5a9c-4c10-bcd2-1c842289008c a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -206,58 +241,64 @@ aama:IDd9326d6f-22c9-4869-8dde-9813daad6a06 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Fem ;
 	.
-aama:ID6649b4e9-cd8e-49eb-8af1-a52b4c067164 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:IDcd287def-ed4d-4622-bb74-89934ce07d15 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
 	egm:token "-ny" ;
 	egm:person egm:Person1 ;
-	egm:number egm:Du ;
+	egm:number egm:Dual ;
 	egm:gender egm:Common ;
 	.
-aama:ID72f8a3f3-89c5-4f64-b19e-8ad3d38e7308 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID850241c9-c274-4716-a0f6-9406a3a2d25b a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
 	egm:token "-ṯny" ;
 	egm:person egm:Person2 ;
-	egm:number egm:Du ;
+	egm:number egm:Dual ;
 	egm:gender egm:Common ;
 	.
-aama:ID432e7f23-f5d1-4ede-ad7c-7c24ba05516d a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID4f3c9d94-f7c2-41c3-8dd0-7e0c304c73d6 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
 	egm:token "-sny" ;
 	egm:person egm:Person3 ;
-	egm:number egm:Du ;
+	egm:number egm:Dual ;
 	egm:gender egm:Common ;
 	.
-aama:IDf4e89457-7c9e-4c60-929c-bcf327fe2a64 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID7031ad71-0657-4116-a690-8888838a0a2f a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
 	egm:token "-fy" ;
 	egm:person egm:Person3 ;
-	egm:number egm:Du ;
+	egm:number egm:Dual ;
 	egm:gender egm:Masc ;
 	.
-aama:IDd1beb1a3-7eee-4f3e-aa46-fa2fc81af016 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID9a314ae6-ceaa-4d45-aee9-c421d68ff1f8 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
 	egm:token "-sy" ;
 	egm:person egm:Person3 ;
-	egm:number egm:Du ;
+	egm:number egm:Dual ;
 	egm:gender egm:Fem ;
 	.
-aama:IDfaf87e59-c163-4e9d-a6e0-f04b5b95b113 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:IDe83e86e4-dc6d-474b-b350-6acd84839601 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -266,8 +307,9 @@ aama:IDfaf87e59-c163-4e9d-a6e0-f04b5b95b113 a aamas:Muterm ;
 	egm:number egm:Plural ;
 	egm:gender egm:Common ;
 	.
-aama:ID263c2e6f-176e-4f18-9d4b-d20a99113878 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:IDd24d91ce-a47f-46d7-8474-5136147ec40b a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -276,8 +318,9 @@ aama:ID263c2e6f-176e-4f18-9d4b-d20a99113878 a aamas:Muterm ;
 	egm:number egm:Plural ;
 	egm:gender egm:Common ;
 	.
-aama:ID0d3c84db-0ba3-445d-be5f-876f7c55655d a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID74dbed96-dadc-468f-b138-39a6c69ff20f a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PSuff ;
 	aamas:morpheme aama:Egyptian-middle-PROSUFF ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Suffix ;
@@ -287,10 +330,15 @@ aama:ID0d3c84db-0ba3-445d-be5f-876f7c55655d a aamas:Muterm ;
 	egm:gender egm:Common ;
 	.
 
-#MUTERMCLUSTER: egyptian_M-PInd
+#MUTERMCLUSTER:  egyptian_M-PInd
 
-aama:ID75b4a578-a5bb-494e-80a3-c1e2b1430f90 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+egm:egyptian_M-PInd a aamas:MuTermcluster ;
+	rdfs:label "egyptian_M-PInd" ;
+	rdfs:comment "Alan Gardiner%%Egyptian Grammar%%3rd Edition (Oxford:Griffith Institute%%2001)%%§64. James E. Hoch%%Middle Egyptian Grammar (Mississauga:Benben Publications%%1997)%%§56." 
+	.
+
+aama:ID995a3206-1471-475e-96b3-193b8b2bab95 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -299,8 +347,9 @@ aama:ID75b4a578-a5bb-494e-80a3-c1e2b1430f90 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Common ;
 	.
-aama:IDc9ba48d0-ab28-4c71-8a0b-8f31bd4473c9 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID62ca51d4-71c4-41ad-b4af-daf5d48fbcf3 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -309,8 +358,9 @@ aama:IDc9ba48d0-ab28-4c71-8a0b-8f31bd4473c9 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Masc ;
 	.
-aama:ID81d3b43d-3399-47a0-bfd9-869d6fb4db7b a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID4ae2e87f-d8f8-4b96-befc-3f72778ce192 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -319,8 +369,9 @@ aama:ID81d3b43d-3399-47a0-bfd9-869d6fb4db7b a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Fem ;
 	.
-aama:IDa86adbc7-8478-4b81-b6ce-e68e9d593e58 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID459c4e76-daf0-4bc7-888d-454d80885d9d a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -329,8 +380,9 @@ aama:IDa86adbc7-8478-4b81-b6ce-e68e9d593e58 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Masc ;
 	.
-aama:ID5bdcf37e-68ad-4c14-8cf9-4c536c4c0ec5 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:IDbf9724ee-c398-4be1-8f07-b87b9e475296 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -339,8 +391,9 @@ aama:ID5bdcf37e-68ad-4c14-8cf9-4c536c4c0ec5 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Fem ;
 	.
-aama:ID61a94072-d050-4e0f-9319-2fa650263f8d a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID95a43a61-3f83-4a39-b006-25e045f50a4a a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -349,8 +402,9 @@ aama:ID61a94072-d050-4e0f-9319-2fa650263f8d a aamas:Muterm ;
 	egm:number egm:Plural ;
 	egm:gender egm:Common ;
 	.
-aama:IDc735abb5-b646-44cc-9d0a-bb25929508ce a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID93545bae-d214-4f64-9bc1-68be937dd4b3 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -359,8 +413,9 @@ aama:IDc735abb5-b646-44cc-9d0a-bb25929508ce a aamas:Muterm ;
 	egm:number egm:Plural ;
 	egm:gender egm:Common ;
 	.
-aama:ID69152d97-9a9c-4f87-9057-59b80604321e a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:IDcb836e5f-af73-4a61-8344-b34771929e8f a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PInd ;
 	aamas:morpheme aama:Egyptian-middle-PROIND ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Independent ;
@@ -370,10 +425,15 @@ aama:ID69152d97-9a9c-4f87-9057-59b80604321e a aamas:Muterm ;
 	egm:gender egm:Common ;
 	.
 
-#MUTERMCLUSTER: egyptian_M-PDep
+#MUTERMCLUSTER:  egyptian_M-PDep
 
-aama:IDd25b374c-8412-4d32-8161-e98fa55a7aed a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+egm:egyptian_M-PDep a aamas:MuTermcluster ;
+	rdfs:label "egyptian_M-PDep" ;
+	rdfs:comment "Alan Gardiner%%Egyptian Grammar%%3rd Edition (Oxford:Griffith Institute%%2001)%%§43. James E. Hoch%%Middle Egyptian Grammar (Mississauga:Benben Publications%%1997)%%§39." 
+	.
+
+aama:IDb479f920-f0d8-4435-a138-0e6452ef93cb a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -382,8 +442,9 @@ aama:IDd25b374c-8412-4d32-8161-e98fa55a7aed a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Common ;
 	.
-aama:ID174fb9d4-67f7-48a9-93d7-607abfc1bf33 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:IDbd6027ea-2dec-47ec-a7b4-e59e192a04d9 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -392,8 +453,9 @@ aama:ID174fb9d4-67f7-48a9-93d7-607abfc1bf33 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Masc ;
 	.
-aama:IDc7fe52aa-426e-4bc5-a163-ad1813b88013 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID46d5adef-ecf1-4fdb-a280-9785364359ae a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -402,8 +464,9 @@ aama:IDc7fe52aa-426e-4bc5-a163-ad1813b88013 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Fem ;
 	.
-aama:IDbed10264-9966-419f-b3fb-f9db2292c265 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID7ead5c2e-6de9-4a30-8f29-e2ea53509f34 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -412,8 +475,9 @@ aama:IDbed10264-9966-419f-b3fb-f9db2292c265 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Masc ;
 	.
-aama:IDf4be2ed7-b01f-4b43-8ea3-136bf50cbd92 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID97fdbae9-7dc7-43a4-b5a0-556673bf3cfe a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -422,8 +486,9 @@ aama:IDf4be2ed7-b01f-4b43-8ea3-136bf50cbd92 a aamas:Muterm ;
 	egm:number egm:Singular ;
 	egm:gender egm:Fem ;
 	.
-aama:ID290f3cda-50a5-49b7-89d8-7953ff03d345 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID73370d63-85fa-49cc-bcf8-7db7eef6d895 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -432,8 +497,9 @@ aama:ID290f3cda-50a5-49b7-89d8-7953ff03d345 a aamas:Muterm ;
 	egm:number egm:Plural ;
 	egm:gender egm:Common ;
 	.
-aama:ID52c8a081-42ae-417f-a30e-d0fbfe9cce17 a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID7b99f8cf-4092-4cd5-9dcc-903a05a196b3 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;
@@ -442,8 +508,9 @@ aama:ID52c8a081-42ae-417f-a30e-d0fbfe9cce17 a aamas:Muterm ;
 	egm:number egm:Plural ;
 	egm:gender egm:Common ;
 	.
-aama:ID0fc57542-56aa-44de-8321-d5b193968d6d a aamas:Muterm ;
-	aamas:lang aama:Egyptian-middle ;
+
+aama:ID761f744b-a6f6-40dc-a3e8-600481c60af2 a aamas:Muterm ;
+	aamas:lang aama:Egyptian-middle ;	aamas:memberOf egm:egyptian_M-PDep ;
 	aamas:morpheme aama:Egyptian-middle-PRODEPENDENT ;
 	egm:pos egm:Pronoun ;
 	egm:proClass egm:Dependent ;

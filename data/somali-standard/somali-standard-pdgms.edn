@@ -1,6 +1,9 @@
 {
 :lang :somali-standard
 :sgpref "sst"
+:datasource "Saeed1999 Orwin1995"
+:geodemoURL "http://www.ethnologue.com/language/som"
+:geodemoTXT "Standard Somali is based principally on the Northern variety of a group of closely related 'Somaloid' language varieties spoken in the Horn of African and Kenya. Standard Somali is spoken throughout the region historically known as Somalia, and in adjacent countries (Djibouti, Ethiopia, Kenya). The paradigms are a combination of Saeed1999 and Orwin1995."
 :schemata {
 :case [:Nominative, :Object]
 	  :clauseCase [:Absolutive, :Subject]
@@ -8,12 +11,13 @@
 	  :conjClass [:Prefix, :Suffix]
 	  :conjSubClass [:C1, :C2A, :C2B, :C3A, :C3B, :Common]
 	  :conjSubType [:SubClass1, :SubClass2]
-          :gender [:Common, :Fem, :Invariable, :Masc]
+           :formClass [:Compound, :Simple]
+           :gender [:Common, :Fem, :Masc]
 	  :genderPoss [:Fem, :Masc]
 	  :morphClass [:COMPDASSOM, :FULLREDVAR, :FULLREDVARCLAUSECASETYPE, :INFINITIVEPREF, :INFINITIVESUFF, :PREFMAINNEGPASTINVAR, :PREFSUBVARTENSE, :SUFFC1MAINNEGPASTINVAR]
 	  :nonFiniteForm [:Infinitive]
 	  :numPersGender [:Invariable]
-	  :number [:Common, :Invariable, :Plural, :Singular]
+	  :number [:Plural, :Singular]
 	  :pdgmSubType [:PastInvar]
 	  :pdgmType [:Comparative, :Compound, :Structure]
 	  :person [:Person1, :Person1ex, :Person1in, :Person2, :Person3]
@@ -23,9 +27,9 @@
 	  :tam [:Conditional, :Future, :Imperative, :Optative, :Past, :PastGeneral, :PastHabitual, :PastIndependent, :PastProgressive, :Potential, :PresentGeneral, :PresentProgressive, :PresentProgressive2]
 	  }
 :pclass {
-           :pngClass [:person :number :gender ]
-           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
-           :inflClass [:conjClass  ]
+           :pngClass [:person :number :gender :genderPoss :numPersGender]
+           :synsemClass [:case :cluaseCase :clauseType  :derivedStems :nonFiniteForm :polarity :pdgmSubType :pos :proClass :tam :formClass]
+           :inflClass [:conjClass :conjSubClass :conjSubType  ]
            :otherClass [ ]
           }
 :morphemes {
@@ -141,10 +145,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C1,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "súgi doontàan"],
 	    [:Common, :Plural, :Person1, "súgi doonnó"],
@@ -176,10 +180,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiqiin,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
 		:terms [[:number, :person, :gender, :token] ;; schema
 		[:Singular, :Person1, :Common, "oqóon lahaa"],
 		[:Singular, :Person2, :Common, "oqóon lahayd"],
@@ -196,13 +200,13 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "há kariyo"],
-	    [:Common, :Plural, :Person1in, "anny karínno"],
+	    [:Common, :Plural, :Person1in, "annu karínno"],
 	    [:Common, :Singular, :Person1, "an karíyo"],
 	    [:Fem, :Singular, :Person3, "há kariso"],
 	    [:Common, :Plural, :Person2, "ad karíseen"],
@@ -210,33 +214,15 @@
 	    [:Common, :Plural, :Person1ex, "aynu karínno"],
 	    [:Common, :Singular, :Person2, "ad karísid"]]
     }
-    {:label "somali-VSuffC3BMainNegPresProg-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"]]
-    }
     {:label "somali-VPrefMainNegFuture-yiqiin"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiqiin,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
 		:terms [[:number, :person, :gender, :token] ;; schema
 		[:Singular, :Person1, :Common, "oqóon doonó"],
 		[:Singular, :Person2, :Common, "oqóon doontó ~doontíd"],
@@ -284,34 +270,15 @@
 	    [:Masc, :Singular, :Person3, "karínayó"],
 	    [:Common, :Plural, :Person3, "karínayàan"]]
     }
-    {:label "somali-VSuffC2BFullAbsAffPresProg-yar"
-    :note ""
-    :common {:clauseCase :Absolutive,
-	    :clauseType :Full,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"]]
-    }
     {:label "somali-VPrefMainAffConditional-yimi"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "imán lahaayeen"],
 	    [:Common, :Plural, :Person2, "imán lahaydeen"],
@@ -320,24 +287,6 @@
 	    [:Common, :Plural, :Person1, "imán lahayn"],
 	    [:Masc, :Singular, :Person3, "imán lahaa"],
 	    [:Common, :Singular, :Person2, "imán lahayd"]]
-    }
-    {:label "somali-VSuffC2BMainNegConditional-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"]]
     }
     {:label "somali-VSuffC2AMainAffPresGen-kari"
     :note ""
@@ -393,24 +342,6 @@
 		[:Plural, :Person3, :Common, "yiqiiné"]
 	]
     }
-    {:label "somali-VSuffC3BMainNegPresProg2-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :PresentProgressive2}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"]]
-    }
     {:label "somali-VSuffC2BMainNegImprtv-yar"
     :note ""
     :common {:clauseType :Main,
@@ -418,24 +349,23 @@
 	    :conjSubClass :C2B,
 	    :gender :Common,
 	    :lexeme :yar,
-	    :pdgmType :Compound,
-	    :person :Person2,
+	    	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Singular, "yaréyn "],
-	    [:Plural, "yaraynína "]]
+	    [:Singular, "yaréyn"],
+	    [:Plural, "yaraynína"]]
     }
     {:label "somali-VPrefMainAffFuture-yahay"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yahay,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "aháan toontaan"],
 	    [:Common, :Plural, :Person3, "aháan doonaan"],
@@ -462,24 +392,6 @@
 	    [:Common, :Plural, :Person1, "aqoonayna"],
 	    [:Common, :Singular, :Person1, "aqoonaya"],
 	    [:Common, :Plural, :Person2, "aqoonaya"]]
-    }
-    {:label "somali-VSuffC3BMainAffPastProg-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPastGen-yidi"
     :note ""
@@ -523,10 +435,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yidi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "oɗán jirteen"],
 	    [:Masc, :Singular, :Person3, "oɗán jirey"],
@@ -553,33 +465,15 @@
 	    [:Common, :Plural, :Person1, "oɗáneynaa"],
 	    [:Common, :Plural, :Person3, "oɗáneyaan"]]
     }
-    {:label "somali-VSuffC2BMainAffConditional-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"]]
-    }
     {:label "somali-VPrefMainAffConditional-yahay"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yahay,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "aháan lahayd"],
 	    [:Fem, :Singular, :Person3, "aháan lahayd"],
@@ -673,10 +567,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiil,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "ad táalleen"],
 	    [:Common, :Plural, :Person3, "há yáalleen"],
@@ -684,7 +578,7 @@
 	    [:Common, :Singular, :Person1, "an áallo"],
 	    [:Common, :Plural, :Person1ex, "aynu náallo"],
 	    [:Fem, :Singular, :Person3, "há táallo"],
-	    [:Common, :Plural, :Person1in, "anny náallo"],
+	    [:Common, :Plural, :Person1in, "annu náallo"],
 	    [:Masc, :Singular, :Person3, "há yáallo"]]
     }
     {:label "somali-VSuffC1RedSubjAffPresGen-keen"
@@ -791,24 +685,6 @@
 	    [:Common, :Plural, :Person3, "yimí(d)"],
 	    [:Common, :Singular, :Person2, "yimí(d)"]]
     }
-    {:label "somali-VSuffC3BMainAffPotential-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Potential}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"]]
-    }
     {:label "somali-VPrefMainAffPastProg-yidi"
     :note ""
     :common {:clauseType :Main,
@@ -850,10 +726,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiqiin,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
 		:terms [[:number, :person, :gender, :token] ;; schema
 		[:Singular, :Person1, :Common, "oqóon jirey"],
 		[:Singular, :Person2, :Common, "oqóon jirtey"],
@@ -925,10 +801,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "karín lahaa"],
 	    [:Common, :Singular, :Person1, "karín lahaa"],
@@ -943,10 +819,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yidi,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1in, "yàanan(u) oɗán"],
 	    [:Common, :Singular, :Person1, "yàanan oɗán"],
@@ -994,25 +870,6 @@
 	    [:Common, :Plural, :Person2, "sugté"],
 	    [:Common, :Singular, :Person2, "súgtay"]]
     }
-    {:label "somali-VSuffC2BFullAbsAffPastProg-yar"
-    :note ""
-    :common {:clauseCase :Absolutive,
-	    :clauseType :Full,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"]]
-    }
     {:label "somali-VSuffC3AMainNegPresProg2-joogso"
     :note ""
     :common {:clauseType :Main,
@@ -1036,10 +893,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yahay,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "aháan doonnó"],
 	    [:Fem, :Singular, :Person3, "aháan doontó"],
@@ -1048,24 +905,6 @@
 	    [:Masc, :Singular, :Person3, "aháan doonó"],
 	    [:Common, :Plural, :Person2, "aháan doontàan"],
 	    [:Common, :Singular, :Person2, "aháan doontó~doontíd"]]
-    }
-    {:label "somali-VSuffC3BMainNegFuture-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPastGen-yiil"
     :note ""
@@ -1126,10 +965,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiqiin,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
 		:terms [[:number, :person, :gender, :token] ;; schema
 		[:Singular, :Person1, :Common, "oqóon doonaa"],
 		[:Singular, :Person2, :Common, "oqóon dontaa"],
@@ -1177,33 +1016,15 @@
 	    [:Masc, :Singular, :Person3, "sugáy"],
 	    [:Common, :Plural, :Person1, "sugnáy"]]
     }
-    {:label "somali-VSuffC3BMainAffPresProg-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"]]
-    }
     {:label "somali-VPrefMainAffFuture-yimi"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "imán doonaan"],
 	    [:Common, :Plural, :Person1, "imán doonnaa"],
@@ -1236,10 +1057,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C3A,
 	    :lexeme :joogso,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "joogsán doonàan"],
 	    [:Common, :Singular, :Person2, "joogsán doontó~doontíd"],
@@ -1303,24 +1124,6 @@
 	    [:Common, :Singular, :Person1, "joogsáday"],
 	    [:Common, :Plural, :Person2, "joogsaté"]]
     }
-    {:label "somali-VSuffC2BMainNegPresProg2-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :PresentProgressive2}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"]]
-    }
     {:label "somali-VSuffC3BMainAffPastGen-qaado"
     :note ""
     :common {:clauseType :Main,
@@ -1345,10 +1148,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C1,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "yàanad súgin"],
 	    [:Common, :Plural, :Person3, "yàaney súgin"],
@@ -1368,7 +1171,7 @@
 	    :pos :Verb,
 	    :tam :Potential}
 		:terms [[:number, :person, :gender, :token] ;; schema
-		[:Singular, :Person1, :Common, "aqaan"],
+		[:Singular, :Person1, :Common, "aqaanee"],
 		[:Singular, :Person2, :Common, "taqaanee"],
 		[:Singular, :Person3, :Masc, "yaqaanee"],
 		[:Singular, :Person3, :Fem, "taqaanee"],
@@ -1454,10 +1257,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yidi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oɗán doonaa"],
 	    [:Fem, :Singular, :Person3, "oɗán doontaa"],
@@ -1472,10 +1275,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yahay,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "yàanad ahaannín"],
 	    [:Masc, :Singular, :Person3, "yàanu ahaannín"],
@@ -1506,10 +1309,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "yàanan imán"],
 	    [:Common, :Plural, :Person1ex, "yàynu imán"],
@@ -1527,7 +1330,8 @@
 	    :lexeme :yiil,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "óolli"],
 	    [:Common, :Plural, :Person1, "óolli"],
@@ -1542,10 +1346,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiil,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "óolli jirtey"],
 	    [:Masc, :Singular, :Person3, "óolli jirey"],
@@ -1561,10 +1365,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1in, "yàanan(u) karín"],
 	    [:Common, :Singular, :Person1, "yàanan karín"],
@@ -1581,18 +1385,17 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2B,
 	    :lexeme :yar,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "yareysaan "],
-	    [:Masc, :Singular, :Person3, "yareeyaa "],
-	    [:Common, :Singular, :Person1, "yareeyaa "],
-	    [:Common, :Plural, :Person3, "yareeyaan "],
-	    [:Common, :Singular, :Person2, "yareysaa "],
-	    [:Fem, :Singular, :Person3, "yareysaa "],
-	    [:Common, :Plural, :Person1, "yareynaa "]]
+	    [:Common, :Plural, :Person2, "yareysaan"],
+	    [:Masc, :Singular, :Person3, "yareeyaa"],
+	    [:Common, :Singular, :Person1, "yareeyaa"],
+	    [:Common, :Plural, :Person3, "yareeyaan"],
+	    [:Common, :Singular, :Person2, "yareysaa"],
+	    [:Fem, :Singular, :Person3, "yareysaa"],
+	    [:Common, :Plural, :Person1, "yareynaa"]]
     }
     {:label "somali-VPrefMainNegImprtv-yiil"
     :note ""
@@ -1624,61 +1427,6 @@
 	    [:Fem, :Singular, :Person3, "ahayd"],
 	    [:Common, :Singular, :Person1, "ahaa"]]
     }
-    {:label "somali-VSuffC2BMainAffPotential-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Potential}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Masc, :Singular, :Person3, "_"]]
-    }
-    {:label "somali-VSuffC2BMainNegPresProg-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"]]
-    }
-    {:label "somali-VSuffC3BFullAbsAffPresProg-qaado"
-    :note ""
-    :common {:clauseCase :Absolutive,
-	    :clauseType :Full,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"]]
-    }
     {:label "somali-VPrefMainAffPastHabit-yahay"
     :note ""
     :common {:clauseType :Main,
@@ -1686,7 +1434,8 @@
 	    :lexeme :yahay,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "aháan"],
 	    [:Common, :Singular, :Person2, "aháan"],
@@ -1695,42 +1444,6 @@
 	    [:Common, :Singular, :Person1, "aháan"],
 	    [:Common, :Plural, :Person2, "aháan"],
 	    [:Fem, :Singular, :Person3, "aháan"]]
-    }
-    {:label "somali-VSuffC3BMainNegOptative-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"]]
-    }
-    {:label "somali-VSuffC2BMainAffPastProg-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefMainNegPresGen-yidi"
     :note ""
@@ -1755,10 +1468,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C1,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "súgi lahaa"],
 	    [:Common, :Singular, :Person1, "súgi lahaa"],
@@ -1932,14 +1645,13 @@
 	    :conjSubClass :C1,
 	    :gender :Common,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :person :Person2,
+	    	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Singular, "súgin "],
-	    [:Plural, "sugína "]]
+	    [:Singular, "súgin"],
+	    [:Plural, "sugína"]]
     }
     {:label "somali-VSuffC2AMainNegPresProg2-kari"
     :note ""
@@ -2068,10 +1780,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yidi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "oɗán lahayd"],
 	    [:Fem, :Singular, :Person3, "oɗán lahayd"],
@@ -2128,24 +1840,6 @@
     :terms [[:number, :token]  ;; schema
 	    [:Plural, "karya"],
 	    [:Singular, "kári"]]
-    }
-    {:label "somali-VSuffC3BMainNegConditional-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC1RedAbsAffPresProg-keen"
     :note ""
@@ -2208,10 +1902,11 @@
 	    :lexeme :yidi,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "an"],
-	    [:Common, :Plural, :Person1in, "anny"],
+	    [:Common, :Plural, :Person1in, "annu"],
 	    [:Common, :Singular, :Person2, "ad"],
 	    [:Common, :Plural, :Person2, "ad"],
 	    [:Fem, :Singular, :Person3, "há"],
@@ -2227,7 +1922,8 @@
 	    :lexeme :yahay,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1ex, "aynu"],
 	    [:Fem, :Singular, :Person3, "há"],
@@ -2243,10 +1939,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiil,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "yàaney óolli"],
 	    [:Common, :Plural, :Person3, "yàaney óolli"],
@@ -2256,24 +1952,6 @@
 	    [:Common, :Plural, :Person1in, "yàanan(u) óolli"],
 	    [:Common, :Plural, :Person1ex, "yàynu óolli"],
 	    [:Common, :Singular, :Person2, "yàanad óolli"]]
-    }
-    {:label "somali-VSuffC3BMainAffConditional-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"]]
     }
     {:label "somali-VSuffC1MainAffPresGen-sug"
     :note ""
@@ -2300,14 +1978,13 @@
 	    :conjSubClass :C2B,
 	    :gender :Common,
 	    :lexeme :yar,
-	    :pdgmType :Compound,
-	    :person :Person2,
+	    	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative}
     :terms [[:number, :token]  ;; schema
-	    [:Plural, "yaréeya "],
-	    [:Singular, "yarèe "]]
+	    [:Plural, "yaréeya"],
+	    [:Singular, "yarèe"]]
     }
     {:label "somali-VPrefMainAffImprtv-yimi"
     :note ""
@@ -2321,23 +1998,6 @@
     :terms [[:number, :gender, :token]  ;; schema
 	    [:Plural, :Common, "kaaláya"],
 	    [:Singular, :Common, "káalay"]]
-    }
-    {:label "somali-VPrefMainNegConditional-yiil"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
-	    :lexeme :yiil,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "CHECK"],
-	    [:Masc, :Singular, :Person3, "CHECK"],
-	    [:Fem, :Singular, :Person3, "CHECK"],
-	    [:Common, :Singular, :Person2, "CHECK"],
-	    [:Common, :Plural, :Person1, "CHECK"],
-	    [:Common, :Plural, :Person2, "CHECK"],
-	    [:Common, :Singular, :Person1, "CHECK"]]
     }
     {:label "somali-VSuffC1MainNegPresProg2-sug"
     :note ""
@@ -2363,8 +2023,7 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C1,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
@@ -2374,7 +2033,7 @@
 	    [:Common, :Plural, :Person2, "súgi maysàan"],
 	    [:Common, :Plural, :Person1, "súgi maynó"],
 	    [:Fem, :Singular, :Person3, "súgi maaysó"],
-	    [:Common, :Singular, :Person2, "súgi maaysó~maysíd "]]
+	    [:Common, :Singular, :Person2, "súgi maaysó~maysíd"]]
     }
     {:label "somali-VSuffC2AMainAffPastHabit-kari"
     :note ""
@@ -2382,10 +2041,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "karín jirtey"],
 	    [:Common, :Singular, :Person1, "karín jirey"],
@@ -2401,10 +2060,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C1,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "súgi jirteen"],
 	    [:Common, :Plural, :Person1, "súgi jirney"],
@@ -2413,24 +2072,6 @@
 	    [:Fem, :Singular, :Person3, "súgi jirtey"],
 	    [:Common, :Singular, :Person1, "súgi jirey"],
 	    [:Common, :Singular, :Person2, "súgi jirtey"]]
-    }
-    {:label "somali-VSuffC2BMainAffPastIndept-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastIndependent}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VPrefMainAffPresProg-yiqiin"
     :note ""
@@ -2506,10 +2147,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C3A,
 	    :lexeme :joogso,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "joogsán jirtey"],
 	    [:Common, :Singular, :Person2, "joogsán jirtey"],
@@ -2572,30 +2213,11 @@
 	    [:Common, :Singular, :Person1, "imaaddaa"],
 	    [:Fem, :Singular, :Person3, "timaaddaa"]]
     }
-    {:label "somali-VSuffC3BMainAffFuture-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"]]
-    }
     {:label "somali-VPrefSubVarTense-yahay"
     :note ""
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :yahay,
-	    :number :Common,
              :morphClass :SubVarTense
 	    :pos :Verb}
     :terms [[:clauseCase, :clauseType, :polarity, :tam, :token]  ;; schema
@@ -2622,18 +2244,17 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2B,
 	    :lexeme :yar,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PastGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "yareeyey "],
-	    [:Common, :Plural, :Person3, "yareeyeen "],
-	    [:Masc, :Singular, :Person3, "yareeyey "],
-	    [:Fem, :Singular, :Person3, "yareysey "],
-	    [:Common, :Plural, :Person2, "yareyseen "],
-	    [:Common, :Singular, :Person2, "yareysey "],
-	    [:Common, :Plural, :Person1, "yareyney "]]
+	    [:Common, :Singular, :Person1, "yareeyey"],
+	    [:Common, :Plural, :Person3, "yareeyeen"],
+	    [:Masc, :Singular, :Person3, "yareeyey"],
+	    [:Fem, :Singular, :Person3, "yareysey"],
+	    [:Common, :Plural, :Person2, "yareyseen"],
+	    [:Common, :Singular, :Person2, "yareysey"],
+	    [:Common, :Plural, :Person1, "yareyney"]]
     }
     {:label "somali-VPrefRedAbsAffPresGen-yiqiin"
     :note ""
@@ -2690,23 +2311,6 @@
 	    [:Common, :Singular, :Person1, "joogsánayey"],
 	    [:Common, :Plural, :Person2, "joogsáneyseen"]]
     }
-    {:label "somali-VPrefMainNegConditional-yidi"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
-	    :lexeme :yidi,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "CHECK"],
-	    [:Common, :Plural, :Person3, "CHECK"],
-	    [:Common, :Singular, :Person1, "CHECK"],
-	    [:Common, :Singular, :Person2, "CHECK"],
-	    [:Fem, :Singular, :Person3, "CHECK"],
-	    [:Masc, :Singular, :Person3, "CHECK"],
-	    [:Common, :Plural, :Person2, "CHECK"]]
-    }
     {:label "somali-VSuffC1MainAffPresProg-sug"
     :note ""
     :common {:clauseType :Main,
@@ -2750,8 +2354,7 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C3A,
 	    :lexeme :joogso,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
@@ -2760,7 +2363,7 @@
 	    [:Common, :Plural, :Person1, "joogsán maynó"],
 	    [:Common, :Singular, :Person1, "joogsán maayó"],
 	    [:Common, :Plural, :Person2, "joogsán maysàan"],
-	    [:Common, :Singular, :Person2, "joogsán maaysó~maysíd "],
+	    [:Common, :Singular, :Person2, "joogsán maaysó~maysíd"],
 	    [:Common, :Plural, :Person3, "joogsán maayàan"]]
     }
     {:label "somali-VPrefRedSubjAffPastGen-yimi"
@@ -2786,10 +2389,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiil,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "óolli doontaa"],
 	    [:Common, :Plural, :Person2, "óolli doontaan"],
@@ -2838,36 +2441,17 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yidi,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "oɗán maaysó~maysíd "],
+	    [:Common, :Singular, :Person2, "oɗán maaysó~maysíd"],
 	    [:Common, :Plural, :Person1, "oɗán maynó"],
 	    [:Fem, :Singular, :Person3, "oɗán maaysó"],
 	    [:Common, :Plural, :Person2, "oɗán maysàan"],
 	    [:Common, :Singular, :Person1, "oɗán maayó"],
 	    [:Masc, :Singular, :Person3, "oɗán maayó"],
 	    [:Common, :Plural, :Person3, "oɗán maayàan"]]
-    }
-    {:label "somali-VSuffC2BMainNegOptative-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"]]
     }
     {:label "somali-VPrefRedSubjAffPresGen-yiil"
     :note ""
@@ -2904,24 +2488,6 @@
 	    [:Common, :Singular, :Person2, "timi(d)"],
 	    [:Common, :Singular, :Person1, "imi(d)"]]
     }
-    {:label "somali-VSuffC2BMainAffPastHabit-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastHabitual}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"]]
-    }
     {:label "somali-VPrefRedAbsAffPastProg-yiil"
     :note ""
     :common {:clauseCase :Absolutive,
@@ -2954,37 +2520,18 @@
 	    [:Common, :Singular, :Person1, "iɗaahdaa"],
 	    [:Common, :Singular, :Person2, "tiɗaahdaa"]]
     }
-    {:label "somali-VSuffC2BMainAffOptative-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"]]
-    }
     {:label "somali-VPrefMainNegPresProg-yimi"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "imán maynó"],
 	    [:Common, :Singular, :Person1, "imán maayó"],
-	    [:Common, :Singular, :Person2, "imán maaysó~maysíd "],
+	    [:Common, :Singular, :Person2, "imán maaysó~maysíd"],
 	    [:Common, :Plural, :Person2, "imán maysàan"],
 	    [:Fem, :Singular, :Person3, "imán maaysó"],
 	    [:Masc, :Singular, :Person3, "imán maayó"],
@@ -3071,13 +2618,13 @@
 	    :pos :Verb,
 	    :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "karistéen"],
-	    [:Common, :Plural, :Person2, "karistéen"],
+	    [:Common, :Singular, :Person2, "kariséen"],
+	    [:Common, :Plural, :Person2, "kariséen"],
 	    [:Masc, :Singular, :Person3, "kariyéen"],
 	    [:Common, :Plural, :Person3, "kariyéen"],
 	    [:Common, :Plural, :Person1, "karinnéen"],
 	    [:Common, :Singular, :Person1, "kariyéen"],
-	    [:Fem, :Singular, :Person3, "karistéen"]]
+	    [:Fem, :Singular, :Person3, "kariséen"]]
     }
     {:label "somali-VSuffC1MainAffPastProg-sug"
     :note ""
@@ -3169,10 +2716,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C3A,
 	    :lexeme :joogso,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Conditional}
+	    :formClass :Compound,
+            :tam :Conditional}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "joogsán lahaa"],
 	    [:Common, :Singular, :Person2, "joogsán lahayd"],
@@ -3181,24 +2728,6 @@
 	    [:Common, :Plural, :Person2, "joogsán lahaydeen"],
 	    [:Fem, :Singular, :Person3, "joogsán lahayd"],
 	    [:Common, :Plural, :Person3, "joogsán lahaayeen"]]
-    }
-    {:label "somali-VSuffC3BMainAffPastHabit-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastHabitual}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffInfinitive"
     :note "somali-VSuffInfinitive"
@@ -3239,26 +2768,27 @@
 	    :lexeme :sug,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token, :token-preverb]  ;; schema
-	    [:Common, :Plural, :Person1ex, "súgno", "aynu"],
-	    [:Common, :Plural, :Person3, "sugeen", "há"],
-	    [:Common, :Singular, :Person1, "súgo", "an"],
-	    [:Common, :Singular, :Person2, "súgtid", "ad"],
-	    [:Masc, :Singular, :Person3, "sugo", "há"],
-	    [:Common, :Plural, :Person2, "súgteen", "ad"],
-	    [:Common, :Plural, :Person1in, "súgno", "anny"],
-	    [:Fem, :Singular, :Person3, "sugto", "há"]]
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1ex, "aynu súgno"],
+	    [:Common, :Plural, :Person3, "há sugeen"],
+	    [:Common, :Singular, :Person1, "an súgo"],
+	    [:Common, :Singular, :Person2, "ad súgtid"],
+	    [:Masc, :Singular, :Person3, "há sugo"],
+	    [:Common, :Plural, :Person2, "ad súgteen"],
+	    [:Common, :Plural, :Person1in, "annu súgno"],
+	    [:Fem, :Singular, :Person3, "há sugto"]]
     }
     {:label "somali-VPrefMainNegFuture-yiil"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiil,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "óolli doonó"],
 	    [:Common, :Singular, :Person1, "óolli doonó"],
@@ -3273,10 +2803,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yidi,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "oɗán doonó"],
 	    [:Common, :Plural, :Person3, "oɗán doonàan"],
@@ -3285,24 +2815,6 @@
 	    [:Masc, :Singular, :Person3, "oɗán doonó"],
 	    [:Common, :Singular, :Person2, "oɗán doontó~doontíd"],
 	    [:Common, :Plural, :Person1, "oɗán doonnó"]]
-    }
-    {:label "somali-VSuffC2BMainNegFuture-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPresProg-yidi"
     :note ""
@@ -3348,8 +2860,7 @@
 	    :morphClass :PREFMAINNEGPASTINVAR,
 	    :numPersGender :Invariable,
 	    :pdgmSubType :PastInvar,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb}
     :terms [[:lexeme, :tam, :token]  ;; schema
 	    [:yimi, :PastProgressive, "_"],
@@ -3409,24 +2920,25 @@
 	    :morphClass :SUFFC1MAINNEGPASTINVAR,
 	    :numPersGender :Invariable,
 	    :pdgmSubType :PastInvar,
+             :pdgmType :Structure,
 	    :polarity :Negative,
 	    :pos :Verb}
-    :terms [[:conjSubClass, :lexeme, :pdgmType, :tam, :token]  ;; schema
-	    [:C2B, :yar, :Structure, :PastProgressive, "_"],
-	    [:C3A, :joogs, :Structure, :PastHabitual, "joogsán jirín"],
-	    [:C1, :sug, :Structure, :PastProgressive, "_"],
-	    [:C2A, :kar, :Structure, :PastGeneral, "_"],
-	    [:C3A, :joogs, :Structure, :PastGeneral, "_"],
-	    [:C2B, :yar, :Structure, :PastHabitual, "CHECK jirín"],
-	    [:C1, :sug, :Structure, :PastHabitual, "súgi jirín"],
-	    [:C3B, :qaad, :Structure, :PastHabitual, "CHECK jirín"],
-	    [:C2A, :kar, :Structure, :PastProgressive, "_"],
-	    [:C3B, :qaad, :Structure, :PastProgressive, "_"],
-	    [:C1, :sug, :Structure, :PastGeneral, "_"],
-	    [:C3A, :joogs, :Structure, :PastProgressive, "_"],
-	    [:C2A, :kar, :Structure, :PastHabitual, "karín jirín"],
-	    [:C3B, :qaad, :Structure, :PastGeneral, "_"],
-	    [:C2B, :yar, :Structure, :PastGeneral, "_"]]
+    :terms [[:conjSubClass, :lexeme :tam, :token]  ;; schema
+	    [:C2B, :yar, :PastProgressive, "_"],
+	    [:C3A, :joogs, :PastHabitual, "joogsán jirín"],
+	    [:C1, :sug, :PastProgressive, "_"],
+	    [:C2A, :kar, :PastGeneral, "_"],
+	    [:C3A, :joogs, :PastGeneral, "_"],
+	    [:C2B, :yar, :PastHabitual, "CHECK jirín"],
+	    [:C1, :sug, :PastHabitual, "súgi jirín"],
+	    [:C3B, :qaad, :PastHabitual, "CHECK jirín"],
+	    [:C2A, :kar, :PastProgressive, "_"],
+	    [:C3B, :qaad, :PastProgressive, "_"],
+	    [:C1, :sug, :PastGeneral, "_"],
+	    [:C3A, :joogs, :PastProgressive, "_"],
+	    [:C2A, :kar, :PastHabitual, "karín jirín"],
+	    [:C3B, :qaad, :PastGeneral, "_"],
+	    [:C2B, :yar, :PastGeneral, "_"]]
     }
     {:label "somali-VPrefRedAbsAffPresGen-yiil"
     :note ""
@@ -3458,23 +2970,6 @@
 	    [:yiqiin, "oqóon"],
 	    [:yahay, "aháan"],
 	    [:yimi, "imán"]]
-    }
-    {:label "somali-VPrefMainNegConditional-yimi"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
-	    :lexeme :yimi,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Conditional}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "CHECK"],
-	    [:Common, :Plural, :Person1, "CHECK"],
-	    [:Fem, :Singular, :Person3, "CHECK"],
-	    [:Common, :Plural, :Person2, "CHECK"],
-	    [:Common, :Plural, :Person3, "CHECK"],
-	    [:Masc, :Singular, :Person3, "CHECK"],
-	    [:Common, :Singular, :Person1, "CHECK"]]
     }
     {:label "somali-VPrefRedAbsAffPastProg-yidi"
     :note ""
@@ -3558,16 +3053,17 @@
 	    :lexeme :joogso,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token, :token-preverb]  ;; schema
-	    [:Common, :Plural, :Person1ex, "jogsánno", "aynu"],
-	    [:Common, :Plural, :Person1in, "jogsánno", "anny"],
-	    [:Masc, :Singular, :Person3, "jogsayo", "há"],
-	    [:Common, :Plural, :Person3, "jogsadeen", "há"],
-	    [:Common, :Plural, :Person2, "jogsáteen", "ad"],
-	    [:Fem, :Singular, :Person3, "jogsato", "há"],
-	    [:Common, :Singular, :Person2, "jogsátid", "ad"],
-	    [:Common, :Singular, :Person1, "jogsádo", "an"]]
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1ex, "aynu jogsánno"],
+	    [:Common, :Plural, :Person1in, "annu jogsánno"],
+	    [:Masc, :Singular, :Person3, "há jogsayo"],
+	    [:Common, :Plural, :Person3, "há jogsadeen"],
+	    [:Common, :Plural, :Person2, "ad jogsáteen"],
+	    [:Fem, :Singular, :Person3, "há jogsato"],
+	    [:Common, :Singular, :Person2, "ad jogsátid"],
+	    [:Common, :Singular, :Person1, "an jogsádo"]]
     }
     {:label "somali-VSuffC1RedAbsAffPastProg-keen"
     :note ""
@@ -3629,13 +3125,12 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "karín maysàan"],
-	    [:Common, :Singular, :Person2, "karín maaysó~maysíd "],
+	    [:Common, :Singular, :Person2, "karín maaysó~maysíd"],
 	    [:Common, :Singular, :Person1, "karín maayó"],
 	    [:Fem, :Singular, :Person3, "karín maaysó"],
 	    [:Masc, :Singular, :Person3, "karín maayó"],
@@ -3678,23 +3173,6 @@
 	    [:Common, :Plural, :Person2, "joogsatéen"],
 	    [:Fem, :Singular, :Person3, "joogsatéen"]]
     }
-    {:label "somali-VPrefMainAffPastProg-yiil"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
-	    :lexeme :yiil,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "oóllaysay"],
-	    [:Masc, :Singular, :Person3, "oóllayay"],
-	    [:Common, :Plural, :Person3, "oóllayeen"],
-	    [:Common, :Plural, :Person2, "CHECK"],
-	    [:Common, :Plural, :Person1, "CHECK"],
-	    [:Common, :Singular, :Person1, "CHECK"],
-	    [:Common, :Singular, :Person2, "CHECK"]]
-    }
     {:label "somali-VPrefMainAffImprtv-yidi"
     :note ""
     :common {:clauseType :Main,
@@ -3713,10 +3191,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yiqiin,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
 		:terms [[:number, :person, :gender, :token] ;; schema
 		[:Singular, :Person1, :Common,  "yàanan oqóon"],
 		[:Singular, :Person2, :Common,  "yàanad oqóon"],
@@ -3733,17 +3211,17 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "há yimáaddo"],
 	    [:Common, :Plural, :Person1ex, "aynu nimáadno"],
 	    [:Common, :Singular, :Person2, "ad timáaddo"],
 	    [:Common, :Plural, :Person2, "ad timáaddeen"],
 	    [:Common, :Singular, :Person1, "an imáaddo"],
-	    [:Common, :Plural, :Person1in, "anny nimáadno"],
+	    [:Common, :Plural, :Person1in, "annu nimáadno"],
 	    [:Common, :Plural, :Person3, "há yimáaddeen"],
 	    [:Fem, :Singular, :Person3, "há timáaddo"]]
     }
@@ -3802,34 +3280,16 @@
 	    [:Common, :Singular, :Person1, "oɗanaya"],
 	    [:Common, :Plural, :Person2, "oɗanaya"]]
     }
-    {:label "somali-VSuffC3BMainAffOptative-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"]]
-    }
     {:label "somali-VSuffC1MainAffFuture-sug"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Suffix,
 	    :conjSubClass :C1,
 	    :lexeme :sug,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "súgi doonnaa"],
 	    [:Masc, :Singular, :Person3, "súgi donaa"],
@@ -3839,53 +3299,16 @@
 	    [:Common, :Plural, :Person2, "súgi toontaan"],
 	    [:Common, :Singular, :Person1, "súgi doonaa"]]
     }
-    {:label "somali-VSuffC3BFullAbsAffPastProg-qaado"
-    :note ""
-    :common {:clauseCase :Absolutive,
-	    :clauseType :Full,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"]]
-    }
-    {:label "somali-VSuffC2BMainAffFuture-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"]]
-    }
     {:label "somali-VSuffC2AMainAffFuture-kari"
     :note ""
     :common {:clauseType :Main,
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "karín doonaa"],
 	    [:Masc, :Singular, :Person3, "karín donaa"],
@@ -3900,10 +3323,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PastHabitual}
+	    :formClass :Compound,
+            :tam :PastHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "imán jirney"],
 	    [:Common, :Singular, :Person2, "imán jirtey"],
@@ -3935,16 +3358,17 @@
 	    :lexeme :yiqiin,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token, :token-preverb]  ;; schema
-	    [:Common, :Singular, :Person1, "aqáanno", "an"],
-	    [:Common, :Plural, :Person2, "taqáanneen", "ad"],
-	    [:Fem, :Singular, :Person3, "taqáanno", "há"],
-	    [:Masc, :Singular, :Person3, "yaqáanno", "há"],
-	    [:Common, :Plural, :Person1ex, "naqáanno", "aynu"],
-	    [:Common, :Plural, :Person1in, "naqáanno", "anny"],
-	    [:Common, :Plural, :Person3, "yaqáanneen", "há"],
-	    [:Common, :Singular, :Person2, "taqáanno", "ad"]]
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "an aqáanno"],
+	    [:Common, :Plural, :Person2, "ad taqáanneen"],
+	    [:Fem, :Singular, :Person3, "há taqáanno"],
+	    [:Masc, :Singular, :Person3, "há yaqáanno"],
+	    [:Common, :Plural, :Person1ex, "aynu naqáanno"],
+	    [:Common, :Plural, :Person1in, "annu naqáanno"],
+	    [:Common, :Plural, :Person3, "há yaqáanneen"],
+	    [:Common, :Singular, :Person2, "ad taqáanno"]]
     }
     {:label "somali-VSuffC1MainNegConditional-sug"
     :note ""
@@ -3998,24 +3422,6 @@
             [:Plural, :Person2, :Common, "taqaanniin"],
             [:Plural, :Person3, :Common, "yaqaanniin"]]
 
-    }
-    {:label "somali-VSuffC3BMainAffPastIndep-qaado"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C3B,
-	    :lexeme :qaado,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PastIndependent}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"]]
     }
     {:label "somali-VSuffC3BMainNegPresGen-qaado"
     :note ""
@@ -4152,10 +3558,10 @@
     :common {:clauseType :Main,
 	    :conjClass :Prefix,
 	    :lexeme :yimi,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "imán doonàan"],
 	    [:Fem, :Singular, :Person3, "imán doontó"],
@@ -4171,10 +3577,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C3A,
 	    :lexeme :joogso,
-	    :pdgmType :Compound,
-	    :polarity :Affirmative,
+	    	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "joogsán doonaan"],
 	    [:Common, :Plural, :Person1, "joogsán doonnaa"],
@@ -4183,24 +3589,6 @@
 	    [:Common, :Singular, :Person2, "joogsán dontaa"],
 	    [:Masc, :Singular, :Person3, "joogsán donaa"],
 	    [:Fem, :Singular, :Person3, "joogsán doontaa"]]
-    }
-    {:label "somali-VPrefMainNegConditional-yiqiin"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Prefix,
-	    :lexeme :yiqiin,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Conditional}
-		:terms [[:number, :person, :gender, :token] ;; schema
-		[:Singular, :Person1, :Common, "CHECK"],
-		[:Singular, :Person2, :Common, "CHECK"],
-		[:Singular, :Person3, :Masc, "CHECK"],
-		[:Singular, :Person3, :Fem, "CHECK"],
-		[:Plural, :Person1, :Common, "CHECK"],
-		[:Plural, :Person2, :Common, "CHECK"],
-		[:Plural, :Person3, :Common, "CHECK"]
-	]
     }
     {:label "somali-VPrefRedSubjAffPastProg-yiil"
     :note ""
@@ -4234,24 +3622,6 @@
 	    [:Common, :Plural, :Person2, "joogsateen"],
 	    [:Common, :Plural, :Person1, "joogsannee"],
 	    [:Common, :Singular, :Person2, "joogsatee"]]
-    }
-    {:label "somali-VSuffC2BMainAffPresProg-yar"
-    :note ""
-    :common {:clauseType :Main,
-	    :conjClass :Suffix,
-	    :conjSubClass :C2B,
-	    :lexeme :yar,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PresentProgressive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "_"],
-	    [:Fem, :Singular, :Person3, "_"],
-	    [:Common, :Plural, :Person2, "_"],
-	    [:Masc, :Singular, :Person3, "_"],
-	    [:Common, :Singular, :Person1, "_"],
-	    [:Common, :Singular, :Person2, "_"],
-	    [:Common, :Plural, :Person1, "_"]]
     }
     {:label "somali-VSuffC3ARedAbsAffPastGen-joogso"
     :note ""
@@ -4296,10 +3666,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2A,
 	    :lexeme :kari,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Future}
+	    :formClass :Compound,
+            :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "karín doonàan"],
 	    [:Fem, :Singular, :Person3, "karín doontó"],
@@ -4330,18 +3700,17 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C2B,
 	    :lexeme :yar,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentGeneral}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "yareeyó "],
-	    [:Common, :Plural, :Person1, "yareynó "],
-	    [:Common, :Plural, :Person3, "yareeyàan "],
-	    [:Common, :Singular, :Person2, "yareeysó~yareysíd "],
-	    [:Fem, :Singular, :Person3, "yareeysó "],
-	    [:Common, :Plural, :Person2, "yareysàaan "],
-	    [:Masc, :Singular, :Person3, "yareeyó "]]
+	    [:Common, :Singular, :Person1, "yareeyó"],
+	    [:Common, :Plural, :Person1, "yareynó"],
+	    [:Common, :Plural, :Person3, "yareeyàan"],
+	    [:Common, :Singular, :Person2, "yareeysó~yareysíd"],
+	    [:Fem, :Singular, :Person3, "yareeysó"],
+	    [:Common, :Plural, :Person2, "yareysàaan"],
+	    [:Masc, :Singular, :Person3, "yareeyó"]]
     }
     {:label "somali-VSuffC3AMainNegOptative-joogso"
     :note ""
@@ -4349,10 +3718,10 @@
 	    :conjClass :Suffix,
 	    :conjSubClass :C3A,
 	    :lexeme :joogso,
-	    :pdgmType :Compound,
-	    :polarity :Negative,
+	    	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Optative}
+	    :formClass :Compound,
+            :tam :Optative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1in, "yàanan(u) joogsán"],
 	    [:Common, :Plural, :Person1ex, "yàynu joogsán"],
@@ -4380,7 +3749,642 @@
 	    [:Fem, :Singular, :Person3, "karisey"],
 	    [:Common, :Plural, :Person2, "kariseen"],
 	    [:Common, :Singular, :Person2, "karisey"]]
-    }}
+    }
+    {:label "somali-VPrefMainNegConditional-yiqiin"
+     :note "with má; on analogy of NegConditional-yahay [CHECK]"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :yiqiin,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Conditional}
+		:terms [[:number, :person, :gender, :token] ;; schema
+		[:Singular, :Person1, :Common, "aqaaneen"],
+		[:Singular, :Person2, :Common, "taqaaneen"],
+		[:Singular, :Person3, :Masc, "yaqaaneen"],
+		[:Singular, :Person3, :Fem, "taqaaneen"],
+		[:Plural, :Person1, :Common, "neeaqaaneen"],
+		[:Plural, :Person2, :Common, "taqaanneen"],
+		[:Plural, :Person3, :Common, "yaqaanneen"]
+	]
+    }
+    {:label "somali-VPrefMainNegConditional-yidi"
+    :note "with má; on analogy of NegConditional-yahay [CHECK]"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :yidi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "niɗaahneen"],
+	    [:Common, :Singular, :Person1, "iɗaahdeen"],
+	    [:Masc, :Singular, :Person3, "yiɗaahdeen"],
+	    [:Common, :Plural, :Person2, "tiɗaahdeen"],
+	    [:Fem, :Singular, :Person3, "tiɗaahdeen"],
+	    [:Common, :Plural, :Person3, "yiɗaahdeen"],
+	    [:Common, :Singular, :Person2, "tiɗaahdeen"]]
+    }
+    {:label "somali-VPrefMainNegConditional-yiil"
+    :note "with má; on analogy of NegConditional-yahay [CHECK]"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :yiil,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "taalleen"],
+	    [:Common, :Singular, :Person2, "taalleen"],
+	    [:Masc, :Singular, :Person3, "yaalleen"],
+	    [:Common, :Plural, :Person1, "naalleen"],
+	    [:Common, :Plural, :Person3, "yaalleen"],
+	    [:Common, :Singular, :Person1, "aalleen"],
+	    [:Common, :Plural, :Person2, "taalleen"]]
+    }
+    {:label "somali-VPrefMainNegConditional-yimi"
+     :note "with má; on analogy of NegConditional-yahay [CHECK]"
+    :common {:clauseType :Main,
+	    :conjClass :Prefix,
+	    :lexeme :yimi,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "nimaadneen"],
+	    [:Common, :Singular, :Person1, "imaaddeen"],
+	    [:Common, :Plural, :Person2, "timaaddeen"],
+	    [:Fem, :Singular, :Person3, "timaaddeen"],
+	    [:Masc, :Singular, :Person3, "yimaaddeen"],
+	    [:Common, :Singular, :Person2, "timaaddeen"],
+	    [:Common, :Plural, :Person3, "yimaaddeen"]]
+    }
+    {:label "somali-VSuffC2BFullAbsAffPresProg-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseCase :Absolutive,
+	    :clauseType :Full,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "yarèyneynó"],
+	    [:Common, :Singular, :Person2, "yarèyneysó"],
+	    [:Common, :Singular, :Person1, "yarèynayó"],
+	    [:Fem, :Singular, :Person3, "yarèyneysó"],
+	    [:Common, :Plural, :Person2, "yarèyneysàan"],
+	    [:Masc, :Singular, :Person3, "yarèynayó"],
+	    [:Common, :Plural, :Person3, "yarèynayàan"]]
+    }
+    {:label "somali-VSuffC3BAbsAffPresProg-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "qaadáneysó"],
+	    [:Common, :Plural, :Person1, "qaadáneynó"],
+	    [:Masc, :Singular, :Person3, "qaadánayó"],
+	    [:Common, :Plural, :Person2, "qaadáneysàan"],
+	    [:Common, :Singular, :Person2, "qaadáneysó"],
+	    [:Common, :Plural, :Person3, "qaadánayàan"],
+	    [:Common, :Singular, :Person1, "qaadánayó"]]
+    }
+    {:label "somali-VSuffC2BMainAffPresProg-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "yarèynayaa"],
+	    [:Common, :Plural, :Person1, "yarèyneynaa"],
+	    [:Common, :Singular, :Person2, "yarèyneysaa"],
+	    [:Fem, :Singular, :Person3, "yarèyneysaa"],
+	    [:Common, :Plural, :Person2, "yarèyneysaan"],
+	    [:Masc, :Singular, :Person3, "yarèynayaa"],
+	    [:Common, :Plural, :Person3, "yarèynayaan"]]
+    }
+    {:label "somali-VSuffC3BFullMainAffPresProg-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseCase :Absolutive,
+	    :clauseType :Full,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "qaadáneynaa"],
+	    [:Fem, :Singular, :Person3, "qaadáneysaa"],
+	    [:Common, :Plural, :Person2, "qaadáneysaan"],
+	    [:Common, :Singular, :Person1, "qaadánayaa"],
+	    [:Common, :Plural, :Person3, "qaadánayaan"],
+	    [:Common, :Singular, :Person2, "qaadáneysaa"],
+	    [:Masc, :Singular, :Person3, "qaadánayaa"]]
+    }
+    {:label "somali-VSuffC2BMainNegPresProg-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "yarèyn maysàan"],
+	    [:Common, :Singular, :Person2, "yarèyn maaysó~maysíd"],
+	    [:Common, :Singular, :Person1, "yarèyn maayó"],
+	    [:Fem, :Singular, :Person3, "yarèyn maaysó"],
+	    [:Masc, :Singular, :Person3, "yarèyn maayó"],
+	    [:Common, :Plural, :Person3, "yarèyn maayàan"],
+	    [:Common, :Plural, :Person1, "yarèyn maynó"]]
+    }
+    {:label "somali-VSuffC3BMainNegPresProg-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresentProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person2, "qaadán maysàan"],
+	    [:Common, :Singular, :Person2, "qaadán maaysó~maysíd"],
+	    [:Common, :Singular, :Person1, "qaadán maayó"],
+	    [:Fem, :Singular, :Person3, "qaadán maaysó"],
+	    [:Masc, :Singular, :Person3, "qaadán maayó"],
+	    [:Common, :Plural, :Person3, "qaadán maayàan"],
+	    [:Common, :Plural, :Person1, "qaadán maynó"]]
+    }
+    {:label "somali-VSuffC2BMainNegPresProg2-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresentProgressive2}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "yarèynaysó"],
+	    [:Masc, :Singular, :Person3, "yarèynayó"],
+	    [:Common, :Plural, :Person1, "yarèynaynó"],
+	    [:Common, :Singular, :Person2, "yarèynaysó~aysíd"],
+	    [:Common, :Singular, :Person1, "yarèynayó"],
+	    [:Common, :Plural, :Person2, "yarèynaysàan"],
+	    [:Common, :Plural, :Person3, "yarèynayàan"]]
+    }
+    {:label "somali-VSuffC3BMainNegPresProg2-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PresentProgressive2}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "qaadánaysó"],
+	    [:Masc, :Singular, :Person3, "qaadánayó"],
+	    [:Common, :Plural, :Person1, "qaadánaynó"],
+	    [:Common, :Singular, :Person2, "qaadánaysó~aysíd"],
+	    [:Common, :Singular, :Person1, "qaadánayó"],
+	    [:Common, :Plural, :Person2, "qaadánaysàan"],
+	    [:Common, :Plural, :Person3, "qaadánayàan"]]
+    }
+    {:label "somali-VSuffC2BMainNegFuture-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "yarèyn doonàan"],
+	    [:Fem, :Singular, :Person3, "yarèyn doontó"],
+	    [:Common, :Plural, :Person1, "yarèyn doonnó"],
+	    [:Common, :Plural, :Person2, "yarèyn doontàan"],
+	    [:Common, :Singular, :Person1, "yarèyn doonó"],
+	    [:Common, :Singular, :Person2, "yarèyn doontó~doontíd"],
+	    [:Masc, :Singular, :Person3, "yarèyn doonó"]]
+    }
+    {:label "somali-VSuffC3BMainNegFuture-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "qaadán doonàan"],
+	    [:Fem, :Singular, :Person3, "qaadán doontó"],
+	    [:Common, :Plural, :Person1, "qaadán doonnó"],
+	    [:Common, :Plural, :Person2, "qaadán doontàan"],
+	    [:Common, :Singular, :Person1, "qaadán doonó"],
+	    [:Common, :Singular, :Person2, "qaadán doontó~doontíd"],
+	    [:Masc, :Singular, :Person3, "qaadán doonó"]]
+    }
+    {:label "somali-VSuffC2BMainNegOptative-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1in, "yàanan(u) yarèyn"],
+	    [:Common, :Singular, :Person1, "yàanan yarèyn"],
+	    [:Masc, :Singular, :Person3, "yàanu yarèyn"],
+	    [:Common, :Plural, :Person1ex, "yàynu yarèyn"],
+	    [:Common, :Plural, :Person2, "yàanad yarèyn"],
+	    [:Common, :Plural, :Person3, "yàaney yarèyn"],
+	    [:Common, :Singular, :Person2, "yàanad yarèyn"],
+	    [:Fem, :Singular, :Person3, "yàaney yarèyn"]]
+    }
+    {:label "somali-VSuffC3BMainNegOptative-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1in, "yàanan(u) qaadán"],
+	    [:Common, :Plural, :Person1ex, "yàynu qaadán"],
+	    [:Common, :Plural, :Person3, "yàaney qaadán"],
+	    [:Common, :Singular, :Person1, "yàanan qaadán"],
+	    [:Common, :Plural, :Person2, "yàanad qaadán"],
+	    [:Common, :Singular, :Person2, "yàanad qaadán"],
+	    [:Fem, :Singular, :Person3, "yàaney qaadán"],
+	    [:Masc, :Singular, :Person3, "yàanu qaadán"]]
+    }
+    {:label "somali-VSuffC2BMainAffConditional-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "yarèyn lahaa"],
+	    [:Common, :Singular, :Person1, "yarèyn lahaa"],
+	    [:Common, :Plural, :Person1, "yarèyn lahayn"],
+	    [:Common, :Plural, :Person2, "yarèyn lahaydeen"],
+	    [:Fem, :Singular, :Person3, "yarèyn lahayd"],
+	    [:Common, :Singular, :Person2, "yarèyn lahayd"],
+	    [:Common, :Plural, :Person3, "yarèyn lahaayeen"]]
+    }
+    {:label "somali-VSuffC3BMainAffConditional-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "qaadán lahaa"],
+	    [:Common, :Singular, :Person2, "qaadán lahayd"],
+	    [:Masc, :Singular, :Person3, "qaadán lahaa"],
+	    [:Common, :Plural, :Person1, "qaadán lahayn"],
+	    [:Common, :Plural, :Person2, "qaadán lahaydeen"],
+	    [:Fem, :Singular, :Person3, "qaadán lahayd"],
+	    [:Common, :Plural, :Person3, "qaadán lahaayeen"]]
+    }
+    {:label "somali-VSuffC2BMainAffPastHabit-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :PastHabitual}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "yarèyn jirtey"],
+	    [:Common, :Singular, :Person1, "yarèyn jirey"],
+	    [:Masc, :Singular, :Person3, "yarèyn jirey"],
+	    [:Common, :Singular, :Person2, "yarèyn jirtey"],
+	    [:Common, :Plural, :Person3, "yarèyn jireen"],
+	    [:Common, :Plural, :Person1, "yarèyn jirney"],
+	    [:Common, :Plural, :Person2, "yarèyn jirteen"]]
+    }
+    {:label "somali-VSuffC3BMainAffPastHabit-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :PastHabitual}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "qaadán jirtey"],
+	    [:Common, :Singular, :Person1, "qaadán jirey"],
+	    [:Masc, :Singular, :Person3, "qaadán jirey"],
+	    [:Common, :Singular, :Person2, "qaadán jirtey"],
+	    [:Common, :Plural, :Person3, "qaadán jireen"],
+	    [:Common, :Plural, :Person1, "qaadán jirney"],
+	    [:Common, :Plural, :Person2, "qaadán jirteen"]]
+    }
+    {:label "somali-VSuffC2BMainAffFuture-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "yarèyn doonaa"],
+	    [:Masc, :Singular, :Person3, "yarèyn donaa"],
+	    [:Fem, :Singular, :Person3, "yarèyn doontaa"],
+	    [:Common, :Plural, :Person2, "yarèyn toontaan"],
+	    [:Common, :Plural, :Person1, "yarèyn doonnaa"],
+	    [:Common, :Plural, :Person3, "yarèyn doonaan"],
+	    [:Common, :Singular, :Person2, "yarèyn dontaa"]]
+    }
+   {:label "somali-VSuffC3BMainAffFuture-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Future}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "qaadán doonaa"],
+	    [:Masc, :Singular, :Person3, "qaadán donaa"],
+	    [:Fem, :Singular, :Person3, "qaadán doontaa"],
+	    [:Common, :Plural, :Person2, "qaadán toontaan"],
+	    [:Common, :Plural, :Person1, "qaadán doonnaa"],
+	    [:Common, :Plural, :Person3, "qaadán doonaan"],
+	    [:Common, :Singular, :Person2, "qaadán dontaa"]]
+    }
+    {:label "somali-VSuffC2BFullAbsAffPastProg-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseCase :Absolutive,
+	    :clauseType :Full,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "yarèynayéen"],
+	    [:Common, :Plural, :Person1, "yarèyneynéy"],
+	    [:Common, :Plural, :Person2, "yarèyneyséen"],
+	    [:Fem, :Singular, :Person3, "yarèyneyséy"],
+	    [:Common, :Singular, :Person1, "yarèynayéy"],
+	    [:Common, :Singular, :Person2, "yarèyneyséy"],
+	    [:Masc, :Singular, :Person3, "yarèynayéy"]]
+    }
+    {:label "somali-VSuffC3BFullAbsAffPastProg-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseCase :Absolutive,
+	    :clauseType :Full,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "qaadánayéen"],
+	    [:Common, :Plural, :Person2, "qaadáneyséen"],
+	    [:Common, :Singular, :Person1, "qaadánayéy"],
+	    [:Common, :Singular, :Person2, "qaadáneynéy"],
+	    [:Fem, :Singular, :Person3, "qaadáneynéy"],
+	    [:Common, :Plural, :Person1, "qaadáneynéy"],
+	    [:Masc, :Singular, :Person3, "qaadánayéy"]]
+    }
+    {:label "somali-VSuffC2BMainAffPastProg-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1, "yarèyneyney"],
+	    [:Common, :Singular, :Person1, "yarèynayey"],
+	    [:Common, :Singular, :Person2, "yarèyneysey"],
+	    [:Common, :Plural, :Person2, "yarèyneyseen"],
+	    [:Fem, :Singular, :Person3, "yarèyneysey"],
+	    [:Common, :Plural, :Person3, "yarèynayeen"],
+	    [:Masc, :Singular, :Person3, "yarèynayey"]]
+    }
+    {:label "somali-VSuffC3BMainAffPastProg-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastProgressive}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "qaadánayeen"],
+	    [:Common, :Singular, :Person2, "qaadáneyney"],
+	    [:Fem, :Singular, :Person3, "qaadáneyney"],
+	    [:Masc, :Singular, :Person3, "qaadánayey"],
+	    [:Common, :Plural, :Person1, "qaadáneyney"],
+	    [:Common, :Singular, :Person1, "qaadánayey"],
+	    [:Common, :Plural, :Person2, "qaadáneyseen"]]
+    }
+    {:label "somali-VSuffC2BMainAffPotential-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Potential}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "yareysee"],
+	    [:Common, :Singular, :Person2, "yareysee"],
+	    [:Common, :Plural, :Person1, "yareynnee"],
+	    [:Common, :Singular, :Person1, "yareeyee"],
+	    [:Common, :Plural, :Person3, "yareeyeen"],
+	    [:Common, :Plural, :Person2, "yareyseen"],
+	    [:Masc, :Singular, :Person3, "yareeyee"]]
+    }
+    {:label "somali-VSuffC3BMainAffPotential-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :Potential}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "qaateen"],
+	    [:Fem, :Singular, :Person3, "qaadatee"],
+	    [:Common, :Singular, :Person1, "qaatee"],
+	    [:Masc, :Singular, :Person3, "qaatee"],
+	    [:Common, :Plural, :Person2, "qaadateen"],
+	    [:Common, :Plural, :Person1, "qaadannee"],
+	    [:Common, :Singular, :Person2, "qaadatee"]]
+    }
+    {:label "somali-VSuffC2BMainNegConditional-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Fem, :Singular, :Person3, "yareysée"],
+	    [:Common, :Singular, :Person2, "yareysée"],
+	    [:Common, :Plural, :Person1, "yareynnée"],
+	    [:Common, :Singular, :Person1, "yareeyée"],
+	    [:Common, :Plural, :Person3, "yareeyéen"],
+	    [:Common, :Plural, :Person2, "yareyseen"],
+	    [:Masc, :Singular, :Person3, "yaréeyee"]]
+    }
+    {:label "somali-VSuffC3BMainNegConditional-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :Conditional}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person3, "qaatéen"],
+	    [:Fem, :Singular, :Person3, "qaadatée"],
+	    [:Common, :Singular, :Person1, "qaatée"],
+	    [:Masc, :Singular, :Person3, "qaatée"],
+	    [:Common, :Plural, :Person2, "qaadatéen"],
+	    [:Common, :Plural, :Person1, "qaadannée"],
+	    [:Common, :Singular, :Person2, "qaadatée"]]
+    }
+    }
+}
+	    [:C2B, :yaree, "yarèyn"],
+
+	    [:C3B, :qaado, "qaadán"],
+    {:label "somali-VSuffC2BMainAffOptative-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Masc, :Singular, :Person3, "há yareeyo"],
+	    [:Common, :Plural, :Person1in, "annu yaréyno"],
+	    [:Common, :Singular, :Person1, "an yareéyo"],
+	    [:Fem, :Singular, :Person3, "há yareyso"],
+	    [:Common, :Plural, :Person2, "ad yaréyseen"],
+	    [:Common, :Plural, :Person3, "há yareeyeen"],
+	    [:Common, :Plural, :Person1ex, "aynu yaréyno"],
+	    [:Common, :Singular, :Person2, "ad yaréysid"]]
+    }
+    {:label "somali-VSuffC3BMainAffOptative-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :formClass :Compound,
+            :tam :Optative}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Plural, :Person1ex, "aynu qaadánno"],
+	    [:Common, :Plural, :Person1in, "annu qaadánno"],
+	    [:Masc, :Singular, :Person3, "há qaato"],
+	    [:Common, :Plural, :Person3, "há qaateen"],
+	    [:Common, :Plural, :Person2, "ad qaadáteen"],
+	    [:Fem, :Singular, :Person3, "há qaadato"],
+	    [:Common, :Singular, :Person2, "ad qaadátid"],
+	    [:Common, :Singular, :Person1, "an qaáto"]]
+    }
+    {:label "somali-VSuffC2BMainAffPastIndep-yar"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C2B,
+	    :lexeme :yar,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastIndependent}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "yarèyey"],
+	    [:Common, :Singular, :Person2, "yarèsey"],
+	    [:Masc, :Singular, :Person3, "yarè"],
+	    [:Fem, :Singular, :Person3, "yarèsey"],
+	    [:Common, :Plural, :Person1, "yarèney"],
+	    [:Common, :Plural, :Person2, "yaresé"],
+	    [:Common, :Plural, :Person3, "yareyé"]]
+    }
+    {:label "somali-VSuffC3BMainAffPastIndep-qaado"
+    :note "form calqued on conjSubClass :C2A/:C3A [CHECK!]"
+    :common {:clauseType :Main,
+	    :conjClass :Suffix,
+	    :conjSubClass :C3B,
+	    :lexeme :qaado,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :PastIndependent}
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "qaáday"],
+	    [:Common, :Singular, :Person2, "qaadátay"],
+	    [:Masc, :Singular, :Person3, "qaadáy"],
+	    [:Fem, :Singular, :Person3, "qaadátay"],
+	    [:Common, :Plural, :Person1, "qaadánay"],
+	    [:Common, :Plural, :Person2, "qaadaté"],
+	    [:Common, :Plural, :Person3, "qaadé"]]
+    }
+}
 :muterms #{
     {:label "somali-PPoss"
     :note "SAEED1999 pp. 114-115"

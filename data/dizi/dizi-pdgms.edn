@@ -1,43 +1,48 @@
 {
 :lang :dizi
 :sgpref "diz"
+:datasource "Beachy2005"
+:geodemoURL "http://www.ethnologue.com/language/mdx"
+:geodemoTXT "Varieties and subdialects of the Omotic language Dizi are spoken in "
 :schemata {
-:case [:Accusative, :Nom, :Nominative, :Voc, :Vocative]
-	  :derivedStem [:Causative, :CausativeReciprocal, :Passive, :Reciprocal]
-	  :gender [:Common, :Fem, :Masc]
-	  :genderNegAux [:Common, :Fem, :Masc]
-	  :morphClass [:AuxNegSuff, :DervStem, :NonMainClauseForms, :PngProclitic, :SubjSuff, :TenseAspSuff]
-	  :nonMainForm [:CommandForms, :Conditional, :Coordinate, :DiffSubj, :Gerund, :Infinitive, :RelativeCovert, :RelativeOvert, :SameSubjOvlp, :SameSubjSucc, :Temporal]
-	  :number [:Du, :Plural, :Pol, :Polite, :Singular]
-	  :person [:Person1, :Person2, :Person3]
-	  :polarity [:Aff, :Affirmative, :Neg, :Negative]
-	  :pos [:Pronoun, :Verb]
-	  :proClass [:Independent, :PossPref]
-	  :tam [:Future, :Imperative, :Imperfective, :Imprtv, :Juss, :Jussive, :Past, :Perfect, :Present]
+           :case [:Accusative, :Nominative, :Vocative]
+           :derivedStem [:Causative, :CausativeReciprocal, :Passive, :Reciprocal]
+           :gender [:Common, :Fem, :Masc]
+           :morphClass [:AuxNegSuff, :DervStem, :NonMainClauseForms, :PngProclitic, :SubjSuff, :TenseAspSuff]
+           :nonMainForm [:CommandForms, :Conditional, :Coordinate, :DiffSubj, :Gerund, :Infinitive, :RelativeCovert, :RelativeOvert, :SameSubjOvlp, :SameSubjSucc, :Temporal]
+           :number [:Dual, :Plural, :Polite, :Singular]
+           :person [:Person1, :Person2, :Person3]
+           :polarity [:Affirmative, :Negative]
+           :pos [:Pronoun, :Verb]
+           :proClass [:Independent, :PossPref]
+           :tam [:Future, :Imperative, :Imperfective, :Imprtv, :Juss, :Jussive, :Past, :Perfect, :Present]
 	  }
-:morphemes {
-  :AUXNEGSUFF {:gloss "[x]", :lemma "[y]", }
-  :NONMAINCLAUSEFORMS {:gloss "[x]", :lemma "[y]", }
-  :PNGPROCLITIC {:gloss "[x]", :lemma "[y]", }
-  :PROIND {:gloss "[x]", :lemma "[y]", }
-  :PROPOSSPREF {:gloss "[x]", :lemma "[y]", }
-  :SUBJSUFFIX {:gloss "[x]", :lemma "[y]", }
-}
-:lexemes {
-  :baasl {:lemma "ba:sl-", :gloss "want", }
-  :baasl-2 {:note "same as basl?", :lemma "ba:s-", :gloss "want", }
-  :hoo-s {:lemma "ho:-s-", :gloss "help", :derivedStem :Causative, :pos :Verb}
-  :kes {:lemma "kes-", :gloss "pay", }
-  :kez {:lemma "kez-", :gloss "become hot", }
-  :mam {:lemma "mam-", :gloss "be prepared", }
-  :tus {:lemma "tus-", :gloss "know", }
-}
-:lxterms #{
-    {:label "dizi-VJussImprtvNeg-baasl"
-    :note "Beachy2005 Table 22. The imperative and jussive tenses form structurally distinct
-            paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 +
-            num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no
-            polite form in the negative."
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case  :derivedStem :nonMainForm :polarity :pos :proClass :tamb ]
+           :inflClass [  ]
+           :otherClass [ ]
+          }
+ :morphemes {
+             :AUXNEGSUFF {:gloss "[x]", :lemma "[y]", }
+             :NONMAINCLAUSEFORMS {:gloss "[x]", :lemma "[y]", }
+             :PNGPROCLITIC {:gloss "[x]", :lemma "[y]", }
+             :PROIND {:gloss "[x]", :lemma "[y]", }
+             :PROPOSSPREF {:gloss "[x]", :lemma "[y]", }
+             :SUBJSUFFIX {:gloss "[x]", :lemma "[y]", }
+             }
+ :lexemes {
+           :baasl {:lemma "ba:sl-", :gloss "want", }
+           :baasl-2 {:note "same as basl?", :lemma "ba:s-", :gloss "want", }
+           :hoo-s {:lemma "ho:-s-", :gloss "help", :derivedStem :Causative, :pos :Verb}
+           :kes {:lemma "kes-", :gloss "pay", }
+           :kez {:lemma "kez-", :gloss "become hot", }
+           :mam {:lemma "mam-", :gloss "be prepared", }
+           :tus {:lemma "tus-", :gloss "know", }
+           }
+ :lxterms #{
+            {:label "dizi-VJussImprtvNeg-baasl"
+             :note "Beachy2005 Table 22. The imperative and jussive tenses form structurally distinct paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 + num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no polite form in the negative."
     :common {:lexeme :baasl,
 	    :polarity :Negative,
 	    :pos :Verb}
@@ -51,14 +56,10 @@
 	    [:Common, :Plural, :Person3, :Jussive, "iš3- ba:s-is"]]
     }
     {:label "dizi-VAffCommandForms"
-    :note "Beachy2005 Table 20. The imperative and jussive tenses form structurally distinct
-            paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 +
-            num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no
-            polite form in the negative. The /g/ of ga is deleted after a consonant;the ŋ goes_to n
-            after n,l and before t;ŋ goes_to m after labial (details in Table 21)."
+    :note "Beachy2005 Table 20. The imperative and jussive tenses form structurally distinct paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 + num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no polite form in the negative. The /g/ of ga is deleted after a consonant;the ŋ goes_to n after n,l and before t;ŋ goes_to m after labial (details in Table 21)."
     :common {:lexeme :baasl,
 	    :morphClass :CommandForms,
-	    :polarity :Aff,
+	    :polarity :Affirmative,
 	    :pos :Verb}
     :terms [[:gender, :number, :person, :tam, :token]  ;; schema
 	    [:Common, :Singular, :Person1, :Juss, "ʔŋ2-ba:s1-ga1"],
@@ -68,13 +69,10 @@
 	    [:Common, :Plural, :Person1, :Juss, "ʔŋ3- ba:s1-ga1"],
 	    [:Common, :Plural, :Person2, :Imprtv, "ba:s1-ŋ1-2ti1"],
 	    [:Common, :Plural, :Person3, :Juss, "iš3- ba:s1-ga1"],
-	    [:Common, :Pol, :Person2, :Imprtv, "ba:s1-ŋ1-dɛy"]]
+	    [:Common, :Polite, :Person2, :Imprtv, "ba:s1-ŋ1-dɛy"]]
     }
     {:label "dizi-VNegAuxNegSuff-baasl"
-    :note "Beachy2005 Table 10 and 3.10. Main clause declatative negation consists of the
-            negative auxiliary nan (var. na before 3sgm and 2sg,nɛ before suffixes beginning in –i-)
-            with auxNegSuff,followed optionally by other sentence constituents,followed by
-            tense-marked verb suffixed with -ti :nan + auxMNegSuff"
+    :note "Beachy2005 Table 10 and 3.10. Main clause declatative negation consists of the negative auxiliary nan (var. na before 3sgm and 2sg,nɛ before suffixes beginning in –i-) with auxNegSuff,followed optionally by other sentence constituents,followed by tense-marked verb suffixed with -ti :nan + auxMNegSuff"
     :common {:lexeme :baasl,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -84,19 +82,15 @@
 	    [:Common, :Singular, :Person2, "nan-a2"],
 	    [:Masc, :Singular, :Person3, "nan-a3"],
 	    [:Fem, :Singular, :Person3, "nan-i"],
-	    [:Common, :Du, :Person1, "nan-ǝ-3n-a2"],
-	    [:Common, :Du, :Person2, "nan-i3t-a2"],
-	    [:Common, :Du, :Person3, "nan-i3š-a2"],
+	    [:Common, :Dual, :Person1, "nan-ǝ-3n-a2"],
+	    [:Common, :Dual, :Person2, "nan-i3t-a2"],
+	    [:Common, :Dual, :Person3, "nan-i3š-a2"],
 	    [:Common, :Plural, :Person1, "nan-ǝ-n3"],
 	    [:Common, :Plural, :Person2, "nan-it3"],
 	    [:Common, :Plural, :Person3, "nan-iš3(i)"]]
     }
     {:label "dizi-VJussImprtvAff-baasl"
-    :note "Beachy2005 Table 20. The imperative and jussive tenses form structurally distinct
-            paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 +
-            num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no
-            polite form in the negative. The /g/ of ga is deleted after a consonant;the ŋ goes_to n
-            after n,l and before t;ŋ goes_to m after labial (details in Table 21)."
+    :note "Beachy2005 Table 20. The imperative and jussive tenses form structurally distinct paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 + num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no polite form in the negative. The /g/ of ga is deleted after a consonant;the ŋ goes_to n after n,l and before t;ŋ goes_to m after labial (details in Table 21)."
     :common {:lexeme :baasl,
 	    :polarity :Affirmative,
 	    :pos :Verb}
@@ -121,21 +115,18 @@
 	    [:Common, :Singular, :Person2, "ba:1s-ǝ -to1"],
 	    [:Masc, :Singular, :Person3, "ba:1s-o1"],
 	    [:Fem, :Singular, :Person3, "ba:1s-ɛy1"],
-	    [:Common, :Du, :Person1, "ba:1s-ǝ-nay2ni1"],
-	    [:Common, :Du, :Person2, "ba:1s-ǝ-nay2ti1"],
-	    [:Common, :Du, :Person3, "ba:1s-ǝ-nay2ši1"],
+	    [:Common, :Dual, :Person1, "ba:1s-ǝ-nay2ni1"],
+	    [:Common, :Dual, :Person2, "ba:1s-ǝ-nay2ti1"],
+	    [:Common, :Dual, :Person3, "ba:1s-ǝ-nay2ši1"],
 	    [:Common, :Plural, :Person1, "ba:1s-ǝ-n13no2"],
 	    [:Common, :Plural, :Person2, "ba:1s-ǝ-ni2to1"],
 	    [:Common, :Plural, :Person3, "ba:1s-ǝ-ni2šo1"]]
     }
     {:label "dizi-VNegCommandForms"
-    :note "Beachy2005 Table 22. The imperative and jussive tenses form structurally distinct
-            paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 +
-            num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no
-            polite form in the negative."
+    :note "Beachy2005 Table 22. The imperative and jussive tenses form structurally distinct paradigms in the affirmative – juss:PNGProclitic + verbStem + ga;imprtv:verbStem + ŋ1 + num. In the negative both have the structure:PNGProclitic + verbStem + is. There is no polite form in the negative."
     :common {:lexeme :baasl-2,
 	    :morphClass :CommandForms,
-	    :polarity :Neg,
+	    :polarity :Negative,
 	    :pos :Verb}
     :terms [[:gender, :number, :person, :tam, :token]  ;; schema
 	    [:Common, :Singular, :Person1, :Juss, "ʔŋ2-ba:s-is"],
@@ -157,9 +148,9 @@
 	    [:Nominative, :Common, :Singular, :Person2, "e1tu2 / yɛ1tu2 / ɛ1tu2"],
 	    [:Nominative, :Masc, :Singular, :Person3, "i2zu2 / i2za3"],
 	    [:Nominative, :Fem, :Singular, :Person3, "iʒ2 / i2ʒi2"],
-	    [:Nominative, :Common, :Du, :Person1, "i3na2 / i3nu2"],
-	    [:Nominative, :Common, :Du, :Person2, "i3ta2"],
-	    [:Nominative, :Common, :Du, :Person3, "i3ša2"],
+	    [:Nominative, :Common, :Dual, :Person1, "i3na2 / i3nu2"],
+	    [:Nominative, :Common, :Dual, :Person2, "i3ta2"],
+	    [:Nominative, :Common, :Dual, :Person3, "i3ša2"],
 	    [:Nominative, :Common, :Plural, :Person1, "i3nu3"],
 	    [:Nominative, :Common, :Plural, :Person2, "i3ti2"],
 	    [:Nominative, :Common, :Plural, :Person3, "i3ši2"],
@@ -167,9 +158,9 @@
 	    [:Accusative, :Common, :Singular, :Person2, "etn / yɛtn"],
 	    [:Accusative, :Masc, :Singular, :Person3, "izn"],
 	    [:Accusative, :Fem, :Singular, :Person3, "iʒn"],
-	    [:Accusative, :Common, :Du, :Person1, "⊤"],
-	    [:Accusative, :Common, :Du, :Person2, "⊤"],
-	    [:Accusative, :Common, :Du, :Person3, "⊤"],
+	    [:Accusative, :Common, :Dual, :Person1, "⊤"],
+	    [:Accusative, :Common, :Dual, :Person2, "⊤"],
+	    [:Accusative, :Common, :Dual, :Person3, "⊤"],
 	    [:Accusative, :Common, :Plural, :Person1, "inn"],
 	    [:Accusative, :Common, :Plural, :Person2, "itin / itn"],
 	    [:Accusative, :Common, :Plural, :Person3, "išin / išn"],
@@ -179,9 +170,9 @@
 	    [:Vocative, :Fem, :Singular, :Person2, "i3rɛy32"],
 	    [:Vocative, :Masc, :Singular, :Person3, "⊤"],
 	    [:Vocative, :Fem, :Singular, :Person3, "⊤"],
-	    [:Vocative, :Common, :Du, :Person1, "⊤"],
-	    [:Vocative, :Common, :Du, :Person2, "i3ta2"],
-	    [:Vocative, :Common, :Du, :Person3, "⊤"],
+	    [:Vocative, :Common, :Dual, :Person1, "⊤"],
+	    [:Vocative, :Common, :Dual, :Person2, "i3ta2"],
+	    [:Vocative, :Common, :Dual, :Person3, "⊤"],
 	    [:Vocative, :Common, :Plural, :Person1, "⊤"],
 	    [:Vocative, :Common, :Plural, :Person2, "i3ti2"],
 	    [:Vocative, :Common, :Plural, :Person3, "⊤"]]
@@ -196,9 +187,9 @@
 	    [:Common, :Singular, :Person2, "a2-"],
 	    [:Masc, :Singular, :Person3, "a3-"],
 	    [:Fem, :Singular, :Person3, "i3-"],
-	    [:Common, :Du, :Person1, "ʔŋ3-a2-"],
-	    [:Common, :Du, :Person2, "i3t-a2-"],
-	    [:Common, :Du, :Person3, "i3š-a2-"],
+	    [:Common, :Dual, :Person1, "ʔŋ3-a2-"],
+	    [:Common, :Dual, :Person2, "i3t-a2-"],
+	    [:Common, :Dual, :Person3, "i3š-a2-"],
 	    [:Common, :Plural, :Person1, "ʔŋ3-"],
 	    [:Common, :Plural, :Person2, "it3-"],
 	    [:Common, :Plural, :Person3, "iš3-"]]
@@ -213,33 +204,30 @@
 	    [:Common, :Singular, :Person2, "-a2"],
 	    [:Masc, :Singular, :Person3, "-a3"],
 	    [:Fem, :Singular, :Person3, "-i"],
-	    [:Common, :Du, :Person1, "-3n-a2"],
-	    [:Common, :Du, :Person2, "-i3t-a2"],
-	    [:Common, :Du, :Person3, "i3š-a2"],
+	    [:Common, :Dual, :Person1, "-3n-a2"],
+	    [:Common, :Dual, :Person2, "-i3t-a2"],
+	    [:Common, :Dual, :Person3, "i3š-a2"],
 	    [:Common, :Plural, :Person1, "-n3"],
 	    [:Common, :Plural, :Person2, "-it3"],
 	    [:Common, :Plural, :Person3, "-iš3(i)"]]
     }
     {:label "dizi-VNonMainClauseForms"
-    :note "Beachy2005 Sect. 3.8.8-10. Dizi has a large number of non-mainClause
-            morphological structures,which have in common the presence of a suffix (including the
-            zero suffix –Ø) where a finite verb would have subject markers. (Note that some
-            subordinate forms have the PNGProclitics.)"
+    :note "Beachy2005 Sect. 3.8.8-10. Dizi has a large number of non-mainClause morphological structures,which have in common the presence of a suffix (including the zero suffix –Ø) where a finite verb would have subject markers. (Note that some subordinate forms have the PNGProclitics.)"
     :common {:morpheme :NONMAINCLAUSEFORMS,
 	    :pos :Verb,
 	    :morphClass :NonMainClauseForms}
-    :terms [[:nonMainForm, :token-BeachyRef, :token-remark, :token-structure]  ;; schema
-	    [:DiffSubj, "3.8.8.1.1", "reference switch marker", "(PNGClitic)+verbStem+tense+n"],
-	    [:SameSubjSucc, "3.8.8.1.2", "succession in time", "(PNGClitic)+verbStem+tense+tɛy"],
-	    [:SameSubjOvlp, "3.8.8.1.3", "overlap in time", "(PNGClitic)+verbStem+tense+Ø"],
-	    [:Infinitive, "3.8.8.2", "_NULL", "verbStem+Ø"],
-	    [:Infinitive, "3.8.8.2", "_NULL", "verbStem+kŋ"],
-	    [:Gerund, "3.8.8.3", "nominalizing clauses", "PNGClitic+verbStem+z"],
-	    [:Conditional, "3.8.8.4", "if clauses", "PNGClitic+verbStem+nt"],
-	    [:Temporal, "3.8.8.5", "when clauses", "PNGClitic+verbStem+kǝst"],
-	    [:Coordinate, "3.8.9", "no PNGClitic", "verbStem+ta … verbStem+tense+ga"],
-	    [:RelativeOvert, "3.8.10", "overt relative", "verbStem+tense+da"],
-	    [:RelativeCovert, "3.8.10", "covert relative", "verbStem+tense+Ø"]]
+    :terms [[:nonMainForm, :token-note, :token]  ;; schema
+	    [:DiffSubj, "3.8.8.1.1 + reference switch marker", "(PNGClitic)+verbStem+tense+n"],
+	    [:SameSubjSucc, "3.8.8.1.2 + succession in time", "(PNGClitic)+verbStem+tense+tɛy"],
+	    [:SameSubjOvlp, "3.8.8.1.3 + overlap in time", "(PNGClitic)+verbStem+tense+Ø"],
+	    [:Infinitive, "3.8.8.2 + _NULL", "verbStem+Ø"],
+	    [:Infinitive, "3.8.8.2 + _NULL", "verbStem+kŋ"],
+	    [:Gerund, "3.8.8.3 + nominalizing clauses", "PNGClitic+verbStem+z"],
+	    [:Conditional, "3.8.8.4 + if clauses", "PNGClitic+verbStem+nt"],
+	    [:Temporal, "3.8.8.5 + when clauses", "PNGClitic+verbStem+kǝst"],
+	    [:Coordinate, "3.8.9 + no PNGClitic", "verbStem+ta … verbStem+tense+ga"],
+	    [:RelativeOvert, "3.8.10 + overt relative", "verbStem+tense+da"],
+	    [:RelativeCovert, "3.8.10 + covert relative", "verbStem+tense+Ø"]]
     }
     {:label "dizi-PPossPref"
     :note "Beachy2005 Table 10,12"
@@ -251,9 +239,9 @@
 	    [:Common, :Singular, :Person2, "a2-"],
 	    [:Masc, :Singular, :Person3, "a3-"],
 	    [:Fem, :Singular, :Person3, "i3-"],
-	    [:Common, :Du, :Person1, "ʔŋ3-a2-"],
-	    [:Common, :Du, :Person2, "i3t-a2"],
-	    [:Common, :Du, :Person3, "i3š-a2-"],
+	    [:Common, :Dual, :Person1, "ʔŋ3-a2-"],
+	    [:Common, :Dual, :Person2, "i3t-a2"],
+	    [:Common, :Dual, :Person3, "i3š-a2-"],
 	    [:Common, :Plural, :Person1, "ʔŋ3-"],
 	    [:Common, :Plural, :Person2, "i3t(i2)-"],
 	    [:Common, :Plural, :Person3, "iš3-"]]
@@ -268,35 +256,35 @@
 	    [:Common, :Singular, :Person2, "-to1"],
 	    [:Masc, :Singular, :Person3, "-go1 / -zo1 / -o"],
 	    [:Fem, :Singular, :Person3, "-ge1 / -gɛy1 / -ze1 / -zɛy1 / -e1 / -ɛy1"],
-	    [:Common, :Du, :Person1, "-nay2ni1"],
-	    [:Common, :Du, :Person2, "-nay2ti1"],
-	    [:Common, :Du, :Person3, "-nay2ši1"],
+	    [:Common, :Dual, :Person1, "-nay2ni1"],
+	    [:Common, :Dual, :Person2, "-nay2ti1"],
+	    [:Common, :Dual, :Person3, "-nay2ši1"],
 	    [:Common, :Plural, :Person1, "-n13no2"],
 	    [:Common, :Plural, :Person2, "-ni2to1"],
 	    [:Common, :Plural, :Person3, "-ni2šo1 / -ni2ša1 / -ni2ši1 / -šo1"]]
     }
 {
 :label "dizi-VTenseAspSuff"
-:note "Beachy2005 Table 19. Yes/no questions are formed:PNGProclitic[Table 10]+ verbStem + tense + interr (vs. non-interrog:verbStem + tense + subjSuff). Examples:3.8.6 (160)-(164)."
+:note "Beachy2005 Table 19. Yes/no questions are formed:PNGProclitic[Table 10]+ verbStem + tense + interr (vs. non-interrog:verbStem + tense + subjSuff). Examples:3.8.6 (160)-(164). Template: affVP + interrVP + affTrans + interrTrans."
 :common {:pos :Verb
          :morphClass :TenseAspSuff}
-:terms [[:tam :token :token_exA :token_exQ :token_glossExA :token_glossExQ] ;; schema
-[:Past "⊤" "ho:-s-Ø-e" "i-ho:-s-ŋ" "she helped" "did she help?"],
-[:Present "-2kŋ1" "tus-k-ǝ-no" "a2-tus-2kŋ1" "I know" "do you know?"],
-[:Future "-i" "kez-i-go" "a3-kez-i" "it becomes_hot" "does it become_hot?"],
-[:Imperfective "-d" "kes-dɛ-no" "a2-kes-da" "I pay" "do you pay?"],
-[:Perfect "-1kŋ1" "mam-ki-go" "a3-mam-1kŋ1" "it has been_prepared" "has it been_prepared?"]]
+:terms [[:tam :token :token-note-template] ;; schema
+[:Past "⊤", "ho:-s-Ø-e + i-ho:-s-ŋ + she helped + did she help?"],
+[:Present "-2kŋ1", "tus-k-ǝ-no + a2-tus-2kŋ1 + I know + do you know?"],
+[:Future "-i", "kez-i-go + a3-kez-i + it becomes_hot + does it become_hot?"],
+[:Imperfective "-d", "kes-dɛ-no + a2-kes-da + I pay + do you pay?"],
+[:Perfect "-1kŋ1", "mam-ki-go + a3-mam-1kŋ1 + it has been_prepared + has it been_prepared?"]]
 }
 {
 :label "dizi-VDervStem"
-:note "Beachy2005 #3.8.2. The dervStem suffixes are added directly to the lexical root,before the tense-aspect markers."
+:note "Beachy2005 #3.8.2. The dervStem suffixes are added directly to the lexical root,before the tense-aspect markers. Template: base + baseGloss + derv + dervGloss"
 :common {:pos :Verb
          :morphClass :DervStem}
-:terms [[:derivedStem :token :token_baseForm :token_baseGloss :token_dervForm :token_dervGloss] ;; schema
-[:Causative "-s-" "sam" "be left over" "sam-s-" "leave over"],
-[:Passive "-dn-" "⊤" "bury" "ɛš-dn-" "be buried"],
-[:Reciprocal "-sǝm-" "_NULL" "be attached" "tits-ǝ-sǝm-" "be attached to one another"],
-[:CausativeReciprocal "-s-ǝ-sǝm-" "boy" "be married" "boy-s-ǝ-sǝm-" "marry one another"]]
+:terms [[:derivedStem :token :token-note-template] ;; schema
+[:Causative "-s-", "sam + be left over + sam-s- + leave over"],
+[:Passive "-dn-", "ɛš + bury + ɛš-dn- + be buried"],
+[:Reciprocal "-sǝm-", "tit + be attached + tits-ǝ-sǝm- + be attached to one another"],
+[:CausativeReciprocal "-s-ǝ-sǝm-" "boy + be married + boy-s-ǝ-sǝm- + marry one another"]]
 }
 }
 }

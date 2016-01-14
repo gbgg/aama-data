@@ -1,22 +1,31 @@
 {
 :lang :hebrew
 :sgpref "heb"
+:datasource "Lambdin1971"
+:geodemoURL "http://www.ethnologue.com/language/hbo"
+:geodemoTXT "Varieties and dialects of Biblical Hebrew were spoken in and around modern-day Israel during the first millennium BCE. It was gradually replaced as principal spoken language by varieties of Aramaic, but remained as a language of scholarship and religion until the modern period, when it was revived as the official language of the state of Israel. The bibliography is huge, but the Hebrew data used here for comparative purposes is simply taken from the pedagogical grammar of T. Lambdin."
 :schemata {
-:ablautClass [:Common, :MidWeak, :a, :a-a, :a-e, :a-o, :e-a]
+           :ablautClass [:MidWeak, :AClass, :A_aClass, :A_eClass, :A_oClass, :E_aClass]
 	  :case [:Accusative, :Dative, :Nominative, :Object]
 	  :deixis [:Far, :Near]
 	  :derivedStem [:B, :D, :D-polel, :Du, :N, :Polal, :Polel, :S, :S2t, :St, :Su]
 	  :gender [:Common, :Fem, :Masc]
-	  :numHead [:Plural, :Singular]
+	  :numHead [:HeadPlural, :HeadSingular]
 	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Demonstrative, :Independent, :ObjClitic, :lamedSuff]
 	  :rootClass [:ACC, :C1C2C2, :CAC, :CCA, :CCC, :CCh, :CCy, :ChC, :CwC, :CyC, :HCC, :NCC, :WCC, :YCC]
 	  :tam [:Imperative, :Imperfect, :Jussive, :Perfect]
-	  :tenseHead [:Imperfect, :Jussive, :Perfect]
+	  :tenseHead [:HeadImperfect, :HeadJussive, :HeadPerfect]
 	  :morphClass [:SubjMarker]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :numHead ]
+           :synsemClass [:case :deixis :derivedStem :polarity :pos :proClass :tam :tenseHead ]
+           :inflClass [:ablautClass :rootClass ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRODEM {:gloss "[x]", :lemma "[y]", }
   :PROIND {:gloss "[x]", :lemma "[y]", }
@@ -31,8 +40,8 @@
   :bny {:lemma "bny", :gloss "build", :pos :Verb, :rootClass :CCy}
   :gdl {:lemma "gdl", :gloss "be big", :pos :Verb, :rootClass :CCC}
   :hzq {:lemma "ḥzq", :gloss "be strong", :pos :Verb, :rootClass :HCC}
-  :kbd {:lemma "kbd", :gloss "honor", :rootClass :CCC, :ablautClass :e-a}
-  :ktb {:lemma "ktb", :gloss "write", :ablautClass :a-o, :pos :Verb, :rootClass :CCC}
+  :kbd {:lemma "kbd", :gloss "honor", :rootClass :CCC, :ablautClass :E_aClass}
+  :ktb {:lemma "ktb", :gloss "write", :ablautClass :A_oClass, :pos :Verb, :rootClass :CCC}
   :mn {:lemma "mʔn", :gloss "refuse", :pos :Verb, :rootClass :CAC}
   :msa {:lemma "mṣʔ", :gloss "come", :pos :Verb, :rootClass :CCA}
   :ng_ {:lemma "ngʕ", :gloss "touch", :pos :Verb, :rootClass :NCC}
@@ -50,7 +59,7 @@
 :lxterms #{
     {:label "hebrew-VNCCBImprtv-npl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :npl,
 	    :person :Person2,
@@ -58,30 +67,30 @@
 	    :rootClass :NCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "nǝp̄ōl", "_NULL", "⊤-nǝp̄ōl-_NULL"],
-	    [:Fem, :Singular, "⊤", "nip̄l", "-î", "⊤-nip̄l--î"],
-	    [:Masc, :Plural, "⊤", "nip̄l", "-û", "⊤-nip̄l--û"],
-	    [:Fem, :Plural, "⊤", "nǝp̄ōl", "-nāh", "⊤-nǝp̄ōl--nāh"]]
+	    [:Masc, :Singular, " ", "nǝp̄ōl", "Ø", "nǝp̄ōl-Ø"],
+	    [:Fem, :Singular, " ", "nip̄l", "-î", "nip̄l-î"],
+	    [:Masc, :Plural, " ", "nip̄l", "-û", "nip̄l-û"],
+	    [:Fem, :Plural, " ", "nǝp̄ōl", "-nāh", "nǝp̄ōl-nāh"]]
     }
     {:label "hebrew-VWCCBImperf-ysb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ysb,
 	    :pos :Verb,
 	    :rootClass :WCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾē-", "šēḇ", "_NULL", "ʾē--šēḇ-_NULL"],
-	    [:Masc, :Singular, :Person2, "tē-", "šēḇ", "_NULL", "tē--šēḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "tē-", "šǝḇ", "-î", "tē--šǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yē-", "šēḇ", "_NULL", "yē--šēḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "tē-", "šēḇ", "_NULL", "tē--šēḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "nē-", "šēḇ", "_NULL", "nē--šēḇ-_NULL"],
-	    [:Masc, :Plural, :Person2, "tē-", "šǝḇ", "-û", "tē--šǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "tē-", "šaḇ", "-nāh", "tē--šaḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yē-", "šǝḇ", "-û", "yē--šǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "tē-", "šaḇ", "-nāh", "tē--šaḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾē-", "šēḇ", "Ø", "ʾē-šēḇ-Ø"],
+	    [:Masc, :Singular, :Person2, "tē-", "šēḇ", "Ø", "tē-šēḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "tē-", "šǝḇ", "-î", "tē-šǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yē-", "šēḇ", "Ø", "yē-šēḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "tē-", "šēḇ", "Ø", "tē-šēḇ-Ø"],
+	    [:Common, :Plural, :Person1, "nē-", "šēḇ", "Ø", "nē-šēḇ-Ø"],
+	    [:Masc, :Plural, :Person2, "tē-", "šǝḇ", "-û", "tē-šǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "tē-", "šaḇ", "-nāh", "tē-šaḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yē-", "šǝḇ", "-û", "yē-šǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "tē-", "šaḇ", "-nāh", "tē-šaḇ-nāh"]]
     }
     {:label "hebrew-VCCCDuImprtv-gdl"
     :note ""
@@ -92,30 +101,30 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "guddal", "_NULL", "⊤-guddal-_NULL"],
-	    [:Fem, :Singular, "⊤", "guddǝl", "-î", "⊤-guddǝl--î"],
-	    [:Masc, :Plural, "⊤", "guddǝl", "-û", "⊤-guddǝl--û"],
-	    [:Fem, :Plural, "⊤", "guddal", "-nāh", "⊤-guddal--nāh"]]
+	    [:Masc, :Singular, " ", "guddal", "Ø", "guddal-Ø"],
+	    [:Fem, :Singular, " ", "guddǝl", "-î", "guddǝl-î"],
+	    [:Masc, :Plural, " ", "guddǝl", "-û", "guddǝl-û"],
+	    [:Fem, :Plural, " ", "guddal", "-nāh", "guddal-nāh"]]
     }
     {:label "hebrew-VYCCBJuss-ytb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :ytb,
 	    :pos :Verb,
 	    :rootClass :YCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾî-", "ṭǝḇ", "-āh", "ʾî--ṭǝḇ--āh"],
-	    [:Masc, :Singular, :Person2, "tî-", "ṭaḇ", "_NULL", "tî--ṭaḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "tî-", "ṭǝḇ", "-î", "tî--ṭǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yî-", "ṭaḇ", "_NULL", "yî--ṭaḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "tî-", "ṭaḇ", "_NULL", "tî--ṭaḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "nî-", "ṭǝḇ", "-āh", "nî--ṭǝḇ--āh"],
-	    [:Masc, :Plural, :Person2, "tî-", "ṭǝḇ", "-û", "tî--ṭǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "tî-", "ṭaḇ", "-nāh", "tî--ṭaḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yî-", "ṭǝḇ", "-û", "yî--ṭǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "tî-", "ṭaḇ", "-nāh", "tî--ṭaḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾî-", "ṭǝḇ", "-āh", "ʾî-ṭǝḇ-āh"],
+	    [:Masc, :Singular, :Person2, "tî-", "ṭaḇ", "Ø", "tî-ṭaḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "tî-", "ṭǝḇ", "-î", "tî-ṭǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yî-", "ṭaḇ", "Ø", "yî-ṭaḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "tî-", "ṭaḇ", "Ø", "tî-ṭaḇ-Ø"],
+	    [:Common, :Plural, :Person1, "nî-", "ṭǝḇ", "-āh", "nî-ṭǝḇ-āh"],
+	    [:Masc, :Plural, :Person2, "tî-", "ṭǝḇ", "-û", "tî-ṭǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "tî-", "ṭaḇ", "-nāh", "tî-ṭaḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yî-", "ṭǝḇ", "-û", "yî-ṭǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "tî-", "ṭaḇ", "-nāh", "tî-ṭaḇ-nāh"]]
     }
     {:label "hebrew-VCCCSuJuss-smd"
     :note ""
@@ -125,16 +134,16 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔo-", "šmaḏ", "_NULL", "ʔo--šmaḏ-_NULL"],
-	    [:Masc, :Singular, :Person2, "to-", "šmaḏ", "_NULL", "to--šmaḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "to-", "šmǝḏ", "-î", "to--šmǝḏ--î"],
-	    [:Masc, :Singular, :Person3, "yo-", "šmaḏ", "_NULL", "yo--šmaḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "to-", "šmaḏ", "_NULL", "to--šmaḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "no-", "šmaḏ", "_NULL", "no--šmaḏ-_NULL"],
-	    [:Masc, :Plural, :Person2, "to-", "šmǝḏ", "-û", "to--šmǝḏ--û"],
-	    [:Fem, :Plural, :Person2, "to-", "šmaḏ", "-nāh", "to--šmaḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "yo-", "šmǝḏ", "-û", "yo--šmǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "to-", "šmaḏ", "-nāh", "to--šmaḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔo-", "šmaḏ", "Ø", "ʔo-šmaḏ-Ø"],
+	    [:Masc, :Singular, :Person2, "to-", "šmaḏ", "Ø", "to-šmaḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "to-", "šmǝḏ", "-î", "to-šmǝḏ-î"],
+	    [:Masc, :Singular, :Person3, "yo-", "šmaḏ", "Ø", "yo-šmaḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "to-", "šmaḏ", "Ø", "to-šmaḏ-Ø"],
+	    [:Common, :Plural, :Person1, "no-", "šmaḏ", "Ø", "no-šmaḏ-Ø"],
+	    [:Masc, :Plural, :Person2, "to-", "šmǝḏ", "-û", "to-šmǝḏ-û"],
+	    [:Fem, :Plural, :Person2, "to-", "šmaḏ", "-nāh", "to-šmaḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "yo-", "šmǝḏ", "-û", "yo-šmǝḏ-û"],
+	    [:Fem, :Plural, :Person3, "to-", "šmaḏ", "-nāh", "to-šmaḏ-nāh"]]
     }
     {:label "hebrew-VCyCBPerf-sym"
     :note "Lambdin1971"
@@ -145,16 +154,16 @@
 	    :rootClass :CyC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "śam", "-tî", "⊤-śam--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "śam", "-tā", "⊤-śam--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "śam", "-t", "⊤-śam--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "śām", "_NULL", "⊤-śām-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "śām", "-āh", "⊤-śām--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "śam", "-nû", "⊤-śam--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "śam", "-tem", "⊤-śam--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "śam", "-ten", "⊤-śam--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "śām", "-û", "⊤-śām--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "śām", "-û", "⊤-śām--û"]]
+	    [:Common, :Singular, :Person1, " ", "śam", "-tî", "śam-tî"],
+	    [:Masc, :Singular, :Person2, " ", "śam", "-tā", "śam-tā"],
+	    [:Fem, :Singular, :Person2, " ", "śam", "-t", "śam-t"],
+	    [:Masc, :Singular, :Person3, " ", "śām", "Ø", "śām-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "śām", "-āh", "śām-āh"],
+	    [:Common, :Plural, :Person1, " ", "śam", "-nû", "śam-nû"],
+	    [:Masc, :Plural, :Person2, " ", "śam", "-tem", "śam-tem"],
+	    [:Fem, :Plural, :Person2, " ", "śam", "-ten", "śam-ten"],
+	    [:Masc, :Plural, :Person3, " ", "śām", "-û", "śām-û"],
+	    [:Fem, :Plural, :Person3, " ", "śām", "-û", "śām-û"]]
     }
     {:label "hebrew-VCCCDImperf-gdl"
     :note ""
@@ -164,16 +173,16 @@
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔă-", "gaddēl", "_NULL", "ʔă--gaddēl-_NULL"],
-	    [:Masc, :Singular, :Person2, "tǝ-", "gaddēl", "_NULL", "tǝ--gaddēl-_NULL"],
-	    [:Fem, :Singular, :Person2, "tǝ-", "gaddǝl", "-î", "tǝ--gaddǝl--î"],
-	    [:Masc, :Singular, :Person3, "yǝ-", "gaddēl", "_NULL", "yǝ--gaddēl-_NULL"],
-	    [:Fem, :Singular, :Person3, "tǝ-", "gaddēl", "_NULL", "tǝ--gaddēl-_NULL"],
-	    [:Common, :Plural, :Person1, "nǝ-", "gaddēl", "_NULL", "nǝ--gaddēl-_NULL"],
-	    [:Masc, :Plural, :Person2, "tǝ-", "gaddǝl", "-û", "tǝ--gaddǝl--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "gaddēl", "-nāh", "tǝ--gaddēl--nāh"],
-	    [:Masc, :Plural, :Person3, "yǝ-", "gaddǝl", "-û", "yǝ--gaddǝl--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "gaddēl", "-nāh", "tǝ--gaddēl--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔă-", "gaddēl", "Ø", "ʔă-gaddēl-Ø"],
+	    [:Masc, :Singular, :Person2, "tǝ-", "gaddēl", "Ø", "tǝ-gaddēl-Ø"],
+	    [:Fem, :Singular, :Person2, "tǝ-", "gaddǝl", "-î", "tǝ-gaddǝl-î"],
+	    [:Masc, :Singular, :Person3, "yǝ-", "gaddēl", "Ø", "yǝ-gaddēl-Ø"],
+	    [:Fem, :Singular, :Person3, "tǝ-", "gaddēl", "Ø", "tǝ-gaddēl-Ø"],
+	    [:Common, :Plural, :Person1, "nǝ-", "gaddēl", "Ø", "nǝ-gaddēl-Ø"],
+	    [:Masc, :Plural, :Person2, "tǝ-", "gaddǝl", "-û", "tǝ-gaddǝl-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "gaddēl", "-nāh", "tǝ-gaddēl-nāh"],
+	    [:Masc, :Plural, :Person3, "yǝ-", "gaddǝl", "-û", "yǝ-gaddǝl-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "gaddēl", "-nāh", "tǝ-gaddēl-nāh"]]
     }
     {:label "hebrew-VCwCBImprtv-qwm"
     :note "Lambdin1971"
@@ -185,70 +194,70 @@
 	    :rootClass :CwC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "qûm", "_NULL", "⊤-qûm-_NULL"],
-	    [:Fem, :Singular, "⊤", "qûm", "-î", "⊤-qûm--î"],
-	    [:Masc, :Plural, "⊤", "qûm", "-û", "⊤-qûm--û"],
-	    [:Fem, :Plural, "⊤", "qōm", "-nāh", "⊤-qōm--nāh"]]
+	    [:Masc, :Singular, " ", "qûm", "Ø", "qûm-Ø"],
+	    [:Fem, :Singular, " ", "qûm", "-î", "qûm-î"],
+	    [:Masc, :Plural, " ", "qûm", "-û", "qûm-û"],
+	    [:Fem, :Plural, " ", "qōm", "-nāh", "qōm-nāh"]]
     }
     {:label "hebrew-VCCCBPerf-ktb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :ktb,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "kāṯaḇ", "-tî", "⊤-kāṯaḇ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "kāṯaḇ", "-tā", "⊤-kāṯaḇ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "kāṯaḇ", "-t", "⊤-kāṯaḇ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "kāṯaḇ", "_NULL", "⊤-kāṯaḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "kāṯǝḇ", "-āh", "⊤-kāṯǝḇ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "kāṯaḇ", "-nû", "⊤-kāṯaḇ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "kǝṯaḇ", "-tem", "⊤-kǝṯaḇ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "kǝṯaḇ", "-ten", "⊤-kǝṯaḇ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "kāṯǝḇ", "-û", "⊤-kāṯǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "kāṯǝḇ", "-û", "⊤-kāṯǝḇ--û"]]
+	    [:Common, :Singular, :Person1, " ", "kāṯaḇ", "-tî", "kāṯaḇ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "kāṯaḇ", "-tā", "kāṯaḇ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "kāṯaḇ", "-t", "kāṯaḇ-t"],
+	    [:Masc, :Singular, :Person3, " ", "kāṯaḇ", "Ø", "kāṯaḇ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "kāṯǝḇ", "-āh", "kāṯǝḇ-āh"],
+	    [:Common, :Plural, :Person1, " ", "kāṯaḇ", "-nû", "kāṯaḇ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "kǝṯaḇ", "-tem", "kǝṯaḇ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "kǝṯaḇ", "-ten", "kǝṯaḇ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "kāṯǝḇ", "-û", "kāṯǝḇ-û"],
+	    [:Fem, :Plural, :Person3, " ", "kāṯǝḇ", "-û", "kāṯǝḇ-û"]]
     }
     {:label "hebrew-VNCCBJuss-npl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :npl,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ppǝl", "-āh", "ʾe--ppǝl--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ppōl", "_NULL", "ti--ppōl-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ppǝl", "-î", "ti--ppǝl--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ppōl", "_NULL", "yi--ppōl-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ppōl", "_NULL", "ti--ppōl-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ppǝl", "-āh", "ni--ppǝl--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ppǝl", "-û", "ti--ppǝl--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ppōl", "-nāh", "ti--ppōl--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ppǝl", "-û", "yi--ppǝl--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ppōl", "-nāh", "ti--ppōl--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ppǝl", "-āh", "ʾe-ppǝl-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ppōl", "Ø", "ti-ppōl-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ppǝl", "-î", "ti-ppǝl-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ppōl", "Ø", "yi-ppōl-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ppōl", "Ø", "ti-ppōl-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ppǝl", "-āh", "ni-ppǝl-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ppǝl", "-û", "ti-ppǝl-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ppōl", "-nāh", "ti-ppōl-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ppǝl", "-û", "yi-ppǝl-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ppōl", "-nāh", "ti-ppōl-nāh"]]
     }
     {:label "hebrew-VHCCBPerf-hzq"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :hzq,
 	    :pos :Verb,
 	    :rootClass :HCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "ḥāzaq", "-tî", "⊤-ḥāzaq--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "ḥāzaq", "-tā", "⊤-ḥāzaq--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "ḥāzaq", "-t", "⊤-ḥāzaq--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "ḥāzaq", "_NULL", "⊤-ḥāzaq-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "ḥāzǝq", "-āh", "⊤-ḥāzǝq--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "ḥāzaq", "-nû", "⊤-ḥāzaq--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "ḥǝzaq", "-tem", "⊤-ḥǝzaq--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "ḥǝzaq", "-ten", "⊤-ḥǝzaq--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "ḥāzǝq", "-û", "⊤-ḥāzǝq--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "ḥāzǝq", "-û", "⊤-ḥāzǝq--û"]]
+	    [:Common, :Singular, :Person1, " ", "ḥāzaq", "-tî", "ḥāzaq-tî"],
+	    [:Masc, :Singular, :Person2, " ", "ḥāzaq", "-tā", "ḥāzaq-tā"],
+	    [:Fem, :Singular, :Person2, " ", "ḥāzaq", "-t", "ḥāzaq-t"],
+	    [:Masc, :Singular, :Person3, " ", "ḥāzaq", "Ø", "ḥāzaq-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "ḥāzǝq", "-āh", "ḥāzǝq-āh"],
+	    [:Common, :Plural, :Person1, " ", "ḥāzaq", "-nû", "ḥāzaq-nû"],
+	    [:Masc, :Plural, :Person2, " ", "ḥǝzaq", "-tem", "ḥǝzaq-tem"],
+	    [:Fem, :Plural, :Person2, " ", "ḥǝzaq", "-ten", "ḥǝzaq-ten"],
+	    [:Masc, :Plural, :Person3, " ", "ḥāzǝq", "-û", "ḥāzǝq-û"],
+	    [:Fem, :Plural, :Person3, " ", "ḥāzǝq", "-û", "ḥāzǝq-û"]]
     }
     {:label "hebrew-VCyCBJuss-sym"
     :note "Lambdin1971"
@@ -259,16 +268,16 @@
 	    :rootClass :CyC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾā-", "śîm", "-āh", "ʾā--śîm--āh"],
-	    [:Masc, :Singular, :Person2, "tā-", "śēm", "_NULL", "tā--śēm-_NULL"],
-	    [:Fem, :Singular, :Person2, "tā-", "śǝm", "-î", "tā--śǝm--î"],
-	    [:Masc, :Singular, :Person3, "yā-", "śēm", "_NULL", "yā--śēm-_NULL"],
-	    [:Fem, :Singular, :Person3, "tā-", "śēm", "_NULL", "tā--śēm-_NULL"],
-	    [:Common, :Plural, :Person1, "nā-", "śîm", "-āh", "nā--śîm--āh"],
-	    [:Masc, :Plural, :Person2, "tā-", "śǝm", "-û", "tā--śǝm--û"],
-	    [:Fem, :Plural, :Person2, "tā-", "śǝm", "-ệnāh", "tā--śǝm--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yā-", "śǝm", "-û", "yā--śǝm--û"],
-	    [:Fem, :Plural, :Person3, "tā-", "śǝm", "-ệnāh", "tā--śǝm--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾā-", "śîm", "-āh", "ʾā-śîm-āh"],
+	    [:Masc, :Singular, :Person2, "tā-", "śēm", "Ø", "tā-śēm-Ø"],
+	    [:Fem, :Singular, :Person2, "tā-", "śǝm", "-î", "tā-śǝm-î"],
+	    [:Masc, :Singular, :Person3, "yā-", "śēm", "Ø", "yā-śēm-Ø"],
+	    [:Fem, :Singular, :Person3, "tā-", "śēm", "Ø", "tā-śēm-Ø"],
+	    [:Common, :Plural, :Person1, "nā-", "śîm", "-āh", "nā-śîm-āh"],
+	    [:Masc, :Plural, :Person2, "tā-", "śǝm", "-û", "tā-śǝm-û"],
+	    [:Fem, :Plural, :Person2, "tā-", "śǝm", "-ệnāh", "tā-śǝm-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yā-", "śǝm", "-û", "yā-śǝm-û"],
+	    [:Fem, :Plural, :Person3, "tā-", "śǝm", "-ệnāh", "tā-śǝm-ệnāh"]]
     }
     {:label "hebrew-VCCCDJuss-gdl"
     :note ""
@@ -278,16 +287,16 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔă-", "gaddēl", "_NULL", "ʔă--gaddēl-_NULL"],
-	    [:Masc, :Singular, :Person2, "tǝ-", "gaddēl", "_NULL", "tǝ--gaddēl-_NULL"],
-	    [:Fem, :Singular, :Person2, "tǝ-", "gaddǝl", "-î", "tǝ--gaddǝl--î"],
-	    [:Masc, :Singular, :Person3, "yǝ-", "gaddēl", "_NULL", "yǝ--gaddēl-_NULL"],
-	    [:Fem, :Singular, :Person3, "tǝ-", "gaddēl", "_NULL", "tǝ--gaddēl-_NULL"],
-	    [:Common, :Plural, :Person1, "nǝ-", "gaddēl", "_NULL", "nǝ--gaddēl-_NULL"],
-	    [:Masc, :Plural, :Person2, "tǝ-", "gaddǝl", "-û", "tǝ--gaddǝl--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "gaddēl", "-nāh", "tǝ--gaddēl--nāh"],
-	    [:Masc, :Plural, :Person3, "yǝ-", "gaddǝl", "-û", "yǝ--gaddǝl--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "gaddēl", "-nāh", "tǝ--gaddēl--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔă-", "gaddēl", "Ø", "ʔă-gaddēl-Ø"],
+	    [:Masc, :Singular, :Person2, "tǝ-", "gaddēl", "Ø", "tǝ-gaddēl-Ø"],
+	    [:Fem, :Singular, :Person2, "tǝ-", "gaddǝl", "-î", "tǝ-gaddǝl-î"],
+	    [:Masc, :Singular, :Person3, "yǝ-", "gaddēl", "Ø", "yǝ-gaddēl-Ø"],
+	    [:Fem, :Singular, :Person3, "tǝ-", "gaddēl", "Ø", "tǝ-gaddēl-Ø"],
+	    [:Common, :Plural, :Person1, "nǝ-", "gaddēl", "Ø", "nǝ-gaddēl-Ø"],
+	    [:Masc, :Plural, :Person2, "tǝ-", "gaddǝl", "-û", "tǝ-gaddǝl-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "gaddēl", "-nāh", "tǝ-gaddēl-nāh"],
+	    [:Masc, :Plural, :Person3, "yǝ-", "gaddǝl", "-û", "yǝ-gaddǝl-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "gaddēl", "-nāh", "tǝ-gaddēl-nāh"]]
     }
     {:label "hebrew-VCwCBImperf-qwm"
     :note "Lambdin1971"
@@ -298,20 +307,20 @@
 	    :rootClass :CwC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾā-", "qûm", "_NULL", "ʾā--qûm-_NULL"],
-	    [:Masc, :Singular, :Person2, "tā-", "qûm", "_NULL", "tā--qûm-_NULL"],
-	    [:Fem, :Singular, :Person2, "tā-", "qûm", "-î", "tā--qûm--î"],
-	    [:Masc, :Singular, :Person3, "yā-", "qûm", "_NULL", "yā--qûm-_NULL"],
-	    [:Fem, :Singular, :Person3, "tā-", "qûm", "_NULL", "tā--qûm-_NULL"],
-	    [:Common, :Plural, :Person1, "nā-", "qûm", "_NULL", "nā--qûm-_NULL"],
-	    [:Masc, :Plural, :Person2, "tā-", "qûm", "-û", "tā--qûm--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "qûm", "-ệnāh", "tǝ--qûm--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yā-", "qûm", "-û", "yā--qûm--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "qûm", "-ệnāh", "tǝ--qûm--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾā-", "qûm", "Ø", "ʾā-qûm-Ø"],
+	    [:Masc, :Singular, :Person2, "tā-", "qûm", "Ø", "tā-qûm-Ø"],
+	    [:Fem, :Singular, :Person2, "tā-", "qûm", "-î", "tā-qûm-î"],
+	    [:Masc, :Singular, :Person3, "yā-", "qûm", "Ø", "yā-qûm-Ø"],
+	    [:Fem, :Singular, :Person3, "tā-", "qûm", "Ø", "tā-qûm-Ø"],
+	    [:Common, :Plural, :Person1, "nā-", "qûm", "Ø", "nā-qûm-Ø"],
+	    [:Masc, :Plural, :Person2, "tā-", "qûm", "-û", "tā-qûm-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "qûm", "-ệnāh", "tǝ-qûm-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yā-", "qûm", "-û", "yā-qûm-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "qûm", "-ệnāh", "tǝ-qûm-ệnāh"]]
     }
     {:label "hebrew-VHCCBImprtv-hzq"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :hzq,
 	    :person :Person2,
@@ -319,10 +328,10 @@
 	    :rootClass :HCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "ḥăzaq", "_NULL", "⊤-ḥăzaq-_NULL"],
-	    [:Fem, :Singular, "⊤", "ḥizq", "-î", "⊤-ḥizq--î"],
-	    [:Masc, :Plural, "⊤", "ḥizq", "-û", "⊤-ḥizq--û"],
-	    [:Fem, :Plural, "⊤", "ḥăzaq", "-nāh", "⊤-ḥăzaq--nāh"]]
+	    [:Masc, :Singular, " ", "ḥăzaq", "Ø", "ḥăzaq-Ø"],
+	    [:Fem, :Singular, " ", "ḥizq", "-î", "ḥizq-î"],
+	    [:Masc, :Plural, " ", "ḥizq", "-û", "ḥizq-û"],
+	    [:Fem, :Plural, " ", "ḥăzaq", "-nāh", "ḥăzaq-nāh"]]
     }
     {:label "hebrew-VCCCDuPerf-gdl"
     :note ""
@@ -332,36 +341,36 @@
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "guddal", "-tî", "⊤-guddal--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "guddal", "-tā", "⊤-guddal--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "guddal", "-t", "⊤-guddal--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "guddal", "_NULL", "⊤-guddal-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "guddǝl", "-āh", "⊤-guddǝl--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "guddal", "-nû", "⊤-guddal--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "guddal", "-tem", "⊤-guddal--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "guddal", "-ten", "⊤-guddal--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "guddǝl", "-û", "⊤-guddǝl--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "guddǝl", "-û", "⊤-guddǝl--û"]]
+	    [:Common, :Singular, :Person1, " ", "guddal", "-tî", "guddal-tî"],
+	    [:Masc, :Singular, :Person2, " ", "guddal", "-tā", "guddal-tā"],
+	    [:Fem, :Singular, :Person2, " ", "guddal", "-t", "guddal-t"],
+	    [:Masc, :Singular, :Person3, " ", "guddal", "Ø", "guddal-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "guddǝl", "-āh", "guddǝl-āh"],
+	    [:Common, :Plural, :Person1, " ", "guddal", "-nû", "guddal-nû"],
+	    [:Masc, :Plural, :Person2, " ", "guddal", "-tem", "guddal-tem"],
+	    [:Fem, :Plural, :Person2, " ", "guddal", "-ten", "guddal-ten"],
+	    [:Masc, :Plural, :Person3, " ", "guddǝl", "-û", "guddǝl-û"],
+	    [:Fem, :Plural, :Person3, " ", "guddǝl", "-û", "guddǝl-û"]]
     }
     {:label "hebrew-VCCCBJuss-ktb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :ktb,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḵtǝḇ", "-āh", "ʾe--ḵtǝḇ--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḵtōḇ", "_NULL", "ti--ḵtōḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḵtǝḇ", "-î", "ti--ḵtǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḵtōḇ", "_NULL", "yi--ḵtōḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḵtōḇ", "_NULL", "ti--ḵtōḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḵtǝḇ", "-āh", "ni--ḵtǝḇ--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḵtǝḇ", "-û", "ti--ḵtǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḵtōḇ", "-nāh", "ti--ḵtōḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḵtǝḇ", "-û", "yi--ḵtǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḵtōḇ", "-nāh", "ti--ḵtōḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḵtǝḇ", "-āh", "ʾe-ḵtǝḇ-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḵtōḇ", "Ø", "ti-ḵtōḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḵtǝḇ", "-î", "ti-ḵtǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḵtōḇ", "Ø", "yi-ḵtōḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḵtōḇ", "Ø", "ti-ḵtōḇ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḵtǝḇ", "-āh", "ni-ḵtǝḇ-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḵtǝḇ", "-û", "ti-ḵtǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḵtōḇ", "-nāh", "ti-ḵtōḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḵtǝḇ", "-û", "yi-ḵtǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḵtōḇ", "-nāh", "ti-ḵtōḇ-nāh"]]
     }
     {:label "hebrew-VCCCStImperf-gdl"
     :note ""
@@ -371,96 +380,96 @@
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔe-", "ṯgaddēl", "_NULL", "ʔe--ṯgaddēl-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ṯgaddēl", "_NULL", "ti--ṯgaddēl-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ṯgaddǝl", "-î", "ti--ṯgaddǝl--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ṯgaddēl", "_NULL", "yi--ṯgaddēl-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ṯgaddēl", "_NULL", "ti--ṯgaddēl-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ṯgaddēl", "_NULL", "ni--ṯgaddēl-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ṯgaddǝl", "-û", "ti--ṯgaddǝl--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ṯgaddēl", "-nāh", "ti--ṯgaddēl--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ṯgaddǝl", "-û", "yi--ṯgaddǝl--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ṯgaddēl", "-nāh", "ti--ṯgaddēl--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔe-", "ṯgaddēl", "Ø", "ʔe-ṯgaddēl-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ṯgaddēl", "Ø", "ti-ṯgaddēl-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ṯgaddǝl", "-î", "ti-ṯgaddǝl-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ṯgaddēl", "Ø", "yi-ṯgaddēl-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ṯgaddēl", "Ø", "ti-ṯgaddēl-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ṯgaddēl", "Ø", "ni-ṯgaddēl-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ṯgaddǝl", "-û", "ti-ṯgaddǝl-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ṯgaddēl", "-nāh", "ti-ṯgaddēl-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ṯgaddǝl", "-û", "yi-ṯgaddǝl-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ṯgaddēl", "-nāh", "ti-ṯgaddēl-nāh"]]
     }
     {:label "hebrew-VCCBJuss-kl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :akl,
 	    :pos :Verb,
 	    :rootClass :ACC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾō-", "(ʾ)ḵǝl", "-āh", "ʾō--(ʾ)ḵǝl--āh"],
-	    [:Masc, :Singular, :Person2, "tō-", "(ʾ)ḵal", "_NULL", "tō--(ʾ)ḵal-_NULL"],
-	    [:Fem, :Singular, :Person2, "tō-", "(ʾ)ḵǝl", "-î", "tō--(ʾ)ḵǝl--î"],
-	    [:Masc, :Singular, :Person3, "yō-", "(ʾ)ḵal", "_NULL", "yō--(ʾ)ḵal-_NULL"],
-	    [:Fem, :Singular, :Person3, "tō-", "(ʾ)ḵal", "_NULL", "tō--(ʾ)ḵal-_NULL"],
-	    [:Common, :Plural, :Person1, "nō-", "(ʾ)ḵǝl", "-āh", "nō--(ʾ)ḵǝl--āh"],
-	    [:Masc, :Plural, :Person2, "tō-", "(ʾ)ḵǝl", "-û", "tō--(ʾ)ḵǝl--û"],
-	    [:Fem, :Plural, :Person2, "tō-", "(ʾ)ḵal", "-nāh", "tō--(ʾ)ḵal--nāh"],
-	    [:Masc, :Plural, :Person3, "yō-", "(ʾ)ḵǝl", "-û", "yō--(ʾ)ḵǝl--û"],
-	    [:Fem, :Plural, :Person3, "tō-", "(ʾ)ḵal", "-nāh", "tō--(ʾ)ḵal--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾō-", "(ʾ)ḵǝl", "-āh", "ʾō-(ʾ)ḵǝl-āh"],
+	    [:Masc, :Singular, :Person2, "tō-", "(ʾ)ḵal", "Ø", "tō-(ʾ)ḵal-Ø"],
+	    [:Fem, :Singular, :Person2, "tō-", "(ʾ)ḵǝl", "-î", "tō-(ʾ)ḵǝl-î"],
+	    [:Masc, :Singular, :Person3, "yō-", "(ʾ)ḵal", "Ø", "yō-(ʾ)ḵal-Ø"],
+	    [:Fem, :Singular, :Person3, "tō-", "(ʾ)ḵal", "Ø", "tō-(ʾ)ḵal-Ø"],
+	    [:Common, :Plural, :Person1, "nō-", "(ʾ)ḵǝl", "-āh", "nō-(ʾ)ḵǝl-āh"],
+	    [:Masc, :Plural, :Person2, "tō-", "(ʾ)ḵǝl", "-û", "tō-(ʾ)ḵǝl-û"],
+	    [:Fem, :Plural, :Person2, "tō-", "(ʾ)ḵal", "-nāh", "tō-(ʾ)ḵal-nāh"],
+	    [:Masc, :Plural, :Person3, "yō-", "(ʾ)ḵǝl", "-û", "yō-(ʾ)ḵǝl-û"],
+	    [:Fem, :Plural, :Person3, "tō-", "(ʾ)ḵal", "-nāh", "tō-(ʾ)ḵal-nāh"]]
     }
     {:label "hebrew-VWCCBJuss-ysb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ysb,
 	    :pos :Verb,
 	    :rootClass :WCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾē-", "šǝḇ", "-āh", "ʾē--šǝḇ--āh"],
-	    [:Masc, :Singular, :Person2, "tē-", "šēḇ", "_NULL", "tē--šēḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "tē-", "šǝḇ", "-î", "tē--šǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yē-", "šēḇ", "_NULL", "yē--šēḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "tē-", "šēḇ", "_NULL", "tē--šēḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "nē-", "šǝḇ", "-āh", "nē--šǝḇ--āh"],
-	    [:Masc, :Plural, :Person2, "tē-", "šǝḇ", "-û", "tē--šǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "tē-", "šaḇ", "-nāh", "tē--šaḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yē-", "šǝḇ", "-û", "yē--šǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "tē-", "šaḇ", "-nāh", "tē--šaḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾē-", "šǝḇ", "-āh", "ʾē-šǝḇ-āh"],
+	    [:Masc, :Singular, :Person2, "tē-", "šēḇ", "Ø", "tē-šēḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "tē-", "šǝḇ", "-î", "tē-šǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yē-", "šēḇ", "Ø", "yē-šēḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "tē-", "šēḇ", "Ø", "tē-šēḇ-Ø"],
+	    [:Common, :Plural, :Person1, "nē-", "šǝḇ", "-āh", "nē-šǝḇ-āh"],
+	    [:Masc, :Plural, :Person2, "tē-", "šǝḇ", "-û", "tē-šǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "tē-", "šaḇ", "-nāh", "tē-šaḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yē-", "šǝḇ", "-û", "yē-šǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "tē-", "šaḇ", "-nāh", "tē-šaḇ-nāh"]]
     }
     {:label "hebrew-VC1C2C2BJuss-qll"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :qll,
 	    :pos :Verb,
 	    :rootClass :C1C2C2,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾē-", "qall", "-āh", "ʾē--qall--āh"],
-	    [:Masc, :Singular, :Person2, "tē-", "qal", "_NULL", "tē--qal-_NULL"],
-	    [:Fem, :Singular, :Person2, "tē-", "qall", "-î", "tē--qall--î"],
-	    [:Masc, :Singular, :Person3, "yē-", "qal", "_NULL", "yē--qal-_NULL"],
-	    [:Fem, :Singular, :Person3, "tē-", "qal", "_NULL", "tē--qal-_NULL"],
-	    [:Common, :Plural, :Person1, "nē-", "qall", "-āh", "nē--qall--āh"],
-	    [:Masc, :Plural, :Person2, "tē-", "qall", "-û", "tē--qall--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "qall", "-ệnāh", "tǝ--qall--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yē-", "qall", "-û", "yē--qall--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "qall", "-ệnāh", "tǝ--qall--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾē-", "qall", "-āh", "ʾē-qall-āh"],
+	    [:Masc, :Singular, :Person2, "tē-", "qal", "Ø", "tē-qal-Ø"],
+	    [:Fem, :Singular, :Person2, "tē-", "qall", "-î", "tē-qall-î"],
+	    [:Masc, :Singular, :Person3, "yē-", "qal", "Ø", "yē-qal-Ø"],
+	    [:Fem, :Singular, :Person3, "tē-", "qal", "Ø", "tē-qal-Ø"],
+	    [:Common, :Plural, :Person1, "nē-", "qall", "-āh", "nē-qall-āh"],
+	    [:Masc, :Plural, :Person2, "tē-", "qall", "-û", "tē-qall-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "qall", "-ệnāh", "tǝ-qall-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yē-", "qall", "-û", "yē-qall-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "qall", "-ệnāh", "tǝ-qall-ệnāh"]]
     }
     {:label "hebrew-VHCCBJuss-hzq"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :hzq,
 	    :pos :Verb,
 	    :rootClass :HCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḥezq", "-āh", "ʾe--ḥezq--āh"],
-	    [:Masc, :Singular, :Person2, "te-", "ḥĕzaq", "_NULL", "te--ḥĕzaq-_NULL"],
-	    [:Fem, :Singular, :Person2, "te-", "ḥezq", "-î", "te--ḥezq--î"],
-	    [:Masc, :Singular, :Person3, "ye-", "ḥĕzaq", "_NULL", "ye--ḥĕzaq-_NULL"],
-	    [:Fem, :Singular, :Person3, "te-", "ḥĕzaq", "_NULL", "te--ḥĕzaq-_NULL"],
-	    [:Common, :Plural, :Person1, "ne-", "ḥezq", "-āh", "ne--ḥezq--āh"],
-	    [:Masc, :Plural, :Person2, "te-", "ḥezq", "-û", "te--ḥezq--û"],
-	    [:Fem, :Plural, :Person2, "te-", "ḥĕzaq", "-nāh", "te--ḥĕzaq--nāh"],
-	    [:Masc, :Plural, :Person3, "ye-", "ḥezq", "-û", "ye--ḥezq--û"],
-	    [:Fem, :Plural, :Person3, "te-", "ḥĕzaq", "-nāh", "te--ḥĕzaq--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḥezq", "-āh", "ʾe-ḥezq-āh"],
+	    [:Masc, :Singular, :Person2, "te-", "ḥĕzaq", "Ø", "te-ḥĕzaq-Ø"],
+	    [:Fem, :Singular, :Person2, "te-", "ḥezq", "-î", "te-ḥezq-î"],
+	    [:Masc, :Singular, :Person3, "ye-", "ḥĕzaq", "Ø", "ye-ḥĕzaq-Ø"],
+	    [:Fem, :Singular, :Person3, "te-", "ḥĕzaq", "Ø", "te-ḥĕzaq-Ø"],
+	    [:Common, :Plural, :Person1, "ne-", "ḥezq", "-āh", "ne-ḥezq-āh"],
+	    [:Masc, :Plural, :Person2, "te-", "ḥezq", "-û", "te-ḥezq-û"],
+	    [:Fem, :Plural, :Person2, "te-", "ḥĕzaq", "-nāh", "te-ḥĕzaq-nāh"],
+	    [:Masc, :Plural, :Person3, "ye-", "ḥezq", "-û", "ye-ḥezq-û"],
+	    [:Fem, :Plural, :Person3, "te-", "ḥĕzaq", "-nāh", "te-ḥĕzaq-nāh"]]
     }
     {:label "hebrew-VCwCBJuss-qwm"
     :note "Lambdin1971"
@@ -471,20 +480,20 @@
 	    :rootClass :CwC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾā-", "qûm", "-āh", "ʾā--qûm--āh"],
-	    [:Masc, :Singular, :Person2, "tā-", "qōm", "_NULL", "tā--qōm-_NULL"],
-	    [:Fem, :Singular, :Person2, "tā-", "qǝm", "-î", "tā--qǝm--î"],
-	    [:Masc, :Singular, :Person3, "yā-", "qōm", "_NULL", "yā--qōm-_NULL"],
-	    [:Fem, :Singular, :Person3, "tā-", "qōm", "_NULL", "tā--qōm-_NULL"],
-	    [:Common, :Plural, :Person1, "nā-", "qûm", "-āh", "nā--qûm--āh"],
-	    [:Masc, :Plural, :Person2, "tā-", "qǝm", "-û", "tā--qǝm--û"],
-	    [:Fem, :Plural, :Person2, "tā-", "qǝm", "-ệnāh", "tā--qǝm--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yā-", "qǝm", "-û", "yā--qǝm--û"],
-	    [:Fem, :Plural, :Person3, "tā-", "qǝm", "-ệnāh", "tā--qǝm--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾā-", "qûm", "-āh", "ʾā-qûm-āh"],
+	    [:Masc, :Singular, :Person2, "tā-", "qōm", "Ø", "tā-qōm-Ø"],
+	    [:Fem, :Singular, :Person2, "tā-", "qǝm", "-î", "tā-qǝm-î"],
+	    [:Masc, :Singular, :Person3, "yā-", "qōm", "Ø", "yā-qōm-Ø"],
+	    [:Fem, :Singular, :Person3, "tā-", "qōm", "Ø", "tā-qōm-Ø"],
+	    [:Common, :Plural, :Person1, "nā-", "qûm", "-āh", "nā-qûm-āh"],
+	    [:Masc, :Plural, :Person2, "tā-", "qǝm", "-û", "tā-qǝm-û"],
+	    [:Fem, :Plural, :Person2, "tā-", "qǝm", "-ệnāh", "tā-qǝm-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yā-", "qǝm", "-û", "yā-qǝm-û"],
+	    [:Fem, :Plural, :Person3, "tā-", "qǝm", "-ệnāh", "tā-qǝm-ệnāh"]]
     }
     {:label "hebrew-VNCCBImprtv-ntn"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ntn,
 	    :person :Person2,
@@ -492,14 +501,14 @@
 	    :rootClass :NCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "tēn", "_NULL", "⊤-tēn-_NULL"],
-	    [:Fem, :Singular, "⊤", "tǝn", "-î", "⊤-tǝn--î"],
-	    [:Masc, :Plural, "⊤", "tǝn", "-û", "⊤-tǝn--û"],
-	    [:Fem, :Plural, "⊤", "tēn", "-nāh", "⊤-tēn--nāh"]]
+	    [:Masc, :Singular, " ", "tēn", "Ø", "tēn-Ø"],
+	    [:Fem, :Singular, " ", "tǝn", "-î", "tǝn-î"],
+	    [:Masc, :Plural, " ", "tǝn", "-û", "tǝn-û"],
+	    [:Fem, :Plural, " ", "tēn", "-nāh", "tēn-nāh"]]
     }
     {:label "hebrew-VCCBImprtv-ms"
     :note "Lambdin1971. The quiesced aleph(non-phonological glottal stop) is indicated by parentheses. In Lambdins transliteration on p. 119 of Introduction to Biblical Hebrew he does not represent the aleph in transliteration at all."
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :msa,
 	    :person :Person2,
@@ -507,10 +516,10 @@
 	    :rootClass :CCA,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "mǝṣā(ʾ)", "_NULL", "⊤-mǝṣā(ʾ)-_NULL"],
-	    [:Fem, :Singular, "⊤", "miṣʾ", "-î", "⊤-miṣʾ--î"],
-	    [:Masc, :Plural, "⊤", "miṣʾ", "-û", "⊤-miṣʾ--û"],
-	    [:Fem, :Plural, "⊤", "mǝṣệ(ʾ)", "-nāh", "⊤-mǝṣệ(ʾ)--nāh"]]
+	    [:Masc, :Singular, " ", "mǝṣā(ʾ)", "Ø", "mǝṣā(ʾ)-Ø"],
+	    [:Fem, :Singular, " ", "miṣʾ", "-î", "miṣʾ-î"],
+	    [:Masc, :Plural, " ", "miṣʾ", "-û", "miṣʾ-û"],
+	    [:Fem, :Plural, " ", "mǝṣệ(ʾ)", "-nāh", "mǝṣệ(ʾ)-nāh"]]
     }
     {:label "hebrew-VCCCSImperf-smd"
     :note ""
@@ -520,20 +529,20 @@
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔa-", "šmîḏ", "_NULL", "ʔa--šmîḏ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ta-", "šmîḏ", "_NULL", "ta--šmîḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ta-", "šmîḏ", "-î", "ta--šmîḏ--î"],
-	    [:Masc, :Singular, :Person3, "ya-", "šmîḏ", "_NULL", "ya--šmîḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ta-", "šmîḏ", "_NULL", "ta--šmîḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "na-", "šmîḏ", "_NULL", "na--šmîḏ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ta-", "šmîḏ", "-û", "ta--šmîḏ--û"],
-	    [:Fem, :Plural, :Person2, "ta-", "šmēḏ", "-nāh", "ta--šmēḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "ya-", "šmîḏ", "-û", "ya--šmîḏ--û"],
-	    [:Fem, :Plural, :Person3, "ta-", "šmēḏ", "-nāh", "ta--šmēḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔa-", "šmîḏ", "Ø", "ʔa-šmîḏ-Ø"],
+	    [:Masc, :Singular, :Person2, "ta-", "šmîḏ", "Ø", "ta-šmîḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "ta-", "šmîḏ", "-î", "ta-šmîḏ-î"],
+	    [:Masc, :Singular, :Person3, "ya-", "šmîḏ", "Ø", "ya-šmîḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "ta-", "šmîḏ", "Ø", "ta-šmîḏ-Ø"],
+	    [:Common, :Plural, :Person1, "na-", "šmîḏ", "Ø", "na-šmîḏ-Ø"],
+	    [:Masc, :Plural, :Person2, "ta-", "šmîḏ", "-û", "ta-šmîḏ-û"],
+	    [:Fem, :Plural, :Person2, "ta-", "šmēḏ", "-nāh", "ta-šmēḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "ya-", "šmîḏ", "-û", "ya-šmîḏ-û"],
+	    [:Fem, :Plural, :Person3, "ta-", "šmēḏ", "-nāh", "ta-šmēḏ-nāh"]]
     }
     {:label "hebrew-VCCCBImprtv-ktb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :ktb,
 	    :person :Person2,
@@ -541,10 +550,10 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "kǝṯōḇ", "_NULL", "⊤-kǝṯōḇ-_NULL"],
-	    [:Fem, :Singular, "⊤", "kiṯḇ", "-î", "⊤-kiṯḇ--î"],
-	    [:Masc, :Plural, "⊤", "kiṯḇ", "-û", "⊤-kiṯḇ--û"],
-	    [:Fem, :Plural, "⊤", "kǝṯōḇ", "-nāh", "⊤-kǝṯōḇ--nāh"]]
+	    [:Masc, :Singular, " ", "kǝṯōḇ", "Ø", "kǝṯōḇ-Ø"],
+	    [:Fem, :Singular, " ", "kiṯḇ", "-î", "kiṯḇ-î"],
+	    [:Masc, :Plural, " ", "kiṯḇ", "-û", "kiṯḇ-û"],
+	    [:Fem, :Plural, " ", "kǝṯōḇ", "-nāh", "kǝṯōḇ-nāh"]]
     }
     {:label "hebrew-VCCCNImperf-ktb"
     :note ""
@@ -554,20 +563,20 @@
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔe-", "kkāṯēḇ", "_NULL", "ʔe--kkāṯēḇ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "kkāṯēḇ", "_NULL", "ti--kkāṯēḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "kkāṯǝḇ", "-î", "ti--kkāṯǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "kkāṯēḇ", "_NULL", "yi--kkāṯēḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "kkāṯēḇ", "_NULL", "ti--kkāṯēḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "kkāṯēḇ", "_NULL", "ni--kkāṯēḇ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "kkāṯǝḇ", "-û", "ti--kkāṯǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "kkāṯaḇ", "-nāh", "ti--kkāṯaḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "kkāṯǝḇ", "-û", "yi--kkāṯǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "kkāṯaḇ", "-nāh", "ti--kkāṯaḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔe-", "kkāṯēḇ", "Ø", "ʔe-kkāṯēḇ-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "kkāṯēḇ", "Ø", "ti-kkāṯēḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "kkāṯǝḇ", "-î", "ti-kkāṯǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "kkāṯēḇ", "Ø", "yi-kkāṯēḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "kkāṯēḇ", "Ø", "ti-kkāṯēḇ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "kkāṯēḇ", "Ø", "ni-kkāṯēḇ-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "kkāṯǝḇ", "-û", "ti-kkāṯǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "kkāṯaḇ", "-nāh", "ti-kkāṯaḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "kkāṯǝḇ", "-û", "yi-kkāṯǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "kkāṯaḇ", "-nāh", "ti-kkāṯaḇ-nāh"]]
     }
     {:label "hebrew-VYCCBImprtv-ytb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :ytb,
 	    :person :Person2,
@@ -575,30 +584,30 @@
 	    :rootClass :YCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "yǝṭaḇ", "_NULL", "⊤-yǝṭaḇ-_NULL"],
-	    [:Fem, :Singular, "⊤", "yiṭḇ", "-î", "⊤-yiṭḇ--î"],
-	    [:Masc, :Plural, "⊤", "yiṭḇ", "-û", "⊤-yiṭḇ--û"],
-	    [:Fem, :Plural, "⊤", "yǝṭaḇ", "-nāh", "⊤-yǝṭaḇ--nāh"]]
+	    [:Masc, :Singular, " ", "yǝṭaḇ", "Ø", "yǝṭaḇ-Ø"],
+	    [:Fem, :Singular, " ", "yiṭḇ", "-î", "yiṭḇ-î"],
+	    [:Masc, :Plural, " ", "yiṭḇ", "-û", "yiṭḇ-û"],
+	    [:Fem, :Plural, " ", "yǝṭaḇ", "-nāh", "yǝṭaḇ-nāh"]]
     }
-    {:label "hebrew-VHCCBPerf-`md"
+    {:label "hebrew-VHCCBPerf-md"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :_md,
 	    :pos :Verb,
 	    :rootClass :HCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "ʕāmaḏ", "-tî", "⊤-ʕāmaḏ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "ʕāmaḏ", "-tā", "⊤-ʕāmaḏ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "ʕāmaḏ", "-t", "⊤-ʕāmaḏ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "ʕāmaḏ", "_NULL", "⊤-ʕāmaḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "ʕāmǝḏ", "-āh", "⊤-ʕāmǝḏ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "ʕāmaḏ", "-nû", "⊤-ʕāmaḏ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "ʕămaḏ", "-tem", "⊤-ʕămaḏ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "ʕămaḏ", "-ten", "⊤-ʕămaḏ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "ʕāmǝḏ", "-û", "⊤-ʕāmǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "ʕāmǝḏ", "-û", "⊤-ʕāmǝḏ--û"]]
+	    [:Common, :Singular, :Person1, " ", "ʕāmaḏ", "-tî", "ʕāmaḏ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "ʕāmaḏ", "-tā", "ʕāmaḏ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "ʕāmaḏ", "-t", "ʕāmaḏ-t"],
+	    [:Masc, :Singular, :Person3, " ", "ʕāmaḏ", "Ø", "ʕāmaḏ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "ʕāmǝḏ", "-āh", "ʕāmǝḏ-āh"],
+	    [:Common, :Plural, :Person1, " ", "ʕāmaḏ", "-nû", "ʕāmaḏ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "ʕămaḏ", "-tem", "ʕămaḏ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "ʕămaḏ", "-ten", "ʕămaḏ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "ʕāmǝḏ", "-û", "ʕāmǝḏ-û"],
+	    [:Fem, :Plural, :Person3, " ", "ʕāmǝḏ", "-û", "ʕāmǝḏ-û"]]
     }
     {:label "hebrew-VCCCStImprtv-gdl"
     :note ""
@@ -609,54 +618,54 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "hiṯgaddēl", "_NULL", "⊤-hiṯgaddēl-_NULL"],
-	    [:Fem, :Singular, "⊤", "hiṯgaddǝl", "-î", "⊤-hiṯgaddǝl--î"],
-	    [:Masc, :Plural, "⊤", "hiṯgaddǝl", "-û", "⊤-hiṯgaddǝl--û"],
-	    [:Fem, :Plural, "⊤", "hiṯgaddēl", "-nāh", "⊤-hiṯgaddēl--nāh"]]
+	    [:Masc, :Singular, " ", "hiṯgaddēl", "Ø", "hiṯgaddēl-Ø"],
+	    [:Fem, :Singular, " ", "hiṯgaddǝl", "-î", "hiṯgaddǝl-î"],
+	    [:Masc, :Plural, " ", "hiṯgaddǝl", "-û", "hiṯgaddǝl-û"],
+	    [:Fem, :Plural, " ", "hiṯgaddēl", "-nāh", "hiṯgaddēl-nāh"]]
     }
     {:label "hebrew-VC1C2C2BJuss-sbb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :sbb,
 	    :pos :Verb,
 	    :rootClass :C1C2C2,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾā-", "subb", "-āh", "ʾā--subb--āh"],
-	    [:Masc, :Singular, :Person2, "tā-", "sōḇ", "_NULL", "tā--sōḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "tā-", "sōbb", "-î", "tā--sōbb--î"],
-	    [:Masc, :Singular, :Person3, "yā-", "sōḇ", "_NULL", "yā--sōḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "tā-", "sōḇ", "_NULL", "tā--sōḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "nā-", "subb", "-āh", "nā--subb--āh"],
-	    [:Masc, :Plural, :Person2, "tā-", "sōbb", "-û", "tā--sōbb--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "subb", "-ệnāh", "tǝ--subb--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yā-", "sōbb", "-û", "yā--sōbb--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "subb", "-ệnāh", "tǝ--subb--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾā-", "subb", "-āh", "ʾā-subb-āh"],
+	    [:Masc, :Singular, :Person2, "tā-", "sōḇ", "Ø", "tā-sōḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "tā-", "sōbb", "-î", "tā-sōbb-î"],
+	    [:Masc, :Singular, :Person3, "yā-", "sōḇ", "Ø", "yā-sōḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "tā-", "sōḇ", "Ø", "tā-sōḇ-Ø"],
+	    [:Common, :Plural, :Person1, "nā-", "subb", "-āh", "nā-subb-āh"],
+	    [:Masc, :Plural, :Person2, "tā-", "sōbb", "-û", "tā-sōbb-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "subb", "-ệnāh", "tǝ-subb-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yā-", "sōbb", "-û", "yā-sōbb-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "subb", "-ệnāh", "tǝ-subb-ệnāh"]]
     }
     {:label "hebrew-VNCCBPerf-npl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :npl,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "nāp̄al", "-tî", "⊤-nāp̄al--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "nāp̄al", "-tā", "⊤-nāp̄al--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "nāp̄al", "-t", "⊤-nāp̄al--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "nāp̄al", "_NULL", "⊤-nāp̄al-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "nāp̄ǝl", "-āh", "⊤-nāp̄ǝl--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "nāp̄al", "-nû", "⊤-nāp̄al--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "nǝp̄al", "-tem", "⊤-nǝp̄al--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "nǝp̄al", "-ten", "⊤-nǝp̄al--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "nāp̄ǝl", "-û", "⊤-nāp̄ǝl--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "nāp̄ǝl", "-û", "⊤-nāp̄ǝl--û"]]
+	    [:Common, :Singular, :Person1, " ", "nāp̄al", "-tî", "nāp̄al-tî"],
+	    [:Masc, :Singular, :Person2, " ", "nāp̄al", "-tā", "nāp̄al-tā"],
+	    [:Fem, :Singular, :Person2, " ", "nāp̄al", "-t", "nāp̄al-t"],
+	    [:Masc, :Singular, :Person3, " ", "nāp̄al", "Ø", "nāp̄al-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "nāp̄ǝl", "-āh", "nāp̄ǝl-āh"],
+	    [:Common, :Plural, :Person1, " ", "nāp̄al", "-nû", "nāp̄al-nû"],
+	    [:Masc, :Plural, :Person2, " ", "nǝp̄al", "-tem", "nǝp̄al-tem"],
+	    [:Fem, :Plural, :Person2, " ", "nǝp̄al", "-ten", "nǝp̄al-ten"],
+	    [:Masc, :Plural, :Person3, " ", "nāp̄ǝl", "-û", "nāp̄ǝl-û"],
+	    [:Fem, :Plural, :Person3, " ", "nāp̄ǝl", "-û", "nāp̄ǝl-û"]]
     }
-    {:label "hebrew-VNCCBImprtv-ng`"
+    {:label "hebrew-VNCCBImprtv-ng_"
     :note "Lambdin1971"
-    :common {:ablautClass :a,
+    :common {:ablautClass :AClass,
 	    :derivedStem :B,
 	    :lexeme :ng_,
 	    :person :Person2,
@@ -664,30 +673,30 @@
 	    :rootClass :NCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "gaʕ", "_NULL", "⊤-gaʕ-_NULL"],
-	    [:Fem, :Singular, "⊤", "gǝʕ", "-î", "⊤-gǝʕ--î"],
-	    [:Masc, :Plural, "⊤", "gǝʕ", "-û", "⊤-gǝʕ--û"],
-	    [:Fem, :Plural, "⊤", "gaʕ", "-nāh", "⊤-gaʕ--nāh"]]
+	    [:Masc, :Singular, " ", "gaʕ", "Ø", "gaʕ-Ø"],
+	    [:Fem, :Singular, " ", "gǝʕ", "-î", "gǝʕ-î"],
+	    [:Masc, :Plural, " ", "gǝʕ", "-û", "gǝʕ-û"],
+	    [:Fem, :Plural, " ", "gaʕ", "-nāh", "gaʕ-nāh"]]
     }
     {:label "hebrew-VNCCBPerf-ntn"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ntn,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "nāṯat", "-tî", "⊤-nāṯat--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "nāṯat", "-tā", "⊤-nāṯat--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "nāṯat", "-t", "⊤-nāṯat--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "nāṯan", "_NULL", "⊤-nāṯan-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "nāṯǝn", "-āh", "⊤-nāṯǝn--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "nāṯan", "-nû", "⊤-nāṯan--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "nǝṯat", "-tem", "⊤-nǝṯat--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "nǝṯat", "-ten", "⊤-nǝṯat--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "nāṯǝn", "-û", "⊤-nāṯǝn--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "nāṯǝn", "-û", "⊤-nāṯǝn--û"]]
+	    [:Common, :Singular, :Person1, " ", "nāṯat", "-tî", "nāṯat-tî"],
+	    [:Masc, :Singular, :Person2, " ", "nāṯat", "-tā", "nāṯat-tā"],
+	    [:Fem, :Singular, :Person2, " ", "nāṯat", "-t", "nāṯat-t"],
+	    [:Masc, :Singular, :Person3, " ", "nāṯan", "Ø", "nāṯan-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "nāṯǝn", "-āh", "nāṯǝn-āh"],
+	    [:Common, :Plural, :Person1, " ", "nāṯan", "-nû", "nāṯan-nû"],
+	    [:Masc, :Plural, :Person2, " ", "nǝṯat", "-tem", "nǝṯat-tem"],
+	    [:Fem, :Plural, :Person2, " ", "nǝṯat", "-ten", "nǝṯat-ten"],
+	    [:Masc, :Plural, :Person3, " ", "nāṯǝn", "-û", "nāṯǝn-û"],
+	    [:Fem, :Plural, :Person3, " ", "nāṯǝn", "-û", "nāṯǝn-û"]]
     }
     {:label "hebrew-VCCCSuPerf-smd"
     :note ""
@@ -697,56 +706,56 @@
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "hošmaḏ", "-tî", "⊤-hošmaḏ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "hošmaḏ", "-tā", "⊤-hošmaḏ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "hošmaḏ", "-t", "⊤-hošmaḏ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "hošmaḏ", "_NULL", "⊤-hošmaḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "hošmǝḏ", "-āh", "⊤-hošmǝḏ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "hošmaḏ", "-nû", "⊤-hošmaḏ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "hošmaḏ", "-tem", "⊤-hošmaḏ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "hošmaḏ", "-ten", "⊤-hošmaḏ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "hošmǝḏ", "-û", "⊤-hošmǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "hošmǝḏ", "-û", "⊤-hošmǝḏ--û"]]
+	    [:Common, :Singular, :Person1, " ", "hošmaḏ", "-tî", "hošmaḏ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "hošmaḏ", "-tā", "hošmaḏ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "hošmaḏ", "-t", "hošmaḏ-t"],
+	    [:Masc, :Singular, :Person3, " ", "hošmaḏ", "Ø", "hošmaḏ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "hošmǝḏ", "-āh", "hošmǝḏ-āh"],
+	    [:Common, :Plural, :Person1, " ", "hošmaḏ", "-nû", "hošmaḏ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "hošmaḏ", "-tem", "hošmaḏ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "hošmaḏ", "-ten", "hošmaḏ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "hošmǝḏ", "-û", "hošmǝḏ-û"],
+	    [:Fem, :Plural, :Person3, " ", "hošmǝḏ", "-û", "hošmǝḏ-û"]]
     }
     {:label "hebrew-VCCCBPerf-bhr"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :bhr,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "bāḥar", "-tî", "⊤-bāḥar--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "bāḥar", "-tā", "⊤-bāḥar--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "bāḥar", "-t", "⊤-bāḥar--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "bāḥar", "_NULL", "⊤-bāḥar-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "bāḥǝr", "-āh", "⊤-bāḥǝr--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "bāḥar", "-nû", "⊤-bāḥar--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "bǝḥar", "-tem", "⊤-bǝḥar--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "bǝḥar", "-ten", "⊤-bǝḥar--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "bāḥǝr", "-û", "⊤-bāḥǝr--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "bāḥǝr", "-û", "⊤-bāḥǝr--û"]]
+	    [:Common, :Singular, :Person1, " ", "bāḥar", "-tî", "bāḥar-tî"],
+	    [:Masc, :Singular, :Person2, " ", "bāḥar", "-tā", "bāḥar-tā"],
+	    [:Fem, :Singular, :Person2, " ", "bāḥar", "-t", "bāḥar-t"],
+	    [:Masc, :Singular, :Person3, " ", "bāḥar", "Ø", "bāḥar-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "bāḥǝr", "-āh", "bāḥǝr-āh"],
+	    [:Common, :Plural, :Person1, " ", "bāḥar", "-nû", "bāḥar-nû"],
+	    [:Masc, :Plural, :Person2, " ", "bǝḥar", "-tem", "bǝḥar-tem"],
+	    [:Fem, :Plural, :Person2, " ", "bǝḥar", "-ten", "bǝḥar-ten"],
+	    [:Masc, :Plural, :Person3, " ", "bāḥǝr", "-û", "bāḥǝr-û"],
+	    [:Fem, :Plural, :Person3, " ", "bāḥǝr", "-û", "bāḥǝr-û"]]
     }
     {:label "hebrew-VC1C2C2BImperf-sbb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :sbb,
 	    :pos :Verb,
 	    :rootClass :C1C2C2,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾā-", "sōḇ", "_NULL", "ʾā--sōḇ-_NULL"],
-	    [:Masc, :Singular, :Person2, "tā-", "sōḇ", "_NULL", "tā--sōḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "tā-", "sōbb", "-î", "tā--sōbb--î"],
-	    [:Masc, :Singular, :Person3, "yā-", "sōḇ", "_NULL", "yā--sōḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "tā-", "sōḇ", "_NULL", "tā--sōḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "nā-", "sōḇ", "_NULL", "nā--sōḇ-_NULL"],
-	    [:Masc, :Plural, :Person2, "tā-", "sōbb", "-û", "tā--sōbb--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "subb", "-ệnāh", "tǝ--subb--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yā-", "sōbb", "-û", "yā--sōbb--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "subb", "-ệnāh", "tǝ--subb--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾā-", "sōḇ", "Ø", "ʾā-sōḇ-Ø"],
+	    [:Masc, :Singular, :Person2, "tā-", "sōḇ", "Ø", "tā-sōḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "tā-", "sōbb", "-î", "tā-sōbb-î"],
+	    [:Masc, :Singular, :Person3, "yā-", "sōḇ", "Ø", "yā-sōḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "tā-", "sōḇ", "Ø", "tā-sōḇ-Ø"],
+	    [:Common, :Plural, :Person1, "nā-", "sōḇ", "Ø", "nā-sōḇ-Ø"],
+	    [:Masc, :Plural, :Person2, "tā-", "sōbb", "-û", "tā-sōbb-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "subb", "-ệnāh", "tǝ-subb-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yā-", "sōbb", "-û", "yā-sōbb-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "subb", "-ệnāh", "tǝ-subb-ệnāh"]]
     }
     {:label "hebrew-VCCCStPerf-gdl"
     :note ""
@@ -756,76 +765,76 @@
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "hiṯgaddal", "-tî", "⊤-hiṯgaddal--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "hiṯgaddal", "-tā", "⊤-hiṯgaddal--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "hiṯgaddal", "-t", "⊤-hiṯgaddal--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "hiṯgaddēl", "_NULL", "⊤-hiṯgaddēl-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "hiṯgaddǝl", "-āh", "⊤-hiṯgaddǝl--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "hiṯgaddal", "-nû", "⊤-hiṯgaddal--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "hiṯgaddal", "-tem", "⊤-hiṯgaddal--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "hiṯgaddal", "-ten", "⊤-hiṯgaddal--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "hiṯgaddǝl", "-û", "⊤-hiṯgaddǝl--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "hiṯgaddǝl", "-û", "⊤-hiṯgaddǝl--û"]]
+	    [:Common, :Singular, :Person1, " ", "hiṯgaddal", "-tî", "hiṯgaddal-tî"],
+	    [:Masc, :Singular, :Person2, " ", "hiṯgaddal", "-tā", "hiṯgaddal-tā"],
+	    [:Fem, :Singular, :Person2, " ", "hiṯgaddal", "-t", "hiṯgaddal-t"],
+	    [:Masc, :Singular, :Person3, " ", "hiṯgaddēl", "Ø", "hiṯgaddēl-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "hiṯgaddǝl", "-āh", "hiṯgaddǝl-āh"],
+	    [:Common, :Plural, :Person1, " ", "hiṯgaddal", "-nû", "hiṯgaddal-nû"],
+	    [:Masc, :Plural, :Person2, " ", "hiṯgaddal", "-tem", "hiṯgaddal-tem"],
+	    [:Fem, :Plural, :Person2, " ", "hiṯgaddal", "-ten", "hiṯgaddal-ten"],
+	    [:Masc, :Plural, :Person3, " ", "hiṯgaddǝl", "-û", "hiṯgaddǝl-û"],
+	    [:Fem, :Plural, :Person3, " ", "hiṯgaddǝl", "-û", "hiṯgaddǝl-û"]]
     }
     {:label "hebrew-VCCBImperf-ms"
     :note "Lambdin1971. The quiesced aleph(non-phonological glottal stop) is indicated by parentheses. In Lambdins transliteration on p. 119 of Introduction to Biblical Hebrew he does not represent the aleph in transliteration at all."
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :msa,
 	    :pos :Verb,
 	    :rootClass :CCA,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "mṣā(ʾ)", "_NULL", "ʾe--mṣā(ʾ)-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "mṣā(ʾ)", "_NULL", "ti--mṣā(ʾ)-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "mṣǝʾ", "-î", "ti--mṣǝʾ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "mṣā(ʾ)", "_NULL", "yi--mṣā(ʾ)-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "mṣā(ʾ)", "_NULL", "ti--mṣā(ʾ)-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "mṣā(ʾ)", "_NULL", "ni--mṣā(ʾ)-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "mṣǝʾ", "-û", "ti--mṣǝʾ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "mṣệ(ʾ)", "-nāh", "ti--mṣệ(ʾ)--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "mṣǝʾ", "-û", "yi--mṣǝʾ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "mṣệ(ʾ)", "-nāh", "ti--mṣệ(ʾ)--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "mṣā(ʾ)", "Ø", "ʾe-mṣā(ʾ)-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "mṣā(ʾ)", "Ø", "ti-mṣā(ʾ)-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "mṣǝʾ", "-î", "ti-mṣǝʾ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "mṣā(ʾ)", "Ø", "yi-mṣā(ʾ)-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "mṣā(ʾ)", "Ø", "ti-mṣā(ʾ)-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "mṣā(ʾ)", "Ø", "ni-mṣā(ʾ)-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "mṣǝʾ", "-û", "ti-mṣǝʾ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "mṣệ(ʾ)", "-nāh", "ti-mṣệ(ʾ)-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "mṣǝʾ", "-û", "yi-mṣǝʾ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "mṣệ(ʾ)", "-nāh", "ti-mṣệ(ʾ)-nāh"]]
     }
-    {:label "hebrew-VHCCBJuss-`md"
+    {:label "hebrew-VHCCBJuss-md"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :_md,
 	    :pos :Verb,
 	    :rootClass :HCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ʕemḏ", "-āh", "ʾe--ʕemḏ--āh"],
-	    [:Masc, :Singular, :Person2, "ta-", "ʕămōḏ", "_NULL", "ta--ʕămōḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ta-", "ʕamḏ", "-î", "ta--ʕamḏ--î"],
-	    [:Masc, :Singular, :Person3, "ya-", "ʕămōḏ", "_NULL", "ya--ʕămōḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ta-", "ʕămōḏ", "_NULL", "ta--ʕămōḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "na-", "ʕamḏ", "-āh", "na--ʕamḏ--āh"],
-	    [:Masc, :Plural, :Person2, "ta-", "ʕamḏ", "-û", "ta--ʕamḏ--û"],
-	    [:Fem, :Plural, :Person2, "ta-", "ʕămōḏ", "-nāh", "ta--ʕămōḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "ya-", "ʕamḏ", "-û", "ya--ʕamḏ--û"],
-	    [:Fem, :Plural, :Person3, "ta-", "ʕămōḏ", "-nāh", "ta--ʕămōḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ʕemḏ", "-āh", "ʾe-ʕemḏ-āh"],
+	    [:Masc, :Singular, :Person2, "ta-", "ʕămōḏ", "Ø", "ta-ʕămōḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "ta-", "ʕamḏ", "-î", "ta-ʕamḏ-î"],
+	    [:Masc, :Singular, :Person3, "ya-", "ʕămōḏ", "Ø", "ya-ʕămōḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "ta-", "ʕămōḏ", "Ø", "ta-ʕămōḏ-Ø"],
+	    [:Common, :Plural, :Person1, "na-", "ʕamḏ", "-āh", "na-ʕamḏ-āh"],
+	    [:Masc, :Plural, :Person2, "ta-", "ʕamḏ", "-û", "ta-ʕamḏ-û"],
+	    [:Fem, :Plural, :Person2, "ta-", "ʕămōḏ", "-nāh", "ta-ʕămōḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "ya-", "ʕamḏ", "-û", "ya-ʕamḏ-û"],
+	    [:Fem, :Plural, :Person3, "ta-", "ʕămōḏ", "-nāh", "ta-ʕămōḏ-nāh"]]
     }
-    {:label "hebrew-VNCCBImperf-ng`"
+    {:label "hebrew-VNCCBImperf-ng_"
     :note "Lambdin1971"
-    :common {:ablautClass :a,
+    :common {:ablautClass :AClass,
 	    :derivedStem :B,
 	    :lexeme :ng_,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ggaʕ", "_NULL", "ʾe--ggaʕ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ggaʕ", "_NULL", "ti--ggaʕ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ggǝʕ", "-î", "ti--ggǝʕ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ggaʕ", "_NULL", "yi--ggaʕ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ggaʕ", "_NULL", "ti--ggaʕ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ggaʕ", "_NULL", "ni--ggaʕ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ggǝʕ", "-û", "ti--ggǝʕ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ggaʕ", "-nāh", "ti--ggaʕ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ggǝʕ", "-û", "yi--ggǝʕ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ggaʕ", "-nāh", "ti--ggaʕ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ggaʕ", "Ø", "ʾe-ggaʕ-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ggaʕ", "Ø", "ti-ggaʕ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ggǝʕ", "-î", "ti-ggǝʕ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ggaʕ", "Ø", "yi-ggaʕ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ggaʕ", "Ø", "ti-ggaʕ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ggaʕ", "Ø", "ni-ggaʕ-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ggǝʕ", "-û", "ti-ggǝʕ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ggaʕ", "-nāh", "ti-ggaʕ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ggǝʕ", "-û", "yi-ggǝʕ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ggaʕ", "-nāh", "ti-ggaʕ-nāh"]]
     }
     {:label "hebrew-VCCCNPerf-ktb"
     :note ""
@@ -835,20 +844,20 @@
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "niḵtaḇ", "-tî", "⊤-niḵtaḇ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "niḵtaḇ", "-tā", "⊤-niḵtaḇ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "niḵtaḇ", "-t", "⊤-niḵtaḇ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "niḵtaḇ", "_NULL", "⊤-niḵtaḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "niḵtǝḇ", "-āh", "⊤-niḵtǝḇ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "niḵtaḇ", "-nû", "⊤-niḵtaḇ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "niḵtaḇ", "-tem", "⊤-niḵtaḇ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "niḵtaḇ", "-ten", "⊤-niḵtaḇ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "niḵtǝḇ", "-û", "⊤-niḵtǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "niḵtǝḇ", "-û", "⊤-niḵtǝḇ--û"]]
+	    [:Common, :Singular, :Person1, " ", "niḵtaḇ", "-tî", "niḵtaḇ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "niḵtaḇ", "-tā", "niḵtaḇ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "niḵtaḇ", "-t", "niḵtaḇ-t"],
+	    [:Masc, :Singular, :Person3, " ", "niḵtaḇ", "Ø", "niḵtaḇ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "niḵtǝḇ", "-āh", "niḵtǝḇ-āh"],
+	    [:Common, :Plural, :Person1, " ", "niḵtaḇ", "-nû", "niḵtaḇ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "niḵtaḇ", "-tem", "niḵtaḇ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "niḵtaḇ", "-ten", "niḵtaḇ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "niḵtǝḇ", "-û", "niḵtǝḇ-û"],
+	    [:Fem, :Plural, :Person3, " ", "niḵtǝḇ", "-û", "niḵtǝḇ-û"]]
     }
     {:label "hebrew-VCChBImprtv-slh"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :slh,
 	    :person :Person2,
@@ -856,10 +865,10 @@
 	    :rootClass :CCh,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "šǝlaḥ", "_NULL", "⊤-šǝlaḥ-_NULL"],
-	    [:Fem, :Singular, "⊤", "šilḥ", "-î", "⊤-šilḥ--î"],
-	    [:Masc, :Plural, "⊤", "šilḥ", "-û", "⊤-šilḥ--û"],
-	    [:Fem, :Plural, "⊤", "šǝlaḥ", "-nāh", "⊤-šǝlaḥ--nāh"]]
+	    [:Masc, :Singular, " ", "šǝlaḥ", "Ø", "šǝlaḥ-Ø"],
+	    [:Fem, :Singular, " ", "šilḥ", "-î", "šilḥ-î"],
+	    [:Masc, :Plural, " ", "šilḥ", "-û", "šilḥ-û"],
+	    [:Fem, :Plural, " ", "šǝlaḥ", "-nāh", "šǝlaḥ-nāh"]]
     }
     {:label "hebrew-VCCyPerf-bny"
     :note "Lambdin1971"
@@ -868,16 +877,16 @@
 	    :rootClass :CCy,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "bānî", "-ṯî", "⊤-bānî--ṯî"],
-	    [:Masc, :Singular, :Person2, "⊤", "bānî", "-ṯā", "⊤-bānî--ṯā"],
-	    [:Fem, :Singular, :Person2, "⊤", "bānî", "-ṯ", "⊤-bānî--ṯ"],
-	    [:Masc, :Singular, :Person3, "⊤", "bānāh", "_NULL", "⊤-bānāh-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "bānǝṯ", "-āh", "⊤-bānǝṯ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "bānî", "-nû", "⊤-bānî--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "bǝnî", "-ṯem", "⊤-bǝnî--ṯem"],
-	    [:Fem, :Plural, :Person2, "⊤", "bǝnî", "-ṯen", "⊤-bǝnî--ṯen"],
-	    [:Masc, :Plural, :Person3, "⊤", "bān", "-û", "⊤-bān--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "bān", "-û", "⊤-bān--û"]]
+	    [:Common, :Singular, :Person1, " ", "bānî", "-ṯî", "bānî-ṯî"],
+	    [:Masc, :Singular, :Person2, " ", "bānî", "-ṯā", "bānî-ṯā"],
+	    [:Fem, :Singular, :Person2, " ", "bānî", "-ṯ", "bānî-ṯ"],
+	    [:Masc, :Singular, :Person3, " ", "bānāh", "Ø", "bānāh-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "bānǝṯ", "-āh", "bānǝṯ-āh"],
+	    [:Common, :Plural, :Person1, " ", "bānî", "-nû", "bānî-nû"],
+	    [:Masc, :Plural, :Person2, " ", "bǝnî", "-ṯem", "bǝnî-ṯem"],
+	    [:Fem, :Plural, :Person2, " ", "bǝnî", "-ṯen", "bǝnî-ṯen"],
+	    [:Masc, :Plural, :Person3, " ", "bān", "-û", "bān-û"],
+	    [:Fem, :Plural, :Person3, " ", "bān", "-û", "bān-û"]]
     }
     {:label "hebrew-VCCCSuImprtv-smd"
     :note ""
@@ -888,10 +897,10 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "hošmaḏ", "_NULL", "⊤-hošmaḏ-_NULL"],
-	    [:Fem, :Singular, "⊤", "hošmǝḏ", "-î", "⊤-hošmǝḏ--î"],
-	    [:Masc, :Plural, "⊤", "hošmǝḏ", "-û", "⊤-hošmǝḏ--û"],
-	    [:Fem, :Plural, "⊤", "hošmaḏ", "-nāh", "⊤-hošmaḏ--nāh"]]
+	    [:Masc, :Singular, " ", "hošmaḏ", "Ø", "hošmaḏ-Ø"],
+	    [:Fem, :Singular, " ", "hošmǝḏ", "-î", "hošmǝḏ-î"],
+	    [:Masc, :Plural, " ", "hošmǝḏ", "-û", "hošmǝḏ-û"],
+	    [:Fem, :Plural, " ", "hošmaḏ", "-nāh", "hošmaḏ-nāh"]]
     }
     {:label "hebrew-VCCyImperf-bny"
     :note "Lambdin1971"
@@ -900,16 +909,16 @@
 	    :rootClass :CCy,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḇneh", "_NULL", "ʾe--ḇneh-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḇneh", "_NULL", "ti--ḇneh-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḇn", "-î", "ti--ḇn--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḇneh", "_NULL", "yi--ḇneh-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḇneh", "_NULL", "ti--ḇneh-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḇneh", "_NULL", "ni--ḇneh-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḇn", "-û", "ti--ḇn--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḇn", "-ệnāh", "ti--ḇn--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḇn", "-û", "yi--ḇn--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḇn", "-ệnāh", "ti--ḇn--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḇneh", "Ø", "ʾe-ḇneh-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḇneh", "Ø", "ti-ḇneh-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḇn", "-î", "ti-ḇn-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḇneh", "Ø", "yi-ḇneh-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḇneh", "Ø", "ti-ḇneh-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḇneh", "Ø", "ni-ḇneh-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḇn", "-û", "ti-ḇn-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḇn", "-ệnāh", "ti-ḇn-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḇn", "-û", "yi-ḇn-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḇn", "-ệnāh", "ti-ḇn-ệnāh"]]
     }
     {:label "hebrew-VCCCNJuss-ktb"
     :note ""
@@ -919,16 +928,16 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔe-", "kkāṯēḇ", "_NULL", "ʔe--kkāṯēḇ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "kkāṯēḇ", "_NULL", "ti--kkāṯēḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "kkāṯǝḇ", "-î", "ti--kkāṯǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "kkāṯēḇ", "_NULL", "yi--kkāṯēḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "kkāṯēḇ", "_NULL", "ti--kkāṯēḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "kkāṯēḇ", "_NULL", "ni--kkāṯēḇ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "kkāṯǝḇ", "-û", "ti--kkāṯǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "kkāṯaḇ", "-nāh", "ti--kkāṯaḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "kkāṯǝḇ", "-û", "yi--kkāṯǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "kkāṯaḇ", "-nāh", "ti--kkāṯaḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔe-", "kkāṯēḇ", "Ø", "ʔe-kkāṯēḇ-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "kkāṯēḇ", "Ø", "ti-kkāṯēḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "kkāṯǝḇ", "-î", "ti-kkāṯǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "kkāṯēḇ", "Ø", "yi-kkāṯēḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "kkāṯēḇ", "Ø", "ti-kkāṯēḇ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "kkāṯēḇ", "Ø", "ni-kkāṯēḇ-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "kkāṯǝḇ", "-û", "ti-kkāṯǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "kkāṯaḇ", "-nāh", "ti-kkāṯaḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "kkāṯǝḇ", "-û", "yi-kkāṯǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "kkāṯaḇ", "-nāh", "ti-kkāṯaḇ-nāh"]]
     }
     {:label "hebrew-VCCCNImprtv-ktb"
     :note ""
@@ -939,10 +948,10 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "hikkāṯēḇ", "_NULL", "⊤-hikkāṯēḇ-_NULL"],
-	    [:Fem, :Singular, "⊤", "hikkāṯǝḇ", "-î", "⊤-hikkāṯǝḇ--î"],
-	    [:Masc, :Plural, "⊤", "hikkāṯǝḇ", "-û", "⊤-hikkāṯǝḇ--û"],
-	    [:Fem, :Plural, "⊤", "hikkāṯaḇ", "-nāh", "⊤-hikkāṯaḇ--nāh"]]
+	    [:Masc, :Singular, " ", "hikkāṯēḇ", "Ø", "hikkāṯēḇ-Ø"],
+	    [:Fem, :Singular, " ", "hikkāṯǝḇ", "-î", "hikkāṯǝḇ-î"],
+	    [:Masc, :Plural, " ", "hikkāṯǝḇ", "-û", "hikkāṯǝḇ-û"],
+	    [:Fem, :Plural, " ", "hikkāṯaḇ", "-nāh", "hikkāṯaḇ-nāh"]]
     }
     {:label "hebrew-VCCCSJuss-smd"
     :note ""
@@ -952,40 +961,40 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔa-", "šmēḏ", "_NULL", "ʔa--šmēḏ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ta-", "šmēḏ", "_NULL", "ta--šmēḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ta-", "šmǝḏ", "-î", "ta--šmǝḏ--î"],
-	    [:Masc, :Singular, :Person3, "ya-", "šmēḏ", "_NULL", "ya--šmēḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ta-", "šmēḏ", "_NULL", "ta--šmēḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "na-", "šmēḏ", "_NULL", "na--šmēḏ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ta-", "šmǝḏ", "-û", "ta--šmǝḏ--û"],
-	    [:Fem, :Plural, :Person2, "ta-", "šmēḏ", "-nāh", "ta--šmēḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "ya-", "šmǝḏ", "-û", "ya--šmǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "ta-", "šmēḏ", "-nāh", "ta--šmēḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔa-", "šmēḏ", "Ø", "ʔa-šmēḏ-Ø"],
+	    [:Masc, :Singular, :Person2, "ta-", "šmēḏ", "Ø", "ta-šmēḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "ta-", "šmǝḏ", "-î", "ta-šmǝḏ-î"],
+	    [:Masc, :Singular, :Person3, "ya-", "šmēḏ", "Ø", "ya-šmēḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "ta-", "šmēḏ", "Ø", "ta-šmēḏ-Ø"],
+	    [:Common, :Plural, :Person1, "na-", "šmēḏ", "Ø", "na-šmēḏ-Ø"],
+	    [:Masc, :Plural, :Person2, "ta-", "šmǝḏ", "-û", "ta-šmǝḏ-û"],
+	    [:Fem, :Plural, :Person2, "ta-", "šmēḏ", "-nāh", "ta-šmēḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "ya-", "šmǝḏ", "-û", "ya-šmǝḏ-û"],
+	    [:Fem, :Plural, :Person3, "ta-", "šmēḏ", "-nāh", "ta-šmēḏ-nāh"]]
     }
     {:label "hebrew-VWCCBPerf-ysb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ysb,
 	    :pos :Verb,
 	    :rootClass :WCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "yāšaḇ", "-tî", "⊤-yāšaḇ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "yāšaḇ", "-tā", "⊤-yāšaḇ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "yāšaḇ", "-t", "⊤-yāšaḇ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "yāšaḇ", "_NULL", "⊤-yāšaḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "yāšǝḇ", "-āh", "⊤-yāšǝḇ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "yāšaḇ", "-nû", "⊤-yāšaḇ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "yǝšaḇ", "-tem", "⊤-yǝšaḇ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "yǝšaḇ ", "-ten", "⊤-yǝšaḇ --ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "yāšǝḇ", "-û", "⊤-yāšǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "yāšǝḇ", "-û", "⊤-yāšǝḇ--û"]]
+	    [:Common, :Singular, :Person1, " ", "yāšaḇ", "-tî", "yāšaḇ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "yāšaḇ", "-tā", "yāšaḇ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "yāšaḇ", "-t", "yāšaḇ-t"],
+	    [:Masc, :Singular, :Person3, " ", "yāšaḇ", "Ø", "yāšaḇ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "yāšǝḇ", "-āh", "yāšǝḇ-āh"],
+	    [:Common, :Plural, :Person1, " ", "yāšaḇ", "-nû", "yāšaḇ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "yǝšaḇ", "-tem", "yǝšaḇ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "yǝšaḇ ", "-ten", "yǝšaḇ -ten"],
+	    [:Masc, :Plural, :Person3, " ", "yāšǝḇ", "-û", "yāšǝḇ-û"],
+	    [:Fem, :Plural, :Person3, " ", "yāšǝḇ", "-û", "yāšǝḇ-û"]]
     }
     {:label "hebrew-VC1C2C2BImprtv-sbb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :sbb,
 	    :person :Person2,
@@ -993,10 +1002,10 @@
 	    :rootClass :C1C2C2,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "sōḇ", "_NULL", "⊤-sōḇ-_NULL"],
-	    [:Fem, :Singular, "⊤", "sōbb", "-î", "⊤-sōbb--î"],
-	    [:Masc, :Plural, "⊤", "sōbb", "-û", "⊤-sōbb--û"],
-	    [:Fem, :Plural, "⊤", "sōḇ/subb", "-nāh/ -ệnāh", "⊤-sōḇ/subb--nāh/ -ệnāh"]]
+	    [:Masc, :Singular, " ", "sōḇ", "Ø", "sōḇ-Ø"],
+	    [:Fem, :Singular, " ", "sōbb", "-î", "sōbb-î"],
+	    [:Masc, :Plural, " ", "sōbb", "-û", "sōbb-û"],
+	    [:Fem, :Plural, " ", "sōḇ/subb", "-nāh/ -ệnāh", "sōḇ/subb-nāh/ -ệnāh"]]
     }
     {:label "hebrew-VCyCBImperf-sym"
     :note "Lambdin1971"
@@ -1007,56 +1016,56 @@
 	    :rootClass :CyC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾā-", "śîm", "_NULL", "ʾā--śîm-_NULL"],
-	    [:Masc, :Singular, :Person2, "tā-", "śîm", "_NULL", "tā--śîm-_NULL"],
-	    [:Fem, :Singular, :Person2, "tā-", "śîm", "-î", "tā--śîm--î"],
-	    [:Masc, :Singular, :Person3, "yā-", "śîm", "_NULL", "yā--śîm-_NULL"],
-	    [:Fem, :Singular, :Person3, "tā-", "śîm", "_NULL", "tā--śîm-_NULL"],
-	    [:Common, :Plural, :Person1, "nā-", "śîm", "_NULL", "nā--śîm-_NULL"],
-	    [:Masc, :Plural, :Person2, "tā-", "śîm", "-û", "tā--śîm--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "śîm", "-ệnāh", "tǝ--śîm--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yā-", "śîm", "-û", "yā--śîm--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "śîm", "-ệnāh", "tǝ--śîm--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾā-", "śîm", "Ø", "ʾā-śîm-Ø"],
+	    [:Masc, :Singular, :Person2, "tā-", "śîm", "Ø", "tā-śîm-Ø"],
+	    [:Fem, :Singular, :Person2, "tā-", "śîm", "-î", "tā-śîm-î"],
+	    [:Masc, :Singular, :Person3, "yā-", "śîm", "Ø", "yā-śîm-Ø"],
+	    [:Fem, :Singular, :Person3, "tā-", "śîm", "Ø", "tā-śîm-Ø"],
+	    [:Common, :Plural, :Person1, "nā-", "śîm", "Ø", "nā-śîm-Ø"],
+	    [:Masc, :Plural, :Person2, "tā-", "śîm", "-û", "tā-śîm-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "śîm", "-ệnāh", "tǝ-śîm-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yā-", "śîm", "-û", "yā-śîm-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "śîm", "-ệnāh", "tǝ-śîm-ệnāh"]]
     }
     {:label "hebrew-VCChBPerf-slh"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :slh,
 	    :pos :Verb,
 	    :rootClass :CCh,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "šālaḥ", "-tî", "⊤-šālaḥ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "šālaḥ", "-tā", "⊤-šālaḥ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "šālaḥa", "-t", "⊤-šālaḥa--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "šālaḥ", "_NULL", "⊤-šālaḥ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "šālǝḥ", "-āh", "⊤-šālǝḥ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "šālaḥ", "-nû", "⊤-šālaḥ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "šǝlaḥ", "-tem", "⊤-šǝlaḥ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "šǝlaḥ", "-ten", "⊤-šǝlaḥ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "šālǝḥ", "-û", "⊤-šālǝḥ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "šālǝḥ", "-û", "⊤-šālǝḥ--û"]]
+	    [:Common, :Singular, :Person1, " ", "šālaḥ", "-tî", "šālaḥ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "šālaḥ", "-tā", "šālaḥ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "šālaḥa", "-t", "šālaḥa-t"],
+	    [:Masc, :Singular, :Person3, " ", "šālaḥ", "Ø", "šālaḥ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "šālǝḥ", "-āh", "šālǝḥ-āh"],
+	    [:Common, :Plural, :Person1, " ", "šālaḥ", "-nû", "šālaḥ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "šǝlaḥ", "-tem", "šǝlaḥ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "šǝlaḥ", "-ten", "šǝlaḥ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "šālǝḥ", "-û", "šālǝḥ-û"],
+	    [:Fem, :Plural, :Person3, " ", "šālǝḥ", "-û", "šālǝḥ-û"]]
     }
-    {:label "hebrew-VNCCBJuss-ng`"
+    {:label "hebrew-VNCCBJuss-ng_"
     :note "Lambdin1971"
-    :common {:ablautClass :a,
+    :common {:ablautClass :AClass,
 	    :derivedStem :B,
 	    :lexeme :ng_,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ggǝʕ", "-āh", "ʾe--ggǝʕ--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ggaʕ", "_NULL", "ti--ggaʕ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ggǝʕ", "-î", "ti--ggǝʕ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ggaʕ", "_NULL", "yi--ggaʕ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ggaʕ", "_NULL", "ti--ggaʕ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ggǝʕ", "-āh", "ni--ggǝʕ--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ggǝʕ", "-û", "ti--ggǝʕ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ggaʕ", "-nāh", "ti--ggaʕ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ggǝʕ", "-û", "yi--ggǝʕ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ggaʕ", "-nāh", "ti--ggaʕ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ggǝʕ", "-āh", "ʾe-ggǝʕ-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ggaʕ", "Ø", "ti-ggaʕ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ggǝʕ", "-î", "ti-ggǝʕ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ggaʕ", "Ø", "yi-ggaʕ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ggaʕ", "Ø", "ti-ggaʕ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ggǝʕ", "-āh", "ni-ggǝʕ-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ggǝʕ", "-û", "ti-ggǝʕ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ggaʕ", "-nāh", "ti-ggaʕ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ggǝʕ", "-û", "yi-ggǝʕ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ggaʕ", "-nāh", "ti-ggaʕ-nāh"]]
     }
     {:label "hebrew-VCCCDPerf-gdl"
     :note ""
@@ -1066,56 +1075,56 @@
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "giddal", "-tî", "⊤-giddal--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "giddal", "-tā", "⊤-giddal--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "giddal", "-t", "⊤-giddal--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "giddēl", "_NULL", "⊤-giddēl-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "giddǝl", "-āh", "⊤-giddǝl--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "giddal", "-nû", "⊤-giddal--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "giddal", "-tem", "⊤-giddal--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "giddal", "-ten", "⊤-giddal--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "giddǝl", "-û", "⊤-giddǝl--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "giddǝl", "-û", "⊤-giddǝl--û"]]
+	    [:Common, :Singular, :Person1, " ", "giddal", "-tî", "giddal-tî"],
+	    [:Masc, :Singular, :Person2, " ", "giddal", "-tā", "giddal-tā"],
+	    [:Fem, :Singular, :Person2, " ", "giddal", "-t", "giddal-t"],
+	    [:Masc, :Singular, :Person3, " ", "giddēl", "Ø", "giddēl-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "giddǝl", "-āh", "giddǝl-āh"],
+	    [:Common, :Plural, :Person1, " ", "giddal", "-nû", "giddal-nû"],
+	    [:Masc, :Plural, :Person2, " ", "giddal", "-tem", "giddal-tem"],
+	    [:Fem, :Plural, :Person2, " ", "giddal", "-ten", "giddal-ten"],
+	    [:Masc, :Plural, :Person3, " ", "giddǝl", "-û", "giddǝl-û"],
+	    [:Fem, :Plural, :Person3, " ", "giddǝl", "-û", "giddǝl-û"]]
     }
     {:label "hebrew-VC1C2C2BImperf-qll"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :qll,
 	    :pos :Verb,
 	    :rootClass :C1C2C2,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾē-", "qal", "_NULL", "ʾē--qal-_NULL"],
-	    [:Masc, :Singular, :Person2, "tē-", "qal", "_NULL", "tē--qal-_NULL"],
-	    [:Fem, :Singular, :Person2, "tē-", "qall", "-î", "tē--qall--î"],
-	    [:Masc, :Singular, :Person3, "yē-", "qal", "_NULL", "yē--qal-_NULL"],
-	    [:Fem, :Singular, :Person3, "tē-", "qal", "_NULL", "tē--qal-_NULL"],
-	    [:Common, :Plural, :Person1, "nē-", "qal", "_NULL", "nē--qal-_NULL"],
-	    [:Masc, :Plural, :Person2, "tē-", "qall", "-û", "tē--qall--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "qall", "-ệnāh", "tǝ--qall--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yē-", "qall", "-û", "yē--qall--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "qall", "-ệnāh", "tǝ--qall--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾē-", "qal", "Ø", "ʾē-qal-Ø"],
+	    [:Masc, :Singular, :Person2, "tē-", "qal", "Ø", "tē-qal-Ø"],
+	    [:Fem, :Singular, :Person2, "tē-", "qall", "-î", "tē-qall-î"],
+	    [:Masc, :Singular, :Person3, "yē-", "qal", "Ø", "yē-qal-Ø"],
+	    [:Fem, :Singular, :Person3, "tē-", "qal", "Ø", "tē-qal-Ø"],
+	    [:Common, :Plural, :Person1, "nē-", "qal", "Ø", "nē-qal-Ø"],
+	    [:Masc, :Plural, :Person2, "tē-", "qall", "-û", "tē-qall-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "qall", "-ệnāh", "tǝ-qall-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yē-", "qall", "-û", "yē-qall-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "qall", "-ệnāh", "tǝ-qall-ệnāh"]]
     }
-    {:label "hebrew-VNCCBPerf-ng`"
+    {:label "hebrew-VNCCBPerf-ng_"
     :note "Lambdin1971"
-    :common {:ablautClass :a,
+    :common {:ablautClass :AClass,
 	    :derivedStem :B,
 	    :lexeme :ng_,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "nāḡaʕ", "-tî", "⊤-nāḡaʕ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "nāḡaʕ", "-tā", "⊤-nāḡaʕ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "nāḡaʕa", "-t", "⊤-nāḡaʕa--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "nāḡaʕ", "_NULL", "⊤-nāḡaʕ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "nāḡǝʕ", "-āh", "⊤-nāḡǝʕ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "nāḡaʕ", "-nû", "⊤-nāḡaʕ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "nǝḡaʕ", "-tem", "⊤-nǝḡaʕ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "nǝḡaʕ", "-ten", "⊤-nǝḡaʕ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "nāḡǝʕ", "-û", "⊤-nāḡǝʕ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "nāḡǝʕ", "-û", "⊤-nāḡǝʕ--û"]]
+	    [:Common, :Singular, :Person1, " ", "nāḡaʕ", "-tî", "nāḡaʕ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "nāḡaʕ", "-tā", "nāḡaʕ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "nāḡaʕa", "-t", "nāḡaʕa-t"],
+	    [:Masc, :Singular, :Person3, " ", "nāḡaʕ", "Ø", "nāḡaʕ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "nāḡǝʕ", "-āh", "nāḡǝʕ-āh"],
+	    [:Common, :Plural, :Person1, " ", "nāḡaʕ", "-nû", "nāḡaʕ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "nǝḡaʕ", "-tem", "nǝḡaʕ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "nǝḡaʕ", "-ten", "nǝḡaʕ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "nāḡǝʕ", "-û", "nāḡǝʕ-û"],
+	    [:Fem, :Plural, :Person3, " ", "nāḡǝʕ", "-û", "nāḡǝʕ-û"]]
     }
     {:label "hebrew-VCCCStJuss-gdl"
     :note ""
@@ -1125,60 +1134,60 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔe-", "ṯgaddēl", "_NULL", "ʔe--ṯgaddēl-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ṯgaddēl", "_NULL", "ti--ṯgaddēl-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ṯgaddǝl", "-î", "ti--ṯgaddǝl--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ṯgaddēl", "_NULL", "yi--ṯgaddēl-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ṯgaddēl", "_NULL", "ti--ṯgaddēl-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ṯgaddēl", "_NULL", "ni--ṯgaddēl-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ṯgaddǝl", "-û", "ti--ṯgaddǝl--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ṯgaddēl", "-nāh", "ti--ṯgaddēl--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ṯgaddǝl", "-û", "yi--ṯgaddǝl--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ṯgaddēl", "-nāh", "ti--ṯgaddēl--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔe-", "ṯgaddēl", "Ø", "ʔe-ṯgaddēl-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ṯgaddēl", "Ø", "ti-ṯgaddēl-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ṯgaddǝl", "-î", "ti-ṯgaddǝl-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ṯgaddēl", "Ø", "yi-ṯgaddēl-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ṯgaddēl", "Ø", "ti-ṯgaddēl-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ṯgaddēl", "Ø", "ni-ṯgaddēl-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ṯgaddǝl", "-û", "ti-ṯgaddǝl-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ṯgaddēl", "-nāh", "ti-ṯgaddēl-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ṯgaddǝl", "-û", "yi-ṯgaddǝl-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ṯgaddēl", "-nāh", "ti-ṯgaddēl-nāh"]]
     }
     {:label "hebrew-VNCCBImperf-ntn"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ntn,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ttēn", "_NULL", "ʾe--ttēn-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ttēn", "_NULL", "ti--ttēn-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ttǝn", "-î", "ti--ttǝn--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ttēn", "_NULL", "yi--ttēn-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ttēn", "_NULL", "ti--ttēn-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ttēn", "_NULL", "ni--ttēn-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ttǝn", "-û", "ti--ttǝn--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ttēn", "-nāh", "ti--ttēn--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ttǝn", "-û", "yi--ttǝn--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ttēn", "-nāh", "ti--ttēn--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ttēn", "Ø", "ʾe-ttēn-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ttēn", "Ø", "ti-ttēn-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ttǝn", "-î", "ti-ttǝn-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ttēn", "Ø", "yi-ttēn-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ttēn", "Ø", "ti-ttēn-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ttēn", "Ø", "ni-ttēn-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ttǝn", "-û", "ti-ttǝn-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ttēn", "-nāh", "ti-ttēn-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ttǝn", "-û", "yi-ttǝn-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ttēn", "-nāh", "ti-ttēn-nāh"]]
     }
     {:label "hebrew-VCCCBImperf-bhr"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :bhr,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḇḥar", "_NULL", "ʾe--ḇḥar-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḇḥar", "_NULL", "ti--ḇḥar-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḇḥăr", "-î", "ti--ḇḥăr--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḇḥar", "_NULL", "yi--ḇḥar-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḇḥar", "_NULL", "ti--ḇḥar-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḇḥar", "_NULL", "ni--ḇḥar-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḇḥăr", "-û", "ti--ḇḥăr--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḇḥar", "-nāh", "ti--ḇḥar--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḇḥăr", "-û", "yi--ḇḥăr--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḇḥar", "-nāh", "ti--ḇḥar--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḇḥar", "Ø", "ʾe-ḇḥar-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḇḥar", "Ø", "ti-ḇḥar-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḇḥăr", "-î", "ti-ḇḥăr-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḇḥar", "Ø", "yi-ḇḥar-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḇḥar", "Ø", "ti-ḇḥar-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḇḥar", "Ø", "ni-ḇḥar-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḇḥăr", "-û", "ti-ḇḥăr-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḇḥar", "-nāh", "ti-ḇḥar-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḇḥăr", "-û", "yi-ḇḥăr-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḇḥar", "-nāh", "ti-ḇḥar-nāh"]]
     }
     {:label "hebrew-VCCCBImprtv-bhr"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :bhr,
 	    :person :Person2,
@@ -1186,10 +1195,10 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "bǝḥar", "_NULL", "⊤-bǝḥar-_NULL"],
-	    [:Fem, :Singular, "⊤", "baḥăr", "-î", "⊤-baḥăr--î"],
-	    [:Masc, :Plural, "⊤", "baḥăr", "-û", "⊤-baḥăr--û"],
-	    [:Fem, :Plural, "⊤", "bǝḥar", "-nāh", "⊤-bǝḥar--nāh"]]
+	    [:Masc, :Singular, " ", "bǝḥar", "Ø", "bǝḥar-Ø"],
+	    [:Fem, :Singular, " ", "baḥăr", "-î", "baḥăr-î"],
+	    [:Masc, :Plural, " ", "baḥăr", "-û", "baḥăr-û"],
+	    [:Fem, :Plural, " ", "bǝḥar", "-nāh", "bǝḥar-nāh"]]
     }
     {:label "hebrew-VCwCBPerf-qwm"
     :note "Lambdin1971"
@@ -1200,56 +1209,56 @@
 	    :rootClass :CwC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "qam", "-tî", "⊤-qam--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "qam", "-tā", "⊤-qam--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "qam", "-t", "⊤-qam--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "qām", "_NULL", "⊤-qām-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "qām", "-āh", "⊤-qām--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "qam", "-nû", "⊤-qam--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "qam", "-tem", "⊤-qam--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "qam", "-ten", "⊤-qam--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "qām", "-û", "⊤-qām--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "qām", "-û", "⊤-qām--û"]]
+	    [:Common, :Singular, :Person1, " ", "qam", "-tî", "qam-tî"],
+	    [:Masc, :Singular, :Person2, " ", "qam", "-tā", "qam-tā"],
+	    [:Fem, :Singular, :Person2, " ", "qam", "-t", "qam-t"],
+	    [:Masc, :Singular, :Person3, " ", "qām", "Ø", "qām-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "qām", "-āh", "qām-āh"],
+	    [:Common, :Plural, :Person1, " ", "qam", "-nû", "qam-nû"],
+	    [:Masc, :Plural, :Person2, " ", "qam", "-tem", "qam-tem"],
+	    [:Fem, :Plural, :Person2, " ", "qam", "-ten", "qam-ten"],
+	    [:Masc, :Plural, :Person3, " ", "qām", "-û", "qām-û"],
+	    [:Fem, :Plural, :Person3, " ", "qām", "-û", "qām-û"]]
     }
     {:label "hebrew-VCChBImperf-slh"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :slh,
 	    :pos :Verb,
 	    :rootClass :CCh,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "šlaḥ", "_NULL", "ʾe--šlaḥ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "šlaḥ", "_NULL", "ti--šlaḥ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "šlǝḥ", "-î", "ti--šlǝḥ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "šlaḥ", "_NULL", "yi--šlaḥ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "šlaḥ", "_NULL", "ti--šlaḥ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "šlaḥ", "_NULL", "ni--šlaḥ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "šlǝḥ", "-û", "ti--šlǝḥ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "šlaḥ", "-nāh", "ti--šlaḥ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "šlǝḥ", "-û", "yi--šlǝḥ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "šlaḥ", "-nāh", "ti--šlaḥ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "šlaḥ", "Ø", "ʾe-šlaḥ-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "šlaḥ", "Ø", "ti-šlaḥ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "šlǝḥ", "-î", "ti-šlǝḥ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "šlaḥ", "Ø", "yi-šlaḥ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "šlaḥ", "Ø", "ti-šlaḥ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "šlaḥ", "Ø", "ni-šlaḥ-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "šlǝḥ", "-û", "ti-šlǝḥ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "šlaḥ", "-nāh", "ti-šlaḥ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "šlǝḥ", "-û", "yi-šlǝḥ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "šlaḥ", "-nāh", "ti-šlaḥ-nāh"]]
     }
     {:label "hebrew-VHCCBImperf-hzq"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :hzq,
 	    :pos :Verb,
 	    :rootClass :HCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḥĕzaq", "_NULL", "ʾe--ḥĕzaq-_NULL"],
-	    [:Masc, :Singular, :Person2, "te-", "ḥĕzaq", "_NULL", "te--ḥĕzaq-_NULL"],
-	    [:Fem, :Singular, :Person2, "te-", "ḥezq", "-î", "te--ḥezq--î"],
-	    [:Masc, :Singular, :Person3, "ye-", "ḥĕzaq", "_NULL", "ye--ḥĕzaq-_NULL"],
-	    [:Fem, :Singular, :Person3, "te-", "ḥĕzaq", "_NULL", "te--ḥĕzaq-_NULL"],
-	    [:Common, :Plural, :Person1, "ne-", "ḥĕzaq", "_NULL", "ne--ḥĕzaq-_NULL"],
-	    [:Masc, :Plural, :Person2, "te-", "ḥezq", "-û", "te--ḥezq--û"],
-	    [:Fem, :Plural, :Person2, "te-", "ḥĕzaq", "-nāh", "te--ḥĕzaq--nāh"],
-	    [:Masc, :Plural, :Person3, "ye-", "ḥezq", "-û", "ye--ḥezq--û"],
-	    [:Fem, :Plural, :Person3, "te-", "ḥĕzaq", "-nāh", "te--ḥĕzaq--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḥĕzaq", "Ø", "ʾe-ḥĕzaq-Ø"],
+	    [:Masc, :Singular, :Person2, "te-", "ḥĕzaq", "Ø", "te-ḥĕzaq-Ø"],
+	    [:Fem, :Singular, :Person2, "te-", "ḥezq", "-î", "te-ḥezq-î"],
+	    [:Masc, :Singular, :Person3, "ye-", "ḥĕzaq", "Ø", "ye-ḥĕzaq-Ø"],
+	    [:Fem, :Singular, :Person3, "te-", "ḥĕzaq", "Ø", "te-ḥĕzaq-Ø"],
+	    [:Common, :Plural, :Person1, "ne-", "ḥĕzaq", "Ø", "ne-ḥĕzaq-Ø"],
+	    [:Masc, :Plural, :Person2, "te-", "ḥezq", "-û", "te-ḥezq-û"],
+	    [:Fem, :Plural, :Person2, "te-", "ḥĕzaq", "-nāh", "te-ḥĕzaq-nāh"],
+	    [:Masc, :Plural, :Person3, "ye-", "ḥezq", "-û", "ye-ḥezq-û"],
+	    [:Fem, :Plural, :Person3, "te-", "ḥĕzaq", "-nāh", "te-ḥĕzaq-nāh"]]
     }
     {:label "hebrew-VCCCDuImperf-gdl"
     :note ""
@@ -1259,76 +1268,76 @@
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔă-", "ḡuddal", "_NULL", "ʔă--ḡuddal-_NULL"],
-	    [:Masc, :Singular, :Person2, "tǝ-", "ḡuddal", "_NULL", "tǝ--ḡuddal-_NULL"],
-	    [:Fem, :Singular, :Person2, "tǝ-", "ḡuddǝl", "-î", "tǝ--ḡuddǝl--î"],
-	    [:Masc, :Singular, :Person3, "yǝ-", "ḡuddal", "_NULL", "yǝ--ḡuddal-_NULL"],
-	    [:Fem, :Singular, :Person3, "tǝ-", "ḡuddal", "_NULL", "tǝ--ḡuddal-_NULL"],
-	    [:Common, :Plural, :Person1, "nǝ-", "ḡuddal", "_NULL", "nǝ--ḡuddal-_NULL"],
-	    [:Masc, :Plural, :Person2, "tǝ-", "ḡuddǝl", "-û", "tǝ--ḡuddǝl--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "ḡuddal", "-nāh", "tǝ--ḡuddal--nāh"],
-	    [:Masc, :Plural, :Person3, "yǝ-", "ḡuddǝl", "-û", "yǝ--ḡuddǝl--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "ḡuddal", "-nāh", "tǝ--ḡuddal--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔă-", "ḡuddal", "Ø", "ʔă-ḡuddal-Ø"],
+	    [:Masc, :Singular, :Person2, "tǝ-", "ḡuddal", "Ø", "tǝ-ḡuddal-Ø"],
+	    [:Fem, :Singular, :Person2, "tǝ-", "ḡuddǝl", "-î", "tǝ-ḡuddǝl-î"],
+	    [:Masc, :Singular, :Person3, "yǝ-", "ḡuddal", "Ø", "yǝ-ḡuddal-Ø"],
+	    [:Fem, :Singular, :Person3, "tǝ-", "ḡuddal", "Ø", "tǝ-ḡuddal-Ø"],
+	    [:Common, :Plural, :Person1, "nǝ-", "ḡuddal", "Ø", "nǝ-ḡuddal-Ø"],
+	    [:Masc, :Plural, :Person2, "tǝ-", "ḡuddǝl", "-û", "tǝ-ḡuddǝl-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "ḡuddal", "-nāh", "tǝ-ḡuddal-nāh"],
+	    [:Masc, :Plural, :Person3, "yǝ-", "ḡuddǝl", "-û", "yǝ-ḡuddǝl-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "ḡuddal", "-nāh", "tǝ-ḡuddal-nāh"]]
     }
     {:label "hebrew-VCChBJuss-slh"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :slh,
 	    :pos :Verb,
 	    :rootClass :CCh,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "šlǝḥ", "-āh", "ʾe--šlǝḥ--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "šlaḥ", "_NULL", "ti--šlaḥ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "šlǝḥ", "-î", "ti--šlǝḥ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "šlaḥ", "_NULL", "yi--šlaḥ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "šlaḥ", "_NULL", "ti--šlaḥ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "šlǝḥ", "-āh", "ni--šlǝḥ--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "šlǝḥ", "-û", "ti--šlǝḥ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "šlaḥ", "-nāh", "ti--šlaḥ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "šlǝḥ", "-û", "yi--šlǝḥ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "šlaḥ", "-nāh", "ti--šlaḥ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "šlǝḥ", "-āh", "ʾe-šlǝḥ-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "šlaḥ", "Ø", "ti-šlaḥ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "šlǝḥ", "-î", "ti-šlǝḥ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "šlaḥ", "Ø", "yi-šlaḥ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "šlaḥ", "Ø", "ti-šlaḥ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "šlǝḥ", "-āh", "ni-šlǝḥ-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "šlǝḥ", "-û", "ti-šlǝḥ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "šlaḥ", "-nāh", "ti-šlaḥ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "šlǝḥ", "-û", "yi-šlǝḥ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "šlaḥ", "-nāh", "ti-šlaḥ-nāh"]]
     }
     {:label "hebrew-VCCCBJuss-bhr"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :bhr,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḇḥăr", "-āh", "ʾe--ḇḥăr--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḇḥar", "_NULL", "ti--ḇḥar-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḇḥăr", "-î", "ti--ḇḥăr--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḇḥar", "_NULL", "yi--ḇḥar-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḇḥar", "_NULL", "ti--ḇḥar-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḇḥăr", "-āh", "ni--ḇḥăr--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḇḥăr", "-û", "ti--ḇḥăr--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḇḥar", "-nāh", "ti--ḇḥar--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḇḥăr", "-û", "yi--ḇḥăr--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḇḥar", "-nāh", "ti--ḇḥar--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḇḥăr", "-āh", "ʾe-ḇḥăr-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḇḥar", "Ø", "ti-ḇḥar-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḇḥăr", "-î", "ti-ḇḥăr-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḇḥar", "Ø", "yi-ḇḥar-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḇḥar", "Ø", "ti-ḇḥar-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḇḥăr", "-āh", "ni-ḇḥăr-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḇḥăr", "-û", "ti-ḇḥăr-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḇḥar", "-nāh", "ti-ḇḥar-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḇḥăr", "-û", "yi-ḇḥăr-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḇḥar", "-nāh", "ti-ḇḥar-nāh"]]
     }
     {:label "hebrew-VCCBImperf-kl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :akl,
 	    :pos :Verb,
 	    :rootClass :ACC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾō-", "(ʾ)ḵal1", "_NULL", "ʾō--(ʾ)ḵal1-_NULL"],
-	    [:Masc, :Singular, :Person2, "tō-", "(ʾ)ḵal", "_NULL", "tō--(ʾ)ḵal-_NULL"],
-	    [:Fem, :Singular, :Person2, "tō-", "(ʾ)ḵǝl", "-î", "tō--(ʾ)ḵǝl--î"],
-	    [:Masc, :Singular, :Person3, "yō-", "(ʾ)ḵal", "_NULL", "yō--(ʾ)ḵal-_NULL"],
-	    [:Fem, :Singular, :Person3, "tō-", "(ʾ)ḵal", "_NULL", "tō--(ʾ)ḵal-_NULL"],
-	    [:Common, :Plural, :Person1, "nō-", "(ʾ)ḵal", "_NULL", "nō--(ʾ)ḵal-_NULL"],
-	    [:Masc, :Plural, :Person2, "tō-", "(ʾ)ḵǝl", "-û", "tō--(ʾ)ḵǝl--û"],
-	    [:Fem, :Plural, :Person2, "tō-", "(ʾ)ḵal", "-nāh", "tō--(ʾ)ḵal--nāh"],
-	    [:Masc, :Plural, :Person3, "yō-", "(ʾ)ḵǝl", "-û", "yō--(ʾ)ḵǝl--û"],
-	    [:Fem, :Plural, :Person3, "tō-", "(ʾ)ḵal", "-nāh", "tō--(ʾ)ḵal--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾō-", "(ʾ)ḵal1", "Ø", "ʾō-(ʾ)ḵal1-Ø"],
+	    [:Masc, :Singular, :Person2, "tō-", "(ʾ)ḵal", "Ø", "tō-(ʾ)ḵal-Ø"],
+	    [:Fem, :Singular, :Person2, "tō-", "(ʾ)ḵǝl", "-î", "tō-(ʾ)ḵǝl-î"],
+	    [:Masc, :Singular, :Person3, "yō-", "(ʾ)ḵal", "Ø", "yō-(ʾ)ḵal-Ø"],
+	    [:Fem, :Singular, :Person3, "tō-", "(ʾ)ḵal", "Ø", "tō-(ʾ)ḵal-Ø"],
+	    [:Common, :Plural, :Person1, "nō-", "(ʾ)ḵal", "Ø", "nō-(ʾ)ḵal-Ø"],
+	    [:Masc, :Plural, :Person2, "tō-", "(ʾ)ḵǝl", "-û", "tō-(ʾ)ḵǝl-û"],
+	    [:Fem, :Plural, :Person2, "tō-", "(ʾ)ḵal", "-nāh", "tō-(ʾ)ḵal-nāh"],
+	    [:Masc, :Plural, :Person3, "yō-", "(ʾ)ḵǝl", "-û", "yō-(ʾ)ḵǝl-û"],
+	    [:Fem, :Plural, :Person3, "tō-", "(ʾ)ḵal", "-nāh", "tō-(ʾ)ḵal-nāh"]]
     }
     {:label "hebrew-VCCyJuss-bny"
     :note "Lambdin1971"
@@ -1337,36 +1346,36 @@
 	    :rootClass :CCy,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾi-", "ḇn", "-āh", "ʾi--ḇn--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḇen", "_NULL", "ti--ḇen-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḇn", "-î", "ti--ḇn--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḇen", "_NULL", "yi--ḇen-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḇen", "_NULL", "ti--ḇen-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḇn", "-āh", "ni--ḇn--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḇn", "-û", "ti--ḇn--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḇn", "-ệnāh", "ti--ḇn--ệnāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḇn", "-û", "yi--ḇn--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḇn", "-ệnāh", "ti--ḇn--ệnāh"]]
+	    [:Common, :Singular, :Person1, "ʾi-", "ḇn", "-āh", "ʾi-ḇn-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḇen", "Ø", "ti-ḇen-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḇn", "-î", "ti-ḇn-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḇen", "Ø", "yi-ḇen-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḇen", "Ø", "ti-ḇen-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḇn", "-āh", "ni-ḇn-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḇn", "-û", "ti-ḇn-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḇn", "-ệnāh", "ti-ḇn-ệnāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḇn", "-û", "yi-ḇn-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḇn", "-ệnāh", "ti-ḇn-ệnāh"]]
     }
-    {:label "hebrew-VHCCBImperf-`md"
+    {:label "hebrew-VHCCBImperf-md"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :_md,
 	    :pos :Verb,
 	    :rootClass :HCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ʕĕmōḏ", "_NULL", "ʾe--ʕĕmōḏ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ta-", "ʕămōḏ", "_NULL", "ta--ʕămōḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ta-", "ʕamḏ", "-î", "ta--ʕamḏ--î"],
-	    [:Masc, :Singular, :Person3, "ya-", "ʕămōḏ", "_NULL", "ya--ʕămōḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ta-", "ʕămōḏ", "_NULL", "ta--ʕămōḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "na-", "ʕămōḏ", "_NULL", "na--ʕămōḏ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ta-", "ʕamḏ", "-û", "ta--ʕamḏ--û"],
-	    [:Fem, :Plural, :Person2, "ta-", "ʕămōḏ", "-nāh", "ta--ʕămōḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "ya-", "ʕamḏ", "-û", "ya--ʕamḏ--û"],
-	    [:Fem, :Plural, :Person3, "ta-", "ʕămōḏ", "-nāh", "ta--ʕămōḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ʕĕmōḏ", "Ø", "ʾe-ʕĕmōḏ-Ø"],
+	    [:Masc, :Singular, :Person2, "ta-", "ʕămōḏ", "Ø", "ta-ʕămōḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "ta-", "ʕamḏ", "-î", "ta-ʕamḏ-î"],
+	    [:Masc, :Singular, :Person3, "ya-", "ʕămōḏ", "Ø", "ya-ʕămōḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "ta-", "ʕămōḏ", "Ø", "ta-ʕămōḏ-Ø"],
+	    [:Common, :Plural, :Person1, "na-", "ʕămōḏ", "Ø", "na-ʕămōḏ-Ø"],
+	    [:Masc, :Plural, :Person2, "ta-", "ʕamḏ", "-û", "ta-ʕamḏ-û"],
+	    [:Fem, :Plural, :Person2, "ta-", "ʕămōḏ", "-nāh", "ta-ʕămōḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "ya-", "ʕamḏ", "-û", "ya-ʕamḏ-û"],
+	    [:Fem, :Plural, :Person3, "ta-", "ʕămōḏ", "-nāh", "ta-ʕămōḏ-nāh"]]
     }
     {:label "hebrew-VCCCSuImperf-smd"
     :note ""
@@ -1376,20 +1385,20 @@
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔo-", "šmaḏ", "_NULL", "ʔo--šmaḏ-_NULL"],
-	    [:Masc, :Singular, :Person2, "to-", "šmaḏ", "_NULL", "to--šmaḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "to-", "šmǝḏ", "-î", "to--šmǝḏ--î"],
-	    [:Masc, :Singular, :Person3, "yo-", "šmaḏ", "_NULL", "yo--šmaḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "to-", "šmaḏ", "_NULL", "to--šmaḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "no-", "šmaḏ", "_NULL", "no--šmaḏ-_NULL"],
-	    [:Masc, :Plural, :Person2, "to-", "šmǝḏ", "-û", "to--šmǝḏ--û"],
-	    [:Fem, :Plural, :Person2, "to-", "šmaḏ", "-nāh", "to--šmaḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "yo-", "šmǝḏ", "-û", "yo--šmǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "to-", "šmaḏ", "-nāh", "to--šmaḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔo-", "šmaḏ", "Ø", "ʔo-šmaḏ-Ø"],
+	    [:Masc, :Singular, :Person2, "to-", "šmaḏ", "Ø", "to-šmaḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "to-", "šmǝḏ", "-î", "to-šmǝḏ-î"],
+	    [:Masc, :Singular, :Person3, "yo-", "šmaḏ", "Ø", "yo-šmaḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "to-", "šmaḏ", "Ø", "to-šmaḏ-Ø"],
+	    [:Common, :Plural, :Person1, "no-", "šmaḏ", "Ø", "no-šmaḏ-Ø"],
+	    [:Masc, :Plural, :Person2, "to-", "šmǝḏ", "-û", "to-šmǝḏ-û"],
+	    [:Fem, :Plural, :Person2, "to-", "šmaḏ", "-nāh", "to-šmaḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "yo-", "šmǝḏ", "-û", "yo-šmǝḏ-û"],
+	    [:Fem, :Plural, :Person3, "to-", "šmaḏ", "-nāh", "to-šmaḏ-nāh"]]
     }
-    {:label "hebrew-VHCCBImprtv-`md"
+    {:label "hebrew-VHCCBImprtv-md"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :_md,
 	    :person :Person2,
@@ -1397,10 +1406,10 @@
 	    :rootClass :HCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "ʕămōḏ", "_NULL", "⊤-ʕămōḏ-_NULL"],
-	    [:Fem, :Singular, "⊤", "ʕimḏ", "-î", "⊤-ʕimḏ--î"],
-	    [:Masc, :Plural, "⊤", "ʕimḏ", "-û", "⊤-ʕimḏ--û"],
-	    [:Fem, :Plural, "⊤", "ʕămōḏ", "-nāh", "⊤-ʕămōḏ--nāh"]]
+	    [:Masc, :Singular, " ", "ʕămōḏ", "Ø", "ʕămōḏ-Ø"],
+	    [:Fem, :Singular, " ", "ʕimḏ", "-î", "ʕimḏ-î"],
+	    [:Masc, :Plural, " ", "ʕimḏ", "-û", "ʕimḏ-û"],
+	    [:Fem, :Plural, " ", "ʕămōḏ", "-nāh", "ʕămōḏ-nāh"]]
     }
     {:label "hebrew-VCCCSPerf-smd"
     :note ""
@@ -1410,20 +1419,20 @@
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "hišmaḏ", "-tî", "⊤-hišmaḏ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "hišmaḏ", "-tā", "⊤-hišmaḏ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "hišmaḏ", "-t", "⊤-hišmaḏ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "hišmîḏ", "_NULL", "⊤-hišmîḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "hišmîḏ", "-āh", "⊤-hišmîḏ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "hišmaḏ", "-nû", "⊤-hišmaḏ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "hišmaḏ", "-tem", "⊤-hišmaḏ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "hišmaḏ", "-ten", "⊤-hišmaḏ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "hišmîḏ", "-û", "⊤-hišmîḏ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "hišmîḏ", "-û", "⊤-hišmîḏ--û"]]
+	    [:Common, :Singular, :Person1, " ", "hišmaḏ", "-tî", "hišmaḏ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "hišmaḏ", "-tā", "hišmaḏ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "hišmaḏ", "-t", "hišmaḏ-t"],
+	    [:Masc, :Singular, :Person3, " ", "hišmîḏ", "Ø", "hišmîḏ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "hišmîḏ", "-āh", "hišmîḏ-āh"],
+	    [:Common, :Plural, :Person1, " ", "hišmaḏ", "-nû", "hišmaḏ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "hišmaḏ", "-tem", "hišmaḏ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "hišmaḏ", "-ten", "hišmaḏ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "hišmîḏ", "-û", "hišmîḏ-û"],
+	    [:Fem, :Plural, :Person3, " ", "hišmîḏ", "-û", "hišmîḏ-û"]]
     }
     {:label "hebrew-VC1C2C2BImprtv-qll"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :qll,
 	    :person :Person2,
@@ -1431,50 +1440,50 @@
 	    :rootClass :C1C2C2,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "qal", "_NULL", "⊤-qal-_NULL"],
-	    [:Fem, :Singular, "⊤", "qall", "-î", "⊤-qall--î"],
-	    [:Masc, :Plural, "⊤", "qall", "-û", "⊤-qall--û"],
-	    [:Fem, :Plural, "⊤", "qal", "-nāh", "⊤-qal--nāh"]]
+	    [:Masc, :Singular, " ", "qal", "Ø", "qal-Ø"],
+	    [:Fem, :Singular, " ", "qall", "-î", "qall-î"],
+	    [:Masc, :Plural, " ", "qall", "-û", "qall-û"],
+	    [:Fem, :Plural, " ", "qal", "-nāh", "qal-nāh"]]
     }
     {:label "hebrew-VCCBPerf-ms"
     :note "Lambdin1971. The quiesced aleph(non-phonological glottal stop) is indicated by parentheses. In Lambdins transliteration on p. 119 of Introduction to Biblical Hebrew he does not represent the aleph in transliteration at all."
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :msa,
 	    :pos :Verb,
 	    :rootClass :CCA,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "māṣā(ʾ)", "-ṯî", "⊤-māṣā(ʾ)--ṯî"],
-	    [:Masc, :Singular, :Person2, "⊤", "māṣā(ʾ)", "-ṯā", "⊤-māṣā(ʾ)--ṯā"],
-	    [:Fem, :Singular, :Person2, "⊤", "māṣā(ʾ)", "-ṯ", "⊤-māṣā(ʾ)--ṯ"],
-	    [:Masc, :Singular, :Person3, "⊤", "māṣā(ʾ)", "_NULL", "⊤-māṣā(ʾ)-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "māṣǝʾ", "-āh", "⊤-māṣǝʾ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "māṣā(ʾ)", "-nû", "⊤-māṣā(ʾ)--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "mǝṣā(ʾ)", "-ṯem", "⊤-mǝṣā(ʾ)--ṯem"],
-	    [:Fem, :Plural, :Person2, "⊤", "mǝṣā(ʾ)", "-ṯen", "⊤-mǝṣā(ʾ)--ṯen"],
-	    [:Masc, :Plural, :Person3, "⊤", "māṣǝʾ", "-û", "⊤-māṣǝʾ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "māṣǝʾ", "-û", "⊤-māṣǝʾ--û"]]
+	    [:Common, :Singular, :Person1, " ", "māṣā(ʾ)", "-ṯî", "māṣā(ʾ)-ṯî"],
+	    [:Masc, :Singular, :Person2, " ", "māṣā(ʾ)", "-ṯā", "māṣā(ʾ)-ṯā"],
+	    [:Fem, :Singular, :Person2, " ", "māṣā(ʾ)", "-ṯ", "māṣā(ʾ)-ṯ"],
+	    [:Masc, :Singular, :Person3, " ", "māṣā(ʾ)", "Ø", "māṣā(ʾ)-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "māṣǝʾ", "-āh", "māṣǝʾ-āh"],
+	    [:Common, :Plural, :Person1, " ", "māṣā(ʾ)", "-nû", "māṣā(ʾ)-nû"],
+	    [:Masc, :Plural, :Person2, " ", "mǝṣā(ʾ)", "-ṯem", "mǝṣā(ʾ)-ṯem"],
+	    [:Fem, :Plural, :Person2, " ", "mǝṣā(ʾ)", "-ṯen", "mǝṣā(ʾ)-ṯen"],
+	    [:Masc, :Plural, :Person3, " ", "māṣǝʾ", "-û", "māṣǝʾ-û"],
+	    [:Fem, :Plural, :Person3, " ", "māṣǝʾ", "-û", "māṣǝʾ-û"]]
     }
     {:label "hebrew-VYCCBPerf-ytb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :ytb,
 	    :pos :Verb,
 	    :rootClass :YCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "yāṭaḇ", "-tî", "⊤-yāṭaḇ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "yāṭaḇ", "-tā", "⊤-yāṭaḇ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "yāṭaḇ", "-t", "⊤-yāṭaḇ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "yāṭēḇ", "_NULL", "⊤-yāṭēḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "yāṭǝḇ", "-āh", "⊤-yāṭǝḇ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "yāṭaḇ", "-nû", "⊤-yāṭaḇ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "yǝṭaḇ", "-tem", "⊤-yǝṭaḇ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "yǝṭaḇ", "-ten", "⊤-yǝṭaḇ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "yāṭǝḇ", "-û", "⊤-yāṭǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "yāṭǝḇ", "-û", "⊤-yāṭǝḇ--û"]]
+	    [:Common, :Singular, :Person1, " ", "yāṭaḇ", "-tî", "yāṭaḇ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "yāṭaḇ", "-tā", "yāṭaḇ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "yāṭaḇ", "-t", "yāṭaḇ-t"],
+	    [:Masc, :Singular, :Person3, " ", "yāṭēḇ", "Ø", "yāṭēḇ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "yāṭǝḇ", "-āh", "yāṭǝḇ-āh"],
+	    [:Common, :Plural, :Person1, " ", "yāṭaḇ", "-nû", "yāṭaḇ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "yǝṭaḇ", "-tem", "yǝṭaḇ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "yǝṭaḇ", "-ten", "yǝṭaḇ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "yāṭǝḇ", "-û", "yāṭǝḇ-û"],
+	    [:Fem, :Plural, :Person3, " ", "yāṭǝḇ", "-û", "yāṭǝḇ-û"]]
     }
     {:label "hebrew-VCCCSImprtv-smd"
     :note ""
@@ -1485,70 +1494,70 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "hašmēḏ", "_NULL", "⊤-hašmēḏ-_NULL"],
-	    [:Fem, :Singular, "⊤", "hašmîḏ", "-î", "⊤-hašmîḏ--î"],
-	    [:Masc, :Plural, "⊤", "hašmîḏ", "-û", "⊤-hašmîḏ--û"],
-	    [:Fem, :Plural, "⊤", "hašmēḏ", "-nāh", "⊤-hašmēḏ--nāh"]]
+	    [:Masc, :Singular, " ", "hašmēḏ", "Ø", "hašmēḏ-Ø"],
+	    [:Fem, :Singular, " ", "hašmîḏ", "-î", "hašmîḏ-î"],
+	    [:Masc, :Plural, " ", "hašmîḏ", "-û", "hašmîḏ-û"],
+	    [:Fem, :Plural, " ", "hašmēḏ", "-nāh", "hašmēḏ-nāh"]]
     }
     {:label "hebrew-VNCCBJuss-ntn"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ntn,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ttǝn", "-āh", "ʾe--ttǝn--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ttēn", "_NULL", "ti--ttēn-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ttǝn", "-î", "ti--ttǝn--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ttēn", "_NULL", "yi--ttēn-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ttēn", "_NULL", "ti--ttēn-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ttǝn", "-āh", "ni--ttǝn--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ttǝn", "-û", "ti--ttǝn--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ttēn", "-nāh", "ti--ttēn--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ttǝn", "-û", "yi--ttǝn--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ttēn", "-nāh", "ti--ttēn--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ttǝn", "-āh", "ʾe-ttǝn-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ttēn", "Ø", "ti-ttēn-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ttǝn", "-î", "ti-ttǝn-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ttēn", "Ø", "yi-ttēn-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ttēn", "Ø", "ti-ttēn-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ttǝn", "-āh", "ni-ttǝn-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ttǝn", "-û", "ti-ttǝn-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ttēn", "-nāh", "ti-ttēn-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ttǝn", "-û", "yi-ttǝn-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ttēn", "-nāh", "ti-ttēn-nāh"]]
     }
     {:label "hebrew-VNCCBImperf-npl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :npl,
 	    :pos :Verb,
 	    :rootClass :NCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ppōl", "_NULL", "ʾe--ppōl-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ppōl", "_NULL", "ti--ppōl-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ppǝl", "-î", "ti--ppǝl--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ppōl", "_NULL", "yi--ppōl-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ppōl", "_NULL", "ti--ppōl-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ppōl", "_NULL", "ni--ppōl-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ppǝl", "-û", "ti--ppǝl--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ppōl", "-nāh", "ti--ppōl--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ppǝl", "-û", "yi--ppǝl--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ppōl", "-nāh", "ti--ppōl--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ppōl", "Ø", "ʾe-ppōl-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ppōl", "Ø", "ti-ppōl-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ppǝl", "-î", "ti-ppǝl-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ppōl", "Ø", "yi-ppōl-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ppōl", "Ø", "ti-ppōl-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ppōl", "Ø", "ni-ppōl-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ppǝl", "-û", "ti-ppǝl-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ppōl", "-nāh", "ti-ppōl-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ppǝl", "-û", "yi-ppǝl-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ppōl", "-nāh", "ti-ppōl-nāh"]]
     }
     {:label "hebrew-VYCCBImperf-ytb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :ytb,
 	    :pos :Verb,
 	    :rootClass :YCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾî-", "ṭaḇ", "_NULL", "ʾî--ṭaḇ-_NULL"],
-	    [:Masc, :Singular, :Person2, "tî-", "ṭaḇ", "_NULL", "tî--ṭaḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "tî-", "ṭǝḇ", "-î", "tî--ṭǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yî-", "ṭaḇ", "_NULL", "yî--ṭaḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "tî-", "ṭaḇ", "_NULL", "tî--ṭaḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "nî-", "ṭaḇ", "_NULL", "nî--ṭaḇ-_NULL"],
-	    [:Masc, :Plural, :Person2, "tî-", "ṭǝḇ", "-û", "tî--ṭǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "tî-", "ṭaḇ", "-nāh", "tî--ṭaḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yî-", "ṭǝḇ", "-û", "yî--ṭǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "tî-", "ṭaḇ", "-nāh", "tî--ṭaḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾî-", "ṭaḇ", "Ø", "ʾî-ṭaḇ-Ø"],
+	    [:Masc, :Singular, :Person2, "tî-", "ṭaḇ", "Ø", "tî-ṭaḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "tî-", "ṭǝḇ", "-î", "tî-ṭǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yî-", "ṭaḇ", "Ø", "yî-ṭaḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "tî-", "ṭaḇ", "Ø", "tî-ṭaḇ-Ø"],
+	    [:Common, :Plural, :Person1, "nî-", "ṭaḇ", "Ø", "nî-ṭaḇ-Ø"],
+	    [:Masc, :Plural, :Person2, "tî-", "ṭǝḇ", "-û", "tî-ṭǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "tî-", "ṭaḇ", "-nāh", "tî-ṭaḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yî-", "ṭǝḇ", "-û", "yî-ṭǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "tî-", "ṭaḇ", "-nāh", "tî-ṭaḇ-nāh"]]
     }
     {:label "hebrew-VCCCDuJuss-gdl"
     :note ""
@@ -1558,20 +1567,20 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔă-", "ḡuddal", "_NULL", "ʔă--ḡuddal-_NULL"],
-	    [:Masc, :Singular, :Person2, "tǝ-", "ḡuddal", "_NULL", "tǝ--ḡuddal-_NULL"],
-	    [:Fem, :Singular, :Person2, "tǝ-", "ḡuddǝl", "-î", "tǝ--ḡuddǝl--î"],
-	    [:Masc, :Singular, :Person3, "yǝ-", "ḡuddal", "_NULL", "yǝ--ḡuddal-_NULL"],
-	    [:Fem, :Singular, :Person3, "tǝ-", "ḡuddal", "_NULL", "tǝ--ḡuddal-_NULL"],
-	    [:Common, :Plural, :Person1, "nǝ-", "ḡuddal", "_NULL", "nǝ--ḡuddal-_NULL"],
-	    [:Masc, :Plural, :Person2, "tǝ-", "ḡuddǝl", "-û", "tǝ--ḡuddǝl--û"],
-	    [:Fem, :Plural, :Person2, "tǝ-", "ḡuddal", "-nāh", "tǝ--ḡuddal--nāh"],
-	    [:Masc, :Plural, :Person3, "yǝ-", "ḡuddǝl", "-û", "yǝ--ḡuddǝl--û"],
-	    [:Fem, :Plural, :Person3, "tǝ-", "ḡuddal", "-nāh", "tǝ--ḡuddal--nāh"]]
+	    [:Common, :Singular, :Person1, "ʔă-", "ḡuddal", "Ø", "ʔă-ḡuddal-Ø"],
+	    [:Masc, :Singular, :Person2, "tǝ-", "ḡuddal", "Ø", "tǝ-ḡuddal-Ø"],
+	    [:Fem, :Singular, :Person2, "tǝ-", "ḡuddǝl", "-î", "tǝ-ḡuddǝl-î"],
+	    [:Masc, :Singular, :Person3, "yǝ-", "ḡuddal", "Ø", "yǝ-ḡuddal-Ø"],
+	    [:Fem, :Singular, :Person3, "tǝ-", "ḡuddal", "Ø", "tǝ-ḡuddal-Ø"],
+	    [:Common, :Plural, :Person1, "nǝ-", "ḡuddal", "Ø", "nǝ-ḡuddal-Ø"],
+	    [:Masc, :Plural, :Person2, "tǝ-", "ḡuddǝl", "-û", "tǝ-ḡuddǝl-û"],
+	    [:Fem, :Plural, :Person2, "tǝ-", "ḡuddal", "-nāh", "tǝ-ḡuddal-nāh"],
+	    [:Masc, :Plural, :Person3, "yǝ-", "ḡuddǝl", "-û", "yǝ-ḡuddǝl-û"],
+	    [:Fem, :Plural, :Person3, "tǝ-", "ḡuddal", "-nāh", "tǝ-ḡuddal-nāh"]]
     }
     {:label "hebrew-VCCCBImprtv-kbd"
     :note "Lambdin1971"
-    :common {:ablautClass :e-a,
+    :common {:ablautClass :E_aClass,
 	    :derivedStem :B,
 	    :lexeme :kbd,
 	    :person :Person2,
@@ -1579,50 +1588,50 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "kǝḇaḏ", "_NULL", "⊤-kǝḇaḏ-_NULL"],
-	    [:Fem, :Singular, "⊤", "kiḇḏ", "-î", "⊤-kiḇḏ--î"],
-	    [:Masc, :Plural, "⊤", "kiḇḏ", "-û", "⊤-kiḇḏ--û"],
-	    [:Fem, :Plural, "⊤", "kǝḇaḏ", "-nāh", "⊤-kǝḇaḏ--nāh"]]
+	    [:Masc, :Singular, " ", "kǝḇaḏ", "Ø", "kǝḇaḏ-Ø"],
+	    [:Fem, :Singular, " ", "kiḇḏ", "-î", "kiḇḏ-î"],
+	    [:Masc, :Plural, " ", "kiḇḏ", "-û", "kiḇḏ-û"],
+	    [:Fem, :Plural, " ", "kǝḇaḏ", "-nāh", "kǝḇaḏ-nāh"]]
     }
     {:label "hebrew-VCCCBPerf-kbd"
     :note "Lambdin1971"
-    :common {:ablautClass :e-a,
+    :common {:ablautClass :E_aClass,
 	    :derivedStem :B,
 	    :lexeme :kbd,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "kāḇaḏ", "-tî", "⊤-kāḇaḏ--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "kāḇaḏ", "-tā", "⊤-kāḇaḏ--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "kāḇaḏ", "-t", "⊤-kāḇaḏ--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "kāḇēḏ", "_NULL", "⊤-kāḇēḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "kāḇǝḏ", "-āh", "⊤-kāḇǝḏ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "kāḇaḏ", "-nû", "⊤-kāḇaḏ--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "kǝḇaḏ", "-tem", "⊤-kǝḇaḏ--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "kǝḇaḏ", "-ten", "⊤-kǝḇaḏ--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "kāḇǝḏ", "-û", "⊤-kāḇǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "kāḇǝḏ", "-û", "⊤-kāḇǝḏ--û"]]
+	    [:Common, :Singular, :Person1, " ", "kāḇaḏ", "-tî", "kāḇaḏ-tî"],
+	    [:Masc, :Singular, :Person2, " ", "kāḇaḏ", "-tā", "kāḇaḏ-tā"],
+	    [:Fem, :Singular, :Person2, " ", "kāḇaḏ", "-t", "kāḇaḏ-t"],
+	    [:Masc, :Singular, :Person3, " ", "kāḇēḏ", "Ø", "kāḇēḏ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "kāḇǝḏ", "-āh", "kāḇǝḏ-āh"],
+	    [:Common, :Plural, :Person1, " ", "kāḇaḏ", "-nû", "kāḇaḏ-nû"],
+	    [:Masc, :Plural, :Person2, " ", "kǝḇaḏ", "-tem", "kǝḇaḏ-tem"],
+	    [:Fem, :Plural, :Person2, " ", "kǝḇaḏ", "-ten", "kǝḇaḏ-ten"],
+	    [:Masc, :Plural, :Person3, " ", "kāḇǝḏ", "-û", "kāḇǝḏ-û"],
+	    [:Fem, :Plural, :Person3, " ", "kāḇǝḏ", "-û", "kāḇǝḏ-û"]]
     }
     {:label "hebrew-VCCBJuss-ms"
     :note "Lambdin1971. The quiesced aleph(non-phonological glottal stop) is indicated by parentheses. In Lambdins transliteration on p. 119 of Introduction to Biblical Hebrew he does not represent the aleph in transliteration at all."
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :msa,
 	    :pos :Verb,
 	    :rootClass :CCA,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "mṣǝʾ", "-āh", "ʾe--mṣǝʾ--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "mṣā(ʾ)", "_NULL", "ti--mṣā(ʾ)-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "mṣǝʾ", "-î", "ti--mṣǝʾ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "mṣā(ʾ)", "_NULL", "yi--mṣā(ʾ)-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "mṣā(ʾ)", "_NULL", "ti--mṣā(ʾ)-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "mṣǝʾ", "-āh", "ni--mṣǝʾ--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "mṣǝʾ", "-û", "ti--mṣǝʾ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "mṣệ(ʾ)", "-nāh", "ti--mṣệ(ʾ)--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "mṣǝʾ", "-û", "yi--mṣǝʾ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "mṣệ(ʾ)", "-nāh", "ti--mṣệ(ʾ)--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "mṣǝʾ", "-āh", "ʾe-mṣǝʾ-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "mṣā(ʾ)", "Ø", "ti-mṣā(ʾ)-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "mṣǝʾ", "-î", "ti-mṣǝʾ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "mṣā(ʾ)", "Ø", "yi-mṣā(ʾ)-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "mṣā(ʾ)", "Ø", "ti-mṣā(ʾ)-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "mṣǝʾ", "-āh", "ni-mṣǝʾ-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "mṣǝʾ", "-û", "ti-mṣǝʾ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "mṣệ(ʾ)", "-nāh", "ti-mṣệ(ʾ)-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "mṣǝʾ", "-û", "yi-mṣǝʾ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "mṣệ(ʾ)", "-nāh", "ti-mṣệ(ʾ)-nāh"]]
     }
     {:label "hebrew-VCCyImprtv-bny"
     :note "Lambdin1971"
@@ -1632,10 +1641,10 @@
 	    :rootClass :CCy,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "bǝnēh", "_NULL", "⊤-bǝnēh-_NULL"],
-	    [:Fem, :Singular, "⊤", "bǝn", "-î", "⊤-bǝn--î"],
-	    [:Masc, :Plural, "⊤", "bǝn", "-û", "⊤-bǝn--û"],
-	    [:Fem, :Plural, "⊤", "bǝn", "-ệnāh", "⊤-bǝn--ệnāh"]]
+	    [:Masc, :Singular, " ", "bǝnēh", "Ø", "bǝnēh-Ø"],
+	    [:Fem, :Singular, " ", "bǝn", "-î", "bǝn-î"],
+	    [:Masc, :Plural, " ", "bǝn", "-û", "bǝn-û"],
+	    [:Fem, :Plural, " ", "bǝn", "-ệnāh", "bǝn-ệnāh"]]
     }
     {:label "hebrew-VCCCDImprtv-gdl"
     :note ""
@@ -1646,94 +1655,94 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "gaddēl", "_NULL", "⊤-gaddēl-_NULL"],
-	    [:Fem, :Singular, "⊤", "gaddǝl", "-î", "⊤-gaddǝl--î"],
-	    [:Masc, :Plural, "⊤", "gaddǝl", "-û", "⊤-gaddǝl--û"],
-	    [:Fem, :Plural, "⊤", "gaddēl", "-nāh", "⊤-gaddēl--nāh"]]
+	    [:Masc, :Singular, " ", "gaddēl", "Ø", "gaddēl-Ø"],
+	    [:Fem, :Singular, " ", "gaddǝl", "-î", "gaddǝl-î"],
+	    [:Masc, :Plural, " ", "gaddǝl", "-û", "gaddǝl-û"],
+	    [:Fem, :Plural, " ", "gaddēl", "-nāh", "gaddēl-nāh"]]
     }
     {:label "hebrew-VC1C2C2BPerf-qll"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :qll,
 	    :pos :Verb,
 	    :rootClass :C1C2C2,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "qallô", "-ṯî", "⊤-qallô--ṯî"],
-	    [:Masc, :Singular, :Person2, "⊤", "qallô", "-ṯā", "⊤-qallô--ṯā"],
-	    [:Fem, :Singular, :Person2, "⊤", "qallô", "-ṯ", "⊤-qallô--ṯ"],
-	    [:Masc, :Singular, :Person3, "⊤", "qal", "_NULL", "⊤-qal-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "qall", "-āh", "⊤-qall--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "qallô", "-nû", "⊤-qallô--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "qallô", "-ṯem", "⊤-qallô--ṯem"],
-	    [:Fem, :Plural, :Person2, "⊤", "qallô", "-ṯen", "⊤-qallô--ṯen"],
-	    [:Masc, :Plural, :Person3, "⊤", "qall", "-û", "⊤-qall--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "qall", "-û", "⊤-qall--û"]]
+	    [:Common, :Singular, :Person1, " ", "qallô", "-ṯî", "qallô-ṯî"],
+	    [:Masc, :Singular, :Person2, " ", "qallô", "-ṯā", "qallô-ṯā"],
+	    [:Fem, :Singular, :Person2, " ", "qallô", "-ṯ", "qallô-ṯ"],
+	    [:Masc, :Singular, :Person3, " ", "qal", "Ø", "qal-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "qall", "-āh", "qall-āh"],
+	    [:Common, :Plural, :Person1, " ", "qallô", "-nû", "qallô-nû"],
+	    [:Masc, :Plural, :Person2, " ", "qallô", "-ṯem", "qallô-ṯem"],
+	    [:Fem, :Plural, :Person2, " ", "qallô", "-ṯen", "qallô-ṯen"],
+	    [:Masc, :Plural, :Person3, " ", "qall", "-û", "qall-û"],
+	    [:Fem, :Plural, :Person3, " ", "qall", "-û", "qall-û"]]
     }
     {:label "hebrew-VCCCBJuss-kbd"
     :note "Lambdin1971"
-    :common {:ablautClass :e-a,
+    :common {:ablautClass :E_aClass,
 	    :derivedStem :B,
 	    :lexeme :kbd,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḵbǝḏ", "-āh", "ʾe--ḵbǝḏ--āh"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḵbaḏ", "_NULL", "ti--ḵbaḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḵbǝḏ", "-î", "ti--ḵbǝḏ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḵbaḏ", "_NULL", "yi--ḵbaḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḵbaḏ", "_NULL", "ti--ḵbaḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḵbǝḏ", "-āh", "ni--ḵbǝḏ--āh"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḵbǝḏ", "-û", "ti--ḵbǝḏ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḵbaḏ", "-nāh", "ti--ḵbaḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḵbǝḏ", "-û", "yi--ḵbǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḵbaḏ", "-nāh", "ti--ḵbaḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḵbǝḏ", "-āh", "ʾe-ḵbǝḏ-āh"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḵbaḏ", "Ø", "ti-ḵbaḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḵbǝḏ", "-î", "ti-ḵbǝḏ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḵbaḏ", "Ø", "yi-ḵbaḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḵbaḏ", "Ø", "ti-ḵbaḏ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḵbǝḏ", "-āh", "ni-ḵbǝḏ-āh"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḵbǝḏ", "-û", "ti-ḵbǝḏ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḵbaḏ", "-nāh", "ti-ḵbaḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḵbǝḏ", "-û", "yi-ḵbǝḏ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḵbaḏ", "-nāh", "ti-ḵbaḏ-nāh"]]
     }
     {:label "hebrew-VCCCBImperf-kbd"
     :note "Lambdin1971"
-    :common {:ablautClass :e-a,
+    :common {:ablautClass :E_aClass,
 	    :derivedStem :B,
 	    :lexeme :kbd,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḵbaḏ", "_NULL", "ʾe--ḵbaḏ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḵbaḏ", "_NULL", "ti--ḵbaḏ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḵbǝḏ", "-î", "ti--ḵbǝḏ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḵbaḏ", "_NULL", "yi--ḵbaḏ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḵbaḏ", "_NULL", "ti--ḵbaḏ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḵbaḏ", "_NULL", "ni--ḵbaḏ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḵbǝḏ", "-û", "ti--ḵbǝḏ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḵbaḏ", "-nāh", "ti--ḵbaḏ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḵbǝḏ", "-û", "yi--ḵbǝḏ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḵbaḏ", "-nāh", "ti--ḵbaḏ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḵbaḏ", "Ø", "ʾe-ḵbaḏ-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḵbaḏ", "Ø", "ti-ḵbaḏ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḵbǝḏ", "-î", "ti-ḵbǝḏ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḵbaḏ", "Ø", "yi-ḵbaḏ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḵbaḏ", "Ø", "ti-ḵbaḏ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḵbaḏ", "Ø", "ni-ḵbaḏ-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḵbǝḏ", "-û", "ti-ḵbǝḏ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḵbaḏ", "-nāh", "ti-ḵbaḏ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḵbǝḏ", "-û", "yi-ḵbǝḏ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḵbaḏ", "-nāh", "ti-ḵbaḏ-nāh"]]
     }
     {:label "hebrew-VCCBPerf-kl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :akl,
 	    :pos :Verb,
 	    :rootClass :ACC,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "ʾāḵal", "-tî", "⊤-ʾāḵal--tî"],
-	    [:Masc, :Singular, :Person2, "⊤", "ʾāḵal", "-tā", "⊤-ʾāḵal--tā"],
-	    [:Fem, :Singular, :Person2, "⊤", "ʾāḵal", "-t", "⊤-ʾāḵal--t"],
-	    [:Masc, :Singular, :Person3, "⊤", "ʾāḵal", "_NULL", "⊤-ʾāḵal-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "ʾāḵǝl", "-āh", "⊤-ʾāḵǝl--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "ʾāḵal", "-nû", "⊤-ʾāḵal--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "ʾǝḵal", "-tem", "⊤-ʾǝḵal--tem"],
-	    [:Fem, :Plural, :Person2, "⊤", "ʾǝḵal", "-ten", "⊤-ʾǝḵal--ten"],
-	    [:Masc, :Plural, :Person3, "⊤", "ʾāḵǝl", "-û", "⊤-ʾāḵǝl--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "ʾāḵǝl", "-û", "⊤-ʾāḵǝl--û"]]
+	    [:Common, :Singular, :Person1, " ", "ʾāḵal", "-tî", "ʾāḵal-tî"],
+	    [:Masc, :Singular, :Person2, " ", "ʾāḵal", "-tā", "ʾāḵal-tā"],
+	    [:Fem, :Singular, :Person2, " ", "ʾāḵal", "-t", "ʾāḵal-t"],
+	    [:Masc, :Singular, :Person3, " ", "ʾāḵal", "Ø", "ʾāḵal-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "ʾāḵǝl", "-āh", "ʾāḵǝl-āh"],
+	    [:Common, :Plural, :Person1, " ", "ʾāḵal", "-nû", "ʾāḵal-nû"],
+	    [:Masc, :Plural, :Person2, " ", "ʾǝḵal", "-tem", "ʾǝḵal-tem"],
+	    [:Fem, :Plural, :Person2, " ", "ʾǝḵal", "-ten", "ʾǝḵal-ten"],
+	    [:Masc, :Plural, :Person3, " ", "ʾāḵǝl", "-û", "ʾāḵǝl-û"],
+	    [:Fem, :Plural, :Person3, " ", "ʾāḵǝl", "-û", "ʾāḵǝl-û"]]
     }
     {:label "hebrew-VWCCBImprtv-ysb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-e,
+    :common {:ablautClass :A_eClass,
 	    :derivedStem :B,
 	    :lexeme :ysb,
 	    :person :Person2,
@@ -1741,10 +1750,10 @@
 	    :rootClass :WCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "šēḇ", "_NULL", "⊤-šēḇ-_NULL"],
-	    [:Fem, :Singular, "⊤", "šǝḇ", "-î", "⊤-šǝḇ--î"],
-	    [:Masc, :Plural, "⊤", "šǝḇ", "-û", "⊤-šǝḇ--û"],
-	    [:Fem, :Plural, "⊤", "šēḇ", "-nāh", "⊤-šēḇ--nāh"]]
+	    [:Masc, :Singular, " ", "šēḇ", "Ø", "šēḇ-Ø"],
+	    [:Fem, :Singular, " ", "šǝḇ", "-î", "šǝḇ-î"],
+	    [:Masc, :Plural, " ", "šǝḇ", "-û", "šǝḇ-û"],
+	    [:Fem, :Plural, " ", "šēḇ", "-nāh", "šēḇ-nāh"]]
     }
     {:label "hebrew-VCyCBImprtv-sym"
     :note "Lambdin1971"
@@ -1756,54 +1765,54 @@
 	    :rootClass :CyC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "śîm", "_NULL", "⊤-śîm-_NULL"],
-	    [:Fem, :Singular, "⊤", "śîm", "-î", "⊤-śîm--î"],
-	    [:Masc, :Plural, "⊤", "śîm", "-û", "⊤-śîm--û"],
-	    [:Fem, :Plural, "⊤", "śēm", "-nāh", "⊤-śēm--nāh"]]
+	    [:Masc, :Singular, " ", "śîm", "Ø", "śîm-Ø"],
+	    [:Fem, :Singular, " ", "śîm", "-î", "śîm-î"],
+	    [:Masc, :Plural, " ", "śîm", "-û", "śîm-û"],
+	    [:Fem, :Plural, " ", "śēm", "-nāh", "śēm-nāh"]]
     }
     {:label "hebrew-VCCCBImperf-ktb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :ktb,
 	    :pos :Verb,
 	    :rootClass :CCC,
 	    :tam :Imperfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾe-", "ḵtōḇ", "_NULL", "ʾe--ḵtōḇ-_NULL"],
-	    [:Masc, :Singular, :Person2, "ti-", "ḵtōḇ", "_NULL", "ti--ḵtōḇ-_NULL"],
-	    [:Fem, :Singular, :Person2, "ti-", "ḵtǝḇ", "-î", "ti--ḵtǝḇ--î"],
-	    [:Masc, :Singular, :Person3, "yi-", "ḵtōḇ", "_NULL", "yi--ḵtōḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "ti-", "ḵtōḇ", "_NULL", "ti--ḵtōḇ-_NULL"],
-	    [:Common, :Plural, :Person1, "ni-", "ḵtōḇ", "_NULL", "ni--ḵtōḇ-_NULL"],
-	    [:Masc, :Plural, :Person2, "ti-", "ḵtǝḇ", "-û", "ti--ḵtǝḇ--û"],
-	    [:Fem, :Plural, :Person2, "ti-", "ḵtōḇ", "-nāh", "ti--ḵtōḇ--nāh"],
-	    [:Masc, :Plural, :Person3, "yi-", "ḵtǝḇ", "-û", "yi--ḵtǝḇ--û"],
-	    [:Fem, :Plural, :Person3, "ti-", "ḵtōḇ", "-nāh", "ti--ḵtōḇ--nāh"]]
+	    [:Common, :Singular, :Person1, "ʾe-", "ḵtōḇ", "Ø", "ʾe-ḵtōḇ-Ø"],
+	    [:Masc, :Singular, :Person2, "ti-", "ḵtōḇ", "Ø", "ti-ḵtōḇ-Ø"],
+	    [:Fem, :Singular, :Person2, "ti-", "ḵtǝḇ", "-î", "ti-ḵtǝḇ-î"],
+	    [:Masc, :Singular, :Person3, "yi-", "ḵtōḇ", "Ø", "yi-ḵtōḇ-Ø"],
+	    [:Fem, :Singular, :Person3, "ti-", "ḵtōḇ", "Ø", "ti-ḵtōḇ-Ø"],
+	    [:Common, :Plural, :Person1, "ni-", "ḵtōḇ", "Ø", "ni-ḵtōḇ-Ø"],
+	    [:Masc, :Plural, :Person2, "ti-", "ḵtǝḇ", "-û", "ti-ḵtǝḇ-û"],
+	    [:Fem, :Plural, :Person2, "ti-", "ḵtōḇ", "-nāh", "ti-ḵtōḇ-nāh"],
+	    [:Masc, :Plural, :Person3, "yi-", "ḵtǝḇ", "-û", "yi-ḵtǝḇ-û"],
+	    [:Fem, :Plural, :Person3, "ti-", "ḵtōḇ", "-nāh", "ti-ḵtōḇ-nāh"]]
     }
     {:label "hebrew-VC1C2C2BPerf-sbb"
     :note "Lambdin1971"
-    :common {:ablautClass :a-o,
+    :common {:ablautClass :A_oClass,
 	    :derivedStem :B,
 	    :lexeme :sbb,
 	    :pos :Verb,
 	    :rootClass :C1C2C2,
 	    :tam :Perfect}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "sabbô", "-ṯî", "⊤-sabbô--ṯî"],
-	    [:Masc, :Singular, :Person2, "⊤", "sabbô", "-ṯā", "⊤-sabbô--ṯā"],
-	    [:Fem, :Singular, :Person2, "⊤", "sabbô", "-ṯ", "⊤-sabbô--ṯ"],
-	    [:Masc, :Singular, :Person3, "⊤", "sāḇaḇ", "_NULL", "⊤-sāḇaḇ-_NULL"],
-	    [:Fem, :Singular, :Person3, "⊤", "sāḇăḇ", "-āh", "⊤-sāḇăḇ--āh"],
-	    [:Common, :Plural, :Person1, "⊤", "sabbô", "-nû", "⊤-sabbô--nû"],
-	    [:Masc, :Plural, :Person2, "⊤", "sabbô", "-ṯem", "⊤-sabbô--ṯem"],
-	    [:Fem, :Plural, :Person2, "⊤", "sabbô", "-ṯen", "⊤-sabbô--ṯen"],
-	    [:Masc, :Plural, :Person3, "⊤", "sāḇăḇ", "-û", "⊤-sāḇăḇ--û"],
-	    [:Fem, :Plural, :Person3, "⊤", "sāḇăḇ", "-û", "⊤-sāḇăḇ--û"]]
+	    [:Common, :Singular, :Person1, " ", "sabbô", "-ṯî", "sabbô-ṯî"],
+	    [:Masc, :Singular, :Person2, " ", "sabbô", "-ṯā", "sabbô-ṯā"],
+	    [:Fem, :Singular, :Person2, " ", "sabbô", "-ṯ", "sabbô-ṯ"],
+	    [:Masc, :Singular, :Person3, " ", "sāḇaḇ", "Ø", "sāḇaḇ-Ø"],
+	    [:Fem, :Singular, :Person3, " ", "sāḇăḇ", "-āh", "sāḇăḇ-āh"],
+	    [:Common, :Plural, :Person1, " ", "sabbô", "-nû", "sabbô-nû"],
+	    [:Masc, :Plural, :Person2, " ", "sabbô", "-ṯem", "sabbô-ṯem"],
+	    [:Fem, :Plural, :Person2, " ", "sabbô", "-ṯen", "sabbô-ṯen"],
+	    [:Masc, :Plural, :Person3, " ", "sāḇăḇ", "-û", "sāḇăḇ-û"],
+	    [:Fem, :Plural, :Person3, " ", "sāḇăḇ", "-û", "sāḇăḇ-û"]]
     }
     {:label "hebrew-VCCBImprtv-kl"
     :note "Lambdin1971"
-    :common {:ablautClass :a-a,
+    :common {:ablautClass :A_aClass,
 	    :derivedStem :B,
 	    :lexeme :akl,
 	    :person :Person2,
@@ -1811,10 +1820,10 @@
 	    :rootClass :ACC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "ʾĕḵōl", "_NULL", "⊤-ʾĕḵōl-_NULL"],
-	    [:Fem, :Singular, "⊤", "ʾiḵl", "-î", "⊤-ʾiḵl--î"],
-	    [:Masc, :Plural, "⊤", "ʾiḵl", "-û", "⊤-ʾiḵl--û"],
-	    [:Fem, :Plural, "⊤", "ʾĕḵōl", "-nāh", "⊤-ʾĕḵōl--nāh"]]
+	    [:Masc, :Singular, " ", "ʾĕḵōl", "Ø", "ʾĕḵōl-Ø"],
+	    [:Fem, :Singular, " ", "ʾiḵl", "-î", "ʾiḵl-î"],
+	    [:Masc, :Plural, " ", "ʾiḵl", "-û", "ʾiḵl-û"],
+	    [:Fem, :Plural, " ", "ʾĕḵōl", "-nāh", "ʾĕḵōl-nāh"]]
     }}
 :muterms #{
     {:label "hebrew-PIndep"
@@ -1843,10 +1852,10 @@
 	    [:Dative, :Fem, :Plural, :Person2, "ʔittǝḵen"],
 	    [:Dative, :Masc, :Plural, :Person3, "ʔittām"],
 	    [:Dative, :Fem, :Plural, :Person3, "ʔittān"],
-	    [:Accusative, :Common, :Singular, :Person1, "⊤"],
-	    [:Accusative, :Masc, :Singular, :Person2, "⊤"],
-	    [:Accusative, :Fem, :Singular, :Person2, "⊤"],
-	    [:Accusative, :Masc, :Singular, :Person3, "⊤"],
+	    [:Accusative, :Common, :Singular, :Person1, " "],
+	    [:Accusative, :Masc, :Singular, :Person2, " "],
+	    [:Accusative, :Fem, :Singular, :Person2, " "],
+	    [:Accusative, :Masc, :Singular, :Person3, " "],
 	    [:Accusative, :Fem, :Singular, :Person3, "ʔōṯāh"],
 	    [:Accusative, :Common, :Plural, :Person1, "ʔōṯānû"],
 	    [:Accusative, :Masc, :Plural, :Person2, "ʔeṯḵem"],
@@ -1860,26 +1869,26 @@
 	    :pos :Pronoun,
 	    :proClass :lamedSuff}
     :terms [[:gender, :numHead, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Singular, :Person1, "⊤"],
-	    [:Masc, :Singular, :Singular, :Person2, "⊤"],
-	    [:Fem, :Singular, :Singular, :Person2, "⊤"],
-	    [:Masc, :Singular, :Singular, :Person3, "⊤"],
-	    [:Fem, :Singular, :Singular, :Person3, "-āh"],
-	    [:Common, :Singular, :Plural, :Person1, "-ēnû"],
-	    [:Masc, :Singular, :Plural, :Person2, "-ḵem"],
-	    [:Fem, :Singular, :Plural, :Person2, "-ḵen"],
-	    [:Masc, :Singular, :Plural, :Person3, "-ām"],
-	    [:Fem, :Singular, :Plural, :Person3, "-ān"],
-	    [:Common, :Plural, :Singular, :Person1, "-ay"],
-	    [:Masc, :Plural, :Singular, :Person2, "⊤"],
-	    [:Fem, :Plural, :Singular, :Person2, "-áyiḵ"],
-	    [:Masc, :Plural, :Singular, :Person3, "-âw"],
-	    [:Fem, :Plural, :Singular, :Person3, "-ệhā"],
-	    [:Common, :Plural, :Plural, :Person1, "-ênû"],
-	    [:Masc, :Plural, :Plural, :Person2, "-êḵem"],
-	    [:Fem, :Plural, :Plural, :Person2, "-êḵen"],
-	    [:Masc, :Plural, :Plural, :Person3, "-êhem"],
-	    [:Fem, :Plural, :Plural, :Person3, "-êhen"]]
+	    [:Common, :HeadSingular, :Singular, :Person1, " "],
+	    [:Masc, :HeadSingular, :Singular, :Person2, " "],
+	    [:Fem, :HeadSingular, :Singular, :Person2, " "],
+	    [:Masc, :HeadSingular, :Singular, :Person3, " "],
+	    [:Fem, :HeadSingular, :Singular, :Person3, "-āh"],
+	    [:Common, :HeadSingular, :Plural, :Person1, "-ēnû"],
+	    [:Masc, :HeadSingular, :Plural, :Person2, "-ḵem"],
+	    [:Fem, :HeadSingular, :Plural, :Person2, "-ḵen"],
+	    [:Masc, :HeadSingular, :Plural, :Person3, "-ām"],
+	    [:Fem, :HeadSingular, :Plural, :Person3, "-ān"],
+	    [:Common, :HeadPlural, :Singular, :Person1, "-ay"],
+	    [:Masc, :HeadPlural, :Singular, :Person2, " "],
+	    [:Fem, :HeadPlural, :Singular, :Person2, "-áyiḵ"],
+	    [:Masc, :HeadPlural, :Singular, :Person3, "-âw"],
+	    [:Fem, :HeadPlural, :Singular, :Person3, "-ệhā"],
+	    [:Common, :HeadPlural, :Plural, :Person1, "-ênû"],
+	    [:Masc, :HeadPlural, :Plural, :Person2, "-êḵem"],
+	    [:Fem, :HeadPlural, :Plural, :Person2, "-êḵen"],
+	    [:Masc, :HeadPlural, :Plural, :Person3, "-êhem"],
+	    [:Fem, :HeadPlural, :Plural, :Person3, "-êhen"]]
     }
     {:label "hebrew-PObjClitic"
     :note "Lambdin1971 p. 260;Hebrew uses 3 object suffixes for the perfective and 2 suffixes for prefix forms (imperfective and jussive). * = the 2p forms are rare and were presumably –kem and –ken in each case. juss = Jussive/Short Forms (including imperative forms;imperative forms ending in a vowel drop the initial vowel -ē- in the following forms).The environments are as follows:env1 = suffix is post-consonantal and stressed (3ms and 2ms perfective forms);env2 = suffix is post-vocalic and unstressed (2fs,1cs,3cp,2m/fp,1cp perfective forms);env3 = suffix is post-consonantal and unstressed (3fs perfective forms);env4 = suffixes on Prefix Forms (the two paradigms are distributed as here as a tendency,but not as a rule)"
@@ -1889,8 +1898,8 @@
 	    :proClass :ObjClitic}
     :terms [[:gender, :number, :person, :tenseHead, :token, :token-environment]  ;; schema
 	    [:Common, :Singular, :Person1, :Perfect, "-ánî", "env1"],
-	    [:Masc, :Singular, :Person2, :Perfect, "⊤", "env1"],
-	    [:Fem, :Singular, :Person2, :Perfect, "⊤", "env1"],
+	    [:Masc, :Singular, :Person2, :Perfect, " ", "env1"],
+	    [:Fem, :Singular, :Person2, :Perfect, " ", "env1"],
 	    [:Masc, :Singular, :Person3, :Perfect, "-ô/-ā́hû", "env1"],
 	    [:Fem, :Singular, :Person3, :Perfect, "-āh", "env1"],
 	    [:Common, :Plural, :Person1, :Perfect, "-ā́nû", "env1"],
@@ -1899,8 +1908,8 @@
 	    [:Masc, :Plural, :Person3, :Perfect, "-ām", "env1"],
 	    [:Fem, :Plural, :Person3, :Perfect, "-ān", "env1"],
 	    [:Common, :Singular, :Person1, :Perfect, "-nî", "env2"],
-	    [:Masc, :Singular, :Person2, :Perfect, "⊤", "env2"],
-	    [:Fem, :Singular, :Person2, :Perfect, "⊤", "env2"],
+	    [:Masc, :Singular, :Person2, :Perfect, " ", "env2"],
+	    [:Fem, :Singular, :Person2, :Perfect, " ", "env2"],
 	    [:Masc, :Singular, :Person3, :Perfect, "-hû/-w", "env2"],
 	    [:Fem, :Singular, :Person3, :Perfect, "-hā", "env2"],
 	    [:Common, :Plural, :Person1, :Perfect, "-nû", "env2"],
@@ -1909,7 +1918,7 @@
 	    [:Masc, :Plural, :Person3, :Perfect, "-m", "env2"],
 	    [:Fem, :Plural, :Person3, :Perfect, "-n", "env2"],
 	    [:Common, :Singular, :Person1, :Perfect, "-nî", "env3"],
-	    [:Masc, :Singular, :Person2, :Perfect, "⊤", "env3"],
+	    [:Masc, :Singular, :Person2, :Perfect, " ", "env3"],
 	    [:Fem, :Singular, :Person2, :Perfect, "-eḵ", "env3"],
 	    [:Masc, :Singular, :Person3, :Perfect, "-hû/-:û", "env3"],
 	    [:Fem, :Singular, :Person3, :Perfect, "-:āh", "env3"],
@@ -1920,22 +1929,22 @@
 	    [:Fem, :Plural, :Person3, :Perfect, "-an", "env3"],
 	    [:Common, :Singular, :Person1, :Imperfect, "-ennî", "env4"],
 	    [:Masc, :Singular, :Person2, :Imperfect, "-ekkā", "env4"],
-	    [:Fem, :Singular, :Person2, :Imperfect, "⊤", "env4"],
+	    [:Fem, :Singular, :Person2, :Imperfect, " ", "env4"],
 	    [:Masc, :Singular, :Person3, :Imperfect, "-ennû", "env4"],
 	    [:Fem, :Singular, :Person3, :Imperfect, "-ennāh", "env4"],
 	    [:Common, :Plural, :Person1, :Imperfect, "-ennû", "env4"],
-	    [:Masc, :Plural, :Person2, :Imperfect, "⊤", "env4"],
-	    [:Fem, :Plural, :Person2, :Imperfect, "⊤", "env4"],
-	    [:Masc, :Plural, :Person3, :Imperfect, "⊤", "env4"],
-	    [:Fem, :Plural, :Person3, :Imperfect, "⊤", "env4"],
+	    [:Masc, :Plural, :Person2, :Imperfect, " ", "env4"],
+	    [:Fem, :Plural, :Person2, :Imperfect, " ", "env4"],
+	    [:Masc, :Plural, :Person3, :Imperfect, " ", "env4"],
+	    [:Fem, :Plural, :Person3, :Imperfect, " ", "env4"],
 	    [:Common, :Singular, :Person1, :Jussive, "-ēnî", "env4"],
-	    [:Masc, :Singular, :Person2, :Jussive, "⊤", "env4"],
-	    [:Fem, :Singular, :Person2, :Jussive, "⊤", "env4"],
+	    [:Masc, :Singular, :Person2, :Jussive, " ", "env4"],
+	    [:Fem, :Singular, :Person2, :Jussive, " ", "env4"],
 	    [:Masc, :Singular, :Person3, :Jussive, "-ēhû", "env4"],
 	    [:Fem, :Singular, :Person3, :Jussive, "-ehā", "env4"],
 	    [:Common, :Plural, :Person1, :Jussive, "-ēnû", "env4"],
-	    [:Masc, :Plural, :Person2, :Jussive, "⊤", "env4"],
-	    [:Fem, :Plural, :Person2, :Jussive, "⊤", "env4"],
+	    [:Masc, :Plural, :Person2, :Jussive, " ", "env4"],
+	    [:Fem, :Plural, :Person2, :Jussive, " ", "env4"],
 	    [:Masc, :Plural, :Person3, :Jussive, "-ēm", "env4"],
 	    [:Fem, :Plural, :Person3, :Jussive, "-ēn", "env4"]]
     }
@@ -1960,35 +1969,35 @@
 	    :pos :Verb,
 	    :morphClass :SubjMarker}
     :terms [[:gender, :number, :person, :tam, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, :Perfect, "⊤", "⊤", "-tî", "⊤-⊤--tî"],
-	    [:Masc, :Singular, :Person2, :Perfect, "⊤", "⊤", "-tā", "⊤-⊤--tā"],
-	    [:Fem, :Singular, :Person2, :Perfect, "⊤", "⊤", "-t", "⊤-⊤--t"],
-	    [:Masc, :Singular, :Person3, :Perfect, "⊤", "_NULL", "_NULL", "⊤-_NULL-_NULL"],
-	    [:Fem, :Singular, :Person3, :Perfect, "⊤", "⊤", "-āh", "⊤-⊤--āh"],
-	    [:Common, :Plural, :Person1, :Perfect, "⊤", "⊤", "-nû", "⊤-⊤--nû"],
-	    [:Masc, :Plural, :Person2, :Perfect, "⊤", "⊤", "-tem", "⊤-⊤--tem"],
-	    [:Fem, :Plural, :Person2, :Perfect, "⊤", "⊤", "-ten", "⊤-⊤--ten"],
-	    [:Masc, :Plural, :Person3, :Perfect, "⊤", "⊤", "⊤", "⊤-⊤-⊤"],
-	    [:Fem, :Plural, :Person3, :Perfect, "⊤", "⊤", "⊤", "⊤-⊤-⊤"],
-	    [:Common, :Singular, :Person1, :Imperfect, "ʾV-", "⊤", "_NULL", "ʾV--⊤-_NULL"],
-	    [:Masc, :Singular, :Person2, :Perfect, "tV-", "⊤", "_NULL", "tV--⊤-_NULL"],
-	    [:Fem, :Singular, :Person2, :Perfect, "tV-", "⊤", "⊤", "tV--⊤-⊤"],
-	    [:Masc, :Singular, :Person3, :Perfect, "yV-", "⊤", "_NULL", "yV--⊤-_NULL"],
-	    [:Fem, :Singular, :Person3, :Perfect, "tV-", "⊤", "_NULL", "tV--⊤-_NULL"],
-	    [:Common, :Plural, :Person1, :Perfect, "nV-", "⊤", "_NULL", "nV--⊤-_NULL"],
-	    [:Masc, :Plural, :Person2, :Perfect, "tV-", "⊤", "⊤", "tV--⊤-⊤"],
-	    [:Fem, :Plural, :Person2, :Perfect, "tV-", "⊤", "-(ệ)nāh", "tV--⊤--(ệ)nāh"],
-	    [:Masc, :Plural, :Person3, :Perfect, "yV-", "⊤", "⊤", "yV--⊤-⊤"],
-	    [:Fem, :Plural, :Person3, :Perfect, "tV-", "⊤", "-(ệ)nāh", "tV--⊤--(ệ)nāh"],
-	    [:Common, :Singular, :Person1, :Jussive, "ʾV-", "⊤", "-āh", "ʾV--⊤--āh"],
-	    [:Masc, :Singular, :Person2, :Jussive, "tV-", "⊤", "_NULL", "tV--⊤-_NULL"],
-	    [:Fem, :Singular, :Person2, :Jussive, "tV-", "⊤", "⊤", "tV--⊤-⊤"],
-	    [:Masc, :Singular, :Person3, :Jussive, "yV-", "⊤", "_NULL", "yV--⊤-_NULL"],
-	    [:Fem, :Singular, :Person3, :Jussive, "tV-", "⊤", "_NULL", "tV--⊤-_NULL"],
-	    [:Common, :Plural, :Person1, :Jussive, "nV-", "⊤", "-āh", "nV--⊤--āh"],
-	    [:Masc, :Plural, :Person2, :Jussive, "tV-", "⊤", "⊤", "tV--⊤-⊤"],
-	    [:Fem, :Plural, :Person2, :Jussive, "tV-", "⊤", "-(ệ)nāh", "tV--⊤--(ệ)nāh"],
-	    [:Masc, :Plural, :Person3, :Jussive, "yV-", "⊤", "⊤", "yV--⊤-⊤"],
-	    [:Fem, :Plural, :Person3, :Jussive, "tV-", "⊤", "-(ệ)nāh", "tV--⊤--(ệ)nāh"]]
+	    [:Common, :Singular, :Person1, :Perfect, " ", " ", "-tî", "tî"],
+	    [:Masc, :Singular, :Person2, :Perfect, " ", " ", "-tā", "tā"],
+	    [:Fem, :Singular, :Person2, :Perfect, " ", " ", "-t", "t"],
+	    [:Masc, :Singular, :Person3, :Perfect, " ", "Ø", "Ø", "Ø-Ø"],
+	    [:Fem, :Singular, :Person3, :Perfect, " ", " ", "-āh", "āh"],
+	    [:Common, :Plural, :Person1, :Perfect, " ", " ", "-nû", "nû"],
+	    [:Masc, :Plural, :Person2, :Perfect, " ", " ", "-tem", "tem"],
+	    [:Fem, :Plural, :Person2, :Perfect, " ", " ", "-ten", "ten"],
+	    [:Masc, :Plural, :Person3, :Perfect, " ", " ", " ", "⊤"],
+	    [:Fem, :Plural, :Person3, :Perfect, " ", " ", " ", "⊤"],
+	    [:Common, :Singular, :Person1, :Imperfect, "ʾV-", " ", "Ø", "ʾV-⊤-Ø"],
+	    [:Masc, :Singular, :Person2, :Perfect, "tV-", " ", "Ø", "tV-⊤-Ø"],
+	    [:Fem, :Singular, :Person2, :Perfect, "tV-", " ", " ", "tV-⊤-⊤"],
+	    [:Masc, :Singular, :Person3, :Perfect, "yV-", " ", "Ø", "yV-⊤-Ø"],
+	    [:Fem, :Singular, :Person3, :Perfect, "tV-", " ", "Ø", "tV-⊤-Ø"],
+	    [:Common, :Plural, :Person1, :Perfect, "nV-", " ", "Ø", "nV-⊤-Ø"],
+	    [:Masc, :Plural, :Person2, :Perfect, "tV-", " ", " ", "tV-⊤-⊤"],
+	    [:Fem, :Plural, :Person2, :Perfect, "tV-", " ", "-(ệ)nāh", "tV-⊤-(ệ)nāh"],
+	    [:Masc, :Plural, :Person3, :Perfect, "yV-", " ", " ", "yV-⊤-⊤"],
+	    [:Fem, :Plural, :Person3, :Perfect, "tV-", " ", "-(ệ)nāh", "tV-⊤-(ệ)nāh"],
+	    [:Common, :Singular, :Person1, :Jussive, "ʾV-", " ", "-āh", "ʾV-⊤-āh"],
+	    [:Masc, :Singular, :Person2, :Jussive, "tV-", " ", "Ø", "tV-⊤-Ø"],
+	    [:Fem, :Singular, :Person2, :Jussive, "tV-", " ", " ", "tV-⊤-⊤"],
+	    [:Masc, :Singular, :Person3, :Jussive, "yV-", " ", "Ø", "yV-⊤-Ø"],
+	    [:Fem, :Singular, :Person3, :Jussive, "tV-", " ", "Ø", "tV-⊤-Ø"],
+	    [:Common, :Plural, :Person1, :Jussive, "nV-", " ", "-āh", "nV-⊤-āh"],
+	    [:Masc, :Plural, :Person2, :Jussive, "tV-", " ", " ", "tV-⊤-⊤"],
+	    [:Fem, :Plural, :Person2, :Jussive, "tV-", " ", "-(ệ)nāh", "tV-⊤-(ệ)nāh"],
+	    [:Masc, :Plural, :Person3, :Jussive, "yV-", " ", " ", "yV-⊤-⊤"],
+	    [:Fem, :Plural, :Person3, :Jussive, "tV-", " ", "-(ệ)nāh", "tV-⊤-(ệ)nāh"]]
     }}
 }

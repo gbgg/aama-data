@@ -1,6 +1,9 @@
 {
 :lang :oromo
 :sgpref "orm"
+:datasource "Gragg1976"
+:geodemoURL "http://www.ethnologue.com/language/orm http://www.ethnologue.com/language/hae http://www.ethnologue.com/language/gax http://www.ethnologue.com/language/orc"
+:geodemoTXT "Varieties and subdialects of Oromo are spoken by millions of individuals over much of central and southern Ethiopia . The variety treated here is characteristic of the west-central region, specifically Wallagga. Other more-or-less distinct varieties are the Eastern , Borana-Arsi-Guji, and Orma (spoken in Kenya)."
 :schemata {
 :case [:Absolutive, :Possessive, :Subject]
 	  :clauseType [:Main, :Subordinate]
@@ -17,6 +20,12 @@
 	  :proClass [:Independent, :ProSuff]
 	  :tam [:Conditional, :FutureDefinite, :FutureIndefinite, :FuturePerfect, :Imperative, :Jussive, :NonPast-nonPres, :Past, :PastProgressive, :Perfect, :Pluperfect, :PluperfectProgressive, :Present, :PresentProgressive]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case :clauseType :copType :nonFiniteForm  :derivedStem :polarity :pos :proClass :tam :tenseName ]
+           :inflClass [:pdmSubType  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRO {:gloss "Pronoun", }
 }
@@ -442,32 +451,32 @@
 	    [:Common, :Singular, :Person1, "beek-sif-ne"]]
     }
     {:label "oromo-VCompoundTense"
-    :note "Gragg1976 p. 189"
+    :note "Gragg1976 p. 189. Template: structAux + structMain + token-aux + token-encliticized + token-main."
     :common {:gender :Masc,
 	    :lexeme :adeem,
 	    :number :Singular,
 	    :person :Person3,
 	    :pos :Verb,
 	    :formType :CompoundTense}
-    :terms [[:polarity, :token-structAux, :token-structMain, :tam, :token-aux, :token-encliticized, :token-main, :token, :token, :token]  ;; schema
-	    [:Negative, "jir-_presNeg", "verb_agent", :PresentProgressive, "hin-jiru", "_NULL", "adeemaa", "adeemaa hin-jiru (_NULL)", "adeemaa", "adeemaa hin-jiru (_NULL) hin-jiru (_NULL)"],
-	    [:Affirmative, "jir-_pres", "verb_infinitive+f", :FutureDefinite, "jira", "_NULL", "adeemuu-f(an)", "adeemuu-f(an) jira (_NULL)"],
-	    [:Negative, "tur-_past", "verb_agent", :PastProgressive, "(hi)n-turre", "_NULL", "adeemaa", "adeemaa (hi)n-turre (_NULL)"],
-	    [:Negative, "⊤", "verb_pastNeg", :Perfect, "⊤", "_NULL", "hin-adeem-ne", "hin-adeem-ne ⊤ (_NULL)"],
-	    [:Affirmative, "jir-_pres+ tur-_past", "verb_agent", :PluperfectProgressive, "jira(n) ture", "_NULL", "adeemaa(n)", "adeemaa(n) jira(n) ture (_NULL)"],
-	    [:Negative, "tur-_past", "verb_presNeg", :Conditional, "ture", "_NULL", "hin-adeemu(n)", "hin-adeemu(n) ture (_NULL)"],
-	    [:Negative, "tur-_past", "verb_pastNeg", :Pluperfect, "ture", "_NULL", "hin-adeemne(n)", "hin-adeemne(n) ture (_NULL)"],
-	    [:Negative, "tur-_pastNeg", "verb_infinitive+f", :FuturePerfect, "(hi)n-turre", "_NULL", "adeemuu-f", "adeemuu-f (hi)n-turre (_NULL)"],
-	    [:Affirmative, "jir-_pres", "verb_agent", :PresentProgressive, "jira", "_NULL", "adeemaa(n)", "adeemaa(n) jira (_NULL)"],
-	    [:Negative, "jir-_presNeg", "verb_infinitive+f", :FutureDefinite, "(hi)n-jiru", "_NULL", "adeemuu-f", "adeemuu-f (hi)n-jiru (_NULL)"],
-	    [:Negative, "taʔa _sg 3 m –invar", "verb_presNeg", :FutureIndefinite, "taʔa", "_NULL", "hin-adeemu(n)", "hin-adeemu(n) taʔa (_NULL)"],
-	    [:Affirmative, "tur-_past", "verb_infinitive+f", :FuturePerfect, "ture", "_NULL", "adeemuu-f(an)", "adeemuu-f(an) ture (_NULL)"],
-	    [:Affirmative, "tur-_past", "verb_past", :Pluperfect, "ture", "_NULL", "adeemee(n)", "adeemee(n) ture (_NULL)"],
-	    [:Negative, "jir-_presNeg+ tur-_past", "verb_agent", :PluperfectProgressive, "(hi)n-jiru(n) ture", "_NULL", "adeemaa", "adeemaa (hi)n-jiru(n) ture (_NULL)"],
-	    [:Affirmative, "jir-_pres", "verb_past", :Perfect, "jira", "adeemeera", "adeemee(n)", "adeemee(n) jira (adeemeera)"],
-	    [:Affirmative, "tur-_past", "hín-verb_pres", :Conditional, "ture", "_NULL", "nan/hin-adeema(n)", "nan/hin-adeema(n) ture (_NULL)"],
-	    [:Affirmative, "tur-_past", "verb_agent", :PastProgressive, "ture", "_NULL", "adeemaa(n)", "adeemaa(n) ture (_NULL)"],
-	    [:Affirmative, "taʔa _sg 3 m –invar", "hín-verb_pres", :FutureIndefinite, "taʔa", "_NULL", "nan/hin-adeema", "nan/hin-adeema taʔa (_NULL)"]]
+    :terms [[:polarity, :tam, :token-note-template, :token]  ;; schema
+	    [:Negative, :PresentProgressive, "jir-_presNeg + verb_agent + hin-jiru + _NULL + adeemaa", "adeemaa hin-jiru (_NULL)"],
+	    [:Affirmative, :FutureDefinite, "jir-_pres + verb_infinitive+f + jira + _NULL + adeemuu-f(an)", "adeemuu-f(an) jira (_NULL)"],
+	    [:Negative, :PastProgressive, "tur-_past + verb_agent + (hi)n-turre + _NULL + adeemaa", "adeemaa (hi)n-turre (_NULL)"],
+	    [:Negative, :Perfect, "⊤ + verb_pastNeg + ⊤ + _NULL + hin-adeem-ne", "hin-adeem-ne ⊤ (_NULL)"],
+	    [:Affirmative, :PluperfectProgressive, "jir-_pres+ tur-_past + verb_agent + jira(n) ture + _NULL + adeemaa(n)", "adeemaa(n) jira(n) ture (_NULL)"],
+	    [:Negative, :Conditional, "tur-_past + verb_presNeg + ture + _NULL + hin-adeemu(n)", "hin-adeemu(n) ture (_NULL)"],
+	    [:Negative, :Pluperfect, "tur-_past + verb_pastNeg + ture + _NULL + hin-adeemne(n)", "hin-adeemne(n) ture (_NULL)"],
+	    [:Negative, :FuturePerfect, "tur-_pastNeg + verb_infinitive+f + (hi)n-turre + _NULL + adeemuu-f", "adeemuu-f (hi)n-turre (_NULL)"],
+	    [:Affirmative, :PresentProgressive, "jir-_pres + verb_agent + jira + _NULL + adeemaa(n)", "adeemaa(n) jira (_NULL)"],
+	    [:Negative, :FutureDefinite, "jir-_presNeg + verb_infinitive+f + (hi)n-jiru + _NULL + adeemuu-f", "adeemuu-f (hi)n-jiru (_NULL)"],
+	    [:Negative, :FutureIndefinite, "taʔa _sg 3 m –invar + verb_presNeg + taʔa + _NULL + hin-adeemu(n)", "hin-adeemu(n) taʔa (_NULL)"],
+	    [:Affirmative, :FuturePerfect, "tur-_past + verb_infinitive+f + ture + _NULL + adeemuu-f(an)", "adeemuu-f(an) ture (_NULL)"],
+	    [:Affirmative, :Pluperfect, "tur-_past + verb_past + ture + _NULL + adeemee(n)", "adeemee(n) ture (_NULL)"],
+	    [:Negative, :PluperfectProgressive, "jir-_presNeg+ tur-_past + verb_agent + (hi)n-jiru(n) ture + _NULL + adeemaa", "adeemaa (hi)n-jiru(n) ture (_NULL)"],
+	    [:Affirmative, :Perfect, "jir-_pres + verb_past + jira + adeemeera + adeemee(n)", "adeemee(n) jira (adeemeera)"],
+	    [:Affirmative, :Conditional, "tur-_past + hín-verb_pres + ture + _NULL + nan/hin-adeema(n)", "nan/hin-adeema(n) ture (_NULL)"],
+	    [:Affirmative, :PastProgressive, "tur-_past + verb_agent + ture + _NULL + adeemaa(n)", "adeemaa(n) ture (_NULL)"],
+	    [:Affirmative, :FutureIndefinite, "taʔa _sg 3 m –invar + hín-verb_pres + taʔa + _NULL + nan/hin-adeema", "nan/hin-adeema taʔa (_NULL)"]]
     }
     {:label "oromo-VMidMainNegPresSmpl-beek"
     :note "Gragg1976 p. 188"
@@ -587,7 +596,7 @@
 	    :person :Person3,
 	    :pos :Verb,
 	    :tam :Jussive}
-    :terms [[:derivedStem, :polarity, :token-structure, :token]  ;; schema
+    :terms [[:derivedStem, :polarity, :token-note-structure, :token]  ;; schema
 	    [:S, :Negative, "hin-VerbStem-in_invariant", "hin-beek-sis-in"],
 	    [:Base, :Negative, "hin-VerbStem-in_invariant", "hin-beek-in"],
 	    [:T, :Negative, "hin-VerbStem-in_invariant", "hin-beek-at-in"],

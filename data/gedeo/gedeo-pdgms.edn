@@ -1,20 +1,29 @@
 {
 :lang :gedeo
 :sgpref "ged"
+:datasource "WedekindK1985"
+:geodemoURL "http://www.ethnologue.com/language/drs"
+:geodemoTXT "Varieties and subdialects of Gedeo are spoken in"
 :schemata {
 :case [:Absolutive, :Nominative]
-	  :caseHead [:Absolutive]
+	  :caseHead [:HeadAbsolutive]
 	  :deixis [:Far, :Near]
 	  :gender [:Common, :Fem, :Masc]
-	  :genderHead [:Fem, :Masc]
+	  :genderHead [:HeadFem, :HeadMasc]
 	  :interrogClass [:InterrogProHow, :InterrogProHowMany, :InterrogProWhat, :InterrogProWhen, :InterrogProWhere, :InterrogProWho]
 	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Interrogative, :Negative]
 	  :pos [:Pronoun, :Verb]
-	  :proClass [:Demonstrative, :Interrogative, :Person, :Possessive]
+	  :proClass [:Demonstrative, :Interrogative, :Independent, :Possessive]
 	  :tam [:DependentConditional, :DependentPurposive, :HypothNonActual, :HypothNonPres, :Imperative, :ImperfectActual, :ImperfectFuture, :ImperfectNonActual, :ImperfectNonPresent, :ImperfectNonPresent2, :Perfect, :PerfectActual, :PerfectNonActual, :PerfectNonPresent, :PerfectNonPresent2]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :genderHead ]
+           :synsemClass [:case :caseHead :deixis :derivedStem :interrogClass  :polarity :pos :proClass :tamb ]
+           :inflClass [  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :PRODEM {:gloss "[x]", :lemma "[y]", }
   :PROIND {:gloss "[x]", :lemma "[y]", }
@@ -293,7 +302,7 @@
     :note "HudsonG1976 pp. 256-259."
     :common {:morpheme :PROIND,
 	    :pos :Pronoun,
-	    :proClass :Person}
+	    :proClass :Independent}
     :terms [[:gender, :number, :person, :token, :case]  ;; schema
 	    [:Common, :Singular, :Person1, "ani", :Nominative],
 	    [:Common, :Singular, :Person2, "asti", :Nominative],
@@ -313,24 +322,24 @@
     {:label "gedeo-PPoss"
     :note "HudsonG1976 pp. 256-259."
     :common {:morpheme :PROPOSS,
-	    :caseHead :Absolutive,
+	    :caseHead :HeadAbsolutive,
 	    :pos :Pronoun,
 	    :proClass :Possessive}
     :terms [[:genderHead, :gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Person1, "an-ke"],
-	    [:Masc, :Common, :Singular, :Person2, "asti-ke"],
-	    [:Masc, :Masc, :Singular, :Person3, "isi-ke"],
-	    [:Masc, :Fem, :Singular, :Person3, "ise-ke"],
-	    [:Masc, :Common, :Plural, :Person1, "noʔo-ke"],
-	    [:Masc, :Common, :Plural, :Person2, "as̆inhaʔno-ke"],
-	    [:Masc, :Common, :Plural, :Person3, "insaʔne-ke"],
-	    [:Fem, :Common, :Singular, :Person1, "an-tte"],
-	    [:Fem, :Common, :Singular, :Person2, "asti-tte"],
-	    [:Fem, :Masc, :Singular, :Person3, "isi-tte"],
-	    [:Fem, :Fem, :Singular, :Person3, "ise-tte"],
-	    [:Fem, :Common, :Plural, :Person1, "noʔo-tte"],
-	    [:Fem, :Common, :Plural, :Person2, "as̆inhaʔno-tte"],
-	    [:Fem, :Common, :Plural, :Person3, "insaʔne-tte"]]
+	    [:HeadMasc, :Common, :Singular, :Person1, "an-ke"],
+	    [:HeadMasc, :Common, :Singular, :Person2, "asti-ke"],
+	    [:HeadMasc, :Masc, :Singular, :Person3, "isi-ke"],
+	    [:HeadMasc, :Fem, :Singular, :Person3, "ise-ke"],
+	    [:HeadMasc, :Common, :Plural, :Person1, "noʔo-ke"],
+	    [:HeadMasc, :Common, :Plural, :Person2, "as̆inhaʔno-ke"],
+	    [:HeadMasc, :Common, :Plural, :Person3, "insaʔne-ke"],
+	    [:HeadFem, :Common, :Singular, :Person1, "an-tte"],
+	    [:HeadFem, :Common, :Singular, :Person2, "asti-tte"],
+	    [:HeadFem, :Masc, :Singular, :Person3, "isi-tte"],
+	    [:HeadFem, :Fem, :Singular, :Person3, "ise-tte"],
+	    [:HeadFem, :Common, :Plural, :Person1, "noʔo-tte"],
+	    [:HeadFem, :Common, :Plural, :Person2, "as̆inhaʔno-tte"],
+	    [:HeadFem, :Common, :Plural, :Person3, "insaʔne-tte"]]
     }
     {:label "gedeo-PDemonstrative"
     :note "HudsonG1976 pp. 255-256."

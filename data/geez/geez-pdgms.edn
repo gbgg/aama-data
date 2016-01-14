@@ -1,71 +1,80 @@
 {
 :lang :geez
 :sgpref "gez"
+:datasource "Gragg1998"
+:geodemoURL "http://www.ethnologue.com/language/gez"
+:geodemoTXT "Varieties of Geez (Classical Ethiopic) were spoken in Ethiopia from approximately the last part of the first millennium BCE to the first millennium CE. The language continued as the principal written language until the 19th century, and survives today as the liturgical language of the Ethiopian church. The data given here for comparative purposes is taken from the concise grammatical sketch of Gragg1998."
 :schemata {
-          :conjugation [:Prefix, :Suffix]
-	  :derivedClass [:B, :S, :ST, :T]
+          :affix [:Prefix, :Suffix]
+           :deixis [:Far, :Near]
 	  :derivedStem [:B, :S, :ST, :T]
-	  :gender [:Common, :Fem, :Masc]
-	  :number [:Plural, :Singular]
+	  :gender [:Common, :Fem, :Masc :Anim :Inam :Altern]
+	  :number [:NumC, :Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :pos [:Verb :Pronoun]
-           :proClass [:To_be_added]
+           :proClass [:VSubjMarker, :ProInd, :ProObjSuff, :ProPossSuff, :ProDemFar, :ProDemNear, :ProRel, :ProInterrog]
 	  :rootClass [:CCC, :CCW, :CCY, :CWC, :CYC, :WCC]
 	  :stemClass [:A, :A1, :A2, :D, :L]
 	  :tam [:Imperative, :Jussive, :Past, :Present]
 	  :morphClass [:SubjMarker, :VerbStems]
            :status [:NA]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
+           :inflClass [:affix :rootClass :stemClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :TOBEADDED {:gloss "[x]", :lemma "[y]", }
   :SUBJMARKER {:gloss "[x]", :lemma "[y]", }
   :VERBSTEMS {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :bdwB {:lemma "bädw-ä/bädo", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedClass :B, :stemClass :A2}
-  :bdwS {:lemma "abdäw-ä", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedClass :S, :stemClass :A2}
-  :bdwT {:lemma "täbädw-ä", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedClass :T, :stemClass :A2}
-  :fsmB {:lemma "fä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedClass :B, :stemClass :D}
-  :fsmS {:lemma "afä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedClass :S, :stemClass :D}
-  :fsmST {:lemma "astäfä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedClass :ST, :stemClass :D}
-  :fsmT {:lemma "täfä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedClass :T, :stemClass :D}
-  :ftwB {:lemma "fätäw-ä/fäto-ä", :gloss "love", :pos :Verb, :rootClass :CCW, :derivedClass :B, :stemClass :A1}
-  :ftwS {:lemma "aftäw-ä", :gloss "love", :pos :Verb, :rootClass :CCW, :derivedClass :S, :stemClass :A1}
-  :ftwT {:lemma "täfätw-ä", :gloss "love", :pos :Verb, :rootClass :CCW, :derivedClass :T, :stemClass :A1}
-  :hwrST {:lemma "astä?äwr-ä", :gloss "bring-back", :pos :Verb, :rootClass :CWC, :derivedClass :ST, :stemClass :A}
-  :kydB {:lemma "ked-ä", :gloss "go", :pos :Verb, :rootClass :CYC, :derivedClass :B, :stemClass :A}
-  :kydS {:lemma "aked-ä", :gloss "go", :pos :Verb, :rootClass :CYC, :derivedClass :S, :stemClass :A}
-  :kydT {:lemma "täkäyd-ä", :gloss "go", :pos :Verb, :rootClass :CYC, :derivedClass :T, :stemClass :A}
-  :lbsB {:lemma "läbs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedClass :B, :stemClass :A2}
-  :lbsS {:lemma "albäs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedClass :S, :stemClass :A2}
-  :lbsST {:lemma "astälbäs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedClass :ST, :stemClass :A2}
-  :lbsT {:lemma "täläbs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedClass :T, :stemClass :A2}
-  :msnB {:lemma "masän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedClass :B, :stemClass :L}
-  :msnS {:lemma "amasän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedClass :S, :stemClass :L}
-  :msnST {:lemma "astämasän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedClass :ST, :stemClass :L}
-  :msnT {:lemma "tämasän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedClass :T, :stemClass :L}
-  :ngrB {:lemma "nägär-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedClass :B, :stemClass :A1}
-  :ngrS {:lemma "angär-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedClass :S, :stemClass :A1}
-  :ngrST {:lemma "astängär-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedClass :ST, :stemClass :A1}
-  :ngrT {:lemma "tänägr-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedClass :T, :stemClass :A1}
-  :qwmB {:lemma "qom-ä", :gloss "stand", :pos :Verb, :rootClass :CWC, :derivedClass :B, :stemClass :A}
-  :qwmS {:lemma "qom-ä", :gloss "stand", :pos :Verb, :rootClass :CWC, :derivedClass :S, :stemClass :A}
-  :qwmT {:lemma "täqäwm-ä", :gloss "stand", :pos :Verb, :rootClass :CWC, :derivedClass :T, :stemClass :A}
-  :sryB {:lemma "säräy-ä/säre-ä", :gloss "pardon", :pos :Verb, :rootClass :CCY, :derivedClass :B, :stemClass :A1}
-  :sryS {:lemma "asräy-ä", :gloss "pardon", :pos :Verb, :rootClass :CCY, :derivedClass :S, :stemClass :A1}
-  :sryT {:lemma "täsäry-ä", :gloss "pardon", :pos :Verb, :rootClass :CCY, :derivedClass :T, :stemClass :A1}
-  :wdqB {:lemma "wädq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedClass :B, :stemClass :A2}
-  :wdqS {:lemma "awdäq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedClass :S, :stemClass :A2}
-  :wdqT {:lemma "täwädq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedClass :T, :stemClass :A2}
-  :whsST {:lemma "astäw?äs-ä", :gloss "lend", :pos :Verb, :rootClass :WCC, :derivedClass :ST, :stemClass :A1}
-  :whyST {:lemma "astäwä??ä", :gloss "spend", :pos :Verb, :rootClass :WCC, :derivedClass :ST, :stemClass :A2}
-  :wrdB {:lemma "wäräd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedClass :B, :stemClass :A1}
-  :wrdS {:lemma "awräd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedClass :S, :stemClass :A1}
-  :wrdT {:lemma "täwärd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedClass :T, :stemClass :A1}
-  :xryB {:lemma "?äry-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedClass :B, :stemClass :A2}
-  :xryS {:lemma "a?räy-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedClass :S, :stemClass :A2}
-  :xryST {:lemma "astä?räy-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedClass :ST, :stemClass :A2}
-  :xryT {:lemma "tä?äry-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedClass :T, :stemClass :A2}
+  :bdwB {:lemma "bädw-ä/bädo", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedStem :B, :stemClass :A2}
+  :bdwS {:lemma "abdäw-ä", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedStem :S, :stemClass :A2}
+  :bdwT {:lemma "täbädw-ä", :gloss "desolate", :pos :Verb, :rootClass :CCW, :derivedStem :T, :stemClass :A2}
+  :fsmB {:lemma "fä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedStem :B, :stemClass :D}
+  :fsmS {:lemma "afä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedStem :S, :stemClass :D}
+  :fsmST {:lemma "astäfä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedStem :ST, :stemClass :D}
+  :fsmT {:lemma "täfä??äm-ä", :gloss "finish", :pos :Verb, :rootClass :CCC, :derivedStem :T, :stemClass :D}
+  :ftwB {:lemma "fätäw-ä/fäto-ä", :gloss "love", :pos :Verb, :rootClass :CCW, :derivedStem :B, :stemClass :A1}
+  :ftwS {:lemma "aftäw-ä", :gloss "love", :pos :Verb, :rootClass :CCW, :derivedStem :S, :stemClass :A1}
+  :ftwT {:lemma "täfätw-ä", :gloss "love", :pos :Verb, :rootClass :CCW, :derivedStem :T, :stemClass :A1}
+  :hwrST {:lemma "astä?äwr-ä", :gloss "bring-back", :pos :Verb, :rootClass :CWC, :derivedStem :ST, :stemClass :A}
+  :kydB {:lemma "ked-ä", :gloss "go", :pos :Verb, :rootClass :CYC, :derivedStem :B, :stemClass :A}
+  :kydS {:lemma "aked-ä", :gloss "go", :pos :Verb, :rootClass :CYC, :derivedStem :S, :stemClass :A}
+  :kydT {:lemma "täkäyd-ä", :gloss "go", :pos :Verb, :rootClass :CYC, :derivedStem :T, :stemClass :A}
+  :lbsB {:lemma "läbs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedStem :B, :stemClass :A2}
+  :lbsS {:lemma "albäs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedStem :S, :stemClass :A2}
+  :lbsST {:lemma "astälbäs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedStem :ST, :stemClass :A2}
+  :lbsT {:lemma "täläbs-ä", :gloss "clothe", :pos :Verb, :rootClass :CCC, :derivedStem :T, :stemClass :A2}
+  :msnB {:lemma "masän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedStem :B, :stemClass :L}
+  :msnS {:lemma "amasän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedStem :S, :stemClass :L}
+  :msnST {:lemma "astämasän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedStem :ST, :stemClass :L}
+  :msnT {:lemma "tämasän-ä", :gloss "corrupt", :pos :Verb, :rootClass :CCC, :derivedStem :T, :stemClass :L}
+  :ngrB {:lemma "nägär-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedStem :B, :stemClass :A1}
+  :ngrS {:lemma "angär-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedStem :S, :stemClass :A1}
+  :ngrST {:lemma "astängär-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedStem :ST, :stemClass :A1}
+  :ngrT {:lemma "tänägr-ä", :gloss "speak", :pos :Verb, :rootClass :CCC, :derivedStem :T, :stemClass :A1}
+  :qwmB {:lemma "qom-ä", :gloss "stand", :pos :Verb, :rootClass :CWC, :derivedStem :B, :stemClass :A}
+  :qwmS {:lemma "qom-ä", :gloss "stand", :pos :Verb, :rootClass :CWC, :derivedStem :S, :stemClass :A}
+  :qwmT {:lemma "täqäwm-ä", :gloss "stand", :pos :Verb, :rootClass :CWC, :derivedStem :T, :stemClass :A}
+  :sryB {:lemma "säräy-ä/säre-ä", :gloss "pardon", :pos :Verb, :rootClass :CCY, :derivedStem :B, :stemClass :A1}
+  :sryS {:lemma "asräy-ä", :gloss "pardon", :pos :Verb, :rootClass :CCY, :derivedStem :S, :stemClass :A1}
+  :sryT {:lemma "täsäry-ä", :gloss "pardon", :pos :Verb, :rootClass :CCY, :derivedStem :T, :stemClass :A1}
+  :wdqB {:lemma "wädq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedStem :B, :stemClass :A2}
+  :wdqS {:lemma "awdäq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedStem :S, :stemClass :A2}
+  :wdqT {:lemma "täwädq-ä", :gloss "fall", :pos :Verb, :rootClass :WCC, :derivedStem :T, :stemClass :A2}
+  :whsST {:lemma "astäw?äs-ä", :gloss "lend", :pos :Verb, :rootClass :WCC, :derivedStem :ST, :stemClass :A1}
+  :whyST {:lemma "astäwä??ä", :gloss "spend", :pos :Verb, :rootClass :WCC, :derivedStem :ST, :stemClass :A2}
+  :wrdB {:lemma "wäräd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedStem :B, :stemClass :A1}
+  :wrdS {:lemma "awräd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedStem :S, :stemClass :A1}
+  :wrdT {:lemma "täwärd-ä", :gloss "descend", :pos :Verb, :rootClass :WCC, :derivedStem :T, :stemClass :A1}
+  :xryB {:lemma "?äry-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedStem :B, :stemClass :A2}
+  :xryS {:lemma "a?räy-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedStem :S, :stemClass :A2}
+  :xryST {:lemma "astä?räy-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedStem :ST, :stemClass :A2}
+  :xryT {:lemma "tä?äry-ä", :gloss "choose", :pos :Verb, :rootClass :CCY, :derivedStem :T, :stemClass :A2}
 }
 :lxterms #{
     {:label "geez-VCYCBAJuss"
@@ -77,16 +86,16 @@
 	    :stemClass :A,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "kid", "_NULL", "ʔə--kid-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "kid", "_NULL", "tə--kid-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "kid", "-i", "tə--kid--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "kid", "_NULL", "yə--kid-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "kid", "_NULL", "tə--kid-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "kid", "_NULL", "nə--kid-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "kid", "-u", "tə--kid--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "kid", "-a", "tə--kid--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "kid", "-u", "yə--kid--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "kid", "-a", "yə--kid--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "kid", "Ø", "ʔə-kid-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "kid", "Ø", "tə-kid-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "kid", "-i", "tə-kid-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "kid", "Ø", "yə-kid-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "kid", "Ø", "tə-kid-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "kid", "Ø", "nə-kid-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "kid", "-u", "tə-kid-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "kid", "-a", "tə-kid-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "kid", "-u", "yə-kid-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "kid", "-a", "yə-kid-a"]]
     }
     {:label "geez-VCCWBA1Imprtv"
     :note ""
@@ -98,10 +107,10 @@
 	    :stemClass :A1,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "fətu", "_NULL", "⊤-fətu-_NULL"],
-	    [:Fem, :Singular, "⊤", "fətəw", "-i", "⊤-fətəw--i"],
-	    [:Masc, :Plural, "⊤", "fətəw", "-u", "⊤-fətəw--u"],
-	    [:Fem, :Plural, "⊤", "fətəw", "-a", "⊤-fətəw--a"]]
+	    [:Masc, :Singular, "⊤", "fətu", "Ø", "fətu-Ø"],
+	    [:Fem, :Singular, "⊤", "fətəw", "-i", "fətəw-i"],
+	    [:Masc, :Plural, "⊤", "fətəw", "-u", "fətəw-u"],
+	    [:Fem, :Plural, "⊤", "fətəw", "-a", "fətəw-a"]]
     }
     {:label "geez-VWCCBA2Juss"
     :note ""
@@ -112,16 +121,16 @@
 	    :stemClass :A2,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "däq", "_NULL", "ʔə--däq-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "däq", "_NULL", "tə--däq-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "däq", "-i", "tə--däq--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "däq", "_NULL", "yə--däq-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "däq", "_NULL", "tə--däq-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "däq", "_NULL", "nə--däq-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "däq", "-u", "tə--däq--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "däq", "-a", "tə--däq--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "däq", "-u", "yə--däq--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "däq", "-a", "yə--däq--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "däq", "Ø", "ʔə-däq-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "däq", "Ø", "tə-däq-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "däq", "-i", "tə-däq-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "däq", "Ø", "yə-däq-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "däq", "Ø", "tə-däq-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "däq", "Ø", "nə-däq-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "däq", "-u", "tə-däq-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "däq", "-a", "tə-däq-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "däq", "-u", "yə-däq-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "däq", "-a", "yə-däq-a"]]
     }
     {:label "geez-VWCCBA2Pres"
     :note ""
@@ -132,16 +141,16 @@
 	    :stemClass :A2,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "wäddəq", "_NULL", "ʔə--wäddəq-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "wäddəq", "_NULL", "tə--wäddəq-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "wäddəq", "-i", "tə--wäddəq--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "wäddəq", "_NULL", "yə--wäddəq-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "wäddəq", "_NULL", "tə--wäddəq-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "wäddəq", "_NULL", "nə--wäddəq-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "wäddəq", "-u", "tə--wäddəq--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "wäddəq", "-a", "tə--wäddəq--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "wäddəq", "-u", "yə--wäddəq--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "wäddəq", "-a", "yə--wäddəq--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "wäddəq", "Ø", "ʔə-wäddəq-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "wäddəq", "Ø", "tə-wäddəq-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "wäddəq", "-i", "tə-wäddəq-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "wäddəq", "Ø", "yə-wäddəq-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "wäddəq", "Ø", "tə-wäddəq-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "wäddəq", "Ø", "nə-wäddəq-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "wäddəq", "-u", "tə-wäddəq-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "wäddəq", "-a", "tə-wäddəq-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "wäddəq", "-u", "yə-wäddəq-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "wäddəq", "-a", "yə-wäddəq-a"]]
     }
     {:label "geez-VCCWBA2Imprtv"
     :note ""
@@ -153,10 +162,10 @@
 	    :stemClass :A2,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "bədäw", "_NULL", "⊤-bədäw-_NULL"],
-	    [:Fem, :Singular, "⊤", "bədäw", "-i", "⊤-bədäw--i"],
-	    [:Masc, :Plural, "⊤", "bədäw", "-u", "⊤-bədäw--u"],
-	    [:Fem, :Plural, "⊤", "bədäw", "-a", "⊤-bədäw--a"]]
+	    [:Masc, :Singular, "⊤", "bədäw", "Ø", "bədäw-Ø"],
+	    [:Fem, :Singular, "⊤", "bədäw", "-i", "bədäw-i"],
+	    [:Masc, :Plural, "⊤", "bədäw", "-u", "bədäw-u"],
+	    [:Fem, :Plural, "⊤", "bədäw", "-a", "bədäw-a"]]
     }
     {:label "geez-VCWCBAImprtv"
     :note ""
@@ -168,10 +177,10 @@
 	    :stemClass :A,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "qum", "_NULL", "⊤-qum-_NULL"],
-	    [:Fem, :Singular, "⊤", "qum", "-i", "⊤-qum--i"],
-	    [:Masc, :Plural, "⊤", "qum", "-u", "⊤-qum--u"],
-	    [:Fem, :Plural, "⊤", "qum", "-a", "⊤-qum--a"]]
+	    [:Masc, :Singular, "⊤", "qum", "Ø", "qum-Ø"],
+	    [:Fem, :Singular, "⊤", "qum", "-i", "qum-i"],
+	    [:Masc, :Plural, "⊤", "qum", "-u", "qum-u"],
+	    [:Fem, :Plural, "⊤", "qum", "-a", "qum-a"]]
     }
     {:label "geez-VCCCSImprtv"
     :note ""
@@ -182,10 +191,10 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "angər", "_NULL", "⊤-angər-_NULL"],
-	    [:Fem, :Singular, "⊤", "angər", "-i", "⊤-angər--i"],
-	    [:Masc, :Plural, "⊤", "angər", "-u", "⊤-angər--u"],
-	    [:Fem, :Plural, "⊤", "angər", "-a", "⊤-angər--a"]]
+	    [:Masc, :Singular, "⊤", "angər", "Ø", "angər-Ø"],
+	    [:Fem, :Singular, "⊤", "angər", "-i", "angər-i"],
+	    [:Masc, :Plural, "⊤", "angər", "-u", "angər-u"],
+	    [:Fem, :Plural, "⊤", "angər", "-a", "angər-a"]]
     }
     {:label "geez-VCCYBA1Juss"
     :note ""
@@ -196,16 +205,16 @@
 	    :stemClass :A1,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "sri", "_NULL", "ʔə--sri-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "sri", "_NULL", "tə--sri-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "srəy", "-i", "tə--srəy--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "sri", "_NULL", "yə--sri-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "sri", "_NULL", "tə--sri-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "sri", "_NULL", "nə--sri-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "srəy", "-u", "tə--srəy--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "srəy", "-a", "tə--srəy--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "srəy", "-u", "yə--srəy--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "srəy", "-a", "yə--srəy--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "sri", "Ø", "ʔə-sri-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "sri", "Ø", "tə-sri-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "srəy", "-i", "tə-srəy-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "sri", "Ø", "yə-sri-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "sri", "Ø", "tə-sri-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "sri", "Ø", "nə-sri-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "srəy", "-u", "tə-srəy-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "srəy", "-a", "tə-srəy-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "srəy", "-u", "yə-srəy-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "srəy", "-a", "yə-srəy-a"]]
     }
     {:label "geez-VCCCBA1Juss"
     :note ""
@@ -216,16 +225,16 @@
 	    :stemClass :A1,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "ngər", "_NULL", "ʔə--ngər-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "ngər", "_NULL", "tə--ngər-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "ngər", "-i", "tə--ngər--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "ngər", "_NULL", "yə--ngər-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "ngər", "_NULL", "tə--ngər-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "ngər", "_NULL", "nə--ngər-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "ngər", "-u", "tə--ngər--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "ngər", "-a", "tə--ngər--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "ngər", "-u", "yə--ngər--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "ngər", "-a", "yə--ngər--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "ngər", "Ø", "ʔə-ngər-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "ngər", "Ø", "tə-ngər-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "ngər", "-i", "tə-ngər-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "ngər", "Ø", "yə-ngər-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "ngər", "Ø", "tə-ngər-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "ngər", "Ø", "nə-ngər-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "ngər", "-u", "tə-ngər-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "ngər", "-a", "tə-ngər-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "ngər", "-u", "yə-ngər-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "ngər", "-a", "yə-ngər-a"]]
     }
     {:label "geez-VCCCBA1Imprtv"
     :note ""
@@ -237,10 +246,10 @@
 	    :stemClass :A1,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "ngər", "_NULL", "⊤-ngər-_NULL"],
-	    [:Fem, :Singular, "⊤", "nəgr", "-i", "⊤-nəgr--i"],
-	    [:Masc, :Plural, "⊤", "nəgr", "-u", "⊤-nəgr--u"],
-	    [:Fem, :Plural, "⊤", "nəgr", "-a", "⊤-nəgr--a"]]
+	    [:Masc, :Singular, "⊤", "ngər", "Ø", "ngər-Ø"],
+	    [:Fem, :Singular, "⊤", "nəgr", "-i", "nəgr-i"],
+	    [:Masc, :Plural, "⊤", "nəgr", "-u", "nəgr-u"],
+	    [:Fem, :Plural, "⊤", "nəgr", "-a", "nəgr-a"]]
     }
     {:label "geez-VCCCTPast"
     :note ""
@@ -250,16 +259,16 @@
 	    :rootClass :CCC,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "tänägär", "-ku", "⊤-tänägär--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "tänägär", "-ka", "⊤-tänägär--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "tänägär", "-ki", "⊤-tänägär--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "tänägr", "-ä", "⊤-tänägr--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "tänägr", "-ät", "⊤-tänägr--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "tänägär", "-nä", "⊤-tänägär--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "tänägär", "-kəmu", "⊤-tänägär--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "tänägär", "-kən", "⊤-tänägär--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "tänägr", "-u", "⊤-tänägr--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "tänägr", "-a", "⊤-tänägr--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "tänägär", "-ku", "tänägär-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "tänägär", "-ka", "tänägär-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "tänägär", "-ki", "tänägär-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "tänägr", "-ä", "tänägr-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "tänägr", "-ät", "tänägr-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "tänägär", "-nä", "tänägär-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "tänägär", "-kəmu", "tänägär-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "tänägär", "-kən", "tänägär-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "tänägr", "-u", "tänägr-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "tänägr", "-a", "tänägr-a"]]
     }
     {:label "geez-VCCCTJuss"
     :note ""
@@ -269,16 +278,16 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "tnägär", "_NULL", "ʔə--tnägär-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "tnägär", "_NULL", "tə--tnägär-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "tnägär", "-i", "tə--tnägär--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "tnägär", "_NULL", "yə--tnägär-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "tnägär", "_NULL", "tə--tnägär-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "tnägär", "_NULL", "nə--tnägär-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "tnägär", "-u", "tə--tnägär--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "tnägär", "-a", "tə--tnägär--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "tnägär", "-u", "yə--tnägär--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "tnägär", "-a", "yə--tnägär--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "tnägär", "Ø", "ʔə-tnägär-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "tnägär", "Ø", "tə-tnägär-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "tnägär", "-i", "tə-tnägär-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "tnägär", "Ø", "yə-tnägär-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "tnägär", "Ø", "tə-tnägär-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "tnägär", "Ø", "nə-tnägär-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "tnägär", "-u", "tə-tnägär-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "tnägär", "-a", "tə-tnägär-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "tnägär", "-u", "yə-tnägär-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "tnägär", "-a", "yə-tnägär-a"]]
     }
     {:label "geez-VCCCBA1Past"
     :note ""
@@ -289,16 +298,16 @@
 	    :stemClass :A1,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "nägär", "-ku", "⊤-nägär--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "nägär", "-ka", "⊤-nägär--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "nägär", "-ki", "⊤-nägär--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "nägär", "-ä", "⊤-nägär--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "nägär", "-ät", "⊤-nägär--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "nägär", "-nä", "⊤-nägär--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "nägär", "-kəmu", "⊤-nägär--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "nägär", "-kən", "⊤-nägär--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "nägär", "-u", "⊤-nägär--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "nägär", "-a", "⊤-nägär--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "nägär", "-ku", "nägär-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "nägär", "-ka", "nägär-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "nägär", "-ki", "nägär-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "nägär", "-ä", "nägär-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "nägär", "-ät", "nägär-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "nägär", "-nä", "nägär-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "nägär", "-kəmu", "nägär-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "nägär", "-kən", "nägär-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "nägär", "-u", "nägär-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "nägär", "-a", "nägär-a"]]
     }
     {:label "geez-VWCCBA2Past"
     :note ""
@@ -309,16 +318,16 @@
 	    :stemClass :A2,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "wädäq", "-qu", "⊤-wädäq--qu"],
-	    [:Masc, :Singular, :Person2, "⊤", "wädäq", "-qa", "⊤-wädäq--qa"],
-	    [:Fem, :Singular, :Person2, "⊤", "wädäq", "-qi", "⊤-wädäq--qi"],
-	    [:Masc, :Singular, :Person3, "⊤", "wädq", "-ä", "⊤-wädq--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "wädq", "-ät", "⊤-wädq--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "wädäq", "-nä", "⊤-wädäq--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "wädäq", "-qəmu", "⊤-wädäq--qəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "wädäq", "-qən", "⊤-wädäq--qən"],
-	    [:Masc, :Plural, :Person3, "⊤", "wädq", "-u", "⊤-wädq--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "wädq", "-a", "⊤-wädq--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "wädäq", "-qu", "wädäq-qu"],
+	    [:Masc, :Singular, :Person2, "⊤", "wädäq", "-qa", "wädäq-qa"],
+	    [:Fem, :Singular, :Person2, "⊤", "wädäq", "-qi", "wädäq-qi"],
+	    [:Masc, :Singular, :Person3, "⊤", "wädq", "-ä", "wädq-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "wädq", "-ät", "wädq-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "wädäq", "-nä", "wädäq-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "wädäq", "-qəmu", "wädäq-qəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "wädäq", "-qən", "wädäq-qən"],
+	    [:Masc, :Plural, :Person3, "⊤", "wädq", "-u", "wädq-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "wädq", "-a", "wädq-a"]]
     }
     {:label "geez-VCCWBA1Past"
     :note ""
@@ -329,16 +338,16 @@
 	    :stemClass :A1,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "fätäw/fäto", "-ku", "⊤-fätäw/fäto--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "fätäw/fäto", "-ka", "⊤-fätäw/fäto--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "fätäw/fäto", "-ki", "⊤-fätäw/fäto--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "fätäw", "-ä", "⊤-fätäw--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "fätäw", "-ät", "⊤-fätäw--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "fätäw/fäto", "-nä", "⊤-fätäw/fäto--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "fätäw/fäto", "-kəmu", "⊤-fätäw/fäto--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "fätäw/fäto", "-kən", "⊤-fätäw/fäto--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "fätäw", "-u", "⊤-fätäw--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "fätäw", "-a", "⊤-fätäw--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "fätäw/fäto", "-ku", "fätäw/fäto-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "fätäw/fäto", "-ka", "fätäw/fäto-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "fätäw/fäto", "-ki", "fätäw/fäto-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "fätäw", "-ä", "fätäw-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "fätäw", "-ät", "fätäw-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "fätäw/fäto", "-nä", "fätäw/fäto-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "fätäw/fäto", "-kəmu", "fätäw/fäto-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "fätäw/fäto", "-kən", "fätäw/fäto-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "fätäw", "-u", "fätäw-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "fätäw", "-a", "fätäw-a"]]
     }
     {:label "geez-VWCCBA1Past"
     :note ""
@@ -349,16 +358,16 @@
 	    :stemClass :A1,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "wäräd", "-ku", "⊤-wäräd--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "wäräd", "-ka", "⊤-wäräd--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "wäräd", "-ki", "⊤-wäräd--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "wäräd", "-ä", "⊤-wäräd--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "wäräd", "-ät", "⊤-wäräd--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "wäräd", "-nä", "⊤-wäräd--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "wäräd", "-kəmu", "⊤-wäräd--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "wäräd", "-kən", "⊤-wäräd--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "wäräd", "-u", "⊤-wäräd--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "wäräd", "-a", "⊤-wäräd--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "wäräd", "-ku", "wäräd-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "wäräd", "-ka", "wäräd-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "wäräd", "-ki", "wäräd-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "wäräd", "-ä", "wäräd-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "wäräd", "-ät", "wäräd-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "wäräd", "-nä", "wäräd-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "wäräd", "-kəmu", "wäräd-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "wäräd", "-kən", "wäräd-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "wäräd", "-u", "wäräd-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "wäräd", "-a", "wäräd-a"]]
     }
     {:label "geez-VCWCBAPast"
     :note ""
@@ -369,16 +378,16 @@
 	    :stemClass :A,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "qom", "-ku", "⊤-qom--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "qom", "-ka", "⊤-qom--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "qom", "-ki", "⊤-qom--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "qom", "-ä", "⊤-qom--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "qom", "-ät", "⊤-qom--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "qom", "-nä", "⊤-qom--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "qom", "-kəmu", "⊤-qom--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "qom", "-kən", "⊤-qom--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "qom", "-u", "⊤-qom--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "qom", "-a", "⊤-qom--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "qom", "-ku", "qom-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "qom", "-ka", "qom-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "qom", "-ki", "qom-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "qom", "-ä", "qom-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "qom", "-ät", "qom-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "qom", "-nä", "qom-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "qom", "-kəmu", "qom-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "qom", "-kən", "qom-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "qom", "-u", "qom-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "qom", "-a", "qom-a"]]
     }
     {:label "geez-VCCWBA2Past"
     :note ""
@@ -389,16 +398,16 @@
 	    :stemClass :A2,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "bädäw/bädo", "-ku", "⊤-bädäw/bädo--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "bädäw/bädo", "-ka", "⊤-bädäw/bädo--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "bädäw/bädo", "-ki", "⊤-bädäw/bädo--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "bädw", "-ä", "⊤-bädw--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "bädw", "-ät", "⊤-bädw--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "bädäw/bädo", "-nä", "⊤-bädäw/bädo--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "bädäw/bädo", "-kəmu", "⊤-bädäw/bädo--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "bädäw/bädo", "-kən", "⊤-bädäw/bädo--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "bädw", "-u", "⊤-bädw--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "bädw", "-a", "⊤-bädw--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "bädäw/bädo", "-ku", "bädäw/bädo-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "bädäw/bädo", "-ka", "bädäw/bädo-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "bädäw/bädo", "-ki", "bädäw/bädo-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "bädw", "-ä", "bädw-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "bädw", "-ät", "bädw-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "bädäw/bädo", "-nä", "bädäw/bädo-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "bädäw/bädo", "-kəmu", "bädäw/bädo-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "bädäw/bädo", "-kən", "bädäw/bädo-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "bädw", "-u", "bädw-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "bädw", "-a", "bädw-a"]]
     }
     {:label "geez-VWCCBA2Imprtv"
     :note ""
@@ -410,10 +419,10 @@
 	    :stemClass :A2,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "däq", "_NULL", "⊤-däq-_NULL"],
-	    [:Fem, :Singular, "⊤", "däq", "-i", "⊤-däq--i"],
-	    [:Masc, :Plural, "⊤", "däq", "-u", "⊤-däq--u"],
-	    [:Fem, :Plural, "⊤", "däq", "-a", "⊤-däq--a"]]
+	    [:Masc, :Singular, "⊤", "däq", "Ø", "däq-Ø"],
+	    [:Fem, :Singular, "⊤", "däq", "-i", "däq-i"],
+	    [:Masc, :Plural, "⊤", "däq", "-u", "däq-u"],
+	    [:Fem, :Plural, "⊤", "däq", "-a", "däq-a"]]
     }
     {:label "geez-VCCYBA2Juss"
     :note ""
@@ -424,16 +433,16 @@
 	    :stemClass :A2,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "ḫräy", "_NULL", "ʔə--ḫräy-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "ḫräy", "_NULL", "tə--ḫräy-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "ḫräy", "-i", "tə--ḫräy--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "ḫräy", "_NULL", "yə--ḫräy-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "ḫräy", "_NULL", "tə--ḫräy-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "ḫräy", "_NULL", "nə--ḫräy-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "ḫräy", "-u", "tə--ḫräy--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "ḫräy", "-a", "tə--ḫräy--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "ḫräy", "-u", "yə--ḫräy--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "ḫräy", "-a", "yə--ḫräy--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "ḫräy", "Ø", "ʔə-ḫräy-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "ḫräy", "Ø", "tə-ḫräy-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "ḫräy", "-i", "tə-ḫräy-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "ḫräy", "Ø", "yə-ḫräy-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "ḫräy", "Ø", "tə-ḫräy-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "ḫräy", "Ø", "nə-ḫräy-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "ḫräy", "-u", "tə-ḫräy-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "ḫräy", "-a", "tə-ḫräy-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "ḫräy", "-u", "yə-ḫräy-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "ḫräy", "-a", "yə-ḫräy-a"]]
     }
     {:label "geez-VCWCBAJuss"
     :note ""
@@ -444,16 +453,16 @@
 	    :stemClass :A,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "qum", "_NULL", "ʔə--qum-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "qum", "_NULL", "tə--qum-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "qum", "-i", "tə--qum--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "qum", "_NULL", "yə--qum-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "qum", "_NULL", "tə--qum-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "qum", "_NULL", "nə--qum-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "qum", "-u", "tə--qum--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "qum", "-a", "tə--qum--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "qum", "-u", "yə--qum--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "qum", "-a", "yə--qum--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "qum", "Ø", "ʔə-qum-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "qum", "Ø", "tə-qum-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "qum", "-i", "tə-qum-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "qum", "Ø", "yə-qum-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "qum", "Ø", "tə-qum-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "qum", "Ø", "nə-qum-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "qum", "-u", "tə-qum-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "qum", "-a", "tə-qum-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "qum", "-u", "yə-qum-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "qum", "-a", "yə-qum-a"]]
     }
     {:label "geez-VWCCBA1Juss"
     :note ""
@@ -464,16 +473,16 @@
 	    :stemClass :A1,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "räd", "_NULL", "ʔə--räd-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "räd", "_NULL", "tə--räd-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "räd", "-i", "tə--räd--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "räd", "_NULL", "yə--räd-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "räd", "_NULL", "tə--räd-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "räd", "_NULL", "nə--räd-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "räd", "-u", "tə--räd--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "räd", "-a", "tə--räd--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "räd", "-u", "yə--räd--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "räd", "-a", "yə--räd--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "räd", "Ø", "ʔə-räd-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "räd", "Ø", "tə-räd-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "räd", "-i", "tə-räd-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "räd", "Ø", "yə-räd-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "räd", "Ø", "tə-räd-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "räd", "Ø", "nə-räd-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "räd", "-u", "tə-räd-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "räd", "-a", "tə-räd-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "räd", "-u", "yə-räd-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "räd", "-a", "yə-räd-a"]]
     }
     {:label "geez-VCCCBA2Juss"
     :note ""
@@ -484,16 +493,16 @@
 	    :stemClass :A2,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "lbäs", "_NULL", "ʔə--lbäs-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "lbäs", "_NULL", "tə--lbäs-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "lbäs", "-i", "tə--lbäs--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "lbäs", "_NULL", "yə--lbäs-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "lbäs", "_NULL", "tə--lbäs-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "lbäs", "_NULL", "nə--lbäs-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "lbäs", "-u", "tə--lbäs--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "lbäs", "-a", "tə--lbäs--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "lbäs", "-u", "yə--lbäs--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "lbäs", "-a", "yə--lbäs--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "lbäs", "Ø", "ʔə-lbäs-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "lbäs", "Ø", "tə-lbäs-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "lbäs", "-i", "tə-lbäs-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "lbäs", "Ø", "yə-lbäs-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "lbäs", "Ø", "tə-lbäs-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "lbäs", "Ø", "nə-lbäs-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "lbäs", "-u", "tə-lbäs-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "lbäs", "-a", "tə-lbäs-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "lbäs", "-u", "yə-lbäs-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "lbäs", "-a", "yə-lbäs-a"]]
     }
     {:label "geez-VCCYBA1Pres"
     :note ""
@@ -504,16 +513,16 @@
 	    :stemClass :A1,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "särri", "_NULL", "ʔə--särri-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "särri", "_NULL", "tə--särri-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "särrəy", "-i", "tə--särrəy--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "särri", "_NULL", "yə--särri-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "särri", "_NULL", "tə--särri-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "särri", "_NULL", "nə--särri-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "särrəy", "-u", "tə--särrəy--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "särrəy", "-a", "tə--särrəy--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "särrəy", "-u", "yə--särrəy--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "särrəy", "-a", "yə--särrəy--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "särri", "Ø", "ʔə-särri-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "särri", "Ø", "tə-särri-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "särrəy", "-i", "tə-särrəy-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "särri", "Ø", "yə-särri-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "särri", "Ø", "tə-särri-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "särri", "Ø", "nə-särri-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "särrəy", "-u", "tə-särrəy-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "särrəy", "-a", "tə-särrəy-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "särrəy", "-u", "yə-särrəy-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "särrəy", "-a", "yə-särrəy-a"]]
     }
     {:label "geez-VWCCBA1Pres"
     :note ""
@@ -524,16 +533,16 @@
 	    :stemClass :A1,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "wärrəd", "_NULL", "ʔə--wärrəd-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "wärrəd", "_NULL", "tə--wärrəd-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "wärrəd", "-i", "tə--wärrəd--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "wärrəd", "_NULL", "yə--wärrəd-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "wärrəd", "_NULL", "tə--wärrəd-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "wärrəd", "_NULL", "nə--wärrəd-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "wärrəd", "-u", "tə--wärrəd--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "wärrəd", "-a", "tə--wärrəd--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "wärrəd", "-u", "yə--wärrəd--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "wärrəd", "-a", "yə--wärrəd--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "wärrəd", "Ø", "ʔə-wärrəd-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "wärrəd", "Ø", "tə-wärrəd-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "wärrəd", "-i", "tə-wärrəd-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "wärrəd", "Ø", "yə-wärrəd-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "wärrəd", "Ø", "tə-wärrəd-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "wärrəd", "Ø", "nə-wärrəd-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "wärrəd", "-u", "tə-wärrəd-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "wärrəd", "-a", "tə-wärrəd-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "wärrəd", "-u", "yə-wärrəd-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "wärrəd", "-a", "yə-wärrəd-a"]]
     }
     {:label "geez-VCCCBA2Pres"
     :note ""
@@ -544,16 +553,16 @@
 	    :stemClass :A2,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "läbbəs", "_NULL", "ʔə--läbbəs-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "läbbəs", "_NULL", "tə--läbbəs-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "läbbəs", "-i", "tə--läbbəs--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "läbbəs", "_NULL", "yə--läbbəs-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "läbbəs", "_NULL", "tə--läbbəs-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "läbbəs", "_NULL", "nə--läbbəs-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "läbbəs", "-u", "tə--läbbəs--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "läbbəs", "-a", "tə--läbbəs--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "läbbəs", "-u", "yə--läbbəs--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "läbbəs", "-a", "yə--läbbəs--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "läbbəs", "Ø", "ʔə-läbbəs-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "läbbəs", "Ø", "tə-läbbəs-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "läbbəs", "-i", "tə-läbbəs-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "läbbəs", "Ø", "yə-läbbəs-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "läbbəs", "Ø", "tə-läbbəs-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "läbbəs", "Ø", "nə-läbbəs-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "läbbəs", "-u", "tə-läbbəs-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "läbbəs", "-a", "tə-läbbəs-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "läbbəs", "-u", "yə-läbbəs-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "läbbəs", "-a", "yə-läbbəs-a"]]
     }
     {:label "geez-VCCWBA1Pres"
     :note ""
@@ -564,16 +573,16 @@
 	    :stemClass :A1,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "fättu", "_NULL", "ʔə--fättu-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "fättu", "_NULL", "tə--fättu-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "fättəw", "-i", "tə--fättəw--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "fättu", "_NULL", "yə--fättu-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "fättu", "_NULL", "tə--fättu-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "fättu", "_NULL", "nə--fättu-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "fättəw", "-u", "tə--fättəw--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "fättəw", "-a", "tə--fättəw--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "fättəw", "-u", "yə--fättəw--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "fättəw", "-a", "yə--fättəw--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "fättu", "Ø", "ʔə-fättu-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "fättu", "Ø", "tə-fättu-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "fättəw", "-i", "tə-fättəw-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "fättu", "Ø", "yə-fättu-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "fättu", "Ø", "tə-fättu-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "fättu", "Ø", "nə-fättu-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "fättəw", "-u", "tə-fättəw-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "fättəw", "-a", "tə-fättəw-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "fättəw", "-u", "yə-fättəw-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "fättəw", "-a", "yə-fättəw-a"]]
     }
     {:label "geez-VCYCBAPres"
     :note ""
@@ -584,16 +593,16 @@
 	    :stemClass :A,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "käyyəd", "_NULL", "ʔə--käyyəd-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "käyyəd", "_NULL", "tə--käyyəd-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "käyyəd", "-i", "tə--käyyəd--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "käyyəd", "_NULL", "yə--käyyəd-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "käyyəd", "_NULL", "tə--käyyəd-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "käyyəd", "_NULL", "nə--käyyəd-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "käyyəd", "-u", "tə--käyyəd--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "käyyəd", "-a", "tə--käyyəd--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "käyyəd", "-u", "yə--käyyəd--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "käyyəd", "-a", "yə--käyyəd--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "käyyəd", "Ø", "ʔə-käyyəd-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "käyyəd", "Ø", "tə-käyyəd-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "käyyəd", "-i", "tə-käyyəd-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "käyyəd", "Ø", "yə-käyyəd-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "käyyəd", "Ø", "tə-käyyəd-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "käyyəd", "Ø", "nə-käyyəd-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "käyyəd", "-u", "tə-käyyəd-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "käyyəd", "-a", "tə-käyyəd-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "käyyəd", "-u", "yə-käyyəd-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "käyyəd", "-a", "yə-käyyəd-a"]]
     }
     {:label "geez-VCYCBAImprtv"
     :note ""
@@ -605,10 +614,10 @@
 	    :stemClass :A,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "kid", "_NULL", "⊤-kid-_NULL"],
-	    [:Fem, :Singular, "⊤", "kid", "-i", "⊤-kid--i"],
-	    [:Masc, :Plural, "⊤", "kid", "-u", "⊤-kid--u"],
-	    [:Fem, :Plural, "⊤", "kid", "-a", "⊤-kid--a"]]
+	    [:Masc, :Singular, "⊤", "kid", "Ø", "kid-Ø"],
+	    [:Fem, :Singular, "⊤", "kid", "-i", "kid-i"],
+	    [:Masc, :Plural, "⊤", "kid", "-u", "kid-u"],
+	    [:Fem, :Plural, "⊤", "kid", "-a", "kid-a"]]
     }
     {:label "geez-VCCCBA2Imprtv"
     :note ""
@@ -620,10 +629,10 @@
 	    :stemClass :A2,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "ləbäs", "_NULL", "⊤-ləbäs-_NULL"],
-	    [:Fem, :Singular, "⊤", "ləbäs", "-i", "⊤-ləbäs--i"],
-	    [:Masc, :Plural, "⊤", "ləbäs", "-u", "⊤-ləbäs--u"],
-	    [:Fem, :Plural, "⊤", "ləbäs", "-a", "⊤-ləbäs--a"]]
+	    [:Masc, :Singular, "⊤", "ləbäs", "Ø", "ləbäs-Ø"],
+	    [:Fem, :Singular, "⊤", "ləbäs", "-i", "ləbäs-i"],
+	    [:Masc, :Plural, "⊤", "ləbäs", "-u", "ləbäs-u"],
+	    [:Fem, :Plural, "⊤", "ləbäs", "-a", "ləbäs-a"]]
     }
     {:label "geez-VCCCBA1Pres"
     :note ""
@@ -634,16 +643,16 @@
 	    :stemClass :A1,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "näggər", "_NULL", "ʔə--näggər-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "näggər", "_NULL", "tə--näggər-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "näggər", "-i", "tə--näggər--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "näggər", "_NULL", "yə--näggər-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "näggər", "_NULL", "tə--näggər-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "näggər", "_NULL", "nə--näggər-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "näggər", "-u", "tə--näggər--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "näggər", "-a", "tə--näggər--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "näggər", "-u", "yə--näggər--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "näggər", "-a", "yə--näggər--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "näggər", "Ø", "ʔə-näggər-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "näggər", "Ø", "tə-näggər-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "näggər", "-i", "tə-näggər-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "näggər", "Ø", "yə-näggər-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "näggər", "Ø", "tə-näggər-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "näggər", "Ø", "nə-näggər-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "näggər", "-u", "tə-näggər-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "näggər", "-a", "tə-näggər-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "näggər", "-u", "yə-näggər-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "näggər", "-a", "yə-näggər-a"]]
     }
     {:label "geez-VCCWBA2Pres"
     :note ""
@@ -654,16 +663,16 @@
 	    :stemClass :A2,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "bäddu", "_NULL", "ʔə--bäddu-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "bäddu", "_NULL", "tə--bäddu-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "bäddəw", "-i", "tə--bäddəw--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "bäddu", "_NULL", "yə--bäddu-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "bäddu", "_NULL", "tə--bäddu-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "bäddu", "_NULL", "nə--bäddu-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "bäddəw", "-u", "tə--bäddəw--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "bäddəw", "-a", "tə--bäddəw--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "bäddəw", "-u", "yə--bäddəw--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "bäddəw", "-a", "yə--bäddəw--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "bäddu", "Ø", "ʔə-bäddu-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "bäddu", "Ø", "tə-bäddu-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "bäddəw", "-i", "tə-bäddəw-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "bäddu", "Ø", "yə-bäddu-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "bäddu", "Ø", "tə-bäddu-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "bäddu", "Ø", "nə-bäddu-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "bäddəw", "-u", "tə-bäddəw-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "bäddəw", "-a", "tə-bäddəw-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "bäddəw", "-u", "yə-bäddəw-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "bäddəw", "-a", "yə-bäddəw-a"]]
     }
     {:label "geez-VCCCSPast"
     :note ""
@@ -673,16 +682,16 @@
 	    :rootClass :CCC,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "angär", "-ku", "⊤-angär--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "angär", "-ka", "⊤-angär--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "angär", "-ki", "⊤-angär--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "angär", "-ä", "⊤-angär--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "angär", "-ät", "⊤-angär--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "angär", "-nä", "⊤-angär--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "angär", "-kəmu", "⊤-angär--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "angär", "-kən", "⊤-angär--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "angär", "-u", "⊤-angär--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "angär", "-a", "⊤-angär--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "angär", "-ku", "angär-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "angär", "-ka", "angär-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "angär", "-ki", "angär-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "angär", "-ä", "angär-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "angär", "-ät", "angär-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "angär", "-nä", "angär-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "angär", "-kəmu", "angär-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "angär", "-kən", "angär-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "angär", "-u", "angär-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "angär", "-a", "angär-a"]]
     }
     {:label "geez-VCCWBA2Juss"
     :note ""
@@ -693,16 +702,16 @@
 	    :stemClass :A2,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "bdäw", "_NULL", "ʔə--bdäw-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "bdäw", "_NULL", "tə--bdäw-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "bdäw", "-i", "tə--bdäw--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "bdäw", "_NULL", "yə--bdäw-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "bdäw", "_NULL", "tə--bdäw-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "bdäw", "_NULL", "nə--bdäw-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "bdäw", "-u", "tə--bdäw--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "bdäw", "-a", "tə--bdäw--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "bdäw", "-u", "yə--bdäw--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "bdäw", "-a", "yə--bdäw--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "bdäw", "Ø", "ʔə-bdäw-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "bdäw", "Ø", "tə-bdäw-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "bdäw", "-i", "tə-bdäw-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "bdäw", "Ø", "yə-bdäw-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "bdäw", "Ø", "tə-bdäw-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "bdäw", "Ø", "nə-bdäw-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "bdäw", "-u", "tə-bdäw-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "bdäw", "-a", "tə-bdäw-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "bdäw", "-u", "yə-bdäw-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "bdäw", "-a", "yə-bdäw-a"]]
     }
     {:label "geez-VCCYBA2Pres"
     :note ""
@@ -713,16 +722,16 @@
 	    :stemClass :A2,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "ḫärri", "_NULL", "ʔə--ḫärri-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "ḫärri", "_NULL", "tə--ḫärri-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "ḫärrəy", "-i", "tə--ḫärrəy--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "ḫärri", "_NULL", "yə--ḫärri-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "ḫärri", "_NULL", "tə--ḫärri-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "ḫärri", "_NULL", "nə--ḫärri-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "ḫärrəy", "-u", "tə--ḫärrəy--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "ḫärrəy", "-a", "tə--ḫärrəy--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "ḫärrəy", "-u", "yə--ḫärrəy--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "ḫärrəy", "-a", "yə--ḫärrəy--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "ḫärri", "Ø", "ʔə-ḫärri-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "ḫärri", "Ø", "tə-ḫärri-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "ḫärrəy", "-i", "tə-ḫärrəy-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "ḫärri", "Ø", "yə-ḫärri-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "ḫärri", "Ø", "tə-ḫärri-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "ḫärri", "Ø", "nə-ḫärri-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "ḫärrəy", "-u", "tə-ḫärrəy-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "ḫärrəy", "-a", "tə-ḫärrəy-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "ḫärrəy", "-u", "yə-ḫärrəy-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "ḫärrəy", "-a", "yə-ḫärrəy-a"]]
     }
     {:label "geez-VCCYBA1Past"
     :note ""
@@ -733,16 +742,16 @@
 	    :stemClass :A1,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "säräy/säre", "-ku", "⊤-säräy/säre--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "säräy/säre", "-ka", "⊤-säräy/säre--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "säräy/säre", "-ki", "⊤-säräy/säre--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "säräy", "-ä", "⊤-säräy--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "säräy", "-ät", "⊤-säräy--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "säräy/säre", "-nä", "⊤-säräy/säre--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "säräy/säre", "-kəmu", "⊤-säräy/säre--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "säräy/säre", "-kən", "⊤-säräy/säre--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "säräy", "-u", "⊤-säräy--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "säräy", "-a", "⊤-säräy--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "säräy/säre", "-ku", "säräy/säre-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "säräy/säre", "-ka", "säräy/säre-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "säräy/säre", "-ki", "säräy/säre-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "säräy", "-ä", "säräy-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "säräy", "-ät", "säräy-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "säräy/säre", "-nä", "säräy/säre-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "säräy/säre", "-kəmu", "säräy/säre-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "säräy/säre", "-kən", "säräy/säre-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "säräy", "-u", "säräy-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "säräy", "-a", "säräy-a"]]
     }
     {:label "geez-VCCCSPres"
     :note ""
@@ -752,16 +761,16 @@
 	    :rootClass :CCC,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔ-", "anäggər", "_NULL", "ʔ--anäggər-_NULL"],
-	    [:Masc, :Singular, :Person2, "t-", "anäggər", "_NULL", "t--anäggər-_NULL"],
-	    [:Fem, :Singular, :Person2, "t-", "anäggər", "-i", "t--anäggər--i"],
-	    [:Masc, :Singular, :Person3, "y-", "anäggər", "_NULL", "y--anäggər-_NULL"],
-	    [:Fem, :Singular, :Person3, "t-", "anäggər", "_NULL", "t--anäggər-_NULL"],
-	    [:Common, :Plural, :Person1, "n-", "anäggər", "_NULL", "n--anäggər-_NULL"],
-	    [:Masc, :Plural, :Person2, "t-", "anäggər", "-u", "t--anäggər--u"],
-	    [:Fem, :Plural, :Person2, "t-", "anäggər", "-a", "t--anäggər--a"],
-	    [:Masc, :Plural, :Person3, "y-", "anäggər", "-u", "y--anäggər--u"],
-	    [:Fem, :Plural, :Person3, "y-", "anäggər", "-a", "y--anäggər--a"]]
+	    [:Common, :Singular, :Person1, "ʔ-", "anäggər", "Ø", "ʔ-anäggər-Ø"],
+	    [:Masc, :Singular, :Person2, "t-", "anäggər", "Ø", "t-anäggər-Ø"],
+	    [:Fem, :Singular, :Person2, "t-", "anäggər", "-i", "t-anäggər-i"],
+	    [:Masc, :Singular, :Person3, "y-", "anäggər", "Ø", "y-anäggər-Ø"],
+	    [:Fem, :Singular, :Person3, "t-", "anäggər", "Ø", "t-anäggər-Ø"],
+	    [:Common, :Plural, :Person1, "n-", "anäggər", "Ø", "n-anäggər-Ø"],
+	    [:Masc, :Plural, :Person2, "t-", "anäggər", "-u", "t-anäggər-u"],
+	    [:Fem, :Plural, :Person2, "t-", "anäggər", "-a", "t-anäggər-a"],
+	    [:Masc, :Plural, :Person3, "y-", "anäggər", "-u", "y-anäggər-u"],
+	    [:Fem, :Plural, :Person3, "y-", "anäggər", "-a", "y-anäggər-a"]]
     }
     {:label "geez-VWCCBA1Imprtv"
     :note ""
@@ -773,10 +782,10 @@
 	    :stemClass :A1,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "räd", "_NULL", "⊤-räd-_NULL"],
-	    [:Fem, :Singular, "⊤", "räd", "-i", "⊤-räd--i"],
-	    [:Masc, :Plural, "⊤", "räd", "-u", "⊤-räd--u"],
-	    [:Fem, :Plural, "⊤", "räd", "-a", "⊤-räd--a"]]
+	    [:Masc, :Singular, "⊤", "räd", "Ø", "räd-Ø"],
+	    [:Fem, :Singular, "⊤", "räd", "-i", "räd-i"],
+	    [:Masc, :Plural, "⊤", "räd", "-u", "räd-u"],
+	    [:Fem, :Plural, "⊤", "räd", "-a", "räd-a"]]
     }
     {:label "geez-VCCYBA2Past"
     :note ""
@@ -787,16 +796,16 @@
 	    :stemClass :A2,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "ḫäräy/ ḫäre", "-ku", "⊤-ḫäräy/ ḫäre--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "ḫäräy/ ḫäre", "-ka", "⊤-ḫäräy/ ḫäre--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "ḫäräy/ ḫäre", "-ki", "⊤-ḫäräy/ ḫäre--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "ḫäry", "-ä", "⊤-ḫäry--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "ḫäry", "-ät", "⊤-ḫäry--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "ḫäräy/ ḫäre", "-nä", "⊤-ḫäräy/ ḫäre--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "ḫäräy/ ḫäre", "-kəmu", "⊤-ḫäräy/ ḫäre--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "ḫäräy/ ḫäre", "-kən", "⊤-ḫäräy/ ḫäre--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "ḫäry", "-u", "⊤-ḫäry--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "ḫäry", "-a", "⊤-ḫäry--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "ḫäräy/ ḫäre", "-ku", "ḫäräy/ ḫäre-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "ḫäräy/ ḫäre", "-ka", "ḫäräy/ ḫäre-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "ḫäräy/ ḫäre", "-ki", "ḫäräy/ ḫäre-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "ḫäry", "-ä", "ḫäry-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "ḫäry", "-ät", "ḫäry-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "ḫäräy/ ḫäre", "-nä", "ḫäräy/ ḫäre-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "ḫäräy/ ḫäre", "-kəmu", "ḫäräy/ ḫäre-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "ḫäräy/ ḫäre", "-kən", "ḫäräy/ ḫäre-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "ḫäry", "-u", "ḫäry-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "ḫäry", "-a", "ḫäry-a"]]
     }
     {:label "geez-VCCCTImprtv"
     :note ""
@@ -807,10 +816,10 @@
 	    :rootClass :CCC,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "tänägär", "_NULL", "⊤-tänägär-_NULL"],
-	    [:Fem, :Singular, "⊤", "tänägär", "-i", "⊤-tänägär--i"],
-	    [:Masc, :Plural, "⊤", "tänägär", "-u", "⊤-tänägär--u"],
-	    [:Fem, :Plural, "⊤", "tänägär", "-a", "⊤-tänägär--a"]]
+	    [:Masc, :Singular, "⊤", "tänägär", "Ø", "tänägär-Ø"],
+	    [:Fem, :Singular, "⊤", "tänägär", "-i", "tänägär-i"],
+	    [:Masc, :Plural, "⊤", "tänägär", "-u", "tänägär-u"],
+	    [:Fem, :Plural, "⊤", "tänägär", "-a", "tänägär-a"]]
     }
     {:label "geez-VCCCSJuss"
     :note ""
@@ -820,16 +829,16 @@
 	    :rootClass :CCC,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔ-", "angər", "_NULL", "ʔ--angər-_NULL"],
-	    [:Masc, :Singular, :Person2, "t-", "angər", "_NULL", "t--angər-_NULL"],
-	    [:Fem, :Singular, :Person2, "t-", "angər", "-i", "t--angər--i"],
-	    [:Masc, :Singular, :Person3, "y-", "angər", "_NULL", "y--angər-_NULL"],
-	    [:Fem, :Singular, :Person3, "t-", "angər", "_NULL", "t--angər-_NULL"],
-	    [:Common, :Plural, :Person1, "n-", "angər", "_NULL", "n--angər-_NULL"],
-	    [:Masc, :Plural, :Person2, "t-", "angər", "-u", "t--angər--u"],
-	    [:Fem, :Plural, :Person2, "t-", "angər", "-a", "t--angər--a"],
-	    [:Masc, :Plural, :Person3, "y-", "angər", "-u", "y--angər--u"],
-	    [:Fem, :Plural, :Person3, "y-", "angər", "-a", "y--angər--a"]]
+	    [:Common, :Singular, :Person1, "ʔ-", "angər", "Ø", "ʔ-angər-Ø"],
+	    [:Masc, :Singular, :Person2, "t-", "angər", "Ø", "t-angər-Ø"],
+	    [:Fem, :Singular, :Person2, "t-", "angər", "-i", "t-angər-i"],
+	    [:Masc, :Singular, :Person3, "y-", "angər", "Ø", "y-angər-Ø"],
+	    [:Fem, :Singular, :Person3, "t-", "angər", "Ø", "t-angər-Ø"],
+	    [:Common, :Plural, :Person1, "n-", "angər", "Ø", "n-angər-Ø"],
+	    [:Masc, :Plural, :Person2, "t-", "angər", "-u", "t-angər-u"],
+	    [:Fem, :Plural, :Person2, "t-", "angər", "-a", "t-angər-a"],
+	    [:Masc, :Plural, :Person3, "y-", "angər", "-u", "y-angər-u"],
+	    [:Fem, :Plural, :Person3, "y-", "angər", "-a", "y-angər-a"]]
     }
     {:label "geez-VCYCBAPast"
     :note ""
@@ -840,16 +849,16 @@
 	    :stemClass :A,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "ked", "-ku", "⊤-ked--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "ked", "-ka", "⊤-ked--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "ked", "-ki", "⊤-ked--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "ked", "-ä", "⊤-ked--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "ked", "-ät", "⊤-ked--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "ked", "-nä", "⊤-ked--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "ked", "-kəmu", "⊤-ked--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "ked", "-kən", "⊤-ked--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "ked", "-u", "⊤-ked--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "ked", "-a", "⊤-ked--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "ked", "-ku", "ked-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "ked", "-ka", "ked-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "ked", "-ki", "ked-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "ked", "-ä", "ked-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "ked", "-ät", "ked-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "ked", "-nä", "ked-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "ked", "-kəmu", "ked-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "ked", "-kən", "ked-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "ked", "-u", "ked-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "ked", "-a", "ked-a"]]
     }
     {:label "geez-VCCCBA2Past"
     :note ""
@@ -860,16 +869,16 @@
 	    :stemClass :A2,
 	    :tam :Past}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤", "läbäs", "-ku", "⊤-läbäs--ku"],
-	    [:Masc, :Singular, :Person2, "⊤", "läbäs", "-ka", "⊤-läbäs--ka"],
-	    [:Fem, :Singular, :Person2, "⊤", "läbäs", "-ki", "⊤-läbäs--ki"],
-	    [:Masc, :Singular, :Person3, "⊤", "läbs", "-ä", "⊤-läbs--ä"],
-	    [:Fem, :Singular, :Person3, "⊤", "läbs", "-ät", "⊤-läbs--ät"],
-	    [:Common, :Plural, :Person1, "⊤", "läbäs", "-nä", "⊤-läbäs--nä"],
-	    [:Masc, :Plural, :Person2, "⊤", "läbäs", "-kəmu", "⊤-läbäs--kəmu"],
-	    [:Fem, :Plural, :Person2, "⊤", "läbäs", "-kən", "⊤-läbäs--kən"],
-	    [:Masc, :Plural, :Person3, "⊤", "läbs", "-u", "⊤-läbs--u"],
-	    [:Fem, :Plural, :Person3, "⊤", "läbs", "-a", "⊤-läbs--a"]]
+	    [:Common, :Singular, :Person1, "⊤", "läbäs", "-ku", "läbäs-ku"],
+	    [:Masc, :Singular, :Person2, "⊤", "läbäs", "-ka", "läbäs-ka"],
+	    [:Fem, :Singular, :Person2, "⊤", "läbäs", "-ki", "läbäs-ki"],
+	    [:Masc, :Singular, :Person3, "⊤", "läbs", "-ä", "läbs-ä"],
+	    [:Fem, :Singular, :Person3, "⊤", "läbs", "-ät", "läbs-ät"],
+	    [:Common, :Plural, :Person1, "⊤", "läbäs", "-nä", "läbäs-nä"],
+	    [:Masc, :Plural, :Person2, "⊤", "läbäs", "-kəmu", "läbäs-kəmu"],
+	    [:Fem, :Plural, :Person2, "⊤", "läbäs", "-kən", "läbäs-kən"],
+	    [:Masc, :Plural, :Person3, "⊤", "läbs", "-u", "läbs-u"],
+	    [:Fem, :Plural, :Person3, "⊤", "läbs", "-a", "läbs-a"]]
     }
     {:label "geez-VCCCTPres"
     :note ""
@@ -879,16 +888,16 @@
 	    :rootClass :CCC,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "tnäggär", "_NULL", "ʔə--tnäggär-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "tnäggär", "_NULL", "tə--tnäggär-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "tnäggär", "-i", "tə--tnäggär--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "tnäggär", "_NULL", "yə--tnäggär-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "tnäggär", "_NULL", "tə--tnäggär-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "tnäggär", "_NULL", "nə--tnäggär-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "tnäggär", "-u", "tə--tnäggär--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "tnäggär", "-a", "tə--tnäggär--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "tnäggär", "-u", "yə--tnäggär--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "tnäggär", "-a", "yə--tnäggär--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "tnäggär", "Ø", "ʔə-tnäggär-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "tnäggär", "Ø", "tə-tnäggär-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "tnäggär", "-i", "tə-tnäggär-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "tnäggär", "Ø", "yə-tnäggär-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "tnäggär", "Ø", "tə-tnäggär-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "tnäggär", "Ø", "nə-tnäggär-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "tnäggär", "-u", "tə-tnäggär-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "tnäggär", "-a", "tə-tnäggär-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "tnäggär", "-u", "yə-tnäggär-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "tnäggär", "-a", "yə-tnäggär-a"]]
     }
     {:label "geez-VCCWBA1Juss"
     :note ""
@@ -899,16 +908,16 @@
 	    :stemClass :A1,
 	    :tam :Jussive}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "ftu", "_NULL", "ʔə--ftu-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "ftu", "_NULL", "tə--ftu-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "ftəw", "-i", "tə--ftəw--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "ftu", "_NULL", "yə--ftu-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "ftu", "_NULL", "tə--ftu-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "ftu", "_NULL", "nə--ftu-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "ftəw", "-u", "tə--ftəw--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "ftəw", "-a", "tə--ftəw--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "ftəw", "-u", "yə--ftəw--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "ftəw", "-a", "yə--ftəw--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "ftu", "Ø", "ʔə-ftu-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "ftu", "Ø", "tə-ftu-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "ftəw", "-i", "tə-ftəw-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "ftu", "Ø", "yə-ftu-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "ftu", "Ø", "tə-ftu-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "ftu", "Ø", "nə-ftu-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "ftəw", "-u", "tə-ftəw-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "ftəw", "-a", "tə-ftəw-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "ftəw", "-u", "yə-ftəw-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "ftəw", "-a", "yə-ftəw-a"]]
     }
     {:label "geez-VCWCBAPres"
     :note ""
@@ -919,16 +928,16 @@
 	    :stemClass :A,
 	    :tam :Present}
     :terms [[:gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʔə-", "qäwwəm", "_NULL", "ʔə--qäwwəm-_NULL"],
-	    [:Masc, :Singular, :Person2, "tə-", "qäwwəm", "_NULL", "tə--qäwwəm-_NULL"],
-	    [:Fem, :Singular, :Person2, "tə-", "qäwwəm", "-i", "tə--qäwwəm--i"],
-	    [:Masc, :Singular, :Person3, "yə-", "qäwwəm", "_NULL", "yə--qäwwəm-_NULL"],
-	    [:Fem, :Singular, :Person3, "tə-", "qäwwəm", "_NULL", "tə--qäwwəm-_NULL"],
-	    [:Common, :Plural, :Person1, "nə-", "qäwwəm", "_NULL", "nə--qäwwəm-_NULL"],
-	    [:Masc, :Plural, :Person2, "tə-", "qäwwəm", "-u", "tə--qäwwəm--u"],
-	    [:Fem, :Plural, :Person2, "tə-", "qäwwəm", "-a", "tə--qäwwəm--a"],
-	    [:Masc, :Plural, :Person3, "yə-", "qäwwəm", "-u", "yə--qäwwəm--u"],
-	    [:Fem, :Plural, :Person3, "yə-", "qäwwəm", "-a", "yə--qäwwəm--a"]]
+	    [:Common, :Singular, :Person1, "ʔə-", "qäwwəm", "Ø", "ʔə-qäwwəm-Ø"],
+	    [:Masc, :Singular, :Person2, "tə-", "qäwwəm", "Ø", "tə-qäwwəm-Ø"],
+	    [:Fem, :Singular, :Person2, "tə-", "qäwwəm", "-i", "tə-qäwwəm-i"],
+	    [:Masc, :Singular, :Person3, "yə-", "qäwwəm", "Ø", "yə-qäwwəm-Ø"],
+	    [:Fem, :Singular, :Person3, "tə-", "qäwwəm", "Ø", "tə-qäwwəm-Ø"],
+	    [:Common, :Plural, :Person1, "nə-", "qäwwəm", "Ø", "nə-qäwwəm-Ø"],
+	    [:Masc, :Plural, :Person2, "tə-", "qäwwəm", "-u", "tə-qäwwəm-u"],
+	    [:Fem, :Plural, :Person2, "tə-", "qäwwəm", "-a", "tə-qäwwəm-a"],
+	    [:Masc, :Plural, :Person3, "yə-", "qäwwəm", "-u", "yə-qäwwəm-u"],
+	    [:Fem, :Plural, :Person3, "yə-", "qäwwəm", "-a", "yə-qäwwəm-a"]]
     }
     {:label "geez-VCCYBA1Imprtv"
     :note ""
@@ -940,10 +949,10 @@
 	    :stemClass :A1,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "səri", "_NULL", "⊤-səri-_NULL"],
-	    [:Fem, :Singular, "⊤", "sərəy", "-i", "⊤-sərəy--i"],
-	    [:Masc, :Plural, "⊤", "sərəy", "-u", "⊤-sərəy--u"],
-	    [:Fem, :Plural, "⊤", "sərəy", "-a", "⊤-sərəy--a"]]
+	    [:Masc, :Singular, "⊤", "səri", "Ø", "səri-Ø"],
+	    [:Fem, :Singular, "⊤", "sərəy", "-i", "sərəy-i"],
+	    [:Masc, :Plural, "⊤", "sərəy", "-u", "sərəy-u"],
+	    [:Fem, :Plural, "⊤", "sərəy", "-a", "sərəy-a"]]
     }
     {:label "geez-VCCYBA2Imprtv"
     :note ""
@@ -955,44 +964,136 @@
 	    :stemClass :A2,
 	    :tam :Imperative}
     :terms [[:gender, :number, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Masc, :Singular, "⊤", "ḫäräy", "_NULL", "⊤-ḫäräy-_NULL"],
-	    [:Fem, :Singular, "⊤", "ḫäräy", "-i", "⊤-ḫäräy--i"],
-	    [:Masc, :Plural, "⊤", "ḫäräy", "-u", "⊤-ḫäräy--u"],
-	    [:Fem, :Plural, "⊤", "ḫäräy", "-a", "⊤-ḫäräy--a"]]
+	    [:Masc, :Singular, "⊤", "ḫäräy", "Ø", "ḫäräy-Ø"],
+	    [:Fem, :Singular, "⊤", "ḫäräy", "-i", "ḫäräy-i"],
+	    [:Masc, :Plural, "⊤", "ḫäräy", "-u", "ḫäräy-u"],
+	    [:Fem, :Plural, "⊤", "ḫäräy", "-a", "ḫäräy-a"]]
     }}
 :muterms #{
-    {:label "geez-VSubjMarker"
-    :note ""
-    :common {:morpheme :SUBJMARKER,
-	    :pos :Verb,
-	    :token-stem :⊤,
-	    :morphClass :SubjMarker}
-    :terms [[:conjugation, :gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
-	    [:Suffix, :Common, :Singular, :Person1, "⊤", "⊤", "-ku", "⊤-⊤--ku"],
-	    [:Suffix, :Masc, :Singular, :Person2, "⊤", "⊤", "-ka", "⊤-⊤--ka"],
-	    [:Suffix, :Fem, :Singular, :Person2, "⊤", "⊤", "-ki", "⊤-⊤--ki"],
-	    [:Suffix, :Masc, :Singular, :Person3, "⊤", "⊤", "-ä", "⊤-⊤--ä"],
-	    [:Suffix, :Fem, :Singular, :Person3, "⊤", "⊤", "-ät", "⊤-⊤--ät"],
-	    [:Suffix, :Common, :Plural, :Person1, "⊤", "⊤", "-nä", "⊤-⊤--nä"],
-	    [:Suffix, :Masc, :Plural, :Person2, "⊤", "⊤", "-kəmu", "⊤-⊤--kəmu"],
-	    [:Suffix, :Fem, :Plural, :Person2, "⊤", "⊤", "-kən", "⊤-⊤--kən"],
-	    [:Suffix, :Masc, :Plural, :Person3, "⊤", "⊤", "-u", "⊤-⊤--u"],
-	    [:Suffix, :Fem, :Plural, :Person3, "⊤", "⊤", "-a", "⊤-⊤--a"],
-	    [:Prefix, :Common, :Singular, :Person1, "⊤", "⊤", "_NULL", "⊤-⊤-_NULL"],
-	    [:Prefix, :Masc, :Singular, :Person2, "tə-", "⊤", "_NULL", "tə--⊤-_NULL"],
-	    [:Prefix, :Fem, :Singular, :Person2, "tə-", "⊤", "-i", "tə--⊤--i"],
-	    [:Prefix, :Masc, :Singular, :Person3, "yə-", "⊤", "_NULL", "yə--⊤-_NULL"],
-	    [:Prefix, :Fem, :Singular, :Person3, "tə-", "⊤", "_NULL", "tə--⊤-_NULL"],
-	    [:Prefix, :Common, :Plural, :Person1, "nə-", "⊤", "_NULL", "nə--⊤-_NULL"],
-	    [:Prefix, :Masc, :Plural, :Person2, "tə-", "⊤", "-u", "tə--⊤--u"],
-	    [:Prefix, :Fem, :Plural, :Person2, "tə-", "⊤", "-a", "tə--⊤--a"],
-	    [:Prefix, :Masc, :Plural, :Person3, "yə-", "⊤", "-u", "yə--⊤--u"],
-	    [:Prefix, :Fem, :Plural, :Person3, "yə-", "⊤", "-a", "yə--⊤--a"]]
+ {:label "geez-PInd"
+    :common {:morpheme :PROIND,
+	    :pos :Pronoun,
+	    :proClass :ProInd}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Common, :Singular, :Person1, "anä"]
+            [:Masc, :Singular, :Person2, "antä"]
+            [:Fem, :Singular, :Person2, "anti"]
+            [:Masc, :Singular, :Person3, "wəʔətu"]
+            [:Fem, :Singular, :Person3, "yəʔəti"]
+            [:Common, :Plural, :Person1, "nəħnä"]
+            [:Masc, :Plural, :Person2, "antəmu"]
+            [:Fem, :Plural, :Person2, "antən"]
+            [:Masc, :Plural, :Person3, "əmuntu"]
+            [:Fem, :Plural, :Person3, "əmantu"]
+            ]
+  }
+ {:label "geez-PPossSuff"
+    :common {:morpheme :PROPOSSSUFF,
+	    :pos :Pronoun,
+	    :proClass :ProPossSuff}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Common, :Singular, :Person1, "-yä"]
+            [:Masc, :Singular, :Person2, "-kä"]
+            [:Fem, :Singular, :Person2, "-ki"]
+            [:Masc, :Singular, :Person3, "-hu"]
+            [:FemÍ, :Singular, :Person3, "-ha"]
+            [:Common, :Plural, :Person1, "-nä"]
+            [:Masc, :Plural, :Person2, "-kəmu"]
+            [:Fem, :Plural, :Person2, "-kən"]
+            [:Masc, :Plural, :Person3, "-homu"]
+            [:Fem, :Plural, :Person3, "-hon"]
+            ]
+  }
+ {:label "geez-PObjSuff"
+    :common {:morpheme :PROOBJSUFF,
+	    :pos :Pronoun,
+	    :proClass :ProObjSuff}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Common, :Singular, :Person1, "-ni"]
+            [:Masc, :Singular, :Person2, "-kä"]
+            [:Fem, :Singular, :Person2, "-ki"]
+            [:Masc, :Singular, :Person3, "-hu"]
+            [:Fem, :Singular, :Person3, "-ha"]
+            [:Common, :Plural, :Person1, "-nä"]
+            [:Masc, :Plural, :Person2, "-kəmu"]
+            [:Fem, :Plural, :Person2, "-kən"]
+            [:Masc, :Plural, :Person3, "-homu"]
+            [:Fem, :Plural, :Person3, "-hon"]
+            ]
+  }
+ {:label "geez-PDemNearRel"
+    :common {:morpheme :PRODEMNEAR,
+	    :pos :Pronoun,
+             :deixis :Near,
+	    :proClass :ProDemNear}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Masc, :Singular, :Person3, "zə-/zəntu"]
+            [:Fem, :Singular, :Person3, "za-/zati"]
+            [:Masc, :Plural, :Person3, "əllu/əllontu"]
+            [:Fem, :Plural, :Person3, "əlla/əllantu"]
+            ]
+  }
+ {:label "geez-PDemFar"
+    :common {:morpheme :PRODEMFAR,
+	    :pos :Pronoun,
+             :deixis :Far,
+	    :proClass :ProDemFar}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Masc, :Singular, :Person3, "zək(t)u"]
+            [:Fem, :Singular, :Person3, "əntəku"]
+            [:Common, :Plural, :Person3, "əlləku"]
+            ]
+  }
+ {:label "geez-PDemRel"
+    :common {:morpheme :PRODEMREL,
+	    :pos :Pronoun,
+	    :proClass :ProDemRel}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Common, :Singular, :Person3, "zä-"]
+            [:Common, :Plural, :Person3, "əllä"]
+            ]
+  }
+ {:label "geez-PInterrog"
+    :common {:morpheme :PROINTERROG,
+	    :pos :Pronoun,
+	    :proClass :ProInterrog}
+    :terms [[:gender, :number, :person, :token]  ;;     
+            [:Anim, :NumC, :Person3, "männu"]
+            [:Inam, :NumC, :Person3, "mənt"]
+            [:Altern, :NumC, :Person3, "äyy"]
+            ]
+  }
+
+
+ {:label "geez-VSubjMarker"
+  :note ""
+  :common {:morpheme :SUBJMARKER,
+           :pos :Pronoun,
+           :proClass :VSubjMarker}
+  :terms [[:affix, :gender, :number, :person, :token-pref, :token-stem, :token-suff, :token]  ;; schema
+	    [:Suffix, :Common, :Singular, :Person1, "⊤", "⊤", "-ku", "-ku"],
+	    [:Suffix, :Masc, :Singular, :Person2, "⊤", "⊤", "-ka", "-ka"],
+	    [:Suffix, :Fem, :Singular, :Person2, "⊤", "⊤", "-ki", "-ki"],
+	    [:Suffix, :Masc, :Singular, :Person3, "⊤", "⊤", "-ä", "-ä"],
+	    [:Suffix, :Fem, :Singular, :Person3, "⊤", "⊤", "-ät", "-ät"],
+	    [:Suffix, :Common, :Plural, :Person1, "⊤", "⊤", "-nä", "-nä"],
+	    [:Suffix, :Masc, :Plural, :Person2, "⊤", "⊤", "-kəmu", "-kəmu"],
+	    [:Suffix, :Fem, :Plural, :Person2, "⊤", "⊤", "-kən", "-kən"],
+	    [:Suffix, :Masc, :Plural, :Person3, "⊤", "⊤", "-u", "-u"],
+	    [:Suffix, :Fem, :Plural, :Person3, "⊤", "⊤", "-a", "-a"],
+	    [:Prefix, :Common, :Singular, :Person1, "⊤", "⊤", "Ø", "ə-...-Ø"],
+	    [:Prefix, :Masc, :Singular, :Person2, "tə-", "⊤", "Ø", "tə-...-Ø"],
+	    [:Prefix, :Fem, :Singular, :Person2, "tə-", "⊤", "-i", "tə-...-i"],
+	    [:Prefix, :Masc, :Singular, :Person3, "yə-", "⊤", "Ø", "yə-...-Ø"],
+	    [:Prefix, :Fem, :Singular, :Person3, "tə-", "⊤", "Ø", "tə-...-Ø"],
+	    [:Prefix, :Common, :Plural, :Person1, "nə-", "⊤", "Ø", "nə-...-Ø"],
+	    [:Prefix, :Masc, :Plural, :Person2, "tə-", "⊤", "-u", "tə-...-u"],
+	    [:Prefix, :Fem, :Plural, :Person2, "tə-", "⊤", "-a", "tə-...-a"],
+	    [:Prefix, :Masc, :Plural, :Person3, "yə-", "⊤", "-u", "yə-...-u"],
+	    [:Prefix, :Fem, :Plural, :Person3, "yə-", "⊤", "-a", "yə-...-a"]]
     }
     {:label "geez-VVerbStems"
-    :note "Full Geez verbal words are formed by combining the stem of the present or jussive
-            with the prefixes and suffixes of the geezPrefixingVSubject paradigm,or the stem of the
-            past with the suffixes of the geezSuffixingVSubject paradigm"
+    :note "Full Geez verbal words are formed by combining the stem of the present or jussive with the prefixes and suffixes of the geezPrefixingVSubject paradigm,or the stem of the past with the suffixes of the geezSuffixingVSubject paradigm"
     :common {:morpheme :VERBSTEMS,
 	    :pos :Verb,
 	    :morphClass :VerbStems}
@@ -1142,10 +1243,5 @@
 	    [:ST, :CCY, :A2, :Present, "-astäḫärri-"],
 	    [:ST, :CCY, :A2, :Jussive, "-astäḫräy-"]]
     }
-    {:label "Pronominal Paradigms to be added"
-    :common {:morpheme :TOBEADDED,
-	    :pos :Pronoun,
-	    :proClass :To_be_added}
-    :terms [[:status :person, :token]  ;; schema
-	    [:NA, :Not_in_datastore, "not attested"]]}}
+    }
 }

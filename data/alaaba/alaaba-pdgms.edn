@@ -1,24 +1,33 @@
 {
 :lang :alaaba
 :sgpref "alb"
+:datasource "Schneider-Blom2007"
+:geodemoURL "http://www.ethnologue.com/language/alw"
+:geodemoTXT "Varieties and subdialects of Alaaba are spoken in"
 :schemata {
 :case [:Ablative, :Absolutive, :AbsolutiveEmphatic, :AbsolutiveNominative, :Dative, :Genitive, :Instrumental, :Nominative, :Possessive, :Similative]
 	  :causativeAllomorph [:causative1, :causative1-assim, :causative2, :causative2-assim, :causativeD1, :causativeD1-assim, :causativeD2, :causativeD2-assim]
 	  :clauseType [:Co-Subject, :Main, :Subordinate]
-	  :derivedStem [:Causal-middle, :Causal-passive, :Causal-reciprocal, :CausativeDouble1, :CausativeDouble2, :CausativeSimple2, :CausativeSimplel1, :CausativeSimplel2, :Detransitivize, :Inchoative, :Iterative, :Middel, :Passive, :Passive-caus, :Pluractional, :Pluractional-transitivize, :Pluractional-transitivize-caus, :Pluractional-transitivize-caus-passive, :Pluractional-transitivize-causD, :Reciprocal, :Reciprocal-caus, :Transitivize, :Transitivize-caus, :_NULL, :causativeD]
+	  :derivedStem [:Causal-middle, :Causal-passive, :Causal-reciprocal, :CausativeDouble1, :CausativeDouble2, :CausativeSimple1, :CausativeSimple2, :Detransitivize, :Inchoative, :Iterative, :Middel, :Passive, :Passive-caus, :Pluractional, :Pluractional-transitivize, :Pluractional-transitivize-caus, :Pluractional-transitivize-caus-passive, :Pluractional-transitivize-causD, :Reciprocal, :Reciprocal-caus, :Transitivize, :Transitivize-caus, :CausativeD]
 	  :gender [:Common, :Fem, :Masc]
-	  :genderHead [:Fem, :Masc]
+	  :genderHead [:HeadFem, :HeadMasc]
 	  :morphClass [:Copula, :DervStem, :DiffSubjSuff, :SubjMarkerSuff, :SubjMarkers, :SubjSuff, :TenseAspectMarking, :causativeAllomorph]
-	  :number [:Plural, :PolImp, :Polarity, :Polite, :PoliteImpersonal, :Singular]
+	  :number [:Plural, :Polite, :PoliteImpersonal, :Singular]
 	  :pdgmType [:Exemplary]
-	  :person [:Common, :Person1, :Person2, :Person3]
+	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
-	  :proClass [:AbsPoss, :ProEmph, :ProIndClit, :PronounClitic, :PronounIndependent, :Reciprocal, :Reflexive]
+	  :proClass [:AbsPoss, :ProEmph, :PronounClitic, :PronounIndependent, :Reciprocal, :Reflexive]
 	  :stemFinalC [:GS-Res-Final, :cc-Final, :d-Final, :f-Final, :l-final, :r-Final]
 	  :tam [:AnteriorPerfect, :Converb, :ConverbCoRef, :ConverbDifRef, :FutureProximate, :Imperative, :Imperfective, :Perfective, :PosteriorSub, :Progressive, :ProgressiveSub, :PurposiveSub, :TensefutProx]
 	  :valence [:Transitive]
 	  }
+:pclass {
+           :pngClass [:person :number :gender :genderHead ]
+         :synsemClass [:case :clauseType :derivedStem :polarity :pos :proClass :tam :valence]
+           :inflClass [:causativeAllomorph :stemFinalC ]
+           :otherClass [ ]
+          }
 :morphemes {
   :COPULA {:gloss "[x]", :lemma "[y]", }
   :DERVSTEMSUFF {:gloss "[x]", :lemma "[y]", }
@@ -48,7 +57,6 @@
 :lexemes {
   :uucc {:gloss "[x]", :lemma "[y]", }
   :CAUSATIVEALLOMORPH {:gloss "[x]", :lemma "[y]", }
-  :_NULL {:lemma "_NULL", :gloss "_NULL", }
   :ameet {:lemma "ʔameet-", :gloss "come", }
   :baad {:lemma "baad", }
   :boroor {:lemma "boroor", }
@@ -216,8 +224,7 @@
 	    [:Fem, :Singular, :Person3, "ʔorrooʔ-tuʔnáan(i)"],
 	    [:Common, :Plural, :Person1, "ʔorrooʔ-nuʔnáan(i)"],
 	    [:Common, :Plural, :Person2, "ʔorrooʔ-toonuʔnáan(i)"],
-	    [:Common, :Plural, :Person3, "ʔorrooʔ-tuʔnáan(i)"],
-	    [:Common, :Polarity, :Person3, "ʔorrooʔ-ooʔnáan(i)"]]
+	    [:Common, :Plural, :Person3, "ʔorrooʔ-ooʔnáan(i)"]]
     }
     {:label "alaaba-VAffImprtvOrroo"
     :note "Schneider-Blum2007 p. p. 224"
@@ -249,7 +256,7 @@
 	    [:Common, :Plural, :Person1, "náʔ(u) korj-i-n-o-táat(i)"],
 	    [:Common, :Plural, :Person2, "ʔáʔn(u) korj-i-ton-o-táat(i)"],
 	    [:Common, :Plural, :Person3, "ʔíss(a) korj-i-t-o-táat(i)"],
-	    [:Common, :PolImp, :Person3, "ʔíss(a) korj-oon-o-táat(i)"]]
+	    [:Common, :PoliteImpersonal, :Person3, "ʔíss(a) korj-oon-o-táat(i)"]]
     }
     {:label "alaaba-VConverbDiffSubjSuffHir"
     :note "Schneider-Blum2007 Table 42"
@@ -264,8 +271,7 @@
 	    [:Fem, :Singular, :Person3, "hirʔ-i-táan(i)"],
 	    [:Common, :Plural, :Person1, "hirʔ-i-náan(i)"],
 	    [:Common, :Plural, :Person2, "hirʔ-i-téenaan(i)"],
-	    [:Common, :Plural, :Person3, "hirʔ-i-táan(i)"],
-	    [:Common, :Polarity, :Person3, "hirʔ-eenáan(i)"]]
+	    [:Common, :Plural, :Person3, "hirʔ-eenáan(i)"]]
     }
     {:label "alaaba-VConverbGaf"
     :note "Schneider-Blum2007 p. 244"
@@ -555,11 +561,11 @@
 	    [:Common, :Plural, :Person3, "ʔorroottunká!"],
 	    [:Common, :PoliteImpersonal, :Person3, "ʔorrooʔoonunká!"]]
     }
-    {:label "'alaaba-VCausativeCaustemAllomorph'"
-    :note "'Schneider-Blum2007 Tables 48-53. There is both a simple and a double causative
+    {:label "alaaba-VCausativeCaustemAllomorph"
+    :note "Schneider-Blum2007 Tables 48-53. There is both a simple and a double causative
             (caus,causD),each with two overlapping allomorphs,as follows:caus1 –s-,causD1
             –siis-,caus2 –siis-,causD2 –siisiis-. The paradigm gives the occurrence of these
-            allomorphs in correlation with the stem-final consonant..'"
+            allomorphs in correlation with the stem-final consonant.."
     :common {:pid :ID3956e9a4-fa0f-4096-9d4a-421230dcb7ea,
 	    :pos :Verb,
 	    :morphClass :causativeAllomorph}
@@ -755,8 +761,8 @@
 	    :morphClass :DervStem,
 	    :tokenType :Suffix}
     :terms [[:derivedStem, :token]  ;; schema
-	    [:_NULL, "-(i)s-/-iis-/-ees-/-(i)siis"],
-	    [:causativeD, "-(i)siis-/-(i)siisiis"],
+	    [:CausativeSimple1, "-(i)s-/-iis-/-ees-/-(i)siis"],
+	    [:CausativeD, "-(i)siis-/-(i)siisiis"],
 	    [:Transitivize, "-aʔ"],
 	    [:Detransitivize, "-taʔ"],
 	    [:Passive, "-am"],
@@ -926,7 +932,7 @@
     :common {:morpheme :PROEMPH,
 	    :pos :Pronoun,
 	    :proClass :ProEmph}
-    :terms [[:gender, :number, :person, :token, :token-gloss]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note]  ;; schema
 	    [:Common, :Singular, :Person1, "ʔanín(i)", "I myself"],
 	    [:Common, :Singular, :Person2, "ʔatín(i)", "you yourslef"],
 	    [:Masc, :Singular, :Person3, "ʔisín(i)", "he himself"],
@@ -955,8 +961,7 @@
     {:label "alaaba-PProIndClit"
     :note "Schneider-Blum2007 Table 27"
     :common {:morpheme :PROINDCLIT,
-	    :pos :Pronoun,
-	    :proClass :ProIndClit}
+	    :pos :Pronoun}
     :terms [[:case, :gender, :number, :person, :proClass, :token]  ;; schema
 	    [:Absolutive, :Common, :Singular, :Person1, :PronounIndependent, "ʔisá"],
 	    [:Absolutive, :Common, :Singular, :Person2, :PronounIndependent, "kesá"],
@@ -1179,8 +1184,6 @@
     {:label "alaaba-VTenseAspectMarking"
     :note "Schneider-Blum2007 Table 46"
     :common {:pos :Verb,
-	    :token-aspectMarking :Common,
-	    :token-onlyVerb :Common,
 	    :person :Common,
 	    :morpheme :TAMMARK,
 	    :morphClass :TenseAspectMarking}
@@ -1235,19 +1238,19 @@
 	    :pos :Pronoun,
 	    :proClass :AbsPoss}
     :terms [[:genderHead, :gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Common, :Singular, :Person1, "ʔíih(a)"],
-	    [:Masc, :Common, :Singular, :Person2, "kíih(a)"],
-	    [:Masc, :Masc, :Singular, :Person3, "ʔisíih(a)"],
-	    [:Masc, :Fem, :Singular, :Person3, "ʔeséeh(a)"],
-	    [:Masc, :Common, :Plural, :Person1, "níih(a)"],
-	    [:Masc, :Common, :Plural, :Person2, "kiʔnéeh(a)"],
-	    [:Masc, :Common, :Plural, :Person3, "ʔissáh(a)"],
-	    [:Fem, :Common, :Singular, :Person1, "ʔíit(a)"],
-	    [:Fem, :Common, :Singular, :Person2, "kíit(a)"],
-	    [:Fem, :Masc, :Singular, :Person3, "ʔisíit(a)"],
-	    [:Fem, :Fem, :Singular, :Person3, "ʔeséet(a)"],
-	    [:Fem, :Common, :Plural, :Person1, "níit(a)"],
-	    [:Fem, :Common, :Plural, :Person2, "kiʔnéet(a)"],
-	    [:Fem, :Common, :Plural, :Person3, "ʔissát(a)"]]
+	    [:HeadMasc, :Common, :Singular, :Person1, "ʔíih(a)"],
+	    [:HeadMasc, :Common, :Singular, :Person2, "kíih(a)"],
+	    [:HeadMasc, :Masc, :Singular, :Person3, "ʔisíih(a)"],
+	    [:HeadMasc, :Fem, :Singular, :Person3, "ʔeséeh(a)"],
+	    [:HeadMasc, :Common, :Plural, :Person1, "níih(a)"],
+	    [:HeadMasc, :Common, :Plural, :Person2, "kiʔnéeh(a)"],
+	    [:HeadMasc, :Common, :Plural, :Person3, "ʔissáh(a)"],
+	    [:HeadFem, :Common, :Singular, :Person1, "ʔíit(a)"],
+	    [:HeadFem, :Common, :Singular, :Person2, "kíit(a)"],
+	    [:HeadFem, :Masc, :Singular, :Person3, "ʔisíit(a)"],
+	    [:HeadFem, :Fem, :Singular, :Person3, "ʔeséet(a)"],
+	    [:HeadFem, :Common, :Plural, :Person1, "níit(a)"],
+	    [:HeadFem, :Common, :Plural, :Person2, "kiʔnéet(a)"],
+	    [:HeadFem, :Common, :Plural, :Person3, "ʔissát(a)"]]
     }}
 }

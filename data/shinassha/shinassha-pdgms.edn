@@ -1,22 +1,31 @@
 {
 :lang :shinassha
 :sgpref "shn"
+:datasource "Lamberti1993b"
+:geodemoURL "http://www.ethnologue.com/language/bwo"
+:geodemoTXT "Varieties and subdialects of the Omotic language Shinassha are spoken in"
 :schemata {
-:case [:Ablative, :Benefactive, :Comitative, :Dative, :Directive, :Locative]
+           :case [:Ablative, :Benefactive, :Comitative, :Dative, :Directive, :Locative]
 	  :complement [:Compound, :Simple]
 	  :conjClass [:Conj1, :Conj2, :Conj3, :Conj4, :Conj5]
 	  :derivedStem [:Benefactive, :Causative, :Completative, :Iterative]
 	  :gender [:Common, :Fem, :Masc]
-	  :mood [:Command, :Conditional, :ConjClass, :Desiderative, :Indicative, :InfinitiveInflect, :Irrealis, :Jussive, :Potential, :Relative, :SubjunctivepdgmLex]
-	  :number [:Common, :Plural, :Singular]
+	  :mood [:Command, :Conditional, :ConjMood, :Desiderative, :Gerund, :Indicative, :InfinitiveInflect, :Irrealis, :Jussive, :Potential, :Relative, :Subjunctive]
+	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:IndepCase, :Independent, :PossAdj, :PossNoun, :Subject]
-	  :tam [:Aorist, :AoristHabitual, :AoristIngressive, :AoristProgressive, :AoristPunctual, :Conditional, :ConjClass, :Future, :FuturePerfect, :FutureProgressive, :FuturePunctual, :Habitual, :Imperative, :ImperfectFuture, :ImperfectPresent, :ImperfectPreterite, :Jussive, :PerfectFuture, :PerfectPresent, :PerfectPreterite, :Pluperfect, :Present, :PresentIngressive, :PresentIngressiveA, :PresentIngressiveB, :Preterite, :PreteriteDubitative, :PreteriteEgressive, :PreteriteIngressive, :PreteritePerfect, :PreteritePerfectB, :Progressive, :U]
+	  :tam [:Aorist, :AoristHabitual, :AoristIngressive, :AoristProgressive, :AoristPunctual, :Conditional, :ConjTns, :Future, :FuturePerfect, :FutureProgressive, :FuturePunctual, :Habitual, :Imperative, :ImperfectFuture, :ImperfectPresent, :ImperfectPreterite, :Jussive, :PerfectFuture, :PerfectPresent, :PerfectPreterite, :Pluperfect, :Present, :PresentIngressiveA, :PresentIngressiveB, :PresentProgressive, :Preterite, :PreteriteDubitative, :PreteriteEgressive, :PreteriteIngressive, :PreteritePerfect, :PreteritePerfectB, :Progressive]
 	  :vClass [:Aux]
-	  :morphClass [:Copula, :DervStem, :Existence, :Gerund, :InflClass, :InterrSubjMarker, :Infinitive, :Interrogative, :Monorad, :Stem, :SubjSuff, :SubjSuffInterr]
+	  :morphClass [:Copula, :DervStem, :Existence, :InflClass, :InterrSubjMarker, :Infinitive, :Interrogative, :Monorad, :Stem, :SubjSuff, :SubjSuffInterr]
 	  }
+:pclass {
+           :pngClass [:person :number :gender ]
+           :synsemClass [:case :complement  :derivedStem :mode :polarity :pos :proClass :tam :vClass ]
+           :inflClass [:conjClass  ]
+           :otherClass [ ]
+          }
 :morphemes {
   :COPULAAFFPRES {:gloss "[x]", :lemma "[y]", }
   :COPULANEGPRES {:gloss "[x]", :lemma "[y]", }
@@ -105,15 +114,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :FutureProgressive,
-	    :token "àmàà-lí"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "àmàà-lí, tì-'àmìírə̀, bú-wòòttít"],
+[:Common, :Singular, :Person2, "àmàà-lí, ní-'àmìírə̀, bú-wòòttít"],
+[:Masc, :Singular, :Person3, "àmàà-lí, bí́-'àmìírə̀, bú-wòòttít"],
+[:Fem, :Singular, :Person3, "àmàà-lí, bì̀-'àmìírə̀, bú-wòòttít"],
+[:Common, :Plural, :Person1, "àmàà-lí, nò-'àmìírə̀, bú-wòòttít"],
+[:Common, :Plural, :Person2, "àmàà-lí, ít-'àmìírə̀, bú-wòòttít"],
+[:Common, :Plural, :Person3, "àmàà-lí, bó-'àmìírə̀, bú-wòòttít"]]
     }
     {:label "shinassha-VAffIndicFutProgrMonorad-maa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -128,8 +137,8 @@
 	    :pos :Verb,
 	    :tam :FutureProgressive,
 	    :stemClass :Monorad}
-    :terms [[:token]  ;; schema
-	    ["màà"]]
+    :terms [[:token :token-note-aux]  ;; schema
+	    ["màà bə́-mèýrə̀", "bə́-mèýrə̀"]]
     }
     {:label "shinassha-VConj1SmplAffIndicAorHab-am"
     :note "Lamberti1993b pp.136-202."
@@ -173,13 +182,13 @@
 	    :pos :Verb,
 	    :tam :Preterite}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "gàrgààr-èr-áts-è"],
-	    [:Common, :Singular, :Person2, "gàrgààr-èr-áts-ì"],
-	    [:Masc, :Singular, :Person3, "gàrgààr-èr-áts-é"],
-	    [:Fem, :Singular, :Person3, "gàrgààr-èr-áts-à"],
-	    [:Common, :Plural, :Person1, "gàrgààr-èr-áts-ò"],
-	    [:Common, :Plural, :Person2, "gàrgààr-èr-áts-ə́t"],
-	    [:Common, :Plural, :Person3, "gàrgààr-èr-áts-nóó"]]
+[:Common, :Singular, :Person1, "gàrgààr-èr-áts-è, wòòt"],
+[:Common, :Singular, :Person2, "gàrgààr-èr-áts-ì, wòòt"],
+[:Masc, :Singular, :Person3, "gàrgààr-èr-áts-é, wòòt"],
+[:Fem, :Singular, :Person3, "gàrgààr-èr-áts-à, wòòt"],
+[:Common, :Plural, :Person1, "gàrgààr-èr-áts-ò, wòòt"],
+[:Common, :Plural, :Person2, "gàrgààr-èr-áts-ə́t , wòòt"],
+[:Common, :Plural, :Person3, "gàrgààr-èr-áts-nóó, wòòt"]]
     }
     {:label "shinassha-VConj1CompAffIndicPlusPerf-am"
     :note "Lamberti1993b pp.136-202."
@@ -191,13 +200,13 @@
 	    :pos :Verb,
 	    :tam :Pluperfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àmmàátə̀"],
-	    [:Common, :Singular, :Person2, "àmmàátə̀"],
-	    [:Masc, :Singular, :Person3, "àmmə̀tə́"],
-	    [:Fem, :Singular, :Person3, "àmmàátə̀"],
-	    [:Common, :Plural, :Person1, "àmmàátə̀"],
-	    [:Common, :Plural, :Person2, "àmmàátə̀"],
-	    [:Common, :Plural, :Person3, "àmmə̀tə́"]]
+[:Common, :Singular, :Person1, "àmmàátə̀, tì-jà'à"],
+[:Common, :Singular, :Person2, "àmmàátə̀, ní-jà'à"],
+[:Masc, :Singular, :Person3, "àmmə̀tə́, bí́-jà'à"],
+[:Fem, :Singular, :Person3, "àmmàátə̀, bì̀-jà'à"],
+[:Common, :Plural, :Person1, "àmmàátə̀, nò-jà'à"],
+[:Common, :Plural, :Person2, "àmmàátə̀, ít-jà'à"],
+[:Common, :Plural, :Person3, "àmmə̀tə́, bó-jà'à"]]
     }
     {:label "shinassha-VConj1SmplAffCondPret-im"
     :note "Lamberti1993b pp.136-202."
@@ -223,11 +232,9 @@
 	    :gender :Common,
 	    :lexeme :massh,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["massh-ó"]]
     }
@@ -279,28 +286,23 @@
 	    ["wàà-f-é"]]
     }
     {:label "shinassha-VAffGerundImperfFutMonorad-waa"
-    :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
-            slight inflectional idiosyncracies in the affirmative. In the negative the inflect
-            regularly on the basis of a special negative stem ."
+    :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have slight inflectional idiosyncracies in the affirmative. In the negative the inflect regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :waa,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectFuture,
 	    :token "waa",
 	    :stemClass :Monorad}
-    :terms [[:token]  ;; schema
-	    ["waa"]]
+    :terms [[:token, :token-note-aux]  ;; schema
+	    ["waa féérə̀", "féérə̀"]]
     }
     {:label "shinassha-VConjExist-fa"
-    :note "Lamberti1993b pp.179-181. fa- is an extremely defective verb and seems to have
-            only two tenses"
+    :note "Lamberti1993b pp.179-181. fa- is an extremely defective verb and seems to have only two tenses"
     :common {:lexeme :fa,
 	    :pos :Verb,
-	    :tam :ConjClass,
+	    :tam :ConjTns,
 	    :morphClass :Existence}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tə̀-fá-ò"],
@@ -321,13 +323,13 @@
 	    :pos :Verb,
 	    :tam :Pluperfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àmmàátə̀"],
-	    [:Common, :Singular, :Person2, "àmmàátə̀"],
-	    [:Masc, :Singular, :Person3, "àmmə̀tə́"],
-	    [:Fem, :Singular, :Person3, "àmmàátə̀"],
-	    [:Common, :Plural, :Person1, "àmmàátə̀"],
-	    [:Common, :Plural, :Person2, "àmmàátə̀"],
-	    [:Common, :Plural, :Person3, "àmmə̀tə́"]]
+[:Common, :Singular, :Person1, "àmmàátə̀, jà'àr-áts-è"],
+[:Common, :Singular, :Person2, "àmmàátə̀, jà'àr-áts-ì"],
+[:Masc, :Singular, :Person3, "àmmə̀tə́, jà'àr-áts-é"],
+[:Fem, :Singular, :Person3, "àmmàátə̀, jà'àr-áts-à"],
+[:Common, :Plural, :Person1, "àmmàátə̀, jà'àr-áts-ò"],
+[:Common, :Plural, :Person2, "àmmàátə̀, jà'àr-áts-ə́t"],
+[:Common, :Plural, :Person3, "àmmə̀tə́, jà'àr-áts-nóó"]]
     }
     {:label "shinassha-VConj1CompAffDesidPretPerf-am"
     :note "Lamberti1993b pp.136-202."
@@ -337,17 +339,36 @@
 	    :mood :Desiderative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PreteritePerfect,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    :tam :PreteritePerfect
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, gèé-r-è,  ~ tì-gèé"],
+[:Common, :Singular, :Person2, "amó, gèé-r-ì, ~ ní-gèé"],
+[:Masc, :Singular, :Person3, "amó, gèé-r-é, ~ bí́-gèé"],
+[:Fem, :Singular, :Person3, "amó, gèé-r-à, ~ bì̀-gèé"],
+[:Common, :Plural, :Person1, "amó, gèé-r-ò, ~ nò- ~ gèé"],
+[:Common, :Plural, :Person2, "amó, gèé-r-ə́t, ~ ít-gèé"],
+[:Common, :Plural, :Person3, "amó, gèé-ə̀r-nóó, ~ bó-gèé"]]
     }
+    {:label "shinassha-VConj1CompNegDesidPretPerf-am"
+    :note "Lamberti1993b pp.136-202."
+    :common {:complement :Compound,
+	    :conjClass :Conj1,
+	    :lexeme :am,
+	    :mood :Desiderative,
+	    :polarity :Negative,
+	    :pos :Verb,
+	    :tam :PreteritePerfect
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, gèèr-áts-è"],
+[:Common, :Singular, :Person2, "amó, gèèr-áts-ì"],
+[:Masc, :Singular, :Person3, "amó, gèèr-áts-é"],
+[:Fem, :Singular, :Person3, "amó, gèèr-áts-à"],
+[:Common, :Plural, :Person1, "amó, gèèr-áts-ò"],
+[:Common, :Plural, :Person2, "amó, gèèr-áts-ə́t"],
+[:Common, :Plural, :Person3, "amó, gèèr-áts-nóó"]]
+     }
     {:label "shinassha-VConj3AffIndicFutPunct-meecc"
     :note "Lamberti1993b pp.136-202."
     :common {:conjClass :Conj3,
@@ -362,31 +383,12 @@
 	    [:Singular, :Person2, "mèècc-í-ttùw-ì"],
 	    [:Plural, :Person1, "mèècc-í-ttùw-ò"]]
     }
-    {:label "shinassha-VConj1CompAffPotentialPretPerf-am"
-    :note "Lamberti1993b pp.136-202."
-    :common {:complement :Compound,
-	    :conjClass :Conj1,
-	    :lexeme :am,
-	    :mood :Potential,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :PreteritePerfect,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
-    }
     {:label "shinassha-VConj1SmplNegSubjHabit-am"
     :note "Lamberti1993b pp.136-202."
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Habitual}
@@ -406,12 +408,9 @@
 	    :gender :Common,
 	    :lexeme :woott,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    }
+	    	    }
     :terms [[:token]  ;; schema
 	    ["wots-ó"]]
     }
@@ -440,13 +439,13 @@
 	    :pos :Verb,
 	    :tam :Preterite}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "gàrgààr-è"],
-	    [:Common, :Singular, :Person2, "gàrgààr-ì"],
-	    [:Masc, :Singular, :Person3, "gàrgààr-é"],
-	    [:Fem, :Singular, :Person3, "gàrgààr-à"],
-	    [:Common, :Plural, :Person1, "gàrgààr-ò"],
-	    [:Common, :Plural, :Person2, "gàrgààr-ə́t"],
-	    [:Common, :Plural, :Person3, "gàrgààr-nóó"]]
+[:Common, :Singular, :Person1, "gàrgààr-è, wóót"],
+[:Common, :Singular, :Person2, "gàrgààr-ì, wóót"],
+[:Masc, :Singular, :Person3, "gàrgààr-é, wóót"],
+[:Fem, :Singular, :Person3, "gàrgààr-à, wóót"],
+[:Common, :Plural, :Person1, "gàrgààr-ò, wóót"],
+[:Common, :Plural, :Person2, "gàrgààr-ə́t , wóót"],
+[:Common, :Plural, :Person3, "gàrgààr-nóó, wóót"]]
     }
     {:label "shinassha-VAffIndicPretPerfMonorad-waa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -527,43 +526,43 @@
 	    [:Common, :Plural, :Person2, "shà-è-r-ə́t"],
 	    [:Common, :Plural, :Person3, "shà-è-r-nóó"]]
     }
-    {:label "shinassha-VConj1CompNegPotentialPretPerf-am"
+    {:label "shinassha-VConj1CompAffPotentialPretPerf-am"
     :note "Lamberti1993b pp.136-202."
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :am,
 	    :mood :Potential,
-	    :polarity :Negative,
+	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PreteritePerfect,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, fàllə̀-r-è,  ~ tì-fàllə̀"],
+[:Common, :Singular, :Person2, "amó, fàllə̀-r-ì, ~ ní-fàllə̀"],
+[:Masc, :Singular, :Person3, "amó, fàllə̀-r-é, ~ bí́-fàllə̀"],
+[:Fem, :Singular, :Person3, "amó, fàllə̀-r-à, ~ bì̀-fàllə̀"],
+[:Common, :Plural, :Person1, "amó, fàllə̀-r-ò, ~ nò- ~ fàllə̀"],
+[:Common, :Plural, :Person2, "amó, fàllə̀-r-ə́t, ~ ít-fàllə̀"],
+[:Common, :Plural, :Person3, "amó, fàllə̀-ə̀r-nóó, ~ bó-fàllə̀"]]
     }
     {:label "shinassha-VConj1CompAffGerundImperfPret-miits"
     :note "Lamberti1993b pp.136-202."
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :miits,
-	    :morphClass :Gerund,
+	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectPreterite,
-	    :token "mììts-"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "mììts'-, féétts-àátə̀/-ə̀"],
+[:Common, :Singular, :Person2, "mììts'-, féétts-àátə̀/-ə̀"],
+[:Masc, :Singular, :Person3, "mììts'-, féétts-ə̀tə́/-ə̀"],
+[:Fem, :Singular, :Person3, "mììts'-, féétts-àátə̀/-ə̀"],
+[:Common, :Plural, :Person1, "mììts'-, féétts-àátə̀/-ə̀"],
+[:Common, :Plural, :Person2, "mììts'-, féétts-àátə̀/-ə̀"],
+[:Common, :Plural, :Person3, "mììts'-, féétts-ə̀tə́/-ə̀"]]
     }
     {:label "shinassha-VAffGerundImperfFutMonorad-maa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -571,16 +570,13 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectFuture,
-	    
 	    :stemClass :Monorad}
-    :terms [[:token]  ;; schema
-	    ["maa"]]
+    :terms [[:token, :token-note-aux]  ;; schema
+	    ["maa féérə̀", "féérə̀"]]
     }
     {:label "shinassha-VAffGerundPerfFutMonorad-maa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -588,13 +584,10 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :maa,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectFuture,
-	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["màà-rə̀"]]
@@ -624,15 +617,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, fàllə̀-f-è"],
+[:Common, :Singular, :Person2, "amó, fàllə̀-f-ì"],
+[:Masc, :Singular, :Person3, "amó, fàllə̀-f-é"],
+[:Fem, :Singular, :Person3, "amó, fàllə̀-f-à"],
+[:Common, :Plural, :Person1, "amó, fàllə̀-f-ò"],
+[:Common, :Plural, :Person2, "amó, fàllə̀-f-ə́t"],
+[:Common, :Plural, :Person3, "amó, fàllə̀-ə̀f-nóó"]]
     }
     {:label "shinassha-VConj1SmplNegRelPres-am"
     :note "Lamberti1993b pp.136-202."
@@ -658,15 +651,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristProgressive,
-	    :token "amòòká"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amòòká, tə̀-fá'ò"],
+[:Common, :Singular, :Person2, "amòòká, nə́-fáò"],
+[:Masc, :Singular, :Person3, "amòòká, bə́-fá'ò"],
+[:Fem, :Singular, :Person3, "amòòká, bə̀-fá'ò"],
+[:Common, :Plural, :Person1, "amòòká, nò-fá'ò"],
+[:Common, :Plural, :Person2, "amòòká, ít-fá'ò"],
+[:Common, :Plural, :Person3, "amòòká, bó-fá'ò"]]
     }
     {:label "shinassha-VConj3AffIndicAorPunct-sha"
     :note "Lamberti1993b pp.136-202."
@@ -687,19 +680,19 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Conditional,
-	    :token "am-ó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "am-ó, tə̀-ká'z-, -áál ~ -ínkè"],
+[:Common, :Singular, :Person2, "am-ó, nə́-fáò, -áál ~ -ínkè"],
+[:Masc, :Singular, :Person3, "am-ó, bə́-ká'z-, -áál ~ -ínkè"],
+[:Fem, :Singular, :Person3, "am-ó, bə̀-ká'z-, -áál ~ -ínkè"],
+[:Common, :Plural, :Person1, "am-ó, nò-ká'z-, -áál ~ -ínkè"],
+[:Common, :Plural, :Person2, "am-ó, ít-ká'z-, -áál ~ -ínkè"],
+[:Common, :Plural, :Person3, "am-ó, bó-ká'z-, -áál ~ -ínkè"]]
     }
     {:label "shinassha-VConj1SmplAffGerundPerfPres-am"
     :note "Lamberti1993b pp.136-202."
@@ -707,9 +700,8 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectPresent,
@@ -722,7 +714,7 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Preterite}
@@ -744,15 +736,16 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PreteriteIngressive,
-	    :token " àmó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singulare, :Person1, "' àmó, tì-jàmmàr"],
+            [:Common, :Singular, :Person2, "' àmó, ní-jàmmàr"],
+            [:Masc, :Singular, :Person3, "' àmó, bí́-jàmmàr"],
+            [:Fem, :Singular, :Person3, "' àmó, bì̀-jàmmàr"],
+            [:Common, :Plural, :Person1, "' àmó, nò-jàmmàr"],
+            [:Common, :Plural, :Person2, "' àmó, ít-jàmmàr"],
+            [:Common, :Plural, :Person3, "' àmó, bó-jàmmàr"],
+            [:Common, :Singular, :Person1],]
     }
     {:label "shinassha-VConj1SmplAffInfinitive-am"
     :note "Lamberti1993b pp.136-202."
@@ -761,12 +754,10 @@
 	    :gender :Common,
 	    :lexeme :am,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    }
+	    	    }
     :terms [[:token]  ;; schema
 	    ["am-ó"]]
     }
@@ -780,13 +771,13 @@
 	    :pos :Verb,
 	    :tam :PreteriteDubitative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àm-áts-è"],
-	    [:Common, :Singular, :Person2, "àm-áts-ì"],
-	    [:Masc, :Singular, :Person3, "àm-áts-é"],
-	    [:Fem, :Singular, :Person3, "àm-áts-à"],
-	    [:Common, :Plural, :Person1, "àm-áts-ò"],
-	    [:Common, :Plural, :Person2, "àm-áts-ə́t"],
-	    [:Common, :Plural, :Person3, "àm-áts-nóó"]]
+[:Common, :Singular, :Person1, "àm-áts-è, àrrèfé"],
+[:Common, :Singular, :Person2, "àm-áts-ì, àrrèfé"],
+[:Masc, :Singular, :Person3, "àm-áts-é, àrrèfé"],
+[:Fem, :Singular, :Person3, "àm-áts-à, àrrèfé"],
+[:Common, :Plural, :Person1, "àm-áts-ò, àrrèfé"],
+[:Common, :Plural, :Person2, "àm-áts-ə́t, àrrèfé"],
+[:Common, :Plural, :Person3, "àm-áts-nóó, àrrèfé"]]
     }
     {:label "shinassha-VConj1SmplAffRelFut-am"
     :note "Lamberti1993b pp.136-202."
@@ -811,16 +802,16 @@
 	    :mood :Indicative,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :PresentIngressive,
-	    :token "àmáá-lí"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    :tam :PresentProgressive,
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "àmáá-lí, tì-'àmìírə̀"],
+[:Common, :Singular, :Person2, "àmáá-lí, ní-'àmìírə̀"],
+[:Masc, :Singular, :Person3, "àmáá-lí, bí́-'àmìírə̀"],
+[:Fem, :Singular, :Person3, "àmáá-lí, bì̀-'àmìírə̀"],
+[:Common, :Plural, :Person1, "àmáá-lí, nò-'àmìírə̀"],
+[:Common, :Plural, :Person2, "àmáá-lí, ít-'àmìírə̀"],
+[:Common, :Plural, :Person3, "àmáá-lí, bó-'àmìírə̀"]]
     }
     {:label "shinassha-VConj5AffCommandImprtv-meeccey"
     :note "Lamberti1993b pp.136-202."
@@ -842,18 +833,18 @@
 	    :conjClass :Conj1,
 	    :lexeme :am,
 	    :mood :Indicative,
-	    :polarity :Negative,
+	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresentIngressiveB,
-	    :token "amóósh"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amóósh, tùúrè"],
+[:Common, :Singular, :Person2, "amóósh, tùúrì"],
+[:Masc, :Singular, :Person3, "amóósh, tùúré"],
+[:Fem, :Singular, :Person3, "amóósh, tùúrà"],
+[:Common, :Plural, :Person1, "amóósh, tùúrò"],
+[:Common, :Plural, :Person2, "amóósh, tùúrə́t"],
+[:Common, :Plural, :Person3, "amóósh, tùúrnóó"]]
     }
     {:label "shinassha-VConj1SmplAffRelPret-am"
     :note "Lamberti1993b pp.136-202."
@@ -891,12 +882,10 @@
     :common {:gender :Common,
 	    :lexeme :maa,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mòó ~ moowó"]]
@@ -910,15 +899,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristIngressive,
-	    :token "amó(ósh)"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó(ósh), jàmmàr-áts-è-r-áts-è"],
+[:Common, :Singular, :Person2, "amó(ósh), jàmmàr-áts-è-r-áts-ì"],
+[:Masc, :Singular, :Person3, "amó(ósh), jàmmàr-áts-è-r-áts-é"],
+[:Fem, :Singular, :Person3, "amó(ósh), jàmmàr-áts-è-r-áts-à"],
+[:Common, :Plural, :Person1, "amó(ósh), jàmmàr-áts-è-r-áts-ò"],
+[:Common, :Plural, :Person2, "amó(ósh), jàmmàr-áts-è-r-áts-ə́t"],
+[:Common, :Plural, :Person3, "amó(ósh), jàmmàr-áts-è-r-áts-nóó"]]
     }
     {:label "shinassha-VConj1SmplAffCondPres-im"
     :note "Lamberti1993b pp.136-202."
@@ -949,7 +938,7 @@
 	    :pos :Verb,
 	    :tam :AoristHabitual,
 	    :morphClass :Interrogative}
-    :terms [[:gender, :number, :person, :token, :token-aux]  ;; schema
+    :terms [[:gender, :number, :person, :token, :token-note-aux]  ;; schema
 	    [:Common, :Singular, :Person1, "àm-áá-k-ə̀", "táá-né ~ táá-nè-yáneg"],
 	    [:Masc, :Singular, :Person3, "àm-áá-k-", "é ~ è-yá"],
 	    [:Fem, :Singular, :Person3, "àm-áá-k-", "né ~ nè-yá"],
@@ -995,18 +984,18 @@
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Progressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "taash ammaa"],
-	    [:Common, :Singular, :Person2, "neesh ammaa"],
-	    [:Masc, :Singular, :Person3, "biish ammaa"],
-	    [:Fem, :Singular, :Person3, "biish ammaa"],
-	    [:Common, :Plural, :Person1, "noosh amma"],
-	    [:Common, :Plural, :Person2, "ittish amma"],
-	    [:Common, :Plural, :Person3, "boosh amma"]]
+[:Common, :Singular, :Person1, "taash ammaa, ni-`amiirə"],
+[:Common, :Singular, :Person2, "neesh ammaa, ni-`amiirə"],
+[:Masc, :Singular, :Person3, "biish ammaa, ni-`amiirə"],
+[:Fem, :Singular, :Person3, "biish ammaa, bi-`amiirə"],
+[:Common, :Plural, :Person1, "noosh amma, it-`amiirə"],
+[:Common, :Plural, :Person2, "ittish amma, it-`amiirə"],
+[:Common, :Plural, :Person3, "boosh amma, bo-`amiirə"]]
     }
     {:label "shinassha-VConj5AffCommandImprtv-tsiiley"
     :note "Lamberti1993b pp.136-202."
@@ -1027,7 +1016,7 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Habitual}
@@ -1063,7 +1052,7 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :waa,
-	    :morphClass :Gerund,
+	    :mood :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
@@ -1079,35 +1068,38 @@
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :Desiderative,
+	    :mood :Potential,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PreteritePerfect,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, fàll-áts-è,  ~ tì-mààwò"],
+[:Common, :Singular, :Person2, "amó, fàll-áts-ì, ~ ní-mààwò"],
+[:Masc, :Singular, :Person3, "amó, fàll-áts-é, ~ bí́-mààwò"],
+[:Fem, :Singular, :Person3, "amó, fàll-áts-à, ~ bì̀-mààwò"],
+[:Common, :Plural, :Person1, "amó, fàll-áts-ò, ~ nò- ~ mààwò"],
+[:Common, :Plural, :Person2, "amó, fàll-áts-ə́t, ~ ít-mààwò"],
+[:Common, :Plural, :Person3, "amó, fàll-áts-nóó, ~ bó-mààwò"]]
     }
     {:label "shinassha-VConj1CompAffPotentialFutPunct-tam"
     :note "Lamberti1993b pp.136-202."
     :common {:complement :Compound,
 	    :conjClass :Conj1,
-	    :gender :Common,
 	    :lexeme :am,
 	    :mood :Potential,
-	    :number :Plural,
-	    :person :Person2,
-	    :polarity :Affirmative,
+ 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :FuturePunctual,
 	    }
-    :terms [[:token]  ;; schema
-	    ["amó"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+	    [:Common, :Singular, :Person1, "amó, fàll-í-ttùw-è"],
+[:Common, :Singular, :Person2, "amó, fàll-í-ttùw-ì"],
+[:Masc, :Singular, :Person3, "amó, fàll-í-ttùw-é"],
+[:Fem, :Singular, :Person3, "amó, fàll-í-ttùw-à"],
+[:Common, :Plural, :Person1, "amó, fàll-í-ttùw-ò"],
+[:Common, :Plural, :Person2, "amó, fàll-í-ttùw-ə́t "],
+[:Common, :Plural, :Person3, "amó, fàll-í-ttùw-nóó"]]
     }
     {:label "shinassha-VAffIndicFutPunctMonorad-waa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -1198,11 +1190,10 @@
 	    :gender :Common,
 	    :lexeme :kutt,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["kut-ó"]]
     }
@@ -1276,15 +1267,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristProgressive,
-	    :token "amóó-k-ààlí"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amóó-k-ààlí, tə̀-fá'ò"],
+[:Common, :Singular, :Person2, "amóó-k-ààlí, nə-́"],
+[:Masc, :Singular, :Person3, "amóó-k-ààlí, bə́-fá'ò"],
+[:Fem, :Singular, :Person3, "amóó-k-ààlí, bə̀-fá'ò"],
+[:Common, :Plural, :Person1, "amóó-k-ààlí, nò-fá'ò"],
+[:Common, :Plural, :Person2, "amóó-k-ààlí, ít-fá'ò"],
+[:Common, :Plural, :Person3, "amóó-k-ààlí, bó-fá'ò"]]
     }
     {:label "shinassha-VNegCommandJussInterrogative-am"
     :note "Lamberti1993b p.200-202. Interrogative forms are made by substituting the
@@ -1296,7 +1287,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux :_NULL,
+	    :token-note-aux "0",
 	    :morphClass :Interrogative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "àmààl-tá-né"],
@@ -1316,15 +1307,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PreteriteEgressive,
-	    :token " àmó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "' àmó, èèkr-è"],
+[:Common, :Singular, :Person2, "' àmó, èèkr-ì"],
+[:Masc, :Singular, :Person3, "' àmó, èèkr-é"],
+[:Fem, :Singular, :Person3, "' àmó, èèkr-à"],
+[:Common, :Plural, :Person1, "' àmó, èèkr-ò"],
+[:Common, :Plural, :Person2, "' àmó, èèkr-ə́t"],
+[:Common, :Plural, :Person3, "' àmó, èèkə̀r-nóó"]]
     }
     {:label "shinassha-VAffInfInflectMonorad-maa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -1333,12 +1324,10 @@
     :common {:gender :Common,
 	    :lexeme :maa,
 	    :morphClass :InfinitiveInflect,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mòósh"]]
@@ -1370,13 +1359,13 @@
 	    :pos :Verb,
 	    :tam :FuturePerfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àm-áts-è"],
-	    [:Common, :Singular, :Person2, "àm-áts-ì"],
-	    [:Masc, :Singular, :Person3, "àm-áts-é"],
-	    [:Fem, :Singular, :Person3, "àm-áts-à"],
-	    [:Common, :Plural, :Person1, "àm-áts-ò"],
-	    [:Common, :Plural, :Person2, "àm-áts-ə́t"],
-	    [:Common, :Plural, :Person3, "àm-ə̀áts-nóó"]]
+[:Common, :Singular, :Person1, "àm-áts-è, bú-wòòttít"],
+[:Common, :Singular, :Person2, "àm-áts-ì, bú-wòòttít"],
+[:Masc, :Singular, :Person3, "àm-áts-é, bú-wòòttít"],
+[:Fem, :Singular, :Person3, "àm-áts-à, bú-wòòttít"],
+[:Common, :Plural, :Person1, "àm-áts-ò, bú-wòòttít"],
+[:Common, :Plural, :Person2, "àm-áts-ə́t, bú-wòòttít"],
+[:Common, :Plural, :Person3, "àm-ə̀áts-nóó, bú-wòòttít"]]
     }
     {:label "shinassha-VConj1CompAffIndicPresIngrB-am"
     :note "Lamberti1993b pp.136-202."
@@ -1384,25 +1373,25 @@
 	    :conjClass :Conj1,
 	    :lexeme :am,
 	    :mood :Indicative,
-	    :polarity :Affirmative,
+	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentIngressiveB,
-	    :token "amóósh"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amóósh, tùúr-áts-è"],
+[:Common, :Singular, :Person2, "amóósh, tùúr-áts-ì"],
+[:Masc, :Singular, :Person3, "amóósh, tùúr-áts-é"],
+[:Fem, :Singular, :Person3, "amóósh, tùúr-áts-à"],
+[:Common, :Plural, :Person1, "amóósh, tùúr-áts-ò"],
+[:Common, :Plural, :Person2, "amóósh, tùúr-áts-ə́t"],
+[:Common, :Plural, :Person3, "amóósh, tùúr-áts-nóó"]]
     }
     {:label "shinassha-VConj1SmplNegSubjPret-am"
     :note "Lamberti1993b pp.136-202."
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Preterite}
@@ -1425,7 +1414,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Jussive,
-	    :token-aux :_NULL,
+	    :token-note-aux "0",
 	    :morphClass :Interrogative}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "àm-tá"],
@@ -1457,12 +1446,10 @@
     :common {:gender :Common,
 	    :lexeme :waa,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["woowó"]]
@@ -1473,9 +1460,8 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectFuture,
@@ -1492,15 +1478,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PresentIngressiveA,
-	    :token "amóóshá"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amóóshá, tì-'éttìírə̀"],
+[:Common, :Singular, :Person2, "amóóshá, ní-'éttìírə̀"],
+[:Masc, :Singular, :Person3, "amóóshá, bí́-'éttìírə̀"],
+[:Fem, :Singular, :Person3, "amóóshá, bì̀-'éttìírə̀"],
+[:Common, :Plural, :Person1, "amóóshá, nò-'éttìírə̀"],
+[:Common, :Plural, :Person2, "amóóshá, ít-'éttìírə̀"],
+[:Common, :Plural, :Person3, "amóóshá, bó-'éttìírə̀"]]
     }
     {:label "shinassha-VConj4AffIndicFutPunct-kasshiy"
     :note "Lamberti1993b pp.136-202."
@@ -1523,12 +1509,10 @@
     :common {:gender :Common,
 	    :lexeme :gey,
 	    :morphClass :Stem,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["gèér"]]
@@ -1556,9 +1540,8 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :et,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectFuture,
@@ -1582,7 +1565,18 @@
 	    [:Fem, :Singular, :Person3, "bì̀-àmfó"],
 	    [:Common, :Plural, :Person1, "nò-àmfó"],
 	    [:Common, :Plural, :Person2, "ít-àmfó"],
-	    [:Common, :Plural, :Person3, "bó-àmfó"],
+	    [:Common, :Plural, :Person3, "bó-àmfó"]]
+    }
+    {:label "shinassha-VConj1SmplAffIndicAorPunct-am"
+    :note "Lamberti1993b pp.136-202."
+    :common {:complement :Simple,
+	    :conjClass :Conj1,
+	    :lexeme :tipp,
+	    :mood :Indicative,
+	    :polarity :Affirmative,
+	    :pos :Verb,
+	    :tam :AoristPunctual}
+    :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tì-típp-ə̀-fó"],
 	    [:Common, :Singular, :Person2, "ní-típp-ə̀-fó"],
 	    [:Common, :Plural, :Person1, "nò-típp-ə̀-fó"]]
@@ -1593,9 +1587,8 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :miits,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :ImperfectPresent,
@@ -1603,30 +1596,13 @@
     :terms [[:token]  ;; schema
 	    ["mììc-"]]
     }
-    {:label "shinassha-VConj1CompAffPotentialFutPunct-am"
-    :note "Lamberti1993b pp.136-202."
-    :common {:complement :Compound,
-	    :conjClass :Conj1,
-	    :lexeme :am,
-	    :mood :Potential,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :FuturePunctual,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1]]
-    }
     {:label "shinassha-VAffGerundImperfPretMonorad-waa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
             slight inflectional idiosyncracies in the affirmative. In the negative the inflect
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :waa,
-	    :morphClass :Gerund,
+	    :mood :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
@@ -1634,8 +1610,8 @@
 	    :tam :ImperfectPreterite,
 	    
 	    :stemClass :Monorad}
-    :terms [[:token]  ;; schema
-	    ["waa"]]
+    :terms [[:token, :token-note-aux]  ;; schema
+	    ["waa féétts-àátə̀", "féétts-àátə̀"]]
     }
     {:label "shinassha-VConj1CompNegPotentialAorHab-am"
     :note "Lamberti1993b pp.136-202."
@@ -1646,15 +1622,16 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, fàll-áá-k  táá-nà, ~ mààw-f-è"],
+[:Common, :Singular, :Person2, "amó, fàll-áá-k néé-nà, ~ mààw-f-ì"],
+[:Masc, :Singular, :Person3, "amó, fàll-áá-k-à, ~ mààw-f-é"],
+[:Fem, :Singular, :Person3, "amó, fàll-áá-k-ì, ~ mààw-f-à"],
+[:Common, :Plural, :Person1, "amó, fàll-áá-k nòò-nà, ~ mààw-f-ò"],
+[:Common, :Plural, :Person2, "amó, fàll-áá-k-ì ít-nà, ~ mààw-f-ə́t"],
+[:Common, :Plural, :Person3, "amó, fàll-áá-k-nóó, ~ mààw-ə̀f-nóó"],
+]
     }
     {:label "shinassha-VConj1CompAffIndicAorIngr-am"
     :note "Lamberti1993b pp.136-202."
@@ -1665,15 +1642,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristIngressive,
-	    :token "amóósh"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amóósh, jàmmàr-è-r-è"],
+[:Common, :Singular, :Person2, "amóósh, jàmmàr-è-r-ì"],
+[:Masc, :Singular, :Person3, "amóósh, jàmmàr-è-r-é"],
+[:Fem, :Singular, :Person3, "amóósh, jàmmàr-è-r-à"],
+[:Common, :Plural, :Person1, "amóósh, jàmmàr-è-r-ò"],
+[:Common, :Plural, :Person2, "amóósh, jàmmàr-è-r-ə́t"],
+[:Common, :Plural, :Person3, "amóósh, jàmmàr-è-r-nóó"]]
     }
     {:label "shinassha-VConj5AffInfinitive-bey"
     :note "Lamberti1993b pp.136-202."
@@ -1681,11 +1658,10 @@
 	    :gender :Common,
 	    :lexeme :bey,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["bey-ó"]]
     }
@@ -1694,7 +1670,7 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Aorist}
@@ -1717,13 +1693,13 @@
 	    :pos :Verb,
 	    :tam :FuturePerfect}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àm-r-è"],
-	    [:Common, :Singular, :Person2, "àm-r-ì"],
-	    [:Masc, :Singular, :Person3, "àm-r-é"],
-	    [:Fem, :Singular, :Person3, "àm-r-à"],
-	    [:Common, :Plural, :Person1, "àm-r-ò"],
-	    [:Common, :Plural, :Person2, "àm-r-ə́t"],
-	    [:Common, :Plural, :Person3, "àm-ə̀r-nóó"]]
+[:Common, :Singular, :Person1, "àm-r-è, bú-wòòttít"],
+[:Common, :Singular, :Person2, "àm-r-ì, bú-wòòttít"],
+[:Masc, :Singular, :Person3, "àm-r-é, bú-wòòttít"],
+[:Fem, :Singular, :Person3, "àm-r-à, bú-wòòttít"],
+[:Common, :Plural, :Person1, "àm-r-ò, bú-wòòttít"],
+[:Common, :Plural, :Person2, "àm-r-ə́t, bú-wòòttít"],
+[:Common, :Plural, :Person3, "àm-ə̀r-nóó, bú-wòòttít"]]
     }
     {:label "shinassha-VConj1SmplNegCommandImprtv-am"
     :note "Lamberti1993b pp.136-202."
@@ -1732,13 +1708,17 @@
 	    :gender :Common,
 	    :lexeme :am,
 	    :mood :Command,
-	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "àm-"],
-	    [:Plural, "àm-ér"]]
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "àm-, k'ày-Ø"],
+[:Common, :Singular, :Person2, "àm-ér, k'ày-ér"],
+[:Masc, :Singular, :Person3, "àm-, k'ày-à"],
+[:Fem, :Singular, :Person3, "àm-, k'ày-á"],
+[:Common, :Plural, :Person1, "àm-, k'ày-ì"],
+[:Common, :Plural, :Person2, "àm-, k'ày-ò"],
+[:Common, :Plural, :Person3, "àm-, k'ày-nó"]]
     }
     {:label "shinassha-VConj2AffInfinitive-tuw"
     :note "Lamberti1993b pp.136-202."
@@ -1746,11 +1726,10 @@
 	    :gender :Common,
 	    :lexeme :tuw,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["tuw-ó"]]
     }
@@ -1776,7 +1755,7 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Preterite}
@@ -1795,7 +1774,7 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :maa,
-	    :morphClass :Gerund,
+	    :mood :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
@@ -1803,8 +1782,8 @@
 	    :tam :ImperfectPreterite,
 	    
 	    :stemClass :Monorad}
-    :terms [[:token]  ;; schema
-	    ["maa"]]
+    :terms [[:token, :token-note-aux]  ;; schema
+	    ["maa féétts-àátə̀", "féétts-àátə̀"]]
     }
     {:label "shinassha-VConj1CompAffIndicFutProgr-am"
     :note "Lamberti1993b pp.136-202."
@@ -1815,15 +1794,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :FutureProgressive,
-	    :token "àmáá"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "àmáá, tì-'àmìírə̀, bú-wòòttít"],
+[:Common, :Singular, :Person2, "àmáá, ní-'àmìírə̀, bú-wòòttít"],
+[:Masc, :Singular, :Person3, "àmáá, bí́-'àmìírə̀, bú-wòòttít"],
+[:Fem, :Singular, :Person3, "àmáá, bì̀-'àmìírə̀, bú-wòòttít"],
+[:Common, :Plural, :Person1, "àmáá, nò-'àmìírə̀, bú-wòòttít"],
+[:Common, :Plural, :Person2, "àmáá, ít-'àmìírə̀, bú-wòòttít"],
+[:Common, :Plural, :Person3, "àmáá, bó-'àmìírə̀, bú-wòòttít"]]
     }
     {:label "shinassha-VConj3AffInfinitive-tool"
     :note "Lamberti1993b pp.136-202."
@@ -1831,11 +1810,10 @@
 	    :gender :Common,
 	    :lexeme :tool,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["tool-ó"]]
     }
@@ -1845,9 +1823,8 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Common,
 	    :lexeme :waa,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectFuture,
@@ -1862,11 +1839,10 @@
 	    :gender :Common,
 	    :lexeme :baziy,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["baziy-ó"]]
     }
@@ -1875,18 +1851,18 @@
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Progressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "taash ammaa-lia-li"],
-	    [:Common, :Singular, :Person2, "neesh ammaa-lia-li"],
-	    [:Masc, :Singular, :Person3, "biish ammaa-lia-li"],
-	    [:Fem, :Singular, :Person3, "biish ammaa-lia-li"],
-	    [:Common, :Plural, :Person1, "noosh ammaa-li"],
-	    [:Common, :Plural, :Person2, "ittish ammaa-li"],
-	    [:Common, :Plural, :Person3, "boosh ammaa-li"]]
+[:Common, :Singular, :Person1, "taash ammaa-lia-li, ni-`amiirə"],
+[:Common, :Singular, :Person2, "neesh ammaa-lia-li, ni-`amiirə"],
+[:Masc, :Singular, :Person3, "biish ammaa-lia-li, ni-`amiirə"],
+[:Fem, :Singular, :Person3, "biish ammaa-lia-li, bi-`amiirə"],
+[:Common, :Plural, :Person1, "noosh ammaa-li, it-`amiirə"],
+[:Common, :Plural, :Person2, "ittish ammaa-li, it-`amiirə"],
+[:Common, :Plural, :Person3, "boosh ammaa-li, bo-`amiirə"]]
     }
     {:label "shinassha-VNegStemMonorad-bey"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -1895,12 +1871,10 @@
     :common {:gender :Common,
 	    :lexeme :bey,
 	    :morphClass :Stem,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["bèèr"]]
@@ -1913,16 +1887,16 @@
 	    :mood :Indicative,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :PresentIngressive,
-	    :token "àmáá"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    :tam :PresentProgressive,
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "àmáá, tì-'àmìírə̀"],
+[:Common, :Singular, :Person2, "àmáá, ní-'àmìírə̀"],
+[:Masc, :Singular, :Person3, "àmáá, bí́-'àmìírə̀"],
+[:Fem, :Singular, :Person3, "àmáá, bì̀-'àmìírə̀"],
+[:Common, :Plural, :Person1, "àmáá, nò-'àmìírə̀"],
+[:Common, :Plural, :Person2, "àmáá, ít-'àmìírə̀"],
+[:Common, :Plural, :Person3, "àmáá, bó-'àmìírə̀"]]
     }
     {:label "shinassha-VConj1SmplNegInfinitive-am"
     :note "Lamberti1993b pp.136-202."
@@ -1931,12 +1905,10 @@
 	    :gender :Common,
 	    :lexeme :am,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    }
+	    	    }
     :terms [[:token]  ;; schema
 	    ["am-"]]
     }
@@ -1950,13 +1922,13 @@
 	    :pos :Verb,
 	    :tam :PreteriteDubitative}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àm-r-è"],
-	    [:Common, :Singular, :Person2, "àm-r-ì"],
-	    [:Masc, :Singular, :Person3, "àm-r-é"],
-	    [:Fem, :Singular, :Person3, "àm-r-à"],
-	    [:Common, :Plural, :Person1, "àm-r-ò"],
-	    [:Common, :Plural, :Person2, "àm-r-ə́t"],
-	    [:Common, :Plural, :Person3, "àm-ə̀r-nóó"]]
+[:Common, :Singular, :Person1, "àm-r-è, àrrèfé"],
+[:Common, :Singular, :Person2, "àm-r-ì, àrrèfé"],
+[:Masc, :Singular, :Person3, "àm-r-é, àrrèfé"],
+[:Fem, :Singular, :Person3, "àm-r-à, àrrèfé"],
+[:Common, :Plural, :Person1, "àm-r-ò, àrrèfé"],
+[:Common, :Plural, :Person2, "àm-r-ə́t, àrrèfé"],
+[:Common, :Plural, :Person3, "àm-ə̀r-nóó, àrrèfé"]]
     }
     {:label "shinassha-VNegStemMonorad-waa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -1965,12 +1937,10 @@
     :common {:gender :Common,
 	    :lexeme :waa,
 	    :morphClass :Stem,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["wààr"]]
@@ -1984,15 +1954,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, gèèr-áá-k  táá-nà"],
+[:Common, :Singular, :Person2, "amó, gèèr-áá-k néé-nà"],
+[:Masc, :Singular, :Person3, "amó, gèèr-áá-k-à"],
+[:Fem, :Singular, :Person3, "amó, gèèr-áá-k-ì"],
+[:Common, :Plural, :Person1, "amó, gèèr-áá-k nòò-nà"],
+[:Common, :Plural, :Person2, "amó, gèèr-áá-k-ì ít-nà"],
+[:Common, :Plural, :Person3, "amó, gèèr-áá-k-nóó"]]
     }
     {:label "shinassha-VConj4AffCommandImprtv-tsiiliy"
     :note "Lamberti1993b pp.136-202."
@@ -2017,15 +1987,15 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :PresentIngressiveA,
-	    :token "amóóshá-lí"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amóóshá-lí, tì-'éttìírə̀"],
+[:Common, :Singular, :Person2, "amóóshá-lí, ní-'éttìírə̀"],
+[:Masc, :Singular, :Person3, "amóóshá-lí, bí́-'éttìírə̀"],
+[:Fem, :Singular, :Person3, "amóóshá-lí, bì̀-'éttìírə̀"],
+[:Common, :Plural, :Person1, "amóóshá-lí, nò-'éttìírə̀"],
+[:Common, :Plural, :Person2, "amóóshá-lí, ít-'éttìírə̀"],
+[:Common, :Plural, :Person3, "amóóshá-lí, bó-'éttìírə̀"]]
     }
     {:label "shinassha-VAffIndicFutProgrMonorad-waa"
     :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
@@ -2041,8 +2011,8 @@
 	    :tam :FutureProgressive,
 	    
 	    :stemClass :Monorad}
-    :terms [[:token]  ;; schema
-	    ["wàà"]]
+    :terms [[:token, :token-note-aux]  ;; schema
+	    ["wàà bə́-wèýrə̀", "bə́-wèýrə̀"]]
     }
     {:label "shinassha-VConj1SmplAffRelPres-am"
     :note "Lamberti1993b pp.136-202."
@@ -2087,13 +2057,13 @@
 	    :pos :Verb,
 	    :tam :AoristHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "àm-áá-k-ə̀"],
-	    [:Common, :Singular, :Person2, "àm-áá-k-ə̀"],
-	    [:Masc, :Singular, :Person3, "àm-áá-k-"],
-	    [:Fem, :Singular, :Person3, "àm-áá-k-"],
-	    [:Common, :Plural, :Person1, "àm-áá-k-ə̀"],
-	    [:Common, :Plural, :Person2, "àm-áá-k-ì"],
-	    [:Common, :Plural, :Person3, "àm-áá-k-"]]
+[:Common, :Singular, :Person1, "àm-áá-k-ə̀, táá-nà"],
+[:Common, :Singular, :Person2, "àm-áá-k-ə̀, néé-nà"],
+[:Masc, :Singular, :Person3, "àm-áá-k-, à"],
+[:Fem, :Singular, :Person3, "àm-áá-k-, ì"],
+[:Common, :Plural, :Person1, "àm-áá-k-ə̀, nòò-nà"],
+[:Common, :Plural, :Person2, "àm-áá-k-ì, ít-nà"],
+[:Common, :Plural, :Person3, "àm-áá-k-, nóó"]]
     }
     {:label "shinassha-VConj3AffCommandImprtv-sha"
     :note "Lamberti1993b pp.136-202."
@@ -2165,10 +2135,10 @@
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :ConjClass}
+	    :tam :ConjTns}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tì-àm"],
 	    [:Common, :Singular, :Person2, "ní-àm"],
@@ -2184,11 +2154,10 @@
 	    :gender :Common,
 	    :lexeme :aaniy,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["aaniy-ó"]]
     }
@@ -2199,12 +2168,10 @@
     :common {:gender :Common,
 	    :lexeme :maa,
 	    :morphClass :Stem,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["mààr"]]
@@ -2232,15 +2199,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :AoristHabitual,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, gèé-f-è"],
+[:Common, :Singular, :Person2, "amó, gèé-f-ì"],
+[:Masc, :Singular, :Person3, "amó, gèé-f-é"],
+[:Fem, :Singular, :Person3, "amó, gèé-f-à"],
+[:Common, :Plural, :Person1, "amó, gèé-f-ò"],
+[:Common, :Plural, :Person2, "amó, gèé-f-ə́t"],
+[:Common, :Plural, :Person3, "amó, gèé-ə̀f-nóó"]]
     }
     {:label "shinassha-VConj1SmplAffCommandImprtv-biits"
     :note "Lamberti1993b pp.136-202."
@@ -2283,15 +2250,15 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :FuturePunctual,
-	    :token "amó"}
-    :terms [[:gender, :number, :person]  ;; schema
-	    [:Common, :Singular, :Person1],
-	    [:Common, :Singular, :Person2],
-	    [:Masc, :Singular, :Person3],
-	    [:Fem, :Singular, :Person3],
-	    [:Common, :Plural, :Person1],
-	    [:Common, :Plural, :Person2],
-	    [:Common, :Plural, :Person3]]
+	    }
+    :terms [[:gender, :number, :person, :token]  ;; schema
+[:Common, :Singular, :Person1, "amó, gèé-ttùw-è"],
+[:Common, :Singular, :Person2, "amó, gèé-ttùw-ì"],
+[:Masc, :Singular, :Person3, "amó, gèé-ttùw-é"],
+[:Fem, :Singular, :Person3, "amó, gèé-ttùw-à"],
+[:Common, :Plural, :Person1, "amó, gèé-ttùw-ò"],
+[:Common, :Plural, :Person2, "amó, gèé-ttùw-ə́t "],
+[:Common, :Plural, :Person3, "amó, gèé-ttùw-nóó"]]
     }
     {:label "shinassha-VConj5AffInfinitive-tippey"
     :note "Lamberti1993b pp.136-202."
@@ -2299,11 +2266,10 @@
 	    :gender :Common,
 	    :lexeme :tippey,
 	    :morphClass :Infinitive,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :U}
+	    }
     :terms [[:token]  ;; schema
 	    ["tippey-ó"]]
     }
@@ -2327,13 +2293,11 @@
 	    :conjClass :Conj1,
 	    :gender :Common,
 	    :lexeme :am,
-	    :morphClass :Gerund,
-	    :number :Common,
-	    
+	    :mood :Gerund,
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    }
+	    	    }
     :terms [[:token]  ;; schema
 	    ["ámm-aaniye"]]
     }
@@ -2342,10 +2306,10 @@
             slight inflectional idiosyncracies in the affirmative. In the negative the inflect
             regularly on the basis of a special negative stem ."
     :common {:lexeme :waa,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :ConjClass,
+	    :tam :ConjTns,
 	    :stemClass :Monorad}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tu-wàà"],
@@ -2379,10 +2343,10 @@
     :common {:conjClass :Conj3,
 	    :gender :Common,
 	    :lexeme :ja,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :ConjClass}
+	    :tam :ConjTns}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "tì-jàà"],
 	    [:Singular, :Person2, "nə́- jàà"],
@@ -2393,10 +2357,10 @@
     :common {:conjClass :Conj2,
 	    :gender :Common,
 	    :lexeme :fall,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :ConjClass}
+	    :tam :ConjTns}
     :terms [[:number, :person, :token]  ;; schema
 	    [:Singular, :Person1, "tə̀-fàllə̀"],
 	    [:Singular, :Person2, "nə́-fàllə"],
@@ -2423,7 +2387,7 @@
             regularly on the basis of a special negative stem ."
     :common {:gender :Masc,
 	    :lexeme :maa,
-	    :morphClass :Gerund,
+	    :mood :Gerund,
 	    :number :Singular,
 	    :person :Person3,
 	    :polarity :Affirmative,
@@ -2439,18 +2403,18 @@
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "taash ammaa-lia-li"],
-	    [:Common, :Singular, :Person2, "neesh ammaa-lia-li"],
-	    [:Masc, :Singular, :Person3, "biish ammaa-lia-li"],
-	    [:Fem, :Singular, :Person3, "biish ammaa-lia-li"],
-	    [:Common, :Plural, :Person1, "noosh ammaa-li"],
-	    [:Common, :Plural, :Person2, "ittish ammaa-li"],
-	    [:Common, :Plural, :Person3, "boosh ammaa-li"]]
+[:Common, :Singular, :Person1, "taash ammaa-lia-li, ni-`ammetə"],
+[:Common, :Singular, :Person2, "neesh ammaa-lia-li, ni-`ammettə"],
+[:Masc, :Singular, :Person3, "biish ammaa-lia-li, ni-`ammettə"],
+[:Fem, :Singular, :Person3, "biish ammaa-lia-li, bi-`ammettə"],
+[:Common, :Plural, :Person1, "noosh ammaa-li, it-`ammettə"],
+[:Common, :Plural, :Person2, "ittish ammaa-li, it-`ammettə"],
+[:Common, :Plural, :Person3, "boosh ammaa-li, bo-`ammettə"]]
     }
     {:label "shinassha-VConj5AffIndicFutPunct-meeccey"
     :note "Lamberti1993b pp.136-202."
@@ -2484,14 +2448,12 @@
 	    [:Common, :Plural, :Person3, "shúw-éé-r-áts-nóó"]]
     }
     {:label "shinassha-VAffConjConjMonorad-maa"
-    :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have
-            slight inflectional idiosyncracies in the affirmative. In the negative the inflect
-            regularly on the basis of a special negative stem ."
+    :note "Lamberti1993b pp.177-179;199-200. The verbs listed in the lexeme section all have slight inflectional idiosyncracies in the affirmative. In the negative the inflect regularly on the basis of a special negative stem ."
     :common {:lexeme :maa,
-	    :mood :ConjClass,
+	    :mood :ConjMood,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :ConjClass,
+	    :tam :ConjTns,
 	    :stemClass :Monorad}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "tə̀-mmàà"],
@@ -2507,25 +2469,25 @@
     :common {:complement :Compound,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :mood :SubjunctivepdgmLex,
+	    :mood :Subjunctive,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Future}
     :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "taash ammaa"],
-	    [:Common, :Singular, :Person2, "neesh ammaa"],
-	    [:Masc, :Singular, :Person3, "biish ammaa"],
-	    [:Fem, :Singular, :Person3, "biish ammaa"],
-	    [:Common, :Plural, :Person1, "noosh amma"],
-	    [:Common, :Plural, :Person2, "ittish amma"],
-	    [:Common, :Plural, :Person3, "boosh amma"]]
+[:Common, :Singular, :Person1, "taash ammaa, ni-`ammet"],
+[:Common, :Singular, :Person2, "neesh ammaa, ni-`ammetti"],
+[:Masc, :Singular, :Person3, "biish ammaa, ni-`ammetti"],
+[:Fem, :Singular, :Person3, "biish ammaa, bi-`ammetti"],
+[:Common, :Plural, :Person1, "noosh amma, it-`ammetti"],
+[:Common, :Plural, :Person2, "ittish amma, it-`ammetti"],
+[:Common, :Plural, :Person3, "boosh amma, bo-`ammetti"]]
     }
     {:label "shinassha-VConj1SmplAffGerundPerfPret-am"
     :note "Lamberti1993b pp.136-202."
     :common {:complement :Simple,
 	    :conjClass :Conj1,
 	    :lexeme :am,
-	    :morphClass :Gerund,
+	    :mood :Gerund,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :PerfectPreterite}
@@ -2545,12 +2507,10 @@
     :common {:gender :Common,
 	    :lexeme :keew,
 	    :morphClass :Stem,
-	    :number :Common,
-	    
+	    	    
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :U,
-	    
+	    	    
 	    :stemClass :Monorad}
     :terms [[:token]  ;; schema
 	    ["kèèwə̀r"]]
@@ -2799,12 +2759,12 @@
     :common {:morpheme :VINFLCLASS,
 	    :pos :Verb,
 	    :morphClass :InflClass}
-    :terms [[:conjClass, :token-note, :token-stemVowel, :token]  ;; schema
-	    [:Conj1, "characterized by consonant gradations between indicative stem and imperative stem", "-Ø- ~ -ə- ~ -e-", "-Ø- ~ -ə- ~ -e-  :  characterized by consonant gradations between indicative stem and imperative stem"],
-	    [:Conj2, "_NULL", "-Ø- ~ -ə- ~ -i-", "-Ø- ~ -ə- ~ -i-  :  _NULL"],
-	    [:Conj3, "_NULL", "-e- ~ -i-", "-e- ~ -i-  :  _NULL"],
-	    [:Conj4, "causative verbs", "-iy-", "-iy-  :  causative verbs"],
-	    [:Conj5, "passive verbs", "-ey-", "-ey-  :  passive verbs"]]
+    :terms [[:conjClass, :token-note, :token]  ;; schema
+	    [:Conj1, "characterized by consonant gradations between indicative stem and imperative stem + -Ø- ~ -ə- ~ -e-", "-Ø- ~ -ə- ~ -e-  :  characterized by consonant gradations between indicative stem and imperative stem"],
+	    [:Conj2, "__ + -Ø- ~ -ə- ~ -i-", "-Ø- ~ -ə- ~ -i-  :  __"],
+	    [:Conj3, "__ + -e- ~ -i-", "-e- ~ -i-  :  __"],
+	    [:Conj4, "causative verbs + -iy-", "-iy-  :  causative verbs"],
+	    [:Conj5, "passive verbs + -ey-", "-ey-  :  passive verbs"]]
     }
     {:label "shinassha-VDervStem"
     :note "Lamberti1993b pp. 126-136."

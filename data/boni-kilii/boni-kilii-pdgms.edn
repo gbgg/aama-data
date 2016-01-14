@@ -1,29 +1,31 @@
 {
 :lang :boni-kilii
 :sgpref "bok"
+:datasource "Heine1982"
+:geodemoURL "http://www.ethnologue.com/language/bob"
+:geodemoTXT "Kilii is a variety of NorthernBoni. The material archived here is from a dialect study by Bernd Heine published in 1982, and is based the speech of one person, who spent most of his life in the town of Badada in South-eastern Somalia."
 :schemata {
-:aspect [:Habitual, :Progressive]
-	  :cliticClass [:Ablative, :Causative, :Comitative, :Focus, :Medial, :Passive, :Reflexive, :Ventive, :goal]
+	  :cliticClass [:Ablative, :Causative, :Comitative, :Focus, :Medial, :Passive, :Reflexive, :Ventive, :Goal]
 	  :cliticType [:DervSuff, :Proclitic]
-	  :conjClass [:Prefix, :Suffix1, :Suffix2, :Suffix3, :Suffix4, :SuffixClass]
-	  :deAdjClass [:Make, :become]
+	  :conjClass [:Prefix, :Suffix, :DeAdjectival, :Copula]
+	  :conjSubClass [:S_1, :S_2, :S_3, :S_4, :Make, :Become]
 	  :formType [:Affix, :Suffix]
 	  :gender [:Common, :Fem, :Masc]
 	  :mood [:Subjunctive]
            :morphClass [:NonFinite, :VSTEM]
-	  :number [:Common, :Plural, :Singular]
-	  :person [:Common, :Person1, :Person2, :Person3]
-	  :polarity [:Affirmative, :Negative, :U]
+	  :number [:Plural, :Singular]
+           :pdgmype [:Partial]
+	  :person [:Unmarked, :Person1, :Person2, :Person3]
+	  :polarity [:Affirmative, :Negative]
 	  :pos [:Adjective, :Pronoun, :Verb]
 	  :proClass [:Possessive]
-	  :tam [:Imperative, :Imperfect, :Infinitive, :Neutral, :Perfect]
-	  :type [:Copula, :DeAdjectival]
+	  :tam [:Imperative, :Imperfect, :ImperfectProgressive, :ImperfectHabitual :Infinitive, :Perfect, :PerfectProgressive, :PerfectHabitual]
 	  :verbMorphClass [:Aspect, :Clitic, :Copula, :NegativeAffix, :SubjMarkers]
 	  }
 :pclass {
            :pngClass [:person :number :gender ]
-           :synsemClass [:case  :derivedStem :polarity :pos :proClass :tam ]
-           :inflClass [:conjClass  ]
+           :synsemClass [:cliticClass  :derivedStem :mood :polarity :pos :proClass :tam ]
+           :inflClass [:conjClass :cliticType :conjSubClass ]
            :otherClass [ ]
           }
 :morphemes {
@@ -36,49 +38,50 @@
 :lexemes {
   :aal {:conjClass :Prefix, :gloss "stand", :lemma "-aal-", :pos :Verb}
   :ahai {:gloss "[x]", :lemma "[y]", }
-  :ahai-1 {:gloss "be", :lemma "ahai-", :pos :Adjective, :type :Copula}
+  :ahai-1 {:gloss "be", :lemma "ahai-", :pos :Adjective, :conjClass :Copula}
   :ahai-2 {:gloss "tall", :lemma "d’eer-", }
   :aham {:conjClass :Prefix, :gloss "eat", :lemma "-aham-", :pos :Verb}
-  :ajik {:conjClass :Suffix1, :gloss "drink", :lemma "ajik-", :pos :Verb}
-  :ark {:conjClass :Suffix1, :gloss "see", :lemma "ark-", :pos :Verb}
+  :ajik {:conjClass :Suffix, :conjSubClass :S_1, :gloss "drink", :lemma "ajik-", :pos :Verb}
+  :ark {:conjClass :Suffix, :conjSubClass :S_1, :gloss "see", :lemma "ark-", :pos :Verb}
   :erah {:conjClass :Prefix, :gloss "say", :lemma "-erah-", :pos :Verb}
   :hacis- {:gloss "[x]", :lemma "[y]", }
   :igaas {:conjClass :Prefix, :gloss "kill", :lemma "-igaas-", :pos :Verb}
   :imaad {:conjClass :Prefix, :gloss "come", :lemma "-imaad-", :pos :Verb}
   :iraar {:conjClass :Prefix, :gloss "run slowly", :lemma "-iɽaar-", :pos :Verb}
-  :kaba {:conjClass :Suffix2, :gloss "seize", :lemma "k’ab-a’-", :pos :Verb}
-  :kaniin {:conjClass :Suffix4, :gloss "bite", :lemma "k’aniin-", :pos :Verb}
-  :kariy {:conjClass :Suffix3, :gloss "cook (tr.)", :lemma "kar-iy-", :pos :Verb}
+  :kaba {:conjClass :Suffix, :conjSubClass :S_2, :gloss "seize", :lemma "k’ab-a’-", :pos :Verb}
+  :kaniin {:conjClass :Suffix, :conjSubClass :S_4, :gloss "bite", :lemma "k’aniin-", :pos :Verb}
+  :kariy {:conjClass :Suffix, :conjSubClass :S_3, :gloss "cook (tr.)", :lemma "kar-iy-", :pos :Verb}
   :kod- {:gloss "[x]", :lemma "[y]", }
-  :kooy {:conjClass :Suffix3, :gloss "carve", :lemma "kooy-", :pos :Verb}
-  :kor {:conjClass :Suffix1, :gloss "climb", :lemma "kor-", :pos :Verb}
+  :kooy {:conjClass :Suffix, :conjSubClass :S_3, :gloss "carve", :lemma "kooy-", :pos :Verb}
+  :kor {:conjClass :Suffix, :conjSubClass :S_1, :gloss "climb", :lemma "kor-", :pos :Verb}
   :kuf- {:gloss "[x]", :lemma "[y]", }
   :maal- {:gloss "[x]", :lemma "[y]", }
   :miic- {:gloss "[x]", :lemma "[y]", }
   :ooy- {:gloss "[x]", :lemma "[y]", }
-  :siiy {:conjClass :Suffix3, :gloss "give", :lemma "siiy-", :pos :Verb}
-  :soo {:conjClass :Suffix2, :gloss "go", :lemma "so’o-", :pos :Verb}
+  :siiy {:conjClass :Suffix, :conjSubClass :S_3, :gloss "give", :lemma "siiy-", :pos :Verb}
+  :soo {:conjClass :Suffix, :conjSubClass :S_2, :gloss "go", :lemma "so’o-", :pos :Verb}
   :suug- {:gloss "[x]", :lemma "[y]", }
-  :udeey {:conjClass :Suffix3, :gloss "drink", :lemma "udeey-", :pos :Verb}
-  :un {:conjClass :Suffix4, :gloss "swallow", :lemma "‘un-", :pos :Verb}
+  :udeey {:conjClass :Suffix, :conjSubClass :S_3, :gloss "drink", :lemma "udeey-", :pos :Verb}
+  :un {:conjClass :Suffix, :conjSubClass :S_4, :gloss "swallow", :lemma "‘un-", :pos :Verb}
   :uwaad {:conjClass :Prefix, :gloss "die", :lemma "-uwaad-", :pos :Verb}
   :wa- {:gloss "[x]", :lemma "[y]", }
-  :wa--1 {:conjClass :Suffix1, :gloss "squeeze", :lemma "miic’-", :pos :Verb}
-  :wa--2 {:conjClass :Suffix1, :gloss "sneeze", :lemma "hac’is-", :pos :Verb}
-  :wa--3 {:conjClass :Suffix1, :gloss "hear", :lemma "ma’al-", :pos :Verb}
-  :wa--4 {:conjClass :Suffix1, :gloss "call", :lemma "wa’-", :pos :Verb}
-  :wa--5 {:conjClass :Suffix1, :gloss "fall", :lemma "kuf-", :pos :Verb}
-  :wa--6 {:conjClass :Suffix1, :gloss "dig", :lemma "k’od-", :pos :Verb}
-  :wa--7 {:conjClass :Suffix1, :gloss "cry", :lemma "ooy-", :pos :Verb}
-  :wa--8 {:conjClass :Suffix1, :gloss "wait", :lemma "suug-", :pos :Verb}
+  :wa--1 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "squeeze", :lemma "miic’-", :pos :Verb}
+  :wa--2 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "sneeze", :lemma "hac’is-", :pos :Verb}
+  :wa--3 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "hear", :lemma "ma’al-", :pos :Verb}
+  :wa--4 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "call", :lemma "wa’-", :pos :Verb}
+  :wa--5 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "fall", :lemma "kuf-", :pos :Verb}
+  :wa--6 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "dig", :lemma "k’od-", :pos :Verb}
+  :wa--7 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "cry", :lemma "ooy-", :pos :Verb}
+  :wa--8 {:conjClass :Suffix, :conjSubClass :S_1, :gloss "wait", :lemma "suug-", :pos :Verb}
   :wiin {:gloss "[x]", :lemma "[y]", }
-  :wiin-1 {:conjClass :Suffix2, :gloss "become big", :lemma "wiin-aa-", :pos :Verb}
-  :wiin-2 {:conjClass :Suffix3, :gloss "make big", :lemma "wiin-ee-", :pos :Verb}
+  :wiin-1 {:conjClass :Suffix, :conjSubClass :S_2, :gloss "become big", :lemma "wiin-aa-", :pos :Verb}
+  :wiin-2 {:conjClass :Suffix, :conjSubClass :S_3, :gloss "make big", :lemma "wiin-ee-", :pos :Verb}
 }
 :lxterms #{
     {:label "boni_K-VSuff1NegImprtv-kor"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :gender :Common,
 	    :lexeme :kor,
 	    :person :Person2,
@@ -91,15 +94,14 @@
     }
     {:label "boni_K-VInfinitiveBecome-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :become,
+    :common {:conjSubClass :Become,
 	    :gender :Common,
 	    :lexeme :wiin,
-	    :number :Common,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:token]  ;; schema
 	    ["wiin-aa-‘ó"]]
     }
@@ -137,9 +139,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :igaas,
-	    :number :Common,
-	    :morphClass :NonFinite,
-	    :polarity :U,
+	    	    :morphClass :NonFinite,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -148,12 +149,12 @@
     {:label "boni_K-VPrefHabitualNegNeut-aham"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
+    :common {
 	    :conjClass :Prefix,
 	    :lexeme :aham,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Neutral}
+	    :tam :PerfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "ado mə́-‘ahám-sen-ne"],
 	    [:Fem, :Singular, :Person3, "ii mə́-‘ahám-sen-ne"],
@@ -168,9 +169,8 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :igaas,
-	    :number :Common,
-	    :morphClass :NonFinite,
-	    :polarity :U,
+	    	    :morphClass :NonFinite,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -194,7 +194,8 @@
     }
     {:label "boni_K-VSuff2NegImperf-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :kaba,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -226,7 +227,8 @@
     }
     {:label "boni_K-VSuff3AffPerf-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :siiy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -242,7 +244,8 @@
     }
     {:label "boni_K-VSuff1AffPerf-kor"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kor,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -258,12 +261,13 @@
     }
     {:label "boni_K-VSuff1ProgAffPerf-ark"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
-	    :conjClass :Suffix1,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :ark,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Perfect}
+	    :tam :PerfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "ak-ó heey-nə"],
 	    [:Common, :Plural, :Person2, "ak-ó hees-séè"],
@@ -288,7 +292,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-suug-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :suug-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -304,7 +309,8 @@
     }
     {:label "boni_K-VSuff3NegImperf-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :siiy,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -371,9 +377,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :uwaad,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -381,7 +387,8 @@
     }
     {:label "boni_K-VSuff2AffImprtv-soo"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :soo,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -413,9 +420,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :imaad,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -426,9 +433,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :igaas,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -452,12 +459,13 @@
     }
     {:label "boni_K-VSuff3Infinitive-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :gender :Common,
 	    :lexeme :siiy,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -465,12 +473,13 @@
     }
     {:label "boni_K-VSuff3ProgAffPerf-kariy"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Perfect}
+	    :tam :PerfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "kariy-ó heey-nə"],
 	    [:Common, :Singular, :Person1, "kariy-ó heey"],
@@ -485,9 +494,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aal,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -527,7 +536,8 @@
     }
     {:label "boni_K-VSuff4AffImperf-kaniin"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :lexeme :kaniin,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -543,7 +553,8 @@
     }
     {:label "boni_K-VSuff3AffImprtv-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :gender :Common,
 	    :lexeme :siiy,
 	    :person :Person2,
@@ -559,9 +570,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aham,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -569,7 +580,8 @@
     }
     {:label "boni_K-VSuff2AffImprtv-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :gender :Common,
 	    :lexeme :kaba,
 	    :person :Person2,
@@ -582,12 +594,12 @@
     }
     {:label "boni_K-VNegPerfMake-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :Make,
+    :common {:conjSubClass :Make,
 	    :lexeme :wiin,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "usə mí-wiin-eey-ne"],
 	    [:Common, :Plural, :Person3, "iyoə mí-wiin-eey-ne"],
@@ -599,7 +611,8 @@
     }
     {:label "boni_K-VSuff1NegPerf-kor"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kor,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -631,9 +644,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :erah,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -641,7 +654,8 @@
     }
     {:label "boni_K-VSuff2NegPerf-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :kaba,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -658,12 +672,13 @@
     {:label "boni_K-VSuff3HabitualAffPerf-kariy"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Perfect}
+	    :tam :PerfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "wó-karíy-set-téè"],
 	    [:Common, :Plural, :Person1, "wó-karíy-sen-nə"],
@@ -675,7 +690,8 @@
     }
     {:label "boni_K-VSuff2AffPerf-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :kaba,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -694,9 +710,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iraar,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -720,7 +736,8 @@
     }
     {:label "boni_K-VSuff4AffImprtv-un"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :gender :Common,
 	    :lexeme :un,
 	    :person :Person2,
@@ -765,7 +782,8 @@
     }
     {:label "boni_K-VSuff4NegImperf-un"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :lexeme :un,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -781,12 +799,12 @@
     }
     {:label "boni_K-VPrefProgNegPerf-igaas"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
+    :common {
 	    :conjClass :Prefix,
 	    :lexeme :igaas,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Perfect}
+	    :tam :PerfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "an igaas-ó mé-heey-ne"],
 	    [:Common, :Plural, :Person1, "un igaas-ó mé-heey-ne"],
@@ -798,12 +816,12 @@
     }
     {:label "boni_K-VAffPerfBecome-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :become,
+    :common {:conjSubClass :Become,
 	    :lexeme :wiin,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "wə́-wiin-aa-ttə"],
 	    [:Masc, :Singular, :Person3, "wə́-wiin-aa-də"],
@@ -815,7 +833,8 @@
     }
     {:label "boni_K-VSuff4NegPerf-un"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :lexeme :un,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -863,12 +882,13 @@
     }
     {:label "boni_K-VSuff3ProgNegPerf-kariy"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Perfect}
+	    :tam :PerfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "ado kariy-ó mé-heey-ne"],
 	    [:Common, :Plural, :Person3, "iyo kariy-ó mé-heey-ne"],
@@ -896,21 +916,22 @@
     }
     {:label "boni_K-VAffImprtvMake-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :Make,
+    :common {:conjSubClass :Make,
 	    :gender :Common,
 	    :lexeme :wiin,
 	    :person :Person2,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:number, :token]  ;; schema
 	    [:Singular, "wiin-éèy"],
 	    [:Plural, "wiin-ééy-a"]]
     }
     {:label "boni_K-VSuff1AffImperf-kuf-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kuf-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -942,21 +963,22 @@
     }
     {:label "boni_K-VNegImprtvMake-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :Make,
+    :common {:conjSubClass :Make,
 	    :gender :Common,
 	    :lexeme :wiin,
 	    :person :Person2,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperative,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:number, :token]  ;; schema
 	    [:Plural, "ha-wiin-eey-náha"],
 	    [:Singular, "ha-wiin-éèy-ne"]]
     }
     {:label "boni_K-VSuff4AffPerf-un"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :lexeme :un,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -972,12 +994,13 @@
     }
     {:label "boni_K-VSuff3ProgNegImperf-kariy"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Imperfect}
+	    :tam :ImperfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "kariy-ó mé́-heey-úù"],
 	    [:Masc, :Singular, :Person3, "kariy-ó mé́-heey-ə"],
@@ -989,12 +1012,12 @@
     }
     {:label "boni_K-VNegPerfBecome-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :become,
+    :common {:conjSubClass :Become,
 	    :lexeme :wiin,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "un mí-wiin-aan-ne"],
 	    [:Common, :Singular, :Person1, "an mí-wiin-aan-ne"],
@@ -1006,7 +1029,8 @@
     }
     {:label "boni_K-VSuff3AffImperf-udeey"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :udeey,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1024,7 +1048,8 @@
     :note "Heine1982 2.26.61. ajik- no longer belongs to the preix conj,but has become a
             suffix conjClass I verb. It is being replaced by udeey- (note also irregular persona
             suffixes in imperf neg."
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :ajik,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1056,12 +1081,12 @@
     }
     {:label "boni_K-VAffPerfMake-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :Make,
+    :common {:conjSubClass :Make,
 	    :lexeme :wiin,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "wə́-wiin-eey"],
 	    [:Masc, :Singular, :Person3, "wə́-wiin-eey"],
@@ -1074,12 +1099,12 @@
     {:label "boni_K-VPrefHabitualAffImperf-aham"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
+    :common {
 	    :conjClass :Prefix,
 	    :lexeme :aham,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Imperfect}
+	    :tam :ImperfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "aham-ó ú-ser-úù"],
 	    [:Masc, :Singular, :Person3, "aham-ó ú-ser-a"],
@@ -1091,12 +1116,12 @@
     }
     {:label "boni_K-VNegImperfMake-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :Make,
+    :common {:conjSubClass :Make,
 	    :lexeme :wiin,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "hááb-wiin-eey"],
 	    [:Fem, :Singular, :Person3, "hááb-wiin-ees-sə"],
@@ -1112,7 +1137,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :type :Copula}
+	    :conjClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "d’eer-á ehee-də"],
 	    [:Common, :Plural, :Person1, "d’eer-á ehee-nə"],
@@ -1126,7 +1151,8 @@
     :note "Heine1982 2.26.61. ajik- no longer belongs to the preix conj,but has become a
             suffix conjClass I verb. It is being replaced by udeey- (note also irregular persona
             suffixes in imperf neg."
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :udeey,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1146,7 +1172,7 @@
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Perfect,
-	    :type :Copula}
+	    :conjClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person2, "ado d’eer-á mé-‘ehee-ne"],
 	    [:Masc, :Singular, :Person3, "us d’eer-á mé-‘ehee-ne"],
@@ -1159,12 +1185,13 @@
     {:label "boni_K-VSuff3HabitualAffImperf-kariy"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Imperfect}
+	    :tam :ImperfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "kariy-ó ú-sen-na"],
 	    [:Common, :Plural, :Person3, "kariy-ó ú-ser-úù"],
@@ -1177,12 +1204,13 @@
     {:label "boni_K-VSuff3HabitualNegNeut-kariy"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Neutral}
+	    :tam :PerfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "ad mə́-karíy-sen-ne"],
 	    [:Common, :Plural, :Person2, "ado mə́-karíy-sen-ne"],
@@ -1223,7 +1251,8 @@
     }
     {:label "boni_K-VSuff4NegImprtv-un"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :gender :Common,
 	    :lexeme :un,
 	    :person :Person2,
@@ -1253,12 +1282,13 @@
     {:label "boni_K-VSuff1HabitualNegNeut-kor"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
-	    :conjClass :Suffix1,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kor,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Neutral}
+	    :tam :PerfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person2, "ad mə́-kór-sen-ne"],
 	    [:Common, :Plural, :Person2, "ado mə́-kór-sen-ne"],
@@ -1287,7 +1317,7 @@
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :type :Copula}
+	    :conjClass :Copula}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "wó-d’éér-na"],
 	    [:Common, :Singular, :Person1, "wó-d’éér-iya"],
@@ -1328,7 +1358,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-ooy-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :ooy-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1360,7 +1391,8 @@
     }
     {:label "boni_K-VSuff3NegPerf-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :siiy,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1376,12 +1408,12 @@
     }
     {:label "boni_K-VNegImperfBecome-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :become,
+    :common {:conjSubClass :Become,
 	    :lexeme :wiin,
 	    :polarity :Negative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "hááb-wiin-aa-də"],
 	    [:Masc, :Singular, :Person3, "hááb-wiin-aa-tt-ə"],
@@ -1393,7 +1425,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-miic-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :miic-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1428,9 +1461,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :uwaad,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1467,12 +1500,12 @@
     }
     {:label "boni_K-VAffImperfBecome-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :become,
+    :common {:conjSubClass :Become,
 	    :lexeme :wiin,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "wə́-wiin-aa-nna"],
 	    [:Common, :Singular, :Person2, "wə́-wiin-aa-tta"],
@@ -1487,9 +1520,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :imaad,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1499,7 +1532,8 @@
     :note "Heine1982 2.26.61. ajik- no longer belongs to the preix conj,but has become a
             suffix conjClass I verb. It is being replaced by udeey- (note also irregular persona
             suffixes in imperf neg."
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :gender :Common,
 	    :lexeme :udeey,
 	    :person :Person2,
@@ -1515,9 +1549,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :uwaad,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1525,12 +1559,13 @@
     }
     {:label "boni_K-VSuff2Infinitive-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :gender :Common,
 	    :lexeme :kaba,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1554,9 +1589,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :erah,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1596,7 +1631,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-wa-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :wa-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1612,7 +1648,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-hacis-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :hacis-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1631,9 +1668,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iraar,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1641,12 +1678,13 @@
     }
     {:label "boni_K-VSuff1ProgAffImperf-ark"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
-	    :conjClass :Suffix1,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :ark,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Imperfect}
+	    :tam :ImperfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Masc, :Singular, :Person3, "ak-ó heey-a"],
 	    [:Fem, :Singular, :Person3, "ak-ó hees-sa"],
@@ -1658,12 +1696,12 @@
     }
     {:label "boni_K-VAffImperfMake-wiin"
     :note "Heine1982 2.26.63"
-    :common {:deAdjClass :Make,
+    :common {:conjSubClass :Make,
 	    :lexeme :wiin,
 	    :polarity :Affirmative,
 	    :pos :Verb,
 	    :tam :Imperfect,
-	    :type :DeAdjectival}
+	    :conjClass :DeAdjectival}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person3, "wə́-wiin-eey-úù"],
 	    [:Common, :Singular, :Person1, "wə́-wiin-eey-a"],
@@ -1675,7 +1713,8 @@
     }
     {:label "boni_K-VSuff3NegImprtv-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :gender :Common,
 	    :lexeme :siiy,
 	    :person :Person2,
@@ -1691,9 +1730,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :imaad,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1703,7 +1742,8 @@
     :note "Heine1982 2.26.61. ajik- no longer belongs to the preix conj,but has become a
             suffix conjClass I verb. It is being replaced by udeey- (note also irregular persona
             suffixes in imperf neg."
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :udeey,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1735,7 +1775,8 @@
     }
     {:label "boni_K-VSuff1AffImprtv-kor"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :gender :Common,
 	    :lexeme :kor,
 	    :person :Person2,
@@ -1751,9 +1792,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aham,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :NonFinite,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Infinitive}
     :terms [[:token]  ;; schema
@@ -1761,12 +1802,12 @@
     }
     {:label "boni_K-VPrefProgNegImperf-igaas"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
+    :common {
 	    :conjClass :Prefix,
 	    :lexeme :igaas,
 	    :polarity :Negative,
 	    :pos :Verb,
-	    :tam :Imperfect}
+	    :tam :ImperfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Singular, :Person1, "igáás-ó mé́-heey"],
 	    [:Masc, :Singular, :Person3, "igáás-ó mé́-heey-ə"],
@@ -1778,7 +1819,8 @@
     }
     {:label "boni_K-VSuff2AffImperf-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :lexeme :kaba,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1794,7 +1836,8 @@
     }
     {:label "boni_K-VSuff4AffImperf-un"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix4,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_4,
 	    :lexeme :un,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1810,7 +1853,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-maal-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :maal-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1858,9 +1902,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :erah,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -1871,9 +1915,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :iraar,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Imperfect}
     :terms [[:token]  ;; schema
@@ -1881,7 +1925,8 @@
     }
     {:label "boni_K-VSuff1NegImperf-kor"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kor,
 	    :polarity :Negative,
 	    :pos :Verb,
@@ -1897,7 +1942,8 @@
     }
     {:label "boni_K-VSuff3AffImperf-kooy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kooy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1943,12 +1989,12 @@
     {:label "boni_K-VPrefHabitualAffPerf-aham"
     :note "Heine1982 2.26.42.2. “There is no aspect distinction with the negative
             habitual,the perfect mə-sen-ne serving for the imperfect as well.”"
-    :common {:aspect :Habitual,
+    :common {
 	    :conjClass :Prefix,
 	    :lexeme :aham,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Perfect}
+	    :tam :PerfectHabitual}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Fem, :Singular, :Person3, "wó-‘ahám-set-tə"],
 	    [:Common, :Plural, :Person2, "wó-‘ahám-set-éè"],
@@ -1960,7 +2006,8 @@
     }
     {:label "boni_K-VSuff3AffImperf-siiy"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix3,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :siiy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -1976,7 +2023,8 @@
     }
     {:label "boni_K-VSuff2NegImprtv-kaba"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix2,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_2,
 	    :gender :Common,
 	    :lexeme :kaba,
 	    :person :Person2,
@@ -2024,9 +2072,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aham,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -2036,7 +2084,8 @@
     :note "Heine1982 2.26.61. ajik- no longer belongs to the preix conj,but has become a
             suffix conjClass I verb. It is being replaced by udeey- (note also irregular persona
             suffixes in imperf neg."
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :gender :Common,
 	    :lexeme :udeey,
 	    :person :Person2,
@@ -2051,7 +2100,8 @@
     :note "Heine1982 2.26.61. ajik- no longer belongs to the preix conj,but has become a
             suffix conjClass I verb. It is being replaced by udeey- (note also irregular persona
             suffixes in imperf neg."
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :ajik,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -2067,7 +2117,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-kod-"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kod-,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -2086,9 +2137,9 @@
     :common {:conjClass :Prefix,
 	    :gender :Common,
 	    :lexeme :aal,
-	    :number :Common,
+	    :person :Unmarked,
 	    :morphClass :VSTEM,
-	    :polarity :U,
+	    :pdgmType :Partial,
 	    :pos :Verb,
 	    :tam :Perfect}
     :terms [[:token]  ;; schema
@@ -2112,7 +2163,8 @@
     }
     {:label "boni_K-VSuff1AffImperf-kor"
     :note "Heine1982 2.26.62"
-    :common {:conjClass :Suffix1,
+    :common {:conjClass :Suffix,
+            :conjSubClass :S_1,
 	    :lexeme :kor,
 	    :polarity :Affirmative,
 	    :pos :Verb,
@@ -2128,12 +2180,13 @@
     }
     {:label "boni_K-VSuff3ProgAffImperf-kariy"
     :note "Heine1982 2.26.42.1"
-    :common {:aspect :Progressive,
-	    :conjClass :Suffix3,
+    :common {
+	    :conjClass :Suffix,
+            :conjSubClass :S_3,
 	    :lexeme :kariy,
 	    :polarity :Affirmative,
 	    :pos :Verb,
-	    :tam :Imperfect}
+	    :tam :ImperfectProgressive}
     :terms [[:gender, :number, :person, :token]  ;; schema
 	    [:Common, :Plural, :Person1, "kariy-ó heey-na"],
 	    [:Common, :Plural, :Person2, "kariy-ó hees-súù"],
@@ -2159,7 +2212,7 @@
 	    [:Plural, :Perfect, "mə́- -nè"]]
     }
     {:label "boni_K-VAspect"
-    :note "Heine1982 2.26.4"
+    :note "Heine1982 2.26.4; [add in Progressive and Habitual!]"
     :common {:morpheme :VASPECTAFF,
 	    :pos :Verb,
 	    :verbMorphClass :Aspect}
@@ -2195,34 +2248,34 @@
 	    :formType :Suffix,
 	    :verbMorphClass :SubjMarkers}
     :terms [[:conjClass, :gender, :number, :person, :token]  ;; schema
-	    [:SuffixClass, :Common, :Plural, :Person3, "Common"],
-	    [:SuffixClass, :Fem, :Singular, :Person3, "-n-"],
-	    [:SuffixClass, :Masc, :Singular, :Person3, "-d-"],
-	    [:SuffixClass, :Common, :Plural, :Person3, "-d-"],
-	    [:SuffixClass, :Fem, :Singular, :Person3, "-s-"],
-	    [:SuffixClass, :Fem, :Singular, :Person3, "-t-"],
-	    [:SuffixClass, :Common, :Plural, :Person2, "-tt-"],
-	    [:SuffixClass, :Common, :Singular, :Person1, "Common"],
-	    [:SuffixClass, :Common, :Plural, :Person3, "Common"],
-	    [:SuffixClass, :Masc, :Singular, :Person3, "Common"],
-	    [:SuffixClass, :Common, :Plural, :Person1, "-n-"],
-	    [:SuffixClass, :Common, :Singular, :Person1, "-(a)’-"],
-	    [:SuffixClass, :Common, :Plural, :Person3, "Common"],
-	    [:SuffixClass, :Common, :Plural, :Person2, "-t-"],
-	    [:SuffixClass, :Common, :Singular, :Person2, "-n-"],
-	    [:SuffixClass, :Common, :Singular, :Person2, "-tt-"],
-	    [:SuffixClass, :Common, :Plural, :Person2, "-s-"],
-	    [:SuffixClass, :Common, :Singular, :Person1, "Common"],
-	    [:SuffixClass, :Common, :Singular, :Person2, "-s-"],
-	    [:SuffixClass, :Fem, :Singular, :Person3, "-tt-"],
-	    [:SuffixClass, :Common, :Plural, :Person2, "-n-"],
-	    [:SuffixClass, :Common, :Singular, :Person2, "-t-"],
-	    [:SuffixClass, :Masc, :Singular, :Person3, "Common"],
-	    [:SuffixClass, :Common, :Plural, :Person1, "-n-"],
-	    [:SuffixClass, :Common, :Plural, :Person1, "-n-"],
-	    [:SuffixClass, :Common, :Singular, :Person1, "Common"],
-	    [:SuffixClass, :Masc, :Singular, :Person3, "Common"],
-	    [:SuffixClass, :Common, :Plural, :Person1, "-nn-"]]
+	    [:Suffix, :Common, :Plural, :Person3, "Common"],
+	    [:Suffix, :Fem, :Singular, :Person3, "-n-"],
+	    [:Suffix, :Masc, :Singular, :Person3, "-d-"],
+	    [:Suffix, :Common, :Plural, :Person3, "-d-"],
+	    [:Suffix, :Fem, :Singular, :Person3, "-s-"],
+	    [:Suffix, :Fem, :Singular, :Person3, "-t-"],
+	    [:Suffix, :Common, :Plural, :Person2, "-tt-"],
+	    [:Suffix, :Common, :Singular, :Person1, "Common"],
+	    [:Suffix, :Common, :Plural, :Person3, "Common"],
+	    [:Suffix, :Masc, :Singular, :Person3, "Common"],
+	    [:Suffix, :Common, :Plural, :Person1, "-n-"],
+	    [:Suffix, :Common, :Singular, :Person1, "-(a)’-"],
+	    [:Suffix, :Common, :Plural, :Person3, "Common"],
+	    [:Suffix, :Common, :Plural, :Person2, "-t-"],
+	    [:Suffix, :Common, :Singular, :Person2, "-n-"],
+	    [:Suffix, :Common, :Singular, :Person2, "-tt-"],
+	    [:Suffix, :Common, :Plural, :Person2, "-s-"],
+	    [:Suffix, :Common, :Singular, :Person1, "Common"],
+	    [:Suffix, :Common, :Singular, :Person2, "-s-"],
+	    [:Suffix, :Fem, :Singular, :Person3, "-tt-"],
+	    [:Suffix, :Common, :Plural, :Person2, "-n-"],
+	    [:Suffix, :Common, :Singular, :Person2, "-t-"],
+	    [:Suffix, :Masc, :Singular, :Person3, "Common"],
+	    [:Suffix, :Common, :Plural, :Person1, "-n-"],
+	    [:Suffix, :Common, :Plural, :Person1, "-n-"],
+	    [:Suffix, :Common, :Singular, :Person1, "Common"],
+	    [:Suffix, :Masc, :Singular, :Person3, "Common"],
+	    [:Suffix, :Common, :Plural, :Person1, "-nn-"]]
     }
     {:label "boni_K-VClitics"
     :note "Heine1982 2.26.7"
@@ -2231,24 +2284,24 @@
 	    :verbMorphClass :Clitic}
     :terms [[:cliticClass, :cliticType, :number, :person, :token, :token-note]  ;; schema
 	    [:Passive, :Proclitic, :Plural, :Person1, "ní-l-", "_NULL"],
-	    [:Reflexive, :Proclitic, :Common, :Common, "i--", "_NULL"],
+	    [:Reflexive, :Proclitic, :_NA, :_NA, "i--", "_NULL"],
 	    [:Passive, :Proclitic, :Plural, :Person3, "-l-", "_NULL"],
 	    [:Comitative, :Proclitic, :Singular, :Person1, "í-l-", "_NULL"],
-	    [:Focus, :Proclitic, :Common, :Common, "wə́-", "_NULL"],
-	    [:Ventive, :Proclitic, :Common, :Common, "hoo-", "_NULL"],
+	    [:Focus, :Proclitic, :_NA, :_NA, "wə́-", "_NULL"],
+	    [:Ventive, :Proclitic, :_NA, :_NA, "hoo-", "_NULL"],
 	    [:Comitative, :Proclitic, :Singular, :Person3, "lí-", "_NULL"],
 	    [:Passive, :Proclitic, :Singular, :Person2, "-l-ku-", "_NULL"],
 	    [:Comitative, :Proclitic, :Plural, :Person3, "lí-", "_NULL"],
-	    [:Medial, :DervSuff, :Common, :Common, "-a’-", "= conjClass suff2"],
-	    [:Ablative, :Proclitic, :Common, :Common, "kí́-", "_NULL"],
-	    [:goal, :Proclitic, :Common, :Common, "Common", "_NULL"],
-	    [:Passive, :Proclitic, :Common, :Common, "li-", "_NULL"],
+	    [:Medial, :DervSuff, :_NA, :_NA, "-a’-", "= conjClass suff2"],
+	    [:Ablative, :Proclitic, :_NA, :_NA, "kí́-", "_NULL"],
+	    [:Goal, :Proclitic, :_NA, :_NA, "Common", "_NULL"],
+	    [:Passive, :Proclitic, :_NA, :_NA, "li-", "_NULL"],
 	    [:Passive, :Proclitic, :Plural, :Person2, "də-l-áá-", "_NULL"],
 	    [:Passive, :Proclitic, :Singular, :Person1, "-lí-í-", "_NULL"],
 	    [:Comitative, :Proclitic, :Singular, :Person2, "kú-l-", "_NULL"],
 	    [:Comitative, :Proclitic, :Plural, :Person1, "nú-l-", "_NULL"],
-	    [:Comitative, :Proclitic, :Common, :Common, "lí-", "_NULL"],
-	    [:Causative, :DervSuff, :Common, :Common, "-iy-", "-eey-"],
+	    [:Comitative, :Proclitic, :_NA, :_NA, "lí-", "_NULL"],
+	    [:Causative, :DervSuff, :_NA, :_NA, "-iy-", "-eey-"],
 	    [:Passive, :Proclitic, :Singular, :Person3, "-l-", "_NULL"],
 	    [:Comitative, :Proclitic, :Plural, :Person2, "də-l-áá-", "_NULL"]]
     }}
