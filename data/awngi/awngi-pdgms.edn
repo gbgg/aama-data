@@ -2,17 +2,20 @@
 :lang :awngi
 :sgpref "awn"
 :datasource "Hetzron1969b"
+:datasourceNote "Hetzron1969b, Chapter 2, 'Verb Classes',  recognizes some 40 inflectional classes subdividing both the prefix and suffix-conjugation verbs. These are based on intersecting criteria of: 'Pattern' (base tone-pattern), 'Type' (associated png-marker set), and 'Group' (tone-effect on subsequent syllable). Pending a more thorough-going analysis, these classes are taken as brute inflectional classes, and are here designated according to the decimal subdivision of Chapter 2 where each class is identified."
 :geodemoURL "http://www.ethnologue.com/language/awn"
 :geodemoTXT "Varieties and subdialects of Agaw (or Central) Cushitic language: Awngi is spoken mainly in the Amhara region, southwest of Lake Tana, and in scattered nearby localities. The variety represented here is that of the village of Bert'a Abbo in the province of Agawmeder, as described by Robert Hetzron in his 1969 monograph."
 :schemata {
-:clauseType [:Apodosis, :Compound, :Converb, :Desiderative, :Durative, :Exobligative, :Immediate, :Main, :Posterior, :Predestinative, :Processive, :Protasis, :RelSubj, :Stative, :Subjunctive, :Subordinate, :Temporal, :Terminative]
-	  :defClass [:Definite, :Indefinite, :Neutral]
+:clauseType [:Apodosis, :Compound, :Consecutive, :Desiderative, :Durative, :Exobligative, :Immediate, :Main, :Posterior, :Predestinative, :Processive, :Protasis, :RelSubj, :Stative, :Subjunctive, :Subordinate, :Temporal, :Terminative]
+	  :aspect [:Definite, :Indefinite, :Neutral]
+           :conjClass [:Prefix, :Suffix]
+           :conjSubClass [:IC11, :IC1211, :IC1221, :IC1214, :IC1351b, :IC1342, :IC142, :IC15112, :IC1611]
 	  :gender [:Common, :Fem, :Masc]
 	  :number [:Plural, :Singular]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun :Verb]
-	  :tam [:Converb, :Definite, :Imperative, :Imperfect, :Order, :Perfect]
+	  :tam [:Converb, :Imperative, :Imperfect, :Order, :Perfect]
 	  :varB [:VarB1, :VarB2, :VarB3, :VarBx]
 	  :varClass [:Var1, :Var2, :VarA, :VarB]
 	  :morphClass [:SuffAlternate]
@@ -22,2000 +25,2379 @@
 :pclass {
            :pngClass [:person :number :gender ]
            :synsemClass [:case :clausetype :derivedStem :polarity :pos :proClass :tam :tenseName ]
-           :inflClass [:varClass :varB   ]
+           :inflClass [:varClass :varB :conjClass :conjSubClass]
            :otherClass [ ]
           }
 :morphemes {
   :TOBEADDED {:gloss "[x]", :lemma "[y]", }
 }
 :lexemes {
-  :aq {:gloss "know", :lemma "yaɣəŋ", :pos :Verb}
-  :des {:gloss "study", :lemma "däs-", :pos :Verb}
-  :egog {:gloss "laugh", :lemma "əɣoɣiŋ", :pos :Verb}
-  :ey {:gloss "give", :lemma "əyəŋ", :pos :Verb}
-  :fay {:gloss "want, look for", :lemma "fayŋ", :pos :Verb}
-  :jep {:gloss "buy", :lemma "jewŋ", :pos :Verb}
-  :kant {:gloss "see, look for", :lemma "kantəŋ", :pos :Verb}
-  :leqleq {:gloss "sway", :lemma "ləqləqiŋ", :pos :Verb}
-  :ne {:gloss "say", :lemma "nəŋ", :pos :Verb}
+  :aq {:gloss "be", :lemma "yaɣəŋ",  :pos :Verb, :conjClass :Prefix, :conjSubClass :IC11}
+  :des {:gloss "study", :lemma "desəŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC1211}
+  :egog {:gloss "laugh", :lemma "əɣoɣiŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC15112}
+  :ey {:gloss "give", :lemma "əyəŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC1214}
+  :fay {:gloss "want, look for", :lemma "fayŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC142}
+  :jep {:gloss "buy", :lemma "jewŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC1221}
+  :kant {:gloss "see, look for", :lemma "kantəŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC1351b}
+  :leqleq {:gloss "sway", :lemma "ləqləqiŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC1342}
+  :ne {:gloss "say", :lemma "nəŋ",  :pos :Verb, :conjClass :Suffix, :conjSubClass :IC1611}
 }
-:lxterms #{
-    {:label "awngi-VStative-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :ey,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "ə́ynûs"],
-	    [:Masc, :Singular, :Person3, "ə́yûs"],
-	    [:Common, :Singular, :Person1, "əyûs"],
-	    [:Fem, :Singular, :Person3, "əytûs"],
-	    [:Common, :Singular, :Person2, "əytûs"],
-	    [:Common, :Plural, :Person2, "əytánis"],
-	    [:Common, :Plural, :Person3, "ə́yánis"]]
-    }
-    {:label "awngi-VTemporal-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :jep,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "jewáni"],
-	    [:Common, :Plural, :Person2, "jewtáni"],
-	    [:Fem, :Singular, :Person3, "jewtání"],
-	    [:Common, :Plural, :Person1, "jewnání"],
-	    [:Masc, :Singular, :Person3, "jewání"],
-	    [:Common, :Singular, :Person1, "jepání"],
-	    [:Common, :Singular, :Person2, "jewtání"]]
-    }
-    {:label "awngi-VMainImperfDef-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :egog,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "əɣóɣéwí"],
-	    [:Common, :Singular, :Person1, "əɣóɣtáɣá"],
-	    [:Common, :Singular, :Person2, "əɣóɣtéɣá"],
-	    [:Common, :Plural, :Person1, "əɣóɣnáɣá"],
-	    [:Common, :Plural, :Person3, "əɣóɣénkú"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtétí"],
-	    [:Common, :Plural, :Person2, "əɣóɣténɣá"]]
-    }
-    {:label "awngi-VImprtvVarB-des"
-    :note "Hetzron1969 1.4.1"
-    :common {:lexeme :des,
-	    :pos :Verb,
-	    :tam :Imperative,
-	    :morphClass :SuffAlternate}
-    :terms [[:gender, :number, :person, :token, :varB]  ;; schema
-	    [:Common, :Plural, :Person3, "deskayínis", :VarBx],
-	    [:Common, :Singular, :Person1, "desayə́s", :VarB3],
-	    [:Fem, :Singular, :Person3, "destayə́s", :VarBx],
-	    [:Common, :Singular, :Person1, "desaycə́s", :VarB2],
-	    [:Common, :Plural, :Person1, "desnaycnə́s", :VarB2],
-	    [:Masc, :Singular, :Person3, "desayə́s", :VarBx],
-	    [:Common, :Singular, :Person2, "destayc", :VarB1],
-	    [:Common, :Singular, :Person2, "destay", :VarB3],
-	    [:Common, :Plural, :Person2, "destə́kayán", :VarB3],
-	    [:Common, :Plural, :Person2, "destə́kaycán", :VarB1],
-	    [:Common, :Plural, :Person1, "desnaynə́s", :VarB3]]
-    }
-    {:label "awngi-VMainImperfIndef-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :kant,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "kanté"],
-	    [:Common, :Plural, :Person3, "kantánà"],
-	    [:Masc, :Singular, :Person3, "kanté"],
-	    [:Common, :Plural, :Person1, "kantné"],
-	    [:Common, :Plural, :Person2, "kantenà"],
-	    [:Common, :Singular, :Person2, "kanti"],
-	    [:Fem, :Singular, :Person3, "kanti"]]
-    }
-    {:label "awngi-VMainPerfIndef-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :aq,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "taɣéka"],
-	    [:Common, :Plural, :Person1, "aɣnâ"],
-	    [:Common, :Singular, :Person2, "taɣâ"],
-	    [:Masc, :Singular, :Person3, "yaɣâ"],
-	    [:Common, :Plural, :Person3, "yaɣéka"],
-	    [:Fem, :Singular, :Person3, "taɣâ"],
-	    [:Common, :Singular, :Person1, "aqâ"]]
-    }
-    {:label "awngi-VMainImperfIndef-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :ne,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "nánà"],
-	    [:Common, :Singular, :Person2, "ni"],
-	    [:Masc, :Singular, :Person3, "né"],
-	    [:Fem, :Singular, :Person3, "ni"],
-	    [:Common, :Singular, :Person1, "né"],
-	    [:Common, :Plural, :Person1, "ənné"],
-	    [:Common, :Plural, :Person2, "nenà"]]
-    }
-    {:label "awngi-VProcessiveAff-des"
-    :note "Hetzron1969 1.2.1-3"
-    :common {:clauseType :Processive,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "destatagi"],
-	    [:Common, :Plural, :Person1, "desnanagi"],
-	    [:Common, :Plural, :Person2, "destə́kamági"],
-	    [:Common, :Plural, :Person3, "deskamági"],
-	    [:Common, :Singular, :Person1, "desatagi"],
-	    [:Fem, :Singular, :Person3, "destatagi"],
-	    [:Masc, :Singular, :Person3, "desamági"]]
-    }
-    {:label "awngi-VPredestinativePerfIndef-des"
-    :note "Hetzron1969 1.4.1"
-    :common {:clauseType :Predestinative,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token, :varB]  ;; schema
-	    [:Common, :Plural, :Person1, "desnaycna", :VarB2],
-	    [:Common, :Plural, :Person3, "deskayə́ka", :VarBx],
-	    [:Common, :Singular, :Person1, "desayca", :VarB2],
-	    [:Common, :Singular, :Person2, "destayta", :VarBx],
-	    [:Common, :Plural, :Person1, "desnayna", :VarB3],
-	    [:Masc, :Singular, :Person3, "desaya", :VarBx],
-	    [:Fem, :Singular, :Person3, "destayta", :VarBx],
-	    [:Common, :Plural, :Person2, "destə́kayə́tka", :VarB2],
-	    [:Common, :Singular, :Person1, "desaya", :VarB3]]
-    }
-    {:label "awngi-VMainAffImprtv-des"
-    :note ""
-    :common {:clauseType :Main,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "destínis-"],
-	    [:Fem, :Singular, :Person3, "destəs"],
-	    [:Common, :Plural, :Person1, "desnəs"],
-	    [:Common, :Singular, :Person2, "destəs-"],
-	    [:Masc, :Singular, :Person3, "desəs"],
-	    [:Common, :Singular, :Person1, "desəs"],
-	    [:Common, :Plural, :Person3, "desínis"]]
-    }
-    {:label "awngi-VMainPerfIndef-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :egog,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "əɣóɣíka"],
-	    [:Masc, :Singular, :Person3, "əɣóɣæ"],
-	    [:Common, :Plural, :Person1, "əɣóɣna"],
-	    [:Common, :Singular, :Person1, "əɣóɣta"],
-	    [:Common, :Plural, :Person2, "əɣóɣtíka"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtæ"],
-	    [:Common, :Singular, :Person2, "əɣóɣtæ"]]
-    }
-    {:label "awngi-VDurativePerf-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :fay,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fatás̆tíɣʷà"],
-	    [:Common, :Plural, :Person3, "fayékas̆ínà"],
-	    [:Masc, :Singular, :Person3, "fayás̆íɣʷà"],
-	    [:Common, :Singular, :Person1, "fastás̆túɣa"],
-	    [:Common, :Plural, :Person1, "fanás̆núɣà"],
-	    [:Fem, :Singular, :Person3, "fatás̆tíɣʷà"],
-	    [:Common, :Plural, :Person2, "fatékas̆tínà"]]
-    }
-    {:label "awngi-VTemporal-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :ey,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "əyání"],
-	    [:Common, :Singular, :Person2, "əytání"],
-	    [:Common, :Plural, :Person2, "əytáni"],
-	    [:Common, :Plural, :Person3, "ə́yání"],
-	    [:Masc, :Singular, :Person3, "ə́yání"],
-	    [:Fem, :Singular, :Person3, "əytání"],
-	    [:Common, :Plural, :Person1, "ə́ynání"]]
-    }
-    {:label "awngi-VTemporal-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :egog,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "əɣóɣnání"],
-	    [:Common, :Singular, :Person2, "əɣóɣténí"],
-	    [:Masc, :Singular, :Person3, "əɣóɣéní"],
-	    [:Common, :Singular, :Person1, "əɣóɣtání"],
-	    [:Common, :Plural, :Person3, "əɣóɣéni"],
-	    [:Common, :Plural, :Person2, "əɣóɣténi"],
-	    [:Fem, :Singular, :Person3, "əɣóɣténí"]]
-    }
-    {:label "awngi-VStative-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :kant,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "kantûs"],
-	    [:Common, :Singular, :Person2, "kantis"],
-	    [:Fem, :Singular, :Person3, "kantis"],
-	    [:Common, :Plural, :Person1, "kantnûs"],
-	    [:Common, :Plural, :Person3, "kantánis"],
-	    [:Common, :Plural, :Person2, "kantenis"],
-	    [:Masc, :Singular, :Person3, "kantûs"]]
-    }
-    {:label "awngi-VMainPerfDef-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :fay,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "fanúɣà"],
-	    [:Common, :Plural, :Person3, "fayúnà"],
-	    [:Common, :Singular, :Person2, "fatúyà"],
-	    [:Common, :Singular, :Person1, "fatúɣà"],
-	    [:Masc, :Singular, :Person3, "fayúɣà"],
-	    [:Fem, :Singular, :Person3, "fatúɣà"],
-	    [:Common, :Plural, :Person2, "fatúnà"]]
-    }
-    {:label "awngi-VProtasisImperf-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :leqleq,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "ləqləqini"],
-	    [:Common, :Plural, :Person1, "ləqləqənnúni"],
-	    [:Common, :Plural, :Person3, "ləqləquni"],
-	    [:Common, :Singular, :Person1, "ləqləquni"],
-	    [:Masc, :Singular, :Person3, "ləqləquni"],
-	    [:Fem, :Singular, :Person3, "ləqləqini"],
-	    [:Common, :Singular, :Person2, "ləqləqini"]]
-    }
-    {:label "awngi-VTerminative-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :egog,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "əɣóɣnə́mba"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtímba"],
-	    [:Common, :Plural, :Person2, "əɣóɣtínimba"],
-	    [:Common, :Plural, :Person3, "əɣóɣínimba"],
-	    [:Common, :Singular, :Person2, "əɣóɣtímba"],
-	    [:Common, :Singular, :Person1, "əɣóɣtə́mba"],
-	    [:Masc, :Singular, :Person3, "əɣóɣímba"]]
-    }
-    {:label "awngi-VMainAffOrder-des"
-    :note ""
-    :common {:clauseType :Main,
-	    :gender :Common,
-	    :lexeme :des,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Order}
-    :terms [[:number, :token]  ;; schema
-	    [:Plural, "desán"],
-	    [:Singular, "dés"]]
-    }
-    {:label "awngi-VMainImperfDef-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :kant,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "kantánkú"],
-	    [:Fem, :Singular, :Person3, "kantetí"],
-	    [:Common, :Plural, :Person2, "kantenɣá"],
-	    [:Common, :Singular, :Person2, "kanteɣá"],
-	    [:Masc, :Singular, :Person3, "kantáwí"],
-	    [:Common, :Plural, :Person1, "kantnáɣá"],
-	    [:Common, :Singular, :Person1, "kantáɣá"]]
-    }
-    {:label "awngi-VApodosisNegDef-des"
-    :note "Hetzron1969 1.2.13"
-    :common {:clauseType :Apodosis,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "desnátínɣás̆núɣà"],
-	    [:Common, :Plural, :Person3, "desátínkús̆ínà"],
-	    [:Common, :Singular, :Person2, "desátíɣás̆tíɣʷà"],
-	    [:Common, :Plural, :Person2, "desátínɣás̆tínà"],
-	    [:Fem, :Singular, :Person3, "desátítə́s̆tíɣʷà"],
-	    [:Masc, :Singular, :Person3, "desátíws̆íɣʷà"],
-	    [:Common, :Singular, :Person1, "desátíɣás̆túɣà"]]
-    }
-    {:label "awngi-VMainPerfDef-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :leqleq,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "ləqləqinà"],
-	    [:Common, :Plural, :Person3, "ləqləqunà"],
-	    [:Common, :Plural, :Person1, "ləqləqənnə́"],
-	    [:Fem, :Singular, :Person3, "ləqləqiɣʷà"],
-	    [:Masc, :Singular, :Person3, "ləqləquɣʷà"],
-	    [:Common, :Singular, :Person2, "ləqləqiɣʷà"],
-	    [:Common, :Singular, :Person1, "ləqləquɣà"]]
-    }
-    {:label "awngi-VMainImperfIndef-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :aq,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "yáɣánà"],
-	    [:Common, :Singular, :Person1, "áqé"],
-	    [:Common, :Plural, :Person2, "táɣánà"],
-	    [:Masc, :Singular, :Person3, "yáɣé"],
-	    [:Fem, :Singular, :Person3, "táɣé"],
-	    [:Common, :Singular, :Person2, "táɣé"],
-	    [:Common, :Plural, :Person1, "áɣné"]]
-    }
-    {:label "awngi-VDurativeNegConverb-des"
-    :note "Hetzron1969 1.3.3"
-    :common {:clauseType :Durative,
-	    :defClass :Neutral,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Converb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "destáɣʷlas̆téta"],
-	    [:Common, :Singular, :Person1, "desáɣʷlas̆téta"],
-	    [:Masc, :Singular, :Person3, "desáɣʷlas̆émá"],
-	    [:Common, :Plural, :Person3, "desánəɣʷlas̆íkamá"],
-	    [:Common, :Plural, :Person1, "desnáɣʷlas̆nána"],
-	    [:Common, :Plural, :Person2, "destánəɣʷlas̆tíkamá"],
-	    [:Common, :Singular, :Person2, "destáɣʷlas̆téta"]]
-    }
-    {:label "awngi-VDurativePerfDef-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :ey,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "əytə́kas̆tínà"],
-	    [:Fem, :Singular, :Person3, "əytas̆tíɣʷà"],
-	    [:Common, :Singular, :Person2, "əytas̆tíɣʷà"],
-	    [:Common, :Singular, :Person1, "əyas̆túɣà"],
-	    [:Masc, :Singular, :Person3, "ə́yas̆íɣʷà"],
-	    [:Common, :Plural, :Person1, "ə́ynaśnúɣà"],
-	    [:Common, :Plural, :Person3, "ə́ykas̆ínà"]]
-    }
-    {:label "awngi-VProtasisImperf-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :jep,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "jewúni"],
-	    [:Common, :Plural, :Person2, "jewtúni"],
-	    [:Common, :Plural, :Person3, "jewúni"],
-	    [:Fem, :Singular, :Person3, "jewtúni"],
-	    [:Common, :Singular, :Person1, "jepúni"],
-	    [:Common, :Plural, :Person1, "jewnúni"],
-	    [:Common, :Singular, :Person2, "jewtúni"]]
-    }
-    {:label "awngi-VTemporal-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :kant,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "kantáni"],
-	    [:Masc, :Singular, :Person3, "kantání"],
-	    [:Common, :Plural, :Person3, "kantáni"],
-	    [:Common, :Plural, :Person1, "kantnání"],
-	    [:Fem, :Singular, :Person3, "kantení"],
-	    [:Common, :Plural, :Person2, "kanteni"],
-	    [:Common, :Singular, :Person2, "kantení"]]
-    }
-    {:label "awngi-VApodosisNegIndef-des"
-    :note "Hetzron1969 1.2.13"
-    :common {:clauseType :Apodosis,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "desálas̆tíɣʷà"],
-	    [:Masc, :Singular, :Person3, "desálas̆íɣʷà"],
-	    [:Common, :Plural, :Person2, "desálas̆tínà"],
-	    [:Fem, :Singular, :Person3, "desálas̆tíɣʷà"],
-	    [:Common, :Singular, :Person1, "desálas̆túɣà"],
-	    [:Common, :Plural, :Person1, "desnálas̆núɣà"],
-	    [:Common, :Plural, :Person3, "desálas̆ínà"]]
-    }
-    {:label "awngi-VExobligativeNegConverb-des"
-    :note "Hetzron1969 1.4.2"
-    :common {:clauseType :Exobligative,
-	    :defClass :Neutral,
-	    :gender :Common,
-	    :lexeme :des,
-	    :number :Singular,
-	    :person :Person1,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Converb}
-    :terms [[:token]  ;; schema
-	    ["desawc̆áɣʷla"]]
-    }
-    {:label "awngi-VStativePerfVar1-des"
-    :note "Hetzron1969 1.2.8"
-    :common {:clauseType :Stative,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Perfect,
-	    :varClass :Var1}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "desta-zkekûs"],
-	    [:Common, :Plural, :Person2, "destə́ka-zkikakûs"],
-	    [:Masc, :Singular, :Person3, "desa-zkokûs"],
-	    [:Common, :Singular, :Person2, "desta-zkekûs"],
-	    [:Common, :Plural, :Person3, "deska-zəkʷkakûs"],
-	    [:Common, :Singular, :Person1, "desa-zkokûs"],
-	    [:Common, :Plural, :Person1, "desna-zkʷnakûs"]]
-    }
-    {:label "awngi-VMainPerfDef-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :jep,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "jewtúnà"],
-	    [:Common, :Plural, :Person1, "jewnúnà"],
-	    [:Common, :Plural, :Person3, "jewúnà"],
-	    [:Masc, :Singular, :Person3, "jewúɣà"],
-	    [:Common, :Singular, :Person2, "jewtúɣà"],
-	    [:Fem, :Singular, :Person3, "jewtúɣà"],
-	    [:Common, :Singular, :Person1, "jepúɣà"]]
-    }
-    {:label "awngi-VMainPerfIndef-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :kant,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "kantæ"],
-	    [:Common, :Plural, :Person2, "kantika"],
-	    [:Masc, :Singular, :Person3, "kanta"],
-	    [:Fem, :Singular, :Person3, "kantæ"],
-	    [:Common, :Plural, :Person3, "kantə́ka"],
-	    [:Common, :Singular, :Person1, "kanta"],
-	    [:Common, :Plural, :Person1, "kantna"]]
-    }
-    {:label "awngi-VProtasisNegImperf-des"
-    :note "Hetzron1969 1.2.12"
-    :common {:clauseType :Protasis,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "desítíes"],
-	    [:Fem, :Singular, :Person3, "destítíes"],
-	    [:Common, :Plural, :Person2, "destíntíes"],
-	    [:Masc, :Singular, :Person3, "desítíes"],
-	    [:Common, :Singular, :Person2, "destítíes"],
-	    [:Common, :Plural, :Person3, "desíntíes"],
-	    [:Common, :Plural, :Person1, "desnítíes"]]
-    }
-    {:label "awngi-VProtasisAffImperf-des"
-    :note "Hetzron1969 1.2.12"
-    :common {:clauseType :Protasis,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "desúni"],
-	    [:Common, :Plural, :Person1, "desnúni"],
-	    [:Common, :Singular, :Person2, "destúni"],
-	    [:Common, :Plural, :Person2, "destúni"],
-	    [:Common, :Singular, :Person1, "desúni"],
-	    [:Fem, :Singular, :Person3, "destúni"],
-	    [:Common, :Plural, :Person3, "desúni"]]
-    }
-    {:label "awngi-VDurativePerf-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :leqleq,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "ləqləqikas̆tínà"],
-	    [:Masc, :Singular, :Person3, "ləqləqas̆íɣʷà"],
-	    [:Common, :Plural, :Person1, "ləqləqənnas̆núɣà"],
-	    [:Common, :Singular, :Person1, "ləqləqas̆túɣà"],
-	    [:Common, :Plural, :Person3, "ləqləqekas̆inà"],
-	    [:Fem, :Singular, :Person3, "ləqləqis̆tíɣʷà"],
-	    [:Common, :Singular, :Person2, "ləqləqis̆tíɣʷà"]]
-    }
-    {:label "awngi-VMainPerfDef-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :egog,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "əɣóɣtə́ɣʷà"],
-	    [:Common, :Plural, :Person2, "əɣóɣtínà"],
-	    [:Common, :Plural, :Person3, "əɣóɣínà"],
-	    [:Common, :Singular, :Person2, "əɣóɣtí́ɣʷà"],
-	    [:Common, :Plural, :Person1, "əɣóɣnə́́ɣʷà"],
-	    [:Masc, :Singular, :Person3, "əɣóɣtí́ɣʷà"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtí́ɣʷà"]]
-    }
-    {:label "awngi-VMainAffPerfIndef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "desta"],
-	    [:Fem, :Singular, :Person3, "desta"],
-	    [:Common, :Singular, :Person1, "desa"],
-	    [:Common, :Plural, :Person2, "destə́ka"],
-	    [:Common, :Plural, :Person3, "deska"],
-	    [:Masc, :Singular, :Person3, "desa"],
-	    [:Common, :Plural, :Person1, "desna"]]
-    }
+:lxterms [
     {:label "awngi-VApodosisAffDef-des"
     :note "Hetzron1969 1.2.13"
     :common {:clauseType :Apodosis,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "desáɣás̆túɣà"],
-	    [:Common, :Plural, :Person1, "desnáɣás̆núɣà"],
-	    [:Common, :Plural, :Person3, "desánkús̆ínà"],
-	    [:Common, :Singular, :Person2, "destáɣs̆tíɣʷà"],
-	    [:Masc, :Singular, :Person3, "desáws̆íɣʷà"],
-	    [:Common, :Plural, :Person2, "destánɣás̆tínà"],
-	    [:Fem, :Singular, :Person3, "destátə́s̆tíɣʷà"]]
-    }
-    {:label "awngi-VTerminative-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :aq,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "taɣínimba"],
-	    [:Common, :Singular, :Person2, "taɣémba"],
-	    [:Common, :Singular, :Person1, "aqémba"],
-	    [:Common, :Plural, :Person1, "aɣnémba"],
-	    [:Masc, :Singular, :Person3, "yaɣémba"],
-	    [:Common, :Plural, :Person3, "yaɣínimba"],
-	    [:Fem, :Singular, :Person3, "taɣémba"]]
-    }
-    {:label "awngi-VExobligativeAffConverb-des"
-    :note "Hetzron1969 1.4.2"
-    :common {:clauseType :Exobligative,
-	    :defClass :Neutral,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Converb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "desnawjnana"],
-	    [:Common, :Singular, :Person1, "desawc̆ata"],
-	    [:Common, :Singular, :Person2, "destawjeta"],
-	    [:Common, :Plural, :Person3, "deskawjə́kamá"],
-	    [:Fem, :Singular, :Person3, "destawjeta"],
-	    [:Common, :Plural, :Person2, "destə́kawjikamá"],
-	    [:Masc, :Singular, :Person3, "desawjamá"]]
-    }
-    {:label "awngi-VSubordinateNegVarB-des"
-    :note "Hetzron1969 1.2.14"
-    :common {:clauseType :Subordinate,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :varClass :VarB}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "destáɣʷla"],
-	    [:Common, :Singular, :Person1, "desáɣʷla"],
-	    [:Common, :Plural, :Person2, "destánəɣʷla"],
-	    [:Masc, :Singular, :Person3, "desáɣʷla"],
-	    [:Fem, :Singular, :Person3, "destáɣʷla"],
-	    [:Common, :Plural, :Person1, "desnáɣʷla"],
-	    [:Common, :Plural, :Person3, "desánəɣʷla"]]
-    }
-    {:label "awngi-VTerminative-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :ne,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "nimba"],
-	    [:Masc, :Singular, :Person3, "nə́mba"],
-	    [:Common, :Plural, :Person1, "ənnə́mba"],
-	    [:Common, :Plural, :Person2, "ninimba"],
-	    [:Common, :Plural, :Person3, "nínimba"],
-	    [:Fem, :Singular, :Person3, "nimba"],
-	    [:Common, :Singular, :Person1, "nə́mba"]]
-    }
-    {:label "awngi-VMainPerfDef-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :aq,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "taɣúɣà"],
-	    [:Common, :Singular, :Person2, "taɣúɣà"],
-	    [:Common, :Plural, :Person1, "aɣnúɣà"],
-	    [:Common, :Plural, :Person3, "yaɣúnà"],
-	    [:Common, :Singular, :Person1, "aqúɣà"],
-	    [:Common, :Plural, :Person2, "taɣúnà"],
-	    [:Masc, :Singular, :Person3, "yaɣúɣà"]]
-    }
-    {:label "awngi-VMainImperfDef-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :ey,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "ə́ynáɣá"],
-	    [:Common, :Plural, :Person2, "əytánɣá"],
-	    [:Common, :Singular, :Person1, "əyáɣá"],
-	    [:Fem, :Singular, :Person3, "əytátí"],
-	    [:Common, :Singular, :Person2, "əytáɣá"],
-	    [:Common, :Plural, :Person3, "ə́yánkú"],
-	    [:Masc, :Singular, :Person3, "ə́yáwí"]]
-    }
-    {:label "awngi-VStative-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :ne,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "nûs"],
-	    [:Common, :Singular, :Person2, "nis"],
-	    [:Common, :Plural, :Person1, "ənnûs"],
-	    [:Common, :Plural, :Person2, "nenis"],
-	    [:Fem, :Singular, :Person3, "nis"],
-	    [:Common, :Plural, :Person3, "nánis"],
-	    [:Common, :Singular, :Person1, "nûs"]]
-    }
-    {:label "awngi-VTemporal-des"
-    :note "Hetzron1969 1.2.7"
-    :common {:clauseType :Temporal,
-	    :lexeme :des,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "destání"],
-	    [:Common, :Plural, :Person2, "destáni"],
-	    [:Common, :Singular, :Person1, "desání"],
-	    [:Fem, :Singular, :Person3, "destání"],
-	    [:Common, :Plural, :Person3, "desáni"],
-	    [:Masc, :Singular, :Person3, "desání"],
-	    [:Common, :Plural, :Person1, "desnání"]]
-    }
-    {:label "awngi-VMainImperfDef-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :aq,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "yáɣánkú"],
-	    [:Masc, :Singular, :Person3, "yáɣáwí"],
-	    [:Common, :Singular, :Person2, "táɣáɣá"],
-	    [:Common, :Plural, :Person2, "táɣánɣá"],
-	    [:Common, :Plural, :Person1, "áɣnáɣá"],
-	    [:Common, :Singular, :Person1, "áqáɣá"],
-	    [:Fem, :Singular, :Person3, "táɣátí"]]
-    }
-    {:label "awngi-VMainAffImperfDef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "desnáɣá"],
-	    [:Common, :Singular, :Person2, "destáɣá"],
-	    [:Masc, :Singular, :Person3, "desáwí"],
-	    [:Common, :Plural, :Person2, "destánɣá"],
-	    [:Common, :Plural, :Person3, "desánkʷí"],
-	    [:Common, :Singular, :Person1, "desáɣá"],
-	    [:Fem, :Singular, :Person3, "destátí"]]
-    }
-    {:label "awngi-VRelSubjAffPerf-des"
-    :note "Hetzron1969 1.2.4"
-    :common {:clauseType :RelSubj,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "desə́ɣʷ / desɣʷí"],
-	    [:Common, :Singular, :Person2, "destúɣá"],
-	    [:Common, :Singular, :Person1, "desúɣá"],
-	    [:Common, :Plural, :Person1, "desnúɣá"],
-	    [:Fem, :Singular, :Person3, "destút(í)"],
-	    [:Common, :Plural, :Person2, "destúnɣá"],
-	    [:Common, :Plural, :Person3, "desúnkú"]]
-    }
-    {:label "awngi-VMainImperfIndef-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :jep,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "jewtánà"],
-	    [:Fem, :Singular, :Person3, "jewté"],
-	    [:Masc, :Singular, :Person3, "jewé"],
-	    [:Common, :Singular, :Person2, "jewté"],
-	    [:Common, :Plural, :Person1, "jewné"],
-	    [:Common, :Singular, :Person1, "jepé"],
-	    [:Common, :Plural, :Person3, "jewánà"]]
-    }
-    {:label "awngi-VDurativePerf-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :egog,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "əɣóɣtis̆tíɣʷà"],
-	    [:Common, :Singular, :Person1, "əɣóɣtas̆túɣà"],
-	    [:Common, :Plural, :Person1, "əɣóɣnasnúɣà"],
-	    [:Masc, :Singular, :Person3, "əɣóɣis̆íɣʷà"],
-	    [:Common, :Plural, :Person3, "əɣóɣíkas̆ínà"],
-	    [:Common, :Plural, :Person2, "əɣóɣtíkas̆tínà"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtis̆tíɣʷà"]]
-    }
-    {:label "awngi-VMainImperfIndef-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :leqleq,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "ləqləqi"],
-	    [:Common, :Plural, :Person1, "ləqləqənné"],
-	    [:Fem, :Singular, :Person3, "ləqləqi"],
-	    [:Masc, :Singular, :Person3, "ləqləqe"],
-	    [:Common, :Plural, :Person3, "ləqləqanà"],
-	    [:Common, :Plural, :Person2, "ləqləqenà"],
-	    [:Common, :Singular, :Person1, "ləqləqe"]]
-    }
-    {:label "awngi-VTerminative-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :fay,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "fanémba"],
-	    [:Fem, :Singular, :Person3, "fatémba"],
-	    [:Masc, :Singular, :Person3, "fayémba"],
-	    [:Common, :Plural, :Person3, "fayínimba"],
-	    [:Common, :Singular, :Person2, "fatémba"],
-	    [:Common, :Singular, :Person1, "fatémba"],
-	    [:Common, :Plural, :Person2, "fatínimba"]]
-    }
-    {:label "awngi-VPredestinativePerfDef-des"
-    :note "Hetzron1969 1.4.1"
-    :common {:clauseType :Predestinative,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token, :varB]  ;; schema
-	    [:Common, :Singular, :Person2, "destaytə́ɣʷa", :VarBx],
-	    [:Common, :Plural, :Person1, "desnaycnə́ɣʷa", :VarB2],
-	    [:Common, :Plural, :Person1, "desnaynə́ɣʷa", :VarB3],
-	    [:Common, :Plural, :Person2, "destə́kaytúnà", :VarBx],
-	    [:Common, :Plural, :Person3, "deskayínà", :VarBx],
-	    [:Common, :Singular, :Person1, "desaycə́ɣʷà", :VarB2],
-	    [:Fem, :Singular, :Person3, "destaytə́ɣʷa", :VarBx],
-	    [:Masc, :Singular, :Person3, "desayə́ɣʷa", :VarBx],
-	    [:Common, :Singular, :Person1, "desayə́ɣʷà", :VarB3]]
-    }
-    {:label "awngi-VTerminative-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :leqleq,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "ləqləqinimba"],
-	    [:Common, :Singular, :Person2, "ləqləqimba"],
-	    [:Common, :Plural, :Person3, "ləqləqinimba"],
-	    [:Fem, :Singular, :Person3, "ləqləqimba"],
-	    [:Masc, :Singular, :Person3, "ləqləqemba"],
-	    [:Common, :Plural, :Person1, "ləqləqənnə́mba"],
-	    [:Common, :Singular, :Person1, "ləqləqemba"]]
-    }
-    {:label "awngi-VMainPerfDef-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :ey,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "əytə́ɣʷà"],
-	    [:Common, :Singular, :Person2, "əytə́ɣʷà"],
-	    [:Masc, :Singular, :Person3, "ə́yɣʷà"],
-	    [:Common, :Plural, :Person3, "ə́yúnà"],
-	    [:Common, :Plural, :Person2, "əytúnà"],
-	    [:Common, :Singular, :Person1, "əyɣʷà"],
-	    [:Common, :Plural, :Person1, "ə́ynə́ɣʷà"]]
-    }
-    {:label "awngi-VStative-egog"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :egog,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "əɣóɣtûs"],
-	    [:Masc, :Singular, :Person3, "əɣóɣîs"],
-	    [:Common, :Plural, :Person1, "əɣóɣnûs"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtîs"],
-	    [:Common, :Singular, :Person2, "əɣóɣtîs"],
-	    [:Common, :Plural, :Person2, "əɣóɣténis"],
-	    [:Common, :Plural, :Person3, "əɣóɣénis"]]
-    }
-    {:label "awngi-VCompound-des"
-    :note "Hetzron1969 1.3.0"
-    :common {:clauseType :Compound,
-	    :lexeme :des,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "desa-"],
-	    [:Common, :Plural, :Person3, "deska-"],
-	    [:Common, :Plural, :Person2, "destə́ka-"],
-	    [:Common, :Plural, :Person1, "desna-"],
-	    [:Common, :Singular, :Person2, "desta-"],
-	    [:Fem, :Singular, :Person3, "desta-"],
-	    [:Common, :Singular, :Person1, "desa-"]]
-    }
-    {:label "awngi-VMainNegImperfIndef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "desála"],
-	    [:Common, :Plural, :Person2, "desála"],
-	    [:Common, :Plural, :Person1, "desnála"],
-	    [:Common, :Singular, :Person1, "desála"],
-	    [:Fem, :Singular, :Person3, "desála"],
-	    [:Common, :Singular, :Person2, "desála"],
-	    [:Masc, :Singular, :Person3, "desála"]]
-    }
-    {:label "awngi-VMainImperfDef-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :leqleq,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "ləqləqenɣá"],
-	    [:Fem, :Singular, :Person3, "ləqləqetí"],
-	    [:Masc, :Singular, :Person3, "ləqləqawí"],
-	    [:Common, :Plural, :Person1, "ləqləqənnáɣá"],
-	    [:Common, :Plural, :Person3, "ləqləqankú"],
-	    [:Common, :Singular, :Person1, "ləqləqaɣá"],
-	    [:Common, :Singular, :Person2, "ləqləqeɣá"]]
-    }
-    {:label "awngi-VDurativePerfDef-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :ne,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "nə́kas̆ínà"],
-	    [:Common, :Singular, :Person2, "nis̆tíɣʷà"],
-	    [:Common, :Plural, :Person1, "ənnas̆núɣà"],
-	    [:Common, :Singular, :Person1, "nas̆túɣà"],
-	    [:Fem, :Singular, :Person3, "nis̆tíɣʷà"],
-	    [:Common, :Plural, :Person2, "nikas̆tínà"],
-	    [:Masc, :Singular, :Person3, "nas̆íɣʷà"]]
-    }
-    {:label "awngi-VMainPerfDef-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :ne,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "núnà"],
-	    [:Fem, :Singular, :Person3, "niɣʷà"],
-	    [:Common, :Plural, :Person1, "ənnə́ɣʷà"],
-	    [:Common, :Plural, :Person2, "ninà"],
-	    [:Common, :Singular, :Person2, "niɣʷà"],
-	    [:Masc, :Singular, :Person3, "nə́ɣʷà"],
-	    [:Common, :Singular, :Person1, "nə́ɣʷà"]]
-    }
-    {:label "awngi-VMainAffImperfIndef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "desé"],
-	    [:Common, :Plural, :Person3, "desána"],
-	    [:Common, :Plural, :Person2, "destána"],
-	    [:Fem, :Singular, :Person3, "desté"],
-	    [:Common, :Singular, :Person1, "desé"],
-	    [:Common, :Singular, :Person2, "desté"],
-	    [:Common, :Plural, :Person1, "desné"]]
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣás̆túɣà"]
+            [:Singular :Person2 :Common "destáɣs̆tíɣʷà"]
+            [:Singular :Person3 :Masc "desáws̆íɣʷà"]
+            [:Singular :Person3 :Fem "destátə́s̆tíɣʷà"]
+            [:Plural :Person1 :Common "desnáɣás̆núɣà"]
+            [:Plural :Person2 :Common "destánɣás̆tínà"]
+            [:Plural :Person3 :Common "desánkús̆ínà"]]
     }
     {:label "awngi-VApodosisAffIndef-des"
     :note "Hetzron1969 1.2.13"
     :common {:clauseType :Apodosis,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "destə́s̆tíɣʷà"],
-	    [:Fem, :Singular, :Person3, "destés̆tíɣʷà"],
-	    [:Common, :Plural, :Person3, "desánas̆ínà"],
-	    [:Common, :Plural, :Person1, "desnés̆núɣà"],
-	    [:Masc, :Singular, :Person3, "desés̆íɣʷà"],
-	    [:Common, :Plural, :Person2, "destánas̆tínà"],
-	    [:Common, :Singular, :Person1, "deés̆úɣà"]]
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "deés̆úɣà"]
+            [:Singular :Person2 :Common "destə́s̆tíɣʷà"]
+            [:Singular :Person3 :Masc "desés̆íɣʷà"]
+            [:Singular :Person3 :Fem "destés̆tíɣʷà"]
+            [:Plural :Person1 :Common "desnés̆núɣà"]
+            [:Plural :Person2 :Common "destánas̆tínà"]
+            [:Plural :Person3 :Common "desánas̆ínà"]]
     }
-    {:label "awngi-VRelSubjAffImperf-des"
-    :note "Hetzron1969 1.2.4"
-    :common {:clauseType :RelSubj,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "destát(í)"],
-	    [:Common, :Plural, :Person2, "destánɣá"],
-	    [:Common, :Singular, :Person1, "desáɣá"],
-	    [:Common, :Plural, :Person1, "desnáɣá"],
-	    [:Masc, :Singular, :Person3, "desáw(í)"],
-	    [:Common, :Plural, :Person3, "desánkú"],
-	    [:Common, :Singular, :Person2, "destáɣá"]]
+    {:label "awngi-VApodosisNegDef-des"
+    :note "Hetzron1969 1.2.13"
+    :common {:clauseType :Apodosis,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desátíɣás̆túɣà"]
+            [:Singular :Person2 :Common "desátíɣás̆tíɣʷà"]
+            [:Singular :Person3 :Masc "desátíws̆íɣʷà"]
+            [:Singular :Person3 :Fem "desátítə́s̆tíɣʷà"]
+            [:Plural :Person1 :Common "desnátínɣás̆núɣà"]
+            [:Plural :Person2 :Common "desátínɣás̆tínà"]
+            [:Plural :Person3 :Common "desátínkús̆ínà"]]
     }
-    {:label "awngi-VExobligativeAffImperfDef-des"
-    :note "Hetzron1969 1.4.2"
-    :common {:clauseType :Exobligative,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "desawc̆é"],
-	    [:Common, :Singular, :Person2, "destawji"],
-	    [:Masc, :Singular, :Person3, "desawjé"],
-	    [:Fem, :Singular, :Person3, "destawji"],
-	    [:Common, :Plural, :Person1, "desnawjné"],
-	    [:Common, :Plural, :Person2, "destə́kawjinà"],
-	    [:Common, :Plural, :Person3, "deskawjánà"]]
+    {:label "awngi-VApodosisNegIndef-des"
+    :note "Hetzron1969 1.2.13"
+    :common {:clauseType :Apodosis,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desálas̆túɣà"]
+            [:Singular :Person2 :Common "desálas̆tíɣʷà"]
+            [:Singular :Person3 :Masc "desálas̆íɣʷà"]
+            [:Singular :Person3 :Fem "desálas̆tíɣʷà"]
+            [:Plural :Person1 :Common "desnálas̆núɣà"]
+            [:Plural :Person2 :Common "desálas̆tínà"]
+            [:Plural :Person3 :Common "desálas̆ínà"]]
     }
-    {:label "awngi-VStative-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :leqleq,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "ləqləqanis"],
-	    [:Masc, :Singular, :Person3, "ləqləqus"],
-	    [:Common, :Plural, :Person1, "ləqləqənnûs"],
-	    [:Fem, :Singular, :Person3, "ləqləqis"],
-	    [:Common, :Singular, :Person2, "ləqləqis"],
-	    [:Common, :Singular, :Person1, "ləqləqus"],
-	    [:Common, :Plural, :Person2, "ləqləqenis"]]
+    {:label "awngi-VCompound-des"
+    :note "Hetzron1969 1.3.0"
+    :common {:clauseType :Compound,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desa-"]
+            [:Singular :Person2 :Common "desta-"]
+            [:Singular :Person3 :Masc "desa-"]
+            [:Singular :Person3 :Fem "desta-"]
+            [:Plural :Person1 :Common "desna-"]
+            [:Plural :Person2 :Common "destə́ka-"]
+            [:Plural :Person3 :Common "deska-"]]
     }
-    {:label "awngi-VTerminative-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :ey,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "əytə́mba"],
-	    [:Common, :Plural, :Person2, "əytinimba"],
-	    [:Masc, :Singular, :Person3, "ə́yə́mba"],
-	    [:Common, :Singular, :Person2, "əytə́mba"],
-	    [:Common, :Singular, :Person1, "əyə́mba"],
-	    [:Common, :Plural, :Person1, "ə́ynə́mba"],
-	    [:Common, :Plural, :Person3, "ə́yínimba"]]
-    }
-    {:label "awngi-VTerminative-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :jep,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "jewtínimba"],
-	    [:Common, :Singular, :Person1, "jepémba"],
-	    [:Common, :Plural, :Person1, "jewnémba"],
-	    [:Common, :Plural, :Person3, "jewínimba"],
-	    [:Masc, :Singular, :Person3, "jewémba"],
-	    [:Common, :Singular, :Person2, "jewtémba"],
-	    [:Fem, :Singular, :Person3, "jewtémba"]]
-    }
-    {:label "awngi-VSubjunctiveNeg-des"
+    {:label "awngi-VConverb-des"
     :note "Hetzron1969 1.2.1-3"
-    :common {:clauseType :Subjunctive,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "desátíta"],
-	    [:Masc, :Singular, :Person3, "desátíta"],
-	    [:Common, :Plural, :Person3, "desátínta"],
-	    [:Common, :Plural, :Person1, "desnátíta"],
-	    [:Fem, :Singular, :Person3, "desátíta"],
-	    [:Common, :Singular, :Person1, "desátíta"],
-	    [:Common, :Plural, :Person2, "desátínta"]]
-    }
-    {:label "awngi-VProtasisAffPerf-des"
-    :note "Hetzron1969 1.2.12"
-    :common {:clauseType :Protasis,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "destə́kas̆tíni"],
-	    [:Fem, :Singular, :Person3, "destás̆tíni"],
-	    [:Common, :Plural, :Person1, "desnás̆núni"],
-	    [:Common, :Singular, :Person1, "desás̆túni"],
-	    [:Common, :Singular, :Person2, "destás̆tíni"],
-	    [:Masc, :Singular, :Person3, "desás̆íni"],
-	    [:Common, :Plural, :Person3, "deskas̆íni"]]
-    }
-    {:label "awngi-VTemporal-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :aq,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "áqání"],
-	    [:Common, :Plural, :Person2, "táɣáni"],
-	    [:Common, :Plural, :Person1, "áɣnání"],
-	    [:Common, :Singular, :Person2, "táɣání"],
-	    [:Masc, :Singular, :Person3, "yaɣání"],
-	    [:Fem, :Singular, :Person3, "táɣání"],
-	    [:Common, :Plural, :Person3, "yáɣáni"]]
-    }
-    {:label "awngi-VSubordinateNegVarA-des"
-    :note "Hetzron1969 1.2.14"
-    :common {:clauseType :Subordinate,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :varClass :VarA}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "desánəɣʷlés"],
-	    [:Masc, :Singular, :Person3, "desáɣʷlés"],
-	    [:Common, :Singular, :Person1, "desáɣʷlés"],
-	    [:Fem, :Singular, :Person3, "destáɣʷlés"],
-	    [:Common, :Singular, :Person2, "destáɣʷlés"],
-	    [:Common, :Plural, :Person2, "destánəɣʷlés"],
-	    [:Common, :Plural, :Person1, "desnáɣʷlés"]]
-    }
-    {:label "awngi-VMainPerfIndef-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :ey,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "əytə́ka"],
-	    [:Common, :Singular, :Person1, "əya"],
-	    [:Common, :Plural, :Person3, "ə́yka"],
-	    [:Masc, :Singular, :Person3, "ə́ya"],
-	    [:Common, :Singular, :Person2, "əyta"],
-	    [:Common, :Plural, :Person1, "ə́yna"],
-	    [:Fem, :Singular, :Person3, "əyta"]]
+    :common {:clauseType :Consecutive,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Converb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desata"]
+            [:Singular :Person2 :Common "destata"]
+            [:Singular :Person3 :Masc "desamá"]
+            [:Singular :Person3 :Fem "destata"]
+            [:Plural :Person1 :Common "desnana"]
+            [:Plural :Person2 :Common "destə́kamá"]
+            [:Plural :Person3 :Common "deskamá"]]
     }
     {:label "awngi-VDesiderativeImperf-des"
     :note "Hetzron1969 1.2.5"
     :common {:clauseType :Desiderative,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "destagi"],
-	    [:Masc, :Singular, :Person3, "desagi"],
-	    [:Common, :Plural, :Person3, "deskagi"],
-	    [:Common, :Singular, :Person1, "desagi"],
-	    [:Common, :Singular, :Person2, "destagi"],
-	    [:Common, :Plural, :Person1, "desnagi"],
-	    [:Common, :Plural, :Person2, "destə́kagi"]]
-    }
-    {:label "awngi-VDurativeAffConverb-des"
-    :note "Hetzron1969 1.3.3"
-    :common {:clauseType :Durative,
-	    :defClass :Neutral,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Converb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "destə́kas̆tíkamá"],
-	    [:Common, :Singular, :Person2, "destas̆téta"],
-	    [:Masc, :Singular, :Person3, "desas̆émá"],
-	    [:Common, :Plural, :Person3, "deskas̆íkamá"],
-	    [:Common, :Singular, :Person1, "desas̆táta"],
-	    [:Common, :Plural, :Person1, "desnănána"],
-	    [:Fem, :Singular, :Person3, "destas̆téta"]]
-    }
-    {:label "awngi-VProcessiveNeg-des"
-    :note "Hetzron1969 1.2.1-3"
-    :common {:clauseType :Processive,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "destánəɣʷlésgi"],
-	    [:Common, :Plural, :Person1, "desnáɣʷlésgi"],
-	    [:Common, :Singular, :Person1, "desáɣʷlésgi"],
-	    [:Common, :Plural, :Person3, "desánəɣʷlésgi"],
-	    [:Masc, :Singular, :Person3, "desáɣʷlésgi"],
-	    [:Fem, :Singular, :Person3, "destáɣʷlésgi"],
-	    [:Common, :Singular, :Person2, "destáɣʷlésgi"]]
-    }
-    {:label "awngi-VDurativePerf-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :kant,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "kantis̆tíɣʷà"],
-	    [:Common, :Plural, :Person2, "kantikas̆tínà"],
-	    [:Masc, :Singular, :Person3, "kantas̆íɣʷà"],
-	    [:Fem, :Singular, :Person3, "kantis̆tíɣʷà"],
-	    [:Common, :Singular, :Person1, "kantas̆túɣà"],
-	    [:Common, :Plural, :Person1, "kantnas̆núɣà"],
-	    [:Common, :Plural, :Person3, "kantkas̆ínà"]]
-    }
-    {:label "awngi-VMainNegImprtv-des"
-    :note ""
-    :common {:clauseType :Main,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "destítin"],
-	    [:Common, :Plural, :Person2, "destíntin-"],
-	    [:Common, :Plural, :Person3, "desíntin"],
-	    [:Masc, :Singular, :Person3, "desítin"],
-	    [:Common, :Plural, :Person1, "desnítin"],
-	    [:Common, :Singular, :Person1, "desítin"],
-	    [:Common, :Singular, :Person2, "destítin-"]]
-    }
-    {:label "awngi-VMainPerfIndef-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :leqleq,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "ləqləqika"],
-	    [:Fem, :Singular, :Person3, "ləqləqæ"],
-	    [:Common, :Singular, :Person2, "ləqləqæ"],
-	    [:Common, :Singular, :Person1, "ləqləqa"],
-	    [:Common, :Plural, :Person3, "ləqləqeka"],
-	    [:Masc, :Singular, :Person3, "ləqləqa"],
-	    [:Common, :Plural, :Person1, "ləqləqənna"]]
-    }
-    {:label "awngi-VMainNegOrder-des"
-    :note ""
-    :common {:clauseType :Main,
-	    :gender :Common,
-	    :lexeme :des,
-	    :person :Common,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Order}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "dissé(kí)"],
-	    [:Plural, "dissén(kí)"]]
-    }
-    {:label "awngi-VDurativePerfDef-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :jep,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "jewtás̆tíɣʷà"],
-	    [:Fem, :Singular, :Person3, "jewtás̆tíɣʷà"],
-	    [:Common, :Plural, :Person1, "jewnás̆núɣà"],
-	    [:Common, :Plural, :Person2, "jewtékas̆tínà"],
-	    [:Common, :Singular, :Person1, "jepás̆túɣà"],
-	    [:Common, :Singular, :Person2, "jewtás̆tíɣʷà"],
-	    [:Common, :Plural, :Person3, "jewékas̆ínà"]]
-    }
-    {:label "awngi-VMainPerfIndef-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :ne,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "na"],
-	    [:Fem, :Singular, :Person3, "næ"],
-	    [:Common, :Plural, :Person3, "nə́ka"],
-	    [:Common, :Singular, :Person2, "næ"],
-	    [:Masc, :Singular, :Person3, "na"],
-	    [:Common, :Plural, :Person2, "nika"],
-	    [:Common, :Plural, :Person1, "ənna"]]
-    }
-    {:label "awngi-VProtasisImperf-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :kant,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "kantini"],
-	    [:Fem, :Singular, :Person3, "kantini"],
-	    [:Common, :Singular, :Person1, "kantúni"],
-	    [:Masc, :Singular, :Person3, "kantúni"],
-	    [:Common, :Plural, :Person3, "kantúni"],
-	    [:Common, :Plural, :Person1, "kantnúni"],
-	    [:Common, :Singular, :Person2, "kantini"]]
-    }
-    {:label "awngi-VMainNegPerfIndef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "desaya"],
-	    [:Common, :Singular, :Person2, "destaya"],
-	    [:Common, :Singular, :Person1, "desaya"],
-	    [:Common, :Plural, :Person3, "deskaya"],
-	    [:Fem, :Singular, :Person3, "destaya"],
-	    [:Common, :Plural, :Person1, "desnaya"],
-	    [:Common, :Plural, :Person2, "destə́kaya"]]
-    }
-    {:label "awngi-VTemporal-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :fay,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "fanání"],
-	    [:Common, :Singular, :Person2, "fatání"],
-	    [:Common, :Singular, :Person1, "fatání"],
-	    [:Fem, :Singular, :Person3, "fatání"],
-	    [:Common, :Plural, :Person2, "fatáni"],
-	    [:Common, :Plural, :Person3, "fayáni"],
-	    [:Masc, :Singular, :Person3, "fayání"]]
-    }
-    {:label "awngi-VTemporal-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :ne,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "není"],
-	    [:Common, :Plural, :Person3, "náni"],
-	    [:Common, :Singular, :Person1, "náni"],
-	    [:Masc, :Singular, :Person3, "nání"],
-	    [:Common, :Plural, :Person1, "ənnání"],
-	    [:Common, :Plural, :Person2, "neni"],
-	    [:Fem, :Singular, :Person3, "není"]]
-    }
-    {:label "awngi-VRelSubjNegImperf-des"
-    :note "Hetzron1969 1.2.4"
-    :common {:clauseType :RelSubj,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "desátít(í)"],
-	    [:Common, :Plural, :Person2, "desátinɣá"],
-	    [:Common, :Plural, :Person3, "desátinkú"],
-	    [:Common, :Plural, :Person1, "desnátinɣá"],
-	    [:Common, :Singular, :Person2, "desátíɣá"],
-	    [:Masc, :Singular, :Person3, "desátíw(í)"],
-	    [:Common, :Singular, :Person1, "desátíɣá"]]
-    }
-    {:label "awngi-VMainPerfIndef-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :fay,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fatâ"],
-	    [:Fem, :Singular, :Person3, "fatâ"],
-	    [:Common, :Plural, :Person1, "fanâ"],
-	    [:Common, :Singular, :Person1, "fatâ"],
-	    [:Common, :Plural, :Person2, "fatéka"],
-	    [:Masc, :Singular, :Person3, "fayâ"],
-	    [:Common, :Plural, :Person3, "fayéka"]]
-    }
-    {:label "awngi-VTemporal-leqleq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Temporal,
-	    :lexeme :leqleq,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "ləqləqani"],
-	    [:Masc, :Singular, :Person3, "ləqləqaní"],
-	    [:Common, :Plural, :Person1, "ləqləqənnání"],
-	    [:Common, :Singular, :Person1, "ləqləqaní"],
-	    [:Common, :Plural, :Person2, "ləqləqeni"],
-	    [:Common, :Singular, :Person2, "ləqləqení"],
-	    [:Fem, :Singular, :Person3, "ləqləqení"]]
-    }
-    {:label "awngi-VDurativeNegDefDef-des"
-    :note "Hetzron1969 1.3.3"
-    :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Definite}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "deskayas̆ínà"],
-	    [:Common, :Plural, :Person2, "destə́kayas̆tínà"],
-	    [:Common, :Singular, :Person2, "destayas̆tíɣʷà"],
-	    [:Common, :Singular, :Person1, "desayas̆túɣà"],
-	    [:Common, :Plural, :Person1, "desnayas̆núɣà"],
-	    [:Masc, :Singular, :Person3, "desyas̆íɣʷà"],
-	    [:Fem, :Singular, :Person3, "destayas̆tíɣʷà"]]
-    }
-    {:label "awngi-VMainImperfIndef-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :fay,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "fayánà"],
-	    [:Common, :Singular, :Person2, "faté"],
-	    [:Common, :Singular, :Person1, "faté"],
-	    [:Fem, :Singular, :Person3, "faté"],
-	    [:Masc, :Singular, :Person3, "fayé"],
-	    [:Common, :Plural, :Person2, "fatánà"],
-	    [:Common, :Plural, :Person1, "fané"]]
-    }
-    {:label "awngi-VProtasisImperf-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :ey,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "ə́ynúni"],
-	    [:Masc, :Singular, :Person3, "ə́yúni"],
-	    [:Common, :Plural, :Person3, "ə́yúni"],
-	    [:Fem, :Singular, :Person3, "əytúni"],
-	    [:Common, :Singular, :Person2, "əytúni"],
-	    [:Common, :Plural, :Person2, "əytúni"],
-	    [:Common, :Singular, :Person1, "əyúni"]]
-    }
-    {:label "awngi-VTerminativeNeg-des"
-    :note "Hetzron1969 1.2.11"
-    :common {:clauseType :Terminative,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "destítímba"],
-	    [:Common, :Plural, :Person3, "desítínimba"],
-	    [:Masc, :Singular, :Person3, "desítímba"],
-	    [:Common, :Plural, :Person2, "destítínimba"],
-	    [:Common, :Singular, :Person1, "desítímba"],
-	    [:Fem, :Singular, :Person3, "destítímba"],
-	    [:Common, :Plural, :Person1, "desnítímba"]]
-    }
-    {:label "awngi-VStative-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :aq,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "táɣûs"],
-	    [:Common, :Plural, :Person1, "áɣnûs"],
-	    [:Common, :Plural, :Person3, "yáɣánis"],
-	    [:Fem, :Singular, :Person3, "táɣûs"],
-	    [:Common, :Singular, :Person1, "áqûs"],
-	    [:Common, :Plural, :Person2, "táɣánis"],
-	    [:Masc, :Singular, :Person3, "yáɣûs"]]
-    }
-    {:label "awngi-VMainPerfDef-kant"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :kant,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "kantɣʷà"],
-	    [:Common, :Plural, :Person1, "kantnə́ɣʷà"],
-	    [:Fem, :Singular, :Person3, "kantiɣʷà"],
-	    [:Common, :Singular, :Person2, "kantiɣʷà"],
-	    [:Masc, :Singular, :Person3, "kantɣʷà"],
-	    [:Common, :Plural, :Person2, "kantinà"],
-	    [:Common, :Plural, :Person3, "kantúnà"]]
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desagi"]
+            [:Singular :Person2 :Common "destagi"]
+            [:Singular :Person3 :Masc "desagi"]
+            [:Singular :Person3 :Fem "destagi"]
+            [:Plural :Person1 :Common "desnagi"]
+            [:Plural :Person2 :Common "destə́kagi"]
+            [:Plural :Person3 :Common "deskagi"]]
     }
     {:label "awngi-VDesiderativePerf-des"
     :note "Hetzron1969 1.2.5"
     :common {:clauseType :Desiderative,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "deskas̆íkagi"],
-	    [:Common, :Plural, :Person1, "desnás̆nági"],
-	    [:Common, :Plural, :Person2, "destə́kas̆tíkagi"],
-	    [:Fem, :Singular, :Person3, "destás̆tégi"],
-	    [:Common, :Singular, :Person2, "destás̆tégi"],
-	    [:Masc, :Singular, :Person3, "desás̆égi"],
-	    [:Common, :Singular, :Person1, "desás̆tági"]]
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desás̆tági"]
+            [:Singular :Person2 :Common "destás̆tégi"]
+            [:Singular :Person3 :Masc "desás̆égi"]
+            [:Singular :Person3 :Fem "destás̆tégi"]
+            [:Plural :Person1 :Common "desnás̆nági"]
+            [:Plural :Person2 :Common "destə́kas̆tíkagi"]
+            [:Plural :Person3 :Common "deskas̆íkagi"]]
     }
-    {:label "awngi-VDurativePerfDef-aq"
-    :note "Hetzron1969 pp. 118-121"
+    {:label "awngi-VDurativeAffConverb-des"
+    :note "Hetzron1969 1.3.3"
     :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :aq,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "taɣás̆tíɣʷà"],
-	    [:Common, :Singular, :Person1, "aqás̆túɣà"],
-	    [:Common, :Plural, :Person2, "taɣékas̆tínà"],
-	    [:Fem, :Singular, :Person3, "taɣás̆tíɣʷà"],
-	    [:Common, :Plural, :Person3, "yaɣékas̆ínà"],
-	    [:Masc, :Singular, :Person3, "yaɣás̆íɣʷà"],
-	    [:Common, :Plural, :Person1, "aɣnás̆núɣà"]]
-    }
-    {:label "awngi-VStativePerfVar2-des"
-    :note "Hetzron1969 1.2.8"
-    :common {:clauseType :Stative,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Perfect,
-	    :varClass :Var2}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "destakûs"],
-	    [:Common, :Singular, :Person2, "destakûs"],
-	    [:Common, :Singular, :Person1, "desakûs"],
-	    [:Common, :Plural, :Person1, "desnakûs"],
-	    [:Common, :Plural, :Person2, "destə́kakûs"],
-	    [:Common, :Plural, :Person3, "deskakûs"],
-	    [:Masc, :Singular, :Person3, "desakûs"]]
-    }
-    {:label "awngi-VConverb-des"
-    :note "Hetzron1969 1.2.1-3"
-    :common {:clauseType :Converb,
-	    :lexeme :des,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "desnana"],
-	    [:Common, :Singular, :Person1, "desata"],
-	    [:Common, :Singular, :Person2, "destata"],
-	    [:Common, :Plural, :Person2, "destə́kamá"],
-	    [:Common, :Plural, :Person3, "deskamá"],
-	    [:Masc, :Singular, :Person3, "desamá"],
-	    [:Fem, :Singular, :Person3, "destata"]]
-    }
-    {:label "awngi-VPredestinativeImperfDef-des"
-    :note "Hetzron1969 1.4.1"
-    :common {:clauseType :Predestinative,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token, :varB]  ;; schema
-	    [:Common, :Singular, :Person1, "desaycáɣá", :VarB2],
-	    [:Common, :Plural, :Person1, "desnaycnáɣá", :VarB2],
-	    [:Common, :Singular, :Person2, "destaytáɣá", :VarBx],
-	    [:Common, :Plural, :Person1, "desnaynáɣá", :VarB3],
-	    [:Common, :Plural, :Person3, "deskayánkʷí", :VarBx],
-	    [:Common, :Plural, :Person2, "destə́kaytánɣá", :VarBx],
-	    [:Fem, :Singular, :Person3, "destaytátí", :VarBx],
-	    [:Common, :Singular, :Person1, "desayáɣá", :VarB3],
-	    [:Masc, :Singular, :Person3, "desayáwi", :VarBx]]
-    }
-    {:label "awngi-VMainImperfDef-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :ne,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "nenɣá"],
-	    [:Common, :Singular, :Person2, "neɣá"],
-	    [:Common, :Singular, :Person1, "náɣá"],
-	    [:Masc, :Singular, :Person3, "náwí"],
-	    [:Common, :Plural, :Person3, "nánkú"],
-	    [:Common, :Plural, :Person1, "ənnáɣá"],
-	    [:Fem, :Singular, :Person3, "netí"]]
-    }
-    {:label "awngi-VMainImperfDef-fay"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :fay,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fatáɣá"],
-	    [:Common, :Plural, :Person3, "fayánkú"],
-	    [:Common, :Singular, :Person1, "fatáɣá"],
-	    [:Common, :Plural, :Person1, "fanáɣá"],
-	    [:Common, :Plural, :Person2, "fatánɣá"],
-	    [:Masc, :Singular, :Person3, "fayáwí"],
-	    [:Fem, :Singular, :Person3, "fatátí"]]
-    }
-    {:label "awngi-VMainAffPerfDef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "destə́ɣʷà"],
-	    [:Masc, :Singular, :Person3, "desɣʷà"],
-	    [:Fem, :Singular, :Person3, "destə́ɣʷà"],
-	    [:Common, :Plural, :Person3, "desúnà"],
-	    [:Common, :Plural, :Person2, "destúnà"],
-	    [:Common, :Plural, :Person1, "desnə́ɣʷà"],
-	    [:Common, :Singular, :Person1, "desɣʷà"]]
-    }
-    {:label "awngi-VMainNegImperfDef-des"
-    :note "STRUCTURE:\n\r\n\r/STRUCTURE\nCONTENT:\n\r\n\r/CONTENT"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "desnátínɣá"],
-	    [:Common, :Plural, :Person3, "desátínkʷí"],
-	    [:Common, :Singular, :Person1, "desátíɣá"],
-	    [:Common, :Singular, :Person2, "desátíɣá"],
-	    [:Masc, :Singular, :Person3, "desátíwí"],
-	    [:Fem, :Singular, :Person3, "desátítí"],
-	    [:Common, :Plural, :Person2, "desátínɣá"]]
-    }
-    {:label "awngi-VExobligativeNegImperfDef-des"
-    :note "Hetzron1969 1.4.2"
-    :common {:clauseType :Exobligative,
-	    :defClass :Definite,
-	    :gender :Common,
-	    :lexeme :des,
-	    :number :Singular,
-	    :person :Person1,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:token]  ;; schema
-	    ["desawc̆ála"]]
-    }
-    {:label "awngi-VMainImperfIndef-ey"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :ey,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "əyté"],
-	    [:Common, :Plural, :Person3, "ə́yánà"],
-	    [:Common, :Singular, :Person2, "əyté"],
-	    [:Common, :Plural, :Person1, "ə́yné"],
-	    [:Masc, :Singular, :Person3, "ə́yé"],
-	    [:Common, :Plural, :Person2, "əytánà"],
-	    [:Common, :Singular, :Person1, "əyé"]]
-    }
-    {:label "awngi-VMainImperfDef-jep"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Definite,
-	    :lexeme :jep,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "jewtátí"],
-	    [:Common, :Plural, :Person2, "jewtánɣá"],
-	    [:Common, :Plural, :Person3, "jewánkú"],
-	    [:Common, :Plural, :Person1, "jewnáɣá"],
-	    [:Common, :Singular, :Person2, "jewtáɣá"],
-	    [:Masc, :Singular, :Person3, "jewáwí"],
-	    [:Common, :Singular, :Person1, "jepáɣá"]]
-    }
-    {:label "awngi-VProtasisImperf-aq"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :aq,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "yaɣúni"],
-	    [:Common, :Plural, :Person2, "taɣúni"],
-	    [:Fem, :Singular, :Person3, "taɣúni"],
-	    [:Common, :Singular, :Person1, "aqúni"],
-	    [:Common, :Singular, :Person2, "taɣúni"],
-	    [:Common, :Plural, :Person1, "aɣnúni"],
-	    [:Masc, :Singular, :Person3, "yaɣúni"]]
-    }
-    {:label "awngi-VProtasisImperf-ne"
-    :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :ne,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "núni"],
-	    [:Common, :Singular, :Person2, "nini"],
-	    [:Common, :Plural, :Person3, "núni"],
-	    [:Common, :Plural, :Person2, "nini"],
-	    [:Common, :Plural, :Person1, "ənnúni"],
-	    [:Fem, :Singular, :Person3, "nini"],
-	    [:Masc, :Singular, :Person3, "núni"]]
-    }
-    {:label "awngi-VTerminativeAff-des"
-    :note "Hetzron1969 1.2.11"
-    :common {:clauseType :Terminative,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "destəmbá"],
-	    [:Common, :Plural, :Person3, "desínimba"],
-	    [:Common, :Singular, :Person1, "desə́mba"],
-	    [:Masc, :Singular, :Person3, "desəmbá"],
-	    [:Common, :Plural, :Person1, "desnə́mba"],
-	    [:Common, :Singular, :Person2, "destəmbá"],
-	    [:Common, :Plural, :Person2, "destínimba"]]
-    }
-    {:label "awngi-VStativeImperf-des"
-    :note "Hetzron1969 1.2.8"
-    :common {:clauseType :Stative,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "desûs"],
-	    [:Common, :Singular, :Person1, "desûs"],
-	    [:Common, :Plural, :Person1, "desnûs"],
-	    [:Fem, :Singular, :Person3, "destûs"],
-	    [:Common, :Singular, :Person2, "destûs"],
-	    [:Common, :Plural, :Person3, "desánis"],
-	    [:Common, :Plural, :Person2, "destánis"]]
+            :aspect :Neutral,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Converb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desas̆táta"]
+            [:Singular :Person2 :Common "destas̆téta"]
+            [:Singular :Person3 :Masc "desas̆émá"]
+            [:Singular :Person3 :Fem "destas̆téta"]
+            [:Plural :Person1 :Common "desnănána"]
+            [:Plural :Person2 :Common "destə́kas̆tíkamá"]
+            [:Plural :Person3 :Common "deskas̆íkamá"]]
     }
     {:label "awngi-VDurativeAffDefDef-des"
     :note "Hetzron1969 1.3.3"
     :common {:clauseType :Durative,
-	    :defClass :Definite,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Definite}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "desas̆túɣà"],
-	    [:Fem, :Singular, :Person3, "destas̆tí ɣʷà"],
-	    [:Common, :Plural, :Person3, "deskas̆ínà"],
-	    [:Common, :Singular, :Person2, "destas̆tíɣʷà"],
-	    [:Common, :Plural, :Person2, "destə́kas̆tínà"],
-	    [:Masc, :Singular, :Person3, "desas̆í ɣʷà"],
-	    [:Common, :Plural, :Person1, "desnas̆núɣà"]]
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desas̆túɣà"]
+            [:Singular :Person2 :Common "destas̆tíɣʷà"]
+            [:Singular :Person3 :Masc "desas̆í ɣʷà"]
+            [:Singular :Person3 :Fem "destas̆tí ɣʷà"]
+            [:Plural :Person1 :Common "desnas̆núɣà"]
+            [:Plural :Person2 :Common "destə́kas̆tínà"]
+            [:Plural :Person3 :Common "deskas̆ínà"]]
     }
-    {:label "awngi-VPosteriorVarB-des"
-    :note "Hetzron1969 1.2.10"
-    :common {:clauseType :Posterior,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :varClass :VarB}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "destánisə́s̆tínidés"],
-	    [:Common, :Plural, :Person3, "desánisə́s̆ínidés"],
-	    [:Fem, :Singular, :Person3, "destás̆tínidés"],
-	    [:Common, :Singular, :Person2, "destás̆tínidés"],
-	    [:Masc, :Singular, :Person3, "desás̆ínidés"],
-	    [:Common, :Plural, :Person1, "desnás̆núnidés"],
-	    [:Common, :Singular, :Person1, "desás̆únidés"]]
+    {:label "awngi-VDurativeNegConverb-des"
+    :note "Hetzron1969 1.3.3"
+    :common {:clauseType :Durative,
+            :aspect :Neutral,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Converb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣʷlas̆téta"]
+            [:Singular :Person2 :Common "destáɣʷlas̆téta"]
+            [:Singular :Person3 :Masc "desáɣʷlas̆émá"]
+            [:Singular :Person3 :Fem "destáɣʷlas̆téta"]
+            [:Plural :Person1 :Common "desnáɣʷlas̆nána"]
+            [:Plural :Person2 :Common "destánəɣʷlas̆tíkamá"]
+            [:Plural :Person3 :Common "desánəɣʷlas̆íkamá"]]
     }
-    {:label "awngi-VPredestinativeImperfIndef-des"
-    :note "Hetzron1969 1.4.1"
-    :common {:clauseType :Predestinative,
-	    :defClass :Indefinite,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token, :varB]  ;; schema
-	    [:Common, :Plural, :Person2, "destə́kaytánà", :VarBx],
-	    [:Fem, :Singular, :Person3, "destayté", :VarBx],
-	    [:Common, :Singular, :Person1, "desaycé", :VarB2],
-	    [:Common, :Plural, :Person1, "desnayné", :VarB3],
-	    [:Common, :Plural, :Person3, "deskayánà", :VarBx],
-	    [:Common, :Singular, :Person2, "destayté", :VarBx],
-	    [:Common, :Singular, :Person1, "desayé", :VarB3],
-	    [:Common, :Plural, :Person1, "desnaycné", :VarB2],
-	    [:Masc, :Singular, :Person3, "desayé", :VarBx]]
+    {:label "awngi-VDurativeNegDefDef-des"
+    :note "Hetzron1969 1.3.3"
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desayas̆túɣà"]
+            [:Singular :Person2 :Common "destayas̆tíɣʷà"]
+            [:Singular :Person3 :Masc "desyas̆íɣʷà"]
+            [:Singular :Person3 :Fem "destayas̆tíɣʷà"]
+            [:Plural :Person1 :Common "desnayas̆núɣà"]
+            [:Plural :Person2 :Common "destə́kayas̆tínà"]
+            [:Plural :Person3 :Common "deskayas̆ínà"]]
     }
-    {:label "awngi-VMainPerfIndef-jep"
+    {:label "awngi-VDurativePerf-egog"
     :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :jep,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "jewtéka"],
-	    [:Common, :Singular, :Person1, "jepâ"],
-	    [:Masc, :Singular, :Person3, "jewâ"],
-	    [:Common, :Plural, :Person1, "jewnâ"],
-	    [:Common, :Plural, :Person3, "jewéka"],
-	    [:Fem, :Singular, :Person3, "jewtâ"],
-	    [:Common, :Singular, :Person2, "jewtâ"]]
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtas̆túɣà"]
+            [:Singular :Person2 :Common "əɣóɣtis̆tíɣʷà"]
+            [:Singular :Person3 :Masc "əɣóɣis̆íɣʷà"]
+            [:Singular :Person3 :Fem "əɣóɣtis̆tíɣʷà"]
+            [:Plural :Person1 :Common "əɣóɣnasnúɣà"]
+            [:Plural :Person2 :Common "əɣóɣtíkas̆tínà"]
+            [:Plural :Person3 :Common "əɣóɣíkas̆ínà"]]
     }
-    {:label "awngi-VStative-fay"
+    {:label "awngi-VDurativePerf-fay"
     :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :fay,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "fayánis"],
-	    [:Common, :Plural, :Person1, "fanús"],
-	    [:Masc, :Singular, :Person3, "fayús"],
-	    [:Common, :Plural, :Person2, "fatánis"],
-	    [:Fem, :Singular, :Person3, "fatús"],
-	    [:Common, :Singular, :Person1, "fatús"],
-	    [:Common, :Singular, :Person2, "fatús"]]
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fastás̆túɣa"]
+            [:Singular :Person2 :Common "fatás̆tíɣʷà"]
+            [:Singular :Person3 :Masc "fayás̆íɣʷà"]
+            [:Singular :Person3 :Fem "fatás̆tíɣʷà"]
+            [:Plural :Person1 :Common "fanás̆núɣà"]
+            [:Plural :Person2 :Common "fatékas̆tínà"]
+            [:Plural :Person3 :Common "fayékas̆ínà"]]
     }
-    {:label "awngi-VPosteriorVarA-des"
-    :note "Hetzron1969 1.2.10"
-    :common {:clauseType :Posterior,
-	    :lexeme :des,
-	    :pos :Verb,
-	    :varClass :VarA}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "destúnidés"],
-	    [:Common, :Singular, :Person2, "destúnidés"],
-	    [:Common, :Singular, :Person1, "desúnidés"],
-	    [:Common, :Plural, :Person1, "desnúnidés"],
-	    [:Fem, :Singular, :Person3, "destúnidés"],
-	    [:Masc, :Singular, :Person3, "desúnidés"],
-	    [:Common, :Plural, :Person3, "desúnidés"]]
-    }
-    {:label "awngi-VProtasisNegPerf-des"
-    :note "Hetzron1969 1.2.12"
-    :common {:clauseType :Protasis,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "desayas̆túni"],
-	    [:Masc, :Singular, :Person3, "desayas̆íni"],
-	    [:Common, :Plural, :Person1, "desnayas̆núni"],
-	    [:Common, :Plural, :Person2, "destə́kayas̆tíni"],
-	    [:Fem, :Singular, :Person3, "destayas̆tíni"],
-	    [:Common, :Singular, :Person2, "destayas̆tíni"],
-	    [:Common, :Plural, :Person3, "deskayas̆íni"]]
-    }
-    {:label "awngi-VMainImperfIndef-egog"
+    {:label "awngi-VDurativePerf-kant"
     :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Main,
-	    :defClass :Indefinite,
-	    :lexeme :egog,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "əɣóɣté"],
-	    [:Common, :Plural, :Person3, "əɣóɣénà"],
-	    [:Masc, :Singular, :Person3, "əɣóɣí"],
-	    [:Common, :Plural, :Person1, "əɣóɣné"],
-	    [:Common, :Singular, :Person2, "əɣóɣtí"],
-	    [:Common, :Plural, :Person2, "əɣóɣténà"],
-	    [:Fem, :Singular, :Person3, "əɣóɣtí"]]
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantas̆túɣà"]
+            [:Singular :Person2 :Common "kantis̆tíɣʷà"]
+            [:Singular :Person3 :Masc "kantas̆íɣʷà"]
+            [:Singular :Person3 :Fem "kantis̆tíɣʷà"]
+            [:Plural :Person1 :Common "kantnas̆núɣà"]
+            [:Plural :Person2 :Common "kantikas̆tínà"]
+            [:Plural :Person3 :Common "kantkas̆ínà"]]
     }
-    {:label "awngi-VSubjunctiveAff-des"
-    :note "Hetzron1969 1.2.1-3"
-    :common {:clauseType :Subjunctive,
-	    :lexeme :des,
-	    :polarity :Affirmative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "desnáta"],
-	    [:Common, :Singular, :Person2, "destáta"],
-	    [:Fem, :Singular, :Person3, "destáta"],
-	    [:Common, :Plural, :Person3, "desánta"],
-	    [:Common, :Singular, :Person1, "desáta"],
-	    [:Masc, :Singular, :Person3, "desáta"],
-	    [:Common, :Plural, :Person2, "destánta"]]
-    }
-    {:label "awngi-VProtasisImperf-egog"
+    {:label "awngi-VDurativePerf-leqleq"
     :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Protasis,
-	    :lexeme :egog,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "əɣóɣtíni"],
-	    [:Masc, :Singular, :Person3, "əɣóɣíni"],
-	    [:Common, :Plural, :Person1, "əɣóɣnúni"],
-	    [:Common, :Singular, :Person2, "əɣóɣtíni"],
-	    [:Common, :Plural, :Person3, "əɣóɣíni"],
-	    [:Common, :Plural, :Person2, "əɣóɣtíni"],
-	    [:Common, :Singular, :Person1, "əɣóɣtúni"]]
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqas̆túɣà"]
+            [:Singular :Person2 :Common "ləqləqis̆tíɣʷà"]
+            [:Singular :Person3 :Masc "ləqləqas̆íɣʷà"]
+            [:Singular :Person3 :Fem "ləqləqis̆tíɣʷà"]
+            [:Plural :Person1 :Common "ləqləqənnas̆núɣà"]
+            [:Plural :Person2 :Common "ləqləqikas̆tínà"]
+            [:Plural :Person3 :Common "ləqləqekas̆inà"]]
+    }
+    {:label "awngi-VDurativePerfDef-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "aqás̆túɣà"]
+            [:Singular :Person2 :Common "taɣás̆tíɣʷà"]
+            [:Singular :Person3 :Masc "yaɣás̆íɣʷà"]
+            [:Singular :Person3 :Fem "taɣás̆tíɣʷà"]
+            [:Plural :Person1 :Common "aɣnás̆núɣà"]
+            [:Plural :Person2 :Common "taɣékas̆tínà"]
+            [:Plural :Person3 :Common "yaɣékas̆ínà"]]
+    }
+    {:label "awngi-VDurativePerfDef-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyas̆túɣà"]
+            [:Singular :Person2 :Common "əytas̆tíɣʷà"]
+            [:Singular :Person3 :Masc "ə́yas̆íɣʷà"]
+            [:Singular :Person3 :Fem "əytas̆tíɣʷà"]
+            [:Plural :Person1 :Common "ə́ynaśnúɣà"]
+            [:Plural :Person2 :Common "əytə́kas̆tínà"]
+            [:Plural :Person3 :Common "ə́ykas̆ínà"]]
+    }
+    {:label "awngi-VDurativePerfDef-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepás̆túɣà"]
+            [:Singular :Person2 :Common "jewtás̆tíɣʷà"]
+            [:Singular :Person3 :Masc "jewtás̆tíɣʷà"]
+            [:Singular :Person3 :Fem "jewtás̆tíɣʷà"]
+            [:Plural :Person1 :Common "jewnás̆núɣà"]
+            [:Plural :Person2 :Common "jewtékas̆tínà"]
+            [:Plural :Person3 :Common "jewékas̆ínà"]]
+    }
+    {:label "awngi-VDurativePerfDef-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Durative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "nas̆túɣà"]
+            [:Singular :Person2 :Common "nis̆tíɣʷà"]
+            [:Singular :Person3 :Masc "nas̆íɣʷà"]
+            [:Singular :Person3 :Fem "nis̆tíɣʷà"]
+            [:Plural :Person1 :Common "ənnas̆núɣà"]
+            [:Plural :Person2 :Common "nikas̆tínà"]
+            [:Plural :Person3 :Common "nə́kas̆ínà"]]
+    }
+    {:label "awngi-VExobligativeAffConverb-des"
+    :note "Hetzron1969 1.4.2"
+    :common {:clauseType :Exobligative,
+            :aspect :Neutral,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Converb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desawc̆ata"]
+            [:Singular :Person2 :Common "destawjeta"]
+            [:Singular :Person3 :Masc "desawjamá"]
+            [:Singular :Person3 :Fem "destawjeta"]
+            [:Plural :Person1 :Common "desnawjnana"]
+            [:Plural :Person2 :Common "destə́kawjikamá"]
+            [:Plural :Person3 :Common "deskawjə́kamá"]]
+    }
+    {:label "awngi-VExobligativeAffImperfDef-des"
+    :note "Hetzron1969 1.4.2"
+    :common {:clauseType :Exobligative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desawc̆é"]
+            [:Singular :Person2 :Common "destawji"]
+            [:Singular :Person3 :Masc "desawjé"]
+            [:Singular :Person3 :Fem "destawji"]
+            [:Plural :Person1 :Common "desnawjné"]
+            [:Plural :Person2 :Common "destə́kawjinà"]
+            [:Plural :Person3 :Common "deskawjánà"]]
+    }
+    {:label "awngi-VExobligativeNegConverb-des"
+    :note "Hetzron1969 1.4.2"
+    :common {:gender :Common,
+            :conjSubClass :IC1211,
+            :polarity :Negative,
+            :conjClass :Suffix,
+            :lexeme :des,
+            :aspect :Neutral,
+            :pos :Verb,
+            :person :Person1,
+            :tam :Converb,
+            :clauseType :Exobligative,
+            :number :Singular}
+    :terms [[:token] ;; schema
+            ["desawc̆áɣʷla"]]
+    }
+    {:label "awngi-VExobligativeNegImperfDef-des"
+    :note "Hetzron1969 1.4.2"
+    :common {:gender :Common,
+            :conjSubClass :IC1211,
+            :polarity :Negative,
+            :conjClass :Suffix,
+            :lexeme :des,
+            :aspect :Definite,
+            :pos :Verb,
+            :person :Person1,
+            :tam :Imperfect,
+            :clauseType :Exobligative,
+            :number :Singular}
+    :terms [[:token] ;; schema
+            ["desawc̆ála"]]
     }
     {:label "awngi-VImmediate-des"
     :note "Hetzron1969 1.2.9"
     :common {:clauseType :Immediate,
-	    :lexeme :des,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "desunta"],
-	    [:Common, :Singular, :Person2, "destuta"],
-	    [:Common, :Plural, :Person2, "destunta"],
-	    [:Fem, :Singular, :Person3, "destuta"],
-	    [:Common, :Plural, :Person1, "desnuta"],
-	    [:Common, :Singular, :Person1, "desuta"],
-	    [:Masc, :Singular, :Person3, "desuta"]]
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desuta"]
+            [:Singular :Person2 :Common "destuta"]
+            [:Singular :Person3 :Masc "desuta"]
+            [:Singular :Person3 :Fem "destuta"]
+            [:Plural :Person1 :Common "desnuta"]
+            [:Plural :Person2 :Common "destunta"]
+            [:Plural :Person3 :Common "desunta"]]
+    }
+    {:label "awngi-VImprtvVarB-des"
+    :note "Hetzron1969 1.4.1"
+    :common {:conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Imperative,
+            :morphClass :SuffAlternate}
+    :terms [[:varB :number :person :gender :token] ;; schema
+            [:VarB1 :Singular :Person2 :Common "destayc"]
+            [:VarB1 :Plural :Person2 :Common "destə́kaycán"]
+            [:VarB2 :Singular :Person1 :Common "desaycə́s"]
+            [:VarB2 :Plural :Person1 :Common "desnaycnə́s"]
+            [:VarB3 :Singular :Person1 :Common "desayə́s"]
+            [:VarB3 :Singular :Person2 :Common "destay"]
+            [:VarB3 :Plural :Person1 :Common "desnaynə́s"]
+            [:VarB3 :Plural :Person2 :Common "destə́kayán"]
+            [:VarBx :Singular :Person3 :Masc "desayə́s"]
+            [:VarBx :Singular :Person3 :Fem "destayə́s"]
+            [:VarBx :Plural :Person3 :Common "deskayínis"]]
+    }
+    {:label "awngi-VMainAffImperfDef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣá"]
+            [:Singular :Person2 :Common "destáɣá"]
+            [:Singular :Person3 :Masc "desáwí"]
+            [:Singular :Person3 :Fem "destátí"]
+            [:Plural :Person1 :Common "desnáɣá"]
+            [:Plural :Person2 :Common "destánɣá"]
+            [:Plural :Person3 :Common "desánkʷí"]]
+    }
+    {:label "awngi-VMainAffImperfIndef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desé"]
+            [:Singular :Person2 :Common "desté"]
+            [:Singular :Person3 :Masc "desé"]
+            [:Singular :Person3 :Fem "desté"]
+            [:Plural :Person1 :Common "desné"]
+            [:Plural :Person2 :Common "destána"]
+            [:Plural :Person3 :Common "desána"]]
+    }
+    {:label "awngi-VMainAffImprtv-des"
+    :note ""
+    :common {:clauseType :Main,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desəs"]
+            [:Singular :Person2 :Common "destəs-"]
+            [:Singular :Person3 :Masc "desəs"]
+            [:Singular :Person3 :Fem "destəs"]
+            [:Plural :Person1 :Common "desnəs"]
+            [:Plural :Person2 :Common "destínis-"]
+            [:Plural :Person3 :Common "desínis"]]
+    }
+    {:label "awngi-VMainAffOrder-des"
+    :note ""
+    :common {:gender :Common,
+            :conjSubClass :IC1211,
+            :polarity :Affirmative,
+            :conjClass :Suffix,
+            :lexeme :des,
+            :pos :Verb,
+            :person :Person2,
+            :tam :Order,
+            :clauseType :Main}
+    :terms [[:number :token] ;; schema
+            [:Singular "dés"]
+            [:Plural "desán"]]
+    }
+    {:label "awngi-VMainAffPerfDef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desɣʷà"]
+            [:Singular :Person2 :Common "destə́ɣʷà"]
+            [:Singular :Person3 :Masc "desɣʷà"]
+            [:Singular :Person3 :Fem "destə́ɣʷà"]
+            [:Plural :Person1 :Common "desnə́ɣʷà"]
+            [:Plural :Person2 :Common "destúnà"]
+            [:Plural :Person3 :Common "desúnà"]]
+    }
+    {:label "awngi-VMainAffPerfIndef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desa"]
+            [:Singular :Person2 :Common "desta"]
+            [:Singular :Person3 :Masc "desa"]
+            [:Singular :Person3 :Fem "desta"]
+            [:Plural :Person1 :Common "desna"]
+            [:Plural :Person2 :Common "destə́ka"]
+            [:Plural :Person3 :Common "deska"]]
+    }
+    {:label "awngi-VMainImperfDef-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "áqáɣá"]
+            [:Singular :Person2 :Common "táɣáɣá"]
+            [:Singular :Person3 :Masc "yáɣáwí"]
+            [:Singular :Person3 :Fem "táɣátí"]
+            [:Plural :Person1 :Common "áɣnáɣá"]
+            [:Plural :Person2 :Common "táɣánɣá"]
+            [:Plural :Person3 :Common "yáɣánkú"]]
+    }
+    {:label "awngi-VMainImperfDef-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtáɣá"]
+            [:Singular :Person2 :Common "əɣóɣtéɣá"]
+            [:Singular :Person3 :Masc "əɣóɣéwí"]
+            [:Singular :Person3 :Fem "əɣóɣtétí"]
+            [:Plural :Person1 :Common "əɣóɣnáɣá"]
+            [:Plural :Person2 :Common "əɣóɣténɣá"]
+            [:Plural :Person3 :Common "əɣóɣénkú"]]
+    }
+    {:label "awngi-VMainImperfDef-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyáɣá"]
+            [:Singular :Person2 :Common "əytáɣá"]
+            [:Singular :Person3 :Masc "ə́yáwí"]
+            [:Singular :Person3 :Fem "əytátí"]
+            [:Plural :Person1 :Common "ə́ynáɣá"]
+            [:Plural :Person2 :Common "əytánɣá"]
+            [:Plural :Person3 :Common "ə́yánkú"]]
+    }
+    {:label "awngi-VMainImperfDef-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatáɣá"]
+            [:Singular :Person2 :Common "fatáɣá"]
+            [:Singular :Person3 :Masc "fayáwí"]
+            [:Singular :Person3 :Fem "fatátí"]
+            [:Plural :Person1 :Common "fanáɣá"]
+            [:Plural :Person2 :Common "fatánɣá"]
+            [:Plural :Person3 :Common "fayánkú"]]
+    }
+    {:label "awngi-VMainImperfDef-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepáɣá"]
+            [:Singular :Person2 :Common "jewtáɣá"]
+            [:Singular :Person3 :Masc "jewáwí"]
+            [:Singular :Person3 :Fem "jewtátí"]
+            [:Plural :Person1 :Common "jewnáɣá"]
+            [:Plural :Person2 :Common "jewtánɣá"]
+            [:Plural :Person3 :Common "jewánkú"]]
+    }
+    {:label "awngi-VMainImperfDef-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantáɣá"]
+            [:Singular :Person2 :Common "kanteɣá"]
+            [:Singular :Person3 :Masc "kantáwí"]
+            [:Singular :Person3 :Fem "kantetí"]
+            [:Plural :Person1 :Common "kantnáɣá"]
+            [:Plural :Person2 :Common "kantenɣá"]
+            [:Plural :Person3 :Common "kantánkú"]]
+    }
+    {:label "awngi-VMainImperfDef-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqaɣá"]
+            [:Singular :Person2 :Common "ləqləqeɣá"]
+            [:Singular :Person3 :Masc "ləqləqawí"]
+            [:Singular :Person3 :Fem "ləqləqetí"]
+            [:Plural :Person1 :Common "ləqləqənnáɣá"]
+            [:Plural :Person2 :Common "ləqləqenɣá"]
+            [:Plural :Person3 :Common "ləqləqankú"]]
+    }
+    {:label "awngi-VMainImperfDef-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "náɣá"]
+            [:Singular :Person2 :Common "neɣá"]
+            [:Singular :Person3 :Masc "náwí"]
+            [:Singular :Person3 :Fem "netí"]
+            [:Plural :Person1 :Common "ənnáɣá"]
+            [:Plural :Person2 :Common "nenɣá"]
+            [:Plural :Person3 :Common "nánkú"]]
+    }
+    {:label "awngi-VMainImperfIndef-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "áq-é"]
+            [:Singular :Person2 :Common "t-áɣ-é"]
+            [:Singular :Person3 :Masc "y-áɣ-é"]
+            [:Singular :Person3 :Fem "t-áɣ-é"]
+            [:Plural :Person1 :Common "áɣ-n-é"]
+            [:Plural :Person2 :Common "t-áɣ-ánà"]
+            [:Plural :Person3 :Common "y-áɣ-ánà"]]
+    }
+    {:label "awngi-VMainImperfIndef-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣté"]
+            [:Singular :Person2 :Common "əɣóɣtí"]
+            [:Singular :Person3 :Masc "əɣóɣí"]
+            [:Singular :Person3 :Fem "əɣóɣtí"]
+            [:Plural :Person1 :Common "əɣóɣné"]
+            [:Plural :Person2 :Common "əɣóɣténà"]
+            [:Plural :Person3 :Common "əɣóɣénà"]]
+    }
+    {:label "awngi-VMainImperfIndef-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyé"]
+            [:Singular :Person2 :Common "əyté"]
+            [:Singular :Person3 :Masc "ə́yé"]
+            [:Singular :Person3 :Fem "əyté"]
+            [:Plural :Person1 :Common "ə́yné"]
+            [:Plural :Person2 :Common "əytánà"]
+            [:Plural :Person3 :Common "ə́yánà"]]
+    }
+    {:label "awngi-VMainImperfIndef-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "faté"]
+            [:Singular :Person2 :Common "faté"]
+            [:Singular :Person3 :Masc "fayé"]
+            [:Singular :Person3 :Fem "faté"]
+            [:Plural :Person1 :Common "fané"]
+            [:Plural :Person2 :Common "fatánà"]
+            [:Plural :Person3 :Common "fayánà"]]
+    }
+    {:label "awngi-VMainImperfIndef-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jep-é"]
+            [:Singular :Person2 :Common "jew-t-é"]
+            [:Singular :Person3 :Masc "jew-é"]
+            [:Singular :Person3 :Fem "jew-t-é"]
+            [:Plural :Person1 :Common "jew-n-é"]
+            [:Plural :Person2 :Common "jew-t-ánà"]
+            [:Plural :Person3 :Common "jew-ánà"]]
+    }
+    {:label "awngi-VMainImperfIndef-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kanté"]
+            [:Singular :Person2 :Common "kanti"]
+            [:Singular :Person3 :Masc "kanté"]
+            [:Singular :Person3 :Fem "kanti"]
+            [:Plural :Person1 :Common "kantné"]
+            [:Plural :Person2 :Common "kantenà"]
+            [:Plural :Person3 :Common "kantánà"]]
+    }
+    {:label "awngi-VMainImperfIndef-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqe"]
+            [:Singular :Person2 :Common "ləqləqi"]
+            [:Singular :Person3 :Masc "ləqləqe"]
+            [:Singular :Person3 :Fem "ləqləqi"]
+            [:Plural :Person1 :Common "ləqləqənné"]
+            [:Plural :Person2 :Common "ləqləqenà"]
+            [:Plural :Person3 :Common "ləqləqanà"]]
+    }
+    {:label "awngi-VMainImperfIndef-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "né"]
+            [:Singular :Person2 :Common "ni"]
+            [:Singular :Person3 :Masc "né"]
+            [:Singular :Person3 :Fem "ni"]
+            [:Plural :Person1 :Common "ənné"]
+            [:Plural :Person2 :Common "nenà"]
+            [:Plural :Person3 :Common "nánà"]]
+    }
+    {:label "awngi-VMainNegImperfDef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desátíɣá"]
+            [:Singular :Person2 :Common "desátíɣá"]
+            [:Singular :Person3 :Masc "desátíwí"]
+            [:Singular :Person3 :Fem "desátítí"]
+            [:Plural :Person1 :Common "desnátínɣá"]
+            [:Plural :Person2 :Common "desátínɣá"]
+            [:Plural :Person3 :Common "desátínkʷí"]]
+    }
+    {:label "awngi-VMainNegImperfIndef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desála"]
+            [:Singular :Person2 :Common "desála"]
+            [:Singular :Person3 :Masc "desála"]
+            [:Singular :Person3 :Fem "desála"]
+            [:Plural :Person1 :Common "desnála"]
+            [:Plural :Person2 :Common "desála"]
+            [:Plural :Person3 :Common "desála"]]
+    }
+    {:label "awngi-VMainNegImprtv-des"
+    :note ""
+    :common {:clauseType :Main,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desítin"]
+            [:Singular :Person2 :Common "destítin-"]
+            [:Singular :Person3 :Masc "desítin"]
+            [:Singular :Person3 :Fem "destítin"]
+            [:Plural :Person1 :Common "desnítin"]
+            [:Plural :Person2 :Common "destíntin-"]
+            [:Plural :Person3 :Common "desíntin"]]
+    }
+    {:label "awngi-VMainNegOrder-des"
+    :note ""
+    :common {:gender :Common,
+            :conjSubClass :IC1211,
+            :polarity :Negative,
+            :conjClass :Suffix,
+            :lexeme :des,
+            :pos :Verb,
+            :person :Common,
+            :tam :Order,
+            :clauseType :Main}
+    :terms [[:number :token] ;; schema
+            [:Singular "dissé(kí)"]
+            [:Plural "dissén(kí)"]]
+    }
+    {:label "awngi-VMainNegPerfIndef-des"
+    :note "STRUCTURE:
+
+
+/STRUCTURE
+CONTENT:
+
+
+/CONTENT"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desaya"]
+            [:Singular :Person2 :Common "destaya"]
+            [:Singular :Person3 :Masc "desaya"]
+            [:Singular :Person3 :Fem "destaya"]
+            [:Plural :Person1 :Common "desnaya"]
+            [:Plural :Person2 :Common "destə́kaya"]
+            [:Plural :Person3 :Common "deskaya"]]
+    }
+    {:label "awngi-VMainPerfDef-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "aqúɣà"]
+            [:Singular :Person2 :Common "taɣúɣà"]
+            [:Singular :Person3 :Masc "yaɣúɣà"]
+            [:Singular :Person3 :Fem "taɣúɣà"]
+            [:Plural :Person1 :Common "aɣnúɣà"]
+            [:Plural :Person2 :Common "taɣúnà"]
+            [:Plural :Person3 :Common "yaɣúnà"]]
+    }
+    {:label "awngi-VMainPerfDef-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtə́ɣʷà"]
+            [:Singular :Person2 :Common "əɣóɣtí́ɣʷà"]
+            [:Singular :Person3 :Masc "əɣóɣtí́ɣʷà"]
+            [:Singular :Person3 :Fem "əɣóɣtí́ɣʷà"]
+            [:Plural :Person1 :Common "əɣóɣnə́́ɣʷà"]
+            [:Plural :Person2 :Common "əɣóɣtínà"]
+            [:Plural :Person3 :Common "əɣóɣínà"]]
+    }
+    {:label "awngi-VMainPerfDef-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyɣʷà"]
+            [:Singular :Person2 :Common "əytə́ɣʷà"]
+            [:Singular :Person3 :Masc "ə́yɣʷà"]
+            [:Singular :Person3 :Fem "əytə́ɣʷà"]
+            [:Plural :Person1 :Common "ə́ynə́ɣʷà"]
+            [:Plural :Person2 :Common "əytúnà"]
+            [:Plural :Person3 :Common "ə́yúnà"]]
+    }
+    {:label "awngi-VMainPerfDef-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatúɣà"]
+            [:Singular :Person2 :Common "fatúyà"]
+            [:Singular :Person3 :Masc "fayúɣà"]
+            [:Singular :Person3 :Fem "fatúɣà"]
+            [:Plural :Person1 :Common "fanúɣà"]
+            [:Plural :Person2 :Common "fatúnà"]
+            [:Plural :Person3 :Common "fayúnà"]]
+    }
+    {:label "awngi-VMainPerfDef-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepúɣà"]
+            [:Singular :Person2 :Common "jewtúɣà"]
+            [:Singular :Person3 :Masc "jewúɣà"]
+            [:Singular :Person3 :Fem "jewtúɣà"]
+            [:Plural :Person1 :Common "jewnúnà"]
+            [:Plural :Person2 :Common "jewtúnà"]
+            [:Plural :Person3 :Common "jewúnà"]]
+    }
+    {:label "awngi-VMainPerfDef-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantɣʷà"]
+            [:Singular :Person2 :Common "kantiɣʷà"]
+            [:Singular :Person3 :Masc "kantɣʷà"]
+            [:Singular :Person3 :Fem "kantiɣʷà"]
+            [:Plural :Person1 :Common "kantnə́ɣʷà"]
+            [:Plural :Person2 :Common "kantinà"]
+            [:Plural :Person3 :Common "kantúnà"]]
+    }
+    {:label "awngi-VMainPerfDef-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləquɣà"]
+            [:Singular :Person2 :Common "ləqləqiɣʷà"]
+            [:Singular :Person3 :Masc "ləqləquɣʷà"]
+            [:Singular :Person3 :Fem "ləqləqiɣʷà"]
+            [:Plural :Person1 :Common "ləqləqənnə́"]
+            [:Plural :Person2 :Common "ləqləqinà"]
+            [:Plural :Person3 :Common "ləqləqunà"]]
+    }
+    {:label "awngi-VMainPerfDef-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "nə́ɣʷà"]
+            [:Singular :Person2 :Common "niɣʷà"]
+            [:Singular :Person3 :Masc "nə́ɣʷà"]
+            [:Singular :Person3 :Fem "niɣʷà"]
+            [:Plural :Person1 :Common "ənnə́ɣʷà"]
+            [:Plural :Person2 :Common "ninà"]
+            [:Plural :Person3 :Common "núnà"]]
+    }
+    {:label "awngi-VMainPerfIndef-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "aq-â"]
+            [:Singular :Person2 :Common "t-aɣ-â"]
+            [:Singular :Person3 :Masc "y-aɣ-â"]
+            [:Singular :Person3 :Fem "t-aɣ-â"]
+            [:Plural :Person1 :Common "aɣ-n-â"]
+            [:Plural :Person2 :Common "t-aɣ-éka"]
+            [:Plural :Person3 :Common "y-aɣ-éka"]]
+    }
+    {:label "awngi-VMainPerfIndef-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣta"]
+            [:Singular :Person2 :Common "əɣóɣtæ"]
+            [:Singular :Person3 :Masc "əɣóɣæ"]
+            [:Singular :Person3 :Fem "əɣóɣtæ"]
+            [:Plural :Person1 :Common "əɣóɣna"]
+            [:Plural :Person2 :Common "əɣóɣtíka"]
+            [:Plural :Person3 :Common "əɣóɣíka"]]
+    }
+    {:label "awngi-VMainPerfIndef-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əya"]
+            [:Singular :Person2 :Common "əyta"]
+            [:Singular :Person3 :Masc "ə́ya"]
+            [:Singular :Person3 :Fem "əyta"]
+            [:Plural :Person1 :Common "ə́yna"]
+            [:Plural :Person2 :Common "əytə́ka"]
+            [:Plural :Person3 :Common "ə́yka"]]
+    }
+    {:label "awngi-VMainPerfIndef-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatâ"]
+            [:Singular :Person2 :Common "fatâ"]
+            [:Singular :Person3 :Masc "fayâ"]
+            [:Singular :Person3 :Fem "fatâ"]
+            [:Plural :Person1 :Common "fanâ"]
+            [:Plural :Person2 :Common "fatéka"]
+            [:Plural :Person3 :Common "fayéka"]]
+    }
+    {:label "awngi-VMainPerfIndef-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jep-â"]
+            [:Singular :Person2 :Common "jew-t-â"]
+            [:Singular :Person3 :Masc "jew-â"]
+            [:Singular :Person3 :Fem "jew-t-â"]
+            [:Plural :Person1 :Common "jew-n-â"]
+            [:Plural :Person2 :Common "jew-t-éka"]
+            [:Plural :Person3 :Common "jew-éka"]]
+    }
+    {:label "awngi-VMainPerfIndef-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kanta"]
+            [:Singular :Person2 :Common "kantæ"]
+            [:Singular :Person3 :Masc "kanta"]
+            [:Singular :Person3 :Fem "kantæ"]
+            [:Plural :Person1 :Common "kantna"]
+            [:Plural :Person2 :Common "kantika"]
+            [:Plural :Person3 :Common "kantə́ka"]]
+    }
+    {:label "awngi-VMainPerfIndef-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqa"]
+            [:Singular :Person2 :Common "ləqləqæ"]
+            [:Singular :Person3 :Masc "ləqləqa"]
+            [:Singular :Person3 :Fem "ləqləqæ"]
+            [:Plural :Person1 :Common "ləqləqənna"]
+            [:Plural :Person2 :Common "ləqləqika"]
+            [:Plural :Person3 :Common "ləqləqeka"]]
+    }
+    {:label "awngi-VMainPerfIndef-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Main,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "na"]
+            [:Singular :Person2 :Common "næ"]
+            [:Singular :Person3 :Masc "na"]
+            [:Singular :Person3 :Fem "næ"]
+            [:Plural :Person1 :Common "ənna"]
+            [:Plural :Person2 :Common "nika"]
+            [:Plural :Person3 :Common "nə́ka"]]
+    }
+    {:label "awngi-VPosteriorVarA-des"
+    :note "Hetzron1969 1.2.10"
+    :common {:clauseType :Posterior,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :varClass :VarA}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desúnidés"]
+            [:Singular :Person2 :Common "destúnidés"]
+            [:Singular :Person3 :Masc "desúnidés"]
+            [:Singular :Person3 :Fem "destúnidés"]
+            [:Plural :Person1 :Common "desnúnidés"]
+            [:Plural :Person2 :Common "destúnidés"]
+            [:Plural :Person3 :Common "desúnidés"]]
+    }
+    {:label "awngi-VPosteriorVarB-des"
+    :note "Hetzron1969 1.2.10"
+    :common {:clauseType :Posterior,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :varClass :VarB}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desás̆únidés"]
+            [:Singular :Person2 :Common "destás̆tínidés"]
+            [:Singular :Person3 :Masc "desás̆ínidés"]
+            [:Singular :Person3 :Fem "destás̆tínidés"]
+            [:Plural :Person1 :Common "desnás̆núnidés"]
+            [:Plural :Person2 :Common "destánisə́s̆tínidés"]
+            [:Plural :Person3 :Common "desánisə́s̆ínidés"]]
+    }
+    {:label "awngi-VPredestinativeImperfDef-des"
+    :note "Hetzron1969 1.4.1"
+    :common {:clauseType :Predestinative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:varB :number :person :gender :token] ;; schema
+            [:VarB2 :Singular :Person1 :Common "desaycáɣá"]
+            [:VarB2 :Plural :Person1 :Common "desnaycnáɣá"]
+            [:VarB3 :Singular :Person1 :Common "desayáɣá"]
+            [:VarB3 :Plural :Person1 :Common "desnaynáɣá"]
+            [:VarBx :Singular :Person2 :Common "destaytáɣá"]
+            [:VarBx :Singular :Person3 :Masc "desayáwi"]
+            [:VarBx :Singular :Person3 :Fem "destaytátí"]
+            [:VarBx :Plural :Person2 :Common "destə́kaytánɣá"]
+            [:VarBx :Plural :Person3 :Common "deskayánkʷí"]]
+    }
+    {:label "awngi-VPredestinativeImperfIndef-des"
+    :note "Hetzron1969 1.4.1"
+    :common {:clauseType :Predestinative,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:varB :number :person :gender :token] ;; schema
+            [:VarB2 :Singular :Person1 :Common "desaycé"]
+            [:VarB2 :Plural :Person1 :Common "desnaycné"]
+            [:VarB3 :Singular :Person1 :Common "desayé"]
+            [:VarB3 :Plural :Person1 :Common "desnayné"]
+            [:VarBx :Singular :Person2 :Common "destayté"]
+            [:VarBx :Singular :Person3 :Masc "desayé"]
+            [:VarBx :Singular :Person3 :Fem "destayté"]
+            [:VarBx :Plural :Person2 :Common "destə́kaytánà"]
+            [:VarBx :Plural :Person3 :Common "deskayánà"]]
+    }
+    {:label "awngi-VPredestinativePerfDef-des"
+    :note "Hetzron1969 1.4.1"
+    :common {:clauseType :Predestinative,
+            :aspect :Definite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:varB :number :person :gender :token] ;; schema
+            [:VarB2 :Singular :Person1 :Common "desaycə́ɣʷà"]
+            [:VarB2 :Plural :Person1 :Common "desnaycnə́ɣʷa"]
+            [:VarB3 :Singular :Person1 :Common "desayə́ɣʷà"]
+            [:VarB3 :Plural :Person1 :Common "desnaynə́ɣʷa"]
+            [:VarBx :Singular :Person2 :Common "destaytə́ɣʷa"]
+            [:VarBx :Singular :Person3 :Masc "desayə́ɣʷa"]
+            [:VarBx :Singular :Person3 :Fem "destaytə́ɣʷa"]
+            [:VarBx :Plural :Person2 :Common "destə́kaytúnà"]
+            [:VarBx :Plural :Person3 :Common "deskayínà"]]
+    }
+    {:label "awngi-VPredestinativePerfIndef-des"
+    :note "Hetzron1969 1.4.1"
+    :common {:clauseType :Predestinative,
+            :aspect :Indefinite,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:varB :number :person :gender :token] ;; schema
+            [:VarB2 :Singular :Person1 :Common "desayca"]
+            [:VarB2 :Plural :Person1 :Common "desnaycna"]
+            [:VarB2 :Plural :Person2 :Common "destə́kayə́tka"]
+            [:VarB3 :Singular :Person1 :Common "desaya"]
+            [:VarB3 :Plural :Person1 :Common "desnayna"]
+            [:VarBx :Singular :Person2 :Common "destayta"]
+            [:VarBx :Singular :Person3 :Masc "desaya"]
+            [:VarBx :Singular :Person3 :Fem "destayta"]
+            [:VarBx :Plural :Person3 :Common "deskayə́ka"]]
+    }
+    {:label "awngi-VProcessiveAff-des"
+    :note "Hetzron1969 1.2.1-3"
+    :common {:clauseType :Processive,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desatagi"]
+            [:Singular :Person2 :Common "destatagi"]
+            [:Singular :Person3 :Masc "desamági"]
+            [:Singular :Person3 :Fem "destatagi"]
+            [:Plural :Person1 :Common "desnanagi"]
+            [:Plural :Person2 :Common "destə́kamági"]
+            [:Plural :Person3 :Common "deskamági"]]
+    }
+    {:label "awngi-VProcessiveNeg-des"
+    :note "Hetzron1969 1.2.1-3"
+    :common {:clauseType :Processive,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣʷlésgi"]
+            [:Singular :Person2 :Common "destáɣʷlésgi"]
+            [:Singular :Person3 :Masc "desáɣʷlésgi"]
+            [:Singular :Person3 :Fem "destáɣʷlésgi"]
+            [:Plural :Person1 :Common "desnáɣʷlésgi"]
+            [:Plural :Person2 :Common "destánəɣʷlésgi"]
+            [:Plural :Person3 :Common "desánəɣʷlésgi"]]
+    }
+    {:label "awngi-VProtasisAffImperf-des"
+    :note "Hetzron1969 1.2.12"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desúni"]
+            [:Singular :Person2 :Common "destúni"]
+            [:Singular :Person3 :Masc "desúni"]
+            [:Singular :Person3 :Fem "destúni"]
+            [:Plural :Person1 :Common "desnúni"]
+            [:Plural :Person2 :Common "destúni"]
+            [:Plural :Person3 :Common "desúni"]]
+    }
+    {:label "awngi-VProtasisAffPerf-des"
+    :note "Hetzron1969 1.2.12"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desás̆túni"]
+            [:Singular :Person2 :Common "destás̆tíni"]
+            [:Singular :Person3 :Masc "desás̆íni"]
+            [:Singular :Person3 :Fem "destás̆tíni"]
+            [:Plural :Person1 :Common "desnás̆núni"]
+            [:Plural :Person2 :Common "destə́kas̆tíni"]
+            [:Plural :Person3 :Common "deskas̆íni"]]
+    }
+    {:label "awngi-VProtasisImperf-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Protasis,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "aqúni"]
+            [:Singular :Person2 :Common "taɣúni"]
+            [:Singular :Person3 :Masc "yaɣúni"]
+            [:Singular :Person3 :Fem "taɣúni"]
+            [:Plural :Person1 :Common "aɣnúni"]
+            [:Plural :Person2 :Common "taɣúni"]
+            [:Plural :Person3 :Common "yaɣúni"]]
+    }
+    {:label "awngi-VProtasisImperf-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtúni"]
+            [:Singular :Person2 :Common "əɣóɣtíni"]
+            [:Singular :Person3 :Masc "əɣóɣíni"]
+            [:Singular :Person3 :Fem "əɣóɣtíni"]
+            [:Plural :Person1 :Common "əɣóɣnúni"]
+            [:Plural :Person2 :Common "əɣóɣtíni"]
+            [:Plural :Person3 :Common "əɣóɣíni"]]
+    }
+    {:label "awngi-VProtasisImperf-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyúni"]
+            [:Singular :Person2 :Common "əytúni"]
+            [:Singular :Person3 :Masc "ə́yúni"]
+            [:Singular :Person3 :Fem "əytúni"]
+            [:Plural :Person1 :Common "ə́ynúni"]
+            [:Plural :Person2 :Common "əytúni"]
+            [:Plural :Person3 :Common "ə́yúni"]]
     }
     {:label "awngi-VProtasisImperf-fay"
     :note "Hetzron1969 pp. 118-121"
     :common {:clauseType :Protasis,
-	    :lexeme :fay,
-	    :pos :Verb,
-	    :tam :Imperfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "fayúni"],
-	    [:Fem, :Singular, :Person3, "fatúni"],
-	    [:Common, :Singular, :Person1, "fatúni"],
-	    [:Common, :Plural, :Person2, "fatúni"],
-	    [:Common, :Singular, :Person2, "fatúni"],
-	    [:Masc, :Singular, :Person3, "fayúni"],
-	    [:Common, :Plural, :Person1, "fanúni"]]
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatúni"]
+            [:Singular :Person2 :Common "fatúni"]
+            [:Singular :Person3 :Masc "fayúni"]
+            [:Singular :Person3 :Fem "fatúni"]
+            [:Plural :Person1 :Common "fanúni"]
+            [:Plural :Person2 :Common "fatúni"]
+            [:Plural :Person3 :Common "fayúni"]]
     }
-    {:label "awngi-VStative-jep"
+    {:label "awngi-VProtasisImperf-jep"
     :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Stative,
-	    :lexeme :jep,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "jewnús"],
-	    [:Common, :Singular, :Person1, "jepús"],
-	    [:Fem, :Singular, :Person3, "jewtús"],
-	    [:Masc, :Singular, :Person3, "jewús"],
-	    [:Common, :Plural, :Person2, "jewtánis"],
-	    [:Common, :Plural, :Person3, "jewánis"],
-	    [:Common, :Singular, :Person2, "jewtús"]]
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepúni"]
+            [:Singular :Person2 :Common "jewtúni"]
+            [:Singular :Person3 :Masc "jewúni"]
+            [:Singular :Person3 :Fem "jewtúni"]
+            [:Plural :Person1 :Common "jewnúni"]
+            [:Plural :Person2 :Common "jewtúni"]
+            [:Plural :Person3 :Common "jewúni"]]
     }
-    {:label "awngi-VTerminative-kant"
+    {:label "awngi-VProtasisImperf-kant"
     :note "Hetzron1969 pp. 118-121"
-    :common {:clauseType :Terminative,
-	    :lexeme :kant,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "kantnə́mba"],
-	    [:Common, :Plural, :Person2, "kantinimba"],
-	    [:Fem, :Singular, :Person3, "kantimba"],
-	    [:Common, :Singular, :Person2, "kantimba"],
-	    [:Common, :Plural, :Person3, "kantínimba"],
-	    [:Masc, :Singular, :Person3, "kantə́mba"],
-	    [:Common, :Singular, :Person1, "kantə́mba"]]
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantúni"]
+            [:Singular :Person2 :Common "kantini"]
+            [:Singular :Person3 :Masc "kantúni"]
+            [:Singular :Person3 :Fem "kantini"]
+            [:Plural :Person1 :Common "kantnúni"]
+            [:Plural :Person2 :Common "kantini"]
+            [:Plural :Person3 :Common "kantúni"]]
+    }
+    {:label "awngi-VProtasisImperf-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləquni"]
+            [:Singular :Person2 :Common "ləqləqini"]
+            [:Singular :Person3 :Masc "ləqləquni"]
+            [:Singular :Person3 :Fem "ləqləqini"]
+            [:Plural :Person1 :Common "ləqləqənnúni"]
+            [:Plural :Person2 :Common "ləqləqini"]
+            [:Plural :Person3 :Common "ləqləquni"]]
+    }
+    {:label "awngi-VProtasisImperf-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "núni"]
+            [:Singular :Person2 :Common "nini"]
+            [:Singular :Person3 :Masc "núni"]
+            [:Singular :Person3 :Fem "nini"]
+            [:Plural :Person1 :Common "ənnúni"]
+            [:Plural :Person2 :Common "nini"]
+            [:Plural :Person3 :Common "núni"]]
+    }
+    {:label "awngi-VProtasisNegImperf-des"
+    :note "Hetzron1969 1.2.12"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desítíes"]
+            [:Singular :Person2 :Common "destítíes"]
+            [:Singular :Person3 :Masc "desítíes"]
+            [:Singular :Person3 :Fem "destítíes"]
+            [:Plural :Person1 :Common "desnítíes"]
+            [:Plural :Person2 :Common "destíntíes"]
+            [:Plural :Person3 :Common "desíntíes"]]
+    }
+    {:label "awngi-VProtasisNegPerf-des"
+    :note "Hetzron1969 1.2.12"
+    :common {:clauseType :Protasis,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desayas̆túni"]
+            [:Singular :Person2 :Common "destayas̆tíni"]
+            [:Singular :Person3 :Masc "desayas̆íni"]
+            [:Singular :Person3 :Fem "destayas̆tíni"]
+            [:Plural :Person1 :Common "desnayas̆núni"]
+            [:Plural :Person2 :Common "destə́kayas̆tíni"]
+            [:Plural :Person3 :Common "deskayas̆íni"]]
+    }
+    {:label "awngi-VRelSubjAffImperf-des"
+    :note "Hetzron1969 1.2.4"
+    :common {:clauseType :RelSubj,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣá"]
+            [:Singular :Person2 :Common "destáɣá"]
+            [:Singular :Person3 :Masc "desáw(í)"]
+            [:Singular :Person3 :Fem "destát(í)"]
+            [:Plural :Person1 :Common "desnáɣá"]
+            [:Plural :Person2 :Common "destánɣá"]
+            [:Plural :Person3 :Common "desánkú"]]
+    }
+    {:label "awngi-VRelSubjAffPerf-des"
+    :note "Hetzron1969 1.2.4"
+    :common {:clauseType :RelSubj,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desúɣá"]
+            [:Singular :Person2 :Common "destúɣá"]
+            [:Singular :Person3 :Masc "desə́ɣʷ / desɣʷí"]
+            [:Singular :Person3 :Fem "destút(í)"]
+            [:Plural :Person1 :Common "desnúɣá"]
+            [:Plural :Person2 :Common "destúnɣá"]
+            [:Plural :Person3 :Common "desúnkú"]]
+    }
+    {:label "awngi-VRelSubjNegImperf-des"
+    :note "Hetzron1969 1.2.4"
+    :common {:clauseType :RelSubj,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desátíɣá"]
+            [:Singular :Person2 :Common "desátíɣá"]
+            [:Singular :Person3 :Masc "desátíw(í)"]
+            [:Singular :Person3 :Fem "desátít(í)"]
+            [:Plural :Person1 :Common "desnátinɣá"]
+            [:Plural :Person2 :Common "desátinɣá"]
+            [:Plural :Person3 :Common "desátinkú"]]
     }
     {:label "awngi-VRelSubjNegPerf-des"
     :note "Hetzron1969 1.2.4"
     :common {:clauseType :RelSubj,
-	    :lexeme :des,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Perfect}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "desayast(í)"],
-	    [:Common, :Plural, :Person3, "deskayaskú"],
-	    [:Common, :Singular, :Person1, "desayasɣá"],
-	    [:Common, :Plural, :Person1, "desnayasɣá"],
-	    [:Common, :Plural, :Person2, "destə́kayasɣá"],
-	    [:Masc, :Singular, :Person3, "desayasu"],
-	    [:Common, :Singular, :Person2, "destayasɣá"]]
-    }}
-:muterms #{
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desayasɣá"]
+            [:Singular :Person2 :Common "destayasɣá"]
+            [:Singular :Person3 :Masc "desayasu"]
+            [:Singular :Person3 :Fem "desayast(í)"]
+            [:Plural :Person1 :Common "desnayasɣá"]
+            [:Plural :Person2 :Common "destə́kayasɣá"]
+            [:Plural :Person3 :Common "deskayaskú"]]
+    }
+    {:label "awngi-VStative-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "áqûs"]
+            [:Singular :Person2 :Common "táɣûs"]
+            [:Singular :Person3 :Masc "yáɣûs"]
+            [:Singular :Person3 :Fem "táɣûs"]
+            [:Plural :Person1 :Common "áɣnûs"]
+            [:Plural :Person2 :Common "táɣánis"]
+            [:Plural :Person3 :Common "yáɣánis"]]
+    }
+    {:label "awngi-VStative-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtûs"]
+            [:Singular :Person2 :Common "əɣóɣtîs"]
+            [:Singular :Person3 :Masc "əɣóɣîs"]
+            [:Singular :Person3 :Fem "əɣóɣtîs"]
+            [:Plural :Person1 :Common "əɣóɣnûs"]
+            [:Plural :Person2 :Common "əɣóɣténis"]
+            [:Plural :Person3 :Common "əɣóɣénis"]]
+    }
+    {:label "awngi-VStative-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyûs"]
+            [:Singular :Person2 :Common "əytûs"]
+            [:Singular :Person3 :Masc "ə́yûs"]
+            [:Singular :Person3 :Fem "əytûs"]
+            [:Plural :Person1 :Common "ə́ynûs"]
+            [:Plural :Person2 :Common "əytánis"]
+            [:Plural :Person3 :Common "ə́yánis"]]
+    }
+    {:label "awngi-VStative-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatús"]
+            [:Singular :Person2 :Common "fatús"]
+            [:Singular :Person3 :Masc "fayús"]
+            [:Singular :Person3 :Fem "fatús"]
+            [:Plural :Person1 :Common "fanús"]
+            [:Plural :Person2 :Common "fatánis"]
+            [:Plural :Person3 :Common "fayánis"]]
+    }
+    {:label "awngi-VStative-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepús"]
+            [:Singular :Person2 :Common "jewtús"]
+            [:Singular :Person3 :Masc "jewús"]
+            [:Singular :Person3 :Fem "jewtús"]
+            [:Plural :Person1 :Common "jewnús"]
+            [:Plural :Person2 :Common "jewtánis"]
+            [:Plural :Person3 :Common "jewánis"]]
+    }
+    {:label "awngi-VStative-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantûs"]
+            [:Singular :Person2 :Common "kantis"]
+            [:Singular :Person3 :Masc "kantûs"]
+            [:Singular :Person3 :Fem "kantis"]
+            [:Plural :Person1 :Common "kantnûs"]
+            [:Plural :Person2 :Common "kantenis"]
+            [:Plural :Person3 :Common "kantánis"]]
+    }
+    {:label "awngi-VStative-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqus"]
+            [:Singular :Person2 :Common "ləqləqis"]
+            [:Singular :Person3 :Masc "ləqləqus"]
+            [:Singular :Person3 :Fem "ləqləqis"]
+            [:Plural :Person1 :Common "ləqləqənnûs"]
+            [:Plural :Person2 :Common "ləqləqenis"]
+            [:Plural :Person3 :Common "ləqləqanis"]]
+    }
+    {:label "awngi-VStative-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "nûs"]
+            [:Singular :Person2 :Common "nis"]
+            [:Singular :Person3 :Masc "nûs"]
+            [:Singular :Person3 :Fem "nis"]
+            [:Plural :Person1 :Common "ənnûs"]
+            [:Plural :Person2 :Common "nenis"]
+            [:Plural :Person3 :Common "nánis"]]
+    }
+    {:label "awngi-VStativeImperf-des"
+    :note "Hetzron1969 1.2.8"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desûs"]
+            [:Singular :Person2 :Common "destûs"]
+            [:Singular :Person3 :Masc "desûs"]
+            [:Singular :Person3 :Fem "destûs"]
+            [:Plural :Person1 :Common "desnûs"]
+            [:Plural :Person2 :Common "destánis"]
+            [:Plural :Person3 :Common "desánis"]]
+    }
+    {:label "awngi-VStativePerfVar1-des"
+    :note "Hetzron1969 1.2.8"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Perfect,
+            :varClass :Var1}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desa-zkokûs"]
+            [:Singular :Person2 :Common "desta-zkekûs"]
+            [:Singular :Person3 :Masc "desa-zkokûs"]
+            [:Singular :Person3 :Fem "desta-zkekûs"]
+            [:Plural :Person1 :Common "desna-zkʷnakûs"]
+            [:Plural :Person2 :Common "destə́ka-zkikakûs"]
+            [:Plural :Person3 :Common "deska-zəkʷkakûs"]]
+    }
+    {:label "awngi-VStativePerfVar2-des"
+    :note "Hetzron1969 1.2.8"
+    :common {:clauseType :Stative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb,
+            :tam :Perfect,
+            :varClass :Var2}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desakûs"]
+            [:Singular :Person2 :Common "destakûs"]
+            [:Singular :Person3 :Masc "desakûs"]
+            [:Singular :Person3 :Fem "destakûs"]
+            [:Plural :Person1 :Common "desnakûs"]
+            [:Plural :Person2 :Common "destə́kakûs"]
+            [:Plural :Person3 :Common "deskakûs"]]
+    }
+    {:label "awngi-VSubjunctiveAff-des"
+    :note "Hetzron1969 1.2.1-3"
+    :common {:clauseType :Subjunctive,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáta"]
+            [:Singular :Person2 :Common "destáta"]
+            [:Singular :Person3 :Masc "desáta"]
+            [:Singular :Person3 :Fem "destáta"]
+            [:Plural :Person1 :Common "desnáta"]
+            [:Plural :Person2 :Common "destánta"]
+            [:Plural :Person3 :Common "desánta"]]
+    }
+    {:label "awngi-VSubjunctiveNeg-des"
+    :note "Hetzron1969 1.2.1-3"
+    :common {:clauseType :Subjunctive,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desátíta"]
+            [:Singular :Person2 :Common "desátíta"]
+            [:Singular :Person3 :Masc "desátíta"]
+            [:Singular :Person3 :Fem "desátíta"]
+            [:Plural :Person1 :Common "desnátíta"]
+            [:Plural :Person2 :Common "desátínta"]
+            [:Plural :Person3 :Common "desátínta"]]
+    }
+    {:label "awngi-VSubordinateNegVarA-des"
+    :note "Hetzron1969 1.2.14"
+    :common {:clauseType :Subordinate,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :varClass :VarA}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣʷlés"]
+            [:Singular :Person2 :Common "destáɣʷlés"]
+            [:Singular :Person3 :Masc "desáɣʷlés"]
+            [:Singular :Person3 :Fem "destáɣʷlés"]
+            [:Plural :Person1 :Common "desnáɣʷlés"]
+            [:Plural :Person2 :Common "destánəɣʷlés"]
+            [:Plural :Person3 :Common "desánəɣʷlés"]]
+    }
+    {:label "awngi-VSubordinateNegVarB-des"
+    :note "Hetzron1969 1.2.14"
+    :common {:clauseType :Subordinate,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb,
+            :varClass :VarB}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desáɣʷla"]
+            [:Singular :Person2 :Common "destáɣʷla"]
+            [:Singular :Person3 :Masc "desáɣʷla"]
+            [:Singular :Person3 :Fem "destáɣʷla"]
+            [:Plural :Person1 :Common "desnáɣʷla"]
+            [:Plural :Person2 :Common "destánəɣʷla"]
+            [:Plural :Person3 :Common "desánəɣʷla"]]
+    }
+    {:label "awngi-VTemporal-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "áqání"]
+            [:Singular :Person2 :Common "táɣání"]
+            [:Singular :Person3 :Masc "yaɣání"]
+            [:Singular :Person3 :Fem "táɣání"]
+            [:Plural :Person1 :Common "áɣnání"]
+            [:Plural :Person2 :Common "táɣáni"]
+            [:Plural :Person3 :Common "yáɣáni"]]
+    }
+    {:label "awngi-VTemporal-des"
+    :note "Hetzron1969 1.2.7"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desání"]
+            [:Singular :Person2 :Common "destání"]
+            [:Singular :Person3 :Masc "desání"]
+            [:Singular :Person3 :Fem "destání"]
+            [:Plural :Person1 :Common "desnání"]
+            [:Plural :Person2 :Common "destáni"]
+            [:Plural :Person3 :Common "desáni"]]
+    }
+    {:label "awngi-VTemporal-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtání"]
+            [:Singular :Person2 :Common "əɣóɣténí"]
+            [:Singular :Person3 :Masc "əɣóɣéní"]
+            [:Singular :Person3 :Fem "əɣóɣténí"]
+            [:Plural :Person1 :Common "əɣóɣnání"]
+            [:Plural :Person2 :Common "əɣóɣténi"]
+            [:Plural :Person3 :Common "əɣóɣéni"]]
+    }
+    {:label "awngi-VTemporal-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyání"]
+            [:Singular :Person2 :Common "əytání"]
+            [:Singular :Person3 :Masc "ə́yání"]
+            [:Singular :Person3 :Fem "əytání"]
+            [:Plural :Person1 :Common "ə́ynání"]
+            [:Plural :Person2 :Common "əytáni"]
+            [:Plural :Person3 :Common "ə́yání"]]
+    }
+    {:label "awngi-VTemporal-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatání"]
+            [:Singular :Person2 :Common "fatání"]
+            [:Singular :Person3 :Masc "fayání"]
+            [:Singular :Person3 :Fem "fatání"]
+            [:Plural :Person1 :Common "fanání"]
+            [:Plural :Person2 :Common "fatáni"]
+            [:Plural :Person3 :Common "fayáni"]]
+    }
+    {:label "awngi-VTemporal-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepání"]
+            [:Singular :Person2 :Common "jewtání"]
+            [:Singular :Person3 :Masc "jewání"]
+            [:Singular :Person3 :Fem "jewtání"]
+            [:Plural :Person1 :Common "jewnání"]
+            [:Plural :Person2 :Common "jewtáni"]
+            [:Plural :Person3 :Common "jewáni"]]
+    }
+    {:label "awngi-VTemporal-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantáni"]
+            [:Singular :Person2 :Common "kantení"]
+            [:Singular :Person3 :Masc "kantání"]
+            [:Singular :Person3 :Fem "kantení"]
+            [:Plural :Person1 :Common "kantnání"]
+            [:Plural :Person2 :Common "kanteni"]
+            [:Plural :Person3 :Common "kantáni"]]
+    }
+    {:label "awngi-VTemporal-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqaní"]
+            [:Singular :Person2 :Common "ləqləqení"]
+            [:Singular :Person3 :Masc "ləqləqaní"]
+            [:Singular :Person3 :Fem "ləqləqení"]
+            [:Plural :Person1 :Common "ləqləqənnání"]
+            [:Plural :Person2 :Common "ləqləqeni"]
+            [:Plural :Person3 :Common "ləqləqani"]]
+    }
+    {:label "awngi-VTemporal-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Temporal,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "náni"]
+            [:Singular :Person2 :Common "není"]
+            [:Singular :Person3 :Masc "nání"]
+            [:Singular :Person3 :Fem "není"]
+            [:Plural :Person1 :Common "ənnání"]
+            [:Plural :Person2 :Common "neni"]
+            [:Plural :Person3 :Common "náni"]]
+    }
+    {:label "awngi-VTerminative-aq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Prefix,
+            :conjSubClass :IC11,
+            :lexeme :aq,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "aqémba"]
+            [:Singular :Person2 :Common "taɣémba"]
+            [:Singular :Person3 :Masc "yaɣémba"]
+            [:Singular :Person3 :Fem "taɣémba"]
+            [:Plural :Person1 :Common "aɣnémba"]
+            [:Plural :Person2 :Common "taɣínimba"]
+            [:Plural :Person3 :Common "yaɣínimba"]]
+    }
+    {:label "awngi-VTerminative-egog"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC15112,
+            :lexeme :egog,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əɣóɣtə́mba"]
+            [:Singular :Person2 :Common "əɣóɣtímba"]
+            [:Singular :Person3 :Masc "əɣóɣímba"]
+            [:Singular :Person3 :Fem "əɣóɣtímba"]
+            [:Plural :Person1 :Common "əɣóɣnə́mba"]
+            [:Plural :Person2 :Common "əɣóɣtínimba"]
+            [:Plural :Person3 :Common "əɣóɣínimba"]]
+    }
+    {:label "awngi-VTerminative-ey"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1214,
+            :lexeme :ey,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "əyə́mba"]
+            [:Singular :Person2 :Common "əytə́mba"]
+            [:Singular :Person3 :Masc "ə́yə́mba"]
+            [:Singular :Person3 :Fem "əytə́mba"]
+            [:Plural :Person1 :Common "ə́ynə́mba"]
+            [:Plural :Person2 :Common "əytinimba"]
+            [:Plural :Person3 :Common "ə́yínimba"]]
+    }
+    {:label "awngi-VTerminative-fay"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC142,
+            :lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fatémba"]
+            [:Singular :Person2 :Common "fatémba"]
+            [:Singular :Person3 :Masc "fayémba"]
+            [:Singular :Person3 :Fem "fatémba"]
+            [:Plural :Person1 :Common "fanémba"]
+            [:Plural :Person2 :Common "fatínimba"]
+            [:Plural :Person3 :Common "fayínimba"]]
+    }
+    {:label "awngi-VTerminative-jep"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1221,
+            :lexeme :jep,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "jepémba"]
+            [:Singular :Person2 :Common "jewtémba"]
+            [:Singular :Person3 :Masc "jewémba"]
+            [:Singular :Person3 :Fem "jewtémba"]
+            [:Plural :Person1 :Common "jewnémba"]
+            [:Plural :Person2 :Common "jewtínimba"]
+            [:Plural :Person3 :Common "jewínimba"]]
+    }
+    {:label "awngi-VTerminative-kant"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1351b,
+            :lexeme :kant,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kantə́mba"]
+            [:Singular :Person2 :Common "kantimba"]
+            [:Singular :Person3 :Masc "kantə́mba"]
+            [:Singular :Person3 :Fem "kantimba"]
+            [:Plural :Person1 :Common "kantnə́mba"]
+            [:Plural :Person2 :Common "kantinimba"]
+            [:Plural :Person3 :Common "kantínimba"]]
+    }
+    {:label "awngi-VTerminative-leqleq"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1342,
+            :lexeme :leqlea,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ləqləqemba"]
+            [:Singular :Person2 :Common "ləqləqimba"]
+            [:Singular :Person3 :Masc "ləqləqemba"]
+            [:Singular :Person3 :Fem "ləqləqimba"]
+            [:Plural :Person1 :Common "ləqləqənnə́mba"]
+            [:Plural :Person2 :Common "ləqləqinimba"]
+            [:Plural :Person3 :Common "ləqləqinimba"]]
+    }
+    {:label "awngi-VTerminative-ne"
+    :note "Hetzron1969 pp. 118-121"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1611,
+            :lexeme :ne,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "nə́mba"]
+            [:Singular :Person2 :Common "nimba"]
+            [:Singular :Person3 :Masc "nə́mba"]
+            [:Singular :Person3 :Fem "nimba"]
+            [:Plural :Person1 :Common "ənnə́mba"]
+            [:Plural :Person2 :Common "ninimba"]
+            [:Plural :Person3 :Common "nínimba"]]
+    }
+    {:label "awngi-VTerminativeAff-des"
+    :note "Hetzron1969 1.2.11"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desə́mba"]
+            [:Singular :Person2 :Common "destəmbá"]
+            [:Singular :Person3 :Masc "desəmbá"]
+            [:Singular :Person3 :Fem "destəmbá"]
+            [:Plural :Person1 :Common "desnə́mba"]
+            [:Plural :Person2 :Common "destínimba"]
+            [:Plural :Person3 :Common "desínimba"]]
+    }
+    {:label "awngi-VTerminativeNeg-des"
+    :note "Hetzron1969 1.2.11"
+    :common {:clauseType :Terminative,
+            :conjClass :Suffix,
+            :conjSubClass :IC1211,
+            :lexeme :des,
+            :polarity :Negative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "desítímba"]
+            [:Singular :Person2 :Common "destítímba"]
+            [:Singular :Person3 :Masc "desítímba"]
+            [:Singular :Person3 :Fem "destítímba"]
+            [:Plural :Person1 :Common "desnítímba"]
+            [:Plural :Person2 :Common "destítínimba"]
+            [:Plural :Person3 :Common "desítínimba"]]
+    }
+]
+:muterms [
     {:label "Pronominal_Paradigms_to_be_added"
     :common {:morpheme :TOBEADDED,
-	    :pos :Pronoun,
-	    :proClass :To_be_added}
-    :terms [[:status :person, :token]  ;; schema
-	    [:NA, :Not_in_datastore, "not attested"]]}}
+            :pos :Pronoun,
+            :proClass :To_be_added}
+    :terms [[:status :person :token] ;; schema
+            [:NA :Not_in_datastore "not attested"]]
+    }
+]
 }

@@ -16,7 +16,7 @@
 	  :numHead [:HeadPlural, :HeadSingular]
 	  :number [:Plural, :Singular]
 	  :pdgmSubType [:Copula, :DervStem, :FiniteVerb, :Interrogative, :SubjMarker]
-	  :pdgmType [:Comparative, :Exemplary]
+	  :pdgmType [:Exemplary]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Noun, :Pronoun, :Verb]
@@ -39,695 +39,790 @@
 }
 :lexemes {
   :fay {:gloss "go", :lemma "fäy-", :pos :Verb}
-  :gab {:gloss "[x]", :lemma "[y]", }
   :iw {:gloss "give", :lemma "iw-", :pos :Verb}
   :was {:gloss "hear", :lemma "was-", :pos :Verb}
   :xw {:gloss "eat", :lemma "xʷ-", :pos :Verb}
 }
-:lxterms #{
-    {:label "kemant-VNegA-subordinate-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :ASubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fäyka"],
-	    [:Masc, :Singular, :Person3, "fäyga"],
-	    [:Common, :Plural, :Person3, "fäygəna"],
-	    [:Common, :Plural, :Person1, "fäygəna"],
-	    [:Fem, :Singular, :Person3, "fäyka"],
-	    [:Common, :Plural, :Person2, "fäykəna"],
-	    [:Common, :Singular, :Person1, "fäyga"]]
+:lxterms [
+    {:label "KemantRelSubjImperf"
+    :note "Appleyard1975 pp. 338-339"
+    :common {:aspect :Imperfective,
+            :lexeme :was,
+            :morphClass :VREL,
+            :pos :Verb,
+            :tam :RelativeSubject}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasaɣər"]
+            [:Singular :Person2 :Common "wasyaɣər"]
+            [:Singular :Person3 :Masc "wasaɣ"]
+            [:Singular :Person3 :Fem "wasäy"]
+            [:Plural :Person1 :Common "wasnaɣər"]
+            [:Plural :Person2 :Common "wasinaɣər"]
+            [:Plural :Person3 :Common "wasäw"]]
     }
-    {:label "kemant-VAffJussive-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Jussive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "-"],
-	    [:Masc, :Singular, :Person3, "xʷədu"],
-	    [:Common, :Singular, :Person2, "-"],
-	    [:Fem, :Singular, :Person3, "xʷətu"],
-	    [:Common, :Singular, :Person1, "?"],
-	    [:Common, :Plural, :Person3, "xʷədənu"],
-	    [:Common, :Plural, :Person1, "xʷənu"]]
+    {:label "KemantRelSubjPerf"
+    :note "Appleyard1975 pp. 338-339"
+    :common {:aspect :Perfective,
+            :lexeme :was,
+            :morphClass :VREL,
+            :pos :Verb,
+            :tam :RelativeSubject}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasaɣər"]
+            [:Singular :Person2 :Common "wasyaɣər"]
+            [:Singular :Person3 :Masc "wasaɣ"]
+            [:Singular :Person3 :Fem "wasäy"]
+            [:Plural :Person1 :Common "wasyänaɣər"]
+            [:Plural :Person2 :Common "wasyänaɣər"]
+            [:Plural :Person3 :Common "wasäw"]]
+    }
+    {:label "kemant-RelObliqImperf"
+    :note "Appleyard1975 pp. 338-339"
+    :common {:aspect :Imperfective,
+            :lexeme :was,
+            :morphClass :VREL,
+            :pos :Verb,
+            :tam :RelativeOblique}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Plural :Person3 :Common "was(ə)naɣ"]]
+    }
+    {:label "kemant-RelObliqPerf"
+    :note "Appleyard1975 pp. 338-339"
+    :common {:aspect :Perfective,
+            :lexeme :was,
+            :morphClass :VREL,
+            :pos :Verb,
+            :tam :RelativeOblique}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Plural :Person3 :Common :RelativeOblique]]
     }
     {:label "kemant-VAFFJuss-fay"
     :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Jussive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "fäytu"],
-	    [:Common, :Plural, :Person2, "-"],
-	    [:Common, :Plural, :Person1, "fäynu"],
-	    [:Masc, :Singular, :Person3, "fäydu"],
-	    [:Common, :Plural, :Person3, "fäydənu"],
-	    [:Common, :Singular, :Person1, "fäyu"],
-	    [:Common, :Singular, :Person2, "-"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Jussive}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyu"]
+            [:Singular :Person2 :Common "-"]
+            [:Singular :Person3 :Masc "fäydu"]
+            [:Singular :Person3 :Fem "fäytu"]
+            [:Plural :Person1 :Common "fäynu"]
+            [:Plural :Person2 :Common "-"]
+            [:Plural :Person3 :Common "fäydənu"]]
     }
     {:label "kemant-VAffA-subordinate-was"
     :note "Appleyard1975"
     :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :ASubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "was(ə)na"],
-	    [:Common, :Plural, :Person2, "wasina"],
-	    [:Fem, :Singular, :Person3, "wasya"],
-	    [:Common, :Singular, :Person1, "wasa"],
-	    [:Common, :Singular, :Person2, "wasya"],
-	    [:Masc, :Singular, :Person3, "wasa"],
-	    [:Common, :Plural, :Person1, "wasna"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :ASubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasa"]
+            [:Singular :Person2 :Common "wasya"]
+            [:Singular :Person3 :Masc "wasa"]
+            [:Singular :Person3 :Fem "wasya"]
+            [:Plural :Person1 :Common "wasna"]
+            [:Plural :Person2 :Common "wasina"]
+            [:Plural :Person3 :Common "was(ə)na"]]
     }
-    {:label "kemant-VNegPerfective-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Perfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "wasgənir"],
-	    [:Common, :Plural, :Person3, "wasgäw"],
-	    [:Fem, :Singular, :Person3, "waskäy"],
-	    [:Masc, :Singular, :Person3, "wasga"],
-	    [:Common, :Singular, :Person2, "waskar"],
-	    [:Common, :Plural, :Person2, "waskänar"],
-	    [:Common, :Singular, :Person1, "wasgir"]]
-    }
-    {:label "kemant-VNegImprtv-xw"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :xw,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "xʷəta"],
-	    [:Plural, "xʷətäna"]]
-    }
-    {:label "kemant-VNegJussive-fay"
+    {:label "kemant-VAffA-subordinate-xw"
     :note "Appleyard1975"
     :common {:lexeme :fay,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Jussive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "?"],
-	    [:Common, :Singular, :Person1, "fäygin"],
-	    [:Common, :Singular, :Person2, "-"],
-	    [:Masc, :Singular, :Person3, "fäygin"],
-	    [:Common, :Plural, :Person3, "faygənin"],
-	    [:Common, :Plural, :Person2, "-"],
-	    [:Fem, :Singular, :Person3, "fäykin"]]
-    }
-    {:label "kemant-VAffJussive2-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :person :Person3,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Jussive2}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "wasin"],
-	    [:Fem, :Singular, "wasin?"],
-	    [:Common, :Plural, "wasənin"]]
-    }
-    {:label "kemant-VBilinKemantRel"
-    :note "Appleyard1975 pp. 338-339"
-    :common {:pdgmType :Comparative,
-	    :morphClass :BilinKemantRel,
-	    :pos :Verb}
-    :terms [[:aspect, :gender, :lang, :lexeme, :number, :person, :tam, :token]  ;; schema
-	    [:Imperfective, :Common, :Kemant, :was, :Plural, :Person2, :RelativeSubject, "wasinaɣər"],
-	    [:Perfective, :Common, :Kemant, :was, :Singular, :Person2, :RelativeSubject, "wasyaɣər"],
-	    [:Imperfective, :Common, :Kemant, :was, :Singular, :Person2, :RelativeSubject, "wasyaɣər"],
-	    [:Perfective, :Common, :Kemant, :was, :Plural, :Person2, :RelativeSubject, "wasyänaɣər"],
-	    [:Perfective, :Common, :Kemant, :was, :Singular, :Person1, :RelativeSubject, "wasaɣər"],
-	    [:Perfective, :Common, :Kemant, :was, :Plural, :Person1, :RelativeSubject, "wasyänaɣər"],
-	    [:Perfective, :Common, :Kemant, :gab, :Plural, :Person1, :RelativeSubject, "gäbnäxər"],
-	    [:Perfective, :Common, :Kemant, :gab, :Plural, :Person3, :RelativeOblique, "gäbänäxʷ"],
-	    [:Perfective, :Fem, :Kemant, :gab, :Singular, :Person3, :RelativeSubject, "gäbrärí"],
-	    [:Perfective, :Common, :Kemant, :was, :Plural, :Person3, :RelativeSubject, "wasäw"],
-	    [:Imperfective, :Common, :Kemant, :gab, :Plural, :Person3, :RelativeSubject, "gäbäw"],
-	    [:Imperfective, :Common, :Kemant, :gab, :Plural, :Person3, :RelativeOblique, "gäbnäxʷ"],
-	    [:Imperfective, :Common, :Kemant, :gab, :Plural, :Person2, :RelativeSubject, "gäbdənäxər"],
-	    [:Imperfective, :Masc, :Kemant, :was, :Singular, :Person3, :RelativeSubject, "wasaɣ"],
-	    [:Perfective, :Masc, :Kemant, :was, :Singular, :Person3, :RelativeSubject, "wasaɣ"],
-	    [:Perfective, :Common, :Kemant, :gab, :Plural, :Person3, :RelativeSubject, "gäbäw"],
-	    [:Perfective, :Common, :Kemant, :gab, :Plural, :Person2, :RelativeSubject, "gäbdanäxər"],
-	    [:Perfective, :Common, :Kemant, :gab, :Singular, :Person2, :RelativeSubject, "gäbräxər"],
-	    [:Perfective, :Fem, :Kemant, :was, :Singular, :Person3, :RelativeSubject, "wasäy"],
-	    [:Imperfective, :Masc, :Kemant, :gab, :Singular, :Person3, :RelativeSubject, "gäbäxʷ"],
-	    [:Perfective, :Common, :Kemant, :was, :Plural, :Person3, :RelativeOblique, "wasänaɣ"],
-	    [:Imperfective, :Common, :Kemant, :was, :Plural, :Person3, :RelativeOblique, "was(ə)naɣ"],
-	    [:Perfective, :Masc, :Kemant, :gab, :Singular, :Person3, :RelativeSubject, "gäbäxʷ"],
-	    [:Imperfective, :Common, :Kemant, :gab, :Singular, :Person1, :RelativeSubject, "gäbäxər"],
-	    [:Perfective, :Common, :Kemant, :gab, :Singular, :Person1, :RelativeSubject, "gäbäxər"],
-	    [:Imperfective, :Fem, :Kemant, :gab, :Singular, :Person3, :RelativeSubject, "gäbräri"],
-	    [:Imperfective, :Common, :Kemant, :gab, :Plural, :Person1, :RelativeSubject, "gäbnäxər"],
-	    [:Imperfective, :Common, :Kemant, :was, :Plural, :Person1, :RelativeSubject, "wasnaɣər"],
-	    [:Imperfective, :Fem, :Kemant, :was, :Singular, :Person3, :RelativeSubject, "wasäy"],
-	    [:Imperfective, :Common, :Kemant, :gab, :Singular, :Person2, :RelativeSubject, "gäbräxər"],
-	    [:Imperfective, :Common, :Kemant, :was, :Singular, :Person1, :RelativeSubject, "wasaɣər"],
-	    [:Imperfective, :Common, :Kemant, :was, :Plural, :Person3, :RelativeSubject, "wasäw"]]
-    }
-    {:label "kemant-VNegN-subordinate-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :NSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fäyäkän"],
-	    [:Fem, :Singular, :Person3, "fäyäkän"],
-	    [:Common, :Singular, :Person1, "fäyägän"],
-	    [:Common, :Plural, :Person1, "fäyägənin"],
-	    [:Common, :Plural, :Person2, "fäyäkänän"],
-	    [:Masc, :Singular, :Person3, "fäyägän"],
-	    [:Common, :Plural, :Person3, "fäyägänän"]]
-    }
-    {:label "kemant-VAffGerundive-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Gerund}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "fätəno"],
-	    [:Fem, :Singular, :Person3, "fäto"],
-	    [:Common, :Plural, :Person3, "fäyəno"],
-	    [:Masc, :Singular, :Person3, "fäyo"],
-	    [:Common, :Singular, :Person2, "fäto"],
-	    [:Common, :Singular, :Person1, "fäyo"],
-	    [:Common, :Plural, :Person1, "fäyno"]]
-    }
-    {:label "kemant-VAffN-subordinate-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :NSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "fätän"],
-	    [:Common, :Plural, :Person3, "fäyänän"],
-	    [:Common, :Plural, :Person1, "fäynän"],
-	    [:Masc, :Singular, :Person3, "fäyän"],
-	    [:Common, :Singular, :Person1, "fäyän"],
-	    [:Common, :Plural, :Person2, "fätänän"],
-	    [:Common, :Singular, :Person2, "fätän"]]
-    }
-    {:label "kemant-VRelSubj-xw"
-    :note "Appleyard1975 7.9"
-    :common {:lexeme :fay,
-	    :pos :Verb,
-	    :tam :RelativeSubject}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "fätänaɣ"],
-	    [:Masc, :Singular, :Person3, "fäyaɣ"],
-	    [:Common, :Singular, :Person2, "fätaɣ "],
-	    [:Fem, :Singular, :Person3, "fäyäy"],
-	    [:Common, :Plural, :Person1, "fäynaɣ"],
-	    [:Common, :Plural, :Person3, "fäyäw"],
-	    [:Common, :Singular, :Person1, "fäyaɣ ~ fäyaɣər ~ fäyar"]]
-    }
-    {:label "kemant-VNegJussive-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Jussive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "?"],
-	    [:Fem, :Singular, :Person3, "waskin"],
-	    [:Common, :Singular, :Person1, "wasgin"],
-	    [:Common, :Plural, :Person3, "wasgənin"],
-	    [:Common, :Plural, :Person2, "-"],
-	    [:Common, :Singular, :Person2, "-"],
-	    [:Masc, :Singular, :Person3, "wasgin"]]
-    }
-    {:label "kemant-VAffImperfective-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "xʷakʷən"],
-	    [:Fem, :Singular, :Person3, "xʷat(i)"],
-	    [:Common, :Singular, :Person2, "xʷəyäkʷ"],
-	    [:Common, :Singular, :Person1, "xʷakʷ"],
-	    [:Common, :Plural, :Person2, "xʷəyäkʷən"],
-	    [:Masc, :Singular, :Person3, "xʷakʷ"],
-	    [:Common, :Plural, :Person1, "xʷanäkʷ"]]
-    }
-    {:label "kemant-VFiniteForm"
-    :note "Appleyard1975 7.4 Agent noun marker sing. –änta plur. –äntə"
-    :common {:finiteForm :AgentNoun,
-	    :morphClass :AGENTNOUN,
-	    :pdgmSubType :FiniteVerb,
-	    :pos :Verb}
-    :terms [[:token-note, :lexeme, :token]  ;; schema
-	    ["farmer", :AGENTNOUN, "gʷäzänta"],
-	    ["sick man", :AGENTNOUN, "s̆əɣʷsänta"],
-	    ["teacher", :AGENTNOUN, "kins̆änta"],
-	    ["beggar", :AGENTNOUN, "s̆iwänta"],
-	    ["soldier", :AGENTNOUN, "säbsänta"],
-	    ["wise-man", :AGENTNOUN, "axänta"]]
-    }
-    {:label "kemant-VAffD-subordinate-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :DSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "wasnäd"],
-	    [:Common, :Singular, :Person1, "wasde"],
-	    [:Masc, :Singular, :Person3, "wasde"],
-	    [:Fem, :Singular, :Person3, "waste?"],
-	    [:Common, :Plural, :Person2, "?"],
-	    [:Common, :Plural, :Person3, "wasnäd"],
-	    [:Common, :Singular, :Person2, "?"]]
-    }
-    {:label "kemant-VNegImperfective-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "xʷakänar"],
-	    [:Common, :Plural, :Person1, "xʷagənir"],
-	    [:Masc, :Singular, :Person3, "xʷaga"],
-	    [:Fem, :Singular, :Person3, "xʷakäy"],
-	    [:Common, :Plural, :Person3, "xʷagäw"],
-	    [:Common, :Singular, :Person2, "xʷakar"],
-	    [:Common, :Singular, :Person1, "xʷagir"]]
-    }
-    {:label "kemant-VAffJuss-was"
-    :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Jussive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "wasdənu"],
-	    [:Common, :Plural, :Person1, "wasnu"],
-	    [:Common, :Singular, :Person2, "-"],
-	    [:Masc, :Singular, :Person3, "wasdu"],
-	    [:Fem, :Singular, :Person3, "wastu"],
-	    [:Common, :Plural, :Person2, "-"],
-	    [:Common, :Singular, :Person1, "wasiw"]]
-    }
-    {:label "kemant-VPerfComp-was"
-    :note "Appleyard1975,p. 334 .This tense is a close compound of a subordinate form,which
-            occasionally occurs outside this particular compound,and the imperfective affirmative of
-            the verb wan- be. The first part of the compound has personal markers (set A),but zero
-            tense marker;also,the marker -y of the 2nd person singular and the 3rd person feminine
-            is often deleted."
-    :common {:lexeme :was,
-	    :pos :Verb,
-	    :tam :PerfectiveComp}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "was(əy)(w)wasnät(i)"],
-	    [:Common, :Singular, :Person2, "was(əy)(w)wasnyäkʷ"],
-	    [:Common, :Plural, :Person1, "wasənwannäkʷ"],
-	    [:Masc, :Singular, :Person3, "waswanäkʷ"],
-	    [:Common, :Plural, :Person3, "wasənwanäkʷən"],
-	    [:Common, :Plural, :Person2, "wasinwanyäkʷən"],
-	    [:Common, :Singular, :Person1, "waswanäkʷ"]]
-    }
-    {:label "kemant-VRelOblique-was"
-    :note "Appleyard1975 7.4 Agent noun marker sing. –änta plur. –äntə"
-    :common {:lexeme :was,
-	    :pos :Verb,
-	    :tam :RelativeOblique}
-    :terms [[:gender, :genderHead, :numHead, :number, :person, :token]  ;; schema
-	    [:Common, :HeadMasc, :HeadSingular, :Singular, :Person2, "wasyaɣ"],
-	    [:Fem, :HeadMasc, :HeadSingular, :Singular, :Person3, "wasyaɣ"],
-	    [:Masc, :HeadMasc, :HeadSingular, :Singular, :Person3, "wasaɣ"],
-	    [:Masc, :HeadCommon, :HeadPlural, :Singular, :Person3, "wasäw"],
-	    [:Common, :HeadCommon, :HeadPlural, :Plural, :Person3, "wasänäw"],
-	    [:Common, :HeadFem, :HeadSingular, :Plural, :Person3, "wasänäy"],
-	    [:Common, :HeadCommon, :HeadPlural, :Singular, :Person1, "wasäw"],
-	    [:Common, :HeadMasc, :HeadSingular, :Plural, :Person2, "wasyänaɣ"],
-	    [:Common, :HeadMasc, :HeadSingular, :Singular, :Person1, "wasaɣ"],
-	    [:Common, :HeadFem, :HeadSingular, :Singular, :Person1, "wasäy"],
-	    [:Common, :HeadMasc, :HeadSingular, :Plural, :Person3, "wasänaɣ"],
-	    [:Fem, :HeadFem, :HeadSingular, :Singular, :Person3, "wasyäy"],
-	    [:Common, :HeadFem, :HeadSingular, :Plural, :Person2, "wasyänäy"],
-	    [:Masc, :HeadFem, :HeadSingular, :Singular, :Person3, "wasäy"],
-	    [:Common, :HeadCommon, :HeadPlural, :Singular, :Person2, "wasyäw"],
-	    [:Common, :HeadFem, :HeadSingular, :Plural, :Person1, "wasnäy"],
-	    [:Common, :HeadFem, :HeadSingular, :Singular, :Person2, "wasyäy"],
-	    [:Common, :HeadCommon, :HeadPlural, :Plural, :Person1, "wasnäw"],
-	    [:Common, :HeadMasc, :HeadSingular, :Plural, :Person1, "wasnaɣ"],
-	    [:Fem, :HeadCommon, :HeadPlural, :Singular, :Person3, "wasyäw"],
-	    [:Common, :HeadCommon, :HeadPlural, :Plural, :Person2, "wasyänäw"]]
-    }
-    {:label "kemant-VNegImprtv-fay"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :fay,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Plural, "fäytäna"],
-	    [:Singular, "fäyta"]]
-    }
-    {:label "kemant-VDervStemForms"
-    :note "Appleyard1975. The token note format is: Verb Gloss + Base Form."
-    :common {:morphClass :DERVSTEM,
-	    :pdgmSubType :DervStem,
-	    :pdgmType :Exemplary,
-	    :pos :Verb}
-    :terms [[:lexeme, :derivedStem, :token, :token-note-baseForm]  ;; schema
-	    [:DERVSTEM, :Reciprocal, "(i) –s + ən-", "_NULL + ⊤"],
-	    [:DERVSTEM, :S,  "kin-t-s̆-", "teach + kin-t-"],
-	    [:DERVSTEM, :M,  "əns̆-s-", "be open(ed) + əns-̆"],
-	    [:DERVSTEM, :S,  "dəkər-t-s̆-", "make hungry + dəkər-t-"],
-	    [:DERVSTEM, :M,  "təŋ-s-", "be found + təŋ-"],
-	    [:DERVSTEM, :S,  "läy-s̆-", "bring + läy-"],
-	    [:DERVSTEM, :M,  "y-s-", "be said + y-"],
-	    [:DERVSTEM, :M,  "was-s-", "be heard + was-"],
-	    [:DERVSTEM, :M,  "ku-mal-s-", "be killed + ku-mal-"],
-	    [:DERVSTEM, :S,  "wäntär-s̆-", "reply + wäntär-"],
-	    [:DERVSTEM, :M,  "lis̆-s-", "shave o.s. + lis-̆"],
-	    [:DERVSTEM, :S,  "ax-s̆-", "inform + ax-"],
-	    [:DERVSTEM, :M,  "xasän-t-s-", "be stolen + xasän-t-"],
-	    [:DERVSTEM, :S,  "xal-s̆-", "show + xal-"],
-	    [:DERVSTEM, :S,  "dəz-s̆-", "lose + dəz-"],
-	    [:DERVSTEM, :S,  "dan-s̆-", "cure + dan-"],
-	    [:DERVSTEM, :S,  "x-s̆-", "wash s.th. + x-"],
-	    [:DERVSTEM, :Reciprocal, "(ii) –s-", "_NULL + ⊤"],
-	    [:DERVSTEM, :S,  "bəlu-s̆-", "boil + bəlu-"],
-	    [:DERVSTEM, :S,  "fäy-s̆-", "take + fäy-"],
-	    [:DERVSTEM, :M,  "käbän-s-", "be born + käbän-"],
-	    [:DERVSTEM, :Reciprocal, "(iii) reduplication + -s-", "_NULL + ⊤"]]
-    }
-    {:label "kemant-VAffN-subordinate-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :NSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "wasän"],
-	    [:Common, :Singular, :Person2, "wasyän"],
-	    [:Common, :Plural, :Person2, "wasyänän"],
-	    [:Common, :Singular, :Person1, "wasän"],
-	    [:Common, :Plural, :Person1, "wasnän"],
-	    [:Fem, :Singular, :Person3, "wasyän"],
-	    [:Common, :Plural, :Person3, "wasänän"]]
-    }
-    {:label "kemant-VAffPerfective-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "fäynəɣʷ"],
-	    [:Fem, :Singular, :Person3, "fäy(ə)t(i)"],
-	    [:Common, :Plural, :Person2, "fätənəɣʷ"],
-	    [:Masc, :Singular, :Person3, "fäyəɣʷ"],
-	    [:Common, :Singular, :Person1, "fäyəɣʷ"],
-	    [:Common, :Singular, :Person2, "fäyəɣʷ"],
-	    [:Common, :Plural, :Person3, "fäy(ə)nəɣʷ"]]
-    }
-    {:label "kemant-VAffImperfective-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fätäkʷ"],
-	    [:Fem, :Singular, :Person3, "fäyät(i)"],
-	    [:Masc, :Singular, :Person3, "fäyäkʷ"],
-	    [:Common, :Plural, :Person3, "fäyäkʷən"],
-	    [:Common, :Plural, :Person2, "fätakʷən"],
-	    [:Common, :Plural, :Person1, "fäynäkʷ"],
-	    [:Common, :Singular, :Person1, "fäyäkʷ"]]
-    }
-    {:label "kemant-VNegGerundive-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Gerund}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "fäygəni"],
-	    [:Masc, :Singular, :Person3, "fäygi"],
-	    [:Fem, :Singular, :Person3, "fäyki"],
-	    [:Common, :Singular, :Person1, "fäygi"],
-	    [:Common, :Singular, :Person2, "fäyki"],
-	    [:Common, :Plural, :Person2, "fäykəni"],
-	    [:Common, :Plural, :Person3, "fäygəni"]]
-    }
-    {:label "kemant-VAffPerfective-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "wasnəɣʷ"],
-	    [:Common, :Plural, :Person2, "wasinəɣʷ"],
-	    [:Common, :Singular, :Person1, "wasəɣʷ"],
-	    [:Common, :Singular, :Person2, "wasyəɣʷ"],
-	    [:Masc, :Singular, :Person3, "wasəɣʷ"],
-	    [:Fem, :Singular, :Person3, "was(ə)t(i)"],
-	    [:Common, :Plural, :Person3, "wasənəɣʷ"]]
-    }
-    {:label "kemant-VNegImperfective-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "wasäga"],
-	    [:Common, :Plural, :Person1, "wasägənir"],
-	    [:Common, :Plural, :Person2, "wasäkänar"],
-	    [:Fem, :Singular, :Person3, "wasäkäy"],
-	    [:Common, :Singular, :Person2, "wasäkar"],
-	    [:Common, :Singular, :Person1, "wagägir"],
-	    [:Common, :Plural, :Person3, "wasägäw"]]
-    }
-    {:label "kemant-VNegPerfective-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Perfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "fäygənir"],
-	    [:Common, :Singular, :Person1, "fäygir"],
-	    [:Common, :Plural, :Person3, "fäygäw"],
-	    [:Masc, :Singular, :Person3, "fäyga"],
-	    [:Common, :Plural, :Person2, "fäykänar"],
-	    [:Common, :Singular, :Person2, "fäykar"],
-	    [:Fem, :Singular, :Person3, "fäykäy"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :ASubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäya"]
+            [:Singular :Person2 :Common "fäta"]
+            [:Singular :Person3 :Masc "fäya"]
+            [:Singular :Person3 :Fem "fäta"]
+            [:Plural :Person1 :Common "fäyna"]
+            [:Plural :Person2 :Common "fätəna"]
+            [:Plural :Person3 :Common "fäy(ə)na"]]
     }
     {:label "kemant-VAffCompSubordinate-was"
     :note "Appleyard1975"
     :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :CompSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "was(əy)"],
-	    [:Common, :Plural, :Person1, "wasən"],
-	    [:Common, :Plural, :Person2, "wasin"],
-	    [:Common, :Plural, :Person3, "wasən"],
-	    [:Common, :Singular, :Person1, "was"],
-	    [:Masc, :Singular, :Person3, "was"],
-	    [:Common, :Singular, :Person2, "was(əy)"]]
-    }
-    {:label "kemant-VAffGerundive-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Gerund}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "wasino"],
-	    [:Fem, :Singular, :Person3, "wasyo"],
-	    [:Common, :Singular, :Person2, "wasyo"],
-	    [:Masc, :Singular, :Person3, "waso"],
-	    [:Common, :Singular, :Person1, "waso"],
-	    [:Common, :Plural, :Person3, "wasəno"],
-	    [:Common, :Plural, :Person1, "wasno"]]
-    }
-    {:label "kemant-VNegImprtv-iw"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :iw,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Plural, "iwtäna"],
-	    [:Singular, "iwta"]]
-    }
-    {:label "kemant-VNegImperfective-fay"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "fäyäga"],
-	    [:Fem, :Singular, :Person3, "fäyäkäy"],
-	    [:Common, :Plural, :Person2, "fäyäkänar"],
-	    [:Common, :Plural, :Person3, "fäyägäw"],
-	    [:Common, :Plural, :Person1, "fäyägənir"],
-	    [:Common, :Singular, :Person1, "fäyägir"],
-	    [:Common, :Singular, :Person2, "fääkar"]]
-    }
-    {:label "kemant-VNegImprtv-was"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :was,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "wasta"],
-	    [:Plural, "wastäna"]]
-    }
-    {:label "kemant-VAffImperfective-was"
-    :note "Appleyard1975"
-    :common {:lexeme :was,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "wasät(i)"],
-	    [:Common, :Singular, :Person2, "wasyäkʷ"],
-	    [:Common, :Plural, :Person1, "wasnäkʷ"],
-	    [:Common, :Singular, :Person1, "wasäkʷ"],
-	    [:Common, :Plural, :Person2, "wasyäkʷən"],
-	    [:Masc, :Singular, :Person3, "wasäkʷ"],
-	    [:Common, :Plural, :Person3, "wasäkʷən"]]
-    }
-    {:label "kemant-VInterrog"
-    :note "Appleyard1975 7.5"
-    :common {:morphClass :VERBINTERROGATIVE,
-	    :pdgmSubType :Interrogative,
-	    :pdgmType :Exemplary,
-	    :pos :Verb}
-    :terms [[:lexeme, :token-note, :token]  ;; schema
-	    [:VERBINTERROGATIVE, "do you want it?", "fälägi"],
-	    [:VERBINTERROGATIVE, "are you getting used to it?", "lämäds̆i"],
-	    [:VERBINTERROGATIVE, "can you?", "gärsi"],
-	    [:VERBINTERROGATIVE, "do you speak Kemant?", "kəmantənäyəs waɣärti"]]
-    }
-    {:label "kemant-VAffImprtv-xw"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :xw,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "xʷəy"],
-	    [:Plural, "xʷa"]]
-    }
-    {:label "kemant-VNegN-subordinate-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :NSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "xʷagän"],
-	    [:Masc, :Singular, :Person3, "xʷagän"],
-	    [:Common, :Plural, :Person2, "xʷakänän"],
-	    [:Fem, :Singular, :Person3, "xʷakän"],
-	    [:Common, :Plural, :Person1, "xʷagənin"],
-	    [:Common, :Plural, :Person3, "xʷagänän"],
-	    [:Common, :Singular, :Person2, "xʷakän"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :CompSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "was"]
+            [:Singular :Person2 :Common "was(əy)"]
+            [:Singular :Person3 :Masc "was"]
+            [:Singular :Person3 :Fem "was(əy)"]
+            [:Plural :Person1 :Common "wasən"]
+            [:Plural :Person2 :Common "wasin"]
+            [:Plural :Person3 :Common "wasən"]]
     }
     {:label "kemant-VAffCompSubordinate-xw"
     :note "Appleyard1975"
     :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :CompSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person2, "fät"],
-	    [:Fem, :Singular, :Person3, "fät"],
-	    [:Masc, :Singular, :Person3, "fäy"],
-	    [:Common, :Plural, :Person1, "fäyən"],
-	    [:Common, :Plural, :Person3, "fäyən"],
-	    [:Common, :Plural, :Person2, "fätən"],
-	    [:Common, :Singular, :Person1, "fäy"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :CompSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäy"]
+            [:Singular :Person2 :Common "fät"]
+            [:Singular :Person3 :Masc "fäy"]
+            [:Singular :Person3 :Fem "fät"]
+            [:Plural :Person1 :Common "fäyən"]
+            [:Plural :Person2 :Common "fätən"]
+            [:Plural :Person3 :Common "fäyən"]]
     }
-    {:label "kemant-VNegGerundive-was"
+    {:label "kemant-VAffD-subordinate-was"
     :note "Appleyard1975"
     :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Gerund}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "wasgəni"],
-	    [:Common, :Plural, :Person2, "waskəni"],
-	    [:Common, :Singular, :Person1, "wasgi"],
-	    [:Common, :Plural, :Person3, "wasgəni"],
-	    [:Masc, :Singular, :Person3, "wasgi"],
-	    [:Fem, :Singular, :Person3, "waski"],
-	    [:Common, :Singular, :Person2, "waski"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :DSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasde"]
+            [:Singular :Person2 :Common "?"]
+            [:Singular :Person3 :Masc "wasde"]
+            [:Singular :Person3 :Fem "waste?"]
+            [:Plural :Person1 :Common "wasnäd"]
+            [:Plural :Person2 :Common "?"]
+            [:Plural :Person3 :Common "wasnäd"]]
+    }
+    {:label "kemant-VAffGerundive-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Gerund}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyo"]
+            [:Singular :Person2 :Common "fäto"]
+            [:Singular :Person3 :Masc "fäyo"]
+            [:Singular :Person3 :Fem "fäto"]
+            [:Plural :Person1 :Common "fäyno"]
+            [:Plural :Person2 :Common "fätəno"]
+            [:Plural :Person3 :Common "fäyəno"]]
+    }
+    {:label "kemant-VAffGerundive-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Gerund}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "waso"]
+            [:Singular :Person2 :Common "wasyo"]
+            [:Singular :Person3 :Masc "waso"]
+            [:Singular :Person3 :Fem "wasyo"]
+            [:Plural :Person1 :Common "wasno"]
+            [:Plural :Person2 :Common "wasino"]
+            [:Plural :Person3 :Common "wasəno"]]
+    }
+    {:label "kemant-VAffImperfective-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyäkʷ"]
+            [:Singular :Person2 :Common "fätäkʷ"]
+            [:Singular :Person3 :Masc "fäyäkʷ"]
+            [:Singular :Person3 :Fem "fäyät(i)"]
+            [:Plural :Person1 :Common "fäynäkʷ"]
+            [:Plural :Person2 :Common "fätakʷən"]
+            [:Plural :Person3 :Common "fäyäkʷən"]]
+    }
+    {:label "kemant-VAffImperfective-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasäkʷ"]
+            [:Singular :Person2 :Common "wasyäkʷ"]
+            [:Singular :Person3 :Masc "wasäkʷ"]
+            [:Singular :Person3 :Fem "wasät(i)"]
+            [:Plural :Person1 :Common "wasnäkʷ"]
+            [:Plural :Person2 :Common "wasyäkʷən"]
+            [:Plural :Person3 :Common "wasäkʷən"]]
+    }
+    {:label "kemant-VAffImperfective-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷakʷ"]
+            [:Singular :Person2 :Common "xʷəyäkʷ"]
+            [:Singular :Person3 :Masc "xʷakʷ"]
+            [:Singular :Person3 :Fem "xʷat(i)"]
+            [:Plural :Person1 :Common "xʷanäkʷ"]
+            [:Plural :Person2 :Common "xʷəyäkʷən"]
+            [:Plural :Person3 :Common "xʷakʷən"]]
+    }
+    {:label "kemant-VAffImprtv-fay"
+    :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :fay,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "fäy"]
+            [:Plural "fäya"]]
     }
     {:label "kemant-VAffImprtv-iw"
     :note "Appleyard1975"
     :common {:gender :Common,
-	    :lexeme :iw,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "iwi ~ iw"],
-	    [:Plural, "iwa"]]
+            :lexeme :iw,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "iwi ~ iw"]
+            [:Plural "iwa"]]
     }
-    {:label "kemant-VNegN-subordinate-was"
+    {:label "kemant-VAffImprtv-was"
     :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :was,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "was"]
+            [:Plural "wasa"]]
+    }
+    {:label "kemant-VAffImprtv-xw"
+    :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :xw,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "xʷəy"]
+            [:Plural "xʷa"]]
+    }
+    {:label "kemant-VAffJuss-was"
     :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :NSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "wasäkän"],
-	    [:Common, :Singular, :Person2, "wasäkän"],
-	    [:Common, :Plural, :Person1, "wasägənin"],
-	    [:Common, :Plural, :Person3, "wasägänän"],
-	    [:Masc, :Singular, :Person3, "wasägän"],
-	    [:Common, :Plural, :Person2, "wasäkänän"],
-	    [:Common, :Singular, :Person1, "wasägän"]]
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Jussive}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasiw"]
+            [:Singular :Person2 :Common "-"]
+            [:Singular :Person3 :Masc "wasdu"]
+            [:Singular :Person3 :Fem "wastu"]
+            [:Plural :Person1 :Common "wasnu"]
+            [:Plural :Person2 :Common "-"]
+            [:Plural :Person3 :Common "wasdənu"]]
+    }
+    {:label "kemant-VAffJussive-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Jussive}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?"]
+            [:Singular :Person2 :Common "-"]
+            [:Singular :Person3 :Masc "xʷədu"]
+            [:Singular :Person3 :Fem "xʷətu"]
+            [:Plural :Person1 :Common "xʷənu"]
+            [:Plural :Person2 :Common "-"]
+            [:Plural :Person3 :Common "xʷədənu"]]
     }
     {:label "kemant-VAffJussive2-fay"
     :note "Appleyard1975"
     :common {:lexeme :fay,
-	    :person :Person3,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Jussive2}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "fäyin"],
-	    [:Common, :Plural, "fäyənin"],
-	    [:Fem, :Singular, "fäyin?"]]
+            :person :Person3,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Jussive2}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "fäyin"]
+            [:Singular :Fem "fäyin?"]
+            [:Plural :Common "fäyənin"]]
+    }
+    {:label "kemant-VAffJussive2-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :person :Person3,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Jussive2}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "wasin"]
+            [:Singular :Fem "wasin?"]
+            [:Plural :Common "wasənin"]]
+    }
+    {:label "kemant-VAffN-subordinate-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :NSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyän"]
+            [:Singular :Person2 :Common "fätän"]
+            [:Singular :Person3 :Masc "fäyän"]
+            [:Singular :Person3 :Fem "fätän"]
+            [:Plural :Person1 :Common "fäynän"]
+            [:Plural :Person2 :Common "fätänän"]
+            [:Plural :Person3 :Common "fäyänän"]]
+    }
+    {:label "kemant-VAffN-subordinate-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :NSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasän"]
+            [:Singular :Person2 :Common "wasyän"]
+            [:Singular :Person3 :Masc "wasän"]
+            [:Singular :Person3 :Fem "wasyän"]
+            [:Plural :Person1 :Common "wasnän"]
+            [:Plural :Person2 :Common "wasyänän"]
+            [:Plural :Person3 :Common "wasänän"]]
+    }
+    {:label "kemant-VAffN-subordinate-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :NSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷan"]
+            [:Singular :Person2 :Common "xʷəyän"]
+            [:Singular :Person3 :Masc "xʷan"]
+            [:Singular :Person3 :Fem "xʷəyän"]
+            [:Plural :Person1 :Common "xʷənän"]
+            [:Plural :Person2 :Common "xʷəyänän"]
+            [:Plural :Person3 :Common "xʷanän"]]
+    }
+    {:label "kemant-VAffPerfective-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyəɣʷ"]
+            [:Singular :Person2 :Common "fäyəɣʷ"]
+            [:Singular :Person3 :Masc "fäyəɣʷ"]
+            [:Singular :Person3 :Fem "fäy(ə)t(i)"]
+            [:Plural :Person1 :Common "fäynəɣʷ"]
+            [:Plural :Person2 :Common "fätənəɣʷ"]
+            [:Plural :Person3 :Common "fäy(ə)nəɣʷ"]]
+    }
+    {:label "kemant-VAffPerfective-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasəɣʷ"]
+            [:Singular :Person2 :Common "wasyəɣʷ"]
+            [:Singular :Person3 :Masc "wasəɣʷ"]
+            [:Singular :Person3 :Fem "was(ə)t(i)"]
+            [:Plural :Person1 :Common "wasnəɣʷ"]
+            [:Plural :Person2 :Common "wasinəɣʷ"]
+            [:Plural :Person3 :Common "wasənəɣʷ"]]
+    }
+    {:label "kemant-VAffPerfective-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Perfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷiɣʷ"]
+            [:Singular :Person2 :Common "xʷəyəɣʷ"]
+            [:Singular :Person3 :Masc "xʷiɣʷ"]
+            [:Singular :Person3 :Fem "xʷit(i)"]
+            [:Plural :Person1 :Common "xʷinəɣʷ"]
+            [:Plural :Person2 :Common "xʷinəɣʷ ?"]
+            [:Plural :Person3 :Common "xʷinəɣʷ"]]
+    }
+    {:label "kemant-VDervStemForms"
+    :note "Appleyard1975. The token note format is: Verb Gloss + Base Form."
+    :common {:morphClass :DERVSTEM,
+            :pdgmSubType :DervStem,
+            :pdgmType :Exemplary,
+            :pos :Verb}
+    :terms [[:derivedStem :lexeme :token :token-note-baseForm] ;; schema
+            [:M :DERVSTEM "əns̆-s-" "be open(ed) + əns-̆"]
+            [:M :DERVSTEM "təŋ-s-" "be found + təŋ-"]
+            [:M :DERVSTEM "y-s-" "be said + y-"]
+            [:M :DERVSTEM "was-s-" "be heard + was-"]
+            [:M :DERVSTEM "ku-mal-s-" "be killed + ku-mal-"]
+            [:M :DERVSTEM "lis̆-s-" "shave o.s. + lis-̆"]
+            [:M :DERVSTEM "xasän-t-s-" "be stolen + xasän-t-"]
+            [:M :DERVSTEM "käbän-s-" "be born + käbän-"]
+            [:Reciprocal :DERVSTEM "(i) –s + ən-" "_NULL + ⊤"]
+            [:Reciprocal :DERVSTEM "(ii) –s-" "_NULL + ⊤"]
+            [:Reciprocal :DERVSTEM "(iii) reduplication + -s-" "_NULL + ⊤"]
+            [:S :DERVSTEM "kin-t-s̆-" "teach + kin-t-"]
+            [:S :DERVSTEM "dəkər-t-s̆-" "make hungry + dəkər-t-"]
+            [:S :DERVSTEM "läy-s̆-" "bring + läy-"]
+            [:S :DERVSTEM "wäntär-s̆-" "reply + wäntär-"]
+            [:S :DERVSTEM "ax-s̆-" "inform + ax-"]
+            [:S :DERVSTEM "xal-s̆-" "show + xal-"]
+            [:S :DERVSTEM "dəz-s̆-" "lose + dəz-"]
+            [:S :DERVSTEM "dan-s̆-" "cure + dan-"]
+            [:S :DERVSTEM "x-s̆-" "wash s.th. + x-"]
+            [:S :DERVSTEM "bəlu-s̆-" "boil + bəlu-"]
+            [:S :DERVSTEM "fäy-s̆-" "take + fäy-"]]
+    }
+    {:label "kemant-VFiniteForm"
+    :note "Appleyard1975 7.4 Agent noun marker sing. –änta plur. –äntə"
+    :common {:finiteForm :AgentNoun,
+            :morphClass :AGENTNOUN,
+            :pdgmSubType :FiniteVerb,
+            :pos :Verb}
+    :terms [[:lexeme :token :token-note] ;; schema
+            [:AGENTNOUN "gʷäzänta" "farmer"]
+            [:AGENTNOUN "s̆əɣʷsänta" "sick man"]
+            [:AGENTNOUN "kins̆änta" "teacher"]
+            [:AGENTNOUN "s̆iwänta" "beggar"]
+            [:AGENTNOUN "säbsänta" "soldier"]
+            [:AGENTNOUN "axänta" "wise-man"]]
+    }
+    {:label "kemant-VInfinitive"
+    :note "Appleyard1975 7.4"
+    :common {:finiteForm :Infinitive,
+            :morphClass :INFINITIVE,
+            :pdgmSubType :FiniteVerb,
+            :pos :Verb}
+    :terms [[:lexeme :polarity :token] ;; schema
+            [:fay :Affirmative "fäyna"]
+            [:fay :Negative "fäygäna"]
+            [:was :Affirmative "wasna"]
+            [:was :Negative "wasgäna"]
+            [:xw :Affirmative "xʷəna"]
+            [:xw :Negative "xʷəgäna"]]
+    }
+    {:label "kemant-VInterrog"
+    :note "Appleyard1975 7.5"
+    :common {:morphClass :VERBINTERROGATIVE,
+            :pdgmSubType :Interrogative,
+            :pdgmType :Exemplary,
+            :pos :Verb}
+    :terms [[:lexeme :token :token-note] ;; schema
+            [:VERBINTERROGATIVE "fälägi" "do you want it?"]
+            [:VERBINTERROGATIVE "lämäds̆i" "are you getting used to it?"]
+            [:VERBINTERROGATIVE "gärsi" "can you?"]
+            [:VERBINTERROGATIVE "kəmantənäyəs waɣärti" "do you speak Kemant?"]]
+    }
+    {:label "kemant-VNegA-subordinate-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :ASubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasga"]
+            [:Singular :Person2 :Common "waska"]
+            [:Singular :Person3 :Masc "wasga"]
+            [:Singular :Person3 :Fem "waska"]
+            [:Plural :Person1 :Common "wasgəna"]
+            [:Plural :Person2 :Common "waskəna"]
+            [:Plural :Person3 :Common "wasgəna"]]
+    }
+    {:label "kemant-VNegA-subordinate-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :ASubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyga"]
+            [:Singular :Person2 :Common "fäyka"]
+            [:Singular :Person3 :Masc "fäyga"]
+            [:Singular :Person3 :Fem "fäyka"]
+            [:Plural :Person1 :Common "fäygəna"]
+            [:Plural :Person2 :Common "fäykəna"]
+            [:Plural :Person3 :Common "fäygəna"]]
+    }
+    {:label "kemant-VNegD-subordinate-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :DSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasgäd"]
+            [:Singular :Person2 :Common "waskäd"]
+            [:Singular :Person3 :Masc "wasgäd"]
+            [:Singular :Person3 :Fem "waskäd"]
+            [:Plural :Person1 :Common "wasgənäd"]
+            [:Plural :Person2 :Common "waskänäd"]
+            [:Plural :Person3 :Common "wasgänäd"]]
+    }
+    {:label "kemant-VNegGerundive-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Gerund}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäygi"]
+            [:Singular :Person2 :Common "fäyki"]
+            [:Singular :Person3 :Masc "fäygi"]
+            [:Singular :Person3 :Fem "fäyki"]
+            [:Plural :Person1 :Common "fäygəni"]
+            [:Plural :Person2 :Common "fäykəni"]
+            [:Plural :Person3 :Common "fäygəni"]]
+    }
+    {:label "kemant-VNegGerundive-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Gerund}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasgi"]
+            [:Singular :Person2 :Common "waski"]
+            [:Singular :Person3 :Masc "wasgi"]
+            [:Singular :Person3 :Fem "waski"]
+            [:Plural :Person1 :Common "wasgəni"]
+            [:Plural :Person2 :Common "waskəni"]
+            [:Plural :Person3 :Common "wasgəni"]]
+    }
+    {:label "kemant-VNegImperfective-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyägir"]
+            [:Singular :Person2 :Common "fääkar"]
+            [:Singular :Person3 :Masc "fäyäga"]
+            [:Singular :Person3 :Fem "fäyäkäy"]
+            [:Plural :Person1 :Common "fäyägənir"]
+            [:Plural :Person2 :Common "fäyäkänar"]
+            [:Plural :Person3 :Common "fäyägäw"]]
+    }
+    {:label "kemant-VNegImperfective-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wagägir"]
+            [:Singular :Person2 :Common "wasäkar"]
+            [:Singular :Person3 :Masc "wasäga"]
+            [:Singular :Person3 :Fem "wasäkäy"]
+            [:Plural :Person1 :Common "wasägənir"]
+            [:Plural :Person2 :Common "wasäkänar"]
+            [:Plural :Person3 :Common "wasägäw"]]
+    }
+    {:label "kemant-VNegImperfective-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷagir"]
+            [:Singular :Person2 :Common "xʷakar"]
+            [:Singular :Person3 :Masc "xʷaga"]
+            [:Singular :Person3 :Fem "xʷakäy"]
+            [:Plural :Person1 :Common "xʷagənir"]
+            [:Plural :Person2 :Common "xʷakänar"]
+            [:Plural :Person3 :Common "xʷagäw"]]
+    }
+    {:label "kemant-VNegImprtv-fay"
+    :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :fay,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "fäyta"]
+            [:Plural "fäytäna"]]
+    }
+    {:label "kemant-VNegImprtv-iw"
+    :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :iw,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "iwta"]
+            [:Plural "iwtäna"]]
+    }
+    {:label "kemant-VNegImprtv-was"
+    :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :was,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "wasta"]
+            [:Plural "wastäna"]]
+    }
+    {:label "kemant-VNegImprtv-xw"
+    :note "Appleyard1975"
+    :common {:gender :Common,
+            :lexeme :xw,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :token] ;; schema
+            [:Singular "xʷəta"]
+            [:Plural "xʷətäna"]]
+    }
+    {:label "kemant-VNegJussive-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Jussive}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäygin"]
+            [:Singular :Person2 :Common "-"]
+            [:Singular :Person3 :Masc "fäygin"]
+            [:Singular :Person3 :Fem "fäykin"]
+            [:Plural :Person1 :Common "?"]
+            [:Plural :Person2 :Common "-"]
+            [:Plural :Person3 :Common "faygənin"]]
+    }
+    {:label "kemant-VNegJussive-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Jussive}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasgin"]
+            [:Singular :Person2 :Common "-"]
+            [:Singular :Person3 :Masc "wasgin"]
+            [:Singular :Person3 :Fem "waskin"]
+            [:Plural :Person1 :Common "?"]
+            [:Plural :Person2 :Common "-"]
+            [:Plural :Person3 :Common "wasgənin"]]
+    }
+    {:label "kemant-VNegJussive-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Jussive}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷəgin"]
+            [:Singular :Person2 :Common "-"]
+            [:Singular :Person3 :Masc "xʷəgin"]
+            [:Singular :Person3 :Fem "xʷəkin"]
+            [:Plural :Person1 :Common "?"]
+            [:Plural :Person2 :Common "-"]
+            [:Plural :Person3 :Common "xʷəgənin"]]
+    }
+    {:label "kemant-VNegN-subordinate-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :NSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyägän"]
+            [:Singular :Person2 :Common "fäyäkän"]
+            [:Singular :Person3 :Masc "fäyägän"]
+            [:Singular :Person3 :Fem "fäyäkän"]
+            [:Plural :Person1 :Common "fäyägənin"]
+            [:Plural :Person2 :Common "fäyäkänän"]
+            [:Plural :Person3 :Common "fäyägänän"]]
+    }
+    {:label "kemant-VNegN-subordinate-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :NSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasägän"]
+            [:Singular :Person2 :Common "wasäkän"]
+            [:Singular :Person3 :Masc "wasägän"]
+            [:Singular :Person3 :Fem "wasäkän"]
+            [:Plural :Person1 :Common "wasägənin"]
+            [:Plural :Person2 :Common "wasäkänän"]
+            [:Plural :Person3 :Common "wasägänän"]]
+    }
+    {:label "kemant-VNegN-subordinate-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :NSubordinate}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷagän"]
+            [:Singular :Person2 :Common "xʷakän"]
+            [:Singular :Person3 :Masc "xʷagän"]
+            [:Singular :Person3 :Fem "xʷakän"]
+            [:Plural :Person1 :Common "xʷagənin"]
+            [:Plural :Person2 :Common "xʷakänän"]
+            [:Plural :Person3 :Common "xʷagänän"]]
+    }
+    {:label "kemant-VNegPerfective-fay"
+    :note "Appleyard1975"
+    :common {:lexeme :fay,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäygir"]
+            [:Singular :Person2 :Common "fäykar"]
+            [:Singular :Person3 :Masc "fäyga"]
+            [:Singular :Person3 :Fem "fäykäy"]
+            [:Plural :Person1 :Common "fäygənir"]
+            [:Plural :Person2 :Common "fäykänar"]
+            [:Plural :Person3 :Common "fäygäw"]]
+    }
+    {:label "kemant-VNegPerfective-was"
+    :note "Appleyard1975"
+    :common {:lexeme :was,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasgir"]
+            [:Singular :Person2 :Common "waskar"]
+            [:Singular :Person3 :Masc "wasga"]
+            [:Singular :Person3 :Fem "waskäy"]
+            [:Plural :Person1 :Common "wasgənir"]
+            [:Plural :Person2 :Common "waskänar"]
+            [:Plural :Person3 :Common "wasgäw"]]
+    }
+    {:label "kemant-VNegPerfective-xw"
+    :note "Appleyard1975"
+    :common {:lexeme :xw,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Perfective}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "xʷəgir"]
+            [:Singular :Person2 :Common "xʷəkar"]
+            [:Singular :Person3 :Masc "xʷəga"]
+            [:Singular :Person3 :Fem "xʷəkäy"]
+            [:Plural :Person1 :Common "xʷəgənir"]
+            [:Plural :Person2 :Common "xʷəkänar"]
+            [:Plural :Person3 :Common "xʷəgäw"]]
     }
     {:label "kemant-VPerfComp-fay"
     :note "Appleyard1975,p. 334 .This tense is a close compound of a subordinate form,which
@@ -736,258 +831,158 @@
             tense marker;also,the marker -y of the 2nd person singular and the 3rd person feminine
             is often deleted."
     :common {:lexeme :fay,
-	    :pos :Verb,
-	    :tam :PerfectiveComp}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "fätwanät(i)"],
-	    [:Common, :Plural, :Person3, "fäyənwanäkʷən"],
-	    [:Common, :Singular, :Person2, "fätwanyäkʷ"],
-	    [:Masc, :Singular, :Person3, "fäwanäkʷ"],
-	    [:Common, :Plural, :Person1, "fäyənwannäkʷ"],
-	    [:Common, :Singular, :Person1, "fäwanäkʷ"],
-	    [:Common, :Plural, :Person2, "fätənwanyäkʷən"]]
+            :pos :Verb,
+            :tam :PerfectiveComp}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäwanäkʷ"]
+            [:Singular :Person2 :Common "fätwanyäkʷ"]
+            [:Singular :Person3 :Masc "fäwanäkʷ"]
+            [:Singular :Person3 :Fem "fätwanät(i)"]
+            [:Plural :Person1 :Common "fäyənwannäkʷ"]
+            [:Plural :Person2 :Common "fätənwanyäkʷən"]
+            [:Plural :Person3 :Common "fäyənwanäkʷən"]]
     }
-    {:label "kemant-VNegD-subordinate-was"
-    :note "Appleyard1975"
+    {:label "kemant-VPerfComp-was"
+    :note "Appleyard1975,p. 334 .This tense is a close compound of a subordinate form,which
+            occasionally occurs outside this particular compound,and the imperfective affirmative of
+            the verb wan- be. The first part of the compound has personal markers (set A),but zero
+            tense marker;also,the marker -y of the 2nd person singular and the 3rd person feminine
+            is often deleted."
     :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :DSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "waskänäd"],
-	    [:Common, :Plural, :Person1, "wasgənäd"],
-	    [:Common, :Singular, :Person1, "wasgäd"],
-	    [:Masc, :Singular, :Person3, "wasgäd"],
-	    [:Common, :Plural, :Person3, "wasgänäd"],
-	    [:Common, :Singular, :Person2, "waskäd"],
-	    [:Fem, :Singular, :Person3, "waskäd"]]
+            :pos :Verb,
+            :tam :PerfectiveComp}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "waswanäkʷ"]
+            [:Singular :Person2 :Common "was(əy)(w)wasnyäkʷ"]
+            [:Singular :Person3 :Masc "waswanäkʷ"]
+            [:Singular :Person3 :Fem "was(əy)(w)wasnät(i)"]
+            [:Plural :Person1 :Common "wasənwannäkʷ"]
+            [:Plural :Person2 :Common "wasinwanyäkʷən"]
+            [:Plural :Person3 :Common "wasənwanäkʷən"]]
     }
-    {:label "kemant-VInfinitive"
-    :note "Appleyard1975 7.4"
-    :common {:finiteForm :Infinitive,
-	    :morphClass :INFINITIVE,
-	    :pdgmSubType :FiniteVerb,
-	    :pos :Verb}
-    :terms [[:lexeme, :polarity, :token]  ;; schema
-	    [:xw, :Affirmative, "xʷəna"],
-	    [:was, :Negative, "wasgäna"],
-	    [:was, :Affirmative, "wasna"],
-	    [:fay, :Negative, "fäygäna"],
-	    [:fay, :Affirmative, "fäyna"],
-	    [:xw, :Negative, "xʷəgäna"]]
-    }
-    {:label "kemant-VAffA-subordinate-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :fay,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :ASubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "fätəna"],
-	    [:Masc, :Singular, :Person3, "fäya"],
-	    [:Fem, :Singular, :Person3, "fäta"],
-	    [:Common, :Plural, :Person1, "fäyna"],
-	    [:Common, :Singular, :Person2, "fäta"],
-	    [:Common, :Plural, :Person3, "fäy(ə)na"],
-	    [:Common, :Singular, :Person1, "fäya"]]
-    }
-    {:label "kemant-VNegPerfective-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Perfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "xʷəgäw"],
-	    [:Common, :Plural, :Person2, "xʷəkänar"],
-	    [:Common, :Singular, :Person2, "xʷəkar"],
-	    [:Common, :Plural, :Person1, "xʷəgənir"],
-	    [:Fem, :Singular, :Person3, "xʷəkäy"],
-	    [:Common, :Singular, :Person1, "xʷəgir"],
-	    [:Masc, :Singular, :Person3, "xʷəga"]]
-    }
-    {:label "kemant-VAffImprtv-was"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :was,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "was"],
-	    [:Plural, "wasa"]]
-    }
-    {:label "kemant-VAffImprtv-fay"
-    :note "Appleyard1975"
-    :common {:gender :Common,
-	    :lexeme :fay,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:number, :token]  ;; schema
-	    [:Singular, "fäy"],
-	    [:Plural, "fäya"]]
-    }
-    {:label "kemant-VNegA-subordinate-was"
-    :note "Appleyard1975"
+    {:label "kemant-VRelOblique-was"
+    :note "Appleyard1975 7.4 Agent noun marker sing. –änta plur. –äntə"
     :common {:lexeme :was,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :ASubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "wasgəna"],
-	    [:Common, :Singular, :Person1, "wasga"],
-	    [:Masc, :Singular, :Person3, "wasga"],
-	    [:Common, :Plural, :Person3, "wasgəna"],
-	    [:Common, :Singular, :Person2, "waska"],
-	    [:Common, :Plural, :Person2, "waskəna"],
-	    [:Fem, :Singular, :Person3, "waska"]]
-    }
-    {:label "kemant-VAffN-subordinate-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :NSubordinate}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "xʷanän"],
-	    [:Common, :Singular, :Person1, "xʷan"],
-	    [:Common, :Plural, :Person2, "xʷəyänän"],
-	    [:Common, :Singular, :Person2, "xʷəyän"],
-	    [:Common, :Plural, :Person1, "xʷənän"],
-	    [:Fem, :Singular, :Person3, "xʷəyän"],
-	    [:Masc, :Singular, :Person3, "xʷan"]]
+            :pos :Verb,
+            :tam :RelativeOblique}
+    :terms [[:genderHead :numHead :number :person :gender :token] ;; schema
+            [:HeadCommon :HeadPlural :Singular :Person1 :Common "wasäw"]
+            [:HeadCommon :HeadPlural :Singular :Person2 :Common "wasyäw"]
+            [:HeadCommon :HeadPlural :Singular :Person3 :Masc "wasäw"]
+            [:HeadCommon :HeadPlural :Singular :Person3 :Fem "wasyäw"]
+            [:HeadCommon :HeadPlural :Plural :Person1 :Common "wasnäw"]
+            [:HeadCommon :HeadPlural :Plural :Person2 :Common "wasyänäw"]
+            [:HeadCommon :HeadPlural :Plural :Person3 :Common "wasänäw"]
+            [:HeadFem :HeadSingular :Singular :Person1 :Common "wasäy"]
+            [:HeadFem :HeadSingular :Singular :Person2 :Common "wasyäy"]
+            [:HeadFem :HeadSingular :Singular :Person3 :Masc "wasäy"]
+            [:HeadFem :HeadSingular :Singular :Person3 :Fem "wasyäy"]
+            [:HeadFem :HeadSingular :Plural :Person1 :Common "wasnäy"]
+            [:HeadFem :HeadSingular :Plural :Person2 :Common "wasyänäy"]
+            [:HeadFem :HeadSingular :Plural :Person3 :Common "wasänäy"]
+            [:HeadMasc :HeadSingular :Singular :Person1 :Common "wasaɣ"]
+            [:HeadMasc :HeadSingular :Singular :Person2 :Common "wasyaɣ"]
+            [:HeadMasc :HeadSingular :Singular :Person3 :Masc "wasaɣ"]
+            [:HeadMasc :HeadSingular :Singular :Person3 :Fem "wasyaɣ"]
+            [:HeadMasc :HeadSingular :Plural :Person1 :Common "wasnaɣ"]
+            [:HeadMasc :HeadSingular :Plural :Person2 :Common "wasyänaɣ"]
+            [:HeadMasc :HeadSingular :Plural :Person3 :Common "wasänaɣ"]]
     }
     {:label "kemant-VRelSubj-was"
     :note "Appleyard1975 7.9"
     :common {:lexeme :was,
-	    :pos :Verb,
-	    :tam :RelativeSubject}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "wasaɣ"],
-	    [:Fem, :Singular, :Person3, "wasäy"],
-	    [:Common, :Plural, :Person3, "wasäw"],
-	    [:Common, :Singular, :Person2, "wasyaɣ ~ wasyaɣər ~ wasyar"],
-	    [:Common, :Singular, :Person1, "wasaɣ ~ wasaɣər ~ wasar"],
-	    [:Common, :Plural, :Person2, "wasyänaɣ ~ wasyänaɣər ~ wasyänar"],
-	    [:Common, :Plural, :Person1, "wasnaɣ ~ wasnaɣər ~ wasnar"]]
+            :pos :Verb,
+            :tam :RelativeSubject}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wasaɣ ~ wasaɣər ~ wasar"]
+            [:Singular :Person2 :Common "wasyaɣ ~ wasyaɣər ~ wasyar"]
+            [:Singular :Person3 :Masc "wasaɣ"]
+            [:Singular :Person3 :Fem "wasäy"]
+            [:Plural :Person1 :Common "wasnaɣ ~ wasnaɣər ~ wasnar"]
+            [:Plural :Person2 :Common "wasyänaɣ ~ wasyänaɣər ~ wasyänar"]
+            [:Plural :Person3 :Common "wasäw"]]
     }
-    {:label "kemant-VAffPerfective-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Perfective}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "xʷiɣʷ"],
-	    [:Common, :Singular, :Person2, "xʷəyəɣʷ"],
-	    [:Masc, :Singular, :Person3, "xʷiɣʷ"],
-	    [:Common, :Plural, :Person2, "xʷinəɣʷ ?"],
-	    [:Fem, :Singular, :Person3, "xʷit(i)"],
-	    [:Common, :Plural, :Person3, "xʷinəɣʷ"],
-	    [:Common, :Plural, :Person1, "xʷinəɣʷ"]]
+    {:label "kemant-VRelSubj-xw"
+    :note "Appleyard1975 7.9"
+    :common {:lexeme :fay,
+            :pos :Verb,
+            :tam :RelativeSubject}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "fäyaɣ ~ fäyaɣər ~ fäyar"]
+            [:Singular :Person2 :Common "fätaɣ "]
+            [:Singular :Person3 :Masc "fäyaɣ"]
+            [:Singular :Person3 :Fem "fäyäy"]
+            [:Plural :Person1 :Common "fäynaɣ"]
+            [:Plural :Person2 :Common "fätänaɣ"]
+            [:Plural :Person3 :Common "fäyäw"]]
     }
-    {:label "kemant-VNegJussive-xw"
-    :note "Appleyard1975"
-    :common {:lexeme :xw,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Jussive}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "?"],
-	    [:Common, :Plural, :Person2, "-"],
-	    [:Fem, :Singular, :Person3, "xʷəkin"],
-	    [:Masc, :Singular, :Person3, "xʷəgin"],
-	    [:Common, :Singular, :Person1, "xʷəgin"],
-	    [:Common, :Plural, :Person3, "xʷəgənin"],
-	    [:Common, :Singular, :Person2, "-"]]
-    }}
-:muterms #{
-    {:label "kemant-PInd"
-    :note "Appleyard1975 p. 320"
-    :common {:morpheme :PRO,
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:gender, :number, :person, :proSet, :token]  ;; schema
-	    [:Common, :Plural, :Person2, :ProSetB, "əntä "],
-	    [:Common, :Singular, :Person1, :ProSetB, "yə"],
-	    [:Masc, :Singular, :Person3, :ProSetA, "ni"],
-	    [:Common, :Singular, :Person2, :ProSetA, "əntə"],
-	    [:Fem, :Singular, :Person3, :ProSetA, "niy"],
-	    [:Common, :Plural, :Person3, :ProSetB, "na"],
-	    [:Fem, :Singular, :Person3, :ProSetB, "nis̆"],
-	    [:Common, :Plural, :Person2, :ProSetA, "əntändiw / əntän(n)iw / əntädiw"],
-	    [:Masc, :Singular, :Person3, :ProSetB, "ni"],
-	    [:Common, :Singular, :Person2, :ProSetB, "ki / ku"],
-	    [:Common, :Plural, :Person3, :ProSetA, "naydiw"],
-	    [:Common, :Plural, :Person1, :ProSetA, "andiw / anniw"],
-	    [:Common, :Singular, :Person1, :ProSetA, "an"],
-	    [:Common, :Plural, :Person1, :ProSetB, "anä"]]
-    }
-    {:label "kemant-VSubjMarker"
-    :note "Appleyard1975 7.2"
-    :common {:morpheme :SUBJMARK,
-	    :pdgmSubType :SubjMarker,
-	    :pos :Verb,
-	    :formType :Affix}
-    :terms [[:gender, :number, :person, :token, :vSubjectSet]  ;; schema
-	    [:Fem, :Singular, :Person3, "-C-", :VSubjSetB],
-	    [:Common, :Plural, :Person2, "-CVn-", :VSubjSetB],
-	    [:Common, :Singular, :Person1, "-Ø-", :VSubjSetA],
-	    [:Masc, :Singular, :Person3, "-Ø-", :VSubjSetB],
-	    [:Common, :Singular, :Person2, "-C-", :VSubjSetB],
-	    [:Common, :Singular, :Person2, "-y- ~ -t-", :VSubjSetA],
-	    [:Masc, :Singular, :Person3, "-Ø-", :VSubjSetA],
-	    [:Common, :Singular, :Person1, "-Ø-", :VSubjSetB],
-	    [:Common, :Plural, :Person2, "-yVn- ~ -tVn-", :VSubjSetA],
-	    [:Fem, :Singular, :Person3, "-y- ~ -t-", :VSubjSetA],
-	    [:Common, :Plural, :Person1, "-n-", :VSubjSetA],
-	    [:Common, :Plural, :Person1, "-n-", :VSubjSetB],
-	    [:Common, :Plural, :Person3, "-Vn-", :VSubjSetA],
-	    [:Common, :Plural, :Person3, "-Vn-", :VSubjSetB]]
-    }
+]
+:muterms [
     {:label "kemant-NCardinalNumeral"
     :note "Appleyard1975 p. 329"
     :common {:morpheme :CARDINALNUM,
-	    :nounClass :CardinalNumeral,
-	    :pos :Noun}
-    :terms [[:token, :token-note]  ;; schema
-	    ["ankʷa", "5"],
-	    ["läŋäta", "7"],
-	    ["säjja", "4"],
-	    ["läŋätiŋ", "70"],
-	    ["säɣʷäyəŋ", "30"],
-	    ["wältiŋ", "60"],
-	    ["s̆i", "1000"],
-	    ["säɣʷätiŋ", "80"],
-	    ["säɣʷäta", "8"],
-	    ["siɣʷa", "p3"],
-	    ["ankʷiŋ", "50"],
-	    ["sässiŋ", "90"],
-	    ["sässa", "9"],
-	    ["läŋayəŋ̈", "20"],
-	    ["s̆əka", "10"],
-	    ["liŋa", "p2"],
-	    ["arba", "40"],
-	    ["liɣ", "100"],
-	    ["laɣʷa / laɣa / la", "p1"],
-	    ["wälta", "6"]]
+            :nounClass :CardinalNumeral,
+            :pos :Noun}
+    :terms [[:token :token-note] ;; schema
+            ["ankʷa" "5"] ["läŋäta" "7"] ["säjja" "4"] ["läŋätiŋ" "70"] ["säɣʷäyəŋ" "30"] ["wältiŋ" "60"] ["s̆i" "1000"] ["säɣʷätiŋ" "80"] ["säɣʷäta" "8"] ["siɣʷa" "p3"] ["ankʷiŋ" "50"] ["sässiŋ" "90"] ["sässa" "9"] ["läŋayəŋ̈" "20"] ["s̆əka" "10"] ["liŋa" "p2"] ["arba" "40"] ["liɣ" "100"] ["laɣʷa / laɣa / la" "p1"] ["wälta" "6"]]
+    }
+    {:label "kemant-PInd"
+    :note "Appleyard1975 p. 320"
+    :common {:morpheme :PRO,
+            :pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:proSet :number :person :gender :token] ;; schema
+            [:ProSetA :Singular :Person1 :Common "an"]
+            [:ProSetA :Singular :Person2 :Common "əntə"]
+            [:ProSetA :Singular :Person3 :Masc "ni"]
+            [:ProSetA :Singular :Person3 :Fem "niy"]
+            [:ProSetA :Plural :Person1 :Common "andiw / anniw"]
+            [:ProSetA :Plural :Person2 :Common "əntändiw / əntän(n)iw / əntädiw"]
+            [:ProSetA :Plural :Person3 :Common "naydiw"]
+            [:ProSetB :Singular :Person1 :Common "yə"]
+            [:ProSetB :Singular :Person2 :Common "ki / ku"]
+            [:ProSetB :Singular :Person3 :Masc "ni"]
+            [:ProSetB :Singular :Person3 :Fem "nis̆"]
+            [:ProSetB :Plural :Person1 :Common "anä"]
+            [:ProSetB :Plural :Person2 :Common "əntä "]
+            [:ProSetB :Plural :Person3 :Common "na"]]
     }
     {:label "kemant-VBe"
     :note "Appleyard1975 7.8"
     :common {:morpheme :COPULA,
-	    :pdgmSubType :Copula,
-	    :polarity :Affirmative,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token-note, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "gagənir + gəyagənir", "gagənir ~  gəyagənir"],
-	    [:Common, :Singular, :Person1, "gagir + gəyagir", "gagir ~  gəyagir"],
-	    [:Common, :Plural, :Person3, "gagäw + gəyagäw", "gagäw ~  gəyagäw"],
-	    [:Fem, :Singular, :Person3, "gakäy + gəyakäy", "gakäy ~  gəyakäy"],
-	    [:Common, :Singular, :Person2, "gakar + gəyakar", "gakar ~  gəyakar"],
-	    [:Masc, :Singular, :Person3, "gaga + gəyaga", "gaga ~  gəyaga"],
-	    [:Common, :Plural, :Person2, "gakänar + gəyakänar", "gakänar ~  gəyakänar"]]
-    }}
+            :pdgmSubType :Copula,
+            :polarity :Affirmative,
+            :pos :Verb}
+    :terms [[:number :person :gender :token :token-note] ;; schema
+            [:Singular :Person1 :Common "gagir ~  gəyagir" "gagir + gəyagir"]
+            [:Singular :Person2 :Common "gakar ~  gəyakar" "gakar + gəyakar"]
+            [:Singular :Person3 :Masc "gaga ~  gəyaga" "gaga + gəyaga"]
+            [:Singular :Person3 :Fem "gakäy ~  gəyakäy" "gakäy + gəyakäy"]
+            [:Plural :Person1 :Common "gagənir ~  gəyagənir" "gagənir + gəyagənir"]
+            [:Plural :Person2 :Common "gakänar ~  gəyakänar" "gakänar + gəyakänar"]
+            [:Plural :Person3 :Common "gagäw ~  gəyagäw" "gagäw + gəyagäw"]]
+    }
+    {:label "kemant-VSubjMarker"
+    :note "Appleyard1975 7.2"
+    :common {:morpheme :SUBJMARK,
+            :pdgmSubType :SubjMarker,
+            :pos :Verb,
+            :formType :Affix}
+    :terms [[:vSubjectSet :number :person :gender :token] ;; schema
+            [:VSubjSetA :Singular :Person1 :Common "-Ø-"]
+            [:VSubjSetA :Singular :Person2 :Common "-y- ~ -t-"]
+            [:VSubjSetA :Singular :Person3 :Masc "-Ø-"]
+            [:VSubjSetA :Singular :Person3 :Fem "-y- ~ -t-"]
+            [:VSubjSetA :Plural :Person1 :Common "-n-"]
+            [:VSubjSetA :Plural :Person2 :Common "-yVn- ~ -tVn-"]
+            [:VSubjSetA :Plural :Person3 :Common "-Vn-"]
+            [:VSubjSetB :Singular :Person1 :Common "-Ø-"]
+            [:VSubjSetB :Singular :Person2 :Common "-C-"]
+            [:VSubjSetB :Singular :Person3 :Masc "-Ø-"]
+            [:VSubjSetB :Singular :Person3 :Fem "-C-"]
+            [:VSubjSetB :Plural :Person1 :Common "-n-"]
+            [:VSubjSetB :Plural :Person2 :Common "-CVn-"]
+            [:VSubjSetB :Plural :Person3 :Common "-Vn-"]]
+    }
+]
 }

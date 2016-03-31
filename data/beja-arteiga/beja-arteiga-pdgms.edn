@@ -129,1093 +129,1092 @@
   :yaas {:pluralClass :Pl_B, :token-plural "yàs", :gloss "[x]", :lemma "yàas", :pos :Noun}
   :yak {:conjClass :Suffix, :derivedStem :SM, :derivedStemAug :Intensive, :lemma "yak-sam-", :gloss "rise up against one another"}
 }
-:lxterms #{
+:lxterms [
+    {:label "beja_H-VCopula"
+    :common {:lexeme :COPULA,
+            :formType :Copula,
+            :pos :Verb}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Masc "STEM=u"]
+            [:Singular :Person1 :Fem "STEM=tu"]
+            [:Singular :Person2 :Masc "STEM=w-a"]
+            [:Singular :Person2 :Fem "STEM=tuu-i"]
+            [:Singular :Person3 :Masc "STEM=u"]
+            [:Singular :Person3 :Fem "STEM=tu"]
+            [:Plural :Person1 :Masc "STEM=a"]
+            [:Plural :Person1 :Fem "STEM=ta"]
+            [:Plural :Person2 :Masc "STEM=aa-na"]
+            [:Plural :Person2 :Fem "STEM=taa-na"]
+            [:Plural :Person3 :Masc "STEM=a"]
+            [:Plural :Person3 :Fem "STEM=ta"]]
+    }
+    {:label "beja_H-VFuture"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Future}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "tam-át"]
+            [:Singular :Person2 :Masc "tam-át-a"]
+            [:Singular :Person2 :Fem "tam-át-i"]
+            [:Plural :Person2 :Common "tam-át-na"]]
+    }
+    {:label "beja_H-VImperativeRootClassExx"
+    :common {:gender :Masc,
+            :pdgmType :Structure,
+            :pos :Verb,
+            :person :Person2,
+            :derivedStem :B,
+            :morphClass :IMPTVROOTCLASSES,
+            :derivedStemAug :Simple,
+            :tam :Imperative,
+            :number :Singular}
+    :terms [[:conjClass :lexeme :rootClass :token] ;; schema
+            [:Prefix :bis :CVC "bis-à"]
+            [:Prefix :dbl :CCC "dibìl-a"]
+            [:Prefix :dgy :CCY "digiì-a"]
+            [:Prefix :dif :CVC "díf-a"]
+            [:Prefix :dir :CVC "dir-à"]
+            [:Prefix :dlb :CCC "dilìb-a"]
+            [:Prefix :fnk :CCC "finìk-a"]
+            [:Prefix :fry :CCY "firiì-a"]
+            [:Prefix :ktb :CCC "kitìb-a"]
+            [:Prefix :ktm :CCC "kitìm-a"]
+            [:Prefix :kwbs :CCC "kwibìs-a"]
+            [:Prefix :liw :CVC "liw-à"]
+            [:Prefix :min :CVC "min-à"]
+            [:Prefix :mry :CCY "miriì-a"]
+            [:Prefix :rib :CVC "rib-à"]
+            [:Prefix :sfy :CCY "šifiì-a"]
+            [:Suffix :ad :Invar "?ad-àa"]
+            [:Suffix :doob :Invar "doob-àa"]
+            [:Suffix :gwa :Invar "gwa?-àa"]
+            [:Suffix :kileew :Invar "kileew-àa"]
+            [:Suffix :nuun :Invar "nuun-àa"]
+            [:Suffix :raat :Invar "raat-àa"]
+            [:Suffix :rih :Invar "rih-àa"]
+            [:Suffix :suum :Invar "šuum-àa"]
+            [:Suffix :tam :Invar "tam-àa"]]
+    }
+    {:label "beja_H-VNegAux"
+    :common {:lexeme :AUXILIARY,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Past,
+            :formType :Auxiliary}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kaàkè"]
+            [:Singular :Person2 :Masc "kíttà = {kí-t-kaa-`a}"]
+            [:Singular :Person2 :Fem "kíttaày = {kí-t-kaa-`i}"]
+            [:Singular :Person3 :Masc "kiìkè"]
+            [:Singular :Person3 :Fem "kíttè = {kí-t-kè}"]
+            [:Plural :Person1 :Common "kínkè"]
+            [:Plural :Person2 :Common "kítteèna = {kí-t-kee-`na}"]
+            [:Plural :Person3 :Common "kiìkeèn"]]
+    }
+    {:label "beja_H-VNegPast"
+    :common {:lexeme :tam,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Past,
+            :formType :Compound}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "tamaa-`b/`t kaàkè"]
+            [:Singular :Person2 :Masc "tamaa-`b kíttà"]
+            [:Singular :Person2 :Fem "tamaa-`t kíttaày"]
+            [:Singular :Person3 :Masc "tamaa-`b kiìkè"]
+            [:Singular :Person3 :Fem "tamaa-`t kíttè"]
+            [:Plural :Person1 :Common "tamaa-`b/`t kínkè"]
+            [:Plural :Person2 :Common "tamaa-`b/`t kítteèna"]
+            [:Plural :Person3 :Common "tamaa-`b/`t kiìkeèn"]]
+    }
+    {:label "beja_H-VParticiple"
+    :common {:derivedStem :B,
+            :morphClass :VERBALPARTICIPLES,
+            :pos :Verb}
+    :terms [[:conjClass :lexeme :participle :token-note :token] ;; schema
+            [:Prefix :dbl :Conjunctive "Suff: -tií, \"X collected and ...\"" "dibil-tií"]
+            [:Prefix :dbl :Future "Suff: -át, \"will collect\"" "dibl-át"]
+            [:Prefix :dbl :Negative "Pref: baa-, \"not collecting\"" "baa-dabiíl"]
+            [:Prefix :dbl :Past "Suff: -aà, \"having collected\"" "dibl-aà"]
+            [:Prefix :dbl :Present "Suff: -ée, \"(while) collecting\"" "dibl-ée"]
+            [:Suffix :tam :Conjunctive "Suff: -eetì, \"X ate and ...\"" "tam-eetì"]
+            [:Suffix :tam :Future "Suff: -át, \"will eat\"" "tam-át"]
+            [:Suffix :tam :Negative "Pref+Suff: baa- + -ày, \"not eating\"" "baa-tam-ày"]
+            [:Suffix :tam :Past "Suff: -aà, \"having eaten\"" "tam-aà"]
+            [:Suffix :tam :Present "Suff: -ée, \"(while) eating\"" "tam-ée"]]
+    }
+    {:label "beja_H-VPrefAffCCCAor"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Aorist}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?-iidbíl"]
+            [:Singular :Person2 :Masc "t-iidbil-`a"]
+            [:Singular :Person2 :Fem "t-iidbil-`i"]
+            [:Singular :Person3 :Masc "?-iidbíl"]
+            [:Singular :Person3 :Fem "t-iidbíl"]
+            [:Plural :Person1 :Common "n-iidbíl"]
+            [:Plural :Person2 :Common "t-iidbil-`na"]
+            [:Plural :Person3 :Common "?-iidbil-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCCImprtv"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "dibil-`a"]
+            [:Singular :Fem "dibil-`i"]
+            [:Plural :Common "dibil-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCCOpt"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "bà-?-iidbíl"]
+            [:Singular :Person2 :Masc "bà-t-iidbil-`a"]
+            [:Singular :Person2 :Fem "bà-t-iidbil-`i"]
+            [:Singular :Person3 :Masc "bà-?-iidbíl"]
+            [:Singular :Person3 :Fem "bà-t-iidbíl"]
+            [:Plural :Person1 :Common "bà-n-iidbíl"]
+            [:Plural :Person2 :Common "bà-t-iidbil-`na"]
+            [:Plural :Person3 :Common "bà-?-iidbil-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCCPast"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Past}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-dbíl"]
+            [:Singular :Person2 :Masc "ti-dbil-`a"]
+            [:Singular :Person2 :Fem "ti-dbil-`i"]
+            [:Singular :Person3 :Masc "?i-dbíl"]
+            [:Singular :Person3 :Fem "ti-dbíl"]
+            [:Plural :Person1 :Common "ni-dbíl"]
+            [:Plural :Person2 :Common "ti-dbil-`na"]
+            [:Plural :Person3 :Common "?i-dbil-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCCPres"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-danbíil"]
+            [:Singular :Person2 :Masc "danbiil-`a"]
+            [:Singular :Person2 :Fem "danbiil -`i"]
+            [:Singular :Person3 :Masc "danbíil"]
+            [:Singular :Person3 :Fem "danbíil"]
+            [:Plural :Person1 :Common "n-eedbíl"]
+            [:Plural :Person2 :Common "t-eedbil-`na"]
+            [:Plural :Person3 :Common "?-eedbil-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCYAor"
+    :common {:conjClass :Prefix,
+            :lexeme :dgy,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Aorist}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-dìig"]
+            [:Singular :Person2 :Masc "ti-diig-`a"]
+            [:Singular :Person2 :Fem "ti-diig-`i"]
+            [:Singular :Person3 :Masc "?i-dìig"]
+            [:Singular :Person3 :Fem "ti-dìig"]
+            [:Plural :Person1 :Common "ni-dìig"]
+            [:Plural :Person2 :Common "ti-diig-`na"]
+            [:Plural :Person3 :Common "?i-diig-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCYImprtv"
+    :common {:conjClass :Prefix,
+            :lexeme :dgy,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "digii-`a"]
+            [:Singular :Fem "digii-`"]
+            [:Plural :Common "digii-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCYOpt"
+    :common {:conjClass :Prefix,
+            :lexeme :dgy,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "bà-?a-dàag"]
+            [:Singular :Person2 :Masc "bà-ti-daag-`a"]
+            [:Singular :Person2 :Fem "bà-ti-daag-`i"]
+            [:Singular :Person3 :Masc "bà-?i-dàag"]
+            [:Singular :Person3 :Fem "bà-ti-dàag"]
+            [:Plural :Person1 :Common "bà-ni-dàag"]
+            [:Plural :Person2 :Common "bà-ti-daag-`na"]
+            [:Plural :Person3 :Common "bà-?i-daag-`na"]]
+    }
+    {:label "beja_H-VPrefAffCCYPast"
+    :common {:conjClass :Prefix,
+            :lexeme :dgy,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Past}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-dgì"]
+            [:Singular :Person2 :Masc "ti-dgii-`a"]
+            [:Singular :Person2 :Fem "ti-dgii-`"]
+            [:Singular :Person3 :Masc "?i-dgì"]
+            [:Singular :Person3 :Fem "ti-dgì"]
+            [:Plural :Person1 :Common "ni-dgì"]
+            [:Plural :Person2 :Common "ti-dgii-`na"]
+            [:Plural :Person3 :Common "?i-dgiil-`na"]]
+    }
     {:label "beja_H-VPrefAffCCYPres"
     :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "dangì"],
-	    [:Common, :Plural, :Person1, "ni-déeg"],
-	    [:Common, :Plural, :Person2, "ti-deeg-`na"],
-	    [:Masc, :Singular, :Person2, "dangii-`a"],
-	    [:Common, :Plural, :Person3, "?i-deeg-`na"],
-	    [:Common, :Singular, :Person1, "?a-dangì"],
-	    [:Fem, :Singular, :Person3, "dangì"],
-	    [:Fem, :Singular, :Person2, "dangii-`"]]
-    }
-    {:label "beja_H-VSuffAffPres"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person2, "tam-tinii-`a"],
-	    [:Masc, :Singular, :Person3, "tam-íiní"],
-	    [:Common, :Plural, :Person1, "tam-này"],
-	    [:Fem, :Singular, :Person2, "tam-tinii-`"],
-	    [:Fem, :Singular, :Person3, "tam-tíní"],
-	    [:Common, :Singular, :Person1, "tam-àní"],
-	    [:Common, :Plural, :Person2, "tam-teéna"],
-	    [:Common, :Plural, :Person3, "tam-eén"]]
-    }
-    {:label "beja_H-VSuffNegOpt"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person2, "bi-t-tam-ay-`a"],
-	    [:Fem, :Singular, :Person3, "bi-t-tam-ày"],
-	    [:Common, :Plural, :Person1, "bi-n-tam-ày"],
-	    [:Common, :Plural, :Person3, "b-ii-tam-ay-`na"],
-	    [:Fem, :Singular, :Person2, "bi-t-tam-ay-`"],
-	    [:Common, :Singular, :Person1, "b-aa-tam-ày"],
-	    [:Masc, :Singular, :Person3, "b-ii-tam-ày"],
-	    [:Common, :Plural, :Person2, "bi-t-tam-ay-`na"]]
+            :lexeme :dgy,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-dangì"]
+            [:Singular :Person2 :Masc "dangii-`a"]
+            [:Singular :Person2 :Fem "dangii-`"]
+            [:Singular :Person3 :Masc "dangì"]
+            [:Singular :Person3 :Fem "dangì"]
+            [:Plural :Person1 :Common "ni-déeg"]
+            [:Plural :Person2 :Common "ti-deeg-`na"]
+            [:Plural :Person3 :Common "?i-deeg-`na"]]
     }
     {:label "beja_H-VPrefAffCVCAor"
     :note "rootClass CVC is sometimes also noted as rootClass CC"
     :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person2, "t-iibis-`a"],
-	    [:Common, :Plural, :Person1, "n-iibís"],
-	    [:Common, :Singular, :Person1, "?-iibís"],
-	    [:Fem, :Singular, :Person2, "t-iibis-`i"],
-	    [:Fem, :Singular, :Person3, "t-iibís"],
-	    [:Common, :Plural, :Person3, "?-iibis-`na"],
-	    [:Common, :Plural, :Person2, "t-iibis-`na"],
-	    [:Masc, :Singular, :Person3, "?-iibís"]]
-    }
-    {:label "beja_H-VPrefAffCCYImprtv"
-    :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "digii-`a"],
-	    [:Fem, :Singular, "digii-`"],
-	    [:Common, :Plural, "digii-`na"]]
-    }
-    {:label "beja_H-VPrefNegCVCImprtv"
-    :note "rootClass CVC is sometimes also noted as rootClass CC"
-    :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "b-àa-biis-à"],
-	    [:Common, :Plural, "b-àa-biis-`na"],
-	    [:Fem, :Singular, "b-íi-biis-ì"]]
-    }
-    {:label "beja_H-VPrefAffCCYAor"
-    :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "?i-diig-`na"],
-	    [:Common, :Plural, :Person2, "ti-diig-`na"],
-	    [:Fem, :Singular, :Person2, "ti-diig-`i"],
-	    [:Common, :Plural, :Person1, "ni-dìig"],
-	    [:Masc, :Singular, :Person3, "?i-dìig"],
-	    [:Fem, :Singular, :Person3, "ti-dìig"],
-	    [:Masc, :Singular, :Person2, "ti-diig-`a"],
-	    [:Common, :Singular, :Person1, "?a-dìig"]]
-    }
-    {:label "beja_H-VStemFormationTense"
-    :common {:derivedStem :B,
-	    :lexeme :dbl,
-	    :pdgmType :Structure,
-	    :pos :Verb,
-	    :formType :Stem}
-    :terms [[:number, :participle, :polarity, :tam, :tamStemClass, :token]  ;; schema
-	    [:_NA, :Present, :Negative, :NA, :NegClass, "-dabiil-"],
-	    [:_NA, :NA, :Affirmative, :Optative, :ModClass, "-iidbil-"],
-	    [:_NA, :NA, :Affirmative, :Past, :PastClass, "-dbil-"],
-	    [:_NA, :Conjunctive, :Affirmative, :NA, :PartClass, "dibl-"],
-	    [:_NA, :NA, :Negative, :Present, :PastClass, "-dbil-"],
-	    [:Singular, :NA, :Affirmative, :Present, :PresSgClass, "-danbiil-"],
-	    [:Plural, :NA, :Affirmative, :Present, :PresClass, "-eedbil-"],
-	    [:_NA, :Future, :Affirmative, :NA, :PartClass, "dibl-"],
-	    [:_NA, :NA, :Affirmative, :Jussive, :ModClass, "-iidbil-"],
-	    [:_NA, :NA, :Negative, :Optative, :NegClass, "-dabiil-"],
-	    [:_NA, :Past, :Affirmative, :NA, :PartClass, "dibl-"],
-	    [:_NA, :Present, :Affirmative, :NA, :PartClass, "dibl-"],
-	    [:_NA, :NA, :Affirmative, :Aorist, :AoristClass, "-iidbil-"],
-	    [:_NA, :NA, :Affirmative, :Imperative, :PastClass, "-dbil-"],
-	    [:_NA, :NA, :Negative, :Imperative, :NegClass, "-dabiil-"],
-	    [:_NA, :Conjunctive, :Negative, :NA, :NegClass, "-dabiil-"]]
-    }
-    {:label "beja_H-VFuture"
-    :common {:conjClass :Suffix,
-             :lexeme :tam,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Future}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person2, "tam-át-i"],
-	    [:Common, :Singular, :Person1, "tam-át"],
-	    [:Common, :Plural, :Person2, "tam-át-na"],
-	    [:Masc, :Singular, :Person2, "tam-át-a"]]
-    }
-    {:label "beja_H-VSuffAffPast"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Past}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person2, "tam-taa-`"],
-	    [:Common, :Plural, :Person3, "tam-yaàn"],
-	    [:Common, :Plural, :Person1, "tam-nà"],
-	    [:Common, :Singular, :Person1, "tam-àn"],
-	    [:Masc, :Singular, :Person3, "tam-yà"],
-	    [:Fem, :Singular, :Person3, "tam-tà"],
-	    [:Common, :Plural, :Person2, "tam-taàna"],
-	    [:Fem, :Singular, :Person2, "tam-taa-`i"]]
-    }
-    {:label "beja_H-VImperativeRootClassExx"
-    :common {:derivedStem :B,
-	    :derivedStemAug :Simple,
-	    :gender :Masc,
-	    :number :Singular,
-	    :person :Person2,
-	    :tam :Imperative,
-	    :morphClass :IMPTVROOTCLASSES,
-	    :pdgmType :Structure,
-	    :pos :Verb}
-    :terms [[:conjClass, :rootClass, :token, :lexeme]  ;; schema
-	    [:Prefix, :CCC, "finìk-a", :fnk],
-	    [:Suffix, :Invar, "raat-àa", :raat],
-	    [:Suffix, :Invar, "šuum-àa", :suum],
-	    [:Suffix, :Invar, "tam-àa", :tam],
-	    [:Suffix, :Invar, "rih-àa", :rih],
-	    [:Prefix, :CVC, "liw-à", :liw],
-	    [:Prefix, :CCC, "kwibìs-a", :kwbs],
-	    [:Prefix, :CCC, "dibìl-a", :dbl],
-	    [:Suffix, :Invar, "nuun-àa", :nuun],
-	    [:Suffix, :Invar, "kileew-àa", :kileew],
-	    [:Prefix, :CCY, "digiì-a", :dgy],
-	    [:Prefix, :CCC, "dilìb-a", :dlb],
-	    [:Prefix, :CVC, "dir-à", :dir],
-	    [:Prefix, :CVC, "bis-à", :bis],
-	    [:Prefix, :CCC, "kitìb-a", :ktb],
-	    [:Suffix, :Invar, "?ad-àa", :ad],
-	    [:Prefix, :CVC, "rib-à", :rib],
-	    [:Prefix, :CCC, "kitìm-a", :ktm],
-	    [:Prefix, :CVC, "min-à", :min],
-	    [:Prefix, :CVC, "díf-a", :dif],
-	    [:Prefix, :CCY, "miriì-a", :mry],
-	    [:Suffix, :Invar, "gwa?-àa", :gwa],
-	    [:Prefix, :CCY, "šifiì-a", :sfy],
-	    [:Suffix, :Invar, "doob-àa", :doob],
-	    [:Prefix, :CCY, "firiì-a", :fry]]
-    }
-    {:label "beja_H-VPrefNegCVCOpt"
-    :note "rootClass CVC is sometimes also noted as rootClass CC"
-    :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person2, "bi-t-biis-`a"],
-	    [:Fem, :Singular, :Person3, "bi-t-bíis"],
-	    [:Fem, :Singular, :Person2, "bi-t-biis-`i"],
-	    [:Masc, :Singular, :Person3, "b-ii-bíis"],
-	    [:Common, :Plural, :Person3, "b-ii-biis-`na"],
-	    [:Common, :Plural, :Person2, "bi-t-biis-`na"],
-	    [:Common, :Plural, :Person1, "bi-n-bíis"],
-	    [:Common, :Singular, :Person1, "b-aa-bíis"]]
-    }
-    {:label "beja_H-VPrefAffCCCPres"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "?-eedbil-`na"],
-	    [:Masc, :Singular, :Person3, "danbíil"],
-	    [:Common, :Plural, :Person1, "n-eedbíl"],
-	    [:Common, :Plural, :Person2, "t-eedbil-`na"],
-	    [:Common, :Singular, :Person1, "?a-danbíil"],
-	    [:Fem, :Singular, :Person3, "danbíil"],
-	    [:Fem, :Singular, :Person2, "danbiil -`i"],
-	    [:Masc, :Singular, :Person2, "danbiil-`a"]]
-    }
-    {:label "beja_H-VPrefNegCCCOpt"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "b-ii-dabiil-`na"],
-	    [:Common, :Plural, :Person1, "bi-n-dabíil"],
-	    [:Fem, :Singular, :Person2, "bi-t-dabiil-`i"],
-	    [:Fem, :Singular, :Person3, "bi-t-dabíil"],
-	    [:Common, :Plural, :Person2, "bi-t-dabiil-`na"],
-	    [:Masc, :Singular, :Person2, "bi-t-dabiil-`a"],
-	    [:Common, :Singular, :Person1, "b-aa-dabíil"],
-	    [:Masc, :Singular, :Person3, "b-ii-dabíil"]]
-    }
-    {:label "beja_H-VParticiple"
-    :common {:derivedStem :B,
-	    :morphClass :VERBALPARTICIPLES,
-	    :pos :Verb}
-    :terms [[:conjClass, :lexeme, :participle, :token, :token-note]  ;; schema
-	    [:Suffix, :tam, :Past, "tam-aà", "Suff: -aà, \"having eaten\""],
-	    [:Suffix, :tam, :Future, "tam-át", "Suff: -át, \"will eat\""],
-	    [:Suffix, :tam, :Conjunctive, "tam-eetì", "Suff: -eetì, \"X ate and ...\""],
-	    [:Prefix, :dbl, :Negative, "baa-dabiíl", "Pref: baa-, \"not collecting\""],
-	    [:Prefix, :dbl, :Past, "dibl-aà", "Suff: -aà, \"having collected\""],
-	    [:Suffix, :tam, :Negative, "baa-tam-ày", "Pref+Suff: baa- + -ày, \"not eating\""],
-	    [:Prefix, :dbl, :Conjunctive, "dibil-tií", "Suff: -tií, \"X collected and ...\""],
-	    [:Prefix, :dbl, :Future, "dibl-át", "Suff: -át, \"will collect\""],
-	    [:Suffix, :tam, :Present, "tam-ée", "Suff: -ée, \"(while) eating\""],
-	    [:Prefix, :dbl, :Present, "dibl-ée", "Suff: -ée, \"(while) collecting\""]]
-    }
-    {:label "beja_H-VPrefAffCVCPres"
-    :note "rootClass CVC is sometimes also noted as rootClass CC"
-    :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person2, "ti-nbiis-`i"],
-	    [:Masc, :Singular, :Person2, "ti-nbiis-`a"],
-	    [:Common, :Plural, :Person2, "t-eebis-`na"],
-	    [:Fem, :Singular, :Person3, "ti-nbíis"],
-	    [:Common, :Singular, :Person1, "?a-nbíis"],
-	    [:Common, :Plural, :Person1, "n-eebís"],
-	    [:Common, :Plural, :Person3, "?-eebis-`na"],
-	    [:Masc, :Singular, :Person3, "?i-nbíis"]]
-    }
-    {:label "beja_H-VPrefAffCVCOpt"
-    :note "rootClass CVC is sometimes also noted as rootClass CC"
-    :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person2, "bà-t-iibis-`i"],
-	    [:Common, :Singular, :Person1, "bà-?-iibís"],
-	    [:Masc, :Singular, :Person2, "bà-t-iibis-`a"],
-	    [:Common, :Plural, :Person3, "bà-?-iibis-`na"],
-	    [:Common, :Plural, :Person1, "bà-n-iibís"],
-	    [:Masc, :Singular, :Person3, "bà-?-iibís"],
-	    [:Fem, :Singular, :Person3, "bà-t-iibís"],
-	    [:Common, :Plural, :Person2, "bà-t-iibis-`na"]]
-    }
-    {:label "beja_H-VSuffAffAor"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "tam-tì"],
-	    [:Masc, :Singular, :Person3, "tam-ì"],
-	    [:Common, :Plural, :Person2, "tam-tiìna"],
-	    [:Common, :Singular, :Person1, "tam-ì"],
-	    [:Fem, :Singular, :Person2, "tam-tii-`"],
-	    [:Common, :Plural, :Person1, "tam-nì"],
-	    [:Masc, :Singular, :Person2, "tam-tii-`a"],
-	    [:Common, :Plural, :Person3, "tam-iìn"]]
-    }
-    {:label "beja_H-VStemClassPrefTense"
-    :common {:conjClass :Prefix,
-	    :morphClass :TENSESTEM,
-	    :pos :Verb,
-	    :formType :Stem}
-    :terms [[:derivedStem, :derivedStemAug, :lexeme, :rootClass, :tamStemClass, :token]  ;; schema
-	    [:S, :Intensive, :dgy, :CCY, :PastClass, "-s-daag-"],
-	    [:S, :Intensive, :liw, :CVC, :PresClass, "..."],
-	    [:B, :Simple, :liw, :CVC, :AoristClass, "-ii-líw-"],
-	    [:T, :Intensive, :dbl, :CCC, :PastClass, "..."],
-	    [:R, :Simple, :liw, :CVC, :AoristClass, "-ii-t-liw-"],
-	    [:M, :Simple, :dgy, :CCY, :PartClass, "?am-dag(aa)y"],
-	    [:M, :Simple, :dgy, :CCY, :NegClass, "-m-dagi-"],
-	    [:T, :Simple, :liw, :CVC, :ModClass, "-t-uu-liw-"],
-	    [:T, :Simple, :dbl, :CCC, :PartClass, "?at-dab[aa]l-"],
-	    [:B, :Intensive, :dbl, :CCC, :PartClass, "daabl-"],
-	    [:M, :Simple, :liw, :CVC, :AoristClass, "-m-uu-liw-"],
-	    [:B, :Intensive, :liw, :CVC, :PartClass, "laaw-"],
-	    [:T, :Intensive, :dgy, :CCY, :ModClass, "-t-daaga-"],
-	    [:S, :Simple, :dgy, :CCY, :NegClass, "-s-dagi"],
-	    [:S, :Intensive, :dbl, :CCC, :PastClass, "-s-daabil-"],
-	    [:S, :Simple, :dgy, :CCY, :PresClass, "-s-dagi-"],
-	    [:B, :Simple, :dgy, :CCY, :PartClass, "digy-"],
-	    [:B, :Simple, :dgy, :CCY, :PastClass, "-dgì-"],
-	    [:B, :Simple, :liw, :CVC, :ModClass, "-ii-líw-"],
-	    [:M, :Intensive, :liw, :CVC, :ModClass, "..."],
-	    [:M, :Intensive, :liw, :CVC, :PresClass, "..."],
-	    [:S, :Simple, :dbl, :CCC, :ModClass, "-s-dibil-"],
-	    [:M, :Intensive, :dbl, :CCC, :NegClass, "-m-ee-dbiil-"],
-	    [:S, :Simple, :dbl, :CCC, :AoristClass, "-s-dibil-"],
-	    [:T, :Simple, :dgy, :CCY, :PastClass, "-t-dagaay-"],
-	    [:S, :Intensive, :liw, :CVC, :PastClass, "..."],
-	    [:S, :Intensive, :liw, :CVC, :ModClass, "..."],
-	    [:T, :Intensive, :liw, :CVC, :AoristClass, "..."],
-	    [:R, :Simple, :dbl, :CCC, :AoristClass, "-t-dibil-"],
-	    [:M, :Intensive, :dgy, :CCY, :NegClass, "-m-ee-dgi-"],
-	    [:B, :Intensive, :liw, :CVC, :PresClass, "-ee-liw- "],
-	    [:T, :Intensive, :dgy, :CCY, :AoristClass, "-t-daagi-"],
-	    [:T, :Intensive, :liw, :CVC, :PresClass, "..."],
-	    [:M, :Intensive, :dgy, :CCY, :ModClass, "-m-ii-dga-"],
-	    [:T, :Intensive, :dgy, :CCY, :PresClass, "-t-daagi- "],
-	    [:M, :Intensive, :liw, :CVC, :PastClass, "..."],
-	    [:T, :Intensive, :dgy, :CCY, :PastClass, "..."],
-	    [:R, :Simple, :dgy, :CCY, :AoristClass, "-t-dig- "],
-	    [:B, :Simple, :dbl, :CCC, :PresClass, "-ee-dbíl-"],
-	    [:M, :Simple, :liw, :CVC, :ModClass, "-m-uu-liw-"],
-	    [:T, :Simple, :dgy, :CCY, :NegClass, "-t-dagi-"],
-	    [:B, :Intensive, :dgy, :CCY, :PartClass, "daag-"],
-	    [:M, :Simple, :liw, :CVC, :PastClass, "-m-oo-laaw"],
-	    [:M, :Intensive, :liw, :CVC, :NegClass, "..."],
-	    [:R, :Simple, :dgy, :CCY, :ModClass, "-t-diga-"],
-	    [:B, :Intensive, :liw, :CVC, :AoristClass, "-ii-liw-"],
-	    [:B, :Intensive, :liw, :CVC, :NegClass, "-laaw-"],
-	    [:T, :Intensive, :dbl, :CCC, :PartClass, "?at-daab(aa)l-"],
-	    [:B, :Intensive, :liw, :CVC, :PastClass, "-laaw-"],
-	    [:B, :Simple, :dbl, :CCC, :AoristClass, "-ii-dbíl-"],
-	    [:B, :Simple, :liw, :CVC, :NegClass, "-líiw-"],
-	    [:B, :Simple, :liw, :CVC, :PresClass, "-ee-líw-"],
-	    [:M, :Intensive, :dgy, :CCY, :PastClass, "-m-ee-dgaay-"],
-	    [:M, :Intensive, :dgy, :CCY, :PresClass, "-m-ee-dgi-"],
-	    [:B, :Intensive, :dbl, :CCC, :NegClass, "-daabiil-"],
-	    [:T, :Intensive, :liw, :CVC, :PastClass, "..."],
-	    [:S, :Simple, :liw, :CVC, :AoristClass, "-s-uu-liw-"],
-	    [:S, :Simple, :dgy, :CCY, :ModClass, "-s-diga-"],
-	    [:R, :Simple, :dbl, :CCC, :NegClass, "-dbaal-"],
-	    [:T, :Intensive, :dbl, :CCC, :PresClass, "-t-daabiil-"],
-	    [:B, :Intensive, :dgy, :CCY, :PresClass, "-ee-dgi-"],
-	    [:M, :Intensive, :dbl, :CCC, :PartClass, "?amee-dab(aa)l-"],
-	    [:T, :Simple, :liw, :CVC, :PartClass, "?at-oo-laaw-"],
-	    [:T, :Simple, :dgy, :CCY, :ModClass, "-t-diga"],
-	    [:S, :Simple, :dbl, :CCC, :PastClass, "-s-dabil-"],
-	    [:S, :Simple, :dbl, :CCC, :NegClass, "-s-dabiil-"],
-	    [:S, :Simple, :dbl, :CCC, :PartClass, "si-dabl-"],
-	    [:S, :Simple, :dgy, :CCY, :PartClass, "si-dag-"],
-	    [:S, :Intensive, :dgy, :CCY, :PresClass, "-s-daagi-"],
-	    [:S, :Intensive, :dgy, :CCY, :AoristClass, "-s-diig-"],
-	    [:M, :Intensive, :liw, :CVC, :PartClass, "..."],
-	    [:S, :Intensive, :dgy, :CCY, :PartClass, "si-daag-"],
-	    [:S, :Simple, :dgy, :CCY, :AoristClass, "-s-dig-"],
-	    [:B, :Simple, :dgy, :CCY, :PresSgClass, "-dangì-"],
-	    [:M, :Simple, :dgy, :CCY, :PastClass, "-m-dagaay-"],
-	    [:B, :Simple, :dgy, :CCY, :NegClass, "-dagì-"],
-	    [:M, :Intensive, :dbl, :CCC, :ModClass, "-m-ii-dbil-"],
-	    [:S, :Intensive, :dbl, :CCC, :AoristClass, "-s-diibal-"],
-	    [:S, :Simple, :liw, :CVC, :PartClass, "s-oo-lw-"],
-	    [:M, :Simple, :dgy, :CCY, :PresClass, "-m-dagi-"],
-	    [:T, :Intensive, :dgy, :CCY, :NegClass, "-t-daagi-"],
-	    [:B, :Simple, :liw, :CVC, :PastClass, "-líw-"],
-	    [:S, :Intensive, :liw, :CVC, :NegClass, "..."],
-	    [:M, :Simple, :dbl, :CCC, :ModClass, "-m-dibil-"],
-	    [:R, :Simple, :liw, :CVC, :NegClass, "-laaw-"],
-	    [:S, :Simple, :liw, :CVC, :NegClass, "-s-oo-liiw-"],
-	    [:T, :Simple, :liw, :CVC, :PastClass, "-t-oo-laaw-"],
-	    [:R, :Simple, :dgy, :CCY, :PresClass, "-t-dagi-"],
-	    [:M, :Simple, :liw, :CVC, :PresClass, "-m-oo-liiw- "],
-	    [:T, :Intensive, :liw, :CVC, :ModClass, "..."],
-	    [:B, :Simple, :dgy, :CCY, :AoristClass, "-dìig-"],
-	    [:S, :Intensive, :dbl, :CCC, :ModClass, "-s-diibal-"],
-	    [:R, :Simple, :dgy, :CCY, :PartClass, "dige-"],
-	    [:M, :Intensive, :dbl, :CCC, :PastClass, "-m-ee-dbaal-"],
-	    [:B, :Intensive, :dbl, :CCC, :ModClass, "-ii-dbal-"],
-	    [:B, :Simple, :dbl, :CCC, :PartClass, "dibl-"],
-	    [:T, :Intensive, :liw, :CVC, :PartClass, "..."],
-	    [:B, :Simple, :liw, :CVC, :PresSgClass, "-nliiw- "],
-	    [:T, :Simple, :dbl, :CCC, :PresClass, "-t-dabiil- "],
-	    [:M, :Simple, :dbl, :CCC, :PresClass, "-m-dabiil-"],
-	    [:M, :Simple, :dbl, :CCC, :PastClass, "-m-dabaal-"],
-	    [:S, :Intensive, :dgy, :CCY, :NegClass, "-s-daagi-"],
-	    [:B, :Intensive, :dgy, :CCY, :ModClass, "-ii-dga"],
-	    [:T, :Simple, :liw, :CVC, :NegClass, "-t-oo-liiw-"],
-	    [:M, :Simple, :liw, :CVC, :NegClass, "-m-oo-liiw-"],
-	    [:M, :Intensive, :dgy, :CCY, :PartClass, "?amee-dag(aa)y"],
-	    [:B, :Simple, :dgy, :CCY, :PresClass, "-déeg-"],
-	    [:T, :Intensive, :liw, :CVC, :NegClass, "..."],
-	    [:T, :Simple, :liw, :CVC, :AoristClass, "-t-uu-liw-"],
-	    [:T, :Simple, :dgy, :CCY, :PartClass, "?at-dag(aa)y"],
-	    [:B, :Simple, :dbl, :CCC, :PresSgClass, "-danbíil-"],
-	    [:M, :Simple, :dgy, :CCY, :ModClass, "-m-diga-"],
-	    [:B, :Intensive, :dbl, :CCC, :PresClass, "-ee-dbil-"],
-	    [:R, :Simple, :dbl, :CCC, :ModClass, "-t-dibil-"],
-	    [:B, :Intensive, :dbl, :CCC, :PastClass, "-daabil-"],
-	    [:T, :Intensive, :dgy, :CCY, :PartClass, "?at-daag(aa)y"],
-	    [:T, :Simple, :dbl, :CCC, :PastClass, "-t-dabaal-"],
-	    [:T, :Simple, :dgy, :CCY, :AoristClass, "-t-dig-"],
-	    [:R, :Simple, :liw, :CVC, :PastClass, "-law-"],
-	    [:R, :Simple, :cbl, :CCC, :PartClass, "dibal-"],
-	    [:R, :Simple, :dbl, :CCC, :PresClass, "-t-dabiil-"],
-	    [:T, :Simple, :dgy, :CCY, :PresClass, "-t-dagi-"],
-	    [:S, :Simple, :liw, :CVC, :PastClass, "-s-oo-liw-"],
-	    [:B, :Intensive, :dgy, :CCY, :AoristClass, "-ii-dgi"],
-	    [:S, :Simple, :liw, :CVC, :PresClass, "-s-oo-liiw- "],
-	    [:B, :Simple, :dbl, :CCC, :NegClass, "-dabíil-"],
-	    [:R, :Simple, :liw, :CVC, :PartClass, "law-"],
-	    [:T, :Intensive, :dbl, :CCC, :NegClass, "-t-daabiil-"],
-	    [:M, :Simple, :dbl, :CCC, :NegClass, "-m-dabiil-"],
-	    [:R, :Simple, :dgy, :CCY, :NegClass, "-dgaay-"],
-	    [:M, :Intensive, :dgy, :CCY, :AoristClass, "-m-ii-dgi-"],
-	    [:M, :Simple, :dbl, :CCC, :PartClass, "?am-dab(aa)l-"],
-	    [:R, :Simple, :liw, :CVC, :PresClass, "-ee-t-liiw- "],
-	    [:S, :Simple, :dbl, :CCC, :PresClass, "-s-dabiil-"],
-	    [:M, :Simple, :dbl, :CCC, :AoristClass, "-m-dibil-"],
-	    [:T, :Intensive, :dbl, :CCC, :ModClass, "-t-diibil-"],
-	    [:R, :Simple, :liw, :CVC, :ModClass, "-ii-t-liw-"],
-	    [:S, :Intensive, :dbl, :CCC, :PresClass, "-s-daabiil-"],
-	    [:S, :Simple, :liw, :CVC, :ModClass, "-s-uu-liw-"],
-	    [:B, :Simple, :dbl, :CCC, :PastClass, "-dbíl-"],
-	    [:S, :Intensive, :liw, :CVC, :PartClass, "..."],
-	    [:T, :Simple, :dbl, :CCC, :AoristClass, "-t-dibil-"],
-	    [:T, :Simple, :dbl, :CCC, :ModClass, "-t-dibil-"],
-	    [:R, :Simple, :dbl, :CCC, :PastClass, "-dbal-"],
-	    [:B, :Simple, :dbl, :CCC, :ModClass, "-ii-dbíl-"],
-	    [:M, :Intensive, :dbl, :CCC, :AoristClass, "-m-ii-dbil-"],
-	    [:S, :Simple, :dgy, :CCY, :PastClass, "-s-dag-"],
-	    [:M, :Simple, :dgy, :CCY, :AoristClass, "-m-dig-"],
-	    [:M, :Intensive, :liw, :CVC, :AoristClass, "..."],
-	    [:B, :Intensive, :liw, :CVC, :ModClass, "-ii-líw-"],
-	    [:T, :Intensive, :dbl, :CCC, :AoristClass, "-t-diibil-"],
-	    [:B, :Intensive, :dgy, :CCY, :PastClass, "-daag-"],
-	    [:M, :Simple, :liw, :CVC, :PartClass, "?am-oo-laaw-"],
-	    [:B, :Intensive, :dgy, :CCY, :NegClass, "-daagi-"],
-	    [:S, :Intensive, :dgy, :CCY, :ModClass, "-s-diiga-"],
-	    [:M, :Intensive, :dbl, :CCC, :PresClass, "-m-ee-dbiil- "],
-	    [:B, :Intensive, :dbl, :CCC, :AoristClass, "-ii-dbal-"],
-	    [:T, :Simple, :dbl, :CCC, :NegClass, "-t-dabiil-"],
-	    [:S, :Intensive, :liw, :CVC, :AoristClass, "..."],
-	    [:T, :Simple, :liw, :CVC, :PresClass, "-t-oo-liiw- "],
-	    [:S, :Intensive, :dbl, :CCC, :NegClass, "-s-daabiil-"],
-	    [:B, :Simple, :dgy, :CCY, :ModClass, "-dàag-"],
-	    [:S, :Intensive, :dbl, :CCC, :PartClass, "si-daabl-"],
-	    [:B, :Simple, :liw, :CVC, :PartClass, "líw-"],
-	    [:R, :Simple, :dgy, :CCY, :PastClass, "-dge-"]]
-    }
-    {:label "beja_H-VPrefAffCCCImprtv"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "dibil-`a"],
-	    [:Common, :Plural, "dibil-`na"],
-	    [:Fem, :Singular, "dibil-`i"]]
-    }
-    {:label "beja_H-VPrefAffCCYOpt"
-    :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "bà-ni-dàag"],
-	    [:Common, :Singular, :Person1, "bà-?a-dàag"],
-	    [:Masc, :Singular, :Person2, "bà-ti-daag-`a"],
-	    [:Fem, :Singular, :Person3, "bà-ti-dàag"],
-	    [:Common, :Plural, :Person2, "bà-ti-daag-`na"],
-	    [:Common, :Plural, :Person3, "bà-?i-daag-`na"],
-	    [:Fem, :Singular, :Person2, "bà-ti-daag-`i"],
-	    [:Masc, :Singular, :Person3, "bà-?i-dàag"]]
+            :lexeme :bis,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Aorist}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?-iibís"]
+            [:Singular :Person2 :Masc "t-iibis-`a"]
+            [:Singular :Person2 :Fem "t-iibis-`i"]
+            [:Singular :Person3 :Masc "?-iibís"]
+            [:Singular :Person3 :Fem "t-iibís"]
+            [:Plural :Person1 :Common "n-iibís"]
+            [:Plural :Person2 :Common "t-iibis-`na"]
+            [:Plural :Person3 :Common "?-iibis-`na"]]
     }
     {:label "beja_H-VPrefAffCVCImprtv"
     :note "rootClass CVC is sometimes also noted as rootClass CC"
     :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Common, :Plural, "bis-`na"],
-	    [:Fem, :Singular, "bis-ì"],
-	    [:Masc, :Singular, "bis-à"]]
+            :lexeme :bis,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "bis-à"]
+            [:Singular :Fem "bis-ì"]
+            [:Plural :Common "bis-`na"]]
     }
-    {:label "beja_H-VSuffAffOpt"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person2, "bà-tam-tii-`"],
-	    [:Fem, :Singular, :Person3, "bà-tam-tì"],
-	    [:Common, :Plural, :Person2, "bà-tam-tiìna"],
-	    [:Common, :Plural, :Person3, "bà-tam-iìn"],
-	    [:Masc, :Singular, :Person3, "bà-tam-ì"],
-	    [:Common, :Singular, :Person1, "bà-tam-ì"],
-	    [:Masc, :Singular, :Person2, "bà-tam-tii-`a"],
-	    [:Common, :Plural, :Person1, "bà-tam-nì"]]
-    }
-    {:label "beja_H-VPrefNegCCYPres"
-    :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "k-iì-dgì"],
-	    [:Common, :Plural, :Person1, "kí-n-dgì"],
-	    [:Common, :Singular, :Person1, "k-aà-dgì"],
-	    [:Fem, :Singular, :Person3, "kí-t-dgì"],
-	    [:Fem, :Singular, :Person2, "kí-t-dgii-`"],
-	    [:Masc, :Singular, :Person2, "kí-t-dgii-`a"],
-	    [:Common, :Plural, :Person2, "kí-t-dgii-`na"],
-	    [:Common, :Plural, :Person3, "k-iì-dgii-`na"]]
-    }
-    {:label "beja_H-VNegPast"
-    :common {:lexeme :tam,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Past,
-	    :formType :Compound}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "tamaa-`b/`t kiìkeèn"],
-	    [:Fem, :Singular, :Person2, "tamaa-`t kíttaày"],
-	    [:Masc, :Singular, :Person3, "tamaa-`b kiìkè"],
-	    [:Common, :Plural, :Person2, "tamaa-`b/`t kítteèna"],
-	    [:Common, :Plural, :Person1, "tamaa-`b/`t kínkè"],
-	    [:Masc, :Singular, :Person2, "tamaa-`b kíttà"],
-	    [:Common, :Singular, :Person1, "tamaa-`b/`t kaàkè"],
-	    [:Fem, :Singular, :Person3, "tamaa-`t kíttè"]]
-    }
-    {:label "beja_H-VPrefAffCCYPast"
-    :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Past}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "?a-dgì"],
-	    [:Common, :Plural, :Person2, "ti-dgii-`na"],
-	    [:Fem, :Singular, :Person3, "ti-dgì"],
-	    [:Fem, :Singular, :Person2, "ti-dgii-`"],
-	    [:Masc, :Singular, :Person2, "ti-dgii-`a"],
-	    [:Common, :Plural, :Person1, "ni-dgì"],
-	    [:Common, :Plural, :Person3, "?i-dgiil-`na"],
-	    [:Masc, :Singular, :Person3, "?i-dgì"]]
-    }
-    {:label "beja_H-VCopula"
-    :common {:lexeme :COPULA,
-	    :formType :Copula,
-	    :pos :Verb}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Plural, :Person1, "STEM=a"],
-	    [:Fem, :Plural, :Person3, "STEM=ta"],
-	    [:Fem, :Plural, :Person2, "STEM=taa-na"],
-	    [:Fem, :Singular, :Person2, "STEM=tuu-i"],
-	    [:Masc, :Singular, :Person3, "STEM=u"],
-	    [:Fem, :Plural, :Person1, "STEM=ta"],
-	    [:Masc, :Singular, :Person2, "STEM=w-a"],
-	    [:Fem, :Singular, :Person1, "STEM=tu"],
-	    [:Masc, :Singular, :Person1, "STEM=u"],
-	    [:Masc, :Plural, :Person2, "STEM=aa-na"],
-	    [:Fem, :Singular, :Person3, "STEM=tu"],
-	    [:Masc, :Plural, :Person3, "STEM=a"]]
-    }
-    {:label "beja_H-VPrefAffCCCAor"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Aorist}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "?-iidbíl"],
-	    [:Common, :Plural, :Person3, "?-iidbil-`na"],
-	    [:Common, :Plural, :Person1, "n-iidbíl"],
-	    [:Fem, :Singular, :Person2, "t-iidbil-`i"],
-	    [:Common, :Plural, :Person2, "t-iidbil-`na"],
-	    [:Masc, :Singular, :Person2, "t-iidbil-`a"],
-	    [:Fem, :Singular, :Person3, "t-iidbíl"],
-	    [:Common, :Singular, :Person1, "?-iidbíl"]]
-    }
-    {:label "beja_H-VPrefAffCCCOpt"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "bà-t-iidbil-`na"],
-	    [:Masc, :Singular, :Person2, "bà-t-iidbil-`a"],
-	    [:Common, :Plural, :Person1, "bà-n-iidbíl"],
-	    [:Common, :Plural, :Person3, "bà-?-iidbil-`na"],
-	    [:Fem, :Singular, :Person3, "bà-t-iidbíl"],
-	    [:Fem, :Singular, :Person2, "bà-t-iidbil-`i"],
-	    [:Common, :Singular, :Person1, "bà-?-iidbíl"],
-	    [:Masc, :Singular, :Person3, "bà-?-iidbíl"]]
-    }
-    {:label "beja_H-VPrefNegCCCPres"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person2, "kí-t-dbil-`na"],
-	    [:Masc, :Singular, :Person2, "kí-t-dbil-`a"],
-	    [:Common, :Singular, :Person1, "k-aà-dbíl"],
-	    [:Common, :Plural, :Person1, "kí-n-dbíl"],
-	    [:Fem, :Singular, :Person3, "kí-t-dbíl"],
-	    [:Fem, :Singular, :Person2, "kí-t-dbil-`i"],
-	    [:Common, :Plural, :Person3, "k-iì-dbil-`na"],
-	    [:Masc, :Singular, :Person3, "k-iì-dbíl"]]
-    }
-    {:label "beja_H-VNegAux"
-    :common {:lexeme :AUXILIARY,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Past,
-	    :formType :Auxiliary}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "kínkè"],
-	    [:Fem, :Singular, :Person3, "kíttè = {kí-t-kè}"],
-	    [:Masc, :Singular, :Person3, "kiìkè"],
-	    [:Common, :Plural, :Person2, "kítteèna = {kí-t-kee-`na}"],
-	    [:Common, :Plural, :Person3, "kiìkeèn"],
-	    [:Masc, :Singular, :Person2, "kíttà = {kí-t-kaa-`a}"],
-	    [:Fem, :Singular, :Person2, "kíttaày = {kí-t-kaa-`i}"],
-	    [:Common, :Singular, :Person1, "kaàkè"]]
-    }
-    {:label "beja_H-VSuffNegPres"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "kà-tam-nà"],
-	    [:Masc, :Singular, :Person2, "kà-tam-taa-`"],
-	    [:Common, :Singular, :Person1, "kà-tam-àn"],
-	    [:Masc, :Singular, :Person3, "kà-tam-yà"],
-	    [:Common, :Plural, :Person3, "kà-tam-yaàn"],
-	    [:Fem, :Singular, :Person3, "kà-tam-tà"],
-	    [:Common, :Plural, :Person2, "kà-tam-taàna"],
-	    [:Fem, :Singular, :Person2, "kà-tam-taa-`i"]]
-    }
-    {:label "beja_H-VPrefAffCCCPast"
-    :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Past}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person3, "?i-dbíl"],
-	    [:Common, :Plural, :Person1, "ni-dbíl"],
-	    [:Common, :Plural, :Person3, "?i-dbil-`na"],
-	    [:Fem, :Singular, :Person3, "ti-dbíl"],
-	    [:Common, :Singular, :Person1, "?a-dbíl"],
-	    [:Masc, :Singular, :Person2, "ti-dbil-`a"],
-	    [:Common, :Plural, :Person2, "ti-dbil-`na"],
-	    [:Fem, :Singular, :Person2, "ti-dbil-`i"]]
-    }
-    {:label "beja_H-VSuffAffImprtv"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :person :Person2,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "tam-àa"],
-	    [:Common, :Plural, "tam-aa-`na"],
-	    [:Fem, :Singular, "tam-ìi"]]
-    }
-    {:label "beja_H-VSuffNegImprtv"
-    :common {:conjClass :Suffix,
-	    :lexeme :tam,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Masc, :Singular, "b-àa-tam-aa-`"],
-	    [:Common, :Plural, "b-àa-tam-aa-`na"],
-	    [:Fem, :Singular, "b-íi-tam-a-`y"]]
-    }
-    {:label "beja_H-VPrefNegCCYImprtv"
-    :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Common, :Plural, "b-àa-dagii-`na"],
-	    [:Masc, :Singular, "b-àa-dagii-`a"],
-	    [:Fem, :Singular, "b-íi-dagii-`"]]
-    }
-    {:label "beja_H-VStemDervExx"
-    :common {:morphClass :DERVSTEMFORM,
-	    :pdgmType :Structure,
-	    :pos :Verb}
-    :terms [[:conjClass, :derivedStem, :derivedStemAug, :lexeme, :rootClass, :token, :token-note]  ;; schema
-	    [:Suffix, :M, :Simple, :tam, :Invar, "tam-am-", "be eaten"],
-	    [:Prefix, :B, :Simple, :ktb, :CCC, "kitìb-", "write"],
-	    [:Prefix, :SS, :Simple, :dgy, :CCY, "-sis-dag-", "see that s.o makes s.o. bring s.th. back "],
-	    [:Prefix, :SM, :Intensive, :dir, :CVC, "-moo-daar-", "kill one another"],
-	    [:Prefix, :T, :Intensive, :fry, :CCY, "-t-faraay-", "be born"],
-	    [:Suffix, :SS, :Simple, :hamasee, :Invar, "hamašee-šiiš-", "cause to blind"],
-	    [:Prefix, :R, :Simple, :sbb, :CCC, "-šbab-", "look at oneself"],
-	    [:Prefix, :M, :Intensive, :niy, :CVC, "-mee-niiy-", "be milked"],
-	    [:Suffix, :B, :Simple, :kileew, :Invar, "kileew-", "guard, take prisoner"],
-	    [:Prefix, :SM, :Intensive, :dlb, :CCC, "-m-dalaab-", "buy ... together"],
-	    [:Suffix, :SM, :Intensive, :doob, :Invar, "daab-sam-", "run together"],
-	    [:Prefix, :S, :Simple, :bis, :CVC, "-soo-bis-", "cause to bury"],
-	    [:Prefix, :R, :Simple, :sar, :CVC, "-sar-", "stay awake"],
-	    [:Prefix, :B, :Simple, :mry, :CCY, "miriì-", "find"],
-	    [:Prefix, :SS, :Simple, :dif2, :CVC, "-šišoo-dif-", "see that s.o. has s.th. dyed "],
-	    [:Prefix, :T, :Intensive, :dif2, :CVC, "-too-daaf-", "be dyed, tanned (see fn. 29) "],
-	    [:Suffix, :B, :Simple, :suum, :Invar, "šuum-", "enter"],
-	    [:Suffix, :M, :Simple, :raat, :Invar, "raat-am-", "be asked, ask oneself"],
-	    [:Prefix, :S, :Simple, :sbb, :CCC, "-š-šabib-", "let ... look at"],
-	    [:Prefix, :S, :Simple, :sgy, :CCY, "-š-šagw-", "make ... do wrong"],
-	    [:Prefix, :S, :Simple, :liw, :CVC, "-soo-liw-", "make ... burn"],
-	    [:Prefix, :S, :Simple, :dif2, :CVC, "-šoo-dif-", "cause to dye/tan"],
-	    [:Suffix, :B, :Simple, :tam, :Invar, "tam-", "eat"],
-	    [:Prefix, :B, :Simple, :fry, :CCY, "firiì-", "give birth"],
-	    [:Prefix, :T, :Intensive, :ktb, :CCC, "-t-kataab-", "be written "],
-	    [:Prefix, :B, :Simple, :dif, :CVC, "díf-", "go away"],
-	    [:Suffix, :B, :Simple, :gwa, :Invar, "gwa?-", "drink"],
-	    [:Suffix, :B, :Simple, :doob, :Invar, "doob-", "marry"],
-	    [:Suffix, :SM, :Intensive, :yak, :Invar, "yak-sam-", "rise up against one another"],
-	    [:Suffix, :S, :Simple, :kadaw, :Invar, "kadaw-š-", "jingle, rattle (tr.)"],
-	    [:Prefix, :T, :Intensive, :sgwd, :CCC, "-š-t-agwaad-", "be washed-3"],
-	    [:Suffix, :SM, :Intensive, :adum, :Invar, "?adum-sam-", "speak with one another"],
-	    [:Prefix, :M, :Intensive, :bdn, :CCC, "-mee-bdaan-", "be forgotten"],
-	    [:Prefix, :S, :Simple, :rsd, :CCC, "-š-rašid-", "cause to tend cattle "],
-	    [:Suffix, :B, :Simple, :raat, :Invar, "raat-", "ask"],
-	    [:Prefix, :B, :Simple, :dgy, :CCY, "digiì-", "bring back"],
-	    [:Prefix, :S, :Intensive, :dgy, :CCY, "-s-daag-", "make ... bring back many"],
-	    [:Prefix, :R, :Simple, :sa, :CVC, "-sa?-", "sit (down) "],
-	    [:Suffix, :M, :Simple, :hug, :Invar, "hug-am-", "be ground"],
-	    [:Prefix, :S, :Simple, :rkwy, :CCY, "-s-rakw-", "make ... fear"],
-	    [:Suffix, :S, :Simple, :oos, :Invar, "make ... urinate"],
-	    [:Prefix, :B, :Simple, :liw, :CVC, "liw-", "burn (trans.)"],
-	    [:Suffix, :B, :Simple, :nuun, :Invar, "nuun-", "hand over"],
-	    [:Prefix, :S, :Intensive, :msw, :CCC, "-s-maasiw-", "let ... hear"],
-	    [:Prefix, :S, :Simple, :dbl, :CCC, "-s-dabil-", "cause to collect"],
-	    [:Prefix, :B, :Simple, :dbl, :CCC, "dibìl-", "collect"],
-	    [:Prefix, :T, :Intensive, :dir, :CVC, "-too-daar-", "be killed"],
-	    [:Prefix, :B, :Simple, :min, :CVC, "min-", "shave"],
-	    [:Suffix, :S, :Simple, :tam, :Invar, "tam-s-", "feed"],
-	    [:Suffix, :B, :Simple, :rih, :Invar, "rih-", "see"],
-	    [:Prefix, :SM, :Intensive, :bis, :CVC, "-moo-baas-", "help to bury, bury ... together"],
-	    [:Prefix, :B, :Simple, :bis, :CVC, "bis-", "bury"],
-	    [:Prefix, :S, :Simple, :ktm, :CCC, "-s-katim-", "cause to arrive"],
-	    [:Prefix, :T, :Intensive, :min, :CVC, "-too-maan-", "be shaved"],
-	    [:Suffix, :SS, :Simple, :tam, :Invar, "tam-siis-", "cause to feed"],
-	    [:Prefix, :SM, :Intensive, :dgy, :CCY, "-m-dagaay-", "help to bring back"],
-	    [:Prefix, :R, :Simple, :min, :CVC, "-man-", "shave oneself"],
-	    [:Prefix, :SS, :Simple, :dbl, :CCC, "-sis-dabil-", "see that s.o. has s.th. collected, see that s.o. makes s.o. collect s.th. "],
-	    [:Prefix, :T, :Intensive, :dbl, :CCC, "-t-dabaal-", "be collected-2"],
-	    [:Prefix, :B, :Simple, :dlb, :CCC, "dilìb-", "buy"],
-	    [:Prefix, :R, :Simple, :liw, :CVC, "-law-", "burn oneself"],
-	    [:Prefix, :S, :Intensive, :dir, :CVC, "-s-daar-", "make ... kill many"],
-	    [:Prefix, :B, :Simple, :dir, :CVC, "dir-", "kill"],
-	    [:Prefix, :S, :Simple, :dgy, :CCY, "-s-dag-", "_NULL"],
-	    [:Prefix, :SS, :Simple, :bis, :CVC, "-sisoo-bis-", "see that s.o. has s.th. buried"],
-	    [:Prefix, :S, :Simple, :dir, :CVC, "-soo-dir-", "make ... kill"],
-	    [:Prefix, :M, :Intensive, :swy, :CCY, "-mee-šwaay-", "help to mix"],
-	    [:Prefix, :R, :Simple, :gnf, :CCC, "-gnaf-", "kneel down"],
-	    [:Prefix, :T, :Intensive, :dgy, :CCY, "-t-dagaay-", "be brought back"],
-	    [:Suffix, :SM, :Intensive, :tam, :Invar, "tam-sam-", "eat one another, eat together"],
-	    [:Prefix, :B, :Simple, :fnk, :CCC, "finìk-", "bite"],
-	    [:Suffix, :M, :Simple, :eegrim, :Invar, "?eegrim-am-", "turn grey"],
-	    [:Prefix, :R, :Simple, :hmy, :CCY, "-hme-", "cover oneself "],
-	    [:Prefix, :SM, :Intensive, :tib, :CVC, "-moo-taab-", "help to fill"],
-	    [:Suffix, :M, :Simple, :reeh, :Invar, "reeh-am-", "rest oneself, be made at ease"],
-	    [:Prefix, :T, :Intensive, :sik, :CVC, "-too-šaak-", "be hunted"],
-	    [:Prefix, :B, :Simple, :kwbs, :CCC, "kwibìs-", "hide"],
-	    [:Prefix, :T, :Intensive, :hby, :CCY, "-t-habaay-", "be forbidden, prevented"],
-	    [:Suffix, :M, :Simple, :fid, :Invar, "fid-am-", "blow one's nose"],
-	    [:Prefix, :R, :Simple, :skt, :CCC, "-skat-", "choke oneself"],
-	    [:Prefix, :SM, :Intensive, :gid, :CVC, "-moo-gaad-", "throw at one another"],
-	    [:Prefix, :SM, :Intensive, :rgg, :CCC, "-m-ragaag-", "help to drive away "],
-	    [:Prefix, :B, :Simple, :rib, :CVC, "rib-", "refuse"],
-	    [:Prefix, :B, :Simple, :sfy, :CCY, "šifiì-", "drink milk"],
-	    [:Suffix, :B, :Simple, :ad, :Invar, "?ad-", "tremble"],
-	    [:Prefix, :S, :Simple, :dmy, :CCY, "-š-dam-", "make ... stink "],
-	    [:Prefix, :R, :Simple, :fif, :CVC, "-faf-", "boil over"],
-	    [:Prefix, :T, :Intensive, :khn, :CCC, "-t-kahaan-", "be loved "],
-	    [:Suffix, :S, :Simple, :ibaab, :Invar, "?ibaab-s-", "send on a journey"],
-	    [:Prefix, :R, :Simple, :mkr, :CCC, "-mkar-", "take advice"],
-	    [:Prefix, :R, :Simple, :dgy, :CCY, "-dge-", "return (intr.)"],
-	    [:Prefix, :SM, :Intensive, :min, :CVC, "-moo-maan-", "shave one another"],
-	    [:Suffix, :S, :Simple, :rih, :Invar, "rih-is-", "make ... see show"],
-	    [:Prefix, :B, :Simple, :ktm, :CCC, "kitìm-", "arrive"],
-	    [:Suffix, :S, :Simple, :as, :Invar, "?as-is-", "make ... shut"],
-	    [:Suffix, :S, :Simple, :hamas, :Invar, "hamašee-š-", "blind"],
-	    [:Prefix, :T, :Intensive, :frk, :CCC, "-t-faraak-", "be dug"],
-	    [:Prefix, :T, :Intensive, :bis, :CVC, "-too-baas-", "be buried"]]
-    }
-    {:label "beja_H-VPrefNegCVCPres"
+    {:label "beja_H-VPrefAffCVCOpt"
     :note "rootClass CVC is sometimes also noted as rootClass CC"
     :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Present}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person3, "k-iì-bis-`na"],
-	    [:Common, :Plural, :Person2, "kí-t-bis-`na"],
-	    [:Common, :Singular, :Person1, "k-aà-bís"],
-	    [:Fem, :Singular, :Person2, "kí-t-bis-`i"],
-	    [:Masc, :Singular, :Person2, "kí-t-bis-`a"],
-	    [:Fem, :Singular, :Person3, "kí-t-bís"],
-	    [:Masc, :Singular, :Person3, "k-iì-bís"],
-	    [:Common, :Plural, :Person1, "kí-n-bís"]]
+            :lexeme :bis,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "bà-?-iibís"]
+            [:Singular :Person2 :Masc "bà-t-iibis-`a"]
+            [:Singular :Person2 :Fem "bà-t-iibis-`i"]
+            [:Singular :Person3 :Masc "bà-?-iibís"]
+            [:Singular :Person3 :Fem "bà-t-iibís"]
+            [:Plural :Person1 :Common "bà-n-iibís"]
+            [:Plural :Person2 :Common "bà-t-iibis-`na"]
+            [:Plural :Person3 :Common "bà-?-iibis-`na"]]
     }
     {:label "beja_H-VPrefAffCVCPast"
     :note "rootClass CVC is sometimes also noted as rootClass CC"
     :common {:conjClass :Prefix,
-	    :lexeme :bis,
-	    :polarity :Affirmative,
-	    :pos :Verb,
-	    :rootClass :CVC,
-	    :tam :Past}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Fem, :Singular, :Person3, "ti-bís"],
-	    [:Common, :Singular, :Person1, "?a-bís"],
-	    [:Common, :Plural, :Person1, "ni-bís"],
-	    [:Common, :Plural, :Person2, "ti-bis-`na"],
-	    [:Fem, :Singular, :Person2, "ti-bis-`i"],
-	    [:Masc, :Singular, :Person3, "?i-bís"],
-	    [:Masc, :Singular, :Person2, "ti-bis-`a"],
-	    [:Common, :Plural, :Person3, "?i-bis-`na"]]
+            :lexeme :bis,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Past}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-bís"]
+            [:Singular :Person2 :Masc "ti-bis-`a"]
+            [:Singular :Person2 :Fem "ti-bis-`i"]
+            [:Singular :Person3 :Masc "?i-bís"]
+            [:Singular :Person3 :Fem "ti-bís"]
+            [:Plural :Person1 :Common "ni-bís"]
+            [:Plural :Person2 :Common "ti-bis-`na"]
+            [:Plural :Person3 :Common "?i-bis-`na"]]
+    }
+    {:label "beja_H-VPrefAffCVCPres"
+    :note "rootClass CVC is sometimes also noted as rootClass CC"
+    :common {:conjClass :Prefix,
+            :lexeme :bis,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a-nbíis"]
+            [:Singular :Person2 :Masc "ti-nbiis-`a"]
+            [:Singular :Person2 :Fem "ti-nbiis-`i"]
+            [:Singular :Person3 :Masc "?i-nbíis"]
+            [:Singular :Person3 :Fem "ti-nbíis"]
+            [:Plural :Person1 :Common "n-eebís"]
+            [:Plural :Person2 :Common "t-eebis-`na"]
+            [:Plural :Person3 :Common "?-eebis-`na"]]
     }
     {:label "beja_H-VPrefNegCCCImprtv"
     :common {:conjClass :Prefix,
-	    :lexeme :dbl,
-	    :person :Person2,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CCC,
-	    :tam :Imperative}
-    :terms [[:gender, :number, :token]  ;; schema
-	    [:Common, :Plural, "b-àa-dabiil-`na"],
-	    [:Fem, :Singular, "b-íi-dabiil-`i"],
-	    [:Masc, :Singular, "b-àa-dabiil-`a"]]
+            :lexeme :dbl,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "b-àa-dabiil-`a"]
+            [:Singular :Fem "b-íi-dabiil-`i"]
+            [:Plural :Common "b-àa-dabiil-`na"]]
+    }
+    {:label "beja_H-VPrefNegCCCOpt"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "b-aa-dabíil"]
+            [:Singular :Person2 :Masc "bi-t-dabiil-`a"]
+            [:Singular :Person2 :Fem "bi-t-dabiil-`i"]
+            [:Singular :Person3 :Masc "b-ii-dabíil"]
+            [:Singular :Person3 :Fem "bi-t-dabíil"]
+            [:Plural :Person1 :Common "bi-n-dabíil"]
+            [:Plural :Person2 :Common "bi-t-dabiil-`na"]
+            [:Plural :Person3 :Common "b-ii-dabiil-`na"]]
+    }
+    {:label "beja_H-VPrefNegCCCPres"
+    :common {:conjClass :Prefix,
+            :lexeme :dbl,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CCC,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "k-aà-dbíl"]
+            [:Singular :Person2 :Masc "kí-t-dbil-`a"]
+            [:Singular :Person2 :Fem "kí-t-dbil-`i"]
+            [:Singular :Person3 :Masc "k-iì-dbíl"]
+            [:Singular :Person3 :Fem "kí-t-dbíl"]
+            [:Plural :Person1 :Common "kí-n-dbíl"]
+            [:Plural :Person2 :Common "kí-t-dbil-`na"]
+            [:Plural :Person3 :Common "k-iì-dbil-`na"]]
+    }
+    {:label "beja_H-VPrefNegCCYImprtv"
+    :common {:conjClass :Prefix,
+            :lexeme :dgy,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "b-àa-dagii-`a"]
+            [:Singular :Fem "b-íi-dagii-`"]
+            [:Plural :Common "b-àa-dagii-`na"]]
     }
     {:label "beja_H-VPrefNegCCYOpt"
     :common {:conjClass :Prefix,
-	    :lexeme :dgy,
-	    :polarity :Negative,
-	    :pos :Verb,
-	    :rootClass :CCY,
-	    :tam :Optative}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Plural, :Person1, "bi-n-dagì"],
-	    [:Common, :Plural, :Person3, "b-ii-dagii-`na"],
-	    [:Masc, :Singular, :Person2, "bi-t-dagii-`a"],
-	    [:Common, :Singular, :Person1, "b-aa-dagì"],
-	    [:Common, :Plural, :Person2, "bi-t-dagii-`na"],
-	    [:Masc, :Singular, :Person3, "b-ii-dagì"],
-	    [:Fem, :Singular, :Person3, "bi-t-dagì"],
-	    [:Fem, :Singular, :Person2, "bi-t-dagii-`"]]
-    }}
-:muterms #{
-    {:label "beja_H-PPostposition"
-    :common {:morphClass :POSTPOSITION,
-	    :pos :Noun}
-    :terms [[:case, :postpositionClass, :token]  ;; schema
-	    [:Ablative, :Pp_A, "..."],
-	    [:Equative, :Pp_A, "-`t"],
-	    [:Ablative, :Pp_B, "-s-"],
-	    [:Locative, :Pp_A, "-`b"],
-	    [:Equative, :Pp_B, "- t-"],
-	    [:Locative, :Pp_B, "..."]]
+            :lexeme :dgy,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "b-aa-dagì"]
+            [:Singular :Person2 :Masc "bi-t-dagii-`a"]
+            [:Singular :Person2 :Fem "bi-t-dagii-`"]
+            [:Singular :Person3 :Masc "b-ii-dagì"]
+            [:Singular :Person3 :Fem "bi-t-dagì"]
+            [:Plural :Person1 :Common "bi-n-dagì"]
+            [:Plural :Person2 :Common "bi-t-dagii-`na"]
+            [:Plural :Person3 :Common "b-ii-dagii-`na"]]
+    }
+    {:label "beja_H-VPrefNegCCYPres"
+    :common {:conjClass :Prefix,
+            :lexeme :dgy,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CCY,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "k-aà-dgì"]
+            [:Singular :Person2 :Masc "kí-t-dgii-`a"]
+            [:Singular :Person2 :Fem "kí-t-dgii-`"]
+            [:Singular :Person3 :Masc "k-iì-dgì"]
+            [:Singular :Person3 :Fem "kí-t-dgì"]
+            [:Plural :Person1 :Common "kí-n-dgì"]
+            [:Plural :Person2 :Common "kí-t-dgii-`na"]
+            [:Plural :Person3 :Common "k-iì-dgii-`na"]]
+    }
+    {:label "beja_H-VPrefNegCVCImprtv"
+    :note "rootClass CVC is sometimes also noted as rootClass CC"
+    :common {:conjClass :Prefix,
+            :lexeme :bis,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "b-àa-biis-à"]
+            [:Singular :Fem "b-íi-biis-ì"]
+            [:Plural :Common "b-àa-biis-`na"]]
+    }
+    {:label "beja_H-VPrefNegCVCOpt"
+    :note "rootClass CVC is sometimes also noted as rootClass CC"
+    :common {:conjClass :Prefix,
+            :lexeme :bis,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "b-aa-bíis"]
+            [:Singular :Person2 :Masc "bi-t-biis-`a"]
+            [:Singular :Person2 :Fem "bi-t-biis-`i"]
+            [:Singular :Person3 :Masc "b-ii-bíis"]
+            [:Singular :Person3 :Fem "bi-t-bíis"]
+            [:Plural :Person1 :Common "bi-n-bíis"]
+            [:Plural :Person2 :Common "bi-t-biis-`na"]
+            [:Plural :Person3 :Common "b-ii-biis-`na"]]
+    }
+    {:label "beja_H-VPrefNegCVCPres"
+    :note "rootClass CVC is sometimes also noted as rootClass CC"
+    :common {:conjClass :Prefix,
+            :lexeme :bis,
+            :polarity :Negative,
+            :pos :Verb,
+            :rootClass :CVC,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "k-aà-bís"]
+            [:Singular :Person2 :Masc "kí-t-bis-`a"]
+            [:Singular :Person2 :Fem "kí-t-bis-`i"]
+            [:Singular :Person3 :Masc "k-iì-bís"]
+            [:Singular :Person3 :Fem "kí-t-bís"]
+            [:Plural :Person1 :Common "kí-n-bís"]
+            [:Plural :Person2 :Common "kí-t-bis-`na"]
+            [:Plural :Person3 :Common "k-iì-bis-`na"]]
+    }
+    {:label "beja_H-VStemClassPrefTense"
+    :common {:conjClass :Prefix,
+            :morphClass :TENSESTEM,
+            :pos :Verb,
+            :formType :Stem}
+    :terms [[:derivedStem :derivedStemAug :lexeme :rootClass :tamStemClass :token] ;; schema
+            [:B :Intensive :dbl :CCC :AoristClass "-ii-dbal-"]
+            [:B :Intensive :dbl :CCC :ModClass "-ii-dbal-"]
+            [:B :Intensive :dbl :CCC :NegClass "-daabiil-"]
+            [:B :Intensive :dbl :CCC :PartClass "daabl-"]
+            [:B :Intensive :dbl :CCC :PastClass "-daabil-"]
+            [:B :Intensive :dbl :CCC :PresClass "-ee-dbil-"]
+            [:B :Intensive :dgy :CCY :AoristClass "-ii-dgi"]
+            [:B :Intensive :dgy :CCY :ModClass "-ii-dga"]
+            [:B :Intensive :dgy :CCY :NegClass "-daagi-"]
+            [:B :Intensive :dgy :CCY :PartClass "daag-"]
+            [:B :Intensive :dgy :CCY :PastClass "-daag-"]
+            [:B :Intensive :dgy :CCY :PresClass "-ee-dgi-"]
+            [:B :Intensive :liw :CVC :AoristClass "-ii-liw-"]
+            [:B :Intensive :liw :CVC :ModClass "-ii-líw-"]
+            [:B :Intensive :liw :CVC :NegClass "-laaw-"]
+            [:B :Intensive :liw :CVC :PartClass "laaw-"]
+            [:B :Intensive :liw :CVC :PastClass "-laaw-"]
+            [:B :Intensive :liw :CVC :PresClass "-ee-liw- "]
+            [:B :Simple :dbl :CCC :AoristClass "-ii-dbíl-"]
+            [:B :Simple :dbl :CCC :ModClass "-ii-dbíl-"]
+            [:B :Simple :dbl :CCC :NegClass "-dabíil-"]
+            [:B :Simple :dbl :CCC :PartClass "dibl-"]
+            [:B :Simple :dbl :CCC :PastClass "-dbíl-"]
+            [:B :Simple :dbl :CCC :PresClass "-ee-dbíl-"]
+            [:B :Simple :dbl :CCC :PresSgClass "-danbíil-"]
+            [:B :Simple :dgy :CCY :AoristClass "-dìig-"]
+            [:B :Simple :dgy :CCY :ModClass "-dàag-"]
+            [:B :Simple :dgy :CCY :NegClass "-dagì-"]
+            [:B :Simple :dgy :CCY :PartClass "digy-"]
+            [:B :Simple :dgy :CCY :PastClass "-dgì-"]
+            [:B :Simple :dgy :CCY :PresClass "-déeg-"]
+            [:B :Simple :dgy :CCY :PresSgClass "-dangì-"]
+            [:B :Simple :liw :CVC :AoristClass "-ii-líw-"]
+            [:B :Simple :liw :CVC :ModClass "-ii-líw-"]
+            [:B :Simple :liw :CVC :NegClass "-líiw-"]
+            [:B :Simple :liw :CVC :PartClass "líw-"]
+            [:B :Simple :liw :CVC :PastClass "-líw-"]
+            [:B :Simple :liw :CVC :PresClass "-ee-líw-"]
+            [:B :Simple :liw :CVC :PresSgClass "-nliiw- "]
+            [:M :Intensive :dbl :CCC :AoristClass "-m-ii-dbil-"]
+            [:M :Intensive :dbl :CCC :ModClass "-m-ii-dbil-"]
+            [:M :Intensive :dbl :CCC :NegClass "-m-ee-dbiil-"]
+            [:M :Intensive :dbl :CCC :PartClass "?amee-dab(aa)l-"]
+            [:M :Intensive :dbl :CCC :PastClass "-m-ee-dbaal-"]
+            [:M :Intensive :dbl :CCC :PresClass "-m-ee-dbiil- "]
+            [:M :Intensive :dgy :CCY :AoristClass "-m-ii-dgi-"]
+            [:M :Intensive :dgy :CCY :ModClass "-m-ii-dga-"]
+            [:M :Intensive :dgy :CCY :NegClass "-m-ee-dgi-"]
+            [:M :Intensive :dgy :CCY :PartClass "?amee-dag(aa)y"]
+            [:M :Intensive :dgy :CCY :PastClass "-m-ee-dgaay-"]
+            [:M :Intensive :dgy :CCY :PresClass "-m-ee-dgi-"]
+            [:M :Intensive :liw :CVC :AoristClass "..."]
+            [:M :Intensive :liw :CVC :ModClass "..."]
+            [:M :Intensive :liw :CVC :NegClass "..."]
+            [:M :Intensive :liw :CVC :PartClass "..."]
+            [:M :Intensive :liw :CVC :PastClass "..."]
+            [:M :Intensive :liw :CVC :PresClass "..."]
+            [:M :Simple :dbl :CCC :AoristClass "-m-dibil-"]
+            [:M :Simple :dbl :CCC :ModClass "-m-dibil-"]
+            [:M :Simple :dbl :CCC :NegClass "-m-dabiil-"]
+            [:M :Simple :dbl :CCC :PartClass "?am-dab(aa)l-"]
+            [:M :Simple :dbl :CCC :PastClass "-m-dabaal-"]
+            [:M :Simple :dbl :CCC :PresClass "-m-dabiil-"]
+            [:M :Simple :dgy :CCY :AoristClass "-m-dig-"]
+            [:M :Simple :dgy :CCY :ModClass "-m-diga-"]
+            [:M :Simple :dgy :CCY :NegClass "-m-dagi-"]
+            [:M :Simple :dgy :CCY :PartClass "?am-dag(aa)y"]
+            [:M :Simple :dgy :CCY :PastClass "-m-dagaay-"]
+            [:M :Simple :dgy :CCY :PresClass "-m-dagi-"]
+            [:M :Simple :liw :CVC :AoristClass "-m-uu-liw-"]
+            [:M :Simple :liw :CVC :ModClass "-m-uu-liw-"]
+            [:M :Simple :liw :CVC :NegClass "-m-oo-liiw-"]
+            [:M :Simple :liw :CVC :PartClass "?am-oo-laaw-"]
+            [:M :Simple :liw :CVC :PastClass "-m-oo-laaw"]
+            [:M :Simple :liw :CVC :PresClass "-m-oo-liiw- "]
+            [:R :Simple :cbl :CCC :PartClass "dibal-"]
+            [:R :Simple :dbl :CCC :AoristClass "-t-dibil-"]
+            [:R :Simple :dbl :CCC :ModClass "-t-dibil-"]
+            [:R :Simple :dbl :CCC :NegClass "-dbaal-"]
+            [:R :Simple :dbl :CCC :PastClass "-dbal-"]
+            [:R :Simple :dbl :CCC :PresClass "-t-dabiil-"]
+            [:R :Simple :dgy :CCY :AoristClass "-t-dig- "]
+            [:R :Simple :dgy :CCY :ModClass "-t-diga-"]
+            [:R :Simple :dgy :CCY :NegClass "-dgaay-"]
+            [:R :Simple :dgy :CCY :PartClass "dige-"]
+            [:R :Simple :dgy :CCY :PastClass "-dge-"]
+            [:R :Simple :dgy :CCY :PresClass "-t-dagi-"]
+            [:R :Simple :liw :CVC :AoristClass "-ii-t-liw-"]
+            [:R :Simple :liw :CVC :ModClass "-ii-t-liw-"]
+            [:R :Simple :liw :CVC :NegClass "-laaw-"]
+            [:R :Simple :liw :CVC :PartClass "law-"]
+            [:R :Simple :liw :CVC :PastClass "-law-"]
+            [:R :Simple :liw :CVC :PresClass "-ee-t-liiw- "]
+            [:S :Intensive :dbl :CCC :AoristClass "-s-diibal-"]
+            [:S :Intensive :dbl :CCC :ModClass "-s-diibal-"]
+            [:S :Intensive :dbl :CCC :NegClass "-s-daabiil-"]
+            [:S :Intensive :dbl :CCC :PartClass "si-daabl-"]
+            [:S :Intensive :dbl :CCC :PastClass "-s-daabil-"]
+            [:S :Intensive :dbl :CCC :PresClass "-s-daabiil-"]
+            [:S :Intensive :dgy :CCY :AoristClass "-s-diig-"]
+            [:S :Intensive :dgy :CCY :ModClass "-s-diiga-"]
+            [:S :Intensive :dgy :CCY :NegClass "-s-daagi-"]
+            [:S :Intensive :dgy :CCY :PartClass "si-daag-"]
+            [:S :Intensive :dgy :CCY :PastClass "-s-daag-"]
+            [:S :Intensive :dgy :CCY :PresClass "-s-daagi-"]
+            [:S :Intensive :liw :CVC :AoristClass "..."]
+            [:S :Intensive :liw :CVC :ModClass "..."]
+            [:S :Intensive :liw :CVC :NegClass "..."]
+            [:S :Intensive :liw :CVC :PartClass "..."]
+            [:S :Intensive :liw :CVC :PastClass "..."]
+            [:S :Intensive :liw :CVC :PresClass "..."]
+            [:S :Simple :dbl :CCC :AoristClass "-s-dibil-"]
+            [:S :Simple :dbl :CCC :ModClass "-s-dibil-"]
+            [:S :Simple :dbl :CCC :NegClass "-s-dabiil-"]
+            [:S :Simple :dbl :CCC :PartClass "si-dabl-"]
+            [:S :Simple :dbl :CCC :PastClass "-s-dabil-"]
+            [:S :Simple :dbl :CCC :PresClass "-s-dabiil-"]
+            [:S :Simple :dgy :CCY :AoristClass "-s-dig-"]
+            [:S :Simple :dgy :CCY :ModClass "-s-diga-"]
+            [:S :Simple :dgy :CCY :NegClass "-s-dagi"]
+            [:S :Simple :dgy :CCY :PartClass "si-dag-"]
+            [:S :Simple :dgy :CCY :PastClass "-s-dag-"]
+            [:S :Simple :dgy :CCY :PresClass "-s-dagi-"]
+            [:S :Simple :liw :CVC :AoristClass "-s-uu-liw-"]
+            [:S :Simple :liw :CVC :ModClass "-s-uu-liw-"]
+            [:S :Simple :liw :CVC :NegClass "-s-oo-liiw-"]
+            [:S :Simple :liw :CVC :PartClass "s-oo-lw-"]
+            [:S :Simple :liw :CVC :PastClass "-s-oo-liw-"]
+            [:S :Simple :liw :CVC :PresClass "-s-oo-liiw- "]
+            [:T :Intensive :dbl :CCC :AoristClass "-t-diibil-"]
+            [:T :Intensive :dbl :CCC :ModClass "-t-diibil-"]
+            [:T :Intensive :dbl :CCC :NegClass "-t-daabiil-"]
+            [:T :Intensive :dbl :CCC :PartClass "?at-daab(aa)l-"]
+            [:T :Intensive :dbl :CCC :PastClass "..."]
+            [:T :Intensive :dbl :CCC :PresClass "-t-daabiil-"]
+            [:T :Intensive :dgy :CCY :AoristClass "-t-daagi-"]
+            [:T :Intensive :dgy :CCY :ModClass "-t-daaga-"]
+            [:T :Intensive :dgy :CCY :NegClass "-t-daagi-"]
+            [:T :Intensive :dgy :CCY :PartClass "?at-daag(aa)y"]
+            [:T :Intensive :dgy :CCY :PastClass "..."]
+            [:T :Intensive :dgy :CCY :PresClass "-t-daagi- "]
+            [:T :Intensive :liw :CVC :AoristClass "..."]
+            [:T :Intensive :liw :CVC :ModClass "..."]
+            [:T :Intensive :liw :CVC :NegClass "..."]
+            [:T :Intensive :liw :CVC :PartClass "..."]
+            [:T :Intensive :liw :CVC :PastClass "..."]
+            [:T :Intensive :liw :CVC :PresClass "..."]
+            [:T :Simple :dbl :CCC :AoristClass "-t-dibil-"]
+            [:T :Simple :dbl :CCC :ModClass "-t-dibil-"]
+            [:T :Simple :dbl :CCC :NegClass "-t-dabiil-"]
+            [:T :Simple :dbl :CCC :PartClass "?at-dab[aa]l-"]
+            [:T :Simple :dbl :CCC :PastClass "-t-dabaal-"]
+            [:T :Simple :dbl :CCC :PresClass "-t-dabiil- "]
+            [:T :Simple :dgy :CCY :AoristClass "-t-dig-"]
+            [:T :Simple :dgy :CCY :ModClass "-t-diga"]
+            [:T :Simple :dgy :CCY :NegClass "-t-dagi-"]
+            [:T :Simple :dgy :CCY :PartClass "?at-dag(aa)y"]
+            [:T :Simple :dgy :CCY :PastClass "-t-dagaay-"]
+            [:T :Simple :dgy :CCY :PresClass "-t-dagi-"]
+            [:T :Simple :liw :CVC :AoristClass "-t-uu-liw-"]
+            [:T :Simple :liw :CVC :ModClass "-t-uu-liw-"]
+            [:T :Simple :liw :CVC :NegClass "-t-oo-liiw-"]
+            [:T :Simple :liw :CVC :PartClass "?at-oo-laaw-"]
+            [:T :Simple :liw :CVC :PastClass "-t-oo-laaw-"]
+            [:T :Simple :liw :CVC :PresClass "-t-oo-liiw- "]]
+    }
+    {:label "beja_H-VStemDervExx"
+    :common {:morphClass :DERVSTEMFORM,
+            :pdgmType :Structure,
+            :pos :Verb}
+    :terms [[:conjClass :derivedStem :derivedStemAug :lexeme :rootClass :token-note :token] ;; schema
+            [:Prefix :B :Simple :bis :CVC "bury" "bis-"]
+            [:Prefix :B :Simple :dbl :CCC "collect" "dibìl-"]
+            [:Prefix :B :Simple :dgy :CCY "bring back" "digiì-"]
+            [:Prefix :B :Simple :dif :CVC "go away" "díf-"]
+            [:Prefix :B :Simple :dir :CVC "kill" "dir-"]
+            [:Prefix :B :Simple :dlb :CCC "buy" "dilìb-"]
+            [:Prefix :B :Simple :fnk :CCC "bite" "finìk-"]
+            [:Prefix :B :Simple :fry :CCY "give birth" "firiì-"]
+            [:Prefix :B :Simple :ktb :CCC "write" "kitìb-"]
+            [:Prefix :B :Simple :ktm :CCC "arrive" "kitìm-"]
+            [:Prefix :B :Simple :kwbs :CCC "hide" "kwibìs-"]
+            [:Prefix :B :Simple :liw :CVC "burn (trans.)" "liw-"]
+            [:Prefix :B :Simple :min :CVC "shave" "min-"]
+            [:Prefix :B :Simple :mry :CCY "find" "miriì-"]
+            [:Prefix :B :Simple :rib :CVC "refuse" "rib-"]
+            [:Prefix :B :Simple :sfy :CCY "drink milk" "šifiì-"]
+            [:Prefix :M :Intensive :bdn :CCC "be forgotten" "-mee-bdaan-"]
+            [:Prefix :M :Intensive :niy :CVC "be milked" "-mee-niiy-"]
+            [:Prefix :M :Intensive :swy :CCY "help to mix" "-mee-šwaay-"]
+            [:Prefix :R :Simple :dgy :CCY "return (intr.)" "-dge-"]
+            [:Prefix :R :Simple :fif :CVC "boil over" "-faf-"]
+            [:Prefix :R :Simple :gnf :CCC "kneel down" "-gnaf-"]
+            [:Prefix :R :Simple :hmy :CCY "cover oneself " "-hme-"]
+            [:Prefix :R :Simple :liw :CVC "burn oneself" "-law-"]
+            [:Prefix :R :Simple :min :CVC "shave oneself" "-man-"]
+            [:Prefix :R :Simple :mkr :CCC "take advice" "-mkar-"]
+            [:Prefix :R :Simple :sa :CVC "sit (down) " "-sa?-"]
+            [:Prefix :R :Simple :sar :CVC "stay awake" "-sar-"]
+            [:Prefix :R :Simple :sbb :CCC "look at oneself" "-šbab-"]
+            [:Prefix :R :Simple :skt :CCC "choke oneself" "-skat-"]
+            [:Prefix :S :Intensive :dgy :CCY "make ... bring back many" "-s-daag-"]
+            [:Prefix :S :Intensive :dir :CVC "make ... kill many" "-s-daar-"]
+            [:Prefix :S :Intensive :msw :CCC "let ... hear" "-s-maasiw-"]
+            [:Prefix :S :Simple :bis :CVC "cause to bury" "-soo-bis-"]
+            [:Prefix :S :Simple :dbl :CCC "cause to collect" "-s-dabil-"]
+            [:Prefix :S :Simple :dgy :CCY "_NULL" "-s-dag-"]
+            [:Prefix :S :Simple :dif2 :CVC "cause to dye/tan" "-šoo-dif-"]
+            [:Prefix :S :Simple :dir :CVC "make ... kill" "-soo-dir-"]
+            [:Prefix :S :Simple :dmy :CCY "make ... stink " "-š-dam-"]
+            [:Prefix :S :Simple :ktm :CCC "cause to arrive" "-s-katim-"]
+            [:Prefix :S :Simple :liw :CVC "make ... burn" "-soo-liw-"]
+            [:Prefix :S :Simple :rkwy :CCY "make ... fear" "-s-rakw-"]
+            [:Prefix :S :Simple :rsd :CCC "cause to tend cattle " "-š-rašid-"]
+            [:Prefix :S :Simple :sbb :CCC "let ... look at" "-š-šabib-"]
+            [:Prefix :S :Simple :sgy :CCY "make ... do wrong" "-š-šagw-"]
+            [:Prefix :SM :Intensive :bis :CVC "help to bury, bury ... together" "-moo-baas-"]
+            [:Prefix :SM :Intensive :dgy :CCY "help to bring back" "-m-dagaay-"]
+            [:Prefix :SM :Intensive :dir :CVC "kill one another" "-moo-daar-"]
+            [:Prefix :SM :Intensive :dlb :CCC "buy ... together" "-m-dalaab-"]
+            [:Prefix :SM :Intensive :gid :CVC "throw at one another" "-moo-gaad-"]
+            [:Prefix :SM :Intensive :min :CVC "shave one another" "-moo-maan-"]
+            [:Prefix :SM :Intensive :rgg :CCC "help to drive away " "-m-ragaag-"]
+            [:Prefix :SM :Intensive :tib :CVC "help to fill" "-moo-taab-"]
+            [:Prefix :SS :Simple :bis :CVC "see that s.o. has s.th. buried" "-sisoo-bis-"]
+            [:Prefix :SS :Simple :dbl :CCC "see that s.o. has s.th. collected, see that s.o. makes s.o. collect s.th. " "-sis-dabil-"]
+            [:Prefix :SS :Simple :dgy :CCY "see that s.o makes s.o. bring s.th. back " "-sis-dag-"]
+            [:Prefix :SS :Simple :dif2 :CVC "see that s.o. has s.th. dyed " "-šišoo-dif-"]
+            [:Prefix :T :Intensive :bis :CVC "be buried" "-too-baas-"]
+            [:Prefix :T :Intensive :dbl :CCC "be collected-2" "-t-dabaal-"]
+            [:Prefix :T :Intensive :dgy :CCY "be brought back" "-t-dagaay-"]
+            [:Prefix :T :Intensive :dif2 :CVC "be dyed, tanned (see fn. 29) " "-too-daaf-"]
+            [:Prefix :T :Intensive :dir :CVC "be killed" "-too-daar-"]
+            [:Prefix :T :Intensive :frk :CCC "be dug" "-t-faraak-"]
+            [:Prefix :T :Intensive :fry :CCY "be born" "-t-faraay-"]
+            [:Prefix :T :Intensive :hby :CCY "be forbidden, prevented" "-t-habaay-"]
+            [:Prefix :T :Intensive :khn :CCC "be loved " "-t-kahaan-"]
+            [:Prefix :T :Intensive :ktb :CCC "be written " "-t-kataab-"]
+            [:Prefix :T :Intensive :min :CVC "be shaved" "-too-maan-"]
+            [:Prefix :T :Intensive :sgwd :CCC "be washed-3" "-š-t-agwaad-"]
+            [:Prefix :T :Intensive :sik :CVC "be hunted" "-too-šaak-"]
+            [:Suffix :B :Simple :ad :Invar "tremble" "?ad-"]
+            [:Suffix :B :Simple :doob :Invar "marry" "doob-"]
+            [:Suffix :B :Simple :gwa :Invar "drink" "gwa?-"]
+            [:Suffix :B :Simple :kileew :Invar "guard, take prisoner" "kileew-"]
+            [:Suffix :B :Simple :nuun :Invar "hand over" "nuun-"]
+            [:Suffix :B :Simple :raat :Invar "ask" "raat-"]
+            [:Suffix :B :Simple :rih :Invar "see" "rih-"]
+            [:Suffix :B :Simple :suum :Invar "enter" "šuum-"]
+            [:Suffix :B :Simple :tam :Invar "eat" "tam-"]
+            [:Suffix :M :Simple :eegrim :Invar "turn grey" "?eegrim-am-"]
+            [:Suffix :M :Simple :fid :Invar "blow one's nose" "fid-am-"]
+            [:Suffix :M :Simple :hug :Invar "be ground" "hug-am-"]
+            [:Suffix :M :Simple :raat :Invar "be asked, ask oneself" "raat-am-"]
+            [:Suffix :M :Simple :reeh :Invar "rest oneself, be made at ease" "reeh-am-"]
+            [:Suffix :M :Simple :tam :Invar "be eaten" "tam-am-"]
+            [:Suffix :S :Simple :as :Invar "make ... shut" "?as-is-"]
+            [:Suffix :S :Simple :hamas :Invar "blind" "hamašee-š-"]
+            [:Suffix :S :Simple :ibaab :Invar "send on a journey" "?ibaab-s-"]
+            [:Suffix :S :Simple :kadaw :Invar "jingle, rattle (tr.)" "kadaw-š-"]
+            [:Suffix :S :Simple :oos :Invar "make ... urinate" "00s-is-"]
+            [:Suffix :S :Simple :rih :Invar "make ... see show" "rih-is-"]
+            [:Suffix :S :Simple :tam :Invar "feed" "tam-s-"]
+            [:Suffix :SM :Intensive :adum :Invar "speak with one another" "?adum-sam-"]
+            [:Suffix :SM :Intensive :doob :Invar "run together" "daab-sam-"]
+            [:Suffix :SM :Intensive :tam :Invar "eat one another, eat together" "tam-sam-"]
+            [:Suffix :SM :Intensive :yak :Invar "rise up against one another" "yak-sam-"]
+            [:Suffix :SS :Simple :hamasee :Invar "cause to blind" "hamašee-šiiš-"]
+            [:Suffix :SS :Simple :tam :Invar "cause to feed" "tam-siis-"]]
+    }
+    {:label "beja_H-VStemFormationTense"
+    :common {:derivedStem :B,
+            :lexeme :dbl,
+            :pdgmType :Structure,
+            :pos :Verb,
+            :formType :Stem}
+    :terms [[:participle :polarity :tam :tamStemClass :number :token] ;; schema
+            [:Conjunctive :Affirmative :NA :PartClass :_NA "dibl-"]
+            [:Conjunctive :Negative :NA :NegClass :_NA "-dabiil-"]
+            [:Future :Affirmative :NA :PartClass :_NA "dibl-"]
+            [:NA :Affirmative :Aorist :AoristClass :_NA "-iidbil-"]
+            [:NA :Affirmative :Imperative :PastClass :_NA "-dbil-"]
+            [:NA :Affirmative :Jussive :ModClass :_NA "-iidbil-"]
+            [:NA :Affirmative :Optative :ModClass :_NA "-iidbil-"]
+            [:NA :Affirmative :Past :PastClass :_NA "-dbil-"]
+            [:NA :Affirmative :Present :PresClass :Plural "-eedbil-"]
+            [:NA :Affirmative :Present :PresSgClass :Singular "-danbiil-"]
+            [:NA :Negative :Imperative :NegClass :_NA "-dabiil-"]
+            [:NA :Negative :Optative :NegClass :_NA "-dabiil-"]
+            [:NA :Negative :Present :PastClass :_NA "-dbil-"]
+            [:Past :Affirmative :NA :PartClass :_NA "dibl-"]
+            [:Present :Affirmative :NA :PartClass :_NA "dibl-"]
+            [:Present :Negative :NA :NegClass :_NA "-dabiil-"]]
+    }
+    {:label "beja_H-VSuffAffAor"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Aorist}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "tam-ì"]
+            [:Singular :Person2 :Masc "tam-tii-`a"]
+            [:Singular :Person2 :Fem "tam-tii-`"]
+            [:Singular :Person3 :Masc "tam-ì"]
+            [:Singular :Person3 :Fem "tam-tì"]
+            [:Plural :Person1 :Common "tam-nì"]
+            [:Plural :Person2 :Common "tam-tiìna"]
+            [:Plural :Person3 :Common "tam-iìn"]]
+    }
+    {:label "beja_H-VSuffAffImprtv"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :person :Person2,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "tam-àa"]
+            [:Singular :Fem "tam-ìi"]
+            [:Plural :Common "tam-aa-`na"]]
+    }
+    {:label "beja_H-VSuffAffOpt"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "bà-tam-ì"]
+            [:Singular :Person2 :Masc "bà-tam-tii-`a"]
+            [:Singular :Person2 :Fem "bà-tam-tii-`"]
+            [:Singular :Person3 :Masc "bà-tam-ì"]
+            [:Singular :Person3 :Fem "bà-tam-tì"]
+            [:Plural :Person1 :Common "bà-tam-nì"]
+            [:Plural :Person2 :Common "bà-tam-tiìna"]
+            [:Plural :Person3 :Common "bà-tam-iìn"]]
+    }
+    {:label "beja_H-VSuffAffPast"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Past}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "tam-àn"]
+            [:Singular :Person2 :Masc "tam-taa-`"]
+            [:Singular :Person2 :Fem "tam-taa-`i"]
+            [:Singular :Person3 :Masc "tam-yà"]
+            [:Singular :Person3 :Fem "tam-tà"]
+            [:Plural :Person1 :Common "tam-nà"]
+            [:Plural :Person2 :Common "tam-taàna"]
+            [:Plural :Person3 :Common "tam-yaàn"]]
+    }
+    {:label "beja_H-VSuffAffPres"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "tam-àní"]
+            [:Singular :Person2 :Masc "tam-tinii-`a"]
+            [:Singular :Person2 :Fem "tam-tinii-`"]
+            [:Singular :Person3 :Masc "tam-íiní"]
+            [:Singular :Person3 :Fem "tam-tíní"]
+            [:Plural :Person1 :Common "tam-này"]
+            [:Plural :Person2 :Common "tam-teéna"]
+            [:Plural :Person3 :Common "tam-eén"]]
+    }
+    {:label "beja_H-VSuffNegImprtv"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :person :Person2,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Imperative}
+    :terms [[:number :gender :token] ;; schema
+            [:Singular :Masc "b-àa-tam-aa-`"]
+            [:Singular :Fem "b-íi-tam-a-`y"]
+            [:Plural :Common "b-àa-tam-aa-`na"]]
+    }
+    {:label "beja_H-VSuffNegOpt"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Optative}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "b-aa-tam-ày"]
+            [:Singular :Person2 :Masc "bi-t-tam-ay-`a"]
+            [:Singular :Person2 :Fem "bi-t-tam-ay-`"]
+            [:Singular :Person3 :Masc "b-ii-tam-ày"]
+            [:Singular :Person3 :Fem "bi-t-tam-ày"]
+            [:Plural :Person1 :Common "bi-n-tam-ày"]
+            [:Plural :Person2 :Common "bi-t-tam-ay-`na"]
+            [:Plural :Person3 :Common "b-ii-tam-ay-`na"]]
+    }
+    {:label "beja_H-VSuffNegPres"
+    :common {:conjClass :Suffix,
+            :lexeme :tam,
+            :polarity :Negative,
+            :pos :Verb,
+            :tam :Present}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "kà-tam-àn"]
+            [:Singular :Person2 :Masc "kà-tam-taa-`"]
+            [:Singular :Person2 :Fem "kà-tam-taa-`i"]
+            [:Singular :Person3 :Masc "kà-tam-yà"]
+            [:Singular :Person3 :Fem "kà-tam-tà"]
+            [:Plural :Person1 :Common "kà-tam-nà"]
+            [:Plural :Person2 :Common "kà-tam-taàna"]
+            [:Plural :Person3 :Common "kà-tam-yaàn"]]
+    }
+]
+:muterms [
+    {:label "beja_H-NPluralFormation"
+    :common {:morphClass :PLMARK,
+            :pdgmType :PluralFormation,
+            :pos :Noun}
+    :terms [[:lexeme :pluralClass :token] ;; schema
+            [:ab :Pl_A "?àb => ?abà"]
+            [:baaba :Pl_C "baabà => baabà"]
+            [:bikkaar :Pl_B "bikkàar => bikkàr"]
+            [:bít :Pl_A "bít => bità"]
+            [:dírim :Pl_A "dírim => dirmà"]
+            [:gaw :Pl_A "gàw => gawà"]
+            [:ginuuf :Pl_B "ginuúf => ginúf"]
+            [:heelay :Pl_A "heèlay => heelayà"]
+            [:huus :Pl_A "huus => huusà"]
+            [:kaam :Pl_B "kaàm => kàm"]
+            [:kitaab :Pl_B "kitaàb => kitàb"]
+            [:kwa :Pl_C "kwà => kwà"]
+            [:miitaat :Pl_B "miitaàt => miitàt"]
+            [:nde :Pl_C "[n]dé => [n]dè"]
+            [:ragad :Pl_A "ragàd => ragadà "]
+            [:san :Pl_A "sàn => sanà"]
+            [:yaas :Pl_B "yàas => yàs"]]
     }
     {:label "beja_H-P3sgProDialectDist"
     :common {:pdgmType :Structure,
-	    :proClass :ProComp,
-	    :pos :Pronoun
-             :person :Person3}
-    :terms [[:case, :langVar, :number, :token]  ;; schema
-	    [:Object, :Arteiga, :Singular, "..."],
-	    [:Object, :Bishari, :Singular, "-[h]ooh"],
-	    [:Object, :Arteiga, :Plural, "..."],
-	    [:Possessive, :Arteiga, :Plural, "-`hina"],
-	    [:Possessive, :Hadendowa, :Singular, "..."],
-	    [:Possessive, :Bishari, :Singular, "- h"],
-	    [:Object, :Arteiga, :Singular, "Halanga"],
-	    [:Object, :Bishari, :Plural, "-[h]oohna"],
-	    [:Possessive, :Hadendowa, :Plural, "-  / -hna"],
-	    [:Object, :Arteiga, :Plural, "Halanga"],
-	    [:Possessive, :Arteiga, :Plural, "Halanga"],
-	    [:Possessive, :Arteiga, :Singular, "..."],
-	    [:Possessive, :Bishari, :Plural, "- hna"],
-	    [:Object, :Hadendowa, :Singular, "..."],
-	    [:Object, :Hadendowa, :Plural, "..."],
-	    [:Possessive, :Arteiga, :Singular, "Halanga"]]
+            :proClass :ProComp,
+            :pos :Pronoun,
+            :person :Person3}
+    :terms [[:case :langVar :number :token] ;; schema
+            [:Object :Arteiga :Singular "..."]
+            [:Object :Arteiga :Singular "Halanga"]
+            [:Object :Arteiga :Plural "..."]
+            [:Object :Arteiga :Plural "Halanga"]
+            [:Object :Bishari :Singular "-[h]ooh"]
+            [:Object :Bishari :Plural "-[h]oohna"]
+            [:Object :Hadendowa :Singular "..."]
+            [:Object :Hadendowa :Plural "..."]
+            [:Possessive :Arteiga :Singular "..."]
+            [:Possessive :Arteiga :Singular "Halanga"]
+            [:Possessive :Arteiga :Plural "-`hina"]
+            [:Possessive :Arteiga :Plural "Halanga"]
+            [:Possessive :Bishari :Singular "- h"]
+            [:Possessive :Bishari :Plural "- hna"]
+            [:Possessive :Hadendowa :Singular "..."]
+            [:Possessive :Hadendowa :Plural "-  / -hna"]]
+    }
+    {:label "beja_H-PDefMarker"
+    :common {:pos :Pronoun,
+            :person :Person3,
+            :proClass :DefMarker}
+    :terms [[:case :defClass :number :gender :token] ;; schema
+            [:Nom_obj :DefClass2 :Singular :Masc "wi-"]
+            [:Nom_obj :DefClass2 :Singular :Fem "ti-"]
+            [:Nom_obj :DefClass2 :Plural :Masc "yi-"]
+            [:Nom_obj :DefClass2 :Plural :Fem "ti-"]
+            [:Nom_obj :DefClass3 :Singular :Masc "?i-"]
+            [:Nom_obj :DefClass3 :Singular :Fem "ti-"]
+            [:Nom_obj :DefClass3 :Plural :Masc "?i-"]
+            [:Nom_obj :DefClass3 :Plural :Fem "ti-"]
+            [:Object :DefClass1 :Singular :Masc "?oo-"]
+            [:Object :DefClass1 :Singular :Fem "too-"]
+            [:Object :DefClass1 :Plural :Masc "?ee-"]
+            [:Object :DefClass1 :Plural :Fem "tee-"]
+            [:Subject :DefClass1 :Singular :Masc "?uu-"]
+            [:Subject :DefClass1 :Singular :Fem "tuu-"]
+            [:Subject :DefClass1 :Plural :Masc "?aa-"]
+            [:Subject :DefClass1 :Plural :Fem "taa-"]]
+    }
+    {:label "beja_H-PDem"
+    :common {:person :Person3,
+            :pos :Pronoun,
+            :proClass :Demonstrative}
+    :terms [[:case :deixis :number :gender :token] ;; schema
+            [:Object :Far :Singular :Masc "beèb"]
+            [:Object :Far :Singular :Fem "beèt"]
+            [:Object :Far :Plural :Masc "baliíb"]
+            [:Object :Far :Plural :Fem "baliít"]
+            [:Object :Near :Singular :Masc "?oón"]
+            [:Object :Near :Singular :Fem "toón"]
+            [:Object :Near :Plural :Masc "?eèn"]
+            [:Object :Near :Plural :Fem "teèn"]
+            [:Subject :Far :Singular :Masc "beèn"]
+            [:Subject :Far :Singular :Fem "beèt"]
+            [:Subject :Far :Plural :Masc "baliín"]
+            [:Subject :Far :Plural :Fem "baliít"]
+            [:Subject :Near :Singular :Masc "?uún"]
+            [:Subject :Near :Singular :Fem "tuún"]
+            [:Subject :Near :Plural :Masc "?aàn"]
+            [:Subject :Near :Plural :Fem "taàn"]]
+    }
+    {:label "beja_H-PInd"
+    :common {:pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:case :number :person :gender :token] ;; schema
+            [:Object :Singular :Person1 :Common "?aneè-b"]
+            [:Object :Singular :Person2 :Masc "bar-oó-k"]
+            [:Object :Singular :Person2 :Fem "ba[r]-t-oó-k"]
+            [:Object :Singular :Person3 :Masc "bar-oó"]
+            [:Object :Singular :Person3 :Fem "ba[r]-t-oó"]
+            [:Object :Plural :Person1 :Common "hinìn"]
+            [:Object :Plural :Person2 :Masc "bar-eé-k"]
+            [:Object :Plural :Person2 :Fem "ba[r]-t-eé-k"]
+            [:Object :Plural :Person3 :Masc "bar-eé"]
+            [:Object :Plural :Person3 :Fem "ba[r]-t-eé"]
+            [:Subject :Singular :Person1 :Common "?anè"]
+            [:Subject :Singular :Person2 :Masc "bar-uú-k"]
+            [:Subject :Singular :Person2 :Fem "ba[r]-t-uú-k"]
+            [:Subject :Singular :Person3 :Masc "bar-uú"]
+            [:Subject :Singular :Person3 :Fem "ba[r]-t-uú"]
+            [:Subject :Plural :Person1 :Common "hinìn"]
+            [:Subject :Plural :Person2 :Masc "bar-aá-k"]
+            [:Subject :Plural :Person2 :Fem "ba[r]-t-aá-k"]
+            [:Subject :Plural :Person3 :Masc "bar-aá"]
+            [:Subject :Plural :Person3 :Fem "ba[r]-t-aá"]]
+    }
+    {:label "beja_H-PPossObj"
+    :common {:pos :Pronoun,
+            :proClass :PossObj}
+    :terms [[:case :number :person :token] ;; schema
+            [:Object :Singular :Person1 "-heèb"]
+            [:Object :Singular :Person2 "-hook"]
+            [:Object :Singular :Person3 "..."]
+            [:Object :Plural :Person1 "-hoon"]
+            [:Object :Plural :Person2 "-hookna"]
+            [:Object :Plural :Person3 "..."]
+            [:Possessive :Singular :Person1 "..."]
+            [:Possessive :Singular :Person2 "-‘k"]
+            [:Possessive :Singular :Person3 "..."]
+            [:Possessive :Plural :Person1 "-‘n"]
+            [:Possessive :Plural :Person2 "-‘kna"]
+            [:Possessive :Plural :Person3 "-`hina"]]
+    }
+    {:label "beja_H-PPostposition"
+    :common {:morphClass :POSTPOSITION,
+            :pos :Noun}
+    :terms [[:case :postpositionClass :token] ;; schema
+            [:Ablative :Pp_A "..."]
+            [:Ablative :Pp_B "-s-"]
+            [:Equative :Pp_A "-`t"]
+            [:Equative :Pp_B "- t-"]
+            [:Locative :Pp_A "-`b"]
+            [:Locative :Pp_B "..."]]
     }
     {:label "beja_H-VSubjMarkers"
     :common {:morphClass :SUBJMARK,
-	    :pos :Verb,
-	    :formType :Affix}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Masc, :Singular, :Person2, "ti-~ -Ø-/-t- + -`a"],
-	    [:Common, :Plural, :Person3, "?i-/-y- + -`n(a)"],
-	    [:Fem, :Singular, :Person2, "ti-~ -Ø-/-t- + -`i"],
-	    [:Common, :Plural, :Person1, "ni-/-n-"],
-	    [:Fem, :Singular, :Person3, "ti-~ -Ø-/-t-"],
-	    [:Common, :Singular, :Person1, "?a- ~ -Ø-"],
-	    [:Masc, :Singular, :Person3, "?i-~ -Ø-/-y-"],
-	    [:Common, :Plural, :Person2, "ti-/-t- + -`na"]]
+            :pos :Verb,
+            :formType :Affix}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "?a- ~ -Ø-"]
+            [:Singular :Person2 :Masc "ti-~ -Ø-/-t- + -`a"]
+            [:Singular :Person2 :Fem "ti-~ -Ø-/-t- + -`i"]
+            [:Singular :Person3 :Masc "?i-~ -Ø-/-y-"]
+            [:Singular :Person3 :Fem "ti-~ -Ø-/-t-"]
+            [:Plural :Person1 :Common "ni-/-n-"]
+            [:Plural :Person2 :Common "ti-/-t- + -`na"]
+            [:Plural :Person3 :Common "?i-/-y- + -`n(a)"]]
     }
-    {:label "beja_H-PDefMarker"
-    :common {
-	    :pos :Pronoun,
-             :person :Person3,
-	    :proClass :DefMarker}
-    :terms [[:case, :defClass, :gender, :number, :token]  ;; schema
-	    [:Nom_obj, :DefClass3, :Masc, :Plural, "?i-"],
-	    [:Nom_obj, :DefClass3, :Fem, :Plural, "ti-"],
-	    [:Nom_obj, :DefClass3, :Fem, :Singular, "ti-"],
-	    [:Nom_obj, :DefClass2, :Fem, :Plural, "ti-"],
-	    [:Object, :DefClass1, :Fem, :Plural, "tee-"],
-	    [:Object, :DefClass1, :Masc, :Plural, "?ee-"],
-	    [:Nom_obj, :DefClass2, :Fem, :Singular, "ti-"],
-	    [:Nom_obj, :DefClass2, :Masc, :Plural, "yi-"],
-	    [:Nom_obj, :DefClass2, :Masc, :Singular, "wi-"],
-	    [:Subject, :DefClass1, :Masc, :Plural, "?aa-"],
-	    [:Nom_obj, :DefClass3, :Masc, :Singular, "?i-"],
-	    [:Subject, :DefClass1, :Fem, :Plural, "taa-"],
-	    [:Object, :DefClass1, :Masc, :Singular, "?oo-"],
-	    [:Object, :DefClass1, :Fem, :Singular, "too-"],
-	    [:Subject, :DefClass1, :Masc, :Singular, "?uu-"],
-	    [:Subject, :DefClass1, :Fem, :Singular, "tuu-"]]
-    }
-    {:label "beja_H-NPluralFormation"
-    :common {:morphClass :PLMARK,
-	    :pdgmType :PluralFormation,
-	    :pos :Noun}
-    :terms [[:pluralClass, :token, :lexeme]  ;; schema
-	    [:Pl_A, "sàn => sanà", :san],
-	    [:Pl_B, "miitaàt => miitàt", :miitaat],
-	    [:Pl_A, "ragàd => ragadà ", :ragad],
-	    [:Pl_B, "bikkàar => bikkàr", :bikkaar],
-	    [:Pl_B, "yàas => yàs", :yaas],
-	    [:Pl_A, "bít => bità", :bít],
-	    [:Pl_B, "kitaàb => kitàb", :kitaab],
-	    [:Pl_A, "dírim => dirmà", :dírim],
-	    [:Pl_A, "huus => huusà", :huus],
-	    [:Pl_B, "ginuúf => ginúf", :ginuuf],
-	    [:Pl_C, "kwà => kwà", :kwa],
-	    [:Pl_C, "[n]dé => [n]dè", :nde],
-	    [:Pl_A, "gàw => gawà", :gaw],
-	    [:Pl_A, "heèlay => heelayà", :heelay],
-	    [:Pl_B, "kaàm => kàm", :kaam],
-	    [:Pl_C, "baabà => baabà", :baaba],
-	    [:Pl_A, "?àb => ?abà", :ab]]
-    }
-    {:label "beja_H-PPossObj"
-    :common {
-	    :pos :Pronoun,
-	    :proClass :PossObj}
-    :terms [[:case, :number, :person, :token]  ;; schema
-	    [:Possessive, :Plural, :Person3, "-`hina"],
-	    [:Object, :Plural, :Person1, "-hoon"],
-	    [:Object, :Plural, :Person3, "..."],
-	    [:Possessive, :Plural, :Person1, "-‘n"],
-	    [:Possessive, :Singular, :Person1, "..."],
-	    [:Object, :Singular, :Person1, "-heèb", "Reinisch [1893:109"],
-	    [:Possessive, :Singular, :Person2, "-‘k"],
-	    [:Possessive, :Plural, :Person2, "-‘kna"],
-	    [:Object, :Singular, :Person2, "-hook"],
-	    [:Possessive, :Singular, :Person3, "..."],
-	    [:Object, :Plural, :Person2, "-hookna"],
-	    [:Object, :Singular, :Person3, "..."]]
-    }
-    {:label "beja_H-PInd"
-    :common {
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:case, :gender, :number, :person, :token]  ;; schema
-	    [:Object, :Common, :Plural, :Person1, "hinìn"],
-	    [:Object, :Masc, :Singular, :Person2, "bar-oó-k"],
-	    [:Object, :Fem, :Singular, :Person2, "ba[r]-t-oó-k"],
-	    [:Subject, :Masc, :Singular, :Person3, "bar-uú"],
-	    [:Subject, :Masc, :Singular, :Person2, "bar-uú-k"],
-	    [:Object, :Fem, :Singular, :Person3, "ba[r]-t-oó"],
-	    [:Subject, :Masc, :Plural, :Person2, "bar-aá-k"],
-	    [:Subject, :Fem, :Plural, :Person3, "ba[r]-t-aá"],
-	    [:Object, :Fem, :Plural, :Person3, "ba[r]-t-eé"],
-	    [:Object, :Masc, :Plural, :Person2, "bar-eé-k"],
-	    [:Subject, :Masc, :Plural, :Person3, "bar-aá"],
-	    [:Subject, :Fem, :Singular, :Person2, "ba[r]-t-uú-k"],
-	    [:Subject, :Common, :Plural, :Person1, "hinìn"],
-	    [:Object, :Masc, :Plural, :Person3, "bar-eé"],
-	    [:Subject, :Common, :Singular, :Person1, "?anè"],
-	    [:Object, :Fem, :Plural, :Person2, "ba[r]-t-eé-k"],
-	    [:Subject, :Fem, :Plural, :Person2, "ba[r]-t-aá-k"],
-	    [:Object, :Masc, :Singular, :Person3, "bar-oó"],
-	    [:Object, :Common, :Singular, :Person1, "?aneè-b"],
-	    [:Subject, :Fem, :Singular, :Person3, "ba[r]-t-uú"]]
-    }
-    {:label "beja_H-PDem"
-    :common {:person :Person3
-	    :pos :Pronoun,
-	    :proClass :Demonstrative}
-    :terms [[:case, :deixis, :gender, :number, :token]  ;; schema
-	    [:Subject, :Near, :Fem, :Singular, "tuún"],
-	    [:Object, :Near, :Fem, :Plural, "teèn"],
-	    [:Subject, :Far, :Fem, :Plural, "baliít"],
-	    [:Subject, :Far, :Fem, :Singular, "beèt"],
-	    [:Object, :Far, :Fem, :Singular, "beèt"],
-	    [:Subject, :Near, :Masc, :Plural, "?aàn"],
-	    [:Subject, :Far, :Masc, :Plural, "baliín"],
-	    [:Object, :Near, :Fem, :Singular, "toón"],
-	    [:Object, :Near, :Masc, :Plural, "?eèn"],
-	    [:Object, :Near, :Masc, :Singular, "?oón"],
-	    [:Subject, :Near, :Masc, :Singular, "?uún"],
-	    [:Subject, :Far, :Masc, :Singular, "beèn"],
-	    [:Object, :Far, :Fem, :Plural, "baliít"],
-	    [:Object, :Far, :Masc, :Singular, "beèb"],
-	    [:Subject, :Near, :Fem, :Plural, "taàn"],
-	    [:Object, :Far, :Masc, :Plural, "baliíb"]]
-    }}
+]
 }

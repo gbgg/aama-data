@@ -25,60 +25,63 @@
 }
 :lexemes {
 }
-:lxterms #{
-           {:label "Egyptian_Verb_to_be_added_to_datastore"
-           :common {:pos :Verb}
-           :terms [[:status :person :token]
-                   [:NA :Not_in_datastore "not attested"]]}}
-:muterms #{
+:lxterms [
+    {:label "Egyptian_Verb_to_be_added_to_datastore"
+    :common {:pos :Verb}
+    :terms [[:status :person :token] ;; schema
+            [:NA :Not_in_datastore "not attested"]]
+    }
+]
+:muterms [
     {:label "egyptian_M-PDep"
     :note "Alan Gardiner,Egyptian Grammar,3rd Edition (Oxford:Griffith Institute,2001),§43. James E. Hoch,Middle Egyptian Grammar (Mississauga:Benben Publications,1997),§39."
     :common {:morpheme :PRODEPENDENT,
-	    :pos :Pronoun,
-	    :proClass :Dependent}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "wἰ"],
-	    [:Masc, :Singular, :Person2, "ṯw ~ tw"],
-	    [:Fem, :Singular, :Person2, "ṯn ~ tn"],
-	    [:Masc, :Singular, :Person3, "sw"],
-	    [:Fem, :Singular, :Person3, "sy ~ s ~ st"],
-	    [:Common, :Plural, :Person1, "neut"],
-	    [:Common, :Plural, :Person2, "ṯn ~ tn"],
-	    [:Common, :Plural, :Person3, "sn"]]
-    }
-    {:label "egyptian_M-PSuff"
-    :note "Alan Gardiner,Egyptian Grammar,3rd Edition (Oxford:Griffith Institute,2001),§34. James E. Hoch,Middle Egyptian Grammar (Mississauga:Benben Publications,1997),§23. Note existence of the dual set of suffix pronouns."
-    :common {:morpheme :PROSUFF,
-	    :pos :Pronoun,
-	    :proClass :Suffix}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "⊤"],
-	    [:Masc, :Singular, :Person2, "-k"],
-	    [:Fem, :Singular, :Person2, "-ṯ ~ -t"],
-	    [:Masc, :Singular, :Person3, "-f"],
-	    [:Fem, :Singular, :Person3, "-s"],
-	    [:Common, :Dual, :Person1, "-ny"],
-	    [:Common, :Dual, :Person2, "-ṯny"],
-	    [:Common, :Dual, :Person3, "-sny"],
-	    [:Masc, :Dual, :Person3, "-fy"],
-	    [:Fem, :Dual, :Person3, "-sy"],
-	    [:Common, :Plural, :Person1, "-n"],
-	    [:Common, :Plural, :Person2, "-ṯn ~ -tn"],
-	    [:Common, :Plural, :Person3, "-sn"]]
+            :pos :Pronoun,
+            :proClass :Dependent}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "wἰ"]
+            [:Singular :Person2 :Masc "ṯw ~ tw"]
+            [:Singular :Person2 :Fem "ṯn ~ tn"]
+            [:Singular :Person3 :Masc "sw"]
+            [:Singular :Person3 :Fem "sy ~ s ~ st"]
+            [:Plural :Person1 :Common "neut"]
+            [:Plural :Person2 :Common "ṯn ~ tn"]
+            [:Plural :Person3 :Common "sn"]]
     }
     {:label "egyptian_M-PInd"
     :note "Alan Gardiner,Egyptian Grammar,3rd Edition (Oxford:Griffith Institute,2001),§64. James E. Hoch,Middle Egyptian Grammar (Mississauga:Benben Publications,1997),§56."
     :common {:morpheme :PROIND,
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ἰnk"],
-	    [:Masc, :Singular, :Person2, "ntk"],
-	    [:Fem, :Singular, :Person2, "ntṯ"],
-	    [:Masc, :Singular, :Person3, "ntf"],
-	    [:Fem, :Singular, :Person3, "nts"],
-	    [:Common, :Plural, :Person1, "ἰnn"],
-	    [:Common, :Plural, :Person2, "ntṯn ~ nttn"],
-	    [:Common, :Plural, :Person3, "ntsn"]]
-    }}
+            :pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ἰnk"]
+            [:Singular :Person2 :Masc "ntk"]
+            [:Singular :Person2 :Fem "ntṯ"]
+            [:Singular :Person3 :Masc "ntf"]
+            [:Singular :Person3 :Fem "nts"]
+            [:Plural :Person1 :Common "ἰnn"]
+            [:Plural :Person2 :Common "ntṯn ~ nttn"]
+            [:Plural :Person3 :Common "ntsn"]]
+    }
+    {:label "egyptian_M-PSuff"
+    :note "Alan Gardiner,Egyptian Grammar,3rd Edition (Oxford:Griffith Institute,2001),§34. James E. Hoch,Middle Egyptian Grammar (Mississauga:Benben Publications,1997),§23. Note existence of the dual set of suffix pronouns."
+    :common {:morpheme :PROSUFF,
+            :pos :Pronoun,
+            :proClass :Suffix}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "⊤"]
+            [:Singular :Person2 :Masc "-k"]
+            [:Singular :Person2 :Fem "-ṯ ~ -t"]
+            [:Singular :Person3 :Masc "-f"]
+            [:Singular :Person3 :Fem "-s"]
+            [:Plural :Person1 :Common "-n"]
+            [:Plural :Person2 :Common "-ṯn ~ -tn"]
+            [:Plural :Person3 :Common "-sn"]
+            [:Dual :Person1 :Common "-ny"]
+            [:Dual :Person2 :Common "-ṯny"]
+            [:Dual :Person3 :Masc "-fy"]
+            [:Dual :Person3 :Fem "-sy"]
+            [:Dual :Person3 :Common "-sny"]]
+    }
+]
 }

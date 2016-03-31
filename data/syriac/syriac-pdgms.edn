@@ -31,166 +31,169 @@
 }
 :lexemes {
 }
-:lxterms #{
-           {:label "Syriac_Verb_to_be_added_to_datastore"
-           :common {:pos :Verb}
-           :terms [[:status :person :token]
-                   [:NA :Not_in_datastore "not attested"]]}}
-:muterms #{
-    {:label "syriac-PPossClitic"
-    :note "Thackston1999 p. 14;Syriac uses the following set of pronominal enclitics on 1) singular nouns and some prepositions,2) plural nouns and other prepositisions. The forms with singular nouns are also used as infintival objects,though the 1cs suffix becomes –an,the pǝʿal infinitive meqtal becomes meqtǝl- except for infinitives with the 2 plural suffixes which remain meqtal,and the III-weak where meḥzā becomes meḥzǝy- expect for infinitives with the 2 plural suffixes which remain meḥzā:"
-    :common {:case :Genitive,
-	    :morpheme :PROPOSSCLITIC,
-	    :pos :Pronoun,
-	    :proClass :PossClitic}
-    :terms [[:gender, :numHead, :number, :person, :token]  ;; schema
-	    [:Common, :HeadSingular, :Singular, :Person1, "-Ø ~ -i"],
-	    [:Masc, :HeadSingular, :Singular, :Person2, "-āk"],
-	    [:Fem, :HeadSingular, :Singular, :Person2, "-ek"],
-	    [:Masc, :HeadSingular, :Singular, :Person3, "-eh"],
-	    [:Fem, :HeadSingular, :Singular, :Person3, "-āh"],
-	    [:Common, :HeadSingular, :Plural, :Person1, "-an"],
-	    [:Masc, :HeadSingular, :Plural, :Person2, "-ḵon"],
-	    [:Fem, :HeadSingular, :Plural, :Person2, "-ḵēn"],
-	    [:Masc, :HeadSingular, :Plural, :Person3, "-hon"],
-	    [:Fem, :HeadSingular, :Plural, :Person3, "-hēn"],
-	    [:Common, :HeadPlural, :Singular, :Person1, "-ay"],
-	    [:Masc, :HeadPlural, :Singular, :Person2, "-ayk"],
-	    [:Fem, :HeadPlural, :Singular, :Person2, "-ayk"],
-	    [:Masc, :HeadPlural, :Singular, :Person3, "-aw"],
-	    [:Fem, :HeadPlural, :Singular, :Person3, "-ēh"],
-	    [:Common, :HeadPlural, :Plural, :Person1, "-ayn"],
-	    [:Masc, :HeadPlural, :Plural, :Person2, "-ayḵon"],
-	    [:Fem, :HeadPlural, :Plural, :Person2, "-ayḵēn"],
-	    [:Masc, :HeadPlural, :Plural, :Person3, "-ayhon"],
-	    [:Masc, :HeadPlural, :Plural, :Person3, "-ayhēn"]]
+:lxterms [
+    {:label "Syriac_Verb_to_be_added_to_datastore"
+    :common {:pos :Verb}
+    :terms [[:status :person :token] ;; schema
+            [:NA :Not_in_datastore "not attested"]]
     }
+]
+:muterms [
     {:label "syriac-PDem"
     :note "Thackston1999 pp. 29-30;Syriac has two sets of demonstratives,near and far,which serve both as adjectives and pronouns."
     :common {:morpheme :PRODEM,
-	    :pos :Pronoun,
-	    :proClass :Demostrative}
-    :terms [[:deixis, :gender, :number, :token]  ;; schema
-	    [:Near, :Masc, :Singular, "hānā"],
-	    [:Near, :Fem, :Singular, "hādē"],
-	    [:Near, :Masc, :Plural, "hālēn"],
-	    [:Near, :Fem, :Plural, "hālēn"],
-	    [:Far, :Masc, :Singular, "haw"],
-	    [:Far, :Fem, :Singular, "hay"],
-	    [:Far, :Masc, :Plural, "hānon"],
-	    [:Far, :Fem, :Plural, "hānēn"]]
-    }
-    {:label "syriac-PObjCliticImprtv"
-    :note "Thackston1999 p. 89;Syriac uses the following set of pronominal enclitics on imperatives. The environments are as follows:ENV1 = General suffixes with Masculine Singular Imperative forms (added to the form qtol-);ENV2 = General suffixes with Feminine Singular Imperative forms (added to the form qtoli-);ENV3 = General suffixes with Masculine Plural Imperative forms (added to the form qutlu-);ENV4 = General suffixes with Feminine Plural Imperative forms (added to the form qtol-);ENV5 = CCY (III-weak) forms of imperatives:suffixes with Masculine Singular Imperative forms (added to the form qri-);ENV6 = CCY (III-weak) forms of imperatives:suffixes with Feminine Singular Imperative forms (added to the form qrāʾi-);ENV7 = CCY (III-weak) forms of imperatives:suffixes Masculine Plural Imperative forms (added to the form qraʾu-);ENV8 = CCY (III-weak) forms of imperatives:suffixes with Feminine Plural Imperative forms (added to the form qrāyen-);"
-    :common {:case :Accusative,
-	    :morpheme :PROOBJCLITICIMPRTV,
-	    :pos :Pronoun,
-	    :proClass :ObjCliticImprtv}
-    :terms [[:gender, :number, :person, :token, :cliticEnv]  ;; schema
-	    [:Common, :Singular, :Person1, "-ayn", :Env1],
-	    [:Masc, :Singular, :Person3, "-āy", :Env1],
-	    [:Fem, :Singular, :Person3, "-ēh", :Env1],
-	    [:Common, :Plural, :Person1, "-ayn", :Env1],
-	    [:Common, :Singular, :Person1, "-n", :Env2],
-	    [:Masc, :Singular, :Person3, "-w", :Env2],
-	    [:Fem, :Singular, :Person3, "-h", :Env2],
-	    [:Common, :Plural, :Person1, "-n", :Env2],
-	    [:Common, :Singular, :Person1, "-n ~ -nān", :Env3],
-	    [:Masc, :Singular, :Person3, "-Ø ~ -nāy", :Env3],
-	    [:Fem, :Singular, :Person3, "-h ~ -nāh", :Env3],
-	    [:Common, :Plural, :Person1, "-n ~ -nān", :Env3],
-	    [:Common, :Singular, :Person1, "-ān ~ -ēnān", :Env4],
-	    [:Masc, :Singular, :Person3, "-āy ~ -ēnāy", :Env4],
-	    [:Fem, :Singular, :Person3, "-āh ~ -ēnāh", :Env4],
-	    [:Common, :Plural, :Person1, "-ān ~ -ēnān", :Env4],
-	    [:Common, :Singular, :Person1, "-n", :Env5],
-	    [:Masc, :Singular, :Person3, "-w", :Env5],
-	    [:Fem, :Singular, :Person3, "-h", :Env5],
-	    [:Common, :Plural, :Person1, "-n", :Env5],
-	    [:Common, :Singular, :Person1, "-n", :Env6],
-	    [:Masc, :Singular, :Person3, "-w", :Env6],
-	    [:Fem, :Singular, :Person3, "-h", :Env6],
-	    [:Common, :Plural, :Person1, "-n", :Env6],
-	    [:Common, :Singular, :Person1, "-n", :Env7],
-	    [:Masc, :Singular, :Person3, "⊤", :Env7],
-	    [:Fem, :Singular, :Person3, "-h", :Env7],
-	    [:Common, :Plural, :Person1, "-n", :Env7],
-	    [:Common, :Singular, :Person1, "-ān", :Env8],
-	    [:Masc, :Singular, :Person3, "-āy", :Env8],
-	    [:Fem, :Singular, :Person3, "-āh", :Env8],
-	    [:Common, :Plural, :Person1, "-ān", :Env8]]
+            :pos :Pronoun,
+            :proClass :Demostrative}
+    :terms [[:deixis :number :gender :token] ;; schema
+            [:Far :Singular :Masc "haw"]
+            [:Far :Singular :Fem "hay"]
+            [:Far :Plural :Masc "hānon"]
+            [:Far :Plural :Fem "hānēn"]
+            [:Near :Singular :Masc "hānā"]
+            [:Near :Singular :Fem "hādē"]
+            [:Near :Plural :Masc "hālēn"]
+            [:Near :Plural :Fem "hālēn"]]
     }
     {:label "syriac-PInd"
     :note "Thackston1999,p. 28. Independent pronouns in Syriac are used as 1) sentence subjects of verbless sentences and for stressing the pronominal subject of a verb. Whereas Thackston does not indicate initial aleph,the following paradigm as included the aleph in transliteration."
     :common {:morpheme :PROIND,
-	    :pos :Pronoun,
-	    :proClass :Independent}
-    :terms [[:gender, :number, :person, :token]  ;; schema
-	    [:Common, :Singular, :Person1, "ʾenā"],
-	    [:Masc, :Singular, :Person2, "ʾatt"],
-	    [:Fem, :Singular, :Person2, "ʾatt"],
-	    [:Masc, :Singular, :Person3, "hu"],
-	    [:Fem, :Singular, :Person3, "hi"],
-	    [:Common, :Plural, :Person1, "naḥnan ~ ḥnan"],
-	    [:Masc, :Plural, :Person2, "ʾatton"],
-	    [:Fem, :Plural, :Person2, "ʾattēn"],
-	    [:Masc, :Plural, :Person3, "hennon"],
-	    [:Fem, :Plural, :Person3, "hennēn"]]
+            :pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "ʾenā"]
+            [:Singular :Person2 :Masc "ʾatt"]
+            [:Singular :Person2 :Fem "ʾatt"]
+            [:Singular :Person3 :Masc "hu"]
+            [:Singular :Person3 :Fem "hi"]
+            [:Plural :Person1 :Common "naḥnan ~ ḥnan"]
+            [:Plural :Person2 :Masc "ʾatton"]
+            [:Plural :Person2 :Fem "ʾattēn"]
+            [:Plural :Person3 :Masc "hennon"]
+            [:Plural :Person3 :Fem "hennēn"]]
+    }
+    {:label "syriac-PObjCliticImprtv"
+    :note "Thackston1999 p. 89;Syriac uses the following set of pronominal enclitics on imperatives. The environments are as follows:ENV1 = General suffixes with Masculine Singular Imperative forms (added to the form qtol-);ENV2 = General suffixes with Feminine Singular Imperative forms (added to the form qtoli-);ENV3 = General suffixes with Masculine Plural Imperative forms (added to the form qutlu-);ENV4 = General suffixes with Feminine Plural Imperative forms (added to the form qtol-);ENV5 = CCY (III-weak) forms of imperatives:suffixes with Masculine Singular Imperative forms (added to the form qri-);ENV6 = CCY (III-weak) forms of imperatives:suffixes with Feminine Singular Imperative forms (added to the form qrāʾi-);ENV7 = CCY (III-weak) forms of imperatives:suffixes Masculine Plural Imperative forms (added to the form qraʾu-);ENV8 = CCY (III-weak) forms of imperatives:suffixes with Feminine Plural Imperative forms (added to the form qrāyen-);"
+    :common {:case :Accusative,
+            :morpheme :PROOBJCLITICIMPRTV,
+            :pos :Pronoun,
+            :proClass :ObjCliticImprtv}
+    :terms [[:cliticEnv :number :person :gender :token] ;; schema
+            [:Env1 :Singular :Person1 :Common "-ayn"]
+            [:Env1 :Singular :Person3 :Masc "-āy"]
+            [:Env1 :Singular :Person3 :Fem "-ēh"]
+            [:Env1 :Plural :Person1 :Common "-ayn"]
+            [:Env2 :Singular :Person1 :Common "-n"]
+            [:Env2 :Singular :Person3 :Masc "-w"]
+            [:Env2 :Singular :Person3 :Fem "-h"]
+            [:Env2 :Plural :Person1 :Common "-n"]
+            [:Env3 :Singular :Person1 :Common "-n ~ -nān"]
+            [:Env3 :Singular :Person3 :Masc "-Ø ~ -nāy"]
+            [:Env3 :Singular :Person3 :Fem "-h ~ -nāh"]
+            [:Env3 :Plural :Person1 :Common "-n ~ -nān"]
+            [:Env4 :Singular :Person1 :Common "-ān ~ -ēnān"]
+            [:Env4 :Singular :Person3 :Masc "-āy ~ -ēnāy"]
+            [:Env4 :Singular :Person3 :Fem "-āh ~ -ēnāh"]
+            [:Env4 :Plural :Person1 :Common "-ān ~ -ēnān"]
+            [:Env5 :Singular :Person1 :Common "-n"]
+            [:Env5 :Singular :Person3 :Masc "-w"]
+            [:Env5 :Singular :Person3 :Fem "-h"]
+            [:Env5 :Plural :Person1 :Common "-n"]
+            [:Env6 :Singular :Person1 :Common "-n"]
+            [:Env6 :Singular :Person3 :Masc "-w"]
+            [:Env6 :Singular :Person3 :Fem "-h"]
+            [:Env6 :Plural :Person1 :Common "-n"]
+            [:Env7 :Singular :Person1 :Common "-n"]
+            [:Env7 :Singular :Person3 :Masc "⊤"]
+            [:Env7 :Singular :Person3 :Fem "-h"]
+            [:Env7 :Plural :Person1 :Common "-n"]
+            [:Env8 :Singular :Person1 :Common "-ān"]
+            [:Env8 :Singular :Person3 :Masc "-āy"]
+            [:Env8 :Singular :Person3 :Fem "-āh"]
+            [:Env8 :Plural :Person1 :Common "-ān"]]
     }
     {:label "syriac-PObjCliticPerf"
     :note "Thackston1999 p. 34-35;Syriac uses 3 object suffixes for the perfective. The ENVironments are as follows:ENV1 = Used when the suffix is post-consonantal (3ms,3fs,and 1cs perfective forms;3 plural suffix forms use the enclitic pronouns above (-ennon and -ennēn) and are not attached directly to the verb);ENV2 = Used for 3mp perfect,the base of which becomes qatl- in the pǝʿal before the suffix (3 plural suffix forms use the enclitic pronouns above (-ennon and -ennēn) and are not attached directly to the verb);ENV3 = Used for the 3fp perfect,the base of which becomes qatl- in the pǝʿal before the suffix except for the 2 plural forms,where the base stays qtal- (3 plural suffix forms use the enclitic pronouns above (-ennon and -ennēn) and are not attached directly to the verb);ENV4 = Used for the the 2ms,the base of which becomes qtaltā- in the pǝʿal before the suffix (3 plural suffix forms use the enclitic pronouns above (-ennon and -ennēn) and are not attached directly to the verb);ENV5 = Used for the the 2fs,the base of which becomes qtalti- in the pǝʿal before the suffix (3 plural suffix forms use the enclitic pronouns above (-ennon and -ennēn) and are not attached directly to the verb);ENV6 = Used for the the 2mp and 2fp (3 plural suffix forms use the enclitic pronouns above (-ennon and -ennēn) and are not attached directly to the verb);"
     :common {:case :Object,
-	    :morpheme :PROOBJCLITICPERF,
-	    :pos :Pronoun,
-	    :proClass :ObjCliticPerf}
-    :terms [[:gender, :number, :person, :token, :cliticEnv]  ;; schema
-	    [:Common, :Singular, :Person1, "-an", :Env1],
-	    [:Masc, :Singular, :Person2, "⊤", :Env1],
-	    [:Fem, :Singular, :Person2, "-eḵ", :Env1],
-	    [:Masc, :Singular, :Person3, "-eh", :Env1],
-	    [:Fem, :Singular, :Person3, "-āh", :Env1],
-	    [:Common, :Plural, :Person1, "-an", :Env1],
-	    [:Masc, :Plural, :Person2, "-ḵon", :Env1],
-	    [:Fem, :Plural, :Person2, "-ḵēn", :Env1],
-	    [:Masc, :Plural, :Person3, "⊤", :Env1],
-	    [:Fem, :Plural, :Person3, "⊤", :Env1],
-	    [:Common, :Singular, :Person1, "-un", :Env2],
-	    [:Masc, :Singular, :Person2, "-uk", :Env2],
-	    [:Fem, :Singular, :Person2, "-uk", :Env2],
-	    [:Masc, :Singular, :Person3, "-u", :Env2],
-	    [:Fem, :Singular, :Person3, "-uh", :Env2],
-	    [:Common, :Plural, :Person1, "-un", :Env2],
-	    [:Masc, :Plural, :Person2, "-uḵon", :Env2],
-	    [:Fem, :Plural, :Person2, "-uḵēn", :Env2],
-	    [:Masc, :Plural, :Person3, "⊤", :Env2],
-	    [:Fem, :Plural, :Person3, "⊤", :Env2],
-	    [:Common, :Singular, :Person1, "-ān", :Env3],
-	    [:Masc, :Singular, :Person2, "-āk", :Env3],
-	    [:Fem, :Singular, :Person2, "-ek", :Env3],
-	    [:Masc, :Singular, :Person3, "-āy", :Env3],
-	    [:Fem, :Singular, :Person3, "-āh", :Env3],
-	    [:Common, :Plural, :Person1, "-ān", :Env3],
-	    [:Masc, :Plural, :Person2, "-ḵon", :Env3],
-	    [:Fem, :Plural, :Person2, "-ḵēn", :Env3],
-	    [:Masc, :Plural, :Person3, "⊤", :Env3],
-	    [:Fem, :Plural, :Person3, "⊤", :Env3],
-	    [:Common, :Singular, :Person1, "-n", :Env4],
-	    [:Masc, :Singular, :Person3, "-y", :Env4],
-	    [:Fem, :Singular, :Person3, "-h", :Env4],
-	    [:Common, :Plural, :Person1, "-n", :Env4],
-	    [:Masc, :Plural, :Person3, "⊤", :Env4],
-	    [:Fem, :Plural, :Person3, "⊤", :Env4],
-	    [:Common, :Singular, :Person1, "-n", :Env5],
-	    [:Masc, :Singular, :Person3, "-w", :Env5],
-	    [:Fem, :Singular, :Person3, "-h", :Env5],
-	    [:Common, :Plural, :Person1, "-n", :Env5],
-	    [:Masc, :Plural, :Person3, "⊤", :Env5],
-	    [:Fem, :Plural, :Person3, "⊤", :Env5],
-	    [:Common, :Singular, :Person1, "-ān", :Env6],
-	    [:Masc, :Singular, :Person3, "-āy", :Env6],
-	    [:Fem, :Singular, :Person3, "-āh", :Env6],
-	    [:Common, :Plural, :Person1, "-ān", :Env6],
-	    [:Masc, :Plural, :Person3, "⊤", :Env6],
-	    [:Fem, :Plural, :Person3, "⊤", :Env6]]
-    }}
+            :morpheme :PROOBJCLITICPERF,
+            :pos :Pronoun,
+            :proClass :ObjCliticPerf}
+    :terms [[:cliticEnv :number :person :gender :token] ;; schema
+            [:Env1 :Singular :Person1 :Common "-an"]
+            [:Env1 :Singular :Person2 :Masc "⊤"]
+            [:Env1 :Singular :Person2 :Fem "-eḵ"]
+            [:Env1 :Singular :Person3 :Masc "-eh"]
+            [:Env1 :Singular :Person3 :Fem "-āh"]
+            [:Env1 :Plural :Person1 :Common "-an"]
+            [:Env1 :Plural :Person2 :Masc "-ḵon"]
+            [:Env1 :Plural :Person2 :Fem "-ḵēn"]
+            [:Env1 :Plural :Person3 :Masc "⊤"]
+            [:Env1 :Plural :Person3 :Fem "⊤"]
+            [:Env2 :Singular :Person1 :Common "-un"]
+            [:Env2 :Singular :Person2 :Masc "-uk"]
+            [:Env2 :Singular :Person2 :Fem "-uk"]
+            [:Env2 :Singular :Person3 :Masc "-u"]
+            [:Env2 :Singular :Person3 :Fem "-uh"]
+            [:Env2 :Plural :Person1 :Common "-un"]
+            [:Env2 :Plural :Person2 :Masc "-uḵon"]
+            [:Env2 :Plural :Person2 :Fem "-uḵēn"]
+            [:Env2 :Plural :Person3 :Masc "⊤"]
+            [:Env2 :Plural :Person3 :Fem "⊤"]
+            [:Env3 :Singular :Person1 :Common "-ān"]
+            [:Env3 :Singular :Person2 :Masc "-āk"]
+            [:Env3 :Singular :Person2 :Fem "-ek"]
+            [:Env3 :Singular :Person3 :Masc "-āy"]
+            [:Env3 :Singular :Person3 :Fem "-āh"]
+            [:Env3 :Plural :Person1 :Common "-ān"]
+            [:Env3 :Plural :Person2 :Masc "-ḵon"]
+            [:Env3 :Plural :Person2 :Fem "-ḵēn"]
+            [:Env3 :Plural :Person3 :Masc "⊤"]
+            [:Env3 :Plural :Person3 :Fem "⊤"]
+            [:Env4 :Singular :Person1 :Common "-n"]
+            [:Env4 :Singular :Person3 :Masc "-y"]
+            [:Env4 :Singular :Person3 :Fem "-h"]
+            [:Env4 :Plural :Person1 :Common "-n"]
+            [:Env4 :Plural :Person3 :Masc "⊤"]
+            [:Env4 :Plural :Person3 :Fem "⊤"]
+            [:Env5 :Singular :Person1 :Common "-n"]
+            [:Env5 :Singular :Person3 :Masc "-w"]
+            [:Env5 :Singular :Person3 :Fem "-h"]
+            [:Env5 :Plural :Person1 :Common "-n"]
+            [:Env5 :Plural :Person3 :Masc "⊤"]
+            [:Env5 :Plural :Person3 :Fem "⊤"]
+            [:Env6 :Singular :Person1 :Common "-ān"]
+            [:Env6 :Singular :Person3 :Masc "-āy"]
+            [:Env6 :Singular :Person3 :Fem "-āh"]
+            [:Env6 :Plural :Person1 :Common "-ān"]
+            [:Env6 :Plural :Person3 :Masc "⊤"]
+            [:Env6 :Plural :Person3 :Fem "⊤"]]
+    }
+    {:label "syriac-PPossClitic"
+    :note "Thackston1999 p. 14;Syriac uses the following set of pronominal enclitics on 1) singular nouns and some prepositions,2) plural nouns and other prepositisions. The forms with singular nouns are also used as infintival objects,though the 1cs suffix becomes –an,the pǝʿal infinitive meqtal becomes meqtǝl- except for infinitives with the 2 plural suffixes which remain meqtal,and the III-weak where meḥzā becomes meḥzǝy- expect for infinitives with the 2 plural suffixes which remain meḥzā:"
+    :common {:case :Genitive,
+            :morpheme :PROPOSSCLITIC,
+            :pos :Pronoun,
+            :proClass :PossClitic}
+    :terms [[:numHead :number :person :gender :token] ;; schema
+            [:HeadPlural :Singular :Person1 :Common "-ay"]
+            [:HeadPlural :Singular :Person2 :Masc "-ayk"]
+            [:HeadPlural :Singular :Person2 :Fem "-ayk"]
+            [:HeadPlural :Singular :Person3 :Masc "-aw"]
+            [:HeadPlural :Singular :Person3 :Fem "-ēh"]
+            [:HeadPlural :Plural :Person1 :Common "-ayn"]
+            [:HeadPlural :Plural :Person2 :Masc "-ayḵon"]
+            [:HeadPlural :Plural :Person2 :Fem "-ayḵēn"]
+            [:HeadPlural :Plural :Person3 :Masc "-ayhon"]
+            [:HeadPlural :Plural :Person3 :Masc "-ayhēn"]
+            [:HeadSingular :Singular :Person1 :Common "-Ø ~ -i"]
+            [:HeadSingular :Singular :Person2 :Masc "-āk"]
+            [:HeadSingular :Singular :Person2 :Fem "-ek"]
+            [:HeadSingular :Singular :Person3 :Masc "-eh"]
+            [:HeadSingular :Singular :Person3 :Fem "-āh"]
+            [:HeadSingular :Plural :Person1 :Common "-an"]
+            [:HeadSingular :Plural :Person2 :Masc "-ḵon"]
+            [:HeadSingular :Plural :Person2 :Fem "-ḵēn"]
+            [:HeadSingular :Plural :Person3 :Masc "-hon"]
+            [:HeadSingular :Plural :Person3 :Fem "-hēn"]]
+    }
+]
 }
