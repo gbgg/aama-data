@@ -1,11 +1,11 @@
 {
 :lang :burji
 :sgpref "bur"
-:datasource "WedekindC19"
+:datasource "WedekindC1985"
 :geodemoURL "http://www.ethnologue.com/language/bji"
 :geodemoTXT "Varieties and subdialects of Burji are spoken in"
 :schemata {
-:case [:Absolutive, :Nominative, :Object]
+           :case [:Absolutive, :Nominative, :Object]
 	  :caseHead [:HeadAbsolutive, :HeadNominative]
 	  :clauseMarker [:NoParticle, :Particle]
 	  :conjClass [:Irreg, :Regular]
@@ -56,7 +56,101 @@
   :mar {:lemma "mar-", :gloss "go", }
   :nak {:lemma "nak-", :gloss "strike", }
 }
-:lxterms [
+:lxterms #{
+    {:label "burji-PDemonstrative"
+    :note "Sasse-Straube1977 pp. 254-255. HudsonG1976 pp. 255-256. Note Sasse-Straube:Von den Demonstrativa sind nur die Formen der ,,hier’’ –Deixis (,dieser’ etc.) belegt– far deixis form is from Hudson."
+    :common {:lexeme :PRODEM,
+            :pos :Pronoun,
+            :proClass :Demonstrative}
+    :terms [[:case :deixis :number :gender :token] ;; schema
+            [:Absolutive :Far :Singular :Masc "kaac"]
+            [:Absolutive :Far :Singular :Fem "kaac"]
+            [:Absolutive :Far :Plural :Common "kaac"]
+            [:Absolutive :Near :Singular :Masc "ka"]
+            [:Absolutive :Near :Singular :Fem "ta"]
+            [:Absolutive :Near :Plural :Common "ci"]
+            [:Nominative :Far :Singular :Masc "kaac"]
+            [:Nominative :Far :Singular :Fem "kaac"]
+            [:Nominative :Far :Plural :Common "kaac"]
+            [:Nominative :Near :Singular :Masc "ku"]
+            [:Nominative :Near :Singular :Fem "tu"]
+            [:Nominative :Near :Plural :Common "ci"]]
+    }
+    {:label "burji-PInd"
+    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
+    :common {:pos :Pronoun,
+            :lexeme :PROIND,
+            :proClass :Independent}
+    :terms [[:case :number :person :gender :token] ;; schema
+            [:Absolutive :Singular :Person1 :Common "ee"]
+            [:Absolutive :Singular :Person2 :Common "s̆eeabs"]
+            [:Absolutive :Singular :Person3 :Fem "is̆ee (GH isee)"]
+            [:Absolutive :Plural :Person1 :Common "ninsi"]
+            [:Absolutive :Plural :Person2 :Common "s̆insi"]
+            [:Absolutive :Plural :Person3 :Common "isinoo"]
+            [:Nominative :Singular :Person1 :Common "ani"]
+            [:Nominative :Singular :Person2 :Common "as̆i"]
+            [:Nominative :Singular :Person3 :Masc "isi"]
+            [:Nominative :Singular :Person3 :Fem "is̆I (GH išee)"]
+            [:Nominative :Plural :Person1 :Common "naanu"]
+            [:Nominative :Plural :Person2 :Common "as̆inu"]
+            [:Nominative :Plural :Person3 :Common "isinu"]
+            [:Object :Singular :Person1 :Common "ee-na"]
+            [:Object :Singular :Person2 :Common "s̆ee-na"]
+            [:Object :Singular :Person3 :Masc "isi-na"]
+            [:Object :Singular :Person3 :Fem "is̆ee-na"]
+            [:Object :Plural :Person1 :Common "ninsi-na"]
+            [:Object :Plural :Person2 :Common "s̆insi-na"]
+            [:Object :Plural :Person3 :Common "isinoo-na"]]
+    }
+    {:label "burji-PInterr"
+    :note "HudsonG1976 p. 259."
+    :common {:lexeme :PROINTERROG,
+            :pos :Pronoun,
+            :proClass :Interrogative}
+    :terms [[:interrogClass :token] ;; schema
+            [:InterrogProHow "maamma"]
+            [:InterrogProHowMany "mia"]
+            [:InterrogProWhat "miya"]
+            [:InterrogProWhen "haynu"]
+            [:InterrogProWhere "haballa"]
+            [:InterrogProWho "ay(y)e"]]
+    }
+    {:label "burji-PPoss"
+    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
+    :common {:lexeme :PROPOSS,
+            :pos :Pronoun,
+            :proClass :Possessive}
+    :terms [[:caseHead :genderHead :number :person :gender :token] ;; schema
+            [:HeadAbsolutive :HeadFem :Singular :Person1 :Common "ita"]
+            [:HeadAbsolutive :HeadFem :Singular :Person2 :Common "s̆ita"]
+            [:HeadAbsolutive :HeadFem :Singular :Person3 :Masc "isata"]
+            [:HeadAbsolutive :HeadFem :Singular :Person3 :Fem "is̆eeta"]
+            [:HeadAbsolutive :HeadFem :Plural :Person1 :Common "ninta"]
+            [:HeadAbsolutive :HeadFem :Plural :Person2 :Common "s̆inta"]
+            [:HeadAbsolutive :HeadFem :Plural :Person3 :Common "isinata"]
+            [:HeadAbsolutive :HeadMasc :Singular :Person1 :Common "iiya"]
+            [:HeadAbsolutive :HeadMasc :Singular :Person2 :Common "s̆iiya"]
+            [:HeadAbsolutive :HeadMasc :Singular :Person3 :Masc "isaka"]
+            [:HeadAbsolutive :HeadMasc :Singular :Person3 :Fem "is̆eeka"]
+            [:HeadAbsolutive :HeadMasc :Plural :Person1 :Common "ninka"]
+            [:HeadAbsolutive :HeadMasc :Plural :Person2 :Common "s̆inka"]
+            [:HeadAbsolutive :HeadMasc :Plural :Person3 :Common "isinaka"]
+            [:HeadNominative :HeadFem :Singular :Person1 :Common "ic̆(i)"]
+            [:HeadNominative :HeadFem :Singular :Person2 :Common "s̆ic̆(i)"]
+            [:HeadNominative :HeadFem :Singular :Person3 :Masc "isic̆(i)"]
+            [:HeadNominative :HeadFem :Singular :Person3 :Fem "is̆ic̆(i)"]
+            [:HeadNominative :HeadFem :Plural :Person1 :Common "ninc̆(i)"]
+            [:HeadNominative :HeadFem :Plural :Person2 :Common "s̆inc̆(i)"]
+            [:HeadNominative :HeadFem :Plural :Person3 :Common "isinac̆(i)"]
+            [:HeadNominative :HeadMasc :Singular :Person1 :Common "iiyu"]
+            [:HeadNominative :HeadMasc :Singular :Person2 :Common "s̆iiyu"]
+            [:HeadNominative :HeadMasc :Singular :Person3 :Masc "isaku"]
+            [:HeadNominative :HeadMasc :Singular :Person3 :Fem "is̆eeku"]
+            [:HeadNominative :HeadMasc :Plural :Person1 :Common "ninku"]
+            [:HeadNominative :HeadMasc :Plural :Person2 :Common "s̆inku"]
+            [:HeadNominative :HeadMasc :Plural :Person3 :Common "isinaku"]]
+    }
     {:label "burji-VAffFutIntensiveCompound-mar"
     :note "WedekindC1985 p. 122"
     :common {:lexeme :mar,
@@ -167,30 +261,43 @@
             [:WPro :Plural :Person3 :Common "mara"]
             [:WoPro :Plural :Person3 :Common "marringoo"]]
     }
-    {:label "burji-VAffImperfectReg-irreg"
+    {:label "burji-VAffImperfectIrreg-hayy"
     :note "WedekindC1985 p. 120,paradigms #23 [mar-]and #24 [hayy-]. Author states:The first of the following imperfect paradigms is used when no further context is given. So every form in this paradigm is fully acceptable as a complete,well-formed utterance.[Not certain how to interpret this.]"
     :common {:morphClass :IMPERFREG-IRREG,
+            :conjClass :Irreg,
+            :lexeme :hayy,
             :pdgmType :Exemplary,
             :polarity :Affirmative,
             :pos :Verb,
             :tam :Imperfect}
-    :terms [[:conjClass :lexeme :proType :number :person :gender :token] ;; schema
-            [:Irreg :hayy :CPro :Singular :Person1 :Common "hayy/oo"]
-            [:Irreg :hayy :CPro :Singular :Person2 :Common "hayyidu/oo"]
-            [:Irreg :hayy :CPro :Singular :Person3 :Masc "hayya"]
-            [:Irreg :hayy :CPro :Singular :Person3 :Fem "hayyida"]
-            [:Irreg :hayy :CPro :Plural :Person1 :Common "hayyinu/oo"]
-            [:Irreg :hayy :CPro :Plural :Person2 :Common "hayyis̆ingu/oo"]
-            [:Irreg :hayy :WPro :Plural :Person3 :Common "hayyingu/oo"]
-            [:Irreg :hayy :WoPro :Plural :Person3 :Common "hayya"]
-            [:Regular :mar :CPro :Singular :Person1 :Common "‘ee mara"]
-            [:Regular :mar :CPro :Singular :Person2 :Common "s̆ee marda"]
-            [:Regular :mar :CPro :Singular :Person3 :Masc "‘isa mara"]
-            [:Regular :mar :CPro :Singular :Person3 :Fem "‘is̆ee marda"]
-            [:Regular :mar :CPro :Plural :Person1 :Common "ninsa marra"]
-            [:Regular :mar :CPro :Plural :Person2 :Common "s̆insa mars̆ingoo"]
-            [:Regular :mar :WPro :Plural :Person3 :Common "‘isinoo mara"]
-            [:Regular :mar :WoPro :Plural :Person3 :Common "- marringoo"]]
+    :terms [[:proType :number :person :gender :token] ;; schema
+            [:CPro :Singular :Person1 :Common "hayy/oo"]
+            [:CPro :Singular :Person2 :Common "hayyidu/oo"]
+            [:CPro :Singular :Person3 :Masc "hayya"]
+            [:CPro :Singular :Person3 :Fem "hayyida"]
+            [:CPro :Plural :Person1 :Common "hayyinu/oo"]
+            [:CPro :Plural :Person2 :Common "hayyis̆ingu/oo"]
+            [:WPro :Plural :Person3 :Common "hayyingu/oo"]
+            [:WoPro :Plural :Person3 :Common "hayya"]]
+    }
+    {:label "burji-VAffImperfectReg-mar"
+    :note "WedekindC1985 p. 120,paradigms #23 [mar-]and #24 [hayy-]. Author states:The first of the following imperfect paradigms is used when no further context is given. So every form in this paradigm is fully acceptable as a complete,well-formed utterance.[Not certain how to interpret this.]"
+    :common {:morphClass :IMPERFREG-IRREG,
+            :conjClass :Reular,
+            :lexeme :mar,
+            :pdgmType :Exemplary,
+            :polarity :Affirmative,
+            :pos :Verb,
+            :tam :Imperfect}
+    :terms [[:proType :number :person :gender :token] ;; schema
+            [:CPro :Singular :Person1 :Common "‘ee mara"]
+            [:CPro :Singular :Person2 :Common "s̆ee marda"]
+            [:CPro :Singular :Person3 :Masc "‘isa mara"]
+            [:CPro :Singular :Person3 :Fem "‘is̆ee marda"]
+            [:CPro :Plural :Person1 :Common "ninsa marra"]
+            [:CPro :Plural :Person2 :Common "s̆insa mars̆ingoo"]
+            [:WPro :Plural :Person3 :Common "‘isinoo mara"]
+            [:WoPro :Plural :Person3 :Common "- marringoo"]]
     }
     {:label "burji-VAffImprtv-it"
     :note "Sasse-Straube1977 pp. 255-258."
@@ -223,7 +330,9 @@
             :pos :Verb,
             :verbClass :Interrogative}
     :terms [[:token :token-note] ;; schema
-            ["‘ani mara-daa?" "“Do I go?”"] ["‘ee-daa mara?" "“Is if me to go?”"] ["‘ani maranni" "“Did I go?”"]]
+            ["‘ani mara-daa?" "“Do I go?”"] 
+            ["‘ee-daa mara?" "“Is if me to go?”"] 
+            ["‘ani maranni" "“Did I go?”"]]
     }
     {:label "burji-VAffJuss-it"
     :note "Sasse-Straube1977 pp. 255-258."
@@ -483,6 +592,21 @@
             [:Plural :Person2 :Common "itanc̆ingu"]
             [:Plural :Person3 :Common "itanningu"]]
     }
+    {:label "burji-VDervStem"
+    :note "WedekindC1985 pp. 133-139 Note discussions of consonant assimilations for causative –s- pp. 133-136,for benefactive pp. 136-137."
+    :common {:lexeme :DERVSTEM,
+            :pos :Verb,
+            :formType :Suffix,
+            :morphClass :DervStem}
+    :terms [[:derivedStem :token] ;; schema
+            [:Benefactive "-aɗ-"]
+            [:Causative1 "-(is)s-"]
+            [:Causative2 "-(is)siis(s)-"]
+            [:Combo "-s-aɗ-"]
+            [:Denominal "-aw-"]
+            [:Passive "-am-"]
+            [:Reduplicated "_NULL"]]
+    }
     {:label "burji-VNegImperfect-it"
     :note "Sasse-Straube1977 pp. 255-258."
     :common {:lexeme :it,
@@ -596,140 +720,30 @@
             [:Plural :Person2 :Common "itanc̆ing-éy"]
             [:Plural :Person3 :Common "itanning-éy"]]
     }
-]
-:muterms [
-    {:label "burji-PDemonstrative"
-    :note "Sasse-Straube1977 pp. 254-255. HudsonG1976 pp. 255-256. Note Sasse-Straube:Von den Demonstrativa sind nur die Formen der ,,hier’’ –Deixis (,dieser’ etc.) belegt– far deixis form is from Hudson."
-    :common {:morpheme :PRODEM,
-            :pos :Pronoun,
-            :proClass :Demonstrative}
-    :terms [[:case :deixis :number :gender :token] ;; schema
-            [:Absolutive :Far :Singular :Masc "kaac"]
-            [:Absolutive :Far :Singular :Fem "kaac"]
-            [:Absolutive :Far :Plural :Common "kaac"]
-            [:Absolutive :Near :Singular :Masc "ka"]
-            [:Absolutive :Near :Singular :Fem "ta"]
-            [:Absolutive :Near :Plural :Common "ci"]
-            [:Nominative :Far :Singular :Masc "kaac"]
-            [:Nominative :Far :Singular :Fem "kaac"]
-            [:Nominative :Far :Plural :Common "kaac"]
-            [:Nominative :Near :Singular :Masc "ku"]
-            [:Nominative :Near :Singular :Fem "tu"]
-            [:Nominative :Near :Plural :Common "ci"]]
-    }
-    {:label "burji-PInd"
-    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
-    :common {:pos :Pronoun,
-            :morpheme :PROIND,
-            :proClass :Independent}
-    :terms [[:case :number :person :gender :token] ;; schema
-            [:Absolutive :Singular :Person1 :Common "ee"]
-            [:Absolutive :Singular :Person2 :Common "s̆eeabs"]
-            [:Absolutive :Singular :Person3 :Fem "is̆ee (GH isee)"]
-            [:Absolutive :Plural :Person1 :Common "ninsi"]
-            [:Absolutive :Plural :Person2 :Common "s̆insi"]
-            [:Absolutive :Plural :Person3 :Common "isinoo"]
-            [:Nominative :Singular :Person1 :Common "ani"]
-            [:Nominative :Singular :Person2 :Common "as̆i"]
-            [:Nominative :Singular :Person3 :Masc "isi"]
-            [:Nominative :Singular :Person3 :Fem "is̆I (GH išee)"]
-            [:Nominative :Plural :Person1 :Common "naanu"]
-            [:Nominative :Plural :Person2 :Common "as̆inu"]
-            [:Nominative :Plural :Person3 :Common "isinu"]
-            [:Object :Singular :Person1 :Common "ee-na"]
-            [:Object :Singular :Person2 :Common "s̆ee-na"]
-            [:Object :Singular :Person3 :Masc "isi-na"]
-            [:Object :Singular :Person3 :Fem "is̆ee-na"]
-            [:Object :Plural :Person1 :Common "ninsi-na"]
-            [:Object :Plural :Person2 :Common "s̆insi-na"]
-            [:Object :Plural :Person3 :Common "isinoo-na"]]
-    }
-    {:label "burji-PInterr"
-    :note "HudsonG1976 p. 259."
-    :common {:morpheme :PROINTERROG,
-            :pos :Pronoun,
-            :proClass :Interrogative}
-    :terms [[:interrogClass :token] ;; schema
-            [:InterrogProHow "maamma"]
-            [:InterrogProHowMany "mia"]
-            [:InterrogProWhat "miya"]
-            [:InterrogProWhen "haynu"]
-            [:InterrogProWhere "haballa"]
-            [:InterrogProWho "ay(y)e"]]
-    }
-    {:label "burji-PPoss"
-    :note "Sasse-Straube1977 p. 254. cf. HudsonG1976 pp. 256-259."
-    :common {:morpheme :PROPOSS,
-            :pos :Pronoun,
-            :proClass :Possessive}
-    :terms [[:caseHead :genderHead :number :person :gender :token] ;; schema
-            [:HeadAbsolutive :HeadFem :Singular :Person1 :Common "ita"]
-            [:HeadAbsolutive :HeadFem :Singular :Person2 :Common "s̆ita"]
-            [:HeadAbsolutive :HeadFem :Singular :Person3 :Masc "isata"]
-            [:HeadAbsolutive :HeadFem :Singular :Person3 :Fem "is̆eeta"]
-            [:HeadAbsolutive :HeadFem :Plural :Person1 :Common "ninta"]
-            [:HeadAbsolutive :HeadFem :Plural :Person2 :Common "s̆inta"]
-            [:HeadAbsolutive :HeadFem :Plural :Person3 :Common "isinata"]
-            [:HeadAbsolutive :HeadMasc :Singular :Person1 :Common "iiya"]
-            [:HeadAbsolutive :HeadMasc :Singular :Person2 :Common "s̆iiya"]
-            [:HeadAbsolutive :HeadMasc :Singular :Person3 :Masc "isaka"]
-            [:HeadAbsolutive :HeadMasc :Singular :Person3 :Fem "is̆eeka"]
-            [:HeadAbsolutive :HeadMasc :Plural :Person1 :Common "ninka"]
-            [:HeadAbsolutive :HeadMasc :Plural :Person2 :Common "s̆inka"]
-            [:HeadAbsolutive :HeadMasc :Plural :Person3 :Common "isinaka"]
-            [:HeadNominative :HeadFem :Singular :Person1 :Common "ic̆(i)"]
-            [:HeadNominative :HeadFem :Singular :Person2 :Common "s̆ic̆(i)"]
-            [:HeadNominative :HeadFem :Singular :Person3 :Masc "isic̆(i)"]
-            [:HeadNominative :HeadFem :Singular :Person3 :Fem "is̆ic̆(i)"]
-            [:HeadNominative :HeadFem :Plural :Person1 :Common "ninc̆(i)"]
-            [:HeadNominative :HeadFem :Plural :Person2 :Common "s̆inc̆(i)"]
-            [:HeadNominative :HeadFem :Plural :Person3 :Common "isinac̆(i)"]
-            [:HeadNominative :HeadMasc :Singular :Person1 :Common "iiyu"]
-            [:HeadNominative :HeadMasc :Singular :Person2 :Common "s̆iiyu"]
-            [:HeadNominative :HeadMasc :Singular :Person3 :Masc "isaku"]
-            [:HeadNominative :HeadMasc :Singular :Person3 :Fem "is̆eeku"]
-            [:HeadNominative :HeadMasc :Plural :Person1 :Common "ninku"]
-            [:HeadNominative :HeadMasc :Plural :Person2 :Common "s̆inku"]
-            [:HeadNominative :HeadMasc :Plural :Person3 :Common "isinaku"]]
-    }
-    {:label "burji-VDervStem"
-    :note "WedekindC1985 pp. 133-139 Note discussions of consonant assimilations for causative –s- pp. 133-136,for benefactive pp. 136-137."
-    :common {:morpheme :DERVSTEM,
-            :pos :Verb,
-            :formType :Suffix,
-            :morphClass :DervStem}
-    :terms [[:derivedStem :token] ;; schema
-            [:Benefactive "-aɗ-"]
-            [:Causative1 "-(is)s-"]
-            [:Causative2 "-(is)siis(s)-"]
-            [:Combo "-s-aɗ-"]
-            [:Denominal "-aw-"]
-            [:Passive "-am-"]
-            [:Reduplicated "_NULL"]]
-    }
     {:label "burji-VSubjMarkers"
     :note "WedekindC1985 p. 117. In the suffix,The –I -u forms are Perfect forms where relevance of the action to the Present is maintained. The –oo forms are Past forms used almost exclusively in narrative discourse."
-    :common {:morpheme :SUBJMARKERS,
+    :common {:lexeme :SUBJMARKERS,
             :pos :Verb,
             :morphClass :SubjMarkers}
-    :terms [[:proType :tam :number :person :gender :token :token-note-proSuff] ;; schema
-            [:CPro :Imperfect :Singular :Person1 :Common "Common =>  -a" "Common + -a"]
-            [:CPro :Imperfect :Singular :Person2 :Common "Common =>  -ta" "Common + -ta"]
-            [:CPro :Imperfect :Singular :Person3 :Masc "Common =>  -a" "Common + -a"]
-            [:CPro :Imperfect :Singular :Person3 :Fem "Common =>  -ta" "Common + -ta"]
-            [:CPro :Imperfect :Plural :Person1 :Common "Common =>  -na" "Common + -na"]
-            [:CPro :Imperfect :Plural :Person2 :Common "Common =>  -cingu/-cingoo" "Common + -cingu/-cingoo"]
-            [:CPro :Imperfect :Plural :Person3 :Masc "Common =>  -a" "Common + -a"]
-            [:CPro :Imperfect :Plural :Person3 :Fem "Common =>  -ingu/-ingoo" "Common + -ingu/-ingoo"]
-            [:CPro :Perfect :Singular :Person1 :Common "‘ani =>  -anni/-annoo" "‘ani + -anni/-annoo"]
-            [:CPro :Perfect :Singular :Person2 :Common "‘as̆i =>  -antu/-antoo" "‘as̆i + -antu/-antoo"]
-            [:CPro :Perfect :Singular :Person3 :Masc "‘isi =>  -anni/-annoo" "‘isi + -anni/-annoo"]
-            [:CPro :Perfect :Singular :Person3 :Fem "‘as̆i =>  -anni/-annoo" "‘as̆i + -anni/-annoo"]
-            [:CPro :Perfect :Plural :Person1 :Common "naanu =>  -anninu/-anninoo" "naanu + -anninu/-anninoo"]
-            [:CPro :Perfect :Plural :Person2 :Common "‘as̆inu =>  -ancingu/-ancingoo" "‘as̆inu + -ancingu/-ancingoo"]
-            [:CPro :Perfect :Plural :Person3 :Masc "‘isinu =>  -anni/-annoo" "‘isinu + -anni/-annoo"]
-            [:CPro :Perfect :Plural :Person3 :Fem "Common =>  -anningu/-anningoo" "Common + -anningu/-anningoo"]
-            [:IdPro :Imperfect :Singular :Person3 :Common "Common =>  -a" "Common + -a"]]
+    :terms [[:proType :tam :number :person :gender :token] ;; schema
+            [:CPro :Imperfect :Singular :Person1 :Common "-a"]
+            [:CPro :Imperfect :Singular :Person2 :Common "-ta"]
+            [:CPro :Imperfect :Singular :Person3 :Masc "-a"]
+            [:CPro :Imperfect :Singular :Person3 :Fem "-ta"]
+            [:CPro :Imperfect :Plural :Person1 :Common "-na"]
+            [:CPro :Imperfect :Plural :Person2 :Common "-cingu/-cingoo"]
+            [:CPro :Imperfect :Plural :Person3 :Masc "-a"]
+            [:CPro :Imperfect :Plural :Person3 :Fem "-ingu/-ingoo"]
+            [:CPro :Perfect :Singular :Person1 :Common "-anni/-annoo"]
+            [:CPro :Perfect :Singular :Person2 :Common "-antu/-antoo"]
+            [:CPro :Perfect :Singular :Person3 :Masc "-anni/-annoo"]
+            [:CPro :Perfect :Singular :Person3 :Fem "-anni/-annoo"]
+            [:CPro :Perfect :Plural :Person1 :Common "-anninu/-anninoo"]
+            [:CPro :Perfect :Plural :Person2 :Common "-ancingu/-ancingoo"]
+            [:CPro :Perfect :Plural :Person3 :Masc "‘-anni/-annoo"]
+            [:CPro :Perfect :Plural :Person3 :Fem "-anningu/-anningoo"]
+            [:IdPro :Imperfect :Singular :Person3 :Common "-a"]]
     }
-]
 }
+}
+ 

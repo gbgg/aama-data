@@ -3,9 +3,9 @@
 :sgpref "had"
 :datasource "SimR1985"
 :geodemoURL "http://www.ethnologue.com/language/hdy"
-:geodemoTXT "Varieties and subdialects of Hadiyya are spoken in "
+:geodemoTXT "Varieties and subdialects of Hadiyya are spoken in  ... [COMPLETE!]"
 :schemata {
-:case [:Accusative, :Nominative, :Possessive]
+           :case [:Accusative, :Nominative, :Possessive]
 	  :deixis [:Far, :Near]
 	  :derivedStem [:Benefactive, :BenefactiveCausative, :BenefactivePassive, :Causative1, :Causative2, :Causative3, :CausativeBenefactive, :CausativeBenefactivePassive, :CausativeDenominal, :CausativePassive, :Passive, :PassiveBenefactive, :PassiveCausative]
 	  :gender [:Common, :Fem, :Masc, :Polite]
@@ -34,7 +34,69 @@
 :lexemes {
   :mass {:lemma "mass-", :gloss "take", }
 }
-:lxterms [
+:lxterms #{
+    {:label "hadiyya-PDemonstrative"
+    :note "HudsonG1976 pp. 255-256. Cf. Korhonen-etal1986 p. 117."
+    :common {:case :Nominative,
+            :morpheme :PRODEM,
+            :pos :Pronoun,
+            :proClass :Demonstrative}
+    :terms [[:deixis :number :gender :token] ;; schema
+            [:Far :Singular :Masc " "]
+            [:Far :Singular :Masc " "]
+            [:Far :Singular :Fem " "]
+            [:Far :Singular :Fem " "]
+            [:Far :Plural :Common " "]
+            [:Far :Plural :Common " "]
+            [:Near :Singular :Masc " "]
+            [:Near :Singular :Masc " "]
+            [:Near :Singular :Fem " "]
+            [:Near :Singular :Fem " "]
+            [:Near :Plural :Common " "]
+            [:Near :Plural :Common " "]]
+    }
+    {:label "hadiyya-PInd"
+    :note "HudsonG1976 pp. 256-259. Cf. Korhonen-etal1986 p. 116,118."
+    :common {:morpheme :PROIND,
+            :pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:case :number :person :gender :token] ;; schema
+            [:Accusative :Singular :Person1 :Common "e(e)s"]
+            [:Accusative :Singular :Person2 :Common "ke(e)s"]
+            [:Accusative :Singular :Person3 :Masc "itti"]
+            [:Accusative :Singular :Person3 :Fem "isi"]
+            [:Accusative :Plural :Person1 :Common "ne(e)s"]
+            [:Accusative :Plural :Person2 :Common "kin"]
+            [:Accusative :Plural :Person3 :Masc "ittu ~ iss"]
+            [:Nominative :Singular :Person1 :Common "ani"]
+            [:Nominative :Singular :Person2 :Common "ati"]
+            [:Nominative :Singular :Person3 :Polite "isse"]
+            [:Nominative :Singular :Person3 :Masc "itto"]
+            [:Nominative :Singular :Person3 :Fem "isi"]
+            [:Nominative :Plural :Person1 :Common "neese"]
+            [:Nominative :Plural :Person2 :Common "kine"]
+            [:Nominative :Plural :Person3 :Masc "ittu ~ issu"]
+            [:Possessive :Singular :Person1 :Common "i-"]
+            [:Possessive :Singular :Person2 :Common "ki-"]
+            [:Possessive :Singular :Person3 :Polite "iss-"]
+            [:Possessive :Singular :Person3 :Masc "it(t)-"]
+            [:Possessive :Singular :Person3 :Fem "is-"]
+            [:Possessive :Plural :Person1 :Common "ni-"]
+            [:Possessive :Plural :Person2 :Common "kin-"]
+            [:Possessive :Plural :Person3 :Masc "ittu ~ issu-"]]
+    }
+    {:label "hadiyya-ProInterrog"
+    :note "HudsonG1976 p. 259."
+    :common {:morpheme :PROINTERROG,
+            :pos :Pronoun,
+            :proClass :Interr}
+    :terms [[:interrogClass :token] ;; schema
+            [:InterrogProHow "hinka"]
+            [:InterrogProHowMany "mei"]
+            [:InterrogProWhat "maha"]
+            [:InterrogProWhere "hanno"]
+            [:InterrogProWho "ayye"]]
+    }
     {:label "hadiyya-VAffImperfect-mass"
     :note "SimR1985 pp. 13-16. Extensive discussions of stem-desinence consonant
             assimilations in section #4,pp. 24-32."
@@ -179,6 +241,27 @@
             [:Plural :Person3 :Masc "massamúkko"]
             [:Plural :Person3 :Fem "massíto’o"]]
     }
+    {:label "hadiyya-VDervStem"
+    :note "SimR1985 pp. 32-42. Note discussions of consonant assimilations for causative –s-
+            pp. 33-36,for benefactive pp. 37-39."
+    :common {:morpheme :DERVSTEM,
+            :pos :Verb,
+            :morphClass :DervStem}
+    :terms [[:derivedStem :token :token-note] ;; schema
+            [:Benefactive "-akk- ~ --" "-akk-:root final CC"]
+            [:BenefactiveCausative "--s" "e.g. amanisukko he caused to believe from aman--s-ukko"]
+            [:BenefactivePassive "--s-" ""]
+            [:Causative1 "-s-" ""]
+            [:Causative2 "-siis-" ""]
+            [:Causative3 "-siisis-" ""]
+            [:CausativeBenefactive "-tt- ~ -s-akk-" "-tt- from –s--"]
+            [:CausativeBenefactivePassive "-s--am-" "makkittamaammo I aimed something from makk-s--am-aammo"]
+            [:CausativeDenominal "-ees-" ""]
+            [:CausativePassive "-s-am-" ""]
+            [:Passive "-am-" ""]
+            [:PassiveBenefactive "-s--" ""]
+            [:PassiveCausative "-am-s-" ""]]
+    }
     {:label "hadiyya-VInterrPresPerf-mass"
     :note "SimR1985 pp. 13-16. Extensive discussions of stem-desinence consonant
             assimilations in section #4,pp. 24-32."
@@ -266,91 +349,6 @@
             [:Plural :Person3 :Masc "massamukkoyyo"]
             [:Plural :Person3 :Fem "massito’oyyo"]]
     }
-]
-:muterms [
-    {:label "hadiyya-PDemonstrative"
-    :note "HudsonG1976 pp. 255-256. Cf. Korhonen-etal1986 p. 117."
-    :common {:case :Nominative,
-            :morpheme :PRODEM,
-            :pos :Pronoun,
-            :proClass :Demonstrative}
-    :terms [[:deixis :number :gender :token] ;; schema
-            [:Far :Singular :Masc " "]
-            [:Far :Singular :Masc " "]
-            [:Far :Singular :Fem " "]
-            [:Far :Singular :Fem " "]
-            [:Far :Plural :Common " "]
-            [:Far :Plural :Common " "]
-            [:Near :Singular :Masc " "]
-            [:Near :Singular :Masc " "]
-            [:Near :Singular :Fem " "]
-            [:Near :Singular :Fem " "]
-            [:Near :Plural :Common " "]
-            [:Near :Plural :Common " "]]
-    }
-    {:label "hadiyya-PInd"
-    :note "HudsonG1976 pp. 256-259. Cf. Korhonen-etal1986 p. 116,118."
-    :common {:morpheme :PROIND,
-            :pos :Pronoun,
-            :proClass :Independent}
-    :terms [[:case :number :person :gender :token] ;; schema
-            [:Accusative :Singular :Person1 :Common "e(e)s"]
-            [:Accusative :Singular :Person2 :Common "ke(e)s"]
-            [:Accusative :Singular :Person3 :Masc "itti"]
-            [:Accusative :Singular :Person3 :Fem "isi"]
-            [:Accusative :Plural :Person1 :Common "ne(e)s"]
-            [:Accusative :Plural :Person2 :Common "kin"]
-            [:Accusative :Plural :Person3 :Masc "ittu ~ iss"]
-            [:Nominative :Singular :Person1 :Common "ani"]
-            [:Nominative :Singular :Person2 :Common "ati"]
-            [:Nominative :Singular :Person3 :Polite "isse"]
-            [:Nominative :Singular :Person3 :Masc "itto"]
-            [:Nominative :Singular :Person3 :Fem "isi"]
-            [:Nominative :Plural :Person1 :Common "neese"]
-            [:Nominative :Plural :Person2 :Common "kine"]
-            [:Nominative :Plural :Person3 :Masc "ittu ~ issu"]
-            [:Possessive :Singular :Person1 :Common "i-"]
-            [:Possessive :Singular :Person2 :Common "ki-"]
-            [:Possessive :Singular :Person3 :Polite "iss-"]
-            [:Possessive :Singular :Person3 :Masc "it(t)-"]
-            [:Possessive :Singular :Person3 :Fem "is-"]
-            [:Possessive :Plural :Person1 :Common "ni-"]
-            [:Possessive :Plural :Person2 :Common "kin-"]
-            [:Possessive :Plural :Person3 :Masc "ittu ~ issu-"]]
-    }
-    {:label "hadiyya-ProInterrog"
-    :note "HudsonG1976 p. 259."
-    :common {:morpheme :PROINTERROG,
-            :pos :Pronoun,
-            :proClass :Interr}
-    :terms [[:interrogClass :token] ;; schema
-            [:InterrogProHow "hinka"]
-            [:InterrogProHowMany "mei"]
-            [:InterrogProWhat "maha"]
-            [:InterrogProWhere "hanno"]
-            [:InterrogProWho "ayye"]]
-    }
-    {:label "hadiyya-VDervStem"
-    :note "SimR1985 pp. 32-42. Note discussions of consonant assimilations for causative –s-
-            pp. 33-36,for benefactive pp. 37-39."
-    :common {:morpheme :DERVSTEM,
-            :pos :Verb,
-            :morphClass :DervStem}
-    :terms [[:derivedStem :token :token-note] ;; schema
-            [:Benefactive "-akk- ~ --" "-akk-:root final CC"]
-            [:BenefactiveCausative "--s" "e.g. amanisukko he caused to believe from aman--s-ukko"]
-            [:BenefactivePassive "--s-" ""]
-            [:Causative1 "-s-" ""]
-            [:Causative2 "-siis-" ""]
-            [:Causative3 "-siisis-" ""]
-            [:CausativeBenefactive "-tt- ~ -s-akk-" "-tt- from –s--"]
-            [:CausativeBenefactivePassive "-s--am-" "makkittamaammo I aimed something from makk-s--am-aammo"]
-            [:CausativeDenominal "-ees-" ""]
-            [:CausativePassive "-s-am-" ""]
-            [:Passive "-am-" ""]
-            [:PassiveBenefactive "-s--" ""]
-            [:PassiveCausative "-am-s-" ""]]
-    }
     {:label "hadiyya-VSubjMarkerTemplates"
     :note "SimR1985 pp. 17-19. The following template (MedialVowel + Final + Person1 + Person2) applies to the simple perfect and the imperfect tenses. The medial vowel –V is:–u simplePerf,-aa- presPerf,-oo- imperfect. Note that 3rd fem pl and 3rd pol pl are modeled on 3rd fem sg. This template is put into relation with progressive forms on p. 19."
     :common {:morpheme :SUBJMARKERTEMPLATES,
@@ -378,5 +376,5 @@
             [:Plural :Person3 :Fem "_NULL . . . -o . . . -t . . . -am" "_NULL + -o + -t + -am"]
             [:Plural :Person3 :Fem "_NULL . . . -o . . . -t . . . -ookk" "_NULL + -o + -t + -ookk"]]
     }
-]
+}
 }

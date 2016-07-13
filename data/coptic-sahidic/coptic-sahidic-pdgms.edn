@@ -5,8 +5,7 @@
 :geodemoURL "http://www.ethnologue.com/language/cop"
 :geodemoTXT "Varieties of Cooptic, the last stage of Egyptian from about mid-first millennium BCE, were spoken in Egypt until about the 16th century. The Bohairic variety still serves as a liturgical language of the Egyptian Coptic church. Sahidic, whose geographic localization is not clear, was the language of the official Coptic translation of the Bible, and served as the principal literary dialect from about the fourth to the tenth century."
 :schemata {
-:clauseConjugation [:Conditional, :Main, :Relative, :Result, :Subordinate, :Temporal, :TemporalSubordinate, :Terminative, :Variable]
-	  :clauseType [:Relative]
+:clauseConjugation [:ConditionalClause, :Main, :Relative, :Result, :Subordinate, :Temporal, :TemporalSubordinate, :TerminativeClause, :Variable]
 	  :formClass [:AbsoluteInfinitive]
 	  :gender [:Common, :Fem, :Masc]
 	  :genderHead [:HeadCommon, :HeadFem, :HeadMasc]
@@ -98,7 +97,7 @@
     }
     {:label "coptic_S-VAffConditional-rime"
     :note "Negation of the conditional is with -ⲧⲙ̄- prefixed to the infinitive. ϣⲁⲛ is sometimes omitted from the prefix in the negative."
-    :common {:clauseConjugation :Conditional,
+    :common {:clauseConjugation :ConditionalClause,
             :formClass :AbsoluteInfinitive,
             :lexeme :rime,
             :polarity :Affirmative,
@@ -290,7 +289,6 @@
     {:label "coptic_S-VAffRelPerf1-bok"
     :note "The relative of the First Perfect is formed by combining the First Perfect prefix with the relative pronoun (ⲉⲛⲧ-). This form can only be used with a defined antecedent. Negation is formed with the relative pronoun ⲉⲧⲉ before the negative First Perfect."
     :common {:clauseConjugation :Relative,
-            :clauseType :Relative,
             :formClass :AbsoluteInfinitive,
             :lexeme :bok,
             :polarity :Affirmative,
@@ -310,7 +308,6 @@
     {:label "coptic_S-VAffRelPres1-bok"
     :note "The relative of the First Present is formed by combining the relative pronoun ⲉⲧ with the First Present prefix."
     :common {:clauseConjugation :Relative,
-            :clauseType :Relative,
             :formClass :AbsoluteInfinitive,
             :lexeme :bok,
             :polarity :Affirmative,
@@ -367,7 +364,7 @@
     }
     {:label "coptic_S-VAffTerminative-bok"
     :note "The Terminative is also known as the Until Tense,and is generally translated until he goes,etc. Negation is formed with the insertion of -ⲧⲙ̄- before the infinitive."
-    :common {:clauseConjugation :Terminative,
+    :common {:clauseConjugation :TerminativeClause,
             :formClass :AbsoluteInfinitive,
             :lexeme :bok,
             :polarity :Affirmative,
@@ -619,7 +616,7 @@
     :common {:clauseConjugation :Main,
             :formClass :AbsoluteInfinitive,
             :lexeme :rime,
-            :polarity :Affirmative,
+            :polarity :Negative,
             :pos :Verb,
             :tam :Aorist}
     :terms [[:number :person :gender :token] ;; schema

@@ -104,7 +104,7 @@
   :mir {:rootClass :CiC, :gloss "prepare"}
   :miriy {:conjClass :Prefix, :gloss "find", :lemma "miriy", :pos :Verb}
   :naw {:conjClass :Prefix, :gloss "fail", :lemma "nawa", :pos :Verb}
-  :ni-di {:conjClass :Prefix, :gloss "say", :lemma "ni ~ di", :pos :Verb}
+  :ni-di {:conjClass :Prefix, :gloss "say", :lemma "ni~di", :pos :Verb}
   :raat {:gloss "[x]", :lemma "[y]", }
   :raataa {:conjClass :Suffix, :gloss "ask", :lemma "raataa", :pos :Verb}
   :rib {:conjClass :Prefix, :gloss "refuse", :lemma "rib", :pos :Verb}
@@ -557,6 +557,7 @@
             [:O_Common :kan :O_Plural :O_Person2 :Plural :Person1 :Common "awóoh niktéenhookna" "yes - we know you"]
             [:O_Common :rih :O_Plural :O_Person1 :Singular :Person2 :Masc "rháayoon kíttaa" "you(M) did not see us"]
             [:O_Common :rih :O_Plural :O_Person3 :Singular :Person1 :Masc "rháayhoona káaki" "I(M) did not see them"]
+            [:O_Common :rih :O_Plural :O_Person3 :Singular :Person1 :Masc "rháayhoona káaki" "I(M) did not see them"]
             [:O_Common :rih :O_Singular :O_Person1 :Singular :Person2 :Masc "rháayu kíttaa" "you(M) did not see me"]
             [:O_Common :rih :O_Singular :O_Person1 :Singular :Person2 :Fem "rháatu kíttaayi" "you(F) did not see me"]
             [:O_Common :rih :O_Singular :O_Person2 :Singular :Person1 :Masc "rhaayóok káaki" "I(M) did not see you(M/F)"]
@@ -844,12 +845,12 @@
             :rootClass :CHiy,
             :tam :Present}
     :terms [[:number :person :gender :token] ;; schema
-            [:Singular :Person1 :Common "adán’I ~ ánd’i"]
+            [:Singular :Person1 :Common "adán’I~ánd’i"]
             [:Singular :Person2 :Masc "dán’íya"]
             [:Singular :Person2 :Fem "dán’íi"]
             [:Singular :Person3 :Masc "dán’i"]
             [:Singular :Person3 :Fem "dán’i"]
-            [:Plural :Person1 :Common "níd’I ~ néed’i"]
+            [:Plural :Person1 :Common "níd’I~néed’i"]
             [:Plural :Person2 :Common "tíd’ina"]
             [:Plural :Person3 :Common "íd’iin"]]
     }
@@ -1040,12 +1041,12 @@
             :rootClass :CaC,
             :tam :Present}
     :terms [[:number :person :gender :token] ;; schema
-            [:Singular :Person1 :Common "eetníiw ~ eenáwi"]
+            [:Singular :Person1 :Common "eetníiw~eenáwi"]
             [:Singular :Person2 :Masc "teetníiwa"]
             [:Singular :Person2 :Fem "teetníiwi"]
             [:Singular :Person3 :Masc "eetníiw"]
             [:Singular :Person3 :Fem "teetníiwi"]
-            [:Plural :Person1 :Common "néetniiw ~ neénawi"]
+            [:Plural :Person1 :Common "néetniiw~neénawi"]
             [:Plural :Person2 :Common "téetniiwna"]
             [:Plural :Person3 :Common "éetniiwna"]]
     }
@@ -2876,14 +2877,14 @@
             :tam :PastAlt,
             :pdgmType :DialectDifference}
     :terms [[:number :person :gender :token] ;; schema
-            [:Singular :Person1 :Common "ádi ~  áni"]
-            [:Singular :Person2 :Masc "tídíya ~  tiníya"]
-            [:Singular :Person2 :Fem "tídíi ~  tínii"]
-            [:Singular :Person3 :Masc "ídí ~  íni"]
-            [:Singular :Person3 :Fem "tídi ~  tíni"]
-            [:Plural :Person1 :Common "nídi ~  níni"]
-            [:Plural :Person2 :Common "tídiina ~  téena"]
-            [:Plural :Person3 :Common "ídiin ~  éen"]]
+            [:Singular :Person1 :Common "ádi~áni"]
+            [:Singular :Person2 :Masc "tídíya~tiníya"]
+            [:Singular :Person2 :Fem "tídíi~tínii"]
+            [:Singular :Person3 :Masc "ídí~íni"]
+            [:Singular :Person3 :Fem "tídi~tíni"]
+            [:Plural :Person1 :Common "nídi~níni"]
+            [:Plural :Person2 :Common "tídiina~téena"]
+            [:Plural :Person3 :Common "ídiin~éen"]]
     }
     {:label "beja_W-VPrefTransVerbPatterns"
     :note "Wedekind-etal2007 p. 124"
@@ -3112,7 +3113,7 @@
             [:Singular :Person2 :Masc "tamtíniya"]
             [:Singular :Person2 :Fem "tamtínii"]
             [:Singular :Person3 :Masc "tamíini"]
-            [:Singular :Person3 :Fem "tamtíni ~\n tamtiní"]
+            [:Singular :Person3 :Fem "tamtíni~tamtiní"]
             [:Plural :Person1 :Common "támnay"]
             [:Plural :Person2 :Common "támteena"]
             [:Plural :Person3 :Common "támeen"]]
@@ -3299,8 +3300,8 @@
             :tam :Jussive}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "gw’átay gw’áta!"]
-            [:Singular :Person2 :Masc "gw’átaa! ~ náan gw’áta?"]
-            [:Singular :Person2 :Fem "gw’átii! ~ náan gw’áti?"]
+            [:Singular :Person2 :Masc "gw’átaa!~náan gw’áta?"]
+            [:Singular :Person2 :Fem "gw’átii!~náan gw’áti?"]
             [:Singular :Person3 :Masc "bágw’íyay!"]
             [:Singular :Person3 :Fem "bágw’atíyay!"]
             [:Plural :Person1 :Common "gw’aníiyay!"]
@@ -3562,29 +3563,31 @@
     :note "Wedekind-etal2007 Table #32"
     :common {:lexeme :diy,
             :person :Person1,
+             :gender :Common,
             :pos :Verb,
             :pdgmType :Overview}
     :terms [[:conjClass :tam :number :token :token-note-aux] ;; schema
-            [:Prefix :Future :Singular "íyaad    ándi" "ándi"]
-            [:Prefix :Future :Plural "níyaad    néeyad" "néeyad"]
-            [:Prefix :Past :Singular "ádi    _NULL" "_NULL"]
-            [:Prefix :Past :Plural "nídi   _NULL" "_NULL"]
-            [:Prefix :Present :Singular "ándi    _NULL" "_NULL"]
-            [:Prefix :Present :Plural "néeyad   _NULL" "_NULL"]]
+            [:Prefix :Future :Singular "íyaad ándi" "ándi"]
+            [:Prefix :Future :Plural "níyaa néeyad" "néeyad"]
+            [:Prefix :Past :Singular "ádi" "_NULL"]
+            [:Prefix :Past :Plural "nídi" "_NULL"]
+            [:Prefix :Present :Singular "ándi" "_NULL"]
+            [:Prefix :Present :Plural "néeyad" "_NULL"]]
     }
     {:label "beja_W-VTenseAspOverview-yak"
     :note "Wedekind-etal2007 Table #32"
     :common {:lexeme :yak,
             :person :Person1,
+             :gender :Common,
             :pos :Verb,
             :pdgmType :Overview}
     :terms [[:conjClass :tam :number :token :token-note-aux] ;; schema
             [:Suffix :Future :Singular "yáki    ándi" "ándi"]
             [:Suffix :Future :Plural "yákni    néeyad" "néeyad"]
-            [:Suffix :Past :Singular "yakán    _NULL" "_NULL"]
-            [:Suffix :Past :Plural "yákna   _NULL" "_NULL"]
-            [:Suffix :Present :Singular "yakáni    _NULL" "_NULL"]
-            [:Suffix :Present :Plural "yáknay   _NULL" "_NULL"]]
+            [:Suffix :Past :Singular "yakán" "_NULL"]
+            [:Suffix :Past :Plural "yákna" "_NULL"]
+            [:Suffix :Present :Singular "yakáni" "_NULL"]
+            [:Suffix :Present :Plural "yáknay" "_NULL"]]
     }
 ]
 :muterms [

@@ -5,25 +5,23 @@
 :geodemoURL "http://www.ethnologue.com/language/byn"
 :geodemoTXT "Varieties and subdialects of theAgaw (or Central) Cushitic language: Bilin is spoken mainly in the vicinity of the town Keren. The variety represented here is that described in Appleyard2007b."
 :schemata {
-:aspect [:Imperfective, :Perfective]
+           :aspect [:Imperfective, :Perfective]
 	  :case [:Absolutive, :Object, :ObjectSuff, :Oblique]
-	  :clauseType [:AdvAt1, :AdvAt2, :AdvCause, :AdvCompl, :AdvCond, :AdvConsec, :AdvFutCond, :AdvPurp, :AdvUntil, :AdvWhen, :AdvWhile, :Main, :RelObliq, :RelSub]
+	  :clauseType [:AdvAt1, :AdvAt2, :AdvCause, :AdvCompl, :AdvCond, :AdvConsec, :AdvFutCond, :AdvPurp, :AdvUntil, :AdvWhen, :AdvWhile, :Main, :RelObliq, :RelSubj]
 	  :conjClass [:Conjugation1, :Conjugation2, :Conjugation3]
 	  :copType [:CopLoc, :CopMain]
 	  :derivedStem [:Frequentative, :M, :MFreq, :Reciprocal, :S, :SRecip, :S2]
 	  :nonFiniteForm [:Agent, :Infinitive]
 	  :gender [:Common, :Fem, :Masc]
-	  :morphClass [:VREL, :Agent, :Infinitive]
+	  :morphClass [:Agent, :Infinitive :Aspect, :CompoundVerbs, :Copula, :DervSuff, :PersSuff]
 	  :number [:Common, :Plural, :Singular]
 	  :numberGenderHead [:HeadPlural, :HeadSingularFem, :HeadSingularMasc]
-	  :pdgmType [:Comparative]
 	  :person [:Person1, :Person2, :Person3]
 	  :pngSet [:PngA, :PngA2, :PngB, :PngC]
 	  :polarity [:Affirmative, :Negative]
 	  :pos [:Pronoun, :Verb]
 	  :proClass [:Independent]
 	  :tam [:Future, :Imperative, :Jussive, :Past, :Perfect, :Present, :RelativeOblique, :RelativeSubject]
-	  :verbMorphClass [:Aspect, :CompoundVerbs, :Copula, :DervSuff, :PersSuff]
 	  }
 :pclass {
            :pngClass [:person :number :gender :pngSet]
@@ -41,13 +39,48 @@
   :SUBJMARKC {:gloss "Subject Marker Class C", }
 }
 :lexemes {
-  :VREL {:gloss "[x]", :lemma "[y]", }
   :gab {:conjClass :Conjugation1, :gloss "refuse", :lemma "gäb-", :pos :Verb}
   :kab {:conjClass :Conjugation2, :gloss "help", :lemma "kab-", :pos :Verb}
   :kw {:conjClass :Conjugation3, :gloss "eat", :lemma "k’w-", :pos :Verb}
   :was {:gloss "[x]", :lemma "[y]", }
 }
-:lxterms [
+:lxterms #{
+    {:label "bilin-PInd"
+    :note "Appleyard2007b p. 491. The oblique case is also used for the possessive prefix. The object suffix pronouns,attached to verb,are borrowed from Tigre. NOte sg 2 f form (unique in Agaw)."
+    :common {:lexeme :PRO,
+            :pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:case :number :person :gender :token] ;; schema
+            [:Absolutive :Singular :Person1 :Common "ʔan"]
+            [:Absolutive :Singular :Person2 :Common "ʔənti"]
+            [:Absolutive :Singular :Person3 :Masc "ni"]
+            [:Absolutive :Singular :Person3 :Fem "nəri"]
+            [:Absolutive :Plural :Person1 :Common "yən"]
+            [:Absolutive :Plural :Person2 :Common "ʔəntən"]
+            [:Absolutive :Plural :Person3 :Common "naw"]
+            [:Object :Singular :Person1 :Common "yət"]
+            [:Object :Singular :Person2 :Common "kwət"]
+            [:Object :Singular :Person3 :Masc "nit"]
+            [:Object :Singular :Person3 :Fem "nərti"]
+            [:Object :Plural :Person1 :Common "yənät"]
+            [:Object :Plural :Person2 :Common "ʔəntät"]
+            [:Object :Plural :Person3 :Common "nat"]
+            [:ObjectSuff :Singular :Person1 :Common "-lä"]
+            [:ObjectSuff :Singular :Person2 :Masc "-ka"]
+            [:ObjectSuff :Singular :Person2 :Fem "-ki"]
+            [:ObjectSuff :Singular :Person3 :Masc "-lu"]
+            [:ObjectSuff :Singular :Person3 :Fem "-la"]
+            [:ObjectSuff :Plural :Person1 :Common "-na"]
+            [:ObjectSuff :Plural :Person2 :Common "-kum"]
+            [:ObjectSuff :Plural :Person3 :Common "-lom"]
+            [:Oblique :Singular :Person1 :Common "yə"]
+            [:Oblique :Singular :Person2 :Common "kwə"]
+            [:Oblique :Singular :Person3 :Masc "ni"]
+            [:Oblique :Singular :Person3 :Fem "nər"]
+            [:Oblique :Plural :Person1 :Common "yəna"]
+            [:Oblique :Plural :Person2 :Common "ʔənta"]
+            [:Oblique :Plural :Person3 :Common "na"]]
+    }
     {:label "bilin-VConj1AdvAt1AffImperfPngA-gab"
     :note "Appleyard2007b pp. 497-501"
     :common {:gender :Masc,
@@ -600,7 +633,7 @@
             [:Plural :Person3 :Common "gäbänäxw"]]
     }
     {:label "bilin-VConj1RelSubjAffImperfPngA-gab"
-    :note "Appleyard2007b pp. 497-501"
+    :note "Appleyard2007b pp. 497-501; Palmer's version cited in Appleyard1975 pp. 338-339."
     :common {:aspect :Imperfective,
             :clauseType :RelSubj,
             :conjClass :Conjugation1,
@@ -618,7 +651,7 @@
             [:Plural :Person3 :Common "gäbäw"]]
     }
     {:label "bilin-VConj1RelSubjAffPerfPngA-gab"
-    :note "Appleyard2007b pp. 497-501"
+    :note "Appleyard2007b pp. 497-501; Palmer's version cited in Appleyard1975 pp. 338-339."
     :common {:aspect :Perfective,
             :clauseType :RelSubj,
             :conjClass :Conjugation1,
@@ -796,72 +829,9 @@
             [:Person2 :Common "k’wərəxw"]
             [:Person3 :Masc "k’wixw"]]
     }
-    {:label "kemant-VBilin-KemantRel"
-    :note "Appleyard1975 pp. 338-339"
-    :common {:pdgmType :Comparative,
-            :morphClass :VREL,
-            :pos :Verb}
-    :terms [[:aspect :lang :lexeme :tam :number :person :gender :token] ;; schema
-            [:Imperfective :Kemant :gab :RelativeOblique :Plural :Person3 :Common "gäbnäxʷ"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Singular :Person1 :Common "gäbäxər"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Singular :Person2 :Common "gäbräxər"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Singular :Person3 :Masc "gäbäxʷ"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Singular :Person3 :Fem "gäbräri"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Plural :Person1 :Common "gäbnäxər"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Plural :Person2 :Common "gäbdənäxər"]
-            [:Imperfective :Kemant :gab :RelativeSubject :Plural :Person3 :Common "gäbäw"]
-            [:Imperfective :Kemant :was :RelativeOblique :Plural :Person3 :Common "was(ə)naɣ"]
-            [:Perfective :Kemant :gab :RelativeOblique :Plural :Person3 :Common "gäbänäxʷ"]
-            [:Perfective :Kemant :gab :RelativeSubject :Singular :Person1 :Common "gäbäxər"]
-            [:Perfective :Kemant :gab :RelativeSubject :Singular :Person2 :Common "gäbräxər"]
-            [:Perfective :Kemant :gab :RelativeSubject :Singular :Person3 :Masc "gäbäxʷ"]
-            [:Perfective :Kemant :gab :RelativeSubject :Singular :Person3 :Fem "gäbrärí"]
-            [:Perfective :Kemant :gab :RelativeSubject :Plural :Person1 :Common "gäbnäxər"]
-            [:Perfective :Kemant :gab :RelativeSubject :Plural :Person2 :Common "gäbdanäxər"]
-            [:Perfective :Kemant :gab :RelativeSubject :Plural :Person3 :Common "gäbäw"]
-            [:Perfective :Kemant :was :RelativeOblique :Plural :Person3 :Common "wasänaɣ"]]
-    }
-]
-:muterms [
-    {:label "bilin-PInd"
-    :note "Appleyard2007b p. 491. The oblique case is also used for the possessive prefix. The object suffix pronouns,attached to verb,are borrowed from Tigre. NOte sg 2 f form (unique in Agaw)."
-    :common {:morpheme :PRO,
-            :pos :Pronoun,
-            :proClass :Independent}
-    :terms [[:case :number :person :gender :token] ;; schema
-            [:Absolutive :Singular :Person1 :Common "ʔan"]
-            [:Absolutive :Singular :Person2 :Common "ʔənti"]
-            [:Absolutive :Singular :Person3 :Masc "ni"]
-            [:Absolutive :Singular :Person3 :Fem "nəri"]
-            [:Absolutive :Plural :Person1 :Common "yən"]
-            [:Absolutive :Plural :Person2 :Common "ʔəntən"]
-            [:Absolutive :Plural :Person3 :Common "naw"]
-            [:Object :Singular :Person1 :Common "yət"]
-            [:Object :Singular :Person2 :Common "kwət"]
-            [:Object :Singular :Person3 :Masc "nit"]
-            [:Object :Singular :Person3 :Fem "nərti"]
-            [:Object :Plural :Person1 :Common "yənät"]
-            [:Object :Plural :Person2 :Common "ʔəntät"]
-            [:Object :Plural :Person3 :Common "nat"]
-            [:ObjectSuff :Singular :Person1 :Common "-lä"]
-            [:ObjectSuff :Singular :Person2 :Masc "-ka"]
-            [:ObjectSuff :Singular :Person2 :Fem "-ki"]
-            [:ObjectSuff :Singular :Person3 :Masc "-lu"]
-            [:ObjectSuff :Singular :Person3 :Fem "-la"]
-            [:ObjectSuff :Plural :Person1 :Common "-na"]
-            [:ObjectSuff :Plural :Person2 :Common "-kum"]
-            [:ObjectSuff :Plural :Person3 :Common "-lom"]
-            [:Oblique :Singular :Person1 :Common "yə"]
-            [:Oblique :Singular :Person2 :Common "kwə"]
-            [:Oblique :Singular :Person3 :Masc "ni"]
-            [:Oblique :Singular :Person3 :Fem "nər"]
-            [:Oblique :Plural :Person1 :Common "yəna"]
-            [:Oblique :Plural :Person2 :Common "ʔənta"]
-            [:Oblique :Plural :Person3 :Common "na"]]
-    }
     {:label "bilin-VCopula"
     :note "Appleyard2007b pp. 502f. “A peculiar feature of the verb ‘to be’ in Bilin,shared with the other Agaw languages,is the reversal of aspect,whereby a perfective aspect (past tense) form is used in imprefective (present time) function,and vice versa,as for instance:ni gərwa kəxin sänäkw ‘he was a clever man’. “(p. 501) See LEXEMES section."
-    :common {:morpheme :COPULA,
+    :common {:lexeme :COPULA,
             :pos :Verb,
             :morphClass :Copula}
     :terms [[:copType :polarity :tam :token :token-note] ;; schema
@@ -874,7 +844,7 @@
     }
     {:label "bilin-VDervSuff"
     :note "Appleyard2007b pp. 493-495"
-    :common {:morpheme :DERVSTEMSUFF,
+    :common {:lexeme :DERVSTEMSUFF,
             :pos :Verb,
             :morphClass :DervSuff}
     :terms [[:derivedStem :token] ;; schema
@@ -889,7 +859,7 @@
     }
     {:label "bilin-VPngA2PngSuff"
     :note "Appleyard2007b p. 495f. A:subordinate tenses (and base for A2,B,C);A2:main neg imperf/perf;B:main aff imperf/perf;C:main aff fut"
-    :common {:morpheme :SUBJMARKA2,
+    :common {:lexeme :SUBJMARKA2,
             :pngSet :PngA2,
             :pos :Verb,
             :verbMorphClass :PersSuff}
@@ -904,7 +874,7 @@
     }
     {:label "bilin-VPngAPngSuff"
     :note "Appleyard2007b p. 495f. A:subordinate tenses (and base for A2,B,C);A2:main neg imperf/perf;B:main aff imperf/perf;C:main aff fut"
-    :common {:morpheme :SUBJMARKA,
+    :common {:lexeme :SUBJMARKA,
             :pngSet :PngA,
             :pos :Verb,
             :verbMorphClass :PersSuff}
@@ -919,7 +889,7 @@
     }
     {:label "bilin-VPngBPngSuff"
     :note "Appleyard2007b p. 495f. A:subordinate tenses (and base for A2,B,C);A2:main neg imperf/perf;B:main aff imperf/perf;C:main aff fut"
-    :common {:morpheme :SUBJMARKB,
+    :common {:lexeme :SUBJMARKB,
             :pngSet :PngB,
             :pos :Verb,
             :verbMorphClass :PersSuff}
@@ -934,7 +904,7 @@
     }
     {:label "bilin-VPngCPngSuff"
     :note "Appleyard2007b p. 495f. A:subordinate tenses (and base for A2,B,C);A2:main neg imperf/perf;B:main aff imperf/perf;C:main aff fut"
-    :common {:morpheme :SUBJMARKC,
+    :common {:lexeme :SUBJMARKC,
             :pngSet :PngC,
             :pos :Verb,
             :verbMorphClass :PersSuff}
@@ -947,5 +917,5 @@
             [:Plural :Person2 :Common "-tVn" " "]
             [:Plural :Person3 :Common "-Vn" " "]]
     }
-]
+}
 }

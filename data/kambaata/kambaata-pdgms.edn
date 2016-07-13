@@ -3,9 +3,9 @@
 :sgpref "kam"
 :datasource "SimM1985"
 :geodemoURL "http://www.ethnologue.com/language/ktb"
-:geodemoTXT "Varieties and subdialects of Kambaata are spoken in "
+:geodemoTXT "Varieties and subdialects of Kambaata are spoken in  ... [COMPLETE!]"
 :schemata {
-:case [:Accusative, :Nominative, :Possessive]
+           :case [:Accusative, :Nominative, :Possessive]
 	  :derivedStem [:Benefactive, :Causative1, :Causative2, :Combination, :Passive, :Reduplicated]
 	  :deixis [:Far, :Near]
 	  :gender [:Common, :Fem, :Masc, :Polite]
@@ -34,7 +34,82 @@
 :lexemes {
   :mar {:lemma "mar", :gloss "go", }
 }
-:lxterms [
+:lxterms #{
+    {:label "kambaata-PDemonstrative"
+    :note "HudsonG1976 pp. 255-256. Cf. Korhonen-etal1986 p. 106."
+    :common {:lexeme :PRODEM,
+            :pos :Pronoun,
+            :proClass :Demonstrative}
+    :terms [[:case :deixis :number :gender :token] ;; schema
+            [:Accusative :Far :Singular :Masc "hikkaapi"]
+            [:Accusative :Far :Singular :Fem "hittaapi"]
+            [:Accusative :Far :Plural :Common "hikkaapi"]
+            [:Accusative :Near :Singular :Masc "ka"]
+            [:Accusative :Near :Singular :Fem "ta"]
+            [:Accusative :Near :Plural :Common "ka"]
+            [:Nominative :Far :Singular :Masc "hikkuupi"]
+            [:Nominative :Far :Singular :Fem "hittiipi"]
+            [:Nominative :Far :Plural :Common "hikkuupi"]
+            [:Nominative :Near :Singular :Masc "ku"]
+            [:Nominative :Near :Singular :Fem "ta"]
+            [:Nominative :Near :Plural :Common "ku"]]
+    }
+    {:label "kambaata-PInterr"
+    :note "HudsonG1976 p. 259."
+    :common {:lexeme :PROINTERROG,
+            :pos :Pronoun,
+            :proClass :Interrogative}
+    :terms [[:interrogClass :token] ;; schema
+            [:InterrogProHow "hatti"]
+            [:InterrogProHowMany "mei"]
+            [:InterrogProWhat "ma"]
+            [:InterrogProWhen "hakka"]
+            [:InterrogProWhere "hanno"]
+            [:InterrogProWho "aye"]]
+    }
+    {:label "kambaata-PPersonal"
+    :note "HudsonG1976 pp. 256-259. Cf. Korhonen-etal1986 p. 105,107."
+    :common {:lexeme :PROIND,
+            :pos :Pronoun}
+    :terms [[:case :proClass :number :person :gender :token] ;; schema
+            [:Accusative :Independent :Singular :Person1 :Common "e(e)s"]
+            [:Accusative :Independent :Singular :Person2 :Common "ke(e)s"]
+            [:Accusative :Independent :Singular :Person3 :Masc "isu"]
+            [:Accusative :Independent :Singular :Person3 :Fem "is(e)t"]
+            [:Accusative :Independent :Plural :Person1 :Common "ne(e)s"]
+            [:Accusative :Independent :Plural :Person2 :Common "kinee(e)"]
+            [:Accusative :Independent :Plural :Person3 :Common "issaot"]
+            [:Accusative :Suffix :Singular :Person1 :Common "-e"]
+            [:Accusative :Suffix :Singular :Person2 :Common "-ke ~ -kki"]
+            [:Accusative :Suffix :Singular :Person3 :Masc "-si"]
+            [:Accusative :Suffix :Singular :Person3 :Fem "-se"]
+            [:Accusative :Suffix :Plural :Person1 :Common "-nne"]
+            [:Accusative :Suffix :Plural :Person2 :Common "-ne"]
+            [:Accusative :Suffix :Plural :Person3 :Common "-(s)sa"]
+            [:Nominative :Independent :Singular :Person1 :Common "ani"]
+            [:Nominative :Independent :Singular :Person2 :Common "ati"]
+            [:Nominative :Independent :Singular :Person3 :Polite "issa"]
+            [:Nominative :Independent :Singular :Person3 :Masc "isi"]
+            [:Nominative :Independent :Singular :Person3 :Fem "ise"]
+            [:Nominative :Independent :Plural :Person1 :Common "naooti"]
+            [:Nominative :Independent :Plural :Person2 :Common "anaooti"]
+            [:Nominative :Independent :Plural :Person3 :Common "issooti"]
+            [:Possessive :Independent :Singular :Person1 :Common "ii-ha/-ta"]
+            [:Possessive :Independent :Singular :Person2 :Common "kii-ha/-ta"]
+            [:Possessive :Independent :Singular :Person3 :Masc "isi-ha/-ta"]
+            [:Possessive :Independent :Singular :Person3 :Fem "ise-ha/-ta"]
+            [:Possessive :Independent :Plural :Person1 :Common "nii-ha/-ta"]
+            [:Possessive :Independent :Plural :Person2 :Common "kiniee-ha/-ta"]
+            [:Possessive :Independent :Plural :Person3 :Common "nii-ha/-ta"]
+            [:Possessive :Suffix :Singular :Person1 :Common "kiniee-ha/-ta"]
+            [:Possessive :Suffix :Singular :Person2 :Common "-e"]
+            [:Possessive :Suffix :Singular :Person3 :Polite "-si"]
+            [:Possessive :Suffix :Singular :Person3 :Masc "-kii"]
+            [:Possessive :Suffix :Singular :Person3 :Fem "-si"]
+            [:Possessive :Suffix :Plural :Person1 :Common "-nne"]
+            [:Possessive :Suffix :Plural :Person2 :Common "-ne"]
+            [:Possessive :Suffix :Plural :Person3 :Common "-ssa"]]
+    }
     {:label "kambaata-VAffImperfectMar-"
     :note "SimM1985 pp. 46-48. Discussions of stem-desinence consonant assimilations in section #4,pp. 52-54."
     :common {:lexeme :mar,
@@ -139,6 +214,19 @@
             [:Plural :Person2 :Common "marteenta"]
             [:Plural :Person3 :Common "marto’i"]]
     }
+    {:label "kambaata-VDervStem"
+    :note "SimM1985 pp. 56-63. Note discussions of consonant assimilations for causative –s- pp. 56-59,for benefactive pp. 59-62."
+    :common {:lexeme :DERVSTEM,
+            :pos :Verb,
+            :morphClass :DervStem}
+    :terms [[:derivedStem :token :token-gloss] ;; schema
+            [:Benefactive "-ak- ~ --" "(a) --:root-final l,r,m,n (>preglottalized); t,b,d,g,f,s,š,h,z (> ejective_;  (>c). (b) -ak-:root-final CC,and all other root-final consonants"]
+            [:Causative1 "-(i)s-" "transitivizing"]
+            [:Causative2 "-(i)siis-" "cause domeone to do something"]
+            [:Combination "-aam-,--aam-,-am-aam-,--am-aam-,--isiis-aam-" "SimM1985 p,63"]
+            [:Passive "-am-" " "]
+            [:Reduplicated "Common" "fossilized?; SimM1985 p. 45"]]
+    }
     {:label "kambaata-VNegImprtv-mar"
     :note "SimM1985 pp. 46-48. Discussions of stem-desinence consonant assimilations in section #4,pp. 52-54."
     :common {:gender :Common,
@@ -151,111 +239,21 @@
             [:Singular "martota"]
             [:Plural "marteenoc(iy)e"]]
     }
-]
-:muterms [
-    {:label "kambaata-PDemonstrative"
-    :note "HudsonG1976 pp. 255-256. Cf. Korhonen-etal1986 p. 106."
-    :common {:morpheme :PRODEM,
-            :pos :Pronoun,
-            :proClass :Demonstrative}
-    :terms [[:case :deixis :number :gender :token] ;; schema
-            [:Accusative :Far :Singular :Masc "hikkaapi"]
-            [:Accusative :Far :Singular :Fem "hittaapi"]
-            [:Accusative :Far :Plural :Common "hikkaapi"]
-            [:Accusative :Near :Singular :Masc "ka"]
-            [:Accusative :Near :Singular :Fem "ta"]
-            [:Accusative :Near :Plural :Common "ka"]
-            [:Nominative :Far :Singular :Masc "hikkuupi"]
-            [:Nominative :Far :Singular :Fem "hittiipi"]
-            [:Nominative :Far :Plural :Common "hikkuupi"]
-            [:Nominative :Near :Singular :Masc "ku"]
-            [:Nominative :Near :Singular :Fem "ta"]
-            [:Nominative :Near :Plural :Common "ku"]]
-    }
-    {:label "kambaata-PInterr"
-    :note "HudsonG1976 p. 259."
-    :common {:morpheme :PROINTERROG,
-            :pos :Pronoun,
-            :proClass :Interrogative}
-    :terms [[:interrogClass :token] ;; schema
-            [:InterrogProHow "hatti"]
-            [:InterrogProHowMany "mei"]
-            [:InterrogProWhat "ma"]
-            [:InterrogProWhen "hakka"]
-            [:InterrogProWhere "hanno"]
-            [:InterrogProWho "aye"]]
-    }
-    {:label "kambaata-PPersonal"
-    :note "HudsonG1976 pp. 256-259. Cf. Korhonen-etal1986 p. 105,107."
-    :common {:morpheme :PROIND,
-            :pos :Pronoun}
-    :terms [[:case :proClass :number :person :gender :token] ;; schema
-            [:Accusative :Independent :Singular :Person1 :Common "e(e)s"]
-            [:Accusative :Independent :Singular :Person2 :Common "ke(e)s"]
-            [:Accusative :Independent :Singular :Person3 :Masc "isu"]
-            [:Accusative :Independent :Singular :Person3 :Fem "is(e)t"]
-            [:Accusative :Independent :Plural :Person1 :Common "ne(e)s"]
-            [:Accusative :Independent :Plural :Person2 :Common "kinee(e)"]
-            [:Accusative :Independent :Plural :Person3 :Common "issaot"]
-            [:Accusative :Suffix :Singular :Person1 :Common "-e"]
-            [:Accusative :Suffix :Singular :Person2 :Common "-ke ~ -kki"]
-            [:Accusative :Suffix :Singular :Person3 :Masc "-si"]
-            [:Accusative :Suffix :Singular :Person3 :Fem "-se"]
-            [:Accusative :Suffix :Plural :Person1 :Common "-nne"]
-            [:Accusative :Suffix :Plural :Person2 :Common "-ne"]
-            [:Accusative :Suffix :Plural :Person3 :Common "-(s)sa"]
-            [:Nominative :Independent :Singular :Person1 :Common "ani"]
-            [:Nominative :Independent :Singular :Person2 :Common "ati"]
-            [:Nominative :Independent :Singular :Person3 :Polite "issa"]
-            [:Nominative :Independent :Singular :Person3 :Masc "isi"]
-            [:Nominative :Independent :Singular :Person3 :Fem "ise"]
-            [:Nominative :Independent :Plural :Person1 :Common "naooti"]
-            [:Nominative :Independent :Plural :Person2 :Common "anaooti"]
-            [:Nominative :Independent :Plural :Person3 :Common "issooti"]
-            [:Possessive :Independent :Singular :Person1 :Common "ii-ha/-ta"]
-            [:Possessive :Independent :Singular :Person2 :Common "kii-ha/-ta"]
-            [:Possessive :Independent :Singular :Person3 :Masc "isi-ha/-ta"]
-            [:Possessive :Independent :Singular :Person3 :Fem "ise-ha/-ta"]
-            [:Possessive :Independent :Plural :Person1 :Common "nii-ha/-ta"]
-            [:Possessive :Independent :Plural :Person2 :Common "kiniee-ha/-ta"]
-            [:Possessive :Independent :Plural :Person3 :Common "nii-ha/-ta"]
-            [:Possessive :Suffix :Singular :Person1 :Common "kiniee-ha/-ta"]
-            [:Possessive :Suffix :Singular :Person2 :Common "-e"]
-            [:Possessive :Suffix :Singular :Person3 :Polite "-si"]
-            [:Possessive :Suffix :Singular :Person3 :Masc "-kii"]
-            [:Possessive :Suffix :Singular :Person3 :Fem "-si"]
-            [:Possessive :Suffix :Plural :Person1 :Common "-nne"]
-            [:Possessive :Suffix :Plural :Person2 :Common "-ne"]
-            [:Possessive :Suffix :Plural :Person3 :Common "-ssa"]]
-    }
-    {:label "kambaata-VDervStem"
-    :note "SimM1985 pp. 56-63. Note discussions of consonant assimilations for causative –s- pp. 56-59,for benefactive pp. 59-62."
-    :common {:morpheme :DERVSTEM,
-            :pos :Verb,
-            :morphClass :DervStem}
-    :terms [[:derivedStem :gloss :token] ;; schema
-            [:Benefactive "(a) --:root-final l,r,m,n (>preglottalized); t,b,d,g,f,s,š,h,z (> ejective_;  (>c). (b) -ak-:root-final CC,and all other root-final consonants" "-ak- ~ --"]
-            [:Causative1 "transitivizing" "-(i)s-"]
-            [:Causative2 "cause domeone to do something" "-(i)siis-"]
-            [:Combination "SimM1985 p,63" "-aam-,--aam-,-am-aam-,--am-aam-,--isiis-aam-"]
-            [:Passive " " "-am-"]
-            [:Reduplicated "fossilized?; SimM1985 p. 45" "Common"]]
-    }
     {:label "kambaata-VSubjMarkerTemplates"
     :note "SimM1985 pp. 48-51. The following template applies to the simple perfect and the
             imperfect tenses. The medial vowel –V is:–o simplePerf,-e- presPerf,-a- imperfect,-ayo-
             progressive. PastProg adds –ikke (past tense of bo be. The token template note is: medialVowel + person1 + person2 + CFinalGem."
-    :common {:morpheme :SUBJMARKERTEMPLATES,
+    :common {:lexeme :SUBJMARKERTEMPLATES,
             :pos :Verb,
             :morphClass :SubjMarkerTemplates}
-    :terms [[:number :person :gender :token :token-note-template] ;; schema
-            [:Singular :Person1 :Common "V + _NULL + –mmi + + (simplePerf, presPerf)" "V + _NULL + –mmi + + (simplePerf, presPerf)"]
-            [:Singular :Person2 :Common "V + -t + –nti + _NULL" "V + -t + –nti + _NULL"]
-            [:Singular :Person3 :Masc "V + _NULL + –no + + (simplePerf, presPerf)" "V + _NULL + –no + + (simplePerf, presPerf)"]
-            [:Singular :Person3 :Fem "V + _NULL + –‘i + _NULL" "V + _NULL + –‘i + _NULL"]
-            [:Plural :Person1 :Common "V + -n + –mmi + _NULL" "V + -n + –mmi + _NULL"]
-            [:Plural :Person2 :Common "V + -teen + –nta + _NULL" "V + -teen + –nta + _NULL"]
-            [:Plural :Person3 :Common "V + -t + –‘i + _NULL" "V + -t + –‘i + _NULL"]]
+    :terms [[:number :person :gender :token] ;; schema
+            [:Singular :Person1 :Common "V+_NULL+–mmi[simplePerf/presPerf]"]
+            [:Singular :Person2 :Common "V+-t+–nti+_NULL"]
+            [:Singular :Person3 :Masc "V+_NULL+–no[simplePerf/presPerf]"]
+            [:Singular :Person3 :Fem "V+_NULL+–‘i+_NULL"]
+            [:Plural :Person1 :Common "V+-n+–mmi+_NULL"]
+            [:Plural :Person2 :Common "V+-teen+–nta+_NULL"]
+            [:Plural :Person3 :Common "V+-t+–‘i+_NULL"]]
     }
-]
+}
 }

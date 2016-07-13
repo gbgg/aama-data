@@ -3,20 +3,20 @@
 :sgpref "ged"
 :datasource "WedekindK1985"
 :geodemoURL "http://www.ethnologue.com/language/drs"
-:geodemoTXT "Varieties and subdialects of Gedeo are spoken in"
+:geodemoTXT "Varieties and subdialects of Gedeo are spoken in ... [COMPLETE!]"
 :schemata {
-:case [:Absolutive, :Nominative]
-	  :caseHead [:HeadAbsolutive]
-	  :deixis [:Far, :Near]
-	  :gender [:Common, :Fem, :Masc]
-	  :genderHead [:HeadFem, :HeadMasc]
-	  :interrogClass [:InterrogProHow, :InterrogProHowMany, :InterrogProWhat, :InterrogProWhen, :InterrogProWhere, :InterrogProWho]
-	  :number [:Plural, :Singular]
-	  :person [:Person1, :Person2, :Person3]
-	  :polarity [:Affirmative, :Interrogative, :Negative]
-	  :pos [:Pronoun, :Verb]
-	  :proClass [:Demonstrative, :Interrogative, :Independent, :Possessive]
-	  :tam [:DependentConditional, :DependentPurposive, :HypothNonActual, :HypothNonPres, :Imperative, :ImperfectActual, :ImperfectFuture, :ImperfectNonActual, :ImperfectNonPresent, :ImperfectNonPresent2, :Perfect, :PerfectActual, :PerfectNonActual, :PerfectNonPresent, :PerfectNonPresent2]
+           :case [:Absolutive, :Nominative]
+           :caseHead [:HeadAbsolutive]
+           :deixis [:Far, :Near]
+           :gender [:Common, :Fem, :Masc]
+           :genderHead [:HeadFem, :HeadMasc]
+           :interrogClass [:InterrogProHow, :InterrogProHowMany, :InterrogProWhat, :InterrogProWhen, :InterrogProWhere, :InterrogProWho]
+           :number [:Plural, :Singular]
+           :person [:Person1, :Person2, :Person3]
+           :polarity [:Affirmative, :Interrogative, :Negative]
+           :pos [:Pronoun, :Verb]
+           :proClass [:Demonstrative, :Interrogative, :Independent, :Possessive]
+           :tam [:DependentConditional, :DependentPurposive, :HypothNonActual, :HypothNonPres, :Imperative, :ImperfectActual, :ImperfectFuture, :ImperfectNonActual, :ImperfectNonPresent, :ImperfectNonPresent2, :Perfect, :PerfectActual, :PerfectNonActual, :PerfectNonPresent, :PerfectNonPresent2]
 	  }
 :pclass {
            :pngClass [:person :number :gender :genderHead ]
@@ -33,7 +33,86 @@
 :lexemes {
   :mar {:lemma "mar-", :gloss "go", }
 }
-:lxterms [
+:lxterms #{
+    {:label "gedeo-PDemonstrative"
+    :note "HudsonG1976 pp. 255-256."
+    :common {:lexeme :PRODEM,
+            :pos :Pronoun,
+            :proClass :Demonstrative}
+    :terms [[:case :deixis :number :gender :token] ;; schema
+            [:Absolutive :Far :Singular :Masc "okkone"]
+            [:Absolutive :Far :Singular :Fem "ettene"]
+            [:Absolutive :Far :Plural :Masc "okkone"]
+            [:Absolutive :Far :Plural :Fem "etteme"]
+            [:Absolutive :Near :Singular :Masc "konne"]
+            [:Absolutive :Near :Singular :Fem "tenne"]
+            [:Absolutive :Near :Plural :Masc "konne"]
+            [:Absolutive :Near :Plural :Fem "tenne"]
+            [:Nominative :Far :Singular :Masc "ikki"]
+            [:Nominative :Far :Singular :Fem "itti"]
+            [:Nominative :Far :Plural :Masc "ikki"]
+            [:Nominative :Far :Plural :Fem "itti"]
+            [:Nominative :Near :Singular :Masc "kuni"]
+            [:Nominative :Near :Singular :Fem "tini"]
+            [:Nominative :Near :Plural :Masc "kuni"]
+            [:Nominative :Near :Plural :Fem "tini"]]
+    }
+    {:label "gedeo-PInterr"
+    :note "HudsonG1976 p. 259."
+    :common {:lexeme :PROINTERROG,
+            :pos :Pronoun,
+            :proClass :Interrogative}
+    :terms [[:interrogClass :token] ;; schema
+            [:InterrogProHow "hiitte"]
+            [:InterrogProHowMany "meʔe"]
+            [:InterrogProWhat "maa"]
+            [:InterrogProWhen "haano"]
+            [:InterrogProWhere "haba"]
+            [:InterrogProWho "ayye"]]
+    }
+    {:label "gedeo-PPersonal"
+    :note "HudsonG1976 pp. 256-259."
+    :common {:lexeme :PROIND,
+            :pos :Pronoun,
+            :proClass :Independent}
+    :terms [[:case :number :person :gender :token] ;; schema
+            [:Absolutive :Singular :Person1 :Common "ane"]
+            [:Absolutive :Singular :Person2 :Common "ate"]
+            [:Absolutive :Singular :Person3 :Masc "iso(o)"]
+            [:Absolutive :Singular :Person3 :Fem "ise(e)"]
+            [:Absolutive :Plural :Person1 :Common "noʔo(s)"]
+            [:Absolutive :Plural :Person2 :Common "as̆inhaʔno(o)"]
+            [:Absolutive :Plural :Person3 :Common "insaʔne(e)"]
+            [:Nominative :Singular :Person1 :Common "ani"]
+            [:Nominative :Singular :Person2 :Common "asti"]
+            [:Nominative :Singular :Person3 :Masc "isi"]
+            [:Nominative :Singular :Person3 :Fem "ise"]
+            [:Nominative :Plural :Person1 :Common "noʔo"]
+            [:Nominative :Plural :Person2 :Common "as̆inhaʔno"]
+            [:Nominative :Plural :Person3 :Common "insaʔne"]]
+    }
+    {:label "gedeo-PPoss"
+    :note "HudsonG1976 pp. 256-259."
+    :common {:lexeme :PROPOSS,
+            :caseHead :HeadAbsolutive,
+            :pos :Pronoun,
+            :proClass :Possessive}
+    :terms [[:genderHead :number :person :gender :token] ;; schema
+            [:HeadFem :Singular :Person1 :Common "an-tte"]
+            [:HeadFem :Singular :Person2 :Common "asti-tte"]
+            [:HeadFem :Singular :Person3 :Masc "isi-tte"]
+            [:HeadFem :Singular :Person3 :Fem "ise-tte"]
+            [:HeadFem :Plural :Person1 :Common "noʔo-tte"]
+            [:HeadFem :Plural :Person2 :Common "as̆inhaʔno-tte"]
+            [:HeadFem :Plural :Person3 :Common "insaʔne-tte"]
+            [:HeadMasc :Singular :Person1 :Common "an-ke"]
+            [:HeadMasc :Singular :Person2 :Common "asti-ke"]
+            [:HeadMasc :Singular :Person3 :Masc "isi-ke"]
+            [:HeadMasc :Singular :Person3 :Fem "ise-ke"]
+            [:HeadMasc :Plural :Person1 :Common "noʔo-ke"]
+            [:HeadMasc :Plural :Person2 :Common "as̆inhaʔno-ke"]
+            [:HeadMasc :Plural :Person3 :Common "insaʔne-ke"]]
+    }
     {:label "gedeo-VAffDepCond-mar"
     :note "WedekindK1985 p. 85-98. 3 sg f is also used for collective plural. Tense values are those of Klaus Wedekind. For the moment,for lack of relevant syntactic information,main clause and subordinate clause tenses are given as distinct values of a single category tense. PerfnonPres2 is a semi-conditionedvariant for PerfnonPres. The same verb form,but without the glottal stop,is used in subordinate sentences:marenna-tta etc. (the fact) that I had goneetc.(p. 91). ImperfNonPres2 is more current,younger-generation variant of imperfNonPres. Assimilation/dissimilation rules for consonant clusters given pp. 99-104."
     :common {:lexeme :mar,
@@ -284,86 +363,5 @@
             [:Plural :Person2 :Common "mar-éemmabáa(ni)"]
             [:Plural :Person3 :Common "mar-éemmabáa(ni)"]]
     }
-]
-:muterms [
-    {:label "gedeo-PDemonstrative"
-    :note "HudsonG1976 pp. 255-256."
-    :common {:morpheme :PRODEM,
-            :pos :Pronoun,
-            :proClass :Demonstrative}
-    :terms [[:case :deixis :number :gender :token] ;; schema
-            [:Absolutive :Far :Singular :Masc "okkone"]
-            [:Absolutive :Far :Singular :Fem "ettene"]
-            [:Absolutive :Far :Plural :Masc "okkone"]
-            [:Absolutive :Far :Plural :Fem "etteme"]
-            [:Absolutive :Near :Singular :Masc "konne"]
-            [:Absolutive :Near :Singular :Fem "tenne"]
-            [:Absolutive :Near :Plural :Masc "konne"]
-            [:Absolutive :Near :Plural :Fem "tenne"]
-            [:Nominative :Far :Singular :Masc "ikki"]
-            [:Nominative :Far :Singular :Fem "itti"]
-            [:Nominative :Far :Plural :Masc "ikki"]
-            [:Nominative :Far :Plural :Fem "itti"]
-            [:Nominative :Near :Singular :Masc "kuni"]
-            [:Nominative :Near :Singular :Fem "tini"]
-            [:Nominative :Near :Plural :Masc "kuni"]
-            [:Nominative :Near :Plural :Fem "tini"]]
-    }
-    {:label "gedeo-PInterr"
-    :note "HudsonG1976 p. 259."
-    :common {:morpheme :PROINTERROG,
-            :pos :Pronoun,
-            :proClass :Interrogative}
-    :terms [[:interrogClass :token] ;; schema
-            [:InterrogProHow "hiitte"]
-            [:InterrogProHowMany "meʔe"]
-            [:InterrogProWhat "maa"]
-            [:InterrogProWhen "haano"]
-            [:InterrogProWhere "haba"]
-            [:InterrogProWho "ayye"]]
-    }
-    {:label "gedeo-PPersonal"
-    :note "HudsonG1976 pp. 256-259."
-    :common {:morpheme :PROIND,
-            :pos :Pronoun,
-            :proClass :Independent}
-    :terms [[:case :number :person :gender :token] ;; schema
-            [:Absolutive :Singular :Person1 :Common "ane"]
-            [:Absolutive :Singular :Person2 :Common "ate"]
-            [:Absolutive :Singular :Person3 :Masc "iso(o)"]
-            [:Absolutive :Singular :Person3 :Fem "ise(e)"]
-            [:Absolutive :Plural :Person1 :Common "noʔo(s)"]
-            [:Absolutive :Plural :Person2 :Common "as̆inhaʔno(o)"]
-            [:Absolutive :Plural :Person3 :Common "insaʔne(e)"]
-            [:Nominative :Singular :Person1 :Common "ani"]
-            [:Nominative :Singular :Person2 :Common "asti"]
-            [:Nominative :Singular :Person3 :Masc "isi"]
-            [:Nominative :Singular :Person3 :Fem "ise"]
-            [:Nominative :Plural :Person1 :Common "noʔo"]
-            [:Nominative :Plural :Person2 :Common "as̆inhaʔno"]
-            [:Nominative :Plural :Person3 :Common "insaʔne"]]
-    }
-    {:label "gedeo-PPoss"
-    :note "HudsonG1976 pp. 256-259."
-    :common {:morpheme :PROPOSS,
-            :caseHead :HeadAbsolutive,
-            :pos :Pronoun,
-            :proClass :Possessive}
-    :terms [[:genderHead :number :person :gender :token] ;; schema
-            [:HeadFem :Singular :Person1 :Common "an-tte"]
-            [:HeadFem :Singular :Person2 :Common "asti-tte"]
-            [:HeadFem :Singular :Person3 :Masc "isi-tte"]
-            [:HeadFem :Singular :Person3 :Fem "ise-tte"]
-            [:HeadFem :Plural :Person1 :Common "noʔo-tte"]
-            [:HeadFem :Plural :Person2 :Common "as̆inhaʔno-tte"]
-            [:HeadFem :Plural :Person3 :Common "insaʔne-tte"]
-            [:HeadMasc :Singular :Person1 :Common "an-ke"]
-            [:HeadMasc :Singular :Person2 :Common "asti-ke"]
-            [:HeadMasc :Singular :Person3 :Masc "isi-ke"]
-            [:HeadMasc :Singular :Person3 :Fem "ise-ke"]
-            [:HeadMasc :Plural :Person1 :Common "noʔo-ke"]
-            [:HeadMasc :Plural :Person2 :Common "as̆inhaʔno-ke"]
-            [:HeadMasc :Plural :Person3 :Common "insaʔne-ke"]]
-    }
-]
+}
 }
