@@ -13,11 +13,11 @@
 	  :derivedStemAug [:Intensive, :Intransitive, :Simple]
 	  :gender [:Common, :Fem, :Masc]
 	  :genHead [:H_Fem, :H_Masc]
-	  :morphClass [:COMPSEM, :DERVSTEMCAUS, :DERVSTEMCOLL, :DERVSTEMPASS, :DERVSTEMRECIP, :DERVSTEMREFL, :DERVSTEMVAR, :TENSESTEMPLUP1, :TENSESTEMPLUP2]
+	  :morphClass [:Compound :PrefVersusSuff :COMPSEM, :DERVSTEMCAUS, :DERVSTEMCOLL, :DERVSTEMPASS, :DERVSTEMRECIP, :DERVSTEMREFL, :DERVSTEMVAR, :TENSESTEMAORIST :DERVSTEMAORIST]
 	  :numHead [:H_Plural, :H_Singular]
 	  :number [:Plural, :Plural2, :Singular]
 	  :pdgmSubType [:AuxFay, :AuxHay, :AuxKay, :Auxiliary, :CopAn]
-	  :pdgmType [:CompSem, :Compound, :DervStemForm, :PrefVsSuff, :RootForm, :StemForm, :StemFormation]
+	  :pdgmType [:Compound]
 	  :person [:Person1, :Person2, :Person3]
 	  :polarity [:Affirmative, :Negative, :NegativeEmphatic]
 	  :pos [:Pronoun, :Verb, :Var]
@@ -71,7 +71,7 @@
   :dur {:gloss "[x]", :lemma "[y]", }
   :dāh {:gloss "be small", :lemma "dāh", }
   :dūr {:gloss "visit", :lemma "dūr", }
-  :fay {:gloss "be", :lemma "fāy", :pdgmSubType :Auxiliary}
+  :fay {:gloss "be (Aux)", :lemma "fāy"}
   :fayd {:gloss "lachen", :lemma "m-fefyād"}
   :fāyd {:gloss "lachen", :lemma "mē-fyād"}
   :fedig {:gloss "release", :lemma "fedig", }
@@ -99,11 +99,11 @@
   :hanig {:gloss "sich biegen", :lemma "halāg"}
   :harid {:gloss "slaughter", :lemma "harid", }
   :har {:gloss "want", :lemma ""}
-  :hay {:gloss "be", :lemma "hāy", :pdgmSubType :Auxiliary}
+  :hay {:gloss "be (Aux)", :lemma "hāy"}
   :herid {:gloss "[x]", :lemma "[y]", }
   :is {:gloss "verlassen", :lemma "mō-‘ās"}
   :kan {:gloss "know", :lemma "kān", }
-  :kay {:gloss "be", :lemma "kāy", :pdgmSubType :Auxiliary}
+  :kay {:gloss "be", :lemma "kāy"}
   :kehan {:gloss "love", :lemma "kehan", }
   :kesis {:gloss "wickeln", :lemma "at-kasās"}
   :keti {:gloss "legen", :lemma "at-katāy"}
@@ -170,7 +170,6 @@
     :note "Reinisch1893 #247. Durative pres/perf formed with MV[perf]+ Aux[pres/perf].
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
-            :conjSubType :AuxFay,
             :lexeme :fay,
             :polarity :Affirmative,
             :pos :Verb,
@@ -190,7 +189,6 @@
     :note "Reinisch1893 #247. Durative pres/perf formed with MV[perf]+ Aux[pres/perf].
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
-            :conjSubType :AuxHay,
             :lexeme :hay,
             :polarity :Affirmative,
             :pos :Verb,
@@ -210,7 +208,6 @@
     :note "Reinisch1893 #247. Durative pres/perf formed with MV[perf]+ Aux[pres/perf].
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
-            :conjSubType :AuxFay,
             :lexeme :fay,
             :polarity :Affirmative,
             :pos :Verb,
@@ -230,7 +227,6 @@
     :note "Reinisch1893 #247. Durative pres/perf formed with MV[perf]+ Aux[pres/perf].
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
-            :conjSubType :AuxHay,
             :lexeme :hay,
             :polarity :Affirmative,
             :pos :Verb,
@@ -470,9 +466,8 @@
     {:label "beja_Re-VPrefAffPluperfRootForm"
     :note "Reinisch1893 #232"
     :common {:conjClass :Prefix,
-            :morphClass :TENSESTEMPLUP2,
+            :morphClass :TENSESTEMAORIST,
             :number :Singular,
-            :pdgmType :RootForm,
             :polarity :Affirmative,
             :pos :Verb,
             :tam :Aorist}
@@ -496,8 +491,7 @@
     {:label "beja_Re-VPrefAffPluperfStemFormation"
     :note "Reinisch1893 #231"
     :common {:conjClass :Prefix,
-            :morphClass :TENSESTEMPLUP1,
-            :pdgmType :StemFormation,
+            :morphClass :DERVSTEMAORIST,
             :polarity :Affirmative,
             :pos :Verb,
             :tam :Aorist}
@@ -966,7 +960,6 @@
     :note "Reinisch1893 #225; compares Arb, Heb imperfect with Beniamer perfect"
     :common {:conjClass :Prefix,
             :morphClass :COMPSEM,
-            :pdgmType :CompSem,
             :polarity :Affirmative,
             :pos :Verb,
             :rootClass :CCC,
@@ -1186,7 +1179,6 @@
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
             :lexeme :fay,
-            :pdgmSubType :AuxFay,
             :polarity :Negative,
             :pos :Verb,
             :rootClass :CC,
@@ -1334,7 +1326,6 @@
     :common {:conjClass :Prefix,
             :derivedStem :S,
             :morphClass :DERVSTEMCAUS,
-            :pdgmType :StemForm,
             :pos :Verb}
     :terms [[:lexeme :token-note :token] ;; schema
             [:Had "Common, verfluchen lassen" "sō-‘ad"]
@@ -1373,7 +1364,6 @@
     :common {:conjClass :Prefix,
             :derivedStem :Collaborative,
             :morphClass :DERVSTEMCOLL,
-            :pdgmType :StemForm,
             :pos :Verb}
     :terms [[:lexeme :token-note :token] ;; schema
             [:baden "w. intensive, mitvergessen" "mē-bdān"]
@@ -1395,7 +1385,6 @@
     :note "Reinisch1893 #306"
     :common {:conjClass :Prefix,
             :lexeme :COPULA,
-            :pdgmSubType :CopAn,
             :pos :Verb,
             :tam :ConditionalPerfect}
     :terms [[:number :person :gender :token] ;; schema
@@ -1412,7 +1401,6 @@
     :note "Reinisch1893 #306"
     :common {:conjClass :Prefix,
             :lexeme :COPULA,
-            :pdgmSubType :CopAn,
             :pos :Verb,
             :tam :ConditionalPresent}
     :terms [[:number :person :gender :token] ;; schema
@@ -1429,8 +1417,8 @@
     :note "Reinisch1893 #247. Durative pres/perf formed with MV[perf]+ Aux[pres/perf].
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
-            :conjSubType :AuxFay,
             :lexeme :fay,
+            :conjSubType :AuxFay,
             :polarity :Negative,
             :pos :Verb,
             :rootClass :CC,
@@ -1469,7 +1457,6 @@
     :note "Reinisch1893 #247. Durative pres/perf formed with MV[perf]+ Aux[pres/perf].
             hay/fay differ acc. to dialect. Neg. cop kāy,cf. #142."
     :common {:conjClass :Prefix,
-            :conjSubType :AuxKay,
             :lexeme :kay,
             :polarity :Negative,
             :pos :Verb,
@@ -1761,7 +1748,6 @@
     :common {:conjClass :Prefix,
             :derivedStem :M,
             :morphClass :DERVSTEMPASS,
-            :pdgmType :StemForm,
             :pos :Verb}
     :terms [[:lexeme :token-note :token] ;; schema
             [:Hat "Common, getreten werden" "tō- atō’āt"]
@@ -1791,7 +1777,6 @@
     :note "Reinisch1893 #306"
     :common {:conjClass :Prefix,
             :lexeme :COPULA,
-            :pdgmSubType :CopAn,
             :pos :Verb,
             :tam :Past}
     :terms [[:number :person :gender :token] ;; schema
@@ -1808,7 +1793,7 @@
     :note "Reinisch1893 #308"
     :common {:lexeme :dir,
             :number :Singular,
-            :pdgmType :PrefVsSuff,
+            :morphClass :PrefVersusSuff,
             :pos :Verb}
     :terms [[:conjClass :tam :person :gender :token] ;; schema
             [:Prefix :Past :Person1 :Common "a-dír"]
@@ -1836,7 +1821,6 @@
     :note "Reinisch1893 #306"
     :common {:conjClass :Prefix,
             :lexeme :COPULA,
-            :pdgmSubType :CopAn,
             :pos :Verb,
             :tam :Present}
     :terms [[:number :person :gender :token] ;; schema
@@ -1854,7 +1838,6 @@
     :common {:conjClass :Prefix,
             :derivedStem :Reciprocal,
             :morphClass :DERVSTEMRECIP,
-            :pdgmType :StemForm,
             :pos :Verb,
             :token-note "m + redup. verb"}
     :terms [[:lexeme :token-gloss :token] ;; schema
@@ -1876,7 +1859,6 @@
     :common {:conjClass :Prefix,
             :derivedStem :Reflexive,
             :morphClass :DERVSTEMREFL,
-            :pdgmType :StemForm,
             :pos :Verb}
     :terms [[:lexeme :token-note :token] ;; schema
             [:am "no base form (#215), sich hinaufbegeben" "‘ām"]
@@ -2117,8 +2099,7 @@
     {:label "beja_Re-VSuffDervStemForm"
     :note "Reinisch1893 #325. [MAKE BETTER SYSTEMATIZATION OF RʔS ANALYSIS OF DERIVED STEMS.] In Reinisch,causPass is termed causatives reflexive;some instances of passCaus are termed reciprocum;passCaus2 is causatives reciprocum."
     :common {:conjClass :Suffix,
-            :morphClass :DERVSTEMVAR,
-            :pdgmType :DervStemForm,
+            :morphClass :DERVSTEMSUFF,
             :pos :Verb}
     :terms [[:derivedStem :derivedStemAug :lexeme :token] ;; schema
             [:Base :Intensive :dab "dadab"]

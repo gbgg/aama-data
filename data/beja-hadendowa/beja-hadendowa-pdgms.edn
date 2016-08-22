@@ -15,9 +15,8 @@
 	  :genHead [:H_Fem, :H_Masc]
 	  :genN1 [:N1_Fem, :N1_Masc]
 	  :genN2 [:N2_Fem, :N2_Masc]
-           :MorphClass [:DervStemForm, :Formation, :NomForm, :SubjMarker, :SUFFCONDPERF]
+           :morphClass [:GenAdjPart, :GenBeforePossSuff, :NumOrd, :Numeral :DervStemForm, :ImptvFormation, :NomForm-ktm, :NomFormPref, :NomFormSuff, :SubjMarker, :SubjMarkerIntens, :SUFFCONDPERF]
            :nonFiniteForm [:Gerund, :NominalAction, :NominalAgent, :Participle, :PerfectParticiple, :PresentParticiple]
-	  :nounMorphClass [:GenAdjPart, :GenBeforePossSuff, :NumOrd, :Numeral]
 	  :numHead [:H_Common, :H_Plural, :H_Singular]
 	  :numN1 [:N1_Common, :N1_Plural, :N1_Singular]
 	  :number [:Plural, :Singular]
@@ -302,20 +301,6 @@
             [:Plural :Person2 :Common "kítkitimna"]
             [:Plural :Person3 :Common "kí̄ktimna"]]
     }
-    {:label "beja_Ro-VPrefCCCNomForm-kitim"
-    :note "Roper1928 #192-197"
-    :common {:conjClass :Prefix,
-            :lexeme :kitim,
-            :pos :Verb,
-            :rootClass :CCC,
-            :verbMorphClass :NomForm}
-    :terms [[:nonFiniteForm :polarity :token] ;; schema
-            [:Gerund :_NA "kitmá̄wa"]
-            [:NominalAction :_NA "-ū- kitú̄m"]
-            [:NominalAgent :_NA "-ā- kātemána"]
-            [:Participle :Affirmative "kítime"]
-            [:Participle :Negative "bākátīm"]]
-    }
     {:label "beja_Ro-VPrefCCCPredicativeNomForm-kitim"
     :note "Roper1928 #192-197"
     :common {:conjClass :Prefix,
@@ -379,8 +364,7 @@
     :note "Roper1928 #211-226"
     :common {:conjClass :Prefix,
             :morphClass :DervStemForm,
-            :pos :Verb,
-            :verbMorphClass :DervStemForm}
+            :pos :Verb}
     :terms [[:derivedStem :lexeme :nonFiniteForm :polarity :tam :token] ;; schema
             [:B_Freq :kitim :_NA :_NA :_NA "kātatim"]
             [:B_Intens :bir :_NA :_NA :_NA "bor"]
@@ -1182,7 +1166,7 @@
     {:label "beja_Ro-NGenAdjPart"
     :note "Roper1928 #62. Possessive construction where N1 is modified by an adjective.
             Pattern is:[N1 Adj]+genAdjPart N2 the Adj N1s N2"
-    :common {:nounMorphClass :GenAdjPart,
+    :common {:morphClass :GenAdjPart,
             :pos :Noun}
     :terms [[:genN1 :genN2 :numN1 :token] ;; schema
             [:Fem :Fem :Plural "-natet"]
@@ -1193,7 +1177,7 @@
     }
     {:label "beja_Ro-NGenBeforePossSuff"
     :note "Roper1928 #106"
-    :common {:nounMorphClass :GenBeforePossSuff,
+    :common {:morphClass :GenBeforePossSuff,
             :pos :Noun}
     :terms [[:genHead :number :gender :token] ;; schema
             [:H_Fem :Singular :Masc "-it-"]
@@ -1207,14 +1191,14 @@
     }
     {:label "beja_Ro-NNumOrd"
     :note "Roper1928 #77"
-    :common {:nounMorphClass :NumOrd,
+    :common {:morphClass :NumOrd,
             :pos :Noun}
     :terms [[:token-note :token] ;; schema
             ["eighth" "ásimha"] ["fifth" "éiya"] ["first" "áwwali"] ["fourth" "fádiga"] ["ninth" "aššádiga"] ["second" "mália"] ["seventh" "asarama"] ["sixth" "aságwira"] ["tenth" "támna"] ["third" "mehéa"]]
     }
     {:label "beja_Ro-NNumerals"
     :note "Roper1928 #69"
-    :common {:nounMorphClass :Numeral,
+    :common {:morphClass :Numeral,
             :pos :Noun}
     :terms [[:token-note :gender :token] ;; schema
             ["1" :Masc "gal"] ["10" :Common "támin"] ["100" :Common "še"] ["1000" :Common "támin še"] ["11" :Masc "tamnágwir"] ["11" :Fem "tamnágwit"] ["110" :Common "šéwa támin"] ["12" :Common "támnamále"] ["13" :Common "támnamehéi"] ["14" :Common "támnafádig"] ["15" :Common "támenei"] ["16" :Masc "támenaságwir"] ["17" :Common "támenasaráma"] ["18" :Common "támenasimhéi"] ["19" :Common "támnaššádig"] ["2" :Common "mále"] ["20" :Masc "tágug"] ["200" :Common "mále še"] ["2000" :Common "tágug še"] ["21" :Masc "taggwágwir"] ["22" :Common "tággwamále"] ["23" :Common "tággwamehéi"] ["24" :Common "tággwafádig"] ["25" :Common "tággwéi"] ["26" :Masc "tággwaságwir"] ["27" :Common "tággwasaráma"] ["28" :Common "tággwasimhéi"] ["29" :Common "tággwaššádig"] ["3" :Common "mehei"] ["30" :Common "mehéitamun"] ["300" :Common "mehéi še"] ["31" :Masc "mehéitamunwa gal"] ["32" :Masc "mehéitamunwa mále"] ["4" :Common "fádig"] ["40" :Common "fádigtamun"] ["5" :Common "ei"] ["50" :Common "éitamun"] ["6" :Masc "aságwir"] ["6" :Fem "aságwit"] ["60" :Common "aságwirtamun"] ["7" :Common "asaráma"] ["70" :Common "asarámatamun"] ["8" :Common "asimhéi"] ["80" :Common "asimhéitamun"] ["9" :Common "aššádig"] ["90" :Common "aššádigtamun"] ["Common" :Fem "taggwágwit"] ["Common" :Fem "tágugt"] ["Common" :Fem "támenaságwit"] ["Common" :Fem "taggwasagwit"] ["p1" :Fem "gat"]]
@@ -1395,12 +1379,39 @@
             [:H_Masc :H_Singular :Plural :Person2 "-ukna"]
             [:H_Masc :H_Singular :Plural :Person3 "-u"]]
     }
+    {:label "beja_Ro-VPrefCCCNomForm-kitim"
+    :note "Roper1928 #192-197"
+    :common {:conjClass :Prefix,
+            :lexeme :kitim,
+            :pos :Verb,
+            :rootClass :CCC,
+            :morphClass :NomForm-ktm}
+    :terms [[:nonFiniteForm :polarity :token] ;; schema
+            [:Gerund :_NA "kitmá̄wa"]
+            [:NominalAction :_NA "-ū- kitú̄m"]
+            [:NominalAgent :_NA "-ā- kātemána"]
+            [:Participle :Affirmative "kítime"]
+            [:Participle :Negative "bākátīm"]]
+    }
+    {:label "beja_Ro-VPrefNomForm"
+    :note "Roper1928 #170-175"
+    :common {:conjClass :Prefix,
+            :pos :Verb,
+            :morphClass :NomFormPref}
+    :terms [[:nonFiniteForm :polarity :token] ;; schema
+            [:Gerund :_NA "-a"]
+            [:NominalAction :_NA "-ā-"]
+            [:NominalAgent :_NA "-o-"]
+            [:PerfectParticiple :_NA "-ti or –tīt"]
+            [:PresentParticiple :Affirmative "-e"]
+            [:PresentParticiple :Negative "bā-"]]
+    }
     {:label "beja_Ro-VPrefIntensSubjMarker"
     :note "Roper1928 #213"
     :common {:conjClass :Prefix,
             :derivedStem :Intensive,
             :pos :Verb,
-            :verbMorphClass :SubjMarker}
+            :morphClass :SubjMarkerIntens}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "e…i…i"]
             [:Singular :Person2 :Masc "te…i…ia"]
@@ -1411,25 +1422,12 @@
             [:Plural :Person2 :Common "te…i…ina"]
             [:Plural :Person3 :Common "e…i…in(a)"]]
     }
-    {:label "beja_Ro-VPrefNomForm"
-    :note "Roper1928 #170-175"
-    :common {:conjClass :Prefix,
-            :pos :Verb,
-            :verbMorphClass :NomForm}
-    :terms [[:nonFiniteForm :polarity :token] ;; schema
-            [:Gerund :_NA "-a"]
-            [:NominalAction :_NA "-ā-"]
-            [:NominalAgent :_NA "-o-"]
-            [:PerfectParticiple :_NA "-ti or –tīt"]
-            [:PresentParticiple :Affirmative "-e"]
-            [:PresentParticiple :Negative "bā-"]]
-    }
     {:label "beja_Ro-VPrefSubjMarker"
     :note "Roper1928 #167"
     :common {:conjClass :Prefix,
             :morpheme :PREFSUBJMARK,
             :pos :Verb,
-            :verbMorphClass :SubjMarker}
+            :morphClass :SubjMarker}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "a…"]
             [:Singular :Person2 :Masc "ti…a"]
@@ -1443,7 +1441,7 @@
     {:label "beja_Ro-VSuffCondPerf"
     :note "Roper1928 #127-158"
     :common {:conjClass :Suffix,
-            :verbMorphClass :SUFFCONDPERF,
+            :morphClass :SUFFCONDPERF,
             :pos :Verb,
             :tam :ConditionalPerfect}
     :terms [[:number :person :gender :token] ;; schema
@@ -1461,7 +1459,7 @@
     :common {:conjClass :Suffix,
             :pos :Verb,
             :tam :Imperative,
-            :verbMorphClass :Formation}
+            :morphClass :ImptvFormation}
     :terms [[:polarity :gender :token] ;; schema
             [:Affirmative :Masc "Common"]
             [:Affirmative :Fem "-i"]
@@ -1474,7 +1472,7 @@
     :note "Roper1928 #121-126"
     :common {:conjClass :Suffix,
             :pos :Verb,
-            :verbMorphClass :NomForm}
+            :morphClass :NomFormSuff}
     :terms [[:aspect :nonFiniteForm :polarity :tam :number :gender :token] ;; schema
             [:Perfect :Participle :_NA :Past :_NA :_NA "-etit"]
             [:Perfect :Participle :_NA :Present :_NA :_NA "-eti"]

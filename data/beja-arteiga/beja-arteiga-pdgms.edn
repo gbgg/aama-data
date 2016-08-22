@@ -12,7 +12,7 @@
            :derivedStem [:B, :M, :R, :S, :SS, :SM, :T :B-Intensive :M-Intensive :S-Intensive :SM-Intensive :T-Intensive]
            :gender [:Common, :Fem, :Masc]
            :langVar [:Arteiga, :Hadendowa, :Bishari]
-           :morphClass [:Affix, :Auxiliary, :Compound, :Copula, :Stem :DERVSTEMFORM :IMPTVROOTCLASSES, :TENSESTEMFORM, :VERBALPARTICIPLES, :POSTPOSITION, :PLMARK, :SUBJMARK]
+           :morphClass [:TAMSTEMCLASS :DERVSTEM :IMPTVROOTCLASSES, :TENSESTEM, :PARTICIPLES, :POSTPOSITION, :PLMARK, :SUBJMARK]
            :number [:Plural, :Singular]
            :participle [:Conjunctive, :Future, :Negative, :Past, :Present]
            :person [:Person1, :Person2, :Person3]
@@ -129,7 +129,6 @@
 :lxterms [
     {:label "beja_H-VCopula"
     :common {:lexeme :COPULA,
-            :morphClass :Copula,
             :pos :Verb}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Masc "STEM=u"]
@@ -157,48 +156,11 @@
             [:Singular :Person2 :Fem "tam-át-i"]
             [:Plural :Person2 :Common "tam-át-na"]]
     }
-    {:label "beja_H-VImperativeRootClassExx"
-    :common {:gender :Masc,
-                        :pos :Verb,
-            :person :Person2,
-            :derivedStem :B,
-            :morphClass :IMPTVROOTCLASSES,
-            :derivedStemAug :Simple,
-            :tam :Imperative,
-            :number :Singular}
-    :terms [[:conjClass :lexeme :rootClass :token] ;; schema
-            [:Prefix :bis :CVC "bis-à"]
-            [:Prefix :dbl :CCC "dibìl-a"]
-            [:Prefix :dgy :CCY "digiì-a"]
-            [:Prefix :dif :CVC "díf-a"]
-            [:Prefix :dir :CVC "dir-à"]
-            [:Prefix :dlb :CCC "dilìb-a"]
-            [:Prefix :fnk :CCC "finìk-a"]
-            [:Prefix :fry :CCY "firiì-a"]
-            [:Prefix :ktb :CCC "kitìb-a"]
-            [:Prefix :ktm :CCC "kitìm-a"]
-            [:Prefix :kwbs :CCC "kwibìs-a"]
-            [:Prefix :liw :CVC "liw-à"]
-            [:Prefix :min :CVC "min-à"]
-            [:Prefix :mry :CCY "miriì-a"]
-            [:Prefix :rib :CVC "rib-à"]
-            [:Prefix :sfy :CCY "šifiì-a"]
-            [:Suffix :ad :Invar "?ad-àa"]
-            [:Suffix :doob :Invar "doob-àa"]
-            [:Suffix :gwa :Invar "gwa?-àa"]
-            [:Suffix :kileew :Invar "kileew-àa"]
-            [:Suffix :nuun :Invar "nuun-àa"]
-            [:Suffix :raat :Invar "raat-àa"]
-            [:Suffix :rih :Invar "rih-àa"]
-            [:Suffix :suum :Invar "šuum-àa"]
-            [:Suffix :tam :Invar "tam-àa"]]
-    }
     {:label "beja_H-VNegAux"
     :common {:lexeme :AUXILIARY,
             :polarity :Negative,
             :pos :Verb,
-            :tam :Past,
-            :morphClass :Auxiliary}
+            :tam :Past}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "kaàkè"]
             [:Singular :Person2 :Masc "kíttà = {kí-t-kaa-`a}"]
@@ -213,8 +175,7 @@
     :common {:lexeme :tam,
             :polarity :Negative,
             :pos :Verb,
-            :tam :Past,
-            :morphClass :Compound}
+            :tam :Past}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "tamaa-`b/`t kaàkè"]
             [:Singular :Person2 :Masc "tamaa-`b kíttà"]
@@ -224,22 +185,6 @@
             [:Plural :Person1 :Common "tamaa-`b/`t kínkè"]
             [:Plural :Person2 :Common "tamaa-`b/`t kítteèna"]
             [:Plural :Person3 :Common "tamaa-`b/`t kiìkeèn"]]
-    }
-    {:label "beja_H-VParticiple"
-    :common {:derivedStem :B,
-            :morphClass :VERBALPARTICIPLES,
-            :pos :Verb}
-    :terms [[:conjClass :lexeme :participle :token-note :token] ;; schema
-            [:Prefix :dbl :Conjunctive "Suff: -tií, \"X collected and ...\"" "dibil-tií"]
-            [:Prefix :dbl :Future "Suff: -át, \"will collect\"" "dibl-át"]
-            [:Prefix :dbl :Negative "Pref: baa-, \"not collecting\"" "baa-dabiíl"]
-            [:Prefix :dbl :Past "Suff: -aà, \"having collected\"" "dibl-aà"]
-            [:Prefix :dbl :Present "Suff: -ée, \"(while) collecting\"" "dibl-ée"]
-            [:Suffix :tam :Conjunctive "Suff: -eetì, \"X ate and ...\"" "tam-eetì"]
-            [:Suffix :tam :Future "Suff: -át, \"will eat\"" "tam-át"]
-            [:Suffix :tam :Negative "Pref+Suff: baa- + -ày, \"not eating\"" "baa-tam-ày"]
-            [:Suffix :tam :Past "Suff: -aà, \"having eaten\"" "tam-aà"]
-            [:Suffix :tam :Present "Suff: -ée, \"(while) eating\"" "tam-ée"]]
     }
     {:label "beja_H-VPrefAffCCCAor"
     :common {:conjClass :Prefix,
@@ -635,7 +580,7 @@
     }
     {:label "beja_H-VStemClassPrefTense"
     :common {:conjClass :Prefix,
-            :morphClass :TENSESTEMFORM,
+            :morphClass :TENSESTEM,
             :pos :Verb}
     :terms [[:derivedStem :lexeme :rootClass :tamStemClass :token] ;; schema
             [:B-Intensive :dbl :CCC :AoristClass "-ii-dbal-"]
@@ -805,7 +750,7 @@
             [:T :liw :CVC :PresClass "-t-oo-liiw- "]]
     }
     {:label "beja_H-VStemDervExx"
-    :common {:morphClass :DERVSTEMFORM,
+    :common {:morphClass :DERVSTEM,
             :pos :Verb}
     :terms [[:conjClass :derivedStem :lexeme :rootClass :token-note :token] ;; schema
             [:Prefix :B :bis :CVC "bury" "bis-"]
@@ -825,7 +770,7 @@
             [:Prefix :B :rib :CVC "refuse" "rib-"]
             [:Prefix :B :sfy :CCY "drink milk" "šifiì-"]
             [:Prefix :M-Intensive :bdn :CCC "be forgotten" "-mee-bdaan-"]
-            [:Prefix :M-Intensive :niy :CVC "be milked" "-mee-niiy-"]
+]            [:Prefix :M-Intensive :niy :CVC "be milked" "-mee-niiy-"]
             [:Prefix :M-Intensive :swy :CCY "help to mix" "-mee-šwaay-"]
             [:Prefix :R :dgy :CCY "return (intr.)" "-dge-"]
             [:Prefix :R :fif :CVC "boil over" "-faf-"]
@@ -911,7 +856,7 @@
     :common {:derivedStem :B,
             :lexeme :dbl,
                         :pos :Verb,
-            :morphClass :Stem}
+            :morphClass :TAMSTEMCLASS}
     :terms [[:participle :polarity :tam :tamStemClass :number :token] ;; schema
             [:Conjunctive :Affirmative :NA :PartClass :_NA "dibl-"]
             [:Conjunctive :Negative :NA :NegClass :_NA "-dabiil-"]
@@ -1052,28 +997,6 @@
     }
 ]
 :muterms [
-    {:label "beja_H-NPluralFormation"
-    :common {:morphClass :PLMARK,
-            :pos :Noun}
-    :terms [[:lexeme :pluralClass :token] ;; schema
-            [:ab :Pl_A "?àb => ?abà"]
-            [:baaba :Pl_C "baabà => baabà"]
-            [:bikkaar :Pl_B "bikkàar => bikkàr"]
-            [:bít :Pl_A "bít => bità"]
-            [:dírim :Pl_A "dírim => dirmà"]
-            [:gaw :Pl_A "gàw => gawà"]
-            [:ginuuf :Pl_B "ginuúf => ginúf"]
-            [:heelay :Pl_A "heèlay => heelayà"]
-            [:huus :Pl_A "huus => huusà"]
-            [:kaam :Pl_B "kaàm => kàm"]
-            [:kitaab :Pl_B "kitaàb => kitàb"]
-            [:kwa :Pl_C "kwà => kwà"]
-            [:miitaat :Pl_B "miitaàt => miitàt"]
-            [:nde :Pl_C "[n]dé => [n]dè"]
-            [:ragad :Pl_A "ragàd => ragadà "]
-            [:san :Pl_A "sàn => sanà"]
-            [:yaas :Pl_B "yàas => yàs"]]
-    }
     {:label "beja_H-P3sgProDialectDist"
     :common {:proClass :ProComp,
             :pos :Pronoun,
@@ -1182,17 +1105,6 @@
             [:Possessive :Plural :Person2 "-‘kna"]
             [:Possessive :Plural :Person3 "-`hina"]]
     }
-    {:label "beja_H-PPostposition"
-    :common {:morphClass :POSTPOSITION,
-            :pos :Noun}
-    :terms [[:case :postpositionClass :token] ;; schema
-            [:Ablative :Pp_A "..."]
-            [:Ablative :Pp_B "-s-"]
-            [:Equative :Pp_A "-`t"]
-            [:Equative :Pp_B "- t-"]
-            [:Locative :Pp_A "-`b"]
-            [:Locative :Pp_B "..."]]
-    }
     {:label "beja_H-VSubjMarkers"
     :common {:morphClass :SUBJMARK,
             :pos :Verb}
@@ -1205,6 +1117,91 @@
             [:Plural :Person1 :Common "ni-/-n-"]
             [:Plural :Person2 :Common "ti-/-t- + -`na"]
             [:Plural :Person3 :Common "?i-/-y- + -`n(a)"]]
+    }
+    {:label "beja_H-VParticiple"
+    :common {:derivedStem :B,
+            :morphClass :PARTICIPLES,
+            :pos :Verb}
+    :terms [[:conjClass :lexeme :participle :token-note :token] ;; schema
+            [:Prefix :dbl :Conjunctive "Suff: -tií, \"X collected and ...\"" "dibil-tií"]
+            [:Prefix :dbl :Future "Suff: -át, \"will collect\"" "dibl-át"]
+            [:Prefix :dbl :Negative "Pref: baa-, \"not collecting\"" "baa-dabiíl"]
+            [:Prefix :dbl :Past "Suff: -aà, \"having collected\"" "dibl-aà"]
+            [:Prefix :dbl :Present "Suff: -ée, \"(while) collecting\"" "dibl-ée"]
+            [:Suffix :tam :Conjunctive "Suff: -eetì, \"X ate and ...\"" "tam-eetì"]
+            [:Suffix :tam :Future "Suff: -át, \"will eat\"" "tam-át"]
+            [:Suffix :tam :Negative "Pref+Suff: baa- + -ày, \"not eating\"" "baa-tam-ày"]
+            [:Suffix :tam :Past "Suff: -aà, \"having eaten\"" "tam-aà"]
+            [:Suffix :tam :Present "Suff: -ée, \"(while) eating\"" "tam-ée"]]
+    }
+    {:label "beja_H-VImperativeRootClassExx"
+    :common {:gender :Masc,
+                        :pos :Verb,
+            :person :Person2,
+            :derivedStem :B,
+            :morphClass :IMPTVROOTCLASSES,
+            :derivedStemAug :Simple,
+            :tam :Imperative,
+            :number :Singular}
+    :terms [[:conjClass :lexeme :rootClass :token] ;; schema
+            [:Prefix :bis :CVC "bis-à"]
+            [:Prefix :dbl :CCC "dibìl-a"]
+            [:Prefix :dgy :CCY "digiì-a"]
+            [:Prefix :dif :CVC "díf-a"]
+            [:Prefix :dir :CVC "dir-à"]
+            [:Prefix :dlb :CCC "dilìb-a"]
+            [:Prefix :fnk :CCC "finìk-a"]
+            [:Prefix :fry :CCY "firiì-a"]
+            [:Prefix :ktb :CCC "kitìb-a"]
+            [:Prefix :ktm :CCC "kitìm-a"]
+            [:Prefix :kwbs :CCC "kwibìs-a"]
+            [:Prefix :liw :CVC "liw-à"]
+            [:Prefix :min :CVC "min-à"]
+            [:Prefix :mry :CCY "miriì-a"]
+            [:Prefix :rib :CVC "rib-à"]
+            [:Prefix :sfy :CCY "šifiì-a"]
+            [:Suffix :ad :Invar "?ad-àa"]
+            [:Suffix :doob :Invar "doob-àa"]
+            [:Suffix :gwa :Invar "gwa?-àa"]
+            [:Suffix :kileew :Invar "kileew-àa"]
+            [:Suffix :nuun :Invar "nuun-àa"]
+            [:Suffix :raat :Invar "raat-àa"]
+            [:Suffix :rih :Invar "rih-àa"]
+            [:Suffix :suum :Invar "šuum-àa"]
+            [:Suffix :tam :Invar "tam-àa"]]
+    }
+    {:label "beja_H-NPluralFormation"
+    :common {:morphClass :PLMARK,
+            :pos :Noun}
+    :terms [[:lexeme :pluralClass :token] ;; schema
+            [:ab :Pl_A "?àb => ?abà"]
+            [:baaba :Pl_C "baabà => baabà"]
+            [:bikkaar :Pl_B "bikkàar => bikkàr"]
+            [:bít :Pl_A "bít => bità"]
+            [:dírim :Pl_A "dírim => dirmà"]
+            [:gaw :Pl_A "gàw => gawà"]
+            [:ginuuf :Pl_B "ginuúf => ginúf"]
+            [:heelay :Pl_A "heèlay => heelayà"]
+            [:huus :Pl_A "huus => huusà"]
+            [:kaam :Pl_B "kaàm => kàm"]
+            [:kitaab :Pl_B "kitaàb => kitàb"]
+            [:kwa :Pl_C "kwà => kwà"]
+            [:miitaat :Pl_B "miitaàt => miitàt"]
+            [:nde :Pl_C "[n]dé => [n]dè"]
+            [:ragad :Pl_A "ragàd => ragadà "]
+            [:san :Pl_A "sàn => sanà"]
+            [:yaas :Pl_B "yàas => yàs"]]
+    }
+    {:label "beja_H-PPostposition"
+    :common {:morphClass :POSTPOSITION,
+            :pos :Noun}
+    :terms [[:case :postpositionClass :token] ;; schema
+            [:Ablative :Pp_A "..."]
+            [:Ablative :Pp_B "-s-"]
+            [:Equative :Pp_A "-`t"]
+            [:Equative :Pp_B "- t-"]
+            [:Locative :Pp_A "-`b"]
+            [:Locative :Pp_B "..."]]
     }
 ]
 }

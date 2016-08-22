@@ -7,31 +7,30 @@
 :geodemoTXT "Beja is a closely related group of language varieties and dialects spoken in the Red Sea coastal and hill regions in Sudan, Eritrea, and Egypt by more than a million individuals. The Atmaan variety is spoken in Eastern Sudan, and is described in Wedekind-etal2007."
 :schemata {
            :case [:Object, :Subject]
-	  :caseHead [:H_Object, :H_Subject]
-	  :clauseType [:Relative]
-	  :conjClass [:Irregular, :Prefix, :Suffix] 
-	  :derivedStemAug [:Repetitive, :Simple]
-	  :formFrequency [:Frequent, :Rare]
-	  :gender [:Common, :Fem, :Masc]
-	  :genHead [:H_Fem, :H_Masc]
-	  :genObj [:O_Common, :O_Fem, :O_Masc]
-	  :headPosition [:HeadFollow, :HeadPrecede]
-	  :morphClass [:AUX_OVERVIEW, :FUTURE_INTENTION, :INTENSIVEACTION, :NOMINALIZATIONPATTERNS, :PREFVERB_PATTERNS, :REL_SUFF, :SUBJPREF, :VNOMFORM]
-	  :nonFiniteForm [:NominalAction, :Participle]
-	  :numHead [:H_Plural, :H_Singular]
-	  :numObj [:O_Plural, :O_Singular]
-	  :number [:Plural, :Singular]
-	  :pdgmType [:Overview, :Intention, :Mood, :NominalizationPatterns, :Q, :RelSuff, :Repetitive, :SubjPref, :TransVerbPatterns, :AuxPut, :AuxTake, :NegAux, :NegCop,  :Become]
-	  :persObj [:O_Person1, :O_Person2, :O_Person3]
-	  :person [:Person1, :Person2, :Person3]
-	  :polarity [:Affirmative, :Negative]
-	  :pos [:Pronoun, :Verb]
-	  :proClass [:Independent, :IndependentPersonal, :ObjSuff, :ObjSuffwVerb, :PersSuff, :PossSuff, :IndependentPossessive]
-	  :rootClass [:CHiy, :CaC, :Cay, :CiC, :CiCH, :CiCaC, :CiCiC, :CiCiy, :Ciy, :HaCiC]
-	  :stemClass [:HFin, :HamzFin, :HamzInitVFin, :VFin1, :VFin2]
-	  :strength [:weak]
-	  :tam [:Aorist, :Future, :Imperative, :Jussive, :Participle, :Past, :PastAlt, :PastPerfect, :Present, :PresentShort]
-	  }
+           :caseHead [:H_Object, :H_Subject]
+           :clauseType [:Relative]
+           :conjClass [:Irregular, :Prefix, :Suffix] 
+           :derivedStemAug [:Repetitive, :Simple]
+           :formFrequency [:Frequent, :Rare]
+           :gender [:Common, :Fem, :Masc]
+           :genHead [:H_Fem, :H_Masc]
+           :genObj [:O_Common, :O_Fem, :O_Masc]
+           :headPosition [:HeadFollow, :HeadPrecede] 
+           :morphClass [:AuxOverview,  :AuxPut,  :AuxTake,  :Become :FutureIntention,  :ImperativeOverview,  :IntensiveAction,  :MoodOverview,   :NegAux,  :NegCop,   :NominalizationPatterns,  :PrefVerbPatterns,  :QOverview,  :RelSuff,  :SubjPref,  :SuffixPastPresOverview  :TenseAspOverview   :VNomForm  :VParticiple] 
+           :nonFiniteForm [:NominalAction, :Participle]
+           :numHead [:H_Plural, :H_Singular]
+           :numObj [:O_Plural, :O_Singular]
+           :number [:Plural, :Singular]
+           :persObj [:O_Person1, :O_Person2, :O_Person3]
+           :person [:Person1, :Person2, :Person3]
+           :polarity [:Affirmative, :Negative]
+           :pos [:Pronoun, :Verb]
+           :proClass [:Independent, :IndependentPersonal, :ObjSuff, :ObjSuffwVerb, :PersSuff, :PossSuff, :IndependentPossessive]
+           :rootClass [:CHiy, :CaC, :Cay, :CiC, :CiCH, :CiCaC, :CiCiC, :CiCiy, :Ciy, :HaCiC :Invar]
+           :stemClass [:HFin, :HamzFin, :HamzInitVFin, :VFin1, :VFin2]
+           :strength [:weak]
+           :tam [:Aorist, :Future, :Imperative, :Jussive, :Participle, :Past, :PastAlt, :PastPerfect, :Present, :PresentShort]
+           }
 :pclass {
            :pngClass [:person :number :gender :genHead :genObj  :numHead :numObj :persObj ]
            :synsemClass [:case :caseHead :clauseType :derivedStem :derivedStemAug :headPosition :nonFiniteForm :polarity :pos :proClass :tam ]
@@ -126,10 +125,77 @@
   :šibiba {:conjClass :Prefix, :gloss "look", :lemma "šibiba", :pos :Verb}
 }
 :lxterms [
-    {:label "beja_W-VAffFuture-become"
+     {:label "beja_W-VPreNomAct"
+    :note "Wedekind-etal2007 p. 113"
+    :common {:conjClass :Prefix,
+            :gender :Common,
+            :morphClass :VNomForm,
+            :nonFiniteForm :NominalAction,
+            :pos :Verb,
+    :terms [[:rootClass :lexeme :token] ;; schema
+            [:HaCiC :hariw "w-harúuw"]
+            [:Ciy :dij "óo-myáad"]
+            [:CiCiy :miriy "óo-mraay óo-mrúuy"]
+            [:CiCiC :sibib "óo-šbúub"]
+            [:CiCaC :fiyak "tu-mifyéek tu-mifiyéek"]
+            [:CiC :rib "óo-raab"]
+            [:CiCH :fir "tu-mifir’óoy"]
+            [:CHiy :dHiy "óo-d’uuy"]
+            [:CaC :naw "óo-naaw"]
+            [:Cay :bay "i-míibi i-mábay"]]
+    }
+
+
+    {:label "beja_W-VParticiple"
+    :note "Wedekind-etal2007 p. 106, etc."
+    :common {:gender :Masc,
+            :morphClass :VParticiple,
+            :nonFiniteForm :Participle,
+            :pos :Verb,
+    :terms [[:conjClass :lexeme :polarity :rootClass :token] ;; schema
+            [:Prefix :dHiy :Affirmative :CHiy "d’íyaab"]
+            [:Prefix :naw :Affirmative :CHiy "nawáab"]
+            [:Prefix :bay :Affirmative :Cay "bayáab abáay"]
+            [:Prefix :fir :Affirmative :CiCH "fir’áab"]
+            [:Prefix :rib :Affirmative :CiC "ribáab"]
+            [:Prefix :fiyak  :Affirmative :CiCaC "fayáak"]
+            [:Prefix :sibib :CiCiC "šibbáab"]
+            [:Prefix :miriy :Affirmative :CiCiy "miriyáab"]
+            [:Prefix :diy :Affirmative :Ciy "diyáab"]
+            [:Prefix :diy :Negative :Ciy "báadí"]
+            [:Prefix :hariw :Affirmative :HaCiC "harwáab"]
+            [:Prefix :dHiy :Negative :CHiy "baad’iiyay"]
+            [:Prefix :bay :Negative :CaC "banáaway"]
+            [:Prefix :bay :Negative :Cay "baabáay"]
+            [:Prefix :fir :Negative :CiCH "báafar’a"]
+            [:Prefix :rib :Negative :CiC "báaríib"]
+            [:Prefix :fiyak :Negative :CiCaC "báafiyáak"]
+            [:Prefix :sibib :Negative :CiCiC "baašabíib"]
+            [:Prefix :miriy :Negative :CiCiy "bamáari"]
+            [:Prefix :diy :Negative :Ciy "báadí"]
+            [:Prefix :hariw :Negative :HaCiC "bahar’iw"]
+            [:Prefix :diy :Affirmative :Ciy "diyáab"]
+            [:Prefix :hariw :Affirmative :HaCiC "harwáab"]
+            [:Prefix :hariw :Negative :HaCiC "bahar’iw"]
+            [:Suffix :yak :Affirmative :Invar "yákaab"]
+            [:Suffix :yak :Negative :Invar "baayákay"]]
+    }
+    {:label "beja_W-VSuffPdgmOverview-nonFinite-yak"
+    :note "Wedekind-etal2007 p. 90"
+    :common {:conjClass :Suffix,
+            :lexeme :yak,
+            :pos :Verb,
+            :morphClass :VSuffNom}
+    :terms [[:nonFiniteForm :polarity :token] ;; schema
+            [:NominalAction :_NA "u-yákt"]
+            [:Participle :Affirmative "yákaab"]
+            [:Participle :Negative "baayákay"]]
+    }
+
+  {:label "beja_W-VAffFuture-become"
     :note "Wedekind-etal2007 p. 154 (cf. also 152) (iikta become frm aka,kaya ?)"
     :common {:conjClass :Prefix,
-            :pdgmType :become,
+            :morphClass :Become,
             :lexeme :kay,
             :polarity :Affirmative,
             :pos :Verb,
@@ -148,7 +214,7 @@
     :note "Wedekind-etal2007 p. 133; D1.6.6"
     :common {:lexeme :hiy,
             :polarity :Affirmative,
-            :pos :Verb,
+            :pos :Pronoun,
             :proClass :ObjSuffwVerb}
     :terms [[:genObj :numObj :persObj :number :person :gender :token] ;; schema
             [:O_Common :O_Plural :O_Person1 :Plural :Person1 :Common "baróok nihíhóok"]
@@ -171,12 +237,11 @@
     }
     {:label "beja_W-VAorRepetitive"
     :note "Wedekind-etal2007 p. 156"
-    :common {:morphClass :INTENSIVEACTION,
+    :common {:morphClass :IntensiveAction,
             :number :Singular,
             :person :Person1,
             :pos :Verb,
-            :tam :Aorist,
-            :pdgmType :Repetitive}
+            :tam :Aorist}
     :terms [[:derivedStemAug :lexeme :token :token-note] ;; schema
             [:Repetitive :dir "gwíbaab dáara ándi" "want kill rats"]
             [:Repetitive :dir "igwíba éedri" "kill rats"]
@@ -193,7 +258,7 @@
     }
     {:label "beja_W-VAuxOverview"
     :note "Wedekind-etal2007 Table #33"
-    :common {:morphClass :AUX_OVERVIEW,
+    :common {:morphClass :AuxOverview,
             :pos :Verb}
     :terms [[:lexeme :token :token-note-auxGloss] ;; schema
             [:aha "háya" "\"to do at once\", >take"]
@@ -205,13 +270,12 @@
             [:siniy "síniya" "\"to be doing\", >wait"]]
     }
     {:label "beja_W-VAuxPut-dilib"
-    :note "Wedekind-etal2007 p. 156. The aux aha take and diya put with verb diliba trade
-            yields respectively buy and sell."
+    :note "Wedekind-etal2007 p. 156. The aux aha take and diya put with verb diliba trade yields respectively buy and sell."
     :common {:lexeme :dilib,
             :polarity :Affirmative,
             :rootClass :CiCiC,
             :pos :Verb,
-            :pdgmType :AuxPut}
+            :morphClass :AuxPut}
     :terms [[:tam :number :person :gender :token] ;; schema
             [:Future :Singular :Person1 :Common "áat dílbi ád’a íid’a ándi"]
             [:Future :Singular :Person2 :Masc "áat dílbi íid’a índiya"]
@@ -243,7 +307,7 @@
     :common {:lexeme :dilib,
             :rootClass :CiCiC,
             :pos :Verb,
-            :pdgmType :AuxTake}
+            :morphClass :AuxTake}
     :terms [[:polarity :tam :number :person :gender :token] ;; schema
             [:Affirmative :Future :Singular :Person2 :Masc "dílbi áyaay tindíya?"]
             [:Affirmative :Future :Singular :Person2 :Fem "dílbi áyaay tíndíyi?"]
@@ -307,7 +371,7 @@
             :person :Person2,
             :pos :Verb,
             :tam :Imperative,
-            :pdgmType :Mood}
+            :morphClass :MoodOverview}
     :terms [[:polarity :number :gender :token] ;; schema
             [:Affirmative :Singular :Masc "hindéeh tamáan!"]
             [:Affirmative :Singular :Masc "diyáheeb!"]
@@ -524,10 +588,9 @@
     }
     {:label "beja_W-VNegNegAux"
     :note "Wedekind-etal2007 p. 147"
-    :common {:lexeme :NEGAUX,
-            :polarity :Negative,
+    :common {:polarity :Negative,
             :pos :Verb,
-            :pdgmType :NegAux}
+            :morphClass :NegAux}
     :terms [[:token :token-note] ;; schema
             ["oosdík usóotiyu iríb" "He did not tell the truth"] ["siniyáayu kíiki" "He does not wait for me"] ["siníitu iríb" "He did not wait for me"] ["aharíw anáw" "I missed/failed to find"] ["y’adíl igwóoy" "He failed to reconcile"] ["siniyáayi kíikeen" "They do not wait for me"] ["dilbát karéetáa?" "Do you not want to buy?"] ["rhát aríb" "I did not see"]]
     }
@@ -536,7 +599,7 @@
     :common {:lexeme :kay,
             :polarity :Negative,
             :pos :Verb,
-            :pdgmType :NegCop}
+            :morphClass :NegCop}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "haráayr’iib káaki"]
             [:Singular :Person2 :Masc "haráayr’iib kíttaa"]
@@ -588,132 +651,14 @@
     }
     {:label "beja_W-VNominalizationPatterns"
     :note "Wedekind-etal2007 Table #34-35"
-    :common {:morphClass :NOMINALIZATIONPATTERNS,
-            :pos :Verb,
-            :pdgmType :NominalizationPatterns}
+    :common {:morphClass :NominalizationPatterns,
+            :pos :Verb}
     :terms [[:conjClass :lexeme :token :token-note] ;; schema
             [:Prefix :bis "bis-a → oo-baas" "bury - goes_to the burial"]
             [:Prefix :kan "kan-a → tu-kanaan" "know → the knowledge"]
             [:Prefix :kan "sookin-a → tu-sook-nooy" "inform → the information"]
             [:Prefix :kitim "kitim-a → oo-ktuum" "arrive → the arrival"]
             [:Suffix :yak "yakaa → uyakti" "from start → the starting"]]
-    }
-    {:label "beja_W-VPrefAffCHiyParticiple"
-    :note "Wedekind-etal2007 p. 106"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :dHiy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CHiy}
-    :terms [[:token] ;; schema
-            ["d’íyaab"]]
-    }
-    {:label "beja_W-VPrefAffCaCParticiple"
-    :note "Wedekind-etal2007 p. 115"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :naw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CaC}
-    :terms [[:token] ;; schema
-            ["nawáab"]]
-    }
-    {:label "beja_W-VPrefAffCayParticiple"
-    :note "Wedekind-etal2007 p. 117"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :Cay}
-    :terms [[:token] ;; schema
-            ["bayáab abáay"]]
-    }
-    {:label "beja_W-VPrefAffCiCHParticiple"
-    :note "Wedekind-etal2007 p. 121"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :fir,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCH}
-    :terms [[:token] ;; schema
-            ["fir’áab"]]
-    }
-    {:label "beja_W-VPrefAffCiCParticiple"
-    :note "Wedekind-etal2007 p. 107"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :rib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiC}
-    :terms [[:token] ;; schema
-            ["ribáab"]]
-    }
-    {:label "beja_W-VPrefAffCiCaCParticiple"
-    :note "Wedekind-etal2007 p. 119"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :fiyak,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCaC}
-    :terms [[:token] ;; schema
-            ["fayáak"]]
-    }
-    {:label "beja_W-VPrefAffCiCiCParticiple"
-    :note "Wedekind-etal2007 p. 109"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :sibib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCiC}
-    :terms [[:token] ;; schema
-            ["šibbáab"]]
-    }
-    {:label "beja_W-VPrefAffCiCiyParticiple"
-    :note "Wedekind-etal2007 p. 111"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :miriy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCiy}
-    :terms [[:token] ;; schema
-            ["miriyáab"]]
-    }
-    {:label "beja_W-VPrefAffCiyParticiple"
-    :note "Wedekind-etal2007 p. 103"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :diy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :Ciy}
-    :terms [[:token] ;; schema
-            ["diyáab"]]
     }
     {:label "beja_W-VPrefAffFuture-dam"
     :note "Wedekind-etal2007 p. 152"
@@ -745,19 +690,6 @@
             :number :Singular}
     :terms [[:token] ;; schema
             ["ihíriw ándi"]]
-    }
-    {:label "beja_W-VPrefAffHaCiCParticiple"
-    :note "Wedekind-etal2007 p. 113"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :hariw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :HaCiC}
-    :terms [[:token] ;; schema
-            ["harwáab"]]
     }
     {:label "beja_W-VPrefCHiyAffAor-diy"
     :note "Wedekind-etal2007 p. 106"
@@ -804,19 +736,6 @@
             [:Singular :Masc "d’íya"]
             [:Singular :Fem "d’íyi"]
             [:Plural :Common "d’íina"]]
-    }
-    {:label "beja_W-VPrefCHiyAffParticiple-diy"
-    :note "Wedekind-etal2007 p. 106"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :dHiy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CHiy}
-    :terms [[:token] ;; schema
-            ["d’íyaab"]]
     }
     {:label "beja_W-VPrefCHiyAffPast-diy"
     :note "Wedekind-etal2007 p. 106"
@@ -882,19 +801,6 @@
             [:Singular :Fem "bíid’íiyi"]
             [:Plural :Common "báad’íina"]]
     }
-    {:label "beja_W-VPrefCHiyNegParticiple-diy"
-    :note "Wedekind-etal2007 p. 106"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :dHiy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CHiy}
-    :terms [[:token] ;; schema
-            ["baad’iiyay"]]
-    }
     {:label "beja_W-VPrefCHiyNegPast-diy"
     :note "Wedekind-etal2007 p. 106"
     :common {:conjClass :Prefix,
@@ -930,30 +836,6 @@
             [:Plural :Person1 :Common "kínd’i"]
             [:Plural :Person2 :Common "kídd’iina"]
             [:Plural :Person3 :Common "kíid’iin"]]
-    }
-    {:label "beja_W-VPrefCHiyNomAct"
-    :note "Wedekind-etal2007 p. 106"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :dHiy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CHiy}
-    :terms [[:token] ;; schema
-            ["óo-d’uuy"]]
-    }
-    {:label "beja_W-VPrefCHiyNomAct-diy"
-    :note "Wedekind-etal2007 p. 106"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :dHiy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CHiy}
-    :terms [[:token] ;; schema
-            ["óo-d’uuy"]]
     }
     {:label "beja_W-VPrefCaCAffAor-naw"
     :note "Wedekind-etal2007 p. 115"
@@ -1000,19 +882,6 @@
             [:Singular :Masc "náwa"]
             [:Singular :Fem "náwi"]
             [:Plural :Common "náwna"]]
-    }
-    {:label "beja_W-VPrefCaCAffParticiple-naw"
-    :note "Wedekind-etal2007 p. 115"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :naw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CaC}
-    :terms [[:token] ;; schema
-            ["nawáab"]]
     }
     {:label "beja_W-VPrefCaCAffPast-naw"
     :note "Wedekind-etal2007 p. 115"
@@ -1078,19 +947,6 @@
             [:Singular :Fem "bíináawi"]
             [:Plural :Common "báanáawna"]]
     }
-    {:label "beja_W-VPrefCaCNegParticiple-naw"
-    :note "Wedekind-etal2007 p. 115"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :naw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CaC}
-    :terms [[:token] ;; schema
-            ["banáaway"]]
-    }
     {:label "beja_W-VPrefCaCNegPast-naw"
     :note "Wedekind-etal2007 p. 115"
     :common {:conjClass :Prefix,
@@ -1126,30 +982,6 @@
             [:Plural :Person1 :Common "kínnaw"]
             [:Plural :Person2 :Common "kítnawna"]
             [:Plural :Person3 :Common "kíinawna"]]
-    }
-    {:label "beja_W-VPrefCaCNomAct"
-    :note "Wedekind-etal2007 p. 115"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :naw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CaC}
-    :terms [[:token] ;; schema
-            ["óo-naaw"]]
-    }
-    {:label "beja_W-VPrefCaCNomAct-naw"
-    :note "Wedekind-etal2007 p. 115"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :naw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CaC}
-    :terms [[:token] ;; schema
-            ["óo-naaw"]]
     }
     {:label "beja_W-VPrefCayAffAor-bay"
     :note "Wedekind-etal2007 p. 117"
@@ -1196,19 +1028,6 @@
             [:Singular :Masc "báya"]
             [:Singular :Fem "báyi"]
             [:Plural :Common "béena"]]
-    }
-    {:label "beja_W-VPrefCayAffParticiple-bay"
-    :note "Wedekind-etal2007 p. 117"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :Cay}
-    :terms [[:token] ;; schema
-            ["bayáab abáay"]]
     }
     {:label "beja_W-VPrefCayAffPast-bay"
     :note "Wedekind-etal2007 p. 117"
@@ -1274,19 +1093,6 @@
             [:Singular :Fem "bíibáayi"]
             [:Plural :Common "báabéena"]]
     }
-    {:label "beja_W-VPrefCayNegParticiple-bay"
-    :note "Wedekind-etal2007 p. 117"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :Cay}
-    :terms [[:token] ;; schema
-            ["baabáay"]]
-    }
     {:label "beja_W-VPrefCayNegPast-bay"
     :note "Wedekind-etal2007 p. 117"
     :common {:conjClass :Prefix,
@@ -1322,30 +1128,6 @@
             [:Plural :Person1 :Common "kínbi"]
             [:Plural :Person2 :Common "kítbeena"]
             [:Plural :Person3 :Common "kíibeen"]]
-    }
-    {:label "beja_W-VPrefCayNomAct"
-    :note "Wedekind-etal2007 p. 117"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :Cay}
-    :terms [[:token] ;; schema
-            ["i-míibi i-mábay"]]
-    }
-    {:label "beja_W-VPrefCayNomAct-bay"
-    :note "Wedekind-etal2007 p. 117"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :Cay}
-    :terms [[:token] ;; schema
-            ["i-míibi i-mábay"]]
     }
     {:label "beja_W-VPrefCiCAffAor-rib"
     :note "Wedekind-etal2007 p. 107"
@@ -1392,19 +1174,6 @@
             [:Singular :Masc "ríba"]
             [:Singular :Fem "ríbi"]
             [:Plural :Common "ríbna"]]
-    }
-    {:label "beja_W-VPrefCiCAffParticiple-rib"
-    :note "Wedekind-etal2007 p. 107"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :rib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiC}
-    :terms [[:token] ;; schema
-            ["ribáab"]]
     }
     {:label "beja_W-VPrefCiCAffPast-rib"
     :note "Wedekind-etal2007 p. 107"
@@ -1488,19 +1257,6 @@
             [:Singular :Fem "fír’I fíra’i"]
             [:Plural :Common "fír’ána"]]
     }
-    {:label "beja_W-VPrefCiCHAffParticiple-fir"
-    :note "Wedekind-etal2007 p. 121"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :fir,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCH}
-    :terms [[:token] ;; schema
-            ["fir’áab"]]
-    }
     {:label "beja_W-VPrefCiCHAffPast-fir"
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
@@ -1565,19 +1321,6 @@
             [:Singular :Fem "bíifíra’i"]
             [:Plural :Common "báafir’ana"]]
     }
-    {:label "beja_W-VPrefCiCHNegParticiple-fir"
-    :note "Wedekind-etal2007 p. 121"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fir,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCH}
-    :terms [[:token] ;; schema
-            ["báafar’a"]]
-    }
     {:label "beja_W-VPrefCiCHNegPast-fir"
     :note "Wedekind-etal2007 p. 121"
     :common {:conjClass :Prefix,
@@ -1614,30 +1357,6 @@
             [:Plural :Person2 :Common "kítfír’ana"]
             [:Plural :Person3 :Common "kíifír’ana"]]
     }
-    {:label "beja_W-VPrefCiCHNomAct"
-    :note "Wedekind-etal2007 p. 121"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fir,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCH}
-    :terms [[:token] ;; schema
-            ["tu-mifir’óoy"]]
-    }
-    {:label "beja_W-VPrefCiCHNomAct-fir"
-    :note "Wedekind-etal2007 p. 121"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fir,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCH}
-    :terms [[:token] ;; schema
-            ["tu-mifir’óoy"]]
-    }
     {:label "beja_W-VPrefCiCNegFuture-rib"
     :note "Wedekind-etal2007 p. 107"
     :common {:gender :Common,
@@ -1665,19 +1384,6 @@
             [:Singular :Masc "báaríiba"]
             [:Singular :Fem "bíiríibi"]
             [:Plural :Common "báaríibna"]]
-    }
-    {:label "beja_W-VPrefCiCNegParticiple-rib"
-    :note "Wedekind-etal2007 p. 107"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :rib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiC}
-    :terms [[:token] ;; schema
-            ["báaríib"]]
     }
     {:label "beja_W-VPrefCiCNegPast-rib"
     :note "Wedekind-etal2007 p. 107"
@@ -1714,30 +1420,6 @@
             [:Plural :Person1 :Common "kínrib"]
             [:Plural :Person2 :Common "kítribna"]
             [:Plural :Person3 :Common "kíiribna"]]
-    }
-    {:label "beja_W-VPrefCiCNomAct"
-    :note "Wedekind-etal2007 p. 107"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :rib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiC}
-    :terms [[:token] ;; schema
-            ["óo-raab"]]
-    }
-    {:label "beja_W-VPrefCiCNominalAction-rib"
-    :note "Wedekind-etal2007 p. 107"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :rib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiC}
-    :terms [[:token] ;; schema
-            ["óo-raab"]]
     }
     {:label "beja_W-VPrefCiCaCAffAor-fiyak"
     :note "Wedekind-etal2007 p. 119"
@@ -1784,19 +1466,6 @@
             [:Singular :Masc "fíyaka"]
             [:Singular :Fem "fíyaki"]
             [:Plural :Common "fíyakna"]]
-    }
-    {:label "beja_W-VPrefCiCaCAffParticiple-fiyak"
-    :note "Wedekind-etal2007 p. 119"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :fiyak,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCaC}
-    :terms [[:token] ;; schema
-            ["fayáak"]]
     }
     {:label "beja_W-VPrefCiCaCAffPast-fiyak"
     :note "Wedekind-etal2007 p. 119"
@@ -1880,19 +1549,6 @@
             [:Singular :Fem "bíifiyáaki"]
             [:Plural :Common "báafiyáakna"]]
     }
-    {:label "beja_W-VPrefCiCaCNegParticiple-fiyak"
-    :note "Wedekind-etal2007 p. 119"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fiyak,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCaC}
-    :terms [[:token] ;; schema
-            ["báafiyáak"]]
-    }
     {:label "beja_W-VPrefCiCaCNegPres-fiyak"
     :note "Wedekind-etal2007 p. 119"
     :common {:conjClass :Prefix,
@@ -1910,30 +1566,6 @@
             [:Plural :Person1 :Common "kínfiyák"]
             [:Plural :Person2 :Common "kítfitákna"]
             [:Plural :Person3 :Common "kíifíyákna"]]
-    }
-    {:label "beja_W-VPrefCiCaCNomAct"
-    :note "Wedekind-etal2007 p. 119"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fiyak,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCaC}
-    :terms [[:token] ;; schema
-            ["tu-mifyéek tu-mifiyéek"]]
-    }
-    {:label "beja_W-VPrefCiCaCNomAct-fiyak"
-    :note "Wedekind-etal2007 p. 119"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fiyak,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCaC}
-    :terms [[:token] ;; schema
-            ["tu-mifyéek tu-mifiyéek"]]
     }
     {:label "beja_W-VPrefCiCiCAffAor-sibib"
     :note "Wedekind-etal2007 p. 109"
@@ -1980,19 +1612,6 @@
             [:Singular :Masc "šíbiba"]
             [:Singular :Fem "šíbibi"]
             [:Plural :Common "šíbibna"]]
-    }
-    {:label "beja_W-VPrefCiCiCAffParticiple-sibib"
-    :note "Wedekind-etal2007 p. 109"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :sibib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCiC}
-    :terms [[:token] ;; schema
-            ["šibbáab"]]
     }
     {:label "beja_W-VPrefCiCiCAffPast-sibib"
     :note "Wedekind-etal2007 p. 109"
@@ -2058,19 +1677,6 @@
             [:Singular :Fem "bíišabíibi"]
             [:Plural :Common "báašabíibna"]]
     }
-    {:label "beja_W-VPrefCiCiCNegParticiple-sibib"
-    :note "Wedekind-etal2007 p. 109"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :sibib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCiC}
-    :terms [[:token] ;; schema
-            ["baašabíib"]]
-    }
     {:label "beja_W-VPrefCiCiCNegPast-sibib"
     :note "Wedekind-etal2007 p. 109"
     :common {:conjClass :Prefix,
@@ -2106,30 +1712,6 @@
             [:Plural :Person1 :Common "kínšbib"]
             [:Plural :Person2 :Common "kítšibibna"]
             [:Plural :Person3 :Common "kíišbibna"]]
-    }
-    {:label "beja_W-VPrefCiCiCNomAct"
-    :note "Wedekind-etal2007 p. 109"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :sibib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCiC}
-    :terms [[:token] ;; schema
-            ["óo-šbúub"]]
-    }
-    {:label "beja_W-VPrefCiCiCNomAct-sibib"
-    :note "Wedekind-etal2007 p. 109"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :sibib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCiC}
-    :terms [[:token] ;; schema
-            ["óo-šbúub"]]
     }
     {:label "beja_W-VPrefCiCiyAffAor-miriy"
     :note "Wedekind-etal2007 p. 111"
@@ -2176,19 +1758,6 @@
             [:Singular :Masc "míriya"]
             [:Singular :Fem "míriyi"]
             [:Plural :Common "míriina"]]
-    }
-    {:label "beja_W-VPrefCiCiyAffParticiple-miriy"
-    :note "Wedekind-etal2007 p. 111"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :miriy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :CiCiy}
-    :terms [[:token] ;; schema
-            ["miriyáab"]]
     }
     {:label "beja_W-VPrefCiCiyAffPast-miriy"
     :note "Wedekind-etal2007 p. 111"
@@ -2254,19 +1823,6 @@
             [:Singular :Fem "bíimaríiyi"]
             [:Plural :Common "báamáríina"]]
     }
-    {:label "beja_W-VPrefCiCiyNegParticiple-miriy"
-    :note "Wedekind-etal2007 p. 111"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :miriy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCiy}
-    :terms [[:token] ;; schema
-            ["bamáari"]]
-    }
     {:label "beja_W-VPrefCiCiyNegPast-miriy"
     :note "Wedekind-etal2007 p. 111"
     :common {:conjClass :Prefix,
@@ -2302,30 +1858,6 @@
             [:Plural :Person1 :Common "kínmíru"]
             [:Plural :Person2 :Common "kítmíruuna"]
             [:Plural :Person3 :Common "kíimirúun"]]
-    }
-    {:label "beja_W-VPrefCiCiyNomAct"
-    :note "Wedekind-etal2007 p. 111"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :miriy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCiy}
-    :terms [[:token] ;; schema
-            ["óo-mraay óo-mrúuy"]]
-    }
-    {:label "beja_W-VPrefCiCiyNomAct-miriy"
-    :note "Wedekind-etal2007 p. 111"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :miriy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :CiCiy}
-    :terms [[:token] ;; schema
-            ["óo-mraay óo-mrúuy"]]
     }
     {:label "beja_W-VPrefCiyAffAor-diy"
     :note "Wedekind-etal2007 p. 103"
@@ -2372,19 +1904,6 @@
             [:Singular :Masc "díya"]
             [:Singular :Fem "díyi"]
             [:Plural :Common "díina"]]
-    }
-    {:label "beja_W-VPrefCiyAffParticiple-diy"
-    :note "Wedekind-etal2007 p. 103"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :diy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :Ciy}
-    :terms [[:token] ;; schema
-            ["diyáab"]]
     }
     {:label "beja_W-VPrefCiyAffPast-diy"
     :note "Wedekind-etal2007 p. 103"
@@ -2450,19 +1969,6 @@
             [:Singular :Fem "bíidíiyi"]
             [:Plural :Common "báadíina"]]
     }
-    {:label "beja_W-VPrefCiyNegParticiple-diy"
-    :note "Wedekind-etal2007 p. 103"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :diy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :Ciy}
-    :terms [[:token] ;; schema
-            ["báadí"]]
-    }
     {:label "beja_W-VPrefCiyNegPast-diy"
     :note "Wedekind-etal2007 p. 103"
     :common {:conjClass :Prefix,
@@ -2498,30 +2004,6 @@
             [:Plural :Person1 :Common "kíndi"]
             [:Plural :Person2 :Common "kíddiina"]
             [:Plural :Person3 :Common "kiídiin"]]
-    }
-    {:label "beja_W-VPrefCiyNomAct"
-    :note "Wedekind-etal2007 p. 103"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :m-,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :Ciy}
-    :terms [[:token] ;; schema
-            ["óo-myáad"]]
-    }
-    {:label "beja_W-VPrefCiyNomAct-diy"
-    :note "Wedekind-etal2007 p. 103"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :diy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :Ciy}
-    :terms [[:token] ;; schema
-            ["óo-myáad"]]
     }
     {:label "beja_W-VPrefHaCiCAffAor-hariw"
     :note "Wedekind-etal2007 p. 113"
@@ -2569,19 +2051,7 @@
             [:Singular :Fem "háriwi"]
             [:Plural :Common "háriwna"]]
     }
-    {:label "beja_W-VPrefHaCiCAffParticiple-hariw"
-    :note "Wedekind-etal2007 p. 113"
-    :common {:conjClass :Prefix,
-            :gender :Masc,
-            :lexeme :hariw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :rootClass :HaCiC}
-    :terms [[:token] ;; schema
-            ["harwáab"]]
-    }
+
     {:label "beja_W-VPrefHaCiCAffPast-hariw"
     :note "Wedekind-etal2007 p. 113"
     :common {:conjClass :Prefix,
@@ -2646,19 +2116,6 @@
             [:Singular :Fem "bíharíiwi"]
             [:Plural :Common "báharíiwna"]]
     }
-    {:label "beja_W-VPrefHaCiCNegParticiple-hariw"
-    :note "Wedekind-etal2007 p. 113"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :hariw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :HaCiC}
-    :terms [[:token] ;; schema
-            ["bahar’iw"]]
-    }
     {:label "beja_W-VPrefHaCiCNegPast-hariw"
     :note "Wedekind-etal2007 p. 113"
     :common {:conjClass :Prefix,
@@ -2695,108 +2152,6 @@
             [:Plural :Person2 :Common "kítháriwna"]
             [:Plural :Person3 :Common "kíháriwna"]]
     }
-    {:label "beja_W-VPrefHaCiCNomAct"
-    :note "Wedekind-etal2007 p. 113"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :hariw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :HaCiC}
-    :terms [[:token] ;; schema
-            ["w-harúuw"]]
-    }
-    {:label "beja_W-VPrefHaCiCNomAct-hariw"
-    :note "Wedekind-etal2007 p. 113"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :hariw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :NominalAction,
-            :pos :Verb,
-            :rootClass :HaCiC}
-    :terms [[:token] ;; schema
-            ["w-harúuw"]]
-    }
-    {:label "beja_W-VPrefNegCHiyParticiple"
-    :note "Wedekind-etal2007 p. 106"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :dHiy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CHiy}
-    :terms [[:token] ;; schema
-            ["baad’iiyay"]]
-    }
-    {:label "beja_W-VPrefNegCaCParticiple"
-    :note "Wedekind-etal2007 p. 115"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CaC}
-    :terms [[:token] ;; schema
-            ["banáaway"]]
-    }
-    {:label "beja_W-VPrefNegCayParticiple"
-    :note "Wedekind-etal2007 p. 117"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :bay,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :Cay}
-    :terms [[:token] ;; schema
-            ["baabáay"]]
-    }
-    {:label "beja_W-VPrefNegCiCHParticiple"
-    :note "Wedekind-etal2007 p. 121"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fir,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCH}
-    :terms [[:token] ;; schema
-            ["báafar’a"]]
-    }
-    {:label "beja_W-VPrefNegCiCParticiple"
-    :note "Wedekind-etal2007 p. 107"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :rib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiC}
-    :terms [[:token] ;; schema
-            ["báaríib"]]
-    }
-    {:label "beja_W-VPrefNegCiCaCParticiple"
-    :note "Wedekind-etal2007 p. 119"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :fiyak,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCaC}
-    :terms [[:token] ;; schema
-            ["báafiyáak"]]
-    }
     {:label "beja_W-VPrefNegCiCaCPast-fiyak"
     :note "Wedekind-etal2007 p. 119"
     :common {:conjClass :Prefix,
@@ -2814,58 +2169,6 @@
             [:Plural :Person1 :Common "fáyaak kínki"]
             [:Plural :Person2 :Common "fáyaak kítteena"]
             [:Plural :Person3 :Common "fáyaak kíikeen"]]
-    }
-    {:label "beja_W-VPrefNegCiCiCParticiple"
-    :note "Wedekind-etal2007 p. 109"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :sibib,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCiC}
-    :terms [[:token] ;; schema
-            ["baašabíib"]]
-    }
-    {:label "beja_W-VPrefNegCiCiyParticiple"
-    :note "Wedekind-etal2007 p. 111"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :miriy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :CiCiy}
-    :terms [[:token] ;; schema
-            ["bamáari"]]
-    }
-    {:label "beja_W-VPrefNegCiyParticiple"
-    :note "Wedekind-etal2007 p. 103"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :diy,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :Ciy}
-    :terms [[:token] ;; schema
-            ["báadí"]]
-    }
-    {:label "beja_W-VPrefNegHaCiCParticiple"
-    :note "Wedekind-etal2007 p. 113"
-    :common {:conjClass :Prefix,
-            :gender :Common,
-            :lexeme :hariw,
-            :morphClass :VNOMFORM,
-            :nonFiniteForm :Participle,
-            :polarity :Negative,
-            :pos :Verb,
-            :rootClass :HaCiC}
-    :terms [[:token] ;; schema
-            ["bahar’iw"]]
     }
     {:label "beja_W-VPrefPast"
     :note "Wedekind-etal2007 Table #29. There are two paradigms of say,-ni- and –di-. Presently,for most Beja dialects,the second paradigm is the most common one,while the other one has only survived with certain speakers and in certain forms.(p.97)"
@@ -2889,10 +2192,9 @@
     {:label "beja_W-VPrefTransVerbPatterns"
     :note "Wedekind-etal2007 p. 124"
     :common {:conjClass :Prefix,
-            :morphClass :PREFVERB_PATTERNS,
+            :morphClass :PrefVerbPatterns,
             :person :Person2,
-            :pos :Verb,
-            :pdgmType :TransVerbPatterns}
+            :pos :Verb}
     :terms [[:lexeme :rootClass :number :gender :token] ;; schema
             [:abik :HaCiC :Singular :Masc "abíka"]
             [:abik :HaCiC :Singular :Fem "abíki"]
@@ -2970,7 +2272,7 @@
             :pos :Verb,
             :strength :weak,
             :tam :Future,
-            :pdgmType :Become}
+            :morphClass :Become}
     :terms [[:person :gender :token] ;; schema
             [:Person1 :Common "áni gw’í ándi"]
             [:Person2 :Masc "barúuk gw’í tíndiya"]
@@ -3160,7 +2462,7 @@
             :lexeme :gwa,
             :pos :Verb,
             :tam :Aorist,
-            :pdgmType :Q}
+            :morphClass :QOverview}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "náan gw’í?"]
             [:Singular :Person2 :Masc "náan gw’átiya?"]
@@ -3193,11 +2495,10 @@
     {:label "beja_W-VSuffFutureIntention"
     :note "Wedekind-etal2007 p. 154. V+a SAY = I want to V;V+1 SAY = I shall V."
     :common {:conjClass :Suffix,
-            :morphClass :FUTURE_INTENTION,
+            :morphClass :FutureIntention,
             :person :Person1,
             :pos :Verb,
-            :tam :Future,
-            :pdgmType :Intention}
+            :tam :Future}
     :terms [[:lexeme :number :token :token-note] ;; schema
             [:diy :Singular "náat íyaad ándi" "shall say"]
             [:diy :Singular "náat íid’a ándi" "shall do"]
@@ -3234,7 +2535,7 @@
             :person :Person2,
             :pos :Verb,
             :tam :Imperative,
-            :pdgmType :Overview}
+            :morphClass :ImperativeOverview}
     :terms [[:lexeme :number :gender :token] ;; schema
             [:adgir :Singular :Masc "adgíraa"]
             [:adgir :Singular :Fem "adgírii"]
@@ -3421,26 +2722,6 @@
             [:Plural :Person2 :Common "káréetaana"]
             [:Plural :Person3 :Common "káréeyaan"]]
     }
-    {:label "beja_W-VSuffPartAff-yak"
-    :note "Wedekind-etal2007 p.90"
-    :common {:conjClass :Suffix,
-            :lexeme :yak,
-            :polarity :Affirmative,
-            :pos :Verb,
-            :tam :Participle}
-    :terms [[:token] ;; schema
-            ["yákaab"]]
-    }
-    {:label "beja_W-VSuffPartNeg-yak"
-    :note "Wedekind-etal2007 p.90"
-    :common {:conjClass :Suffix,
-            :lexeme :yak,
-            :polarity :Negative,
-            :pos :Verb,
-            :tam :Participle}
-    :terms [[:token] ;; schema
-            ["baayákay"]]
-    }
     {:label "beja_W-VSuffPastAff-yak"
     :note "Wedekind-etal2007 p.90"
     :common {:conjClass :Suffix,
@@ -3482,7 +2763,7 @@
             :number :Singular,
             :person :Person3,
             :pos :Verb,
-            :pdgmType :Overview}
+            :morphClass :SuffPastPresOverview}
     :terms [[:lexeme :tam :token] ;; schema
             [:afirh :Past "afirhíya"]
             [:afirh :Present "afirhíini"]
@@ -3496,17 +2777,6 @@
             [:bireet :Present "bireetíni"]
             [:daas :Past "daasíya"]
             [:daas :Present "daasíini"]]
-    }
-    {:label "beja_W-VSuffPdgmOverview-nonFinite-yak"
-    :note "Wedekind-etal2007 p. 90"
-    :common {:conjClass :Suffix,
-            :lexeme :yak,
-            :pos :Verb,
-            :pdgmType :Overview}
-    :terms [[:nonFiniteForm :polarity :token] ;; schema
-            [:NominalAction :_NA "u-yákt"]
-            [:Participle :Affirmative "yákaab"]
-            [:Participle :Negative "baayákay"]]
     }
     {:label "beja_W-VSuffPresAff-yak"
     :note "Wedekind-etal2007 p. 90 & Table #29"
@@ -3565,7 +2835,7 @@
             :person :Person1,
              :gender :Common,
             :pos :Verb,
-            :pdgmType :Overview}
+            :pdgmType :TenseAspOverview}
     :terms [[:conjClass :tam :number :token :token-note-aux] ;; schema
             [:Prefix :Future :Singular "íyaad ándi" "ándi"]
             [:Prefix :Future :Plural "níyaa néeyad" "néeyad"]
@@ -3573,15 +2843,6 @@
             [:Prefix :Past :Plural "nídi" "_NULL"]
             [:Prefix :Present :Singular "ándi" "_NULL"]
             [:Prefix :Present :Plural "néeyad" "_NULL"]]
-    }
-    {:label "beja_W-VTenseAspOverview-yak"
-    :note "Wedekind-etal2007 Table #32"
-    :common {:lexeme :yak,
-            :person :Person1,
-             :gender :Common,
-            :pos :Verb,
-            :pdgmType :Overview}
-    :terms [[:conjClass :tam :number :token :token-note-aux] ;; schema
             [:Suffix :Future :Singular "yáki    ándi" "ándi"]
             [:Suffix :Future :Plural "yákni    néeyad" "néeyad"]
             [:Suffix :Past :Singular "yakán" "_NULL"]
@@ -3806,9 +3067,8 @@
     {:label "beja_W-VPrefSubjPref"
     :note "Wedekind-etal2007 Table #30"
     :common {:conjClass :Prefix,
-            :morpheme :SUBJPREF,
-            :pos :Verb,
-            :pdgmType :SubjPref}
+            :morphClass :SubjPref,
+            :pos :Verb}
     :terms [[:number :person :gender :token] ;; schema
             [:Singular :Person1 :Common "a-"]
             [:Singular :Person2 :Masc "ti-"]
@@ -3822,9 +3082,8 @@
     {:label "beja_W-VRelRelSuff"
     :note "Wedekind-etal2007 Table #41. Table #41:Relative Verb Suffixes"
     :common {:clauseType :Relative,
-            :morpheme :REL_SUFF,
             :pos :Verb,
-            :pdgmType :RelSuff}
+            :morphClass :RelSuff}
     :terms [[:caseHead :formFrequency :genHead :headPosition :token] ;; schema
             [:H_Object :Frequent :H_Fem :HeadFollow "-eet"]
             [:H_Object :Frequent :H_Fem :HeadFollow "-eet –too-na"]
