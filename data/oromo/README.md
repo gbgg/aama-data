@@ -1,0 +1,4 @@
+oromo
+=====
+
+Oromo morphology repository
