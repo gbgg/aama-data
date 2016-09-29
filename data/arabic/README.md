@@ -1,0 +1,4 @@
+arabic
+======
+
+Arabic morphology data
